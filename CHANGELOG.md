@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.2.4] - 2026-11-24
+
 ### Added
 
 - Volume 1, Section 2.5, the resolution of curves. It proves that the normal locus of a domain with a finite normalization is open with the conductor, that the regular locus of a curve is open, and that the normalization of each integral curve over a field is a resolution, in each characteristic. Each result has its Lean proof.
