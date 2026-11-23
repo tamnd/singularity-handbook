@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-11-24
+
 ### Added
 
 - Volume 1, Chapter 2, Integral closure and normalization. Section 2.1 recalls integral dependence and proves that a unique factorization domain is integrally closed. Section 2.2 proves the normalization lemma of Noether with the substitution of Nagata. Section 2.3 proves that the normalization is finite when the field extension is separable, with the trace form, and in particular for each finitely generated domain in characteristic 0. It ends with the resolution of affine curves in characteristic 0.
