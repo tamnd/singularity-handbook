@@ -1,6 +1,6 @@
 ---
 title: Regular local rings of dimension 1
-nodes: [SG00000022]
+nodes: [SG00000022, SG00000024]
 sources: [AM69, Mat, Stacks, Mathlib, Har]
 status: drafted
 drafted_by: writer
@@ -67,11 +67,11 @@ A scheme $X$ is *normal* if each local ring $\mathcal{O}_{X,x}$ is an integrally
 
 **Corollary 1.4.3.** Let $X$ be a normal locally Noetherian scheme with $\dim X \le 1$. Then $X$ is regular.
 
-Lean: none yet
+Node: SG00000024 · Lean: `Singularity.isRegularScheme_of_isIntegrallyClosed_stalk`
 
 *Proof.* Let $x \in X$ and let $R = \mathcal{O}_{X,x}$. Then $R$ is a Noetherian local domain that is integrally closed, and $\dim R \le \dim X \le 1$ (Volume 9, Lemma 1.1.2). If $\dim R = 0$, then $0$ is the only prime ideal of the domain $R$, so $\mathfrak{m} = 0$ and $R$ is a field. A field is regular (Example 1.2.2). If $\dim R = 1$, then $R$ is regular by Theorem 1.4.2. $\square$
 
-For a curve $X$ over a field, Corollary 1.4.3 reduces the resolution to the construction of the normalization $\tilde{X} \to X$. Volume 4 shows that the normalization is a resolution when it is a finite morphism, and the finiteness is a theorem of E. Noether for varieties [Har, Chapter I, Theorem 3.9A]. In the Lean development, the finiteness of the normalization is still open.
+For a curve $X$ over a field, Corollary 1.4.3 reduces the resolution to the construction of the normalization $\tilde{X} \to X$. Volume 4 shows that the normalization is a resolution when it is a finite morphism, and the finiteness is a theorem of E. Noether for varieties [Har, Chapter I, Theorem 3.9A]. Chapter 2 proves the finiteness in characteristic 0 (Corollary 2.3.5), and the Lean development has this case. The case of characteristic $p$ is still open in Lean.
 
 ### Examples
 
@@ -101,7 +101,7 @@ The equivalence $1 \Leftrightarrow 3$ is `Singularity.Algebra.isRegularLocalRing
 
 The proofs are short, because Mathlib has the theorem `IsDiscreteValuationRing.TFAE`. It gives seven equivalent conditions for a Noetherian local domain that is not a field, among them "$R$ is a discrete valuation ring", "$R$ is integrally closed and has exactly one nonzero prime ideal", and "the cotangent space has dimension 1". The Lean proof does three things. It shows that $R$ is not a field, since a field has dimension 0. It uses `IsRegularLocalRing.iff_finrank_cotangentSpace` to write regularity as "the cotangent space has dimension $\dim R = 1$". For condition 4, it shows that $\mathfrak{m}$ is the only nonzero prime ideal, which is Lemma 1.4.1. The Lean proof of Lemma 1.4.1 uses heights of prime ideals: the height of $\mathfrak{m}$ is $\dim R = 1$, so a prime ideal $\mathfrak{p} \subsetneq \mathfrak{m}$ has height 0, and in a domain this means $\mathfrak{p} = 0$.
 
-Corollary 1.4.3 and the examples are not yet in Lean.
+The Lean proof of Corollary 1.4.3 is `Singularity.isRegularScheme_of_isIntegrallyClosed_stalk` in the file `Singularity/Scheme/NormalDimOne.lean`. Mathlib has no class for normal schemes, so the theorem takes two hypotheses on the local rings: each local ring is a domain, and each local ring is integrally closed. The proof has two steps. First, the lemma `Singularity.ringKrullDim_stalk_le_topologicalKrullDim` gives $\dim \mathcal{O}_{X,x} \le \dim X$. Its proof identifies $\dim \mathcal{O}_{X,x}$ with the length of the longest chain of irreducible closed sets that contain $x$, with the Mathlib lemma `ringKrullDim_stalk_eq_coheight`. Second, the theorem `Singularity.isRegularLocalRing_of_isIntegrallyClosed` treats the local rings of dimension 0 and 1, as in the proof above. The examples are not yet in Lean.
 
 ### Notes and references
 
