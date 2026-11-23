@@ -11,6 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - Volume 1, Corollary 1.4.3, a normal scheme of dimension at most 1 is regular, now has the node SG00000024 and its Lean proof.
+- Volume 1, Corollary 2.3.6, the normalization of an affine curve in characteristic 0, now has the node SG00000027 and its Lean proof, and Section 2.3 explains the Lean proof.
 
 ## [0.2.1] - 2026-11-24
 

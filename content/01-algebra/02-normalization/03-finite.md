@@ -1,6 +1,6 @@
 ---
 title: Finiteness of the normalization
-nodes: [SG00000025, SG00000026]
+nodes: [SG00000025, SG00000026, SG00000027]
 sources: [AM69, Mat, Har, Nag62, Stacks, Mathlib]
 status: drafted
 drafted_by: writer
@@ -84,7 +84,7 @@ The finiteness theorem and Chapter 1 together resolve the singularities of an af
 
 **Corollary 2.3.6.** Let $k$ be a field of characteristic 0 and let $A$ be a domain that is a finitely generated $k$-algebra with $\dim A = 1$. Then $\tilde{A}$ is a finitely generated $k$-algebra, it is a finite $A$-module, and for each maximal ideal $\mathfrak{n}$ of $\tilde{A}$ the local ring $\tilde{A}_\mathfrak{n}$ is regular of dimension 1.
 
-Lean: none yet
+Node: SG00000027 · Lean: `Singularity.Curves.isDedekindDomain_integralClosure_of_charZero`
 
 *Proof.* By Corollary 2.3.5, $\tilde{A}$ is a finite $A$-module. Thus it is a finitely generated $k$-algebra, and it is Noetherian by the Hilbert basis theorem. The extension $A \subseteq \tilde{A}$ is integral, so $\dim \tilde{A} = \dim A = 1$ (Section 2.1). Let $\mathfrak{n}$ be a maximal ideal of $\tilde{A}$ and let $R = \tilde{A}_\mathfrak{n}$. Then $R$ is a Noetherian local domain, and it is integrally closed because $\tilde{A}$ is integrally closed and integral closure commutes with localization (Section 2.1). Its dimension is the height of $\mathfrak{n}$, which is at most 1. The ideal $\mathfrak{n}$ is not $0$, because $\tilde{A}$ is not a field: a domain that is integral over $A$ and is a field makes $A$ a field [AM69, Proposition 5.7], and $\dim A = 1$. Thus $\dim R = 1$, and $R$ is regular by Theorem 1.4.2. $\square$
 
@@ -99,6 +99,8 @@ The Lean proof of Theorem 2.3.4 is `Singularity.Algebra.finite_integralClosure_o
 3. Step 2 is `isIntegral_trans`. Step 3 is `isNoetherian_of_le` for the inclusion of submodules, and `Submodule.FG.of_restrictScalars` to go from generators over $P$ to generators over $A$.
 
 The Lean proof of Corollary 2.3.5 is `Singularity.Algebra.finite_integralClosure_of_charZero`. It takes $P$ from `exists_finite_inj_algHom_of_fg`, makes $A$ a $P$-algebra with the map `g`, and obtains the separability from `Algebra.IsAlgebraic.isSeparable_of_perfectField`, since a field of characteristic 0 is perfect. Mathlib knows that a polynomial ring over a field is Noetherian, and that it is integrally closed because it is a unique factorization domain.
+
+The Lean proof of Corollary 2.3.6 is `Singularity.Curves.isDedekindDomain_integralClosure_of_charZero` in the file `Singularity/Curves/Affine.lean`. It proves a slightly stronger statement: $\tilde{A}$ is a Dedekind domain, that is, a Noetherian integrally closed domain in which each nonzero prime ideal is maximal. The dimension hypothesis is the Mathlib class `Ring.DimensionLEOne A`, which says that each nonzero prime ideal of $A$ is maximal. The three parts of the proof above are `finite_integralClosure_of_charZero` with `IsNoetherianRing.of_finite`, the Mathlib theorem `integralClosure.isIntegrallyClosedOfFiniteExtension`, and the Mathlib instance that an integral extension of a ring of dimension at most 1 has dimension at most 1. Mathlib then knows that the localization of a Dedekind domain at a nonzero prime ideal is a discrete valuation ring, and so a regular local ring. The theorem `Singularity.Curves.isRegularRing_integralClosure_of_charZero` states this consequence.
 
 ### Notes and references
 
