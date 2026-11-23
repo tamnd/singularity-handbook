@@ -88,7 +88,7 @@ Node: SG00000027 · Lean: `Singularity.Curves.isDedekindDomain_integralClosure_o
 
 *Proof.* By Corollary 2.3.5, $\tilde{A}$ is a finite $A$-module. Thus it is a finitely generated $k$-algebra, and it is Noetherian by the Hilbert basis theorem. The extension $A \subseteq \tilde{A}$ is integral, so $\dim \tilde{A} = \dim A = 1$ (Section 2.1). Let $\mathfrak{n}$ be a maximal ideal of $\tilde{A}$ and let $R = \tilde{A}_\mathfrak{n}$. Then $R$ is a Noetherian local domain, and it is integrally closed because $\tilde{A}$ is integrally closed and integral closure commutes with localization (Section 2.1). Its dimension is the height of $\mathfrak{n}$, which is at most 1. The ideal $\mathfrak{n}$ is not $0$, because $\tilde{A}$ is not a field: a domain that is integral over $A$ and is a field makes $A$ a field [AM69, Proposition 5.7], and $\dim A = 1$. Thus $\dim R = 1$, and $R$ is regular by Theorem 1.4.2. $\square$
 
-In the language of schemes, $\operatorname{Spec} \tilde{A}$ is a normal scheme of dimension 1, so it is regular by Corollary 1.4.3, and the morphism $\operatorname{Spec} \tilde{A} \to \operatorname{Spec} A$ is finite and birational. Volume 4 shows that this morphism is a resolution, and it glues the affine pieces to resolve each curve.
+In the language of schemes, $\operatorname{Spec} \tilde{A}$ is a normal scheme of dimension 1, so it is regular by Corollary 1.4.3, and the morphism $\operatorname{Spec} \tilde{A} \to \operatorname{Spec} A$ is finite and birational. Section 2.5 shows that this morphism is a resolution, and it glues the affine pieces to resolve each integral curve.
 
 ### The Lean proof
 

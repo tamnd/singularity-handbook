@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Section 2.5, the resolution of curves. It proves that the normal locus of a domain with a finite normalization is open with the conductor, that the regular locus of a curve is open, and that the normalization of each integral curve over a field is a resolution, in each characteristic. Each result has its Lean proof.
+- Volume 9, Section 1.6, curves in each characteristic. It states the result in the form of the map, and it says that the general case of curves waits for the Lean proof of the reduction to integral varieties.
+
+### Changed
+
+- Volume 1, Sections 1.4, 2.3 and 2.4 and the introductions of Chapters 1 and 2 now refer to Section 2.5 for the resolution of curves. Section 1.4 no longer says that the case of characteristic p is open in Lean.
+
 ## [0.2.3] - 2026-11-24
 
 ### Added
