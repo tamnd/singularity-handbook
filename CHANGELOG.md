@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Section 2.4, the normalization in characteristic p. It proves the finiteness of the integral closure of a polynomial ring in a purely inseparable extension with the $q$-th roots of the coefficients, the reduction of the general case with the normal closure, the theorem of E. Noether over each field, and the resolution of affine curves over each field. Each result has its node and its Lean proof.
+
+### Changed
+
+- Volume 1, Section 2.3 now refers to Section 2.4 for the general case. The paragraph on perfect fields is clearer.
+- Volume 1, Chapter 2, the introduction describes Section 2.4.
+
 ## [0.2.2] - 2026-11-24
 
 ### Added

@@ -72,11 +72,11 @@ Node: SG00000026 · Lean: `Singularity.Algebra.finite_integralClosure_of_charZer
 
 *Proof.* By Theorem 2.2.1 there are elements $y_1, \dots, y_s \in A$, algebraically independent over $k$, such that $A$ is a finite module over $P = k[y_1, \dots, y_s]$. The ring $P$ is a polynomial ring. It is Noetherian by the Hilbert basis theorem [AM69, Corollary 7.6], and it is integrally closed by Example 2.1.5. The field $\operatorname{Frac} P$ has characteristic 0, so each algebraic extension of it is separable. By Step 1 of the proof of Theorem 2.3.4, $\operatorname{Frac} A$ is a finite extension of $\operatorname{Frac} P$, so it is separable. Theorem 2.3.4 gives the result. $\square$
 
-The same proof works over a perfect field $k$ when $\operatorname{Frac} A$ is separable over $\operatorname{Frac} P$, but this is not always so. Over each field one can choose the $y_i$ such that $\operatorname{Frac} A$ is separable over $k(y_1, \dots, y_s)$ when $k$ is perfect, because $\operatorname{Frac} A$ then has a separating transcendence basis [Mat, Theorem 26.2]. The Lean development does not yet use this choice.
+When $k$ is perfect, one can choose the $y_i$ such that $\operatorname{Frac} A$ is separable over $k(y_1, \dots, y_s)$, because $\operatorname{Frac} A$ then has a separating transcendence basis [Mat, Theorem 26.2]. Then the same proof applies. Over a field that is not perfect, such a choice is not always possible. Section 2.4 gives a proof over each field that does not need this choice.
 
 ### The general case
 
-E. Noether proved Corollary 2.3.5 over each field $k$. The statement is [Har, Chapter I, Theorem 3.9A], and the proof is in [Mat, Section 33] and [Stacks]. When $\operatorname{Frac} A$ is not separable over $\operatorname{Frac} P$, the proof first goes to a finite purely inseparable extension $K'$ of $K = \operatorname{Frac} P$ that contains enough $p$-th roots, so that $L K'$ is separable over $K'$. The ring $P' = k'[y_1^{1/q}, \dots, y_s^{1/q}]$, for a finite extension $k'$ of $k$ and a power $q$ of $p$, is again a polynomial ring and is finite over $P$. Then Theorem 2.3.4 applies over $P'$. This case is not yet in Lean, and the map of the project has it as the node SG0000000M.
+E. Noether proved Corollary 2.3.5 over each field $k$. The statement is [Har, Chapter I, Theorem 3.9A], and the proof is in [Mat, Section 33] and [Stacks]. When $\operatorname{Frac} A$ is not separable over $\operatorname{Frac} P$, the trace form can be zero, and Theorem 2.3.3 does not apply. Section 2.4 proves the general case with the $q$-th roots of the coefficients and with the normal closure. It also proves Corollary 2.3.6 over each field.
 
 ### Application to curves
 
