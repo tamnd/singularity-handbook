@@ -76,7 +76,7 @@ Volume 9, Section 1.3 uses Theorem 1.3.3 for this reason. A resolution of a vari
 A regular local ring has two more properties that we do not prove here.
 
 1. A regular local ring is a unique factorization domain. This is the theorem of Auslander and Buchsbaum [Mat, Theorem 20.3]. In particular, a regular local ring is integrally closed. The project has the node SG00000023 for this result, and it is not yet in Lean.
-2. Let $R$ be a regular local ring and let $\mathfrak{p}$ be a prime ideal. Then $R_\mathfrak{p}$ is a regular local ring. This is a theorem of Serre [Ser55], and its proof uses homological algebra: a Noetherian local ring is regular if and only if it has finite global dimension [Mat, Theorems 19.2 and 19.3]. The project has the node SG0000000H for this result. Mathlib does not yet have it, and its definition of a regular ring has a TODO for it.
+2. Let $R$ be a regular local ring and let $\mathfrak{p}$ be a prime ideal. Then $R_\mathfrak{p}$ is a regular local ring. This is a theorem of Serre [Ser55], and its proof uses homological algebra: a Noetherian local ring is regular if and only if it has finite global dimension [Mat, Theorems 19.2 and 19.3]. The project has the node SG0000000H for this result. Mathlib does not yet have it, and its definition of a regular ring has a TODO for it. Section 1.5 proves the first half of the theorem of Serre.
 
 The second property is important for geometry. It says that the set of regular points of a scheme is stable under generization, and it is the first step to prove that the regular locus is open. The chapter of this volume on excellence returns to this question.
 
