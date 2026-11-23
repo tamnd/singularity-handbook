@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Section 1.6, the theorem of Serre and localization. It proves the Ext criterion for projective dimension (Lemma 1.6.1), the bound $\operatorname{pd}_R M \le \dim R$ over a regular local ring (Theorem 1.6.3), the theorem of Serre in both directions (Theorem 1.6.8), and the regularity of $R_\mathfrak{p}$ for a regular local ring $R$ (Corollary 1.6.9). Each result has the name of its Lean proof.
+
+### Changed
+
+- Section 1.5 and the introduction of Chapter 1 no longer say that the converse of Serre is not in Lean.
+- `EDITION` refers to the release v0.2.7 of tamnd/singularity.
+
 ## [0.2.6] - 2026-11-24
 
 ### Added
