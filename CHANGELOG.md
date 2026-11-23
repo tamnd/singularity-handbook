@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Section 1.7, the regular locus and the criterion of Nagata. It proves that the regular locus is stable under generization (Proposition 1.7.2), the topological criterion for an open set (Lemma 1.7.3), the spreading of a regular system of parameters (Proposition 1.7.5) and the criterion of Nagata (Theorem 1.7.7). Example 1.7.8 computes the regular locus of the cuspidal cubic. Each result has the name of its Lean proof.
+
 ## [0.2.7] - 2026-11-24
 
 ### Added
