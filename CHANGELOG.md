@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Chapter 3, the Hilbert-Samuel function. Section 3.1 defines the function $n \mapsto \ell(M/I^n M)$, proves that its values are finite when $I$ contains a power of a maximal ideal, and gives the count for the local ring of affine space. Section 3.2 defines the order of an element for an ideal, proves its laws, and proves with the intersection theorem of Krull that only $0$ has infinite order in a Noetherian local ring. The Lean proofs are in `Singularity/Algebra/HilbertSamuel.lean`. The chapter says that the Samuel multiplicity is not proved in Lean yet.
+
 ## [0.2.5] - 2026-11-24
 
 ### Changed
