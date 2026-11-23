@@ -4,6 +4,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Commutative algebra for resolution, with Chapter 1, Regular local rings. It has four sections: dimension and the cotangent space, regular local rings and the quotient by a parameter, the proof that a regular local ring is a domain, and the description of regular local rings of dimension 1. Each section gives complete proofs for a graduate student with references to Atiyah and Macdonald, Matsumura and the Stacks project, examples (the cusp, the node, the cone, the union of two axes), an explanation of the Lean proof and notes.
+- The workflow `build` builds Volumes 0, 1 and 9.
+
+### Changed
+
+- `shb` reads the record of the Lean build in the form with the key `decls`, that tamnd/singularity-lean writes. Before this change it did not find the declarations, and each node had the status planned. A node with named hypotheses now has the status proved-mod.
+- Volume 9, Section 1.3 refers to the full proof in Volume 1 and gives the Lean name of SG0000000J.
+- `EDITION` points to the map after the nodes of the regular local ring API.
+
 ## [0.2.0] - 2026-11-23
 
 ### Added

@@ -22,11 +22,11 @@ We need one fact from commutative algebra.
 
 **Theorem 1.3.2.** A regular local ring is a domain.
 
-Node: SG0000000J · Lean: `Singularity.IsRegularLocalRing.isDomain` (status: planned in the project; the base has a Lean proof)
+Node: SG0000000J · Lean: `Singularity.Algebra.isDomain_of_isRegularLocalRing`
 
-For a proof see [Mat, Theorem 14.3]. The proof is by induction on the dimension. Let $(R, \mathfrak{m})$ be regular of dimension $d > 0$, and choose $x \in \mathfrak{m} \setminus \mathfrak{m}^2$ that is not in any minimal prime of $R$. Then $R/(x)$ is regular of dimension $d - 1$, so it is a domain by induction, and $(x)$ is a prime ideal. Let $\mathfrak{p} \subseteq (x)$ be a minimal prime. Each $y \in \mathfrak{p}$ is $y = xz$, and $z \in \mathfrak{p}$ because $x \notin \mathfrak{p}$. Thus $\mathfrak{p} = x\mathfrak{p}$, and $\mathfrak{p} = 0$ by Nakayama's lemma.
+Volume 1, Theorem 1.3.3 gives the full proof, and [Mat, Theorem 14.3] is the standard reference. Here is a summary. The proof is by induction on the dimension. Let $(R, \mathfrak{m})$ be regular of dimension $d > 0$, and choose $x \in \mathfrak{m} \setminus \mathfrak{m}^2$ that is not in any minimal prime of $R$. Then $R/(x)$ is regular of dimension $d - 1$, so it is a domain by induction, and $(x)$ is a prime ideal. Let $\mathfrak{p} \subseteq (x)$ be a minimal prime. Each $y \in \mathfrak{p}$ is $y = xz$, and $z \in \mathfrak{p}$ because $x \notin \mathfrak{p}$. Thus $\mathfrak{p} = x\mathfrak{p}$, and $\mathfrak{p} = 0$ by Nakayama's lemma.
 
-Let $X$ be a Noetherian scheme and let $x \in X$. The minimal prime ideals of $\mathcal{O}_{X,x}$ correspond to the irreducible components of $X$ that contain $x$. If $\mathcal{O}_{X,x}$ is a domain, it has only one minimal prime ideal, $0$. Thus a regular point of $X$ lies on exactly one irreducible component of $X$.
+Let $X$ be a Noetherian scheme and let $x \in X$. The minimal prime ideals of $\mathcal{O}_{X,x}$ correspond to the irreducible components of $X$ that contain $x$. If $\mathcal{O}_{X,x}$ is a domain, it has only one minimal prime ideal, $0$. Thus a regular point of $X$ lies on exactly one irreducible component of $X$. This is Volume 1, Corollary 1.3.4.
 
 ### The proof of the reduction
 
