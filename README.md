@@ -75,7 +75,7 @@ pip install .
 python scripts/style.py
 python -m shb check
 python -m shb number --write
-python -m shb build --volume 0 --formats pdf,epub
+python -m shb build --volume 0,9 --formats pdf,epub
 python -m unittest discover -s tests
 ```
 
