@@ -1,0 +1,22 @@
+[project]
+name = "shb"
+version = "0.1.0"
+description = "The builder of The Singularity Handbook: the theory of resolution of singularities as PDF and EPUB volumes"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["PyYAML>=6", "Pillow>=10", "fonttools>=4.40"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+shb = "shb.__main__:main"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["shb"]

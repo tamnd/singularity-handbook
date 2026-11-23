@@ -1,0 +1,5 @@
+tag: SG0000000B
+kind: conjecture
+title: Resolution in dimension 4
+lean:
+  statement: Singularity.ResolutionDimFourCharP

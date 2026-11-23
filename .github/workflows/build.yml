@@ -1,0 +1,113 @@
+name: build
+
+# Build Volume 0 as PDF and EPUB on each push to main, on each pull request and by hand.
+# On a tag v*, attach the books to the GitHub release of the tag.
+# The map of tamnd/singularity is the commit in the line "singularity" of EDITION.
+# The job does not cache the Tectonic bundle: the books of a release must not come from a cache that another run wrote.
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' && !startsWith(github.ref, 'refs/tags/') }}
+
+env:
+  PANDOC_VERSION: "3.12"
+  PANDOC_SHA256: 91903ff19f1b1d4db4129797c7e18f71212990d7394fcff1787719aebf04e372
+  TECTONIC_VERSION: "0.17.0"
+  TECTONIC_SHA256: 8533d07f9ccbd7a65824b9e0459041bca34af1eb33daba48f59215593753a3b7
+
+jobs:
+  build:
+    name: volume 0
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: edition
+        id: ed
+        run: |
+          echo "version=$(awk '/^version /{print $2}' EDITION)" >> "$GITHUB_OUTPUT"
+          echo "singularity=$(awk '/^singularity /{print $2}' EDITION)" >> "$GITHUB_OUTPUT"
+      - name: the tag matches EDITION
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          TAG: ${{ github.ref_name }}
+          VERSION: ${{ steps.ed.outputs.version }}
+        run: |
+          if [ "$TAG" != "v$VERSION" ]; then
+            echo "the tag $TAG is not v$VERSION of EDITION"
+            exit 1
+          fi
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: style
+        run: python scripts/style.py
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: tamnd/singularity
+          ref: ${{ steps.ed.outputs.singularity }}
+          path: singularity-map
+          persist-credentials: false
+      - name: install
+        run: pip install .
+      - name: shb check
+        run: python -m shb check --map singularity-map
+      - name: pandoc and tectonic
+        run: |
+          curl -fsSL -o pandoc.deb "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb"
+          echo "${PANDOC_SHA256}  pandoc.deb" | sha256sum -c -
+          sudo dpkg -i pandoc.deb
+          curl -fsSL -o tectonic.tar.gz "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-musl.tar.gz"
+          echo "${TECTONIC_SHA256}  tectonic.tar.gz" | sha256sum -c -
+          tar -xzf tectonic.tar.gz
+          sudo install -m 0755 tectonic /usr/local/bin/tectonic
+          rm -f pandoc.deb tectonic.tar.gz tectonic
+          pandoc --version | head -1
+          tectonic --version
+      - name: build
+        run: python -m shb build --volume 0 --formats pdf,epub --map singularity-map --out build
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: volume-0
+          path: |
+            build/*.pdf
+            build/*.epub
+          if-no-files-found: error
+
+  release:
+    name: release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: volume-0
+          path: out
+      - name: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          cd out
+          sha256sum -- *.pdf *.epub > SHA256SUMS
+          cd ..
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$TAG" out/* --clobber -R "$GITHUB_REPOSITORY"
+          else
+            gh release create "$TAG" out/* -R "$GITHUB_REPOSITORY" --verify-tag --title "The Singularity Handbook $TAG" --notes "The books of edition $TAG. See CHANGELOG.md."
+          fi

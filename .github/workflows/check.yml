@@ -1,0 +1,44 @@
+name: check
+
+# Check the writing rules, the content against the map of tamnd/singularity, and the tests of shb.
+# The job runs on each push to main, on each pull request and by hand.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  check:
+    name: style, shb check and tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      # The style check runs before the checkout of the map, so it reads only the files of this repository.
+      - name: style
+        run: python scripts/style.py
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: tamnd/singularity
+          path: singularity-map
+          persist-credentials: false
+      - name: install
+        run: pip install .
+      - name: shb check
+        run: python -m shb check --map singularity-map
+      - name: tests
+        run: python -m unittest discover -s tests

@@ -1,0 +1,187 @@
+"""The EPUB of a volume: the Markdown of the volume, then pandoc, then EPUB 3 with MathML. Each chapter is a file
+of its own. The filter puts the number of a heading in front of its text."""
+
+from __future__ import annotations
+
+import os
+import re
+import subprocess
+import time
+import zipfile
+
+from .book import Book
+from .content import Volume
+from .cover import cover_png
+from .paths import ROOT
+from .util import volume_hue
+
+
+def volume_css(vol: Volume, outdir: str) -> str:
+    """tex/epub.css with the blue of the template replaced by the hue of the volume ."""
+    hue = volume_hue(vol.number)
+    rgb = [int(hue[i:i + 2], 16) for i in (0, 2, 4)]
+    dark = "".join(f"{int(c * 0.75):02X}" for c in rgb)
+    tint = "".join(f"{int(c + (255 - c) * 0.94):02X}" for c in rgb)
+    soft = "".join(f"{int(c + (255 - c) * 0.6):02X}" for c in rgb)
+    css = open(os.path.join(ROOT, "tex", "epub.css")).read()
+    css = (css.replace("#2B59C3", f"#{hue}").replace("#20448f", f"#{dark}")
+              .replace("#F1F4FB", f"#{tint}").replace("#A9B9E3", f"#{soft}"))
+    path = os.path.join(outdir, "epub.css")
+    open(path, "w").write(css)
+    return path
+
+
+def metadata(book: Book, vol: Volume, edition: str, date: str) -> str:
+    commit = book.map_commit[:8]
+    q = lambda s: s.replace('"', '\\"')
+    return f"""---
+title:
+- type: main
+  text: "{q(vol.title)}"
+- type: subtitle
+  text: "The Singularity Handbook, Volume {vol.number}"
+creator:
+- role: author
+  text: "The singularity-handbook contributors"
+publisher: "singularity.tamnd.com"
+date: "{date}"
+lang: en
+identifier:
+- scheme: URI
+  text: "https://singularity.tamnd.com/handbook/{vol.dirname}/{edition}"
+rights: "Text CC BY 4.0; builder MIT. Edition {edition}, map commit {commit}."
+description: "{q(vol.subtitle.strip())}"
+subject: "Resolution of singularities"
+...
+"""
+
+
+def copyright_md(book: Book, vol: Volume, edition: str, date: str) -> str:
+    commit = book.map_commit[:8]
+    return f"""# About this edition {{.unnumbered .unlisted}}
+
+**The Singularity Handbook, Volume {vol.number}: {vol.title}.** Edition {edition}, {date}.
+
+{COPYRIGHT.format(commit=commit)}
+"""
+
+
+# the text of the copyright page; tex/handbook.sty has the same text in \hbcopyright
+COPYRIGHT = """The status of each node comes from the map of tamnd/singularity at commit `{commit}` (<https://github.com/tamnd/singularity>). The online edition is at <https://singularity.tamnd.com>.
+
+Resolution of singularities in dimension 4 and higher in characteristic $p > 0$ is an open problem. This book does not claim a proof of it. A statement has the status "proved" only when a Lean proof of it is checked.
+
+A chapter with the mark Draft has not been reviewed by a person. Each section names its writer and its reviewers in its source file.
+
+The text is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). The builder is licensed under the MIT licence. Please report errors at <https://github.com/tamnd/singularity-handbook/issues>."""
+
+
+# TeX that pandoc's MathML writer (texmath) cannot read and prints as source. XeTeX reads all of it; the EPUB
+# gets equivalent forms: `{n \atop k}` (Stirling and Eulerian numbers), `\xRightarrow{a}`, `\textsc{update}` (a
+# procedure name; MathML has no small capitals, so capitals), `{\rm best}`, `\cfrac`, `\tbinom` and `\bmod`.
+_MATH = re.compile(r"\$\$.*?\$\$|(?<![\\$])\$[^$\n]+\$", re.S)
+_MATHML = [
+    (re.compile(r"(?<!\\)\{\s*([^{}$]*?)\s*\\atop\s*([^{}$]*?)\s*(?<!\\)\}"),
+     lambda m: "{\\begin{matrix}" + m[1] + "\\\\" + m[2] + "\\end{matrix}}"),
+    (re.compile(r"(\\left(?:\\[A-Za-z]+|\\.|.))\s*([^{}$]*?)\s*\\atop\s*([^{}$]*?)\s*(\\right(?:\\[A-Za-z]+|\\.|.))"),
+     lambda m: m[1] + " \\begin{matrix}" + m[2] + "\\\\" + m[3] + "\\end{matrix} " + m[4]),
+    (re.compile(r"\\texttt\{([^{}$]*)\}"), lambda m: "\\texttt{" + m[1].replace("\\dots", "...") + "}"),
+    (re.compile(r"\\dbinom(?![A-Za-z])"), lambda m: "\\binom"),
+    (re.compile(r"\\xRightarrow\{([^{}$]*)\}"), lambda m: "\\overset{" + m[1] + "}{\\Rightarrow}"),
+    (re.compile(r"\\textsc\{([^{}$]*)\}"), lambda m: "\\text{" + m[1].upper() + "}"),
+    (re.compile(r"\{\\rm\s+([^{}$]*)\}"), lambda m: "\\mathrm{" + m[1] + "}"),
+    (re.compile(r"\\cfrac(?![A-Za-z])"), lambda m: "\\dfrac"),
+    # texmath has no \varprojlim and \varinjlim: the limit with an arrow under it
+    (re.compile(r"\\varprojlim(?![A-Za-z])"), lambda m: "\\underset{\\longleftarrow}{\\lim}"),
+    (re.compile(r"\\varinjlim(?![A-Za-z])"), lambda m: "\\underset{\\longrightarrow}{\\lim}"),
+    (re.compile(r"\\tbinom(?![A-Za-z])"), lambda m: "\\binom"),
+    (re.compile(r"\\bmod(?![A-Za-z])"), lambda m: "\\mathbin{\\mathrm{mod}}"),
+    # texmath cannot read \not before a group, as in the negated "|~" of nonmonotonic reasoning
+    (re.compile(r"\\not\s*\\mathrel\{\|\\!\\sim\}"), lambda m: "\\mathrel{|\\!\\nsim}"),
+    # texmath has \big but not the relation sizes \bigm, \Bigm, \biggm, \Biggm (as in P(A \bigm| B))
+    (re.compile(r"\\(big|Big|bigg|Bigg)m(?![A-Za-z])\s*(\\\||\\[A-Za-z]+|.)"),
+     lambda m: "\\mathrel{\\" + m[1] + m[2] + "}"),
+]
+
+
+def mathml_safe(md: str) -> str:
+    def span(m: re.Match) -> str:
+        t = m.group(0)
+        for rx, f in _MATHML:
+            t = rx.sub(f, t)
+        return t
+    return _MATH.sub(span, md)
+
+
+_HEADING = re.compile(r"^(#{1,6} .*?)(?:\s*(?<!\])\{([^{}]*)\})?\s*$")
+_FENCE = re.compile(r"^\s*(`{3,}|~{3,})")
+
+
+def heading_ids(md: str) -> str:
+    """Give every heading without an identifier one of its own (`h-1`, `h-2` and so on). Pandoc's EPUB writer would
+    otherwise make one from the text, and the section "Termination" of one entry would take the identifier of
+    the entry `termination`, and its links."""
+    out, fence, n = [], None, 0
+    for ln in md.split("\n"):
+        f = _FENCE.match(ln)
+        if f:
+            if fence is None:
+                fence = f.group(1)[0]
+            elif f.group(1)[0] == fence:
+                fence = None
+        elif fence is None and ln.startswith("#") and (m := _HEADING.match(ln)):
+            attrs = m.group(2) or ""
+            if not re.search(r"(^|\s)#", attrs):
+                n += 1
+                ln = f"{m.group(1)} {{#h-{n}{' ' + attrs if attrs else ''}}}"
+        out.append(ln)
+    return "\n".join(out)
+
+
+def build(book: Book, vol: Volume, md: str, outdir: str, edition: str, date: str) -> dict:
+    os.makedirs(outdir, exist_ok=True)
+    t = time.time()
+    src = os.path.join(outdir, "epub.md")
+    open(src, "w").write(metadata(book, vol, edition, date) + "\n" + copyright_md(book, vol, edition, date)
+                         + "\n\n" + heading_ids(mathml_safe(md)))
+    cover = os.path.join(outdir, "cover.png")
+    cover_png(vol, edition, cover)
+    out = os.path.join(outdir, "main.epub")
+    cmd = ["pandoc", src, "-f", "markdown-auto_identifiers-raw_tex", "-t", "epub3", "-o", out,
+           "--lua-filter", os.path.join(ROOT, "filters", "shb.lua"),
+           "--math-method=mathml", "--toc", "--toc-depth=3", "--split-level=1",
+           "--css", volume_css(vol, outdir),
+           "--epub-cover-image", cover, "--resource-path", outdir,
+           "--syntax-highlighting=pygments"]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    info = {"epub_s": round(time.time() - t, 1), "epub_ok": r.returncode == 0}
+    if r.returncode:
+        info["error"] = r.stderr[-4000:]
+    elif r.stderr.strip():
+        info["epub_warnings"] = r.stderr.count("[WARNING]")
+        open(os.path.join(outdir, "epub.log"), "w").write(r.stderr)
+    if os.path.exists(out):
+        space_functions(out)
+        info["epub"] = out
+        info["epub_mb"] = round(os.path.getsize(out) / 1e6, 1)
+    return info
+
+
+# `log n` in MathML is <mi>log</mi><mo>&#8289;</mo>; WebKit and Blink, which most reading systems use, put no
+# space around it, so `n log n` prints as `nlogn`. A thin space on both sides, as TeX gives.
+_FN = re.compile(r'(<mrow>)?(<mi mathvariant="normal">[A-Za-z]{2,}\*?</mi><mo>&#8289;</mo>)(</mrow>)?')
+_SP = '<mspace width="0.1667em"></mspace>'
+
+
+def space_functions(path: str) -> None:
+    tmp = path + ".tmp"
+    with zipfile.ZipFile(path) as zin, zipfile.ZipFile(tmp, "w") as zout:
+        for item in zin.infolist():
+            data = zin.read(item.filename)
+            if item.filename.endswith(".xhtml"):
+                data = _FN.sub(lambda m: (m.group(1) or "") + _SP + m.group(2) + _SP + (m.group(3) or ""),
+                               data.decode()).encode()
+            # mimetype first and stored, as EPUB requires
+            zout.writestr(item, data, compress_type=zipfile.ZIP_STORED if item.filename == "mimetype"
+                          else zipfile.ZIP_DEFLATED)
+    os.replace(tmp, path)

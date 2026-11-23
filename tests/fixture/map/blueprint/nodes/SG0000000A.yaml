@@ -1,0 +1,6 @@
+tag: SG0000000A
+kind: example
+title: A regular scheme resolves itself
+lean:
+  statement: Singularity.isResolution_id
+  proof: Singularity.isResolution_id
