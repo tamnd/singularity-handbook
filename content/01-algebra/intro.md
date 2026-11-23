@@ -6,4 +6,4 @@ The reader we have in mind knows the book of Atiyah and Macdonald [AM69]: locali
 
 Each statement that has a Lean proof has a `Lean:` line with the name of the declaration, and each statement on the map of the project has a `Node:` line. A statement with the line "Lean: none yet" has no Lean proof. The reader who does not read Lean can skip these lines and the sections "The Lean proof".
 
-This edition has Chapter 1, on regular local rings. The other chapters come with the milestones S2 and S3 of the project.
+This edition has Chapter 1, on regular local rings, and Chapter 2, on integral closure and normalization. The other chapters come with the milestones S2 and S3 of the project.
