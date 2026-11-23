@@ -71,7 +71,7 @@ Node: SG00000024 · Lean: `Singularity.isRegularScheme_of_isIntegrallyClosed_sta
 
 *Proof.* Let $x \in X$ and let $R = \mathcal{O}_{X,x}$. Then $R$ is a Noetherian local domain that is integrally closed, and $\dim R \le \dim X \le 1$ (Volume 9, Lemma 1.1.2). If $\dim R = 0$, then $0$ is the only prime ideal of the domain $R$, so $\mathfrak{m} = 0$ and $R$ is a field. A field is regular (Example 1.2.2). If $\dim R = 1$, then $R$ is regular by Theorem 1.4.2. $\square$
 
-For a curve $X$ over a field, Corollary 1.4.3 reduces the resolution to the construction of the normalization $\tilde{X} \to X$. Volume 4 shows that the normalization is a resolution when it is a finite morphism, and the finiteness is a theorem of E. Noether for varieties [Har, Chapter I, Theorem 3.9A]. Chapter 2 proves the finiteness in characteristic 0 (Corollary 2.3.5), and the Lean development has this case. The case of characteristic $p$ is still open in Lean.
+For a curve $X$ over a field, Corollary 1.4.3 reduces the resolution to the construction of the normalization $\tilde{X} \to X$. Section 2.5 shows that the normalization is a resolution when it is a finite morphism, and the finiteness is a theorem of E. Noether for varieties [Har, Chapter I, Theorem 3.9A]. Chapter 2 proves the finiteness over each field (Theorem 2.4.7), and the Lean development has the full proof.
 
 ### Examples
 

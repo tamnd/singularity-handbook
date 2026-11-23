@@ -1,6 +1,6 @@
 # The proved cases and the reductions
 
-This chapter has the first results of the project. Section 1.1 proves resolution in dimension 0, in each characteristic. Section 1.2 proves resolution of integral varieties in characteristic 0, from the Lean proof of Hironaka's Main Theorem I. Section 1.3 gives the step from integral varieties to reduced varieties, which is still a named hypothesis in Lean. Section 1.4 compares our statement with the statement of formal-conjectures. Section 1.5 shows that the core problem P1 is a special case of the main statement.
+This chapter has the first results of the project. Section 1.1 proves resolution in dimension 0, in each characteristic. Section 1.2 proves resolution of integral varieties in characteristic 0, from the Lean proof of Hironaka's Main Theorem I. Section 1.3 gives the step from integral varieties to reduced varieties, which is still a named hypothesis in Lean. Section 1.4 compares our statement with the statement of formal-conjectures. Section 1.5 shows that the core problem P1 is a special case of the main statement. Section 1.6 proves resolution of integral curves in each characteristic, with the normalization.
 
 The definitions are those of Volume 0, Chapter 2. We recall the most important one. Let $X$ be a scheme. A morphism $\pi : Y \to X$ is a *resolution* of $X$ when these four conditions hold:
 
