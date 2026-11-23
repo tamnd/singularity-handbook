@@ -92,13 +92,13 @@ Node: SG0000002C · Lean: `Singularity.Curves.integralResolutionInDim_one`
 
 Thus $\mathrm{Res}(p, 1)$ holds for integral varieties for each $p$. For a variety with more than one component, we use the reduction of Volume 9, Section 1.3.
 
-**Corollary 2.5.7.** Assume Hypothesis 1.3.1 of Volume 9. Then $\mathrm{Res}(p, 1)$ holds for each $p$.
+**Corollary 2.5.7.** $\mathrm{Res}(p, 1)$ holds for each $p$.
 
-Lean: `Singularity.Curves.resolutionInDim_one_of_reductionToIntegral`
+Lean: `Singularity.Curves.resolutionInDim_one`
 
-*Proof.* By Theorem 2.5.6, each integral variety of dimension at most 1 over a field of characteristic $p$ has a resolution. Hypothesis 1.3.1 with $n = 1$ gives $\mathrm{Res}(p, 1)$. $\square$
+*Proof.* By Theorem 2.5.6, each integral variety of dimension at most 1 over a field of characteristic $p$ has a resolution. Theorem 1.3.1 of Volume 9 with $n = 1$ gives $\mathrm{Res}(p, 1)$. $\square$
 
-Volume 9 proves Hypothesis 1.3.1 on paper. Its Lean proof is not yet written, so the node SG0000001A of the map, the statement $\mathrm{Res}(p, 1)$ for all curves, is still only stated in Lean. Its integral case, the node SG0000002C, is proved.
+The Lean development proves Theorem 1.3.1 of Volume 9 with only the three standard axioms. Thus the node SG0000001A of the map, the statement $\mathrm{Res}(p, 1)$ for all curves, is proved in Lean, and so is its integral case, the node SG0000002C.
 
 **Example 2.5.8 (the cusp).** Let $X = \operatorname{Spec} A$ with $A = k[t^2, t^3]$, the cusp of Example 2.1.6. Then $\tilde{A} = k[t]$, and the normalization is the map $\mathbb{A}^1_k \to X$ that sends $t$ to $(t^2, t^3)$. The conductor of $A$ in $k[t]$ contains $t^2$ and $t^3$, because $t^2 \cdot t^i$ and $t^3 \cdot t^i$ are in $A$ for each $i \ge 0$. It does not contain $1$, because $t \notin A$. Thus the conductor is the maximal ideal $(t^2, t^3)$ of $A$, the ideal of the cusp point. By Lemma 2.5.2 with $s = t^2$, the ring $A_{t^2} = k[t, t^{-1}]$ is integrally closed. The regular locus is $X$ minus the cusp point, and the normalization is an isomorphism over it.
 

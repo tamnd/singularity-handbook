@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## Curves in each characteristic
 
-This section reports the first result of the project in positive characteristic with no extra hypothesis. Each integral curve over a field has a resolution, and the resolution is the normalization. Volume 1, Section 2.5, gives the full proof. Here we state the result in the form of the map and we say what remains for all curves.
+This section reports the first result of the project in positive characteristic with no extra hypothesis. Each curve over a field has a resolution. For an integral curve, the resolution is the normalization. Volume 1, Section 2.5, gives the full proof. Here we state the result in the form of the map, and we deduce the result for all curves.
 
 **Theorem 1.6.1 (integral curves).** Let $p$ be $0$ or a prime. Let $k$ be a field of characteristic $p$ and let $X$ be an integral variety over $k$ with $\dim X \le 1$. Then the normalization $\pi : \tilde{X} \to X$ is a resolution of $X$.
 
@@ -18,11 +18,11 @@ Node: SG0000002C · Lean: `Singularity.Curves.integralResolutionInDim_one`
 
 **Corollary 1.6.2.** Let $p$ be $0$ or a prime. Then $\mathrm{Res}(p, 1)$ holds.
 
-Node: SG0000001A · Lean: `Singularity.resolutionInDim_one`
+Node: SG0000001A · Lean: `Singularity.Curves.resolutionInDim_one`
 
-*Proof.* By Theorem 1.6.1, each integral variety of dimension at most 1 over a field of characteristic $p$ has a resolution. By Hypothesis 1.3.1 with $n = 1$, which Section 1.3 proves, $\mathrm{Res}(p, 1)$ holds. $\square$
+*Proof.* By Theorem 1.6.1, each integral variety of dimension at most 1 over a field of characteristic $p$ has a resolution. By Theorem 1.3.1 with $n = 1$, $\mathrm{Res}(p, 1)$ holds. $\square$
 
-The Lean proof of Corollary 1.6.2 is not complete. The Lean development proves Theorem 1.6.1 with only the three standard axioms, and it proves the statement `Singularity.Curves.resolutionInDim_one_of_reductionToIntegral`, which is Corollary 1.6.2 with Hypothesis 1.3.1 as an argument. When the Lean proof of Hypothesis 1.3.1 is written, the node SG0000001A will be proved for each $p$.
+The Lean development proves Theorem 1.6.1 and Corollary 1.6.2 with only the three standard axioms. The Lean proof of the corollary applies `Singularity.Curves.resolutionInDim_one_of_reductionToIntegral` to the proof of Theorem 1.3.1.
 
 For $p = 0$ the result also follows from Section 1.2, but the proof here is much simpler and does not use the base. For $p > 0$ the result is new in the project. It is the case $n = 1$ of the open statement. The case $n = 2$ is a theorem of Abhyankar and Lipman, and $n = 3$ is a theorem of Cossart and Piltant. These cases are not yet in Lean. The case $n \ge 4$ is open.
 
