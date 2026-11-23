@@ -1,6 +1,6 @@
 ---
 title: The fidelity checks
-nodes: [SG0000000A, SG0000000B, SG0000001X, SG0000000C]
+nodes: [SG0000000A, SG0000000B, SG0000001X, SG0000000C, SG0000000E, SG00000020]
 sources: []
 status: drafted
 drafted_by: writer
@@ -51,3 +51,27 @@ In particular, a proof of the open case $\mathrm{Res}(p, 4)$ gives P1 for $n = 4
 The statement with "smooth" in place of "regular" is false over an imperfect field (Section 2.4). The Lean proof of this third instance is planned.
 
 Node: SG0000000C · Lean: `Singularity.exists_regular_not_smooth`
+
+The project is not the only place where the problem is stated in Lean. google-deepmind/formal-conjectures states it as `resolution_of_singularities`, with a different definition of a resolution: an integral scheme $Y$, smooth over $k$, with a proper morphism $Y \to X$ that is birational over $X$. That statement is for integral $X$ over a perfect field. If the two statements disagree where they meet, then one of them is wrong. The next proposition is the check.
+
+**Proposition 2.5.4 (the bridge to formal-conjectures).** Let $k$ be a perfect field, let $X$ be an integral variety over $k$, and let $\pi : Y \to X$ be a resolution of $X$. Then $Y$ is integral and smooth over $k$, and $\pi$ is proper and birational over $X$.
+
+Node: SG0000000E · Lean: `Singularity.Base.hasResolution_of_isResolution`
+
+*Proof.* Let $\eta$ be the generic point of $X$. Its local ring is the function field of $X$, which is a field, so $\eta \in \operatorname{Reg}(X)$. Let $U = \operatorname{Reg}(X)$. By condition 3, $U$ is open, and it is not empty. $X$ is irreducible, so $U$ is dense in $X$.
+
+By condition 3, $\pi^{-1}(U) \to U$ is an isomorphism. An open subscheme of an integral scheme that is not empty is integral, so $U$ and $\pi^{-1}(U)$ are integral. Thus $\pi^{-1}(U)$ is irreducible. By condition 4, it is dense in $Y$, so $Y$ is irreducible. $Y$ is regular, and a regular local ring is a domain, so $Y$ is reduced. Thus $Y$ is integral.
+
+$\pi$ is proper, so $Y$ is of finite type over $k$. Over a perfect field, a scheme that is locally of finite type is smooth if and only if it is regular. The base proves this (`Scheme.smooth_iff_isRegular`). Thus $Y$ is smooth over $k$.
+
+The isomorphism $\pi^{-1}(U) \to U$ is an isomorphism between dense open subschemes of $Y$ and $X$, and it commutes with the maps to $X$. Thus $\pi$ is birational over $X$. $\square$
+
+The proposition gives the bridge in one direction: $\mathrm{Res}(p, n)$ implies the statement of formal-conjectures in characteristic $p$ and dimension $n$ (`Singularity.Base.fcResolutionInDim_of_resolutionInDim`). The other direction is not a formal consequence. A resolution in the sense of formal-conjectures is an isomorphism over some dense open set, but it need not be an isomorphism over all of $\operatorname{Reg}(X)$. So the statement of the project is the stronger one.
+
+**Corollary 2.5.5 (Hironaka's theorem in the form of formal-conjectures).** Let $k$ be a field of characteristic 0 and let $X$ be an integral scheme that is separated and of finite type over $k$. Then there is an integral scheme $Y$, smooth over $k$, with a proper morphism $Y \to X$ that is birational over $X$.
+
+Node: SG00000020 · Lean: `Singularity.Base.fcResolutionCharZero`
+
+*Proof.* $X$ is integral, so it is reduced, and it is a variety. A field of characteristic 0 is perfect. Theorem 2.3.2 gives a resolution of $X$, and Proposition 2.5.4 shows that it has the properties of the corollary. $\square$
+
+This is the statement `resolution_of_singularities_of_charZero` of formal-conjectures. Its proof takes no hypothesis. Hypothesis 2.3.3 is not necessary here, because the statement of formal-conjectures is for integral schemes only.

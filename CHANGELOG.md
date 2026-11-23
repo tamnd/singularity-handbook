@@ -4,6 +4,20 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-23
+
+### Added
+
+- Volume 9, The open problem, Chapter 1, The proved cases and the reductions. It has five sections: dimension 0, integral varieties in characteristic 0, the reduction to integral varieties, the bridge to formal-conjectures, and the purely inseparable hypersurfaces of P1. Each section gives the statements, complete proofs for a graduate student, examples and counterexamples, an explanation of the Lean proof, and notes with references.
+- Volume 0: Theorem 2.3.2 (integral varieties in characteristic 0), Hypothesis 2.3.3 (the reduction to integral varieties), Theorem 2.3.4 (characteristic 0 from the hypothesis), Proposition 2.5.4 (the bridge to formal-conjectures) and Corollary 2.5.5 (Hironaka's theorem in the form of formal-conjectures).
+- The statement kind Hypothesis in `shb`.
+- The workflow `build` builds Volumes 0 and 9.
+
+### Changed
+
+- The edition page of Volume 0 describes the milestone S1.
+- `EDITION` is 0.2.0 and points to the map after the records of S1.
+
 ## [0.1.0] - 2026-11-23
 
 ### Added

@@ -13,7 +13,7 @@ import re
 from .content import anchor
 from .map import SITE, Map, node_url
 
-KINDS = "Definition|Theorem|Proposition|Lemma|Corollary|Example|Counterexample|Remark|Conjecture"
+KINDS = "Definition|Theorem|Proposition|Lemma|Corollary|Example|Counterexample|Remark|Conjecture|Hypothesis"
 
 _FENCE = re.compile(r"^(`{3,}|~{3,})")
 _MATH = re.compile(r"\$\$.*?\$\$|(?<![\\$])\$[^$\n]+\$", re.S)
@@ -82,6 +82,8 @@ class Converter:
                 level = len(m.group(1))
                 title = m.group(2)
                 lab = label_id(prefix, anchor(title))
+                if level > 2 and sec:   # a subsection: its anchor has the number of its section, so that each is unique
+                    lab = label_id(prefix, str(sec), anchor(title))
                 head = "#" * min(6, level + shift)
                 if numbering and level == 2:
                     sec += 1
