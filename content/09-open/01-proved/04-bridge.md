@@ -46,7 +46,7 @@ Node: SG00000020 · Lean: `Singularity.Base.fcResolutionCharZero`
 
 *Proof.* A field of characteristic 0 is perfect. The scheme $X$ is integral, so it is reduced, and it is a variety in our sense. By Theorem 1.2.5 it has a resolution, and by Proposition 1.4.1 it has a resolution in the sense of formal-conjectures. $\square$
 
-The corollary does not use Hypothesis 1.3.1, because the statement of formal-conjectures is about integral schemes only. Its status on the map is "proved".
+The corollary does not use Theorem 1.3.1, because the statement of formal-conjectures is about integral schemes only. Its status on the map is "proved".
 
 ### The converse is false
 

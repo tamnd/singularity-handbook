@@ -68,13 +68,15 @@ Node: SG0000001Z · Lean: `Singularity.Base.integralResolutionInDim_zero`
 3. By Theorem 1.2.2, $Z = \operatorname{Sing}(X)$, so $\operatorname{Reg}(X) = X \setminus Z$. This set is open, because $Z$ is closed. By Proposition 1.2.1, $\pi$ is an isomorphism over it.
 4. The inverse image of $\operatorname{Reg}(X)$ is $Y \setminus \pi^{-1}(Z) = Y \setminus V(\mathcal{E})$, where $\mathcal{E}$ is the inverse image ideal sheaf. By Proposition 1.2.1 the sheaf $\mathcal{E}$ is invertible, and by Lemma 1.2.4 the set $Y \setminus V(\mathcal{E})$ is dense. $\square$
 
-The theorem gives the integral case of $\mathrm{Res}(0, n)$ for each $n$. To get $\mathrm{Res}(0, n)$ itself we must pass from integral varieties to reduced varieties. This is Section 1.3, and it is not yet proved in Lean. We record the result in the form that the project has.
+The theorem gives the integral case of $\mathrm{Res}(0, n)$ for each $n$. To get $\mathrm{Res}(0, n)$ itself we must pass from integral varieties to reduced varieties. This is Theorem 1.3.1.
 
-**Theorem 1.2.6 (characteristic 0, from a hypothesis).** Assume Hypothesis 1.3.1. Then $\mathrm{Res}(0, n)$ holds for each $n$.
+**Theorem 1.2.6 (characteristic 0).** $\mathrm{Res}(0, n)$ holds for each $n$.
 
-Node: SG0000000D · Lean: `Singularity.resolutionInDim_zero` (status: proved-mod, it uses Hypothesis 1.3.1)
+Node: SG0000000D · Lean: `Singularity.resolutionInDim_charZero`
 
-*Proof.* Theorem 1.2.5 is the hypothesis of Hypothesis 1.3.1 for $p = 0$. $\square$
+*Proof.* Theorem 1.2.5 is the hypothesis of Theorem 1.3.1 for $p = 0$. $\square$
+
+In Lean, `Singularity.resolutionInDim_zero` takes `ReductionToIntegral` as an argument, and `Singularity.resolutionInDim_charZero` applies it to `Singularity.Reduction.reductionToIntegral`.
 
 ### An example
 

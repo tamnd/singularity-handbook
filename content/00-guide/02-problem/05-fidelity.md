@@ -74,4 +74,4 @@ Node: SG00000020 · Lean: `Singularity.Base.fcResolutionCharZero`
 
 *Proof.* $X$ is integral, so it is reduced, and it is a variety. A field of characteristic 0 is perfect. Theorem 2.3.2 gives a resolution of $X$, and Proposition 2.5.4 shows that it has the properties of the corollary. $\square$
 
-This is the statement `resolution_of_singularities_of_charZero` of formal-conjectures. Its proof takes no hypothesis. Hypothesis 2.3.3 is not necessary here, because the statement of formal-conjectures is for integral schemes only.
+This is the statement `resolution_of_singularities_of_charZero` of formal-conjectures. Its proof takes no hypothesis. Theorem 2.3.3 is not necessary here, because the statement of formal-conjectures is for integral schemes only.

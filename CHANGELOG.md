@@ -4,6 +4,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 9, Section 1.3. The reduction to integral varieties is now Theorem 1.3.1 with the Lean proof `Singularity.Reduction.reductionToIntegral`. It was a hypothesis. The new Lemma 1.3.5 proves with the valuative criterion that a finite disjoint union of proper morphisms is proper. The section "The Lean proof" gives the four steps of the formal proof.
+- Volume 9, Section 1.2. Theorem 1.2.6 (characteristic 0) is now unconditional, with the Lean proof `Singularity.resolutionInDim_charZero`.
+- Volume 9, Section 1.6, and Volume 1, Section 2.5. The resolution of each curve, not only of each integral curve, is now proved, with the Lean proof `Singularity.Curves.resolutionInDim_one`.
+- Volume 0, Section 2.3. Theorems 2.3.3 and 2.3.4 are now unconditional.
+
 ## [0.2.4] - 2026-11-24
 
 ### Added
