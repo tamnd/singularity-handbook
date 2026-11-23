@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.2.5] - 2026-11-24
+
 ### Changed
 
 - Volume 9, Section 1.3. The reduction to integral varieties is now Theorem 1.3.1 with the Lean proof `Singularity.Reduction.reductionToIntegral`. It was a hypothesis. The new Lemma 1.3.5 proves with the valuative criterion that a finite disjoint union of proper morphisms is proper. The section "The Lean proof" gives the four steps of the formal proof.
