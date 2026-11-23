@@ -74,6 +74,19 @@ class TestStatus(unittest.TestCase):
         self.assertEqual(m.status("SG0000000B"), "open")
         self.assertEqual(m.status("SG0000000C"), "planned")
 
+    def test_decls_and_hypotheses(self):
+        # The form that tamnd/singularity-lean writes has the key "decls". A node with hypotheses is proved-mod.
+        with tempfile.TemporaryDirectory() as d:
+            root = os.path.join(d, "map")
+            shutil.copytree(MAP, root)
+            with open(os.path.join(root, "records", "lean.json"), "w") as f:
+                f.write('{"commit": "x", "decls": {"Singularity.isResolution_id": {"axioms": []}}}')
+            with open(os.path.join(root, "blueprint", "nodes", "SG0000000A.yaml"), "a") as f:
+                f.write("hypotheses:\n- SG0000000B\n")
+            m = Map.load(root)
+            self.assertEqual(set(m.records), {"Singularity.isResolution_id"})
+            self.assertEqual(m.status("SG0000000A"), "proved-mod")
+
     def test_without_records(self):
         with tempfile.TemporaryDirectory() as d:
             shutil.copytree(MAP, os.path.join(d, "map"), ignore=shutil.ignore_patterns("records"))

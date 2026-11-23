@@ -8,6 +8,7 @@ The status of a node is computed here, in a simple form. With no records/lean.js
 statement is not in it, the status is "planned". records/lean.json is read in one of these forms:
 
     {"declarations": {"Singularity.foo": {...}, ...}}
+    {"decls": {"Singularity.foo": {...}, ...}}           (the form that tamnd/singularity-lean writes)
     {"Singularity.foo": {...}, ...}
     [{"name": "Singularity.foo", ...}, ...]
 
@@ -49,6 +50,7 @@ class Node:
     title: str
     statement: str    # the Lean name of the statement, "" if none
     proof: str        # the Lean name of the proof, "" if none
+    hypotheses: list = field(default_factory=list)   # the tags of the named hypotheses that the proof takes
 
 
 @dataclass
@@ -92,7 +94,8 @@ class Map:
             lean = y.get("lean") or {}
             tag = str(y.get("tag") or os.path.basename(p)[:-5])
             m.nodes[tag] = Node(tag, str(y.get("kind") or ""), str(y.get("title") or ""),
-                                str(lean.get("statement") or ""), str(lean.get("proof") or ""))
+                                str(lean.get("statement") or ""), str(lean.get("proof") or ""),
+                                [str(h) for h in y.get("hypotheses") or []])
         for p in sorted(glob.glob(os.path.join(root, "papers", "*.yaml"))):
             y = yaml.safe_load(read(p)) or {}
             key = str(y.get("key") or os.path.basename(p)[:-5])
@@ -119,13 +122,15 @@ class Map:
         if n.proof and n.proof in self.records:
             prec = self.records[n.proof]
             if not (isinstance(prec, dict) and prec.get("sorry")):
-                return "proved"
+                return "proved-mod" if n.hypotheses else "proved"
         return "open" if n.kind == "conjecture" else "stated"
 
 
 def _records(data) -> dict:
-    if isinstance(data, dict) and isinstance(data.get("declarations"), (dict, list)):
-        data = data["declarations"]
+    for key in ("declarations", "decls"):
+        if isinstance(data, dict) and isinstance(data.get(key), (dict, list)):
+            data = data[key]
+            break
     if isinstance(data, list):
         out = {}
         for r in data:
