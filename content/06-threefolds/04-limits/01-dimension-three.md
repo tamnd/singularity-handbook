@@ -1,7 +1,7 @@
 ---
 title: Where the proof uses dimension three
 nodes: [SG0000001V, SG0000001F, SG0000001C]
-sources: [CP19, CP14, CJS20, Hir67]
+sources: [CP19, CP14, CJS20, Hir67, Abh56]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -27,7 +27,7 @@ So in each dimension the main invariant does not go up. The missing part is a pr
 
 We list the places where [CP19] uses $n = 3$. The list follows the remarks of Cossart and Piltant in [CP19, Section 1] and at the places that we cite.
 
-*The reduction.* The reduction of Section 2.2 uses three theorems on regular schemes of dimension 2 and 3 [CP19, Propositions 4.2 to 4.4]: a theorem of Abhyankar that a regular local ring of dimension 2 that dominates another one with the same fraction field is an iterated quadratic transform of it, the embedded resolution of a reduced subscheme of an excellent regular scheme of dimension 3 [CJS20], and the principalization of ideals on such a scheme by blowups in regular centers. With these theorems Cossart and Piltant also reach condition (E) [CP19, Corollary 4.19]. In dimension 4 one would need the embedded resolution of threefolds in regular schemes of dimension 4, which is open in characteristic $p$ (Volume 9, Section 2.1).
+*The reduction.* The reduction of Section 2.2 uses three theorems on regular schemes of dimension 2 and 3 [CP19, Propositions 4.2 to 4.4]: a theorem of Abhyankar that a regular local ring of dimension 2 that dominates another one with the same fraction field is an iterated quadratic transform of it [Abh56], the embedded resolution of a reduced subscheme of an excellent regular scheme of dimension 3 [CJS20], and the principalization of ideals on such a scheme by blowups in regular centers. With these theorems Cossart and Piltant also reach condition (E) [CP19, Corollary 4.19]. In dimension 4 one would need the embedded resolution of threefolds in regular schemes of dimension 4, which is open in characteristic $p$ (Volume 9, Section 2.1).
 
 Node: SG0000001C · Lean: `Singularity.EmbeddedResolutionSurface` (the statement only)
 

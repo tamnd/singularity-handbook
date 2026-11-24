@@ -1,7 +1,7 @@
 ---
 title: The theorems
 nodes: [SG0000001D, SG0000001V, SG0000001F, SG0000001C]
-sources: [Abh56s, Abh66, Cut09, CP08, CP09, CP19, Zar40, Zar44, Lip78, CJS20, Kol20, BMP20, Hau10]
+sources: [Abh56s, Abh66, Cut09, CP08, CP09, CP19, Zar40, Zar44, Lip78, CJS20, Kol20, BMP20, Hau10, Cos87, Moh96]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -70,7 +70,7 @@ This is Theorem 4.1.5 of Volume 3 and Theorem 2.1.5 of Volume 9. Chapter 2 of th
 
 ### What is not in these theorems
 
-Theorem 1.1.3 is not an embedded resolution. The morphism $\pi$ is not built as a sequence of blowups in regular centers along which the strict transforms are normally flat [CP19, Remark 1.4]. The embedded resolution of a threefold in a regular fourfold by such a sequence is open in characteristic $p$. Cutkosky calls it the most fundamental problem of resolution in positive characteristic [Cut09]. Kollár [Kol20] and Bhatt, Ma, Patakfalvi, Schwede, Tucker, Waldron and Witaszek [BMP20] state the existence of projective log resolutions for quasi-excellent schemes of dimension at most 3, with these theorems as the base. They note that their results do not give a resolution by a sequence of blowups in regular centers [BMP20]. Volume 9, Section 2.1 states these facts, and Chapter 4 of this volume explains why the methods stop in dimension 3.
+Theorem 1.1.3 is not an embedded resolution. The morphism $\pi$ is not built as a sequence of blowups in regular centers along which the strict transforms are normally flat [CP19, Remark 1.4]. The embedded resolution of a threefold in a regular fourfold by such a sequence is open in characteristic $p$. Cossart and Piltant see the local Theorem 1.2.6, which uses only Hironaka-permissible blowups, as evidence that such a resolution may exist for threefolds, and they also point to [Cos87, Moh96] [CP19, Section 1]. Cutkosky calls it the most fundamental problem of resolution in positive characteristic [Cut09]. Kollár [Kol20] and Bhatt, Ma, Patakfalvi, Schwede, Tucker, Waldron and Witaszek [BMP20] state the existence of projective log resolutions for quasi-excellent schemes of dimension at most 3, with these theorems as the base. They note that their results do not give a resolution by a sequence of blowups in regular centers [BMP20]. Volume 9, Section 2.1 states these facts, and Chapter 4 of this volume explains why the methods stop in dimension 3.
 
 For surfaces the embedded problem is solved: the theorem of Cossart, Jannsen and Saito gives a canonical embedded resolution of each excellent surface in a regular excellent scheme (Theorem 3.1.4 of Volume 4).
 

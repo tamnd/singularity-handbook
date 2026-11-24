@@ -17,7 +17,7 @@ $$d' \le d + p^{e-1}.$$
 
 Node: SG00000015 · Lean: `Singularity.moh_bound` (the statement only, not proved)
 
-We do not prove Theorem 1.4.1. It is from [Moh87], and [HP19a, Section 3] states it in this form. The Lean statement `Singularity.moh_bound` measures the residual order in the given coordinates. The papers measure it in coordinates that the resolution chooses, so the Lean statement may need a hypothesis on the coordinates. No Lean theorem uses it. Hauser gives a further analysis of the increase and necessary conditions on $F$ for an increase in [Hau10], and Hauser and Perlega characterize the increase in [HP19b]. Hauser studies the points where the invariant increases, the *kangaroo points*, in [Hau08].
+We do not prove Theorem 1.4.1. It is from [Moh87], and [HP19a, Section 3] states it in this form. The Lean statement `Singularity.moh_bound` measures the residual order after cleaning in the given coordinates. By Proposition 1.3.5 this number does not depend on the choice of the coordinates $x$ that keep $E$. The Lean statement is not proved, and no Lean theorem uses it. Hauser gives a further analysis of the increase and necessary conditions on $F$ for an increase in [Hau10], and Hauser and Perlega characterize the increase in [HP19b]. Hauser studies the points where the invariant increases, the *kangaroo points*, in [Hau08].
 
 Moh also claimed a stronger result, the *stability theorem*: along a sequence of permissible blowups under which the order of the strict transforms of $f$ stays $q$, the residual order never exceeds $d + p^{e-1}$ [Moh87]. If it were true, the residual order could not increase without bound, and a refined invariant might drop in the long run. The rest of this section shows that the claim is false.
 
@@ -35,7 +35,7 @@ Now take the point blowup in the $x$-chart with the translation $y \mapsto y + 1
 $$\pi(x + y) = x + x(y + 1) = xy, \qquad \pi\bigl(w (x + y)^4\bigr) = x^5 w y^4.$$
 Thus
 $$\pi(F) = x^2 \cdot x^2 (y + 1)^2 \cdot x^3 w^3 \cdot \bigl(x^5 w y^4 + x^{13}\bigr) = x^{12} (y + 1)^2 w^3 \bigl(w y^4 + x^8\bigr),$$
-and by Lemma 1.3.6, with $(y + 1)^2 = y^2 + 1$,
+and by Lemma 1.3.7, with $(y + 1)^2 = y^2 + 1$,
 $$F' = x^{-4} \pi(F) = x^8 w^3 \bigl(w y^4 + w y^6 + x^8 + x^8 y^2\bigr).$$
 The monomial $x^8 w^4 y^4 = (x^2 w y)^4$ is a fourth power, and it is the only one, since the other exponents of $w$ are $3$. Cleaning removes it:
 $$F'^{\mathrm{cl}} = x^8 w^3 \bigl(w y^6 + x^8 + x^8 y^2\bigr).$$
