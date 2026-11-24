@@ -16,6 +16,8 @@ In this section we prove that the order of the weak transform at a point over th
 $$h = g(x_1 + t_1, \dots, 1, \dots, x_n + t_n),$$
 with the entry $1$ at the place $j$. Then $h \ne 0$, $h$ does not contain $x_j$, and $\deg h \le m$.
 
+Lean: `Singularity.dehomogenize_monomial`, `Singularity.chartShift_injective`, `Singularity.totalDegree_chartShift_le`
+
 *Proof.* Let $\sigma$ be the homomorphism $x_j \mapsto 1$. Two different monomials of degree $m$ differ in an exponent $\alpha_i$ with $i \ne j$, because the exponent $\alpha_j$ is determined by the others. So $\sigma$ sends the different monomials of $g$ to different monomials, and $\sigma(g) \ne 0$. Each monomial of $\sigma(g)$ has degree at most $m$. The translation $x_i \mapsto x_i + t_i$ is an automorphism of $K[x]$ with the inverse $x_i \mapsto x_i - t_i$, and it does not increase the degree. Thus $h \ne 0$ and $\deg h \le m$. The variable $x_j$ does not occur in $\sigma(g)$, and the translation does not introduce it. $\square$
 
 **Theorem 2.2.2.** Let $f \in K[x]$ with $\operatorname{ord} f = m$, and let $f'$ be the weak transform of $f$ in the chart $\pi_{j,t}$. Then $\operatorname{ord} f' \le m$.
@@ -31,7 +33,11 @@ The theorem is a statement about one chart at its origin. Each point of the exce
 
 **Corollary 2.2.3.** Let $X_0 = V(f) \subseteq \mathbb{A}^n$, and let $X_0 \leftarrow X_1 \leftarrow X_2 \leftarrow \cdots$ be a sequence of point blowups, where $X_{k+1}$ is the strict transform of $X_k$ under the blowup of a point $a_k$ of $X_k$, and $a_{k+1}$ lies over $a_k$. Then the sequence $\operatorname{ord}_{a_k} X_k$ does not increase.
 
+Lean: none yet
+
 *Proof.* After a translation, $a_k$ is the origin, and $a_{k+1}$ is the origin of a chart. Apply Theorem 2.2.2. $\square$
+
+The Lean library has the three parts of Lemma 2.2.1 as separate lemmas: the image of a monomial under $x_j \mapsto 1$, the injectivity of the translation, and the bound on the degree after the translation. The Lean proof of Theorem 2.2.2 combines them in `Singularity.ord_chartTransform_le`. Corollary 2.2.3 is a statement about a sequence of blowups of schemes, and the Lean library has no such sequence yet.
 
 Theorem 2.2.2 is the case of a hypersurface and a point center of the theorem of Bennett, which says that the Hilbert-Samuel function does not go up under a permissible blowup [Benn70]. For a hypersurface, the Hilbert-Samuel function at a point is determined by the order, so the two theorems agree.
 
