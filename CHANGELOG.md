@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.2.13] - 2026-11-24
+
 ### Added
 
 - Volume 1, Section 3.3, the multiplicity of a regular local ring. It proves that $(\mathfrak{m}^{n+1} : a) = \mathfrak{m}^n$ for the first element $a$ of a regular sequence that generates $\mathfrak{m}$ (Lemma 3.3.12), and that a regular local ring of dimension $d$ has $\ell(R/\mathfrak{m}^{n+1}) = \binom{n+d}{d}$ and $e(R) = 1$ (Theorem 3.3.13). Each of these results has a Lean proof. Remark 3.3.14 states the converse of Nagata and gives a ring that shows that the converse needs a hypothesis.
