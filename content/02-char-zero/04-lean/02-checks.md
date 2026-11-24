@@ -1,6 +1,6 @@
 ---
 title: What the project checks
-nodes: [SG0000001P, SG00000004, SG0000000V, SG0000002C, SG0000003A, SG00000018, SG0000001Q]
+nodes: [SG0000001P, SG00000004, SG0000000V, SG0000002C, SG0000003A, SG00000018, SG0000001Q, SG00000040, SG00000041, SG00000042, SG00000043, SG00000044, SG00000045, SG00000046, SG00000047, SG00000048, SG00000049]
 sources: [HirLean, Kol07, ATW24]
 status: drafted
 drafted_by: writer
@@ -39,20 +39,30 @@ The table lists the results of this volume that have a node of the map. The stat
 
 Two more results are near the text of this volume. Corollary 2.2.8 says that the maximal order does not go up under a blowup sequence of order $m$. The case of one polynomial and the blowup of a point, in each characteristic, is node SG0000003A, with the Lean theorem `Singularity.ord_le_of_pointChart`; Volume 7, Theorem 2.2.2, proves it. The weighted blowups of Section 3.3 are node SG0000001Q. That node has no Lean statement yet.
 
+### Results with a node and no Lean statement
+
+The map has a node for these results of the volume, but the library has no Lean statement of them.
+
+| Result | Node | Lean |
+|---|---|---|
+| Theorem 1.1.3 | SG00000040 | none yet |
+| Theorem 1.1.4 | SG00000041 | none yet |
+| Theorems 1.1.5 to 1.1.7, Theorem 3.3.11 | SG00000042 | none yet |
+| Theorem 1.1.8 | SG00000043 | none yet |
+| Theorem 1.2.1 | SG00000044 | none yet |
+| Lemma 2.3.2, Theorem 2.3.3 | SG00000045 | none yet |
+| Theorem 3.1.3 | SG00000046 | none yet |
+| Theorem 3.2.4, Corollary 3.2.5 | SG00000047 | none yet |
+| Theorem 3.3.6 | SG00000048 | none yet |
+| Theorems 3.3.8 and 3.3.10 | SG00000049 | none yet |
+
+The library defines the conclusion of Theorem 1.1.4 in a weak form, `Singularity.IsEmbeddedResolution`, but it does not state the theorem in characteristic 0.
+
 ### Results with no node
 
-The map has no node for these results of the volume, and the library has no Lean statement of them.
+The map has no node for the derivative ideals and the order, Section 2.1, and for the derivatives of the transforms, Theorem 2.2.7. The library has no Lean statement of them.
 
-1. The strong form of resolution, Theorem 1.1.3, with a projective morphism and a divisor with simple normal crossings.
-2. Embedded resolution in characteristic 0, Theorem 1.1.4. The library defines the conclusion in a weak form, `Singularity.IsEmbeddedResolution`, but it does not state the theorem in characteristic 0.
-3. Principalization, Theorems 1.1.5 to 1.1.7, and the functorial form, Theorem 1.1.8.
-4. Resolution from principalization, Theorem 1.2.1.
-5. The derivative ideals and the order, Section 2.1, and the derivatives of the transforms, Theorem 2.2.7.
-6. Maximal contact, Theorem 2.3.3.
-7. The restriction theorem, Theorem 3.1.3, and the coefficient ideal, Theorem 3.2.4.
-8. Order reduction for ideals and for marked ideals, Theorems 3.3.6 and 3.3.10, the monomial case, Theorem 3.3.8, and principalization from order reduction, Theorem 3.3.11.
-
-A Lean proof of these results would give a second proof of Theorem 4.1.4 that does not use the base, with the stronger conclusions of Chapter 1. It would need blowups of smooth varieties along smooth centers with their charts, the derivative ideals of an ideal sheaf on a smooth variety, and divisors with simple normal crossings with an order on their components. Mathlib and the library have some of these notions. The library defines divisors with simple normal crossings, and Volume 7 studies the order of a polynomial under the blowup of a point.
+A Lean proof of the results in these two lists would give a second proof of Theorem 4.1.4 that does not use the base, with the stronger conclusions of Chapter 1. It would need blowups of smooth varieties along smooth centers with their charts, the derivative ideals of an ideal sheaf on a smooth variety, and divisors with simple normal crossings with an order on their components. Mathlib and the library have some of these notions. The library defines divisors with simple normal crossings, and Volume 7 studies the order of a polynomial under the blowup of a point.
 
 ### Notes and references
 

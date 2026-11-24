@@ -1,6 +1,6 @@
 ---
 title: The coefficient ideal
-nodes: []
+nodes: [SG00000047]
 sources: [Kol07, Vil89, EH02, Wlo05, Mat]
 status: drafted
 drafted_by: writer
@@ -44,7 +44,7 @@ The point of the proposition is not the statement on $X$, which is easy, but the
 $$S_i \cap \operatorname{cosupp}(I_i, m) = \operatorname{cosupp}(C_{S, i}, m!),$$
 where $C_{S, i}$ is the $i$th transform of $(C_S(I), m!)$ on $S$.
 
-Lean: none yet
+Node: SG00000047 · Lean: none yet
 
 *Proof.* We argue by induction on the length. For $i = 0$, part (2) except the displayed equality is the hypothesis: a center in $S \cap \operatorname{cosupp}(I, m)$ contains no component of $S$, so it has codimension at least 2 in $X$. Assume that the first $i$ blowups are of order at least $m$ for $(I, m)$, equivalently of order at least $m!$ for $(C_S(I), m!)$, and that (2) holds up to $i$. Let $T^{(j)}_i$ be as in Theorem 3.1.3. By Theorem 3.1.3 (1), the $T^{(j)}_i$ are the transforms of the marked ideals $(D^j(I)|_S, m - j)$ on $S$. Restriction commutes with sums and products, so $C_S(I) = \sum_j (D^j(I)|_S)^{m!/(m-j)}$, and Lemma 3.2.2 (2) on $S$ gives $C_{S, i} = \sum_j (T^{(j)}_i)^{m!/(m-j)}$. By Lemma 3.2.2 (1) and Theorem 3.1.3 (2),
 $$\operatorname{cosupp}(C_{S, i}, m!) = \bigcap_{j=0}^{m-1} \operatorname{cosupp}(T^{(j)}_i, m - j) = S_i \cap \operatorname{cosupp}(I_i, m).$$
@@ -56,7 +56,7 @@ So, if $S$ is a hypersurface of maximal contact, order reduction on $X$ is the s
 
 **Corollary 3.2.5.** Let $m = \operatorname{max\text{-}ord} I \ge 1$, and let $H$ be a hypersurface of maximal contact for $I$ such that no component of $H$ lies in $\operatorname{cosupp}(I, m)$. Then the blowup sequences of order $m$ for $(I, m)$ are exactly the sequences with centers $Z_i \subseteq H_i$ that are blowup sequences of order at least $m!$ for $(C_H(I), m!)$ on $H$. For them, $\operatorname{cosupp}(I_i, m) = \operatorname{cosupp}(C_{H, i}, m!)$. In particular, $(I_r, m)$ has empty cosupport if and only if $(C_{H, r}, m!)$ has empty cosupport.
 
-Lean: none yet
+Node: SG00000047 · Lean: none yet
 
 *Proof.* By Theorem 2.3.3 (2), the centers of each blowup sequence of order $m$ lie in the transforms $H_i$, and $\operatorname{cosupp}(I_i, m) \subseteq H_i$. Now apply Theorem 3.2.4 with $S = H$. $\square$
 

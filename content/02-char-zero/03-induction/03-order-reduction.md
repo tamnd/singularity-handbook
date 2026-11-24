@@ -1,6 +1,6 @@
 ---
 title: Order reduction and principalization
-nodes: [SG0000001P, SG0000001Q]
+nodes: [SG0000001P, SG0000001Q, SG00000048, SG00000049, SG00000042]
 sources: [Kol07, Vil89, BM97, EH02, Wlo05, ATW24, McQ20]
 status: drafted
 drafted_by: writer
@@ -72,7 +72,7 @@ In general there is no global hypersurface of maximal contact. Kollár deals wit
 
 **Theorem 3.3.6 (order reduction for ideals).** Assume (M$_{n-1}$), in the functorial form. Then (O$_n$) holds, in the functorial form.
 
-Lean: none yet
+Node: SG00000048 · Lean: none yet
 
 *Proof sketch.* We follow [Kol07, Chapter 3], Section "Order reduction for ideals". Let $\operatorname{max\text{-}ord} I \le m$; if it is less than $m$ there is nothing to do.
 
@@ -103,7 +103,7 @@ We allow different coefficients on the components of one divisor $E^l$; then par
 
 **Theorem 3.3.8 (order reduction for monomial ideals).** Let $I = \mathcal{O}_X(-\sum_D a_D D)$ be a monomial ideal for $E$, with $D$ running over the components of the $E^l$, and let $m \ge 1$. Then there is a blowup sequence of order at least $m$ for $(I, m, E)$ whose centers are intersections of components of the transforms of $E$, with $\operatorname{cosupp}(I_r, m) = \emptyset$.
 
-Lean: none yet
+Node: SG00000049 · Lean: none yet
 
 *Proof.* The transforms of $I$ stay monomial: if $Z$ is a connected component of some $E^B$ and $\pi$ is its blowup, then $\pi^* \mathcal{O}(-D)$ is $\mathcal{O}(-D' - F)$ if $Z \subseteq D$ and $\mathcal{O}(-D')$ otherwise, where $D'$ is the birational transform. So if $Z \subseteq \operatorname{cosupp}(I, m)$, the transform of $(I, m)$ is monomial, with the old coefficients on the transforms $D'$ and the coefficient $a_B(Z) - m$ on the new divisor $F$ over $Z$; by the remark above, no other divisor contains $Z$. Also $\operatorname{ord}_y I = a_{A(y)}(y)$, where $A(y)$ is the set of all $l$ with $y \in E^l$. So a union of connected components of $E^B$ on which $a_B \ge m$ lies in $\operatorname{cosupp}(I, m)$ and is an allowed center.
 
@@ -126,7 +126,7 @@ Lean: none yet
 
 **Theorem 3.3.10 (order reduction for marked ideals).** Assume (O$_n$). Then (M$_n$) holds.
 
-Lean: none yet
+Node: SG00000049 · Lean: none yet
 
 *Proof.* Let $(X, I, m, E)$ be given, with $I$ nonzero on each component. Write $I = M(I) \cdot N(I)$ as in Lemma 3.3.7. If $\operatorname{cosupp}(I, m) = \emptyset$ we stop. Otherwise let
 $$s = \max \{ \operatorname{ord}_x N(I) : x \in \operatorname{cosupp}(I, m) \}.$$
@@ -143,7 +143,7 @@ Kollár first applies order reduction to $N(I)$ until its maximal order is less 
 
 **Theorem 3.3.11 (principalization).** Assume (M$_n$). Let $X$ be a smooth variety of dimension $n$, $I$ an ideal sheaf nonzero on each component, and $E$ a divisor with simple normal crossings and ordered index set. Then there is a blowup sequence $\Pi \colon X_r \to \dots \to X_0 = X$ with smooth centers that have simple normal crossings with the transforms of $E$, each lying over $V(I)$, such that $\Pi^* I = \mathcal{O}_{X_r}(-G)$ for a divisor $G \ge 0$ supported on the exceptional divisors, which are part of the divisor $E_r$ with simple normal crossings.
 
-Lean: none yet
+Node: SG00000042 · Lean: none yet
 
 *Proof.* Apply (M$_n$) with $m = 1$. A blowup sequence of order at least 1 is a sequence whose centers lie in $V(I_i)$, and $\operatorname{cosupp}(I_r, 1) = \emptyset$ means $I_r = \mathcal{O}_{X_r}$. Since $I_{i+1} = \mathcal{O}(F_i) \cdot \pi_i^* I_i$, we get $\Pi^* I = \mathcal{O}(-G) \cdot I_r = \mathcal{O}(-G)$, with $G$ the sum of the pullbacks to $X_r$ of the exceptional divisors $F_i$. By induction, $\Pi_i^* I = \mathcal{O}(-G_i) \cdot I_i \subseteq I_i$, where $\Pi_i \colon X_i \to X$, so $Z_i \subseteq V(I_i) \subseteq \Pi_i^{-1}(V(I))$. $\square$
 

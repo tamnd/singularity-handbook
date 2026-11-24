@@ -1,6 +1,6 @@
 ---
 title: The statements
-nodes: [SG0000001P, SG0000000D, SG00000004, SG00000005, SG0000000V]
+nodes: [SG0000001P, SG0000000D, SG00000004, SG00000005, SG0000000V, SG00000040, SG00000041, SG00000042, SG00000043]
 sources: [Hir64, Kol07, BM97, EV98, EH02, Wlo05, Vil89, Hau03, Cut04, Har]
 status: drafted
 drafted_by: writer
@@ -34,9 +34,9 @@ A divisor $E^i$ need not be irreducible, but it is smooth, so its irreducible co
 2. $\Pi$ is an isomorphism over $\operatorname{Reg}(X)$, and
 3. $\Pi^{-1}(\operatorname{Sing}(X))$ is a divisor with simple normal crossings on $X'$.
 
-Lean: none yet
+Node: SG00000040 · Lean: none yet
 
-This is the second form of resolution in [Kol07, Chapter 3], Section "Statement of main theorems". A morphism with the three properties is a resolution in the sense of Volume 0: it is proper since it is projective, and $\Pi^{-1}(\operatorname{Reg}(X))$ is the complement of a divisor in the smooth variety $X'$, so it is dense. The map has no node for the strong form; the node SG0000001P records only the weaker form of Theorem 1.1.1.
+This is the second form of resolution in [Kol07, Chapter 3], Section "Statement of main theorems". A morphism with the three properties is a resolution in the sense of Volume 0: it is proper since it is projective, and $\Pi^{-1}(\operatorname{Reg}(X))$ is the complement of a divisor in the smooth variety $X'$, so it is dense. The node SG00000040 records the strong form. The node SG0000001P records only the weaker form of Theorem 1.1.1.
 
 ### Embedded resolution
 
@@ -44,9 +44,9 @@ Let $Y$ be a smooth variety and $X \subseteq Y$ a reduced closed subscheme. We u
 
 **Theorem 1.1.4 (Hironaka, embedded resolution).** Let $Y$ be a smooth variety over $k$ and let $X \subseteq Y$ be a reduced closed subscheme. Then $X$ has an embedded resolution.
 
-Lean: none yet
+Node: SG00000041 · Lean: none yet
 
-This is the second main theorem of [Hir64]. The constructive proofs of [Vil89], [BM97], [EV98] and [EH02] give an embedded resolution that is determined by the pair $(Y, X)$ and compatible with smooth morphisms. The Lean library defines the conclusion in a weak form without the sequence of blowups, as `Singularity.IsEmbeddedResolution` (Volume 4, Section 3.1), but it has no statement of Theorem 1.1.4 in characteristic 0, and the map has no node for it.
+This is the second main theorem of [Hir64]. The constructive proofs of [Vil89], [BM97], [EV98] and [EH02] give an embedded resolution that is determined by the pair $(Y, X)$ and compatible with smooth morphisms. The Lean library defines the conclusion in a weak form without the sequence of blowups, as `Singularity.IsEmbeddedResolution` (Volume 4, Section 3.1), but it has no statement of Theorem 1.1.4 in characteristic 0. The node SG00000041 records the theorem.
 
 ### Principalization
 
@@ -54,7 +54,7 @@ Kollár does not prove resolution directly. He proves a theorem about ideal shea
 
 **Theorem 1.1.5 (principalization, first form).** Let $X$ be a smooth variety over $k$ and let $I \subseteq \mathcal{O}_X$ be a nonzero ideal sheaf. Then there are a smooth variety $X'$ and a projective birational morphism $f \colon X' \to X$ such that $f^* I$ is locally principal.
 
-Lean: none yet
+Node: SG00000042 · Lean: none yet
 
 Resolution implies this form. Let $\pi \colon B_I X \to X$ be the blowup of $I$. Then $\pi^* I$ is invertible [Har, Proposition II.7.13], and for a resolution $h \colon X' \to B_I X$ the composite $\pi \circ h$ is a principalization, because the pullback of an invertible ideal sheaf is locally principal. To get resolution back from principalization we need more control on the morphism.
 
@@ -64,7 +64,7 @@ Resolution implies this form. Let $\pi \colon B_I X \to X$ be the blowup of $I$.
 2. $f$ is a composite of blowups $X' = X_r \to X_{r-1} \to \dots \to X_1 \to X_0 = X$, where $X_{i+1} \to X_i$ is the blowup of a smooth closed subvariety $Z_i \subseteq X_i$.
 3. Each center $Z_i$ lies over $\operatorname{cosupp} I$, that is, its image in $X$ is contained in $\operatorname{cosupp} I$. In particular $f$ is an isomorphism over $X \setminus \operatorname{cosupp} I$.
 
-Lean: none yet
+Node: SG00000042 · Lean: none yet
 
 The variety $X'$ is smooth and $f$ is projective and birational, because each blowup of a smooth variety along a smooth center has these properties. Section 1.2 deduces from Theorem 1.1.6 that each integral quasi-projective variety $X$ has a projective birational morphism $X' \to X$ with $X'$ smooth. Kollár states part 3 as the condition that $f$ is an isomorphism over $X \setminus \operatorname{cosupp} I$; the proof gives the form above. The next form keeps track of a divisor.
 
@@ -74,7 +74,7 @@ The variety $X'$ is smooth and $f$ is projective and birational, because each bl
 2. $\Pi^* I$ is the ideal sheaf of a divisor with simple normal crossings, and
 3. $\Pi$ is an isomorphism over $X \setminus \operatorname{cosupp} I$.
 
-Lean: none yet
+Node: SG00000042 · Lean: none yet
 
 An ideal sheaf of the form $\mathcal{O}_X(-\sum_j c_j E^j)$, with $\sum_j E^j$ a divisor with simple normal crossings and $c_j \ge 0$, is called *monomial*: at each point it is generated by a monomial in a regular system of parameters. So Theorem 1.1.7 says that the inverse image of $I$ becomes monomial. Kollár calls this monomialization.
 
@@ -89,7 +89,7 @@ A canonical algorithm assigns to each triple $(X, I, E)$ a blowup sequence, and 
 3. $\Pi$ is an isomorphism over $X \setminus \operatorname{cosupp} I$.
 4. $B$ commutes with smooth morphisms and with change of fields.
 
-Lean: none yet
+Node: SG00000043 · Lean: none yet
 
 This is the fourth and strongest form of principalization in [Kol07, Chapter 3]. Kollár proves also a compatibility with closed embeddings when $E$ is empty, which is needed to make the resolution independent of an embedding. From it he deduces a functorial resolution: a rule that assigns to each reduced scheme $X$ of finite type over $k$ a blowup sequence $X_r \to \dots \to X$ with $X_r$ smooth, which is an isomorphism over the smooth locus, with $\Pi^{-1}(\operatorname{Sing} X)$ a divisor with simple normal crossings, and which commutes with smooth morphisms and with change of fields. In this resolution the centers are subschemes of the singular varieties $X_i$, and they need not be smooth. Example 1.2.2 explains why.
 
