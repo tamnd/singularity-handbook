@@ -1,7 +1,7 @@
 ---
 title: Embedded resolution and history
 nodes: [SG0000000T, SG0000000V, SG0000001C]
-sources: [CJS20, Zar39, Zar40, Zar44, Abh56s, Abh56, Abh66, CGO, Lip78, Hir64, Benn70, BenV13, HP24, Cut04, Kol07, CP19, Har, Stacks]
+sources: [CJS20, Zar39, Zar40, Zar44, Abh56s, Abh56, Abh66, CGO, Lip78, Hir64, Benn70, BenV13, HP24, Cut04, Kol07, CP19, Har, Stacks, Mat]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -14,17 +14,17 @@ The process of Lipman changes the surface. It does not keep an embedding of the 
 
 **Definition 3.1.1.** Let $Z$ be a Noetherian scheme, let $X \subseteq Z$ be a closed subscheme, and let $C \subseteq X$ be a closed subscheme with ideal $\mathcal{I}_C$ in $\mathcal{O}_X$. The center $C$ is *permissible* for $X$ if $C$ is regular and $X$ is normally flat along $C$, that is, each sheaf $\mathcal{I}_C^n/\mathcal{I}_C^{n+1}$ is a flat $\mathcal{O}_C$-module.
 
-Node: SG0000000T · Lean: none yet
+Node: SG0000000T · Lean: `Singularity.IsPermissible`
 
-The theorem of Bennett [Benn70] says that the Hilbert-Samuel function of $X$ does not go up under the blowup in a permissible center. The Hilbert-Samuel function is in Chapter 3 of Volume 1. A closed point is a permissible center, because each module over a field is flat.
+The theorem of Bennett [Benn70] says that the Hilbert-Samuel function of $X$ does not go up under the blowup in a permissible center. The Hilbert-Samuel function is in Chapter 3 of Volume 1. A closed point is a permissible center, because each module over a field is flat. This fact has a Lean proof, `Singularity.isPermissible_vanishingIdeal_singleton`.
 
 **Definition 3.1.2.** Let $Z$ be a regular Noetherian scheme. An effective Cartier divisor $D = \sum_i D_i$ on $Z$, with irreducible components $D_i$, has *simple normal crossings* if each $D_i$ is regular and, at each point $z \in Z$, the components that contain $z$ have local equations $t_1, \dots, t_r$ that are part of a regular system of parameters of $\mathcal{O}_{Z,z}$. A regular closed subscheme $X \subseteq Z$ has *normal crossings with* $D$ if, at each point $z \in X$, there is a regular system of parameters of $\mathcal{O}_{Z,z}$ such that $X$ is defined by some of its members and each component of $D$ through $z$ is defined by another of its members.
 
-Node: SG0000000V · Lean: none yet
+Node: SG0000000V · Lean: `Singularity.IsSncDivisor`
 
 **Definition 3.1.3.** Let $Z$ be a regular excellent scheme and let $X \subseteq Z$ be a reduced closed subscheme. An *embedded resolution* of $X$ is a sequence of blowups $Z_n \to Z_{n-1} \to \dots \to Z_0 = Z$, each in a permissible center for the strict transform $X_i$ of $X$, such that $X_n$ is regular, the union $E_n$ of the exceptional divisors is a divisor with simple normal crossings on $Z_n$, and $X_n$ has normal crossings with $E_n$.
 
-Lean: none yet
+Lean: `Singularity.IsEmbeddedResolution`
 
 The conditions vary a little between authors. Some ask that each center lies over the singular locus of $X$, or over the locus where the condition of normal crossings fails. Some ask that the sequence be canonical, that is, compatible with the regular morphisms and the automorphisms of the pair $(Z, X)$.
 
@@ -32,11 +32,22 @@ The conditions vary a little between authors. Some ask that each center lies ove
 
 **Theorem 3.1.4 (Cossart-Jannsen-Saito).** Let $Z$ be a regular excellent scheme and let $X \subseteq Z$ be a reduced closed subscheme of dimension at most 2. There is a canonical sequence of blowups in permissible centers after which the strict transform of $X$ is regular and has normal crossings with the exceptional divisor.
 
-Node: SG0000001C · Lean: none yet
+Node: SG0000001C · Lean: `Singularity.EmbeddedResolutionSurface` (the statement only)
 
 This is the main theorem of [CJS20]. The same work gives a canonical non-embedded resolution of each reduced excellent scheme of dimension at most 2. The proof uses the Hilbert-Samuel function, the directrix and the characteristic polyhedron of Hironaka. It does not use the characteristic, and it includes the case of mixed characteristic.
 
 The theorem gives the resolution of Theorem 2.2.1 again, for the schemes that embed in a regular excellent scheme. Each variety over a field embeds locally in an affine space, so the theorem applies locally. A canonical resolution glues, so for a variety the local resolutions give a global one.
+
+### The Lean statement
+
+The Lean library states Theorem 3.1.4 in a weaker form. Mathlib has no excellent schemes and no blowups of schemes, so the Lean statement changes two things.
+
+1. The scheme $Z$ is regular and of finite type over a field $k$. The field can be imperfect. Such a scheme is excellent, so this is a special case of Theorem 3.1.4.
+2. The Lean statement does not ask for a sequence of blowups. It asks for the result: a proper morphism $\pi \colon Z' \to Z$ with $Z'$ regular, an open set $U \subseteq Z$ that contains each point where $X$ is regular, and an ideal sheaf $E$ on $Z'$. The morphism $\pi$ is an isomorphism over $U$, the support of $E$ is $\pi^{-1}(Z \setminus U)$, $E$ has simple normal crossings, and the strict transform of $X$ has normal crossings with $E$.
+
+The local conditions are stated at the stalks. A divisor with simple normal crossings is an ideal sheaf whose stalk at each point is generated by the product of some members of a regular system of parameters [Stacks, Tag 0BI9]. On a regular Noetherian scheme this is the same as Definition 3.1.2. The strict transform is the reduced closed subscheme on the closure of $\pi^{-1}(X \cap U)$. Each generic point of $Z'$ has a field as local ring, so it is not in the support of $E$. Thus $\pi^{-1}(U)$ is dense in $Z'$.
+
+The Lean library proves two facts of this section. A closed point of $X$ is a permissible center. A regular closed subscheme of codimension 1 of a regular scheme is a divisor with simple normal crossings (`Singularity.isSncDivisor_of_codim_one`), because its ideal at each point is generated by one member of a regular system of parameters [Mat, Theorem 14.2]. The Lean library does not prove Theorem 3.1.4.
 
 ### Two examples
 

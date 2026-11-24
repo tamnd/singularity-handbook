@@ -30,7 +30,7 @@ The embedded problem for surfaces is also solved.
 
 **Theorem 2.1.3 (Cossart-Jannsen-Saito).** Let $Z$ be a regular excellent scheme and let $X \subseteq Z$ be a reduced closed subscheme of dimension at most 2. There is a canonical sequence of blowups in permissible centers after which the strict transform of $X$ is regular and has normal crossings with the exceptional divisor.
 
-Node: SG0000001C · Lean: `Singularity.embeddedResolution_surface` (planned, no Lean statement yet)
+Node: SG0000001C · Lean: `Singularity.EmbeddedResolutionSurface` (the statement only)
 
 The proof [CJS20] uses the Hilbert-Samuel function of Volume 1, the directrix, and the characteristic polyhedron of Hironaka. It is free of the characteristic, and it includes the case of mixed characteristic. It is the main source of invariants for the route of characteristic polyhedra in Section 2.3.
 
