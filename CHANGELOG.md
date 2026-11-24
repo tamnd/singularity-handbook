@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.9] - 2026-11-25
+
 ### Changed
 
 - The edition is 0.4.9, with the map at tamnd/singularity@70120f9. The build workflow now builds all ten volumes. The releases 0.4.7 and 0.4.8 had no files for Volume 6, because the workflow did not build it.
