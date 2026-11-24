@@ -15,9 +15,9 @@ In characteristic $0$, the residual order does not increase under a permissible 
 **Theorem 1.4.1 (Moh).** Let $f = z^q + F$ with $F$ clean, let $E$ be a normal crossings divisor as in Section 1.3, and let $d$ be the residual order of $f$ for $E$. Let $\pi$ be a permissible blowup, and let $a$ be a point over the origin where the strict transform $f'$ has order $q$. Then the residual order $d'$ of $f'$ at $a$ for the transform $E'$ of $E$ satisfies
 $$d' \le d + p^{e-1}.$$
 
-Node: SG00000015 · Lean: none yet
+Node: SG00000015 · Lean: Singularity.moh_bound (the statement only, not proved)
 
-We do not prove Theorem 1.4.1. It is from [Moh87], and [HP19a, Section 3] states it in this form. Hauser gives a further analysis of the increase and necessary conditions on $F$ for an increase in [Hau10], and Hauser and Perlega characterize the increase in [HP19b]. Hauser studies the points where the invariant increases, the *kangaroo points*, in [Hau08].
+We do not prove Theorem 1.4.1. It is from [Moh87], and [HP19a, Section 3] states it in this form. The Lean statement `Singularity.moh_bound` measures the residual order in the given coordinates. The papers measure it in coordinates that the resolution chooses, so the Lean statement may need a hypothesis on the coordinates. No Lean theorem uses it. Hauser gives a further analysis of the increase and necessary conditions on $F$ for an increase in [Hau10], and Hauser and Perlega characterize the increase in [HP19b]. Hauser studies the points where the invariant increases, the *kangaroo points*, in [Hau08].
 
 Moh also claimed a stronger result, the *stability theorem*: along a sequence of permissible blowups under which the order of the strict transforms of $f$ stays $q$, the residual order never exceeds $d + p^{e-1}$ [Moh87]. If it were true, the residual order could not increase without bound, and a refined invariant might drop in the long run. The rest of this section shows that the claim is false.
 
@@ -41,9 +41,9 @@ The monomial $x^8 w^4 y^4 = (x^2 w y)^4$ is a fourth power, and it is the only o
 $$F'^{\mathrm{cl}} = x^8 w^3 \bigl(w y^6 + x^8 + x^8 y^2\bigr).$$
 The translation of $y$ is not $0$, so $B = \{x, y\}$ and the new divisor is $E' = V(xw)$. The power series $w y^6 + x^8 + x^8 y^2$ is not divisible by $x$ or by $w$. So $G' = w y^6 + x^8 + x^8 y^2$ and the residual order is $d' = 7$. The order of $f'$ is still $4$.
 
-Thus $d' = 7$ exceeds Moh's bound $6$ for this step. It agrees with Theorem 1.4.1, since $d + p^{e-1} = 5 + 2 = 7$.
+Thus $d' = 7$ exceeds Moh's bound $6$ for this step. It agrees with Theorem 1.4.1, since $d + p^{e-1} = 5 + 2 = 7$. The Lean theorem `Singularity.Examples.kangaroo` checks by computation in the polynomial ring that $F$ is clean, that $d = 5$, that $\pi(F) = x^4 F'$ with $\operatorname{ord} F' \ge 4$, that $E' = V(xw)$ and that $d' = 7$. The value $p^r = 2$ is not checked in Lean.
 
-Node: SG00000016 · Lean: none yet
+Node: SG00000016 · Lean: Singularity.Examples.kangaroo, Singularity.Examples.kangaroo_increase
 
 The mechanism is visible in the computation. The term $w (x + y)^4$ of $G$ has a large order along the line $x = y$, and the translation $y \mapsto y + 1$ moves this line to the new origin. After the blowup, the term $w y^4$ is a fourth power times the exceptional factor $x^8 w^3$, and cleaning removes it. The remaining terms of $G'$ have larger order.
 
