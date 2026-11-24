@@ -16,7 +16,7 @@ In this section $K/k$ is a function field. A *model* of $K/k$ is an integral var
 
 The center of $v$ on $X'$ exists. Let $x$ be the center of $v$ on $X$. The inclusion $\mathcal{O}_{X,x} \subseteq \mathcal{O}_v$ gives a morphism $\operatorname{Spec} \mathcal{O}_v \to X$, and the valuative criterion of properness [Har, Chapter II, Theorem 4.7] lifts it to $X'$. The image $x'$ of the closed point is a center of $v$ on $X'$. This is the definition of Volume 9, Section 2.3.
 
-A trivial valuation has local uniformization, because its center is the generic point, and the local ring there is the field $K$. If $\dim X = 1$, then the normalization of $X$ is regular, and the normalization morphism is finite and birational, so it is proper (Volume 1, Theorem 2.5.6). Thus each valuation has local uniformization. The definition asks for a regular center on one model. It does not ask that the model be regular elsewhere.
+A trivial valuation has local uniformization, because its center is the generic point, and the local ring there is the field $K$. If $\dim X = 1$, then the normalization of $X$ is regular, and the normalization morphism is finite and birational, so it is proper (Volume 1, Theorem 2.5.6). Thus each valuation has local uniformization. Proposition 4.1.7 below gives a proof in the affine form. The definition asks for a regular center on one model. It does not ask that the model be regular elsewhere.
 
 ### The method of Zariski
 
@@ -68,6 +68,22 @@ Conversely, assume the condition, and let $X$ be a model on which $v$ has a cent
 
 The condition with one affine model, without the finite set $S$, follows from the condition of Proposition 4.1.6. The converse is not known in general, and the definition of local uniformization must ask for each finite set.
 
+### Transcendence degree at most 1
+
+The affine form gives a direct proof of the case of curves. It uses no blowup and no condition on the characteristic.
+
+**Proposition 4.1.7.** Let $k$ be a field of any characteristic, and let $K/k$ be a function field with $\operatorname{trdeg}_k K \le 1$. Then each valuation of $K/k$ has local uniformization.
+
+Lean: `Singularity.hasLocalUniformization_of_trdeg_le_one`
+
+*Proof.* We use Proposition 4.1.6. Let $v$ be a valuation of $K/k$, and let $S \subseteq \mathcal{O}_v$ be finite. As in the proof of Proposition 4.1.6, choose $t_1, \dots, t_n \in \mathcal{O}_v$ that generate $K$ as a field over $k$, and let $A_0 = k[S, t_1, \dots, t_n]$. Then $A_0$ is an affine model with $S \subseteq A_0 \subseteq \mathcal{O}_v$. Let $A$ be the integral closure of $A_0$ in $K$. A valuation ring is integrally closed, so $A \subseteq \mathcal{O}_v$. By the theorem of E. Noether (Volume 1, Theorem 2.4.7), $A$ is a finite $A_0$-module. Thus $A$ is a finitely generated $k$-algebra, and $A$ is an affine model.
+
+We show that $\dim A \le 1$. By Noether normalization (Volume 1, Theorem 2.2.1) there are $y_1, \dots, y_s \in A$, algebraically independent over $k$, such that $A$ is finite over $P = k[y_1, \dots, y_s]$. The $y_i$ are algebraically independent elements of $K$, so $s \le \operatorname{trdeg}_k K \le 1$. The extension $P \subseteq A$ is integral. By incomparability, a strict chain of primes of $A$ maps to a strict chain of primes of $P$, so $\dim A \le \dim P = s$.
+
+Let $\mathfrak{p} = \mathfrak{m}_v \cap A$, and let $R = A_\mathfrak{p}$. Then $R$ is a Noetherian local domain with $\dim R \le 1$, and $R$ is integrally closed, because $A$ is integrally closed. If $\dim R = 0$, then $R$ is a field, and it is regular. If $\dim R = 1$, then $R$ is regular by Volume 1, Theorem 1.4.2. $\square$
+
+The proof is the proof of Theorem 2.5.6 of Volume 1 in the affine form. The model $A$ is regular at the center of $v$, and the proof gives no information at the other points of $\operatorname{Spec} A$. For $\operatorname{trdeg}_k K = 0$ the field $K$ is finite over $k$, so $A = K$, and the result is trivial.
+
 ### The Lean statements
 
-The Lean library states the definitions of this chapter in `Singularity/Statements/LocalUniformization.lean`. A valuation of $K/k$ is a valuation subring $V$ of $K$ that contains $k$. The condition of Proposition 4.1.6 for one finite set is `Singularity.HasRegularCenter`, and local uniformization is `Singularity.HasLocalUniformization`. The regular local rings are the regular local rings of Mathlib. The library has no Lean proof of Proposition 4.1.6, because it has no Lean statement of Definition 4.1.1. Theorem 4.1.5 is stated as `Singularity.localUniformization_three`, for each prime $p$ and each field of characteristic $p$, and it is not proved. The file also states Theorems 4.2.1 and 4.2.2 and the two conjectures of Volume 9, Section 2.3. The file `Singularity/Fidelity/LocalUniformization.lean` proves three facts that test the definition. The trivial valuation has local uniformization. A valuation with local uniformization contains $k$. If some valuation has local uniformization, then $K$ is finitely generated over $k$. The last fact shows that the condition on the models is not empty.
+The Lean library states the definitions of this chapter in `Singularity/Statements/LocalUniformization.lean`. A valuation of $K/k$ is a valuation subring $V$ of $K$ that contains $k$. The condition of Proposition 4.1.6 for one finite set is `Singularity.HasRegularCenter`, and local uniformization is `Singularity.HasLocalUniformization`. The regular local rings are the regular local rings of Mathlib. The library has no Lean proof of Proposition 4.1.6, because it has no Lean statement of Definition 4.1.1. Proposition 4.1.7 is proved in `Singularity/Valuation/LocalUniformizationCurves.lean`. The file also proves `Singularity.localUniformizationInDim_zero` and `Singularity.localUniformizationInDim_one`, that is, local uniformization for each function field of transcendence degree 0 or 1 over a field of characteristic $p$, for each $p$. Theorem 4.1.5 is stated as `Singularity.localUniformization_three`, for each prime $p$ and each field of characteristic $p$, and it is not proved. The file also states Theorems 4.2.1 and 4.2.2 and the two conjectures of Volume 9, Section 2.3. The file `Singularity/Fidelity/LocalUniformization.lean` proves three facts that test the definition. The trivial valuation has local uniformization. A valuation with local uniformization contains $k$. If some valuation has local uniformization, then $K$ is finitely generated over $k$. The last fact shows that the condition on the models is not empty.
