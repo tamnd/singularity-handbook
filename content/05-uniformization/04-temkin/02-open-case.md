@@ -45,7 +45,7 @@ Part 4. The ring $A_\mathfrak{m}$ has dimension 2. Its maximal ideal is generate
 
 Let $v$ be a valuation of $K/k$ with center $\mathfrak{m}$ on $X$, and let $w$ be its extension to $L$. The center $\mathfrak{q}$ of $w$ on $\operatorname{Spec} k[a, b]$ lies over $\mathfrak{m}$. So $a^p = x$ and $b^p = y$ lie in $\mathfrak{q}$, hence $a, b \in \mathfrak{q}$, and $\mathfrak{q}$ is the origin $(a, b)$. The origin is a point of $\mathbb{A}^2_k$ with residue field $k$, so it is a simple $k$-smooth point. So the conclusion of Theorem 4.1.1 holds for $X$ itself, with $l = k$ and $X' = X$. But the center of $v$ on $X$ is singular. The conclusion of Theorem 4.1.1 gives no information on the singularities of $X'$.
 
-In this example $v$ has local uniformization, because Volume 4 resolves $X$ and Proposition 1.4.5 applies. In dimension 4 no such resolution is known.
+In this example $v$ has local uniformization by Proposition 3.1.2, because $K/k$ has transcendence degree 2. The resolution of $X$ in Volume 4 and Proposition 1.4.5 give a regular center over $X$ itself. In dimension 4 no such resolution is known.
 
 ### The reduction to equations of the form $t^p = f$
 
@@ -57,7 +57,7 @@ with each step of degree $p$. If one can uniformize each valuation centered on a
 
 The hypersurfaces $z^p + g = 0$ of Volume 9, Conjecture 2.3.7, are of this form, with $f = -g$ and the regular model a polynomial ring.
 
-Node: SG00000009 · Lean: `Singularity.PurelyInseparableHypersurfaceResolution`
+Node: SG00000009 · Lean: `Singularity.PurelyInseparableHypersurfaceResolution` (the statement only)
 
 Volume 9, Conjecture 2.3.7, asks for a resolution, which is a global statement. By Proposition 1.4.5 a resolution of such a hypersurface gives local uniformization of the valuations of its function field. The remark of Temkin needs a local statement over each regular model, not only over a polynomial ring.
 

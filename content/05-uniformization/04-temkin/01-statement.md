@@ -45,7 +45,7 @@ The same argument shows that Theorem 4.1.1 gives local uniformization of $v$ whe
 We describe the structure of the proof of [Tem13], following the overview in [Tem13, Section 1.5]. We give no details.
 
 1. Height reduction. The rank of a valuation is also called its height. Temkin reduces the theorem to valuations of height one.
-2. Induction on the dimension by curves. Temkin writes the function field as a function field of one variable over a subfield of smaller transcendence degree, and he studies the valuation on this field of one variable over a valued field. The tools are the geometry of curves over valued fields, in the form of Berkovich or adic spaces, and a study of special points of such curves.
+2. Induction on the dimension by curves. Temkin writes the function field as a function field of one variable over a subfield of smaller transcendence degree, and he studies the valuation on this field of one variable over a valued field. The tools are the geometry of curves over valued fields, in the form of Berkovich analytic curves, and a study of special points of such curves.
 3. The case of height one. Here Temkin uses an induction on the transcendence defect, that is, on the difference between the two sides of the Abhyankar inequality. The base of the induction is the Abhyankar case. For it Temkin gives a proof of local uniformization in the separable case, which recovers the theorem of Knaf-Kuhlmann [KK05] (Theorem 2.2.1).
 4. Henselization. Temkin names as the main difficulty that the valued fields in the induction are not henselian. The defect (node SG00000010) is defined through the henselization, so this is where the defect of Chapter 3 enters.
 

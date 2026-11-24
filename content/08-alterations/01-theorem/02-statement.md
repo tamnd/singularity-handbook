@@ -1,7 +1,7 @@
 ---
 title: The theorem
 nodes: [SG0000001K, SG0000000V]
-sources: [dJ96, Har, Liu]
+sources: [dJ96, Stacks, Liu]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -41,7 +41,7 @@ For curves the theorem is classical, and an alteration of degree 1 suffices. We 
 
 Lean: none yet
 
-*Proof.* By Chow's lemma [Har, Exercise II.4.10] there is a modification $X' \to X$ with $X'$ quasi-projective over $k$. Let $X' \subseteq P$ be an open immersion into a projective variety $P$, for example the closure of $X'$ in a projective space. Let $\nu \colon \bar X_1 \to P$ be the normalization. By Volume 1, Theorem 2.4.7 the morphism $\nu$ is finite, so $\bar X_1$ is projective over $k$. By Volume 1, Theorem 2.5.6, $\bar X_1$ is regular, because it is a normal variety of dimension 1. Let $X_1 = \nu^{-1}(X')$, an open subset of $\bar X_1$, and let $\varphi_1$ be the composition $X_1 \to X' \to X$. It is a composition of two modifications, so it is a modification. The closed subset $\varphi_1^{-1}(Z) \cup (\bar X_1 \setminus X_1)$ is a proper closed subset of the irreducible curve $\bar X_1$, so it is a finite set of closed points. A finite set of closed points on a regular curve is a divisor with strict normal crossings, as we saw after Lemma 1.1.11. A modification has degree 1, and an extension of degree 1 is separable, so $\varphi_1$ is generically étale by Lemma 1.1.5. $\square$
+*Proof.* By Chow's lemma for varieties [Stacks] there is a modification $X' \to X$ with $X'$ quasi-projective over $k$. Let $X' \subseteq P$ be an open immersion into a projective variety $P$, for example the closure of $X'$ in a projective space. Let $\nu \colon \bar X_1 \to P$ be the normalization. By Volume 1, Theorem 2.4.7 the morphism $\nu$ is finite, so $\bar X_1$ is projective over $k$. By Volume 1, Theorem 2.5.6, $\bar X_1$ is regular, because it is a normal variety of dimension 1. Let $X_1 = \nu^{-1}(X')$, an open subset of $\bar X_1$, and let $\varphi_1$ be the composition $X_1 \to X' \to X$. It is a composition of two modifications, so it is a modification. The closed subset $\varphi_1^{-1}(Z) \cup (\bar X_1 \setminus X_1)$ is a proper closed subset of the irreducible curve $\bar X_1$, so it is a finite set of closed points. A finite set of closed points on a regular curve is a divisor with strict normal crossings, as we saw after Lemma 1.1.11. A modification has degree 1, and an extension of degree 1 is separable, so $\varphi_1$ is generically étale by Lemma 1.1.5. $\square$
 
 The proof does not give the stronger form of Remark 4.2 of [dJ96]: over an imperfect field $k$ the curve $\bar X_1$ is regular, but it need not be smooth over any finite extension of $k$ in $k(\bar X_1)$. De Jong obtains the smooth form by first passing to an algebraically closed field [dJ96, 4.3 and 4.5]. The next example shows a regular curve that is not smooth.
 

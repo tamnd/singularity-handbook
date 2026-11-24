@@ -32,7 +32,7 @@ Lean: none yet
 
 Theorem 1.2.1 gives no control of the degree. The proof of Chapter 2 makes alterations at many steps: normalizations in Galois extensions to make the components of $Z$ into sections, the finite étale covers of level structures, and the alterations of the induction hypothesis. Each of them multiplies the degree. If $k$ is perfect, each step is generically étale, but the degrees of these extensions can be divisible by $p$.
 
-**Proposition 1.3.4.** Let $\varphi \colon X_1 \to X$ be an alteration of degree $d$ of an integral variety $X$ over a field $k$, with $X_1$ regular. If $d = 1$ and $\varphi$ is an isomorphism over $\operatorname{Reg}(X)$, then $\varphi$ is a resolution of $X$. If $d > 1$, then no open subset of $X_1$ maps isomorphically onto an open subset of $X$.
+**Proposition 1.3.4.** Let $\varphi \colon X_1 \to X$ be an alteration of degree $d$ of an integral variety $X$ over a field $k$, with $X_1$ regular. If $d = 1$ and $\varphi$ is an isomorphism over $\operatorname{Reg}(X)$, then $\varphi$ is a resolution of $X$. If $d > 1$, then no nonempty open subset of $X_1$ maps isomorphically onto an open subset of $X$.
 
 Lean: none yet
 
