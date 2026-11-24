@@ -4,6 +4,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.4, "The log-Jacobian ideal under a blowup in a regular center", is new. It gives the ideal $\Theta_C$ of the log derivations tangent to a coordinate center $C$, the transformation law in the charts of the blowup of $C$ (Theorem 3.4.3), the bound for the order of an equimultiple weak transform (Lemma 3.4.4) and the non-increase of $\rho$ under the conditions (H1) and (H2) (Theorem 3.4.5). Example 3.4.6 shows that $\rho$ can go up when (H1) holds and (H2) fails. The proofs hold for each number of variables. The results have no Lean proof yet (tamnd/singularity#130).
+
+### Changed
+
+- `EDITION` now pins the map at 7cbeba4, which has the nodes SG0000004P, SG0000004Q and SG0000004R.
+
 ## [0.4.11] - 2026-11-25
 
 ### Added
