@@ -1,7 +1,7 @@
 ---
 title: Results in all dimensions and the defect
 nodes: [SG0000001E, SG0000001G]
-sources: [KK05, Cut20, Tem13, Kuh-book, Kuh16, CM17, Hau10]
+sources: [KK05, Cut20, Tem13, Kuh-book, Kuh16, Kuh10, CM17, Hau10]
 status: drafted
 drafted_by: writer
 reviewed_by: []

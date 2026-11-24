@@ -1,7 +1,7 @@
 ---
 title: Defect
 nodes: [SG00000010]
-sources: [Kuh-book, Kuh16, KR23, CKR25]
+sources: [Kuh-book, Kuh16, Kuh10b, KR23, CKR25]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -71,4 +71,4 @@ The field $K_0$ is complete for a discrete valuation of rank 1, so it is henseli
 
 The proof of the first three claims does not use that $K$ is henselian. Only the value of the defect uses it, through the uniqueness of $w$. The one fact that we cite is that the complete field $K_0$ is henselian [Kuh-book, Chapter 9]. Proposition 3.2.3 and the third claim show again that $ef < p$, without a computation of $e$ and $f$.
 
-The sequence $s_m$ approximates $\vartheta$ better and better. The values $w(\vartheta - s_m) = -1/p^{m+1}$ increase to 0, but they never reach a maximum in $K$. A change of coordinates $\vartheta \mapsto \vartheta - a$ with $a \in K$ can never make the value of $\vartheta$ as large as possible. In residue characteristic 0 this cannot happen in a henselian field, by Corollary 3.2.2 and Proposition 3.2.3. In characteristic $p$, local uniformization must deal with such extensions, and Chapter 4 explains how. Volume 9, Section 2.2, uses the same example. Kuhlmann studies defect extensions in [Kuh16] and [Kuh-book]. Kuhlmann divided the Artin-Schreier defect extensions into dependent and independent ones in a paper of 2010, and the bibliography of this handbook has no key for that paper yet. Kuhlmann and Rzepka extend this division to the Galois defect extensions of degree $p$ in mixed characteristic, and they relate it to deeply ramified fields [KR23]. Also Cutkosky, Kuhlmann and Rzepka characterize the independent ones by their module of Kähler differentials [CKR25].
+The sequence $s_m$ approximates $\vartheta$ better and better. The values $w(\vartheta - s_m) = -1/p^{m+1}$ increase to 0, but they never reach a maximum in $K$. A change of coordinates $\vartheta \mapsto \vartheta - a$ with $a \in K$ can never make the value of $\vartheta$ as large as possible. In residue characteristic 0 this cannot happen in a henselian field, by Corollary 3.2.2 and Proposition 3.2.3. In characteristic $p$, local uniformization must deal with such extensions, and Chapter 4 explains how. Volume 9, Section 2.2, uses the same example. Kuhlmann studies defect extensions in [Kuh16] and [Kuh-book]. Kuhlmann divided the Artin-Schreier defect extensions into dependent and independent ones [Kuh10b]. Kuhlmann and Rzepka extend this division to the Galois defect extensions of degree $p$ in mixed characteristic, and they relate it to deeply ramified fields [KR23]. Also Cutkosky, Kuhlmann and Rzepka characterize the independent ones by their module of Kähler differentials [CKR25].

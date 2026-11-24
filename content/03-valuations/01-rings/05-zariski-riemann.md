@@ -1,14 +1,14 @@
 ---
 title: The Zariski-Riemann space
 nodes: [SG0000000X]
-sources: [ZS2, Zar40, Zar44, Tem13]
+sources: [ZS2, Zar40, Zar44, Zar44b, Tem13]
 status: drafted
 drafted_by: writer
 reviewed_by: []
 ---
 ## The Zariski-Riemann space
 
-Zariski collected all valuation rings of a function field into one topological space, which he called the Riemann manifold, and he used it in his work on resolution [Zar40, Zar44]. He proved its quasi-compactness in a separate short note of 1944. The main property of this space is quasi-compactness. It lets one pass from a local statement at each valuation to a statement about finitely many models. In this section we define the space and its topology, and we prove that it is quasi-compact.
+Zariski collected all valuation rings of a function field into one topological space, which he called the Riemann manifold, and he used it in his work on resolution [Zar40, Zar44]. He proved its quasi-compactness in a separate short note [Zar44b]. The main property of this space is quasi-compactness. It lets one pass from a local statement at each valuation to a statement about finitely many models. In this section we define the space and its topology, and we prove that it is quasi-compact.
 
 ### The space and its topology
 

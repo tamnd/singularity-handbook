@@ -28,7 +28,7 @@ Conjecture 2.3.2 is open in each characteristic. In characteristic 0 nobody need
 
 The results that hold in all dimensions are these. A valuation is an *Abhyankar valuation* if the Abhyankar inequality is an equality for it. Volume 3, Chapter 2, proves the inequality and studies the case of equality.
 
-**Theorem 2.3.3 (Knaf and Kuhlmann).** Each Abhyankar valuation of a function field has local uniformization.
+**Theorem 2.3.3 (Knaf-Kuhlmann).** Each Abhyankar valuation of a function field has local uniformization.
 
 Node: SG0000001E · Lean: `Singularity.localUniformization_abhyankar` (planned, no Lean statement yet)
 
@@ -52,7 +52,7 @@ The polyhedron exists in each dimension, and the first invariants of [CJS20] (th
 
 The school of Villamayor replaces an ideal by a Rees algebra that is closed under Hasse-Schmidt derivations. Then the elimination algebra replaces the hypersurface of maximal contact [BV10, BenV13]. Benito and Villamayor use a new invariant from elimination algebras to give embedded resolution of surfaces [BenV13]. Kawanoue and Matsuki use idealistic filtrations and a leading generator system in [Kaw07] and [KM16]. Benito, Bravo and Encinas define the Samuel slope of a local ring [BBE24].
 
-**Theorem 2.3.5 (Benito, Bravo and Encinas).** A Noetherian local ring is regular if and only if its Samuel slope is infinite.
+**Theorem 2.3.5 (Benito-Bravo-Encinas).** A Noetherian local ring is regular if and only if its Samuel slope is infinite.
 
 Node: SG00000019 · Lean: `Singularity.samuelSlope_eq_top_iff` (planned, no Lean statement yet)
 

@@ -14,6 +14,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 9, the introduction of Chapter 2 and Section 2.3 refer to Volume 3. Example 2.2.3 refers to Volume 3, Proposition 3.2.5, for the proof of its last statements.
 - Volume 0, Section 5.1 describes Volume 3.
 
+### Fixed
+
+- Volume 9, Section 2.1 tells that [CP08, CP09] need a base field that is differentially finite over a perfect subfield, and that [CP19] removes this hypothesis.
+- The theorem headings of Volume 9, Chapter 2 use the hyphen form for the names of more than one author (Cossart-Piltant, Cossart-Jannsen-Saito, Knaf-Kuhlmann, Benito-Bravo-Encinas, Abramovich-Schober).
+- Volume 3 cites [Vaq07], [Kuh10], [Kuh10b], [Zar44b] and [Zar39] with the new records of tamnd/singularity.
+
 ## [0.4.0] - 2026-11-24
 
 ### Added

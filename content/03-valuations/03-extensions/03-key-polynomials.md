@@ -1,7 +1,7 @@
 ---
 title: Key polynomials
 nodes: [SG0000000Z]
-sources: [Mac36, HMOS22]
+sources: [Mac36, Vaq07, HMOS22]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -54,7 +54,7 @@ of augmentations with $\deg \varphi_0 = 1$, $\deg \varphi_i \le \deg \varphi_{i+
 
 Lean: none yet
 
-MacLane proved parts 1 to 3, and part 4 without limit augmentations, for a discrete valuation $v$ of rank 1 [Mac36]. In that case the chain is finite or $\nu$ is its limit. Vaquié extended the theorem to an arbitrary valuation $v$ in a paper of 2007 on the extension of a valuation. He introduced the limit augmentations of part 4, and in the general case one indexes the chain by an ordinal. The bibliography of this handbook has no separate key for the paper of Vaquié yet. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We do not prove the theorem. In the example below we use only parts 1 to 3, and we compute the last step by hand.
+MacLane proved parts 1 to 3, and part 4 without limit augmentations, for a discrete valuation $v$ of rank 1 [Mac36]. In that case the chain is finite or $\nu$ is its limit. Vaquié extended the theorem to an arbitrary valuation $v$ [Vaq07]. He introduced the limit augmentations of part 4, and in the general case one indexes the chain by an ordinal. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We do not prove the theorem. In the example below we use only parts 1 to 3, and we compute the last step by hand.
 
 Over a henselian field $K$, part 4 for the valuation $\nu$ with support $(F)$ describes the extension of $v$ to $K[y]/(F)$. Defect is related to the limit augmentations of part 4. A family of key polynomials of the same degree whose values increase but have no maximum is the same phenomenon as the sequence $s_m$ of Proposition 3.2.5.
 

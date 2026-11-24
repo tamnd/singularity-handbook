@@ -1,7 +1,7 @@
 ---
 title: The case of equality
 nodes: []
-sources: [ZS2, Kuh-book, KK05]
+sources: [ZS2, Kuh-book, KK05, Kuh10]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -43,4 +43,4 @@ Lean: none yet
 
 The order on $\mathbb{Z}^r$ is not determined by $r$. Examples 1.6.3 and 1.6.4 give two Abhyankar valuations of $k(x, y)$ with $\Gamma_v \cong \mathbb{Z}^2$. In the first the order comes from an embedding in $\mathbb{R}$, and the rank is 1. In the second the order is lexicographic, and the rank is 2.
 
-A divisorial valuation of $K/k$ has $\operatorname{trdeg}(Kv/k) = \operatorname{trdeg}(K/k) - 1$. On a suitable normal model its center is the generic point of a prime divisor, and the valuation is the order of vanishing along this divisor [ZS2, Chapter VI, Section 14]. We do not prove this here. Local uniformization is known for Abhyankar valuations in each characteristic and in each dimension (Chapter 4). One reason is the generalized stability theorem of Kuhlmann. A special case states: if $v$ is an Abhyankar valuation of $K/k$, then $(K, v)$ is a *defectless* valued field. Kuhlmann proves this theorem in his paper on the elimination of ramification of 2010, and the bibliography of this handbook has no key for that paper yet. Section 3.2 defines the defect, and Section 4.2 explains why it is the obstruction. Knaf and Kuhlmann use the theorem in [KK05].
+A divisorial valuation of $K/k$ has $\operatorname{trdeg}(Kv/k) = \operatorname{trdeg}(K/k) - 1$. On a suitable normal model its center is the generic point of a prime divisor, and the valuation is the order of vanishing along this divisor [ZS2, Chapter VI, Section 14]. We do not prove this here. Local uniformization is known for Abhyankar valuations in each characteristic and in each dimension (Chapter 4). One reason is the generalized stability theorem of Kuhlmann. A special case states: if $v$ is an Abhyankar valuation of $K/k$, then $(K, v)$ is a *defectless* valued field. Kuhlmann proves this theorem in [Kuh10]. Section 3.2 defines the defect, and Section 4.2 explains why it is the obstruction. Knaf and Kuhlmann use the theorem in [KK05].
