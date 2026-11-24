@@ -1,0 +1,7 @@
+# Frobenius and positive characteristic
+
+In characteristic $p > 0$ the map $x \mapsto x^p$ is a ring homomorphism, the Frobenius. It has no analogue in characteristic $0$. It gives tools that work only in positive characteristic, and it is the source of many of the problems of resolution there. For example, the derivative of $x^p$ is $0$. So the usual derivations cannot detect the order of $x^p$, and the methods of characteristic $0$ that use derivatives, such as the Jacobian criterion of Section 1.8, must change. A field need not be perfect, and over an imperfect field a regular variety need not be smooth.
+
+Section 6.1 defines the Frobenius and proves its first properties. Section 6.2 defines $p$-bases of a field and computes the module of differentials of a field extension with them. It gives the example of a regular curve that is not smooth. Section 6.3 defines the Hasse-Schmidt derivations and the differential operators, which replace the derivatives of higher order in characteristic $p$. It computes the differential operators of a polynomial ring. Section 6.4 proves one direction of the theorem of Kunz: a Noetherian ring of characteristic $p$ is regular if and only if its Frobenius is flat. The proof uses the Cohen structure theorem of Chapter 4.
+
+Throughout the chapter, $p$ is a prime number. A ring $R$ has characteristic $p$ if $p \cdot 1 = 0$ in $R$, that is, if $R$ is an $\mathbb{F}_p$-algebra. We use Chapter 1 and Chapter 4.
