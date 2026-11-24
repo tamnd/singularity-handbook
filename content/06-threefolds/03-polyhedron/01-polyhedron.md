@@ -1,7 +1,7 @@
 ---
 title: The polyhedron of Hironaka
 nodes: [SG00000014]
-sources: [Hir67, CP19, Mat]
+sources: [Hir67, CP19, CP15, CSch21, Mat]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -82,7 +82,7 @@ The lemma holds in each characteristic. Its second claim is Volume 7, Propositio
 
 Lean: none yet
 
-Parts 1 and 2 are [CP19, Proposition 2.7], which refers to the Vertex Preparation Lemma (3.10) and Theorem (4.8) of [Hir67]. Part 3 is the first statement of [CP19, Proposition 2.12], which [CP19] takes from a paper of Cossart and Piltant on polyhedra without completion. We do not prove Theorem 3.1.5. Lemma 3.1.4 proves the implication "minimal implies no solvable vertex" of part 2 for $S = k[[u]]$: a solvable vertex can be removed. The converse, and the convergence of the translations in part 1, are the deep parts.
+Parts 1 and 2 are [CP19, Proposition 2.7], which refers to the Vertex Preparation Lemma (3.10) and Theorem (4.8) of [Hir67]. Part 3 is the first statement of [CP19, Proposition 2.12], which [CP19] takes from [CP15, Corollary II.4]. We do not prove Theorem 3.1.5. Lemma 3.1.4 proves the implication "minimal implies no solvable vertex" of part 2 for $S = k[[u]]$: a solvable vertex can be removed. The converse, and the convergence of the translations in part 1, are the deep parts.
 
 The minimal polyhedron is the *characteristic polyhedron* $\Delta(h; u)$. It is the intersection of the polyhedra $\Delta(h; u; X - \varphi)$ over all $\varphi \in \hat S$. Volume 7, Section 1.2, takes the intersection only over the $\varphi$ with $\varphi(0) = 0$. If the image of $h$ in $k[X]$ is $X^m$, the two intersections agree: for $\varphi(0) \ne 0$ the constant term of $f_{m, X - \varphi}$ is $\varphi(0)^m \ne 0$, so $\Delta(h; u; X - \varphi)$ is the whole orthant. It depends on $u$, and it does not depend on the choice of $X$. A polyhedron $\Delta(h; u; X - \varphi)$ with no solvable vertex is called *minimal* [CP19, Definition 2.8].
 
@@ -120,4 +120,4 @@ Lean: none yet
 
 ### Notes and references
 
-Hironaka introduced the characteristic polyhedron in [Hir67], where he proves its existence for a general system of equations. The hypersurface case above is the form of [CP19, Section 2.1]. Hironaka writes on page 254 of [Hir67] that "reduction of singularities is sharpening of polyhedra", and [CP19, Section 1] quotes this sentence. The proof of Lemma 3.1.4 with weights follows the idea of Hironaka's preparation of a vertex. The paper of Cossart and Piltant on polyhedra without completion, which proves Theorem 3.1.5(3), is not yet in the map of the project.
+Hironaka introduced the characteristic polyhedron in [Hir67], where he proves its existence for a general system of equations. The hypersurface case above is the form of [CP19, Section 2.1]. Hironaka writes on page 254 of [Hir67] that "reduction of singularities is sharpening of polyhedra", and [CP19, Section 1] quotes this sentence. The proof of Lemma 3.1.4 with weights follows the idea of Hironaka's preparation of a vertex. Cossart and Piltant prove Theorem 3.1.5(3) in their paper on characteristic polyhedra without completion [CP15]. Cossart and Schober continue this work for surfaces [CSch21].

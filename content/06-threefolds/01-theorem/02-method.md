@@ -1,7 +1,7 @@
 ---
 title: The plan of the proofs
 nodes: [SG0000001F, SG00000018, SG0000001C]
-sources: [Abh66, Cut09, CP08, CP09, CP19, Zar44, Hir67]
+sources: [Abh66, Cut09, CP08, CP09, CP19, Zar44, Hir67, Hir67b, Cos92, Cut04]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -32,7 +32,7 @@ These are [Cut09, Theorem 1.2] and [Cut09, Theorem 1.3]. Abhyankar proved them f
 
 Node: SG0000001C · Lean: `Singularity.EmbeddedResolutionSurface` (the statement only)
 
-Cutkosky proves Theorems 1.2.2 and 1.2.3 in Sections 5 to 11 of [Cut09]. He follows the algorithm of Levi for a surface in a nonsingular threefold. He uses the invariant and the termination argument that Hironaka outlined for this algorithm in arbitrary characteristic. He resolves ideals by their weak transforms, as Bravo, Encinas and Villamayor do in characteristic 0, so the main invariant is the order of an ideal and not the multiplicity of a variety.
+Cutkosky proves Theorems 1.2.2 and 1.2.3 in Sections 5 to 11 of [Cut09]. He follows the algorithm of Levi for a surface in a nonsingular threefold. He uses the invariant and the termination argument that Hironaka outlined for this algorithm in arbitrary characteristic, in his Bowdoin lectures on excellent surfaces [Hir67b]. He resolves ideals by their weak transforms, as Bravo, Encinas and Villamayor do in characteristic 0, so the main invariant is the order of an ideal and not the multiplicity of a variety.
 
 ### The five steps
 
@@ -44,7 +44,7 @@ Cutkosky divides the proof of Theorem 1.1.1 into five steps [Cut09].
 4. Patch the local resolutions to a nonsingular projective variety that is birational to $V$.
 5. Change a resolution $W \to V$ into a resolution that is an isomorphism over the nonsingular locus of $V$.
 
-Steps 1 to 4 are in the proof of Abhyankar. Steps 1 and 4 are also in the proof of Zariski for threefolds in characteristic 0 [Zar44]. Step 5 is due to Cossart [Cut09]. If $p > 5$, then $6 < p$, so after Step 2 each point of $V_0$ has multiplicity less than $p$, and Step 3 applies to each point. This is the only place where the condition $p \ne 2, 3, 5$ enters. Step 3 gives local uniformization of each valuation of the function field. In the language of Volume 3, Chapter 4, Steps 4 and 5 are the patching.
+Steps 1 to 4 are in the proof of Abhyankar. Steps 1 and 4 are also in the proof of Zariski for threefolds in characteristic 0 [Zar44]. Step 5 is due to Cossart [Cos92], and the proof of Step 5 in [Cut09] follows his argument. If $p > 5$, then $6 < p$, so after Step 2 each point of $V_0$ has multiplicity less than $p$, and Step 3 applies to each point. This is the only place where the condition $p \ne 2, 3, 5$ enters. Step 3 gives local uniformization of each valuation of the function field. In the language of Volume 3, Chapter 4, Steps 4 and 5 are the patching.
 
 ### Maximal contact in small multiplicity
 
@@ -72,7 +72,7 @@ Since $m!$ is a unit, $z' \in \mathfrak{m}_q \cap A[z] = q$. So $q \in V(z')$. T
 
 The proof uses only that $m!$ is a unit in $A$. So the proposition holds with the same proof for each ring $A$ that contains $k$, for example $A = k[[x_1, \dots, x_n]]$, and then $V(z') \cong \operatorname{Spec} A$ is regular when $A$ is regular. By the Weierstrass preparation theorem, a power series in $k[[x, z]]$ of order $m$ in which $z^m$ has a nonzero coefficient is a unit times a polynomial of the form of Proposition 1.2.5 with $A = k[[x]]$. So the proposition covers each hypersurface singularity of multiplicity $m$, after a linear change of coordinates when $k$ is infinite. The full statement of maximal contact also asks that the hypersurface keeps this property after each blowup in a permissible center. This is true for $m!$ a unit, and [Cut09, Section 3] outlines the proof. With maximal contact one can argue by induction on the dimension, as in characteristic 0.
 
-For $m = p$ the proof breaks down at once. For $h = z^p + g(x)$ we have $D h = p z^{p-1} = 0$, so no derivative in $z$ sees the variable $z$. In fact no regular hypersurface works. Example 2.2.1 of Volume 9, due to Narasimhan, is the threefold $x^2 + y z^3 + z w^3 + y^7 w = 0$ in characteristic 2. Its points of multiplicity 2 near the origin are not contained in any regular hypersurface germ, also not in a formal one.
+For $m = p$ the proof breaks down at once. The book of Cutkosky [Cut04] explains the role of maximal contact in characteristic 0 and its failure in characteristic $p$. For $h = z^p + g(x)$ we have $D h = p z^{p-1} = 0$, so no derivative in $z$ sees the variable $z$. In fact no regular hypersurface works. Example 2.2.1 of Volume 9, due to Narasimhan, is the threefold $x^2 + y z^3 + z w^3 + y^7 w = 0$ in characteristic 2. Its points of multiplicity 2 near the origin are not contained in any regular hypersurface germ, also not in a formal one.
 
 Node: SG00000018 · Lean: `Singularity.Examples.narasimhan`
 

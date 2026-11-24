@@ -1,7 +1,7 @@
 ---
 title: The reduction to equations of degree p
 nodes: [SG0000001F, SG0000001V, SG0000001G, SG00000010]
-sources: [CP08, CP19, ZS2, Zar44, Mat, Tem13, Kuh-book]
+sources: [CP08, CP19, ZS2, Zar44, Mat, Tem13, Kuh-book, Abh59]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -28,7 +28,7 @@ Step 3 (the purely inseparable part). Let $K^{\mathrm{sep}}$ be the separable cl
 
 Step 4 (the separable part). Now let $K/F$ be separable. Let $\bar K$ be a Galois closure of $K/F$ and let $\bar v$ be an extension of the valuation to $\bar K$. The ramification theory of valuations [ZS2, Chapter VI] gives the inertia fields $F^i \subseteq K^i$ and the ramification fields $F^r \subseteq K^r$ of $\bar K/F$ and of $\bar K/K$ for $\bar v$. They form a diagram
 $$F \subseteq F^i \subseteq F^r, \qquad K \subseteq K^i \subseteq K^r, \qquad F \subseteq K, \quad F^i \subseteq K^i, \quad F^r \subseteq K^r.$$
-These extensions behave as follows [CP19, Section 4.2]. The extensions $F^i/F$ and $K^i/K$ are unramified. The extensions $F^r/F^i$ and $K^r/K^i$ are totally ramified and abelian of degree prime to $p$. The extension $K^r/F^r$ is a tower of totally ramified Galois extensions of degree $p$. For the unramified and the tame parts, local uniformization passes up and down with classical methods: [CP19] refers to the proof of [CP08, Theorem 8.1] and proves an approximation of the ramification groups of the valuation by those of local rings [CP19, Proposition 4.13]. For each Galois step of degree $p$, Theorem 1.2.6 with condition 2 gives local uniformization. In equal characteristic $p$ these steps are Artin-Schreier extensions by Theorem 2.1.3. $\square$
+These extensions behave as follows [CP19, Section 4.2]. The extensions $F^i/F$ and $K^i/K$ are unramified. The extensions $F^r/F^i$ and $K^r/K^i$ are totally ramified and abelian of degree prime to $p$. The extension $K^r/F^r$ is a tower of totally ramified Galois extensions of degree $p$. For the unramified and the tame parts, local uniformization passes up and down with classical methods: [CP19] refers to the proof of [CP08, Theorem 8.1] and proves an approximation of the ramification groups of the valuation by those of local rings [CP19, Proposition 4.13]. For the ramification theory of local rings, [CP19] refers to the book of Abhyankar [Abh59]. For each Galois step of degree $p$, Theorem 1.2.6 with condition 2 gives local uniformization. In equal characteristic $p$ these steps are Artin-Schreier extensions by Theorem 2.1.3. $\square$
 
 The proof needs Theorem 1.2.6 only for the Galois and inseparable steps of degree $p$ that are immediate for the valuation, that is, the steps with defect $p$ (Section 2.1). For the steps that are not immediate there is a much simpler proof [CP19, Remark 4.11].
 

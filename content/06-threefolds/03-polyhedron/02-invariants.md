@@ -1,7 +1,7 @@
 ---
 title: The invariants of Cossart and Piltant
 nodes: [SG00000014, SG00000013, SG00000015]
-sources: [CP19, Hir67, Mat, Moh87, HP19a]
+sources: [CP19, Hir67, Mat, Moh87, Moh14, HP19a]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -75,7 +75,7 @@ Part 4. By the definitions, $\epsilon(x) = p (\operatorname{ord} f^{\mathrm{cl}}
 
 Part 5. Let $u'$ be another regular system of parameters. By the structure theorem of Cohen [Mat], $S = k'[[u']]$ for a coefficient field $k'$, and $k' \cong k$ is perfect. Parts 2 and 3 hold in this expansion. The maxima in parts 2 and 3 depend only on $S$, on $f$ and on the ideals $(u_j)$. So they are the same for $u$ and for $u'$. $\square$
 
-Part 4 shows that $\epsilon$ is the residual order of Volume 7 for the equations $z^p + F$, and part 5 shows that, in this case, it does not depend on the coordinates that keep $E$. Part 1 is the special case of Theorem 3.1.5 that one can prove in a few lines. For $h = X^q + f$ with $q = p^e$ and $e \ge 2$ the same proof shows that the clean part for $q$ gives the minimal polyhedron among the translations of $X$.
+Part 4 shows that $\epsilon$ is the residual order of Volume 7 for the equations $z^p + F$, and part 5 shows that, in this case, it does not depend on the coordinates that keep $E$. Volume 7, Proposition 1.3.5, proves part 5 for each $q = p^e$ by the same argument. Part 1 is the special case of Theorem 3.1.5 that one can prove in a few lines. For $h = X^q + f$ with $q = p^e$ and $e \ge 2$ the same proof shows that the clean part for $q$ gives the minimal polyhedron among the translations of $X$.
 
 ### The invariant omega
 
@@ -114,7 +114,7 @@ Theorem 3.2.6 explains why Cossart and Piltant use $\omega$ and not $\epsilon$. 
 
 Node: SG00000015 · Lean: `Singularity.moh_bound` (the statement only, not proved)
 
-The residual order can increase by $1$ (Section 3.3). Since $\omega \in \{\epsilon - 1, \epsilon\}$, an increase of $\epsilon$ by $1$ can leave $\omega$ unchanged. Theorem 3.2.6 says that this is what happens: $\omega$ never increases. For $q = p^e$ with $e \ge 2$ the increase of the residual order can be larger (Volume 7, Theorem 1.4.3). The reduction of Chapter 2 needs only equations of degree $p$, so this case does not occur in [CP19].
+The residual order can increase by $1$ (Section 3.3). Since $\omega \in \{\epsilon - 1, \epsilon\}$, an increase of $\epsilon$ by $1$ can leave $\omega$ unchanged. Theorem 3.2.6 says that this is what happens: $\omega$ never increases. For $q = p^e$ with $e \ge 2$ the increase of the residual order can be larger (Volume 7, Theorem 1.4.3). The reduction of Chapter 2 needs only equations of degree $p$, so this case does not occur in [CP19]. Cossart and Piltant know no analogue of $\omega$ with the properties of Theorem 3.2.6 for the equations $X^{p^e} + f$ with $e \ge 2$, and they refer to the work of Moh [Moh14] and of Hauser and Perlega [HP19a] on these equations [CP19, Section 1].
 
 **Example 3.2.8.** Let $p = 3$, let $k$ be perfect of characteristic 3, let $S = k[[u_1, u_2, u_3]]$, let $h = Z^3 + u_1 u_2 u_3$ and let $E = \operatorname{div}(u_1 u_2 u_3)$. This is Example 2.3.4 at the origin. The series $f = u_1 u_2 u_3$ is clean, so $(u; Z)$ is well adapted and $\Delta(h; u) = (\frac13, \frac13, \frac13) + \mathbb{R}_{\ge 0}^3$. So $\delta(x) = 1$ and $m(x) = 3$. Further $d_1 = d_2 = d_3 = \frac13$, $r = (1, 1, 1)$ and $G = 1$. So $\epsilon(x) = 0$ and $\omega(x) = 0$, and Theorem 3.2.7 applies. Here one point blowup suffices. In the $u_1$-chart, with $u_2 = u_1(u'_2 + t_2)$, $u_3 = u_1(u'_3 + t_3)$ and $Z = u_1 Z'$, the strict transform is
 $$h' = Z'^3 + (u'_2 + t_2)(u'_3 + t_3).$$

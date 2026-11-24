@@ -1,7 +1,7 @@
 ---
 title: Purely inseparable equations and the residual order
 nodes: [SG00000013]
-sources: [HP19a, Hau10, HW14, Moh87]
+sources: [HP19a, Hau10, HW14, Moh87, CP19, Mat]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -46,11 +46,31 @@ The power series $G$ is unique, because $K[[x]]$ is a domain. The residual order
 $$F = x^2 y^2 w^3 \bigl(w (x + y)^4 + x^{13}\bigr) = x^6 y^2 w^4 + x^2 y^6 w^4 + x^{15} y^2 w^3,$$
 since $(x + y)^4 = x^4 + y^4$ in characteristic $2$. No exponent is in $4\mathbb{N}^3$, so $F$ is clean. The factor $G = w x^4 + w y^4 + x^{13}$ is not divisible by $x$, by $y$ or by $w$, so $r = (2, 2, 3)$ and the residual order of $z^4 + F$ is $\operatorname{ord} G = 5$. Section 1.4 blows up this example.
 
-The definition uses the given coordinates $x$ and the given divisor $E$. Changes of the $x$ coordinates that keep $E$ can change $\operatorname{ord} G$. A resolution proof must choose the coordinates well, for example so that the order of the residual factor is maximal [HP19a, Section 1], or it must use an invariant that does not depend on the choice [HW14]. The examples of Section 1.4 compute the residual order in explicit coordinates, as [HP19a] does.
+The definition uses the given coordinates $x$ and the given divisor $E$. A change of the coordinates $x$ can turn a clean series into a series that is not clean, so after the change we must clean again. After this second cleaning the residual order is the same as before, if the change keeps the components of $E$. The reason is that the order of the clean part and its orders along the components of $E$ are maxima over all translations of $z$, and these maxima do not refer to the coordinates $x$. Hauser and Perlega define the residual order with hypersurfaces that maximize these orders, and in this way it is an intrinsic invariant [HP19a, Section 1].
+
+**Proposition 1.3.5.** Let $f = z^q + F$ with $F^{\mathrm{cl}} \ne 0$, and let $E = V(\prod_{i \in \Delta} x_i)$. For $H \in K[[x]]$ and $i \in \Delta$, let $\operatorname{ord}_{x_i} H$ be the largest integer $r$ with $x_i^r \mid H$. In parts 1 and 2, $\varphi$ runs over $K[[x]]$.
+
+1. $\operatorname{ord} F^{\mathrm{cl}} = \max_{\varphi} \operatorname{ord}(F + \varphi^q)$, and $\operatorname{ord}_{x_i} F^{\mathrm{cl}} = \max_{\varphi} \operatorname{ord}_{x_i}(F + \varphi^q)$ for each $i \in \Delta$.
+2. The residual order of $f$ for $E$ is $\max_{\varphi} \operatorname{ord}(F + \varphi^q) - \sum_{i \in \Delta} \max_{\varphi} \operatorname{ord}_{x_i}(F + \varphi^q)$.
+3. Let $x'_1, \dots, x'_n$ be a regular system of parameters of $K[[x]]$ with $(x'_i) = (x_i)$ for each $i \in \Delta$, so that $E = V(\prod_{i \in \Delta} x'_i)$. Then the residual order of $f$ for $E$, computed from the expansion of $F$ in the coordinates $x'$, equals the residual order computed in the coordinates $x$.
+
+Lean: none yet
+
+*Proof.* Part 1. Let $g$ be as in Lemma 1.3.2, so that $F + g^q = F^{\mathrm{cl}}$, and let $\varphi \in K[[x]]$. Since the Frobenius is a ring homomorphism, $\varphi^q - g^q = (\varphi - g)^q$, so
+$$F + \varphi^q = F^{\mathrm{cl}} + (\varphi - g)^q.$$
+If $\varphi - g = \sum_\beta b_\beta x^\beta$, then $(\varphi - g)^q = \sum_\beta b_\beta^q x^{q\beta}$, so its support lies in $q\mathbb{N}^n$. The support of $F^{\mathrm{cl}}$ does not meet $q\mathbb{N}^n$. So no cancellation occurs, and the support of $F + \varphi^q$ contains the support of $F^{\mathrm{cl}}$. The order of a series is the smallest value of $|\alpha|$ on its support, and $\operatorname{ord}_{x_i}$ is the smallest value of $\alpha_i$ on its support. So $\operatorname{ord}(F + \varphi^q) \le \operatorname{ord} F^{\mathrm{cl}}$ and $\operatorname{ord}_{x_i}(F + \varphi^q) \le \operatorname{ord}_{x_i} F^{\mathrm{cl}}$, with equality for $\varphi = g$.
+
+Part 2. Write $F^{\mathrm{cl}} = \prod_{i \in \Delta} x_i^{r_i} \cdot G$ as in Definition 1.3.3. Then $r_i = \operatorname{ord}_{x_i} F^{\mathrm{cl}}$. The order is additive on products, because the graded ring $K[X_1, \dots, X_n]$ of $K[[x]]$ is a domain. So the residual order is $\operatorname{ord} G = \operatorname{ord} F^{\mathrm{cl}} - \sum_{i \in \Delta} r_i$, and part 1 gives the formula.
+
+Part 3. Since $x'$ is a regular system of parameters of the complete local ring $K[[x]]$, the continuous $K$-algebra map $K[[X'_1, \dots, X'_n]] \to K[[x]]$ with $X'_i \mapsto x'_i$ is an isomorphism [Mat]. So the cleaning and parts 1 and 2 apply in the coordinates $x'$, over the same field $K$. The right side of part 2 depends only on the ring $K[[x]]$, on $F$, on the maximal ideal, which defines $\operatorname{ord}$, and on the ideals $(x_i) = (x'_i)$, which define the $\operatorname{ord}_{x_i}$. So it is the same in the coordinates $x$ and $x'$. $\square$
+
+For example, let $q = 2$, $n = 2$, $\Delta = \{1\}$ and $F = x_1 x_2$. This series is clean, $r_1 = 1$ and $G = x_2$, so the residual order is $1$. Let $x'_1 = x_1$ and $x'_2 = x_2 + x_1$. Then $(x'_1) = (x_1)$, and $F = x'_1 x'_2 + x_1'^2$, because $-1 = 1$ in characteristic $2$. This series is not clean. Its clean part is $x'_1 x'_2$, again with $r_1 = 1$ and residual order $1$.
+
+Proposition 1.3.5 keeps the divisor $E$ fixed, and the residual order depends on $E$: for $F = x_1 x_2$ it is $1$ for $\Delta = \{1\}$ and $2$ for $\Delta = \emptyset$. The proposition also uses that $K$ is perfect, through Lemma 1.3.2. The coordinates enter the resolution process in another way. Definition 1.3.6 below uses the coordinate ideals $(z, x_i : i \in \Gamma)$, and the charts of a blowup are given in coordinates. The examples of Section 1.4 compute the residual order in explicit coordinates, as [HP19a] does, and by Proposition 1.3.5 the values do not depend on these coordinates.
 
 ### Permissible centers and point blowups
 
-**Definition 1.3.5.** Let $f = z^q + F$ with $F$ clean, with $E$ and $G$ as above, and let $d = \operatorname{ord} G$. An ideal $P = (z, x_i : i \in \Gamma)$ with $\Gamma \subseteq \{1, \dots, n\}$ is a *permissible center* for $f$ and $E$ if $f \in P^q$ and $G \in P^d$.
+**Definition 1.3.6.** Let $f = z^q + F$ with $F$ clean, with $E$ and $G$ as above, and let $d = \operatorname{ord} G$. An ideal $P = (z, x_i : i \in \Gamma)$ with $\Gamma \subseteq \{1, \dots, n\}$ is a *permissible center* for $f$ and $E$ if $f \in P^q$ and $G \in P^d$.
 
 The maximal ideal $(z, x_1, \dots, x_n)$ is always a permissible center, because $\operatorname{ord} f = q$ and $\operatorname{ord} G = d$. Its blowup is a *point blowup*.
 
@@ -58,7 +78,7 @@ Let $\pi$ be the blowup with center $P$, and let $f'$ be the strict transform of
 $$\pi(z) = x_j z, \qquad \pi(x_j) = x_j, \qquad \pi(x_i) = x_j (x_i + t_i) \ (i \in \Gamma \setminus \{j\}), \qquad \pi(x_l) = x_l \ (l \notin \Gamma),$$
 with $j \in \Gamma$ and constants $t_i \in K$ [HP19a, Section 2]. This is the *$x_j$-chart* with the translations $x_i \mapsto x_i + t_i$.
 
-**Lemma 1.3.6.** In this situation, $\pi(F)$ is divisible by $x_j^q$, and the strict transform of $f$ is
+**Lemma 1.3.7.** In this situation, $\pi(F)$ is divisible by $x_j^q$, and the strict transform of $f$ is
 $$f' = z^q + F', \qquad F' = x_j^{-q} \pi(F).$$
 
 Lean: Singularity.pointChartZ_purelyInseparable
@@ -69,4 +89,4 @@ The new divisor is the total transform of $E$. In the $x_j$-chart with the trans
 
 ### Notes and references
 
-Cleaning and the residual order appear, often only implicitly, in the work of Abhyankar, Moh, Cossart and Piltant, Cutkosky, Benito and Villamayor, and Kawanoue and Matsuki [HP19a, Section 2]. We follow the definitions of [HP19a]. Hauser and Wagner study alternative invariants for purely inseparable surfaces in [HW14]. The paper [Moh87] and the survey [Hau10] give the behaviour of the residual order under one blowup, which Section 1.4 states.
+Cleaning and the residual order appear, often only implicitly, in the work of Abhyankar, Moh, Cossart and Piltant, Cutkosky, Benito and Villamayor, and Kawanoue and Matsuki [HP19a, Section 2]. We follow the definitions of [HP19a]. For $q = p$, Proposition 1.3.5 contains Proposition 3.2.4(5) of Volume 6. In the same way, Cossart and Piltant show that the invariants of their projection do not depend on the choice of coordinates [CP19, Proposition 2.26]. Hauser and Wagner study alternative invariants for purely inseparable surfaces in [HW14]. The paper [Moh87] and the survey [Hau10] give the behaviour of the residual order under one blowup, which Section 1.4 states.
