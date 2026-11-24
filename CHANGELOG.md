@@ -14,6 +14,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - The introduction of Volume 1 lists Chapters 4, 5 and 6.
+- Remark 3.1.7 and the intro of Chapter 3 now refer to Section 3.3.
+- Volume 0, Section 5.1 gives the results of the milestone S2 at this release.
+- `EDITION` refers to the release v0.2.11 of tamnd/singularity.
 
 ## [0.2.10] - 2026-11-24
 
