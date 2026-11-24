@@ -11,6 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - Volume 7, Theorem 2.2.5 (the points of the same order lie in the directrix, node SG0000003B) has the Lean proof `Singularity.mem_directrix_of_ord_pointChart_eq` of tamnd/singularity-lean#55. Two new paragraphs describe the Lean definition of the directrix and the route of the Lean proof. Volume 0, Section 5.1 is changed to match.
+- `EDITION` has the version 0.3.3 and the commit of tamnd/singularity at the release 0.3.2. Volume 0, Section 5.1 tells that Theorem 1.1.11 and Corollary 1.1.12 of Volume 4 have Lean proofs.
 
 ### Fixed
 
