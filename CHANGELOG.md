@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.2.11] - 2026-11-24
+
 ### Added
 
 - Volume 1, Chapter 4, completion and the Cohen structure theorem. It proves the Artin-Rees lemma (Theorem 4.1.5) and the intersection theorem of Krull (Theorem 4.1.7), the exactness and flatness of completion (Proposition 4.2.5 and Theorem 4.2.7), that the completion of a Noetherian ring is Noetherian (Theorem 4.2.9), and that a Noetherian local ring and its completion have the same dimension and embedding dimension, so that one is regular if and only if the other is (Theorem 4.3.3). It proves the existence of coefficient fields in characteristic $0$ and for a perfect residue field (Theorem 4.4.4) and the Cohen structure theorem (Theorem 4.4.7), and it states the case of mixed characteristic (Theorem 4.4.9). Example 4.3.5 shows that the completion of the local ring of the node is not a domain.
