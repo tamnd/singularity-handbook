@@ -66,6 +66,6 @@ The status of SG0000000D on the map is "proved". Before release 0.2.5 it was "pr
 
 **Theorem 2.3.5 (de Jong).** Let $X$ be a variety over a field $k$. There is a regular variety $Y$ and a proper, surjective and generically finite morphism $Y \to X$.
 
-Node: SG0000001K · Lean: `Singularity.exists_regular_alteration`
+Node: SG0000001K · Lean: `Singularity.exists_regular_alteration` (planned, no Lean statement yet)
 
 Such a morphism is an *alteration*. An alteration is weaker than a resolution, because it can have a degree greater than 1 over the generic point. For many questions of cohomology an alteration is sufficient, but it does not answer the problem of this handbook. Proposition 2.5.2 shows that the statement of the project does not accept an alteration as a resolution.

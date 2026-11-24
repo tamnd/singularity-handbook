@@ -96,7 +96,7 @@ Node: SG0000001M · Lean: `Singularity.exists_regular_alteration_coprime` (plann
 
 Node: SG0000001N · Lean: `Singularity.exists_regular_p_alteration` (planned, no Lean statement yet)
 
-These are [dJ96], [ILO14] and [Tem17]. The degree of an alteration is the degree of the extension of the function fields. By Theorems 2.3.9 and 2.3.10, the degree can avoid each prime $\ell \ne p$, and it can be a power of $p$. It cannot be 1 by these methods. A route through alterations must descend a resolution of $X'$ to $X$. Assume that the extension of the function fields is Galois with group $G$. Then $X$ is birational to the quotient $X'/G$. When the degree is a power of $p$, the group $G$ is a $p$-group, and its action in characteristic $p$ is wild. Nobody knows how to resolve such quotients in dimension 4 in general.
+These are [dJ96], [ILO14] and [Tem17]. The degree of an alteration is the degree of the extension of the function fields. By Theorems 2.3.9 and 2.3.10, the degree can avoid each prime $\ell \ne p$, and it can be a power of $p$. It cannot be 1 by these methods. A route through alterations must descend a resolution of $X'$ to $X$. Assume that the extension of the function fields is Galois with group $G$. Then $X$ is birational to the quotient $X'/G$. When the degree is a power of $p$, the group $G$ is a $p$-group, and its action in characteristic $p$ is wild. Theorem 2.3.10 does not give a Galois extension, so this case is only a model of the difficulty. Volume 8, Chapter 3 gives the precise statements. Nobody knows how to resolve such quotients in dimension 4 in general.
 
 ### Notes and references
 
