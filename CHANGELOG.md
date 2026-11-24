@@ -4,6 +4,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Section 1.8, generic regularity in characteristic zero. It proves the Jacobian criterion for a hypersurface (Proposition 1.8.2 and Corollary 1.8.3), the conductor lemma (Lemma 1.8.4), generic regularity over a regular base (Theorem 1.8.8) and over a field of characteristic $0$ (Theorem 1.8.9), and the openness of the regular locus of an algebra of finite type over a field of characteristic $0$ (Theorem 1.8.10). Example 1.8.11 applies the method to the cuspidal cubic. Each result has the name of its Lean proof.
+
+### Changed
+
+- The introduction of Chapter 1 and Section 1.7 refer to Section 1.8.
+
 ## [0.2.8] - 2026-11-24
 
 ### Added
