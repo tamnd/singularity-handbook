@@ -14,7 +14,7 @@ Throughout the section, $(R, \mathfrak{m}, \kappa)$ is a Noetherian local ring a
 
 ### A test for freeness
 
-We start with a test for freeness that uses only the residue field. Over a local ring, a finitely generated module $M$ is free if and only if the map $\kappa \otimes K \to \kappa \otimes F$ is injective for one presentation of $M$ [Mat, Theorem 7.10]. In Lean this criterion is the Mathlib theorem `Module.free_of_lTensor_residueField_injective`.
+We start with a test for freeness that uses only the residue field. Over a local ring, a finitely generated module $M$ is free if and only if the map $\kappa \otimes K \to \kappa \otimes F$ is injective for one presentation of $M$. This criterion contains the theorem that a finitely generated flat module over a local ring is free [Mat, Theorem 7.10], because the map is injective when $M$ is flat. In Lean this criterion is the Mathlib theorem `Module.free_of_lTensor_residueField_injective`.
 
 **Lemma 1.6.1 (the Ext criterion).** Let $M$ be a finitely generated $R$-module and let $n \ge 0$. Then $\operatorname{pd}_R M \le n$ if and only if $\operatorname{Ext}^{n+1}_R(M, \kappa) = 0$.
 

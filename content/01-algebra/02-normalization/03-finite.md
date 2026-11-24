@@ -1,7 +1,7 @@
 ---
 title: Finiteness of the normalization
 nodes: [SG00000025, SG00000026, SG00000027]
-sources: [AM69, Lan02, Mat, Har, Nag62, Stacks, Mathlib]
+sources: [AM69, Eis95, Lan02, Mat, Har, Nag62, Stacks, Mathlib]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -76,7 +76,7 @@ When $k$ is perfect, one can choose the $y_i$ such that $\operatorname{Frac} A$ 
 
 ### The general case
 
-E. Noether proved Corollary 2.3.5 over each field $k$. The statement is [Har, Chapter I, Theorem 3.9A], and the proof is in [Mat, Section 33] and [Stacks]. When $\operatorname{Frac} A$ is not separable over $\operatorname{Frac} P$, the trace form can be zero, and Theorem 2.3.3 does not apply. Section 2.4 proves the general case with the $q$-th roots of the coefficients and with the normal closure. It also proves Corollary 2.3.6 over each field.
+E. Noether proved Corollary 2.3.5 over each field $k$. The statement is [Har, Chapter I, Theorem 3.9A]. A proof is in [Eis95, Corollary 13.13], and the statement also follows from [Stacks, Tag 0335], which says that each finitely generated algebra over a field is a Nagata ring. When $\operatorname{Frac} A$ is not separable over $\operatorname{Frac} P$, the trace form can be zero, and Theorem 2.3.3 does not apply. Section 2.4 proves the general case with the $q$-th roots of the coefficients and with the normal closure. It also proves Corollary 2.3.6 over each field.
 
 ### Application to curves
 
@@ -104,4 +104,4 @@ The Lean proof of Corollary 2.3.6 is `Singularity.Curves.isDedekindDomain_integr
 
 ### Notes and references
 
-The finiteness of the normalization for finitely generated algebras is due to E. Noether. Rings $A$ for which the normalization of each finite extension domain is finite are the *Japanese rings* of Nagata [Nag62], and a Noetherian ring with this property for all its quotient domains is a *Nagata ring*. Fields, $\mathbb{Z}$, complete Noetherian local rings and the finitely generated algebras over them are Nagata rings [Mat, Section 32]. These rings are the right setting for the theory of excellent rings, which a later chapter of this volume treats.
+The finiteness of the normalization for finitely generated algebras is due to E. Noether. Rings $A$ for which the normalization of each finite extension domain is finite are the *Japanese rings* of Nagata [Nag62], and a Noetherian ring with this property for all its quotient domains is a *Nagata ring*. Fields, $\mathbb{Z}$, complete Noetherian local rings and the finitely generated algebras over them are Nagata rings [Stacks, Tag 0335]. These rings are the right setting for the theory of excellent rings, which a later chapter of this volume treats.
