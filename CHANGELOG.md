@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.7] - 2026-11-25
+
 ### Changed
 
 - Citations of Matsumura [Mat] are checked against sources that quote its theorem numbers. Volume 1, Sections 2.3 and 2.4 no longer cite [Mat, Section 33] for the finiteness of the normalization. They cite [Eis95, Corollary 13.13] and [Stacks, Tag 0335]. Volume 4, Section 1.1 says that [Mat, Theorem 14.2] gives Step 2 of Theorem 1.1.11, and it cites [Stacks, Tag 00NR] for the full statement. Volume 4, Section 3.1 cites Theorem 1.1.11 and [Stacks, Tag 00NR] for the same fact. Volume 1, Section 3.3 states the theorem of Hilbert and Serre in its form with the Poincaré series, and Section 1.6 states [Mat, Theorem 7.10] exactly. Volume 0, Section 2.1 cites [EGA4, Section 6.12] in the usual form.
