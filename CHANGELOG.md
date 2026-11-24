@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-11-24
+
 ### Changed
 
 - Volume 4, Section 3.1 gives the Lean names of Definitions 3.1.1 to 3.1.3 and of Theorem 3.1.4, from tamnd/singularity-lean#61. The new subsection "The Lean statement" tells how the Lean statement of Theorem 3.1.4 is weaker than the theorem, and it names the two facts of the section that have Lean proofs. Volume 9, Section 2.1 and Volume 0, Section 5.1 give the new Lean name.
