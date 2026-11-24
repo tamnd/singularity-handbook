@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.2.12] - 2026-11-24
+
 ### Added
 
 - Volume 1, Section 1.8, generic regularity over a perfect field. It proves that a localization of a regular ring is regular (Lemma 1.8.14), generic regularity over a perfect field with a separating transcendence basis (Theorem 1.8.16), and the openness of the regular locus of an algebra of finite type and of a scheme locally of finite type over a perfect field (Theorem 1.8.17). Remark 1.8.18 explains why the method fails over an imperfect field. Each of these results has a Lean proof.
