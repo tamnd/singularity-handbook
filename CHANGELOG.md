@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 9, Chapter 2, "The open case". Section 2.1 states the known cases in dimension at most 3 (Lipman, Cossart-Jannsen-Saito, Abhyankar, Cutkosky, Cossart-Piltant) and what is still open there. Section 2.2 explains why the methods of characteristic 0 fail. It has a complete proof that the points of order 2 of the example of Narasimhan are not in a smooth hypersurface germ, an example over an imperfect field, and an Artin-Schreier extension with defect. Section 2.3 describes the routes to dimension 4: valuations and patching, characteristic polyhedra, Rees algebras, weighted blowups, the purely inseparable equations and alterations. Section 2.4 gives the special classes with a resolution in all dimensions, with a toric example, and the next steps of the project.
+
 ### Changed
 
 - Volume 7, Chapter 1 has the Lean names of tamnd/singularity-lean#45: the order and its laws, the Newton polyhedron, cleaning, the residual order, the chart of a point blowup, and the example of Section 1.4 (Example 1.4.2, `Singularity.Examples.kangaroo`). Section 1.4 says that the Lean statement of the bound of Moh is not proved.
