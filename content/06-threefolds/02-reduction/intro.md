@@ -1,0 +1,3 @@
+# Reduction to purely inseparable and Artin-Schreier equations
+
+Cossart and Piltant reduce local uniformization of threefolds to two kinds of equations of degree $p$. This chapter explains the reduction. Section 2.1 proves the field theory that we need: a finite purely inseparable extension is a tower of extensions $K(a^{1/p})$, and a Galois extension of degree $p$ in characteristic $p$ is given by an Artin-Schreier equation. Section 2.2 states the local theorem of Cossart-Piltant and gives the structure of the reduction. Section 2.3 studies the equations $z^p + g(x, y, w)$ that come out of the purely inseparable case.
