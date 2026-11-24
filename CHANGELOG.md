@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Fixed
+
+- Volume 0, Section 5.1 gives the results of Volume 7, Chapter 2 after the results of Chapter 1.
+- The build workflow builds Volume 7. The releases 0.2.14 and 0.3.0 have no PDF or EPUB file for Volume 7, and the release 0.3.1 has them.
+
+### Changed
+
+- `EDITION` has the version 0.3.1. It refers to the same commit of tamnd/singularity as the release 0.3.0.
+
 ## [0.3.0] - 2026-11-24
 
 ### Added
