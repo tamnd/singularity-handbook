@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, Section 3.3 has the new subsections "The choice of the key polynomial" and "The graded algebra of an augmentation". The key polynomial of a step of the chain is not unique, and the augmentation depends on the choice: Example 3.3.18 gives two choices with different augmentations. Proposition 3.3.15 proves that all key polynomials of the step have the same degree and are $\mu$-equivalent, Lemma 3.3.16 and Proposition 3.3.17 compare the augmentations, and the text says that there is no maximal choice in general [Vaq07]. Proposition 3.3.19 proves the claim of part 3 of Theorem 3.3.5 on the graded algebra, in the form with $\mu$-equivalence of the library. The text gives the Lean names from tamnd/singularity-lean#80.
+
 ## [0.4.7] - 2026-11-25
 
 ### Changed
