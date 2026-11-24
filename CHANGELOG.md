@@ -8,6 +8,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 - Volume 3, Section 3.3 has the new subsection "The step of MacLane". The new Lemma 3.3.9 is the inductive step of the chain of part 4 of Theorem 3.3.5, with a complete proof, and the new Lemma 3.3.10 is the first step. The text now says which parts of part 4 are proved and which are not. The text gives the Lean names from tamnd/singularity-lean#75.
 - Volume 3, Section 3.3: the Lean line of Lemma 3.3.7 says that `Singularity.KeyPolynomial.map_mul_modByMonic` proves only the first claim, and it gives the short argument for the second claim.
+- Volume 9, introduction of Chapter 1: Section 1.3 proves the step from integral to reduced varieties, in `Singularity.Reduction.reductionToIntegral`, so the text no longer calls it a named hypothesis.
+- Volume 9, Section 1.2: the name `Singularity.Base.hironaka` does not exist in the library, so its Lean line is marked as planned.
+- Volume 9, Section 1.3: five arrows in Lemma 1.3.5 and its proof had a tab character in place of `\to`.
+- Volume 9, Section 1.5: P1 for $n \le 3$ holds over each field, so the text cites Theorem 2.1.4 and [CP19], and not only [CP08, CP09], which need a differentially finite field.
+- Volume 9, Section 2.2: Kuhlmann introduced dependent and independent Artin-Schreier defect extensions [Kuh10b], and Kuhlmann-Rzepka extended them to mixed characteristic [KR23]. The criterion of [CKR25] is for Galois defect extensions of degree $p$ and uses the Kähler differentials of the extension of valuation rings.
+- Volume 9, Section 2.3: the definition of local uniformization has the quantifier over the varieties $X$. Conjecture 2.3.2 is stated in characteristic $p$ and for the components of $X$, as in its Lean statement. The text no longer says that it is open in characteristic 0, where Hironaka's theorem proves the statement.
 
 ## [0.4.6] - 2026-11-24
 

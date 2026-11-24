@@ -29,7 +29,7 @@ For a proof see [Har, II.7.13] for parts 2 and 3, and [Har, Section II.7] for pa
 
 **Theorem 1.2.2 (Hironaka, Main Theorem I, integral form).** Let $k$ be a field of characteristic 0 and let $X$ be an integral variety over $k$. Then there is a coherent ideal sheaf $\mathcal{I}$ on $X$ such that the support of $\mathcal{I}$ is the singular locus $\operatorname{Sing}(X) = X \setminus \operatorname{Reg}(X)$ and the blowup $\operatorname{Bl}_{\mathcal{I}} X$ is regular.
 
-Node: SG0000001P · Lean: `Singularity.Base.hironaka`
+Node: SG0000001P · Lean: `Singularity.Base.hironaka` (planned, no Lean statement yet)
 
 In the base the theorem is `AlgebraicGeometry.exists_support_eq_singularLocus_isRegular_blowUp`. The project plans the name above for the same theorem in its own vocabulary.
 

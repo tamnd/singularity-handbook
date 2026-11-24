@@ -59,7 +59,7 @@ For condition 4 it is sufficient to show that $\pi_i^{-1}(R_i)$ is dense in $Y_i
 
 The proof of Proposition 1.3.3 uses one lemma that the textbooks often leave to the reader.
 
-**Lemma 1.3.5.** Let $X$ be a scheme, and let $g_i : Y_i 	o X$, for $i = 1, \dots, r$, be proper morphisms. Let $Y = Y_1 \sqcup \dots \sqcup Y_r$ and let $g : Y 	o X$ be the morphism that is $g_i$ on $Y_i$. Assume that $Y$ is quasi-separated. Then $g$ is proper.
+**Lemma 1.3.5.** Let $X$ be a scheme, and let $g_i : Y_i \to X$, for $i = 1, \dots, r$, be proper morphisms. Let $Y = Y_1 \sqcup \dots \sqcup Y_r$ and let $g : Y \to X$ be the morphism that is $g_i$ on $Y_i$. Assume that $Y$ is quasi-separated. Then $g$ is proper.
 
 Lean: `Singularity.Reduction.isProper_sigmaDesc`
 
@@ -67,7 +67,7 @@ Lean: `Singularity.Reduction.isProper_sigmaDesc`
 
 The morphism $g$ is locally of finite type, because this property is local on the source. It is quasi-separated, because $Y$ is quasi-separated. It is quasi-compact: for a quasi-compact open $U \subseteq X$, the set $g^{-1}(U)$ is the union of the sets $g_i^{-1}(U)$, and a finite union of quasi-compact sets is quasi-compact.
 
-Let $R$ be a valuation ring with field of fractions $K$, and consider a commutative square with $a : \operatorname{Spec} K 	o Y$ on top and $b : \operatorname{Spec} R 	o X$ at the bottom. The space $\operatorname{Spec} K$ has one point, so $a$ factors through one $Y_i$. Each $Y_i$ is open in $Y$, so we get a square over $g_i$, and it has a lift $\operatorname{Spec} R 	o Y_i$ because $g_i$ is proper. This gives a lift over $g$. For uniqueness, let $l$ be a lift over $g$. Each $Y_j$ is open and closed in $Y$, so $l^{-1}(Y_i)$ is open and closed in $\operatorname{Spec} R$. It contains the image of $\operatorname{Spec} K$, so it is not empty. The space $\operatorname{Spec} R$ is connected, because $R$ is a domain. Thus $l$ factors through $Y_i$. Two lifts over $g$ thus give two lifts over $g_i$, and these are equal because $g_i$ is proper. $\square$
+Let $R$ be a valuation ring with field of fractions $K$, and consider a commutative square with $a : \operatorname{Spec} K \to Y$ on top and $b : \operatorname{Spec} R \to X$ at the bottom. The space $\operatorname{Spec} K$ has one point, so $a$ factors through one $Y_i$. Each $Y_i$ is open in $Y$, so we get a square over $g_i$, and it has a lift $\operatorname{Spec} R \to Y_i$ because $g_i$ is proper. This gives a lift over $g$. For uniqueness, let $l$ be a lift over $g$. Each $Y_j$ is open and closed in $Y$, so $l^{-1}(Y_i)$ is open and closed in $\operatorname{Spec} R$. It contains the image of $\operatorname{Spec} K$, so it is not empty. The space $\operatorname{Spec} R$ is connected, because $R$ is a domain. Thus $l$ factors through $Y_i$. Two lifts over $g$ thus give two lifts over $g_i$, and these are equal because $g_i$ is proper. $\square$
 
 In Proposition 1.3.3 the scheme $Y$ is of finite type over $k$, so it is Noetherian and in particular quasi-separated.
 
