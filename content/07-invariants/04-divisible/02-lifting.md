@@ -17,7 +17,7 @@ for some $h \in R$. Indeed, $R[z]/J \cong R/I$, by the map that sends $z$ to $h$
 **Proposition 4.2.1.** Let $I$ be an ideal of $R$, let $g, h \in R$, and let $J = (z - h) + I R[z]$. Then
 $$z^q + g \in J^q \iff g + h^q \in I^q.$$
 
-Node: SG0000003K · Lean: `Singularity.LEAN_LIFT`
+Node: SG0000003K · Lean: `Singularity.X_pow_add_C_mem_pow_iff`
 
 *Proof.* Assume that $g + h^q \in I^q$. In characteristic $p$, the Frobenius of $R[z]$ gives $(z - h)^q = z^q - h^q$. So
 $$z^q + g = (z - h)^q + (g + h^q).$$

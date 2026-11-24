@@ -18,7 +18,7 @@ We put $a_0 = 1$. For $c \in R$ we write $f(z + c) = \sum_{i=0}^{m} a_i' z^{m-i}
 $$(z + c)^m = \bigl(z^{p^e} + c^{p^e}\bigr)^{m_0}.$$
 So the coefficient of $z^k$ in $(z + c)^m$ is $0$ unless $p^e \mid k$.
 
-Node: SG0000003J · Lean: `Singularity.LEAN_FROB`
+Node: SG0000003J · Lean: `Singularity.X_add_C_pow_pow_mul`, `Singularity.cast_choose_pow_mul_eq_zero`
 
 *Proof.* The ring $R[z]$ has characteristic $p$, so the map $u \mapsto u^{p^e}$ is a ring homomorphism of $R[z]$. Thus $(z + c)^{p^e} = z^{p^e} + c^{p^e}$. Raise both sides to the power $m_0$. The binomial theorem gives
 $$\bigl(z^{p^e} + c^{p^e}\bigr)^{m_0} = \sum_{k=0}^{m_0} \binom{m_0}{k} c^{p^e k} z^{p^e (m_0 - k)},$$
@@ -31,13 +31,17 @@ $$a_i' = \sum_{j=0}^{i} \binom{m-j}{i-j} a_j c^{i-j}.$$
 
 *Proof.* We have $f(z + c) = \sum_j a_j (z + c)^{m-j}$. By the binomial theorem, the coefficient of $z^{m-i}$ in $(z + c)^{m-j}$ is $\binom{m-j}{i-j} c^{i-j}$ for $j \le i$, and it is $0$ for $j > i$. $\square$
 
+Node: SG0000003J · Lean: `Singularity.coeff_taylor_natDegree_sub`
+
+In Lean the statements of this section have weaker hypotheses than in the text. No statement needs $p \nmid m_0$ or $e \ge 1$, and Lemma 4.1.2 and Theorem 4.1.3 do not need $f$ to be monic. The ring $R$ can be any commutative semiring of exponential characteristic $p$.
+
 ### The rigid layer
 
 **Theorem 4.1.3.** Let $0 < i < p^e$. Then
 $$a_i' = a_i + \sum_{0 < j < i} \binom{m-j}{i-j} a_j c^{i-j}.$$
 In particular $a_1' = a_1$ for each $c \in R$. If $a_1 = \dots = a_{i-1} = 0$, then $a_i' = a_i$ for each $c \in R$.
 
-Node: SG0000003J · Lean: `Singularity.LEAN_RIGID`
+Node: SG0000003J · Lean: `Singularity.coeff_taylor_sub_of_lt_pow`, `Singularity.coeff_taylor_natDegree_sub_one`, `Singularity.coeff_taylor_sub_of_lt_pow_of_eq_zero`
 
 *Proof.* In Lemma 4.1.2, the term with $j = i$ is $a_i$. The term with $j = 0$ is $\binom{m}{i} c^i$, the coefficient of $z^{m-i}$ in $(z + c)^m$. Since $p^e \mid m$ and $0 < i < p^e$, the number $p^e$ does not divide $m - i$. By Lemma 4.1.1 this term is $0$. For $i = 1$ no other term is left. If $a_1 = \dots = a_{i-1} = 0$, then every term of the sum is $0$. $\square$
 
@@ -47,7 +51,7 @@ So a translation cannot change $a_1$. If $a_1 = 0$, it cannot change $a_2$, and 
 $$a_{p^e}' = a_{p^e} + m_0\, c^{p^e} + \sum_{0 < j < p^e} \binom{m-j}{p^e-j} a_j c^{p^e-j}.$$
 In particular, if $a_1 = \dots = a_{p^e - 1} = 0$, then $a_{p^e}' = a_{p^e} + m_0 c^{p^e}$.
 
-Node: SG0000003J · Lean: `Singularity.LEAN_APE`
+Node: SG0000003J · Lean: `Singularity.coeff_taylor_sub_pow`, `Singularity.coeff_taylor_sub_pow_of_eq_zero`
 
 *Proof.* In Lemma 4.1.2 with $i = p^e$, the term with $j = 0$ is the coefficient of $z^{m - p^e}$ in $(z + c)^m$. By Lemma 4.1.1 it is the coefficient of $z^{p^e (m_0 - 1)}$ in $(z^{p^e} + c^{p^e})^{m_0}$, which is $\binom{m_0}{1} c^{p^e} = m_0 c^{p^e}$. The term with $j = p^e$ is $a_{p^e}$. $\square$
 
