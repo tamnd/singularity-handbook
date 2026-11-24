@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, Section 3.3 proves parts 1 and 2 of Theorem 3.3.5 with two new lemmas, the expansion criterion for $\mu$-minimal polynomials (Lemma 3.3.6) and the products in low degree (Lemma 3.3.7). It gives the Lean names of these results, from tamnd/singularity-lean#68.
+
 ## [0.4.4] - 2026-11-24
 
 ### Changed

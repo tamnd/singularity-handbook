@@ -54,17 +54,56 @@ Lean: `Singularity.augmentedValuationFun`
 $$\mu_0 = [v; \varphi_0, \gamma_0] < \mu_1 = [\mu_0; \varphi_1, \gamma_1] < \mu_2 < \cdots$$
 of augmentations with $\deg \varphi_0 = 1$, $\deg \varphi_i \le \deg \varphi_{i+1}$ and $\mu_i \le \nu$, in the following sense. Either the chain is finite and ends with $\nu$, or $\nu$ is the limit of the chain, or one needs *limit augmentations* along an infinite family of key polynomials of the same degree.
 
-Lean: none yet
+Lean: `Singularity.augmentedValuation`, `Singularity.KeyPolynomial.augmentedValuationFun_mul`, `Singularity.augmentedValuation_le` (parts 1 and 2)
 
-MacLane proved parts 1 to 3, and part 4 without limit augmentations, for a discrete valuation $v$ of rank 1 [Mac36]. In that case the chain is finite or $\nu$ is its limit. Vaquié extended the theorem to an arbitrary valuation $v$ [Vaq07]. He introduced the limit augmentations of part 4, and in the general case one indexes the chain by an ordinal. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We do not prove the theorem. In the example below we use only parts 1 to 3, and we compute the last step by hand.
+MacLane proved parts 1 to 3, and part 4 without limit augmentations, for a discrete valuation $v$ of rank 1 [Mac36]. In that case the chain is finite or $\nu$ is its limit. Vaquié extended the theorem to an arbitrary valuation $v$ [Vaq07]. He introduced the limit augmentations of part 4, and in the general case one indexes the chain by an ordinal. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We prove parts 1 and 2 below, and we do not prove parts 3 and 4. In the example below we use only parts 1 to 3, and we compute the last step by hand.
 
 Over a henselian field $K$, part 4 for the valuation $\nu$ with support $(F)$ describes the extension of $v$ to $K[y]/(F)$. Defect is related to the limit augmentations of part 4. A family of key polynomials of the same degree whose values increase but have no maximum is the same phenomenon as the sequence $s_m$ of Proposition 3.2.5.
+
+### The proof of parts 1 and 2
+
+The proof uses two lemmas. In both, $\mu$ is a valuation on $K[y]$ with support 0 that extends $v$, and $\varphi$ is monic of degree $m \ge 1$. For $f \in K[y]$ we write $f = \sum_j a_j\varphi^j$ for its $\varphi$-expansion.
+
+**Lemma 3.3.6 (the expansion criterion).** The polynomial $\varphi$ is $\mu$-minimal if and only if
+$$\mu(f) = \min_j\big(\mu(a_j) + j\mu(\varphi)\big)$$
+for each $f \in K[y]$.
+
+Lean: `Singularity.isMuMinimal_iff`
+
+*Proof.* Assume that $\varphi$ is $\mu$-minimal. Step 1. Let $r, q \in K[y]$ with $\deg r < m$. We show that $\mu(r + \varphi q) = \min(\mu(r), \mu(\varphi q))$. The inequality $\ge$ is the ultrametric inequality, and it is an equality if $\mu(r) \neq \mu(\varphi q)$. Assume that $\mu(r) = \mu(\varphi q)$ and $\mu(r + \varphi q) > \mu(r)$. Then $r \neq 0$, because otherwise $\mu(r + \varphi q) = \mu(\varphi q) = \mu(r)$. Now $\mu(r - \varphi(-q)) > \mu(r)$, so $r$ is $\mu$-equivalent to $\varphi \cdot (-q)$, and $\varphi$ $\mu$-divides $r$. By minimality $\deg r \ge m$. This is a contradiction. Step 2. Write $f = a_0 + \varphi f_1$ with $f_1 = \sum_{j \ge 1} a_j\varphi^{j-1}$. By Step 1, $\mu(f) = \min(\mu(a_0), \mu(\varphi) + \mu(f_1))$. The $\varphi$-expansion of $f_1$ has fewer terms, so by induction $\mu(f_1) = \min_{j \ge 1}(\mu(a_j) + (j - 1)\mu(\varphi))$. This gives the formula.
+
+Conversely, assume the formula, and let $f \neq 0$ with $\deg f < m$. Assume that $\varphi$ $\mu$-divides $f$, so that $\mu(f - \varphi h) > \mu(f)$ for some $h$. The $\varphi$-expansion of $f - \varphi h$ has the coefficient $a_0 = f$, so the formula gives $\mu(f - \varphi h) \le \mu(f)$. This is a contradiction. Thus $\varphi$ $\mu$-divides no nonzero polynomial of degree less than $m$, and $\varphi$ is $\mu$-minimal. $\square$
+
+**Lemma 3.3.7 (products in low degree).** Let $\varphi$ be a key polynomial for $\mu$. Let $a, b \in K[y]$ with $\deg a < m$ and $\deg b < m$, and write $ab = q\varphi + r$ with $\deg r < m$. Then $\mu(r) = \mu(ab)$ and $\mu(q\varphi) \ge \mu(ab)$.
+
+Lean: `Singularity.KeyPolynomial.map_mul_modByMonic`
+
+*Proof.* We can assume that $a \neq 0$ and $b \neq 0$. Since $\deg(ab) \le 2m - 2$, we have $\deg q < m$, so $r + q\varphi$ is the $\varphi$-expansion of $ab$. By Lemma 3.3.6, $\mu(ab) = \min(\mu(r), \mu(q\varphi))$. If $\mu(q\varphi) < \mu(r)$, then $\mu(ab - q\varphi) = \mu(r) > \mu(ab)$. Thus $ab$ is $\mu$-equivalent to $\varphi q$, and $\varphi$ $\mu$-divides $ab$. Since $\varphi$ is $\mu$-irreducible, it $\mu$-divides $a$ or $b$. This is not possible by minimality, because $a$ and $b$ are nonzero of degree less than $m$. So $\mu(r) \le \mu(q\varphi)$, and $\mu(r) = \mu(ab)$. $\square$
+
+*Proof of parts 1 and 2 of Theorem 3.3.5.* The function $\mu'$ satisfies $\mu'(f + g) \ge \min(\mu'(f), \mu'(g))$, because the $\varphi$-expansion of $f + g$ is the sum of the expansions. For $c$ of degree less than $m$ and $k \ge 0$, the $\varphi$-expansion of $c\varphi^k$ has one term, so $\mu'(c\varphi^k) = \mu(c) + k\gamma$. In particular $\mu'(f) = \mu(f)$ if $\deg f < m$, $\mu'(\varphi) = \gamma$, and $\mu'$ extends $v$.
+
+We show part 2, $\mu \le \mu'$. By Lemma 3.3.6 and $\gamma > \mu(\varphi)$,
+$$\mu(f) = \min_j\big(\mu(a_j) + j\mu(\varphi)\big) \le \min_j\big(\mu(a_j) + j\gamma\big) = \mu'(f).$$
+
+We show that $\mu'(fg) = \mu'(f) + \mu'(g)$. Let $f = \sum_i a_i\varphi^i$ and $g = \sum_j b_j\varphi^j$, and write $a_ib_j = q_{ij}\varphi + r_{ij}$ with $\deg r_{ij} < m$. Then
+$$fg = \sum_{i,j}\big(r_{ij}\varphi^{i+j} + q_{ij}\varphi^{i+j+1}\big),$$
+and $\deg q_{ij} < m$. By Lemma 3.3.7, $\mu'(r_{ij}\varphi^{i+j}) = \mu(a_i) + \mu(b_j) + (i + j)\gamma$ and
+$$\mu'(q_{ij}\varphi^{i+j+1}) = \mu(q_{ij}) + (i + j + 1)\gamma \ge \mu(q_{ij}\varphi) + (i + j)\gamma \ge \mu(a_i) + \mu(b_j) + (i + j)\gamma.$$
+Each term is at least $\mu'(f) + \mu'(g)$, so $\mu'(fg) \ge \mu'(f) + \mu'(g)$. For the other inequality we can assume that $\mu'(f)$ and $\mu'(g)$ are finite. Let $i_0$ be the least index with $\mu(a_{i_0}) + i_0\gamma = \mu'(f)$, let $j_0$ be the least index with $\mu(b_{j_0}) + j_0\gamma = \mu'(g)$, and let $k = i_0 + j_0$. Let $\delta = \mu'(f) + \mu'(g) - k\gamma$. If $\gamma = \infty$, then $i_0 = j_0 = 0$. By the uniqueness of the $\varphi$-expansion, the coefficient of $\varphi^k$ in the expansion of $fg$ is
+$$c_k = \sum_{i + j = k} r_{ij} + \sum_{i + j = k - 1} q_{ij}.$$
+The term $r_{i_0j_0}$ has the value $\mu(a_{i_0}) + \mu(b_{j_0}) = \delta$. Another term $r_{ij}$ with $i + j = k$ has $i < i_0$ or $j < j_0$, so its value $\mu(a_i) + \mu(b_j)$ is larger than $\delta$. A term $q_{ij}$ with $i + j = k - 1$ has the value
+$$\mu(q_{ij}) \ge \mu(a_i) + \mu(b_j) - \mu(\varphi) \ge \delta + \gamma - \mu(\varphi) > \delta.$$
+By Lemma 1.1.3, $\mu(c_k) = \delta$. Thus $\mu'(fg) \le \mu(c_k) + k\gamma = \mu'(f) + \mu'(g)$.
+
+The support of $\mu'$ is the set of $f$ with $\mu(a_j) + j\gamma = \infty$ for each $j$. If $\gamma < \infty$, this means that each $a_j$ is 0, because the support of $\mu$ is 0, so the support of $\mu'$ is 0. If $\gamma = \infty$, it means that $a_0 = 0$, that is $f \in (\varphi)$. $\square$
+
+The proof of the multiplicativity uses $\gamma > \mu(\varphi)$ only in the strict inequality for the terms $q_{ij}$. For $\gamma = \mu(\varphi)$, Lemma 3.3.6 gives $\mu' = \mu$, so $\mu'$ is a valuation also in this case.
 
 ### The Lean definitions
 
 The Lean library states Definition 3.3.3 without the graded algebra $\operatorname{gr}_\mu$. Mathlib writes valuations multiplicatively, so the condition $\mu(f - g) > \mu(f)$ of Definition 3.3.1 becomes $\mu(f - g) < \mu(f)$. The library calls this relation `Singularity.MuEquiv`. It says that $f$ and $g$ have the same initial form. Then $\varphi$ $\mu$-divides $f$ if $f$ is $\mu$-equivalent to $\varphi h$ for some $h$. With this relation, `Singularity.IsMuIrreducible` and `Singularity.IsMuMinimal` are the two conditions of Definition 3.3.3, written for elements of $K[y]$ and not for elements of $\operatorname{gr}_\mu$. The two forms are equivalent, because each homogeneous element of $\operatorname{gr}_\mu$ is an initial form. The elementwise form needs only the valuation, and Mathlib does not yet have the graded algebra of a valuation.
 
-The library proves Lemma 3.3.2 as the valuation `Singularity.monomialValuation`. It also proves that $y$ is a key polynomial for $[v; y, \gamma]$, in `Singularity.keyPolynomial_X_monomialValuation`. This is the first step of each chain in part 4 of Theorem 3.3.5. For $a \in K$, the polynomial $y - a$ is a key polynomial for $[v; y, \gamma]$ if $v(a) \ge \gamma$. It is not a key polynomial if $v(a) < \gamma$, because then its initial form is the initial form of the unit $-a$. The $\varphi$-expansion is `Singularity.expansionCoeff`, and `Singularity.eq_sum_expansionCoeff` proves that the expansion gives $f$ back. The function `Singularity.augmentedValuationFun` is the right side of Definition 3.3.4. The library proves the ultrametric inequality for it, the equality $\mu'(f) = \mu(f)$ for $\deg f < m$ and the equality $\mu'(\varphi) = \gamma$. It also proves $\mu(f) \ge \min_j(\mu(a_j) + j\mu(\varphi))$ for the $\varphi$-expansion $f = \sum_j a_j\varphi^j$. This inequality holds for each monic $\varphi$. The inequality $\mu \le \mu'$ of part 2 needs the equality, and the equality needs that $\varphi$ is $\mu$-minimal. The inequality $\mu \le \mu'$ and the multiplicativity of $\mu'$ in part 1 have no Lean proof, and parts 3 and 4 have no Lean proof.
+The library proves Lemma 3.3.2 as the valuation `Singularity.monomialValuation`. It also proves that $y$ is a key polynomial for $[v; y, \gamma]$, in `Singularity.keyPolynomial_X_monomialValuation`. This is the first step of each chain in part 4 of Theorem 3.3.5. For $a \in K$, the polynomial $y - a$ is a key polynomial for $[v; y, \gamma]$ if $v(a) \ge \gamma$. It is not a key polynomial if $v(a) < \gamma$, because then its initial form is the initial form of the unit $-a$. The $\varphi$-expansion is `Singularity.expansionCoeff`, and `Singularity.eq_sum_expansionCoeff` proves that the expansion gives $f$ back. The function `Singularity.augmentedValuationFun` is the right side of Definition 3.3.4. For a key polynomial $\varphi$, the valuation `Singularity.augmentedValuation` is this function, and `Singularity.KeyPolynomial.augmentedValuationFun_mul` is its multiplicativity. The Lean proof follows the proof above. In multiplicative notation the condition $\gamma > \mu(\varphi)$ is $\gamma < \mu(\varphi)$. The Lean theorems ask only for $\gamma \le \mu(\varphi)$, so they include the case $\mu' = \mu$ of the last remark, and `Singularity.augmentedValuation_eq_self` proves this case. The value $\gamma = \infty$ is the element 0 of the group with zero. Parts 3 and 4 of Theorem 3.3.5 have no Lean proof.
 
 ### An example
 
