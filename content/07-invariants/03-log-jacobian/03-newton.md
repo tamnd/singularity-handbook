@@ -32,7 +32,7 @@ Let $f = z^p + g$, a polynomial in the $n + 1$ variables $(x, z)$.
 
 **Theorem 3.3.3.** The polynomial $f = z^p + g$ is Newton nondegenerate if and only if, for each compact face $\sigma$ of $N(g)$, the initial form $g_\sigma$ has no critical point in the torus $T$.
 
-Node: SG0000003G · Lean: `Singularity.LEAN_TORUS`
+Node: SG0000003G · Lean: `Singularity.isSingularPoint_purelyInseparable_iff`, `Singularity.exists_torus_isCriticalPoint_iff` (for one face)
 
 *Proof.* We examine the three kinds of faces of Lemma 3.3.2.
 
@@ -56,7 +56,7 @@ So the Newton nondegeneracy of $z^p + g$ is a statement about the ideal $\Theta$
 
 **Corollary 3.3.5.** If a vertex $a$ of $N(g)$ lies in $p \mathbb{N}^n$, then $z^p + g$ is Newton degenerate.
 
-Node: SG0000003G · Lean: `Singularity.LEAN_VERTEX`
+Node: SG0000003G · Lean: `Singularity.isCriticalPoint_monomial_of_dvd`, `Singularity.exists_torus_isSingularPoint_purelyInseparable_initialForm`
 
 *Proof.* The vertex is a compact face, with the initial form $c_a x^a$. Each partial derivative of $x^a$ is $0$, because each exponent is divisible by $p$. So each point of $T$ is a critical point of $c_a x^a$. $\square$
 
@@ -74,7 +74,7 @@ The generators of $\Theta_{\mathrm{all}}(h)$ are thus $n$ linear combinations of
 $$h = \sum_{i=1}^n w_i \, x_i \partial_i h.$$
 In particular, $h \in \Theta_{\mathrm{all}}(h)$, and each torus critical point of $h$ lies on the zero set of $h$.
 
-Node: SG0000003H · Lean: `Singularity.LEAN_EULER`
+Node: SG0000003H · Lean: `Singularity.eq_sum_smul_X_mul_pderiv`, `Singularity.eval_eq_zero_of_isCriticalPoint_of_eq_sum`
 
 *Proof.* By the formula above, $\sum_i w_i x_i \partial_i h = \sum_c \langle w, c \rangle x^c u_c^p = \sum_c x^c u_c^p = h$. At a torus critical point each $x_i \partial_i h$ is $0$, so $h$ is $0$. $\square$
 
@@ -82,13 +82,13 @@ The hypothesis excludes $0 \in S(h)$, because $\langle w, 0 \rangle = 0$. The pr
 
 **Corollary 3.3.7.** Let $\sigma$ be a compact face of $N(g)$, and let $\omega \in \mathbb{Z}_{>0}^n$ be an integral weight for $\sigma$, with the value $D = \min_{N(g)} \langle \omega, \cdot \rangle$. If $p \nmid D$, then each torus critical point of $g_\sigma$ lies on the zero set of $g_\sigma$. For this face, the condition of Theorem 3.3.3 is then the classical condition that $g_\sigma = 0$ is smooth in $T$.
 
-Node: SG0000003H · Lean: `Singularity.LEAN_EULER_WEIGHT`
+Node: SG0000003H · Lean: `Singularity.eq_inv_smul_sum_X_mul_pderiv`, `Singularity.eval_eq_zero_of_isCriticalPoint_of_isWeightedHomogeneous`
 
 *Proof.* Each exponent $a$ of $g_\sigma$ has $\langle \omega, a \rangle = D$. Reduce modulo $p$ and multiply by the inverse of $D$ in $\mathbb{F}_p$. The vector $w = D^{-1} \omega \bmod p$ satisfies $\langle w, a \rangle = 1$ for each exponent $a$ of $g_\sigma$, so it satisfies the hypothesis of Proposition 3.3.6. $\square$
 
 **Definition 3.3.8.** A compact face $\sigma$ of $N(g)$ is *resonant* if there is no $w \in \mathbb{F}_p^n$ with $\langle w, c \rangle = 1$ for each $c \in S(g_\sigma)$.
 
-Node: SG0000003H · Lean: `Singularity.LEAN_RESONANT`
+Node: SG0000003H · Lean: `Singularity.IsResonant`, `Singularity.eval_eq_zero_of_isCriticalPoint_of_not_isResonant`
 
 Resonance is a question of linear algebra over $\mathbb{F}_p$, so a computer can decide it. By Corollary 3.3.7, a resonant face has $p \mid D$ for each integral weight of the face. The converse is false. For $p = 2$ and the edge $x^3 y + x y^3$, the value is $D = 4$ for the weight $(1, 1)$, but $S = \{(1, 1)\}$ and $w = (1, 0)$ satisfies the condition. So this face is not resonant. By Proposition 3.3.6, the failures of nondegeneracy that are special to characteristic $p$, the torus critical points off the zero set, occur only on resonant faces.
 
