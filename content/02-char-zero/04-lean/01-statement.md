@@ -1,6 +1,6 @@
 ---
 title: The statement and the base
-nodes: [SG00000004, SG0000001P, SG0000000D, SG0000001Z, SG0000001Y, SG00000020]
+nodes: [SG00000004, SG0000001P, SG0000000D, SG0000001Z, SG0000001Y, SG00000020, SG00000040, SG00000041, SG00000042, SG00000043]
 sources: [HirLean, Hir64, Kol07, FC, Mathlib, Har]
 status: drafted
 drafted_by: writer
@@ -41,7 +41,7 @@ A variety over a field has finite dimension. Hence the statement $\forall n, \ \
 3. It does not say that the inverse image of the singular locus is a divisor with simple normal crossings.
 4. It does not say that the resolution is functorial, as in Theorem 1.1.8.
 
-The note of node SG0000001P records this difference. The map has no node for Theorems 1.1.3 to 1.1.8.
+The note of node SG0000001P records this difference. The nodes SG00000040 to SG00000043 record Theorems 1.1.3 to 1.1.8, and they have no Lean statement yet.
 
 ### The base
 

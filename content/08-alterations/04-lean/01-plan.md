@@ -1,6 +1,6 @@
 ---
 title: Nodes and a plan
-nodes: [SG0000001K, SG0000001M, SG0000001N, SG0000001G, SG00000002, SG0000000V, SG00000004]
+nodes: [SG0000001K, SG0000001M, SG0000001N, SG0000001G, SG00000002, SG0000000V, SG00000004, SG0000004K, SG0000004G, SG0000004H, SG0000004J]
 sources: [dJ96, DM69, Knu83, ILO14, Tem17]
 status: drafted
 drafted_by: writer
@@ -21,8 +21,12 @@ The theorems of this volume are on route R6 of the map, the route through altera
 | SG00000002 | regular schemes | Theorem 1.2.1 | `Singularity.IsRegularScheme` |
 | SG0000000V | divisors with simple normal crossings | Definition 1.1.10 | `Singularity.IsSncDivisor` |
 | SG00000004 | resolutions | Proposition 1.3.4 | `Singularity.IsResolution` |
+| SG0000004K | de Jong, regular model of a semistable curve | Theorem 2.1.8 | none yet |
+| SG0000004G | Deligne-Mumford, Knudsen, moduli of stable pointed curves | Theorem 2.2.2 | none yet |
+| SG0000004H | the level-$\ell$ moduli | Hypothesis 2.2.4 | none yet |
+| SG0000004J | extension after an alteration | Hypothesis 2.2.5 | none yet |
 
-The node SG0000001K uses SG00000002 and SG0000000V, and its note records Q-08. The nodes SG0000001M and SG0000001N use SG0000001K, and SG0000001N also uses SG0000001G. The map has no node for the moduli of stable curves, for the stable reduction theorem, or for the semistable curves of Section 2.1.
+The node SG0000001K uses SG00000002, SG0000000V and SG0000004J, and its note records Q-08. The nodes SG0000001M and SG0000001N use SG0000001K, and SG0000001N also uses SG0000001G. The node SG0000004J uses SG0000004H, and SG0000004H uses SG0000004G. The stable reduction theorem is part of the properness in SG0000004G, and the map has no separate node for it. The map has no node for the definition of a semistable curve in Section 2.1.
 
 ### The named hypothesis
 

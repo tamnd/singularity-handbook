@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volumes 2, 5 and 8 have Node lines for the new nodes SG00000040 to SG0000004K of tamnd/singularity#123. Each line has the form `Node: TAG · Lean: none yet`, and the tags are in the `nodes` of their sections. Volume 8, Hypotheses 2.2.4 and 2.2.5 now have Node lines. Volume 2, Section 4.2 lists the results with a node and no Lean statement, and Volume 8, Section 4.1 lists the four new nodes of the volume.
+
 ## [0.4.9] - 2026-11-25
 
 ### Changed

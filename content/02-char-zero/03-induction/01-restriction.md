@@ -1,6 +1,6 @@
 ---
 title: Restriction to a smooth hypersurface
-nodes: []
+nodes: [SG00000046]
 sources: [Kol07, Har]
 status: drafted
 drafted_by: writer
@@ -43,7 +43,7 @@ So the derivative of the transform in the direction normal to $S'$ is the transf
 1. $S_{i+1} \to S_i$ is the blowup of $S_i$ along $Z_i$, and $T^{(j)}_{i+1}$ is the transform of $(T^{(j)}_i, m - j)$. So the $T^{(j)}_i$ are the successive transforms of $\big( D^j(I)|_S, \, m - j \big)$ on $S$.
 2. $S_i \cap \operatorname{cosupp}(I_i, m) = \bigcap_{j=0}^{m-1} \operatorname{cosupp}(T^{(j)}_i, m - j)$.
 
-Lean: none yet
+Node: SG00000046 · Lean: none yet
 
 *Proof.* (1) This is Lemma 3.1.2 (1) and (2), since $Z_i \subseteq \operatorname{cosupp}(J^{(j)}_i, m - j)$ by Theorem 2.2.7.
 

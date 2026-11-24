@@ -1,6 +1,6 @@
 ---
 title: From principalization to resolution
-nodes: [SG0000001P]
+nodes: [SG0000001P, SG00000044]
 sources: [Kol07, Har, Mat, BM97]
 status: drafted
 drafted_by: writer
@@ -14,7 +14,7 @@ This section proves that the second form of principalization, Theorem 1.1.6, giv
 
 **Theorem 1.2.1 (resolution from principalization).** Assume Theorem 1.1.6. Let $X$ be an integral quasi-projective variety over $k$. Then there are a smooth variety $X'$ and a projective birational morphism $g \colon X' \to X$.
 
-Lean: none yet
+Node: SG00000044 · Lean: none yet
 
 *Proof.* Since $X$ is quasi-projective, it is a locally closed subscheme of a projective space $\mathbb{P}^N$. A linear embedding $\mathbb{P}^N \subseteq \mathbb{P}^{N+2}$ raises the codimension by 2, so we may assume that the closure $\bar X$ of $X$ in $P = \mathbb{P}^N$ has codimension $c \ge 2$. Let $I \subseteq \mathcal{O}_P$ be the ideal sheaf of $\bar X$ and let $\eta$ be the generic point of $\bar X$. The local ring $\mathcal{O}_{P,\eta}$ is regular of dimension $c$, and $I_\eta$ is its maximal ideal. A maximal ideal of a regular local ring of dimension $c$ needs $c$ generators, so $I_\eta$ is not principal.
 
