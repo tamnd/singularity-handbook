@@ -12,6 +12,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- `EDITION` refers to the release v0.2.14 of tamnd/singularity.
+- Volume 0, Section 5.1 gives the status at release 0.2.14.
 - Volume 7, Chapter 1 has the Lean names of tamnd/singularity-lean#45: the order and its laws, the Newton polyhedron, cleaning, the residual order, the chart of a point blowup, and the example of Section 1.4 (Example 1.4.2, `Singularity.Examples.kangaroo`). Section 1.4 says that the Lean statement of the bound of Moh is not proved.
 - Remark 1.8.18, Section 1.7, Theorem 5.3.3 and the introduction of Volume 1, Chapter 1 refer to Section 1.9. The node SG0000000K is proved for a field.
 - Volume 9, Example 2.2.1 (Narasimhan) has the Lean name of tamnd/singularity-lean#50, and a paragraph on the Lean proof.
