@@ -169,6 +169,14 @@ class TestCheck(Tmp):
         self.assertIn("the status 'done' is not one of drafted, checked, reviewed", text)
         self.assertIn("02-bad.md:14: a Node line without a tag", text)
 
+    def test_statement_not_in_records(self):
+        self.write("00-test/02-second/02-planned.md", "---\ntitle: Planned\nnodes: [SG0000000B]\nstatus: drafted\n"
+                   "drafted_by: writer\n---\n## Planned\n\n**Theorem.** A claim.\n\n"
+                   "Node: SG0000000B · Lean: `Singularity.missing` (the statement only)\n")
+        faults, _ = self.faults()
+        self.assertIn("02-planned.md:11: the Lean name Singularity.missing is marked as a statement, but it is not "
+                      "in records/lean.json", "\n".join(faults))
+
     def test_section_rules(self):
         self.write("00-test/02-second/02-bad.md", "---\ntitle: Bad\nstatus: reviewed\ndrafted_by: writer\n"
                    "reviewed_by: []\n---\nNo heading here, and a dash \u2014 here.\n")

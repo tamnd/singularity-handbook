@@ -30,7 +30,7 @@ A *binomial variety* is a variety that is defined, locally, by binomial equation
 
 **Theorem 2.4.3 (Włodarczyk; Abramovich and Schober).** Each binomial variety has a resolution, in each characteristic.
 
-Node: SG0000001S · Lean: `Singularity.binomial_resolution` (the statement only)
+Node: SG0000001S · Lean: `Singularity.binomial_resolution` (planned, no Lean statement yet)
 
 Włodarczyk gives a functorial resolution of locally toric varieties by cobordant blowups [Wlo22]. Abramovich and Schober give a resolution by weighted blowups [AS22]. In both proofs the invariant is built from the monomials, and the derivatives of Section 2.2 are not used.
 

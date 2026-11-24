@@ -13,6 +13,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - The build workflow builds Volume 4.
 - Volume 9, Section 1.1 refers to Volume 1, Chapter 2 for curves and to Volume 4 for surfaces.
 
+### Fixed
+
+- Fourteen Node lines in Volume 9 gave a Lean name with the mark "(the statement only)", but the Lean library has no declaration of that name. These lines now say "(planned, no Lean statement yet)". `shb check` now gives a fault when a Node line marks a name as a statement and records/lean.json does not have the name.
+
 ## [0.3.1] - 2026-11-24
 
 ### Fixed
