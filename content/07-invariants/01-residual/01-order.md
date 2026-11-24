@@ -1,6 +1,6 @@
 ---
 title: The order of a power series
-nodes: [SG0000002E, SG00000013]
+nodes: [SG0000002E, SG00000013, SG0000004M]
 sources: [AM69, Mat, Hau03, Hau10]
 status: drafted
 drafted_by: writer
@@ -51,7 +51,7 @@ Let $f \in K[x]$ be a polynomial and let $a \in K^n$. The *order of $f$ at $a$* 
 
 **Proposition 1.1.4.** Let $f \in K[x]$ and $d \in \mathbb{N}$. Then the set $\{ a \in K^n : \operatorname{ord}_a f \ge d \}$ is the common zero set of the polynomials $\partial^{(\beta)} f$ with $|\beta| < d$. In particular, it is closed in the Zariski topology.
 
-Lean: none yet
+Node: SG0000004M · Lean: `Singularity.Algebra.MvHasse.le_ord_aeval_X_add_C_iff` (the criterion at one point $a$, over each commutative ring)
 
 *Proof.* By the definition of the operators $\partial^{(\beta)}$ in Section 6.3 of Volume 1, we have $f(a + t) = \sum_\beta (\partial^{(\beta)} f)(a) \, t^\beta$. So the coefficient of $t^\beta$ in the Taylor expansion of $f$ at $a$ is $(\partial^{(\beta)} f)(a)$, and $\operatorname{ord}_a f \ge d$ if and only if these coefficients vanish for $|\beta| < d$. $\square$
 
