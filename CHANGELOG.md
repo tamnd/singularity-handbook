@@ -7,6 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - Volume 3, Section 3.3 gives the Lean names of Lemma 3.3.2 and Definitions 3.3.3 and 3.3.4, from tamnd/singularity-lean#66. The new subsection "The Lean definitions" tells how the Lean definitions use $\mu$-equivalence in place of the graded algebra, and which parts of Theorem 3.3.5 have Lean proofs.
+- `EDITION` has the version 0.4.4 and the commit of tamnd/singularity with the Lean definitions of the key polynomials.
 
 ## [0.4.3] - 2026-11-24
 
