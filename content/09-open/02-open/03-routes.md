@@ -36,7 +36,7 @@ Node: SG0000001E · Lean: `Singularity.localUniformization_abhyankar` (the state
 
 Knaf and Kuhlmann prove this with a separable extension of the residue fields [KK05], and Cutkosky removes this condition [Cut20]. The valuations that are not Abhyankar valuations are the hard case. They can have defect (Section 2.2).
 
-**Theorem 2.3.4 (Temkin).** Each valuation of a function field $K$ has local uniformization after a finite purely inseparable extension of $K$.
+**Theorem 2.3.4 (Temkin).** Let $v$ be a valuation of a function field $K$, and let $S$ be a finite subset of $\mathcal{O}_v$. Then there is a finite purely inseparable extension $L$ of $K$, which depends on $S$, such that the extension of $v$ to $L$ has a regular center on an affine model of $L$ that contains $S$.
 
 Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (the statement only)
 

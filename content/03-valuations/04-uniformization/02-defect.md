@@ -24,13 +24,13 @@ The rest of this subsection is a heuristic. It explains the idea of [KK05], and 
 
 ### Purely inseparable extensions
 
-**Theorem 4.2.2 (Temkin).** Let $K/k$ be a function field and let $v$ be a valuation of $K/k$. Then there is a finite purely inseparable extension $L/K$ such that the extension of $v$ to $L$ has local uniformization.
+**Theorem 4.2.2 (Temkin).** Let $K/k$ be a function field, let $v$ be a valuation of $K/k$, and let $S$ be a finite subset of $\mathcal{O}_v$. Then there is a finite purely inseparable extension $L/K$ such that the extension $w$ of $v$ to $L$ has a regular center on an affine model of $L/k$ that contains $S$, in the sense of Proposition 4.1.6.
 
 Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (the statement only)
 
 This is the main theorem of [Tem13]. The extension of $v$ to $L$ is unique, because $L/K$ is purely inseparable: if $z^{p^n} \in K$, then $w(z) = v(z^{p^n})/p^n$ for each extension $w$. The paper [Tem13] gives the precise form of the statement. Temkin works with relative forms of the Zariski-Riemann space (Section 1.5). In characteristic 0 the theorem is Theorem 4.1.3, because then $L = K$.
 
-In [Tem13, Theorem 1.3.2] the extension $L$ depends on the model. So the Lean statement `Singularity.localUniformization_inseparable` takes a finite subset $S$ of $\mathcal{O}_v$ first. Then it asks for $L$ and an extension $w$ of $v$ to $L$ such that $w$ has a regular center on an affine model of $L/k$ that contains $S$, in the sense of Proposition 4.1.6. With one $L$ for all finite sets, the statement would be stronger than the theorem of Temkin.
+In [Tem13, Theorem 1.3.2] the extension $L$ depends on the model. For this reason Theorem 4.2.2 and the Lean statement `Singularity.localUniformization_inseparable` take the finite subset $S$ of $\mathcal{O}_v$ first, and the extension $L$ depends on $S$. With one $L$ for all finite sets, the statement would be stronger than the theorem of Temkin.
 
 The theorem does not say that a purely inseparable extension removes the defect. A purely inseparable extension can even create a defect. Use the notation of Section 3.2. By Lemma 3.2.4 with $m = 0$, the extension $K_0(\vartheta)/K_0$ has $e = p$, so it has no defect. The perfect hull $K$ is a purely inseparable extension of $K_0$, and by Proposition 3.2.5 the extension $K(\vartheta)/K$ has defect $p$.
 
