@@ -1,0 +1,3 @@
+# The characteristic polyhedron and the invariants
+
+This chapter defines the polyhedron of Hironaka for a monic polynomial over a regular local ring, and the invariants that Cossart and Piltant build on it. Section 3.1 defines the polyhedron, proves the vertex preparation step, and shows that the Tschirnhausen transformation gives a polyhedron with no solvable vertex when the degree is a unit, so that it is minimal by the theorem of Hironaka. Section 3.2 defines the invariants $\delta$, $d_j$, $\epsilon$ and $\omega$ for the purely inseparable equations, and proves that cleaning gives the minimal polyhedron in this case. Section 3.3 computes examples by hand.

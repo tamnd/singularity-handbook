@@ -6,6 +6,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 6, on threefolds in characteristic $p$, is new, as a draft in four chapters: the theorems of Abhyankar, Cutkosky and Cossart-Piltant and the plan of their proofs; the reduction to purely inseparable and Artin-Schreier equations of degree $p$; the characteristic polyhedron of Hironaka and the invariants of Cossart-Piltant, with examples computed by hand; and the places where the method uses dimension 3. Proposition 3.2.4 proves that cleaning gives the minimal polyhedron of $X^p + f$ over a perfect field, so that the invariant $\epsilon$ is the residual order of Volume 7.
+- Volume 0, Section 5.1 says that Volume 6 is drafted.
 - Volume 3, Section 3.3 has the new subsection "The step of MacLane". The new Lemma 3.3.9 is the inductive step of the chain of part 4 of Theorem 3.3.5, with a complete proof, and the new Lemma 3.3.10 is the first step. The text now says which parts of part 4 are proved and which are not. The text gives the Lean names from tamnd/singularity-lean#75.
 - Volume 3, Section 3.3: the Lean line of Lemma 3.3.7 says that `Singularity.KeyPolynomial.map_mul_modByMonic` proves only the first claim, and it gives the short argument for the second claim.
 - Volume 9, introduction of Chapter 1: Section 1.3 proves the step from integral to reduced varieties, in `Singularity.Reduction.reductionToIntegral`, so the text no longer calls it a named hypothesis.
