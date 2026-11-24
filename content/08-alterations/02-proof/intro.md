@@ -1,0 +1,5 @@
+# The proof of de Jong
+
+This chapter explains the proof of Theorem 1.2.1. The proof is an induction on the dimension. A variety of dimension $d$ is fibred, after a modification, over a variety of dimension $d - 1$ with fibres of dimension 1. The family of curves is made stable over a dense open subset of the base. The moduli of stable pointed curves then extend the family to a stable curve over an alteration of the base. The induction hypothesis makes the base regular and the discriminant a divisor with strict normal crossings. At the end, the total space is a semistable curve over a regular base, and explicit blowups make it regular.
+
+Section 2.1 studies semistable curves and proves the local computations of the blowups. Section 2.2 states the theorems on stable curves and their moduli that the proof uses, and it proves the extension of a family of curves after an alteration of the base from a named hypothesis on the moduli. Section 2.3 gives the reductions and the fibration in curves. Section 2.4 gives the extension of the family, the induction, and the last blowups. We follow [dJ96, Sections 3 and 4] and use its numbering in the references.
