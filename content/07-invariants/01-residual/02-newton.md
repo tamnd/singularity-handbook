@@ -16,7 +16,7 @@ The order of $f$ remembers only the smallest degree of a monomial of $f$. The Ne
 $$N(f) = \operatorname{conv}(\operatorname{supp} f) + \mathbb{R}_{\ge 0}^n \subseteq \mathbb{R}_{\ge 0}^n,$$
 the convex hull of the support plus the positive orthant.
 
-Lean: none yet
+Lean: Singularity.newtonPolyhedron (for polynomials)
 
 For example, $N(x^2 - y^3)$ is the set of the points of $\mathbb{R}_{\ge 0}^2$ above the segment from $(2, 0)$ to $(0, 3)$. For a monomial times a unit, $N(x^\alpha u) = \alpha + \mathbb{R}_{\ge 0}^n$, because the support of $x^\alpha u$ contains $\alpha$ and is in $\alpha + \mathbb{N}^n$.
 
@@ -34,7 +34,7 @@ For $\omega = (1, \dots, 1)$ these are the order and the initial form of Section
 
 **Proposition 1.2.3.** Let $f \ne 0$. Then $\operatorname{ord} f = \min \{ u_1 + \cdots + u_n : u \in N(f) \}$.
 
-Lean: none yet
+Lean: Singularity.isLeast_sum_newtonPolyhedron
 
 *Proof.* This is the case $\omega = (1, \dots, 1)$ of the remark before the proposition. $\square$
 
@@ -43,7 +43,7 @@ Lean: none yet
 1. $\operatorname{in}_\omega(fg) = \operatorname{in}_\omega(f) \operatorname{in}_\omega(g)$ and $\operatorname{ord}_\omega(fg) = \operatorname{ord}_\omega f + \operatorname{ord}_\omega g$;
 2. $N(fg) = N(f) + N(g)$, the Minkowski sum.
 
-Lean: none yet
+Lean: Singularity.initialForm_mul, Singularity.newtonPolyhedron_mul_subset (part (1) for integer weights, and the inclusion $N(fg) \subseteq N(f) + N(g)$ of part (2))
 
 *Proof.* (1) Let $a = \operatorname{ord}_\omega f$ and $b = \operatorname{ord}_\omega g$. Each monomial of $fg$ is a product of a monomial of $f$ and a monomial of $g$, so it has $\omega$-weight at least $a + b$. The sum of the terms of weight $a + b$ is $\operatorname{in}_\omega(f) \operatorname{in}_\omega(g)$. This product is not $0$, because $K[x]$ is a domain.
 

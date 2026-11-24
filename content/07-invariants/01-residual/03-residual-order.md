@@ -20,11 +20,11 @@ Thus the change of the variable $z$ changes $F$ by a $q$-th power, and the monom
 
 **Definition 1.3.1.** The power series $F = \sum_\alpha c_\alpha x^\alpha$ is *clean* if $c_\alpha = 0$ for each $\alpha \in q\mathbb{N}^n$. The *clean part* of $F$ is $F^{\mathrm{cl}} = \sum_{\alpha \notin q\mathbb{N}^n} c_\alpha x^\alpha$.
 
-Lean: none yet
+Lean: Singularity.IsClean, Singularity.cleanPart
 
 **Lemma 1.3.2.** Let $F \in K[[x]]$. There is exactly one $g \in K[[x]]$ such that $g^q + F$ is clean. For this $g$, $g^q + F = F^{\mathrm{cl}}$.
 
-Lean: none yet
+Lean: Singularity.exists_add_pow_eq_cleanPart (the existence of $g$)
 
 *Proof.* Let $g = \sum_\beta b_\beta x^\beta$. Then $g^q = \sum_\beta b_\beta^q x^{q\beta}$, so $g^q$ has its support in $q\mathbb{N}^n$. Thus $g^q + F$ is clean if and only if $b_\beta^q = -c_{q\beta}$ for each $\beta$. Since $K$ is perfect, the map $b \mapsto b^q$ is a bijection of $K$, so there is exactly one such $g$. Then $g^q + F$ and $F$ have the same coefficients outside $q\mathbb{N}^n$, and $g^q + F = F^{\mathrm{cl}}$. $\square$
 
@@ -38,7 +38,7 @@ The resolution process keeps a normal crossings divisor $E$, the union of the ex
 $$F = \prod_{i \in \Delta} x_i^{r_i} \cdot G.$$
 The *residual order* of $f$ for $E$ is $\operatorname{ord}_E^{\mathrm{res}} f = \operatorname{ord} G$. For a general $f = z^q + F$, the residual order is the residual order after cleaning, that is, $\operatorname{ord} G$ for $F^{\mathrm{cl}}$.
 
-Node: SG00000013 · Lean: none yet
+Node: SG00000013 · Lean: Singularity.residualOrderAlong, Singularity.residualOrder_eq_ord_cleanPart
 
 The power series $G$ is unique, because $K[[x]]$ is a domain. The residual order measures how far $F$ is from a monomial times a unit: it is $0$ if and only if $F^{\mathrm{cl}}$ is a monomial in the $x_i$, $i \in \Delta$, times a unit. In characteristic $0$, the analogue is the order of the residual factor of the coefficient ideal, the second component of the invariant of the proofs of Villamayor, Bierstone and Milman, and Encinas and Hauser [Hau03]. The term *residual order* is from Hironaka [HP19a, Section 2].
 
@@ -61,7 +61,7 @@ with $j \in \Gamma$ and constants $t_i \in K$ [HP19a, Section 2]. This is the *$
 **Lemma 1.3.6.** In this situation, $\pi(F)$ is divisible by $x_j^q$, and the strict transform of $f$ is
 $$f' = z^q + F', \qquad F' = x_j^{-q} \pi(F).$$
 
-Lean: none yet
+Lean: Singularity.pointChartZ_purelyInseparable
 
 *Proof.* The homomorphism $K[[z, x]] \to K[[x]]$ that sends $z$ to $0$ maps $f$ to $F$ and $P^q$ onto $(x_i : i \in \Gamma)^q$. Since $f \in P^q$, we have $F \in (x_i : i \in \Gamma)^q$. The map $\pi$ sends each $x_i$ with $i \in \Gamma$ to a multiple of $x_j$, so it sends $(x_i : i \in \Gamma)^q$ into $x_j^q K[[z, x]]$. Thus $\pi(F) = x_j^q F'$ with $F' \in K[[x]]$. Also $\pi(z^q) = x_j^q z^q$. So $\pi(f) = x_j^q (z^q + F')$, and the strict transform is $z^q + F'$, since this power series is not divisible by $x_j$. $\square$
 

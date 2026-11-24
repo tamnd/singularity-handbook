@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 7, Chapter 1 has the Lean names of tamnd/singularity-lean#45: the order and its laws, the Newton polyhedron, cleaning, the residual order, the chart of a point blowup, and the example of Section 1.4 (Example 1.4.2, `Singularity.Examples.kangaroo`). Section 1.4 says that the Lean statement of the bound of Moh is not proved.
+
 ## [0.2.13] - 2026-11-24
 
 ### Added
