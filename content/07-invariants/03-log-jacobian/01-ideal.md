@@ -1,6 +1,6 @@
 ---
 title: The log-Jacobian ideal and the dichotomy
-nodes: [SG0000003E, SG0000003F]
+nodes: [SG0000003E, SG0000003F, SG0000004N]
 sources: [Cos87, Pos24, CP08, HP19a]
 status: drafted
 drafted_by: writer
@@ -78,6 +78,10 @@ so $\rho = 1 = d$, and the type is $0$.
 **Example 3.1.7.** Let $p = 3$, $\Delta = \emptyset$ and $F = x^3 y$. Then $\partial_x F = 0$ and $\partial_y F = x^3$, so $\rho = 3$ and $d = 4$. The type is $1$. The variable $x$ appears only as a cube, and the derivative in $y$ lowers the degree by one.
 
 The Lean library states the dichotomy for $R = K[x]$, over a field $K$ of characteristic $p$. The proofs do not use that $p$ is prime. The case $R = K[[x]]$ is not in Lean yet.
+
+**Remark 3.1.8 (the case $q = p^e$ with $e \ge 2$).** Let the equation be $f = z^q + F$ with $q = p^e$. The change $z \mapsto z + h$ replaces $F$ by $F + h^q$, so an invariant must see the class of $F$ modulo $q$-th powers. For $e \ge 2$ the ideal $\Theta(F)$ sees less. By Lemma 3.1.2 it does not change when we add a $p$-th power, and a $p$-th power need not be a $q$-th power. For example, let $p = 2$, $q = 4$, $\Delta = \emptyset$ and $F = x^2 y^2$. Each derivation kills $F$, so $\Theta(F) = 0$, but $F$ is not a polynomial in $x^4$ and $y^4$. The Hasse-Schmidt derivative $\partial^{((2, 0))}$ of Volume 1, Section 6.3 sends $F$ to $y^2$. In general, $F$ is a polynomial in $x_1^q, \dots, x_n^q$ if and only if $\partial^{(\beta)}(F) = 0$ for each $\beta \ne 0$ with $\beta_i < q$ for each $i$ (Volume 1, Corollary 6.3.7). For $R = K[x]$ and such $\beta$, this gives $\partial^{(\beta)}(h^q) = 0$, so $\partial^{(\beta)}(F + h^q) = \partial^{(\beta)}(F)$, as in Lemma 3.1.2. So for $e \ge 2$ an invariant of this kind must use the operators $\partial^{(\beta)}$ with $\beta_i < q$ in place of the derivations.
+
+Node: SG0000004N · Lean: `Singularity.Algebra.MvHasse.exists_expand_eq_iff_hasseDeriv`
 
 ### Notes and references
 

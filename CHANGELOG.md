@@ -4,8 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Corollary 6.3.7 is new: a polynomial in characteristic $p$ is a polynomial in $x_1^q, \dots, x_n^q$ if and only if each $\partial^{(\beta)}$ with $\beta \ne 0$ and $\beta_i < q$ kills it. The proof uses the theorem of Lucas in the form $\binom{qa + b}{b} \equiv 1 \pmod p$ for $b < q$. A new paragraph in Section 6.3 gives the Leibniz rule and the composition rule of the operators $\partial^{(\beta)}$.
+- Volume 7, Remark 3.1.8 is new. It explains why the log-Jacobian ideal does not see the $q$-th powers for $q = p^e$ with $e \ge 2$, with the example $x^2 y^2$ for $p = 2$.
+
 ### Changed
 
+- Volume 1, Section 6.3 and Volume 7, Proposition 1.1.4 now give the Lean names of tamnd/singularity-lean#91: the operators $\partial^{(\beta)}$, the agreement with the Hasse derivatives of Mathlib, the first step of the proof of Theorem 6.3.6 and the order criterion at a point. The notes of Section 6.3 now say which results of the section are in Lean.
+- `EDITION` now pins the map at 6a060ec, which has the nodes SG0000004M and SG0000004N.
 - Volume 7, Section 3.2 now gives the Lean names of Definition 3.2.1, Lemma 3.2.2 and Theorem 3.2.3, from tamnd/singularity-lean#90. A new paragraph after the proof of Theorem 3.2.3 explains the Lean form in $K[x]$: two inclusions with the product $u$ of the factors $x_i + t_i$, which is a unit only in $K[[x]]$. Theorem 3.2.4 has no Lean proof yet.
 - Review of Volumes 5 and 8. Volume 5, Examples 3.2.2 and 4.2.2 said that the resolution of one model, with Proposition 1.4.5, gives local uniformization. It gives a regular center over that model only, so the text now takes local uniformization from Proposition 3.1.2. Volume 8, Proposition 1.2.3 and Section 2.3 cited Chow's lemma from [Har, Exercise II.4.10], which assumes $X$ proper; they now cite [Stacks]. Volume 8, Section 2.4 referred to Proposition 2.4.5, which does not exist; it now refers to Proposition 2.4.3. Volume 8, Proposition 1.3.4 now says "no nonempty open subset". Volume 5, Section 4.2 now says that its Lean line for SG00000009 is the statement only. Volume 5, Section 4.1 now says that the proof of Temkin uses Berkovich analytic curves, not adic spaces. Volume 8, Section 3.3 no longer calls the theorem of Temkin the strongest known result toward resolution.
 
