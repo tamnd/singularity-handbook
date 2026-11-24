@@ -48,7 +48,7 @@ The proof is in three papers. The first two [CP08, CP09] prove birational resolu
 
 **Theorem 2.1.5 (Cossart-Piltant).** Let $K$ be a function field of transcendence degree 3 over a field $k$ of characteristic $p > 0$. Each valuation of $K$ over $k$ has local uniformization.
 
-Node: SG0000001F · Lean: `Singularity.localUniformization_three` (planned, no Lean statement yet)
+Node: SG0000001F · Lean: `Singularity.localUniformization_three` (the statement only)
 
 Then they patch the local solutions together. Section 2.3 defines local uniformization and explains the patching. For local uniformization, Cossart and Piltant reduce to purely inseparable equations and to Artin-Schreier equations, and they control them with the characteristic polyhedron. Their arguments project the polyhedron to the space of two variables, and they treat many cases one at a time. This analysis is special to three variables.
 

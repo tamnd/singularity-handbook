@@ -14,9 +14,11 @@ Two results on local uniformization hold in all dimensions and in each character
 
 **Theorem 4.2.1 (Knaf-Kuhlmann, Cutkosky).** Let $K/k$ be a function field over a field $k$ of any characteristic. Each Abhyankar valuation of $K/k$ has local uniformization.
 
-Node: SG0000001E · Lean: `Singularity.localUniformization_abhyankar` (planned, no Lean statement yet)
+Node: SG0000001E · Lean: `Singularity.localUniformization_abhyankar` (the statement only)
 
 Knaf and Kuhlmann prove this when $Kv/k$ is separable [KK05]. Cutkosky proves it without this condition, with a different method that follows Zariski and Abhyankar [Cut20]. Abhyankar valuations are defined in Definition 2.2.3.
+
+The Lean statement `Singularity.localUniformization_abhyankar` is the form of [KK05]. It asks that $Kv$ is separably generated over $k$. This is the same as separable, because $Kv$ is finitely generated over $k$ for an Abhyankar valuation (Corollary 2.2.4). An Abhyankar valuation is `Singularity.IsAbhyankarValuation`, the equality in the Lean statement of Theorem 2.1.5. Knaf and Kuhlmann give a smooth center, and the Lean statement asks only for a regular center.
 
 The rest of this subsection is a heuristic. It explains the idea of [KK05], and it is not a proof. Let $v$ be an Abhyankar valuation of $K/k$ with rational rank $r$, and let $s = \operatorname{trdeg}(Kv/k)$. By Corollary 2.2.4 the value group is $\mathbb{Z}^r$, and the residue field is finitely generated over $k$. Choose $x_1, \dots, x_r$ and $y_1, \dots, y_s$ as in Theorem 2.1.4, and let $K_0 = k(x_1, \dots, x_r, y_1, \dots, y_s)$. By the proof of Theorem 2.2.2, the extension $K/K_0$ is finite. By Lemma 2.1.2, the restriction of $v$ to $K_0$ is the monomial valuation of Lemma 1.6.1 with the weight $\gamma_i = v(x_i)$ on $x_i$ and the weight 0 on each $y_j$. We can replace $x_i$ by $x_i^{-1}$ if $\gamma_i < 0$. Then the restriction has a center on the affine space with the coordinates $x_i$ and $y_j$, and this center is a regular point. So for $K_0$ the problem is easy. The difficulty is the finite extension $K/K_0$. The restriction of $v$ to $K_0$ is again an Abhyankar valuation. By the generalized stability theorem of Kuhlmann (Section 2.2), $(K_0, v)$ is a defectless field. So $\sum_i e_if_i = [K : K_0]$, with the sum over the extensions of the restriction to $K$, and the value groups and the residue fields control the extension $K/K_0$.
 
@@ -24,9 +26,11 @@ The rest of this subsection is a heuristic. It explains the idea of [KK05], and 
 
 **Theorem 4.2.2 (Temkin).** Let $K/k$ be a function field and let $v$ be a valuation of $K/k$. Then there is a finite purely inseparable extension $L/K$ such that the extension of $v$ to $L$ has local uniformization.
 
-Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (planned, no Lean statement yet)
+Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (the statement only)
 
 This is the main theorem of [Tem13]. The extension of $v$ to $L$ is unique, because $L/K$ is purely inseparable: if $z^{p^n} \in K$, then $w(z) = v(z^{p^n})/p^n$ for each extension $w$. The paper [Tem13] gives the precise form of the statement. Temkin works with relative forms of the Zariski-Riemann space (Section 1.5). In characteristic 0 the theorem is Theorem 4.1.3, because then $L = K$.
+
+In [Tem13, Theorem 1.3.2] the extension $L$ depends on the model. So the Lean statement `Singularity.localUniformization_inseparable` takes a finite subset $S$ of $\mathcal{O}_v$ first. Then it asks for $L$ and an extension $w$ of $v$ to $L$ such that $w$ has a regular center on an affine model of $L/k$ that contains $S$, in the sense of Proposition 4.1.6. With one $L$ for all finite sets, the statement would be stronger than the theorem of Temkin.
 
 The theorem does not say that a purely inseparable extension removes the defect. A purely inseparable extension can even create a defect. Use the notation of Section 3.2. By Lemma 3.2.4 with $m = 0$, the extension $K_0(\vartheta)/K_0$ has $e = p$, so it has no defect. The perfect hull $K$ is a purely inseparable extension of $K_0$, and by Proposition 3.2.5 the extension $K(\vartheta)/K$ has defect $p$.
 
