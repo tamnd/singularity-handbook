@@ -12,6 +12,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 - The build workflow builds Volume 4.
 - Volume 9, Section 1.1 refers to Volume 1, Chapter 2 for curves and to Volume 4 for surfaces.
+- Volume 0, Section 5.1 describes Volume 4.
 
 ### Fixed
 
