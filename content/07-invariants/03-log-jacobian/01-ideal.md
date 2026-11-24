@@ -19,13 +19,13 @@ These are the *logarithmic derivations* for $E$.
 **Definition 3.1.1.** The *log-Jacobian ideal* of $F$ for $E$ is the ideal of $R$
 $$\Theta(F) = \bigl( x_i \partial_i F \ (i \in \Delta), \ \partial_j F \ (j \notin \Delta) \bigr).$$
 
-Node: SG0000003E · Lean: `Singularity.LEAN_THETA`
+Node: SG0000003E · Lean: `Singularity.logJacobian`
 
 The ideal is the image of $F$ under all logarithmic derivations. For $\Delta = \emptyset$ it is the Jacobian ideal $(\partial_1 F, \dots, \partial_n F)$. For $\Delta = \{1, \dots, n\}$ it is $(x_1 \partial_1 F, \dots, x_n \partial_n F)$, the ideal of Section 3.3.
 
 **Lemma 3.1.2.** For each $h \in R$, $\Theta(F + h^p) = \Theta(F)$.
 
-Node: SG0000003E · Lean: `Singularity.LEAN_THETA_ADD_POW`
+Node: SG0000003E · Lean: `Singularity.logJacobian_add_pow`
 
 *Proof.* For each derivation $D$, the Leibniz rule gives $D(h^p) = p h^{p-1} D(h) = 0$. So each generator of $\Theta(F + h^p)$ is the generator of $\Theta(F)$ with the same index. $\square$
 
@@ -43,10 +43,11 @@ Let $F \ne 0$ be clean, and write $F = x^r G$ as in Definition 1.3.3, with $r_i 
 $$x_i \partial_i F = x^r (r_i G + x_i \partial_i G) \ (i \in \Delta), \qquad \partial_j F = x^r \partial_j G \ (j \notin \Delta).$$
 So $\Theta(F) = x^r \widetilde\Theta(G)$, where
 $$\widetilde\Theta(G) = \bigl( r_i G + x_i \partial_i G \ (i \in \Delta), \ \partial_j G \ (j \notin \Delta) \bigr).$$
+In Lean the factorization is `Singularity.logJacobian_monomial_mul` and `Singularity.logJacobian_eq_mul`.
 
 **Definition 3.1.3.** The *residual order of the log-Jacobian ideal* is $\rho(F) = \operatorname{ord} \widetilde\Theta(G)$, the smallest order of an element of $\widetilde\Theta(G)$.
 
-Node: SG0000003F · Lean: `Singularity.LEAN_RHO`
+Node: SG0000003F · Lean: `Singularity.residualLogJacobian`, `Singularity.logJacobianOrder`
 
 **Theorem 3.1.4.** Let $F \ne 0$ be clean, with $F = x^r G$ and $d = \operatorname{ord} G$ as above, and let $\rho = \rho(F)$.
 
@@ -54,7 +55,7 @@ Node: SG0000003F · Lean: `Singularity.LEAN_RHO`
 2. $d - 1 \le \rho \le d$.
 3. $\rho = d - 1$ if and only if $\partial_j \operatorname{in}(G) \ne 0$ for some $j \notin \Delta$, where $\operatorname{in}(G)$ is the homogeneous part of degree $d$ of $G$.
 
-Node: SG0000003F · Lean: `Singularity.LEAN_DICHOTOMY`
+Node: SG0000003F · Lean: `Singularity.residualLogJacobian_not_le_span_X`, `Singularity.le_divisorExponent_of_logJacobian_le` (part 1), `Singularity.logJacobianOrder_eq_or` (part 2), `Singularity.logJacobianOrder_add_one_eq_iff` (part 3)
 
 *Proof.* Write $G = \sum_\alpha c_\alpha x^\alpha$. The coefficient of $x^\alpha$ in $r_i G + x_i \partial_i G$ is $(r_i + \alpha_i) c_\alpha$. The coefficient of $x^{\alpha - e_j}$ in $\partial_j G$ is $\alpha_j c_\alpha$. The monomial $x^{r + \alpha}$ is a monomial of $F$ with the coefficient $c_\alpha$.
 
@@ -76,7 +77,7 @@ so $\rho = 1 = d$, and the type is $0$.
 
 **Example 3.1.7.** Let $p = 3$, $\Delta = \emptyset$ and $F = x^3 y$. Then $\partial_x F = 0$ and $\partial_y F = x^3$, so $\rho = 3$ and $d = 4$. The type is $1$. The variable $x$ appears only as a cube, and the derivative in $y$ lowers the degree by one.
 
-The Lean library states the dichotomy for polynomials over a field of characteristic $p$.
+The Lean library states the dichotomy for $R = K[x]$, over a field $K$ of characteristic $p$. The proofs do not use that $p$ is prime. The case $R = K[[x]]$ is not in Lean yet.
 
 ### Notes and references
 
