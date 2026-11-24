@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, Section 2.1 gives the Lean names of Theorems 2.1.4 and 2.1.5, from tamnd/singularity-lean#63. The new subsection "The Lean proof" tells how the Lean statements are written.
+
 ## [0.4.2] - 2026-11-24
 
 ### Changed
