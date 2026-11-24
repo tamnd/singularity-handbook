@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.5] - 2026-11-24
+
 ### Changed
 
 - Volume 3, Section 4.1 has the new Proposition 4.1.6, the affine form of local uniformization, with a proof. The new subsection "The Lean statements" gives the Lean names of tamnd/singularity-lean#69 and tamnd/singularity-lean#70. Volume 3, Section 4.2 tells how the Lean statements of Theorems 4.2.1 and 4.2.2 are written, and Volume 9, Section 2.3 tells how the Lean statement of Conjecture 2.3.2 is written. The Node lines of the nodes SG0000001E to SG0000001J give the Lean statements.
