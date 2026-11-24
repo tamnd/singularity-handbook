@@ -26,7 +26,7 @@ Node: SG0000002T · Lean: `Singularity.Algebra.isOpen_regularLocus_of_charZero`
 
 Lean: none yet
 
-We do not prove Theorem 5.2.3. For a field it is [EGA4, Section 6.12], and the other cases are in [EGA4-7, Section 7.8] and [Mat, Section 32]. By the criterion of Nagata (Theorem 1.7.7), the statement for a field $k$ reduces to this: for each domain $D$ of finite type over $k$, the set $\operatorname{Reg}(D)$ contains a nonempty open set. When $k$ is perfect, $D$ is smooth over $k$ on a nonempty open set. When $k$ is imperfect, this can fail (Example 6.2.7), and the proof uses other tools. The Lean library of the project proves the case of characteristic $0$ (Proposition 5.2.2). The case of a field of positive characteristic is not yet proved in Lean.
+We do not prove Theorem 5.2.3. For a field it is [EGA4, Section 6.12], and the other cases are in [EGA4-7, Section 7.8] and [Mat, Section 32]. By the criterion of Nagata (Theorem 1.7.7), the statement for a field $k$ reduces to this: for each domain $D$ of finite type over $k$, the set $\operatorname{Reg}(D)$ contains a nonempty open set. When $k$ is perfect, $D$ is smooth over $k$ on a nonempty open set. When $k$ is imperfect, this can fail (Example 6.2.7), and the proof uses other tools. The Lean library of the project proves the case of characteristic $0$ (Proposition 5.2.2) and the case of a perfect field (Theorem 1.8.17). The case of an imperfect field is not yet proved in Lean.
 
 ### Universally catenary rings
 
