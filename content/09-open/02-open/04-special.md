@@ -28,7 +28,7 @@ So both cones are regular, and the subdivision gives a resolution of the quadric
 
 A *binomial variety* is a variety that is defined, locally, by binomial equations $x^\alpha - c x^\beta$. Locally it is a toric variety in the general sense, which need not be normal. The local torus actions need not glue to a global action.
 
-**Theorem 2.4.3 (Włodarczyk; Abramovich and Schober).** Each binomial variety has a resolution, in each characteristic.
+**Theorem 2.4.3 (Włodarczyk; Abramovich-Schober).** Each binomial variety has a resolution, in each characteristic.
 
 Node: SG0000001S · Lean: `Singularity.binomial_resolution` (planned, no Lean statement yet)
 
