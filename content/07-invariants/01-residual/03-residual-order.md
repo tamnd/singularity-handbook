@@ -54,7 +54,7 @@ The definition uses the given coordinates $x$ and the given divisor $E$. Changes
 
 The maximal ideal $(z, x_1, \dots, x_n)$ is always a permissible center, because $\operatorname{ord} f = q$ and $\operatorname{ord} G = d$. Its blowup is a *point blowup*.
 
-Let $\pi$ be the blowup with center $P$, and let $f'$ be the strict transform of $f$. Then $\operatorname{ord} f' \le q$ at each point over the origin. If $\operatorname{ord} f' < q$, the singularity has improved. The interesting points are those where $\operatorname{ord} f' = q$. At such a point, after a translation, the blowup is given in a chart by a map of the form
+Let $\pi$ be the blowup with center $P$, and let $f'$ be the strict transform of $f$. Then $\operatorname{ord} f' \le q$ at each point over the origin. For a point blowup, Theorem 2.2.2 proves this. If $\operatorname{ord} f' < q$, the singularity has improved. The interesting points are those where $\operatorname{ord} f' = q$. At such a point, after a translation, the blowup is given in a chart by a map of the form
 $$\pi(z) = x_j z, \qquad \pi(x_j) = x_j, \qquad \pi(x_i) = x_j (x_i + t_i) \ (i \in \Gamma \setminus \{j\}), \qquad \pi(x_l) = x_l \ (l \notin \Gamma),$$
 with $j \in \Gamma$ and constants $t_i \in K$ [HP19a, Section 2]. This is the *$x_j$-chart* with the translations $x_i \mapsto x_i + t_i$.
 
