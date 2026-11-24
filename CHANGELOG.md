@@ -17,6 +17,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 9, Section 2.2: Kuhlmann introduced dependent and independent Artin-Schreier defect extensions [Kuh10b], and Kuhlmann-Rzepka extended them to mixed characteristic [KR23]. The criterion of [CKR25] is for Galois defect extensions of degree $p$ and uses the Kähler differentials of the extension of valuation rings.
 - Volume 9, Section 2.3: the definition of local uniformization has the quantifier over the varieties $X$. Conjecture 2.3.2 is stated in characteristic $p$ and for the components of $X$, as in its Lean statement. The text no longer says that it is open in characteristic 0, where Hironaka's theorem proves the statement.
 
+- Volume 1, review: the text now says that the openness of the regular locus is proved in Lean over each field (Theorem 1.9.5), in Sections 1.3, 1.7, 1.8, 2.5, 5.2 and 5.3 and in the introduction of Chapter 5. Theorem 5.2.3 has a Lean line for the case of a field. Section 1.1 proves the case $x \in \mathfrak{m}^2$ of its Lean paragraph and cites Chapter 3 for the Hilbert-Samuel polynomial. Section 1.2 states what [Stacks, Tag 00NQ] gives. Section 3.2 proves $\operatorname{ord}(fg) = \operatorname{ord} f + \operatorname{ord} g$ and says that it has no Lean proof yet. Section 4.4 corrects the example of a coefficient field that is not unique. Citations with a wrong number are corrected in Sections 1.6, 2.3, 2.4, 2.5 and 4.1.
+
 ## [0.4.6] - 2026-11-24
 
 ### Changed

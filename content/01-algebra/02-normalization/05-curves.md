@@ -1,7 +1,7 @@
 ---
 title: The resolution of curves
 nodes: [SG0000002B, SG0000002C]
-sources: [AM69, Har, Mat, Stacks, Mathlib, Curves]
+sources: [AM69, Har, Mat, EGA4, Stacks, Mathlib, Curves]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -72,7 +72,7 @@ Conversely, let $V$ be as in the statement, let $B = \mathcal{O}_X(V)$, and let 
 
 The first part shows that $\operatorname{Reg}(X)$ is the union of the open sets $V$ of the statement, so it is open. $\square$
 
-Proposition 2.5.5 is a special case of a theorem of Grothendieck: the regular locus of each variety is open (EGA IV, 6.12). In dimension 1 the proof is easy, because regular and normal are the same condition on a local ring of dimension at most 1.
+Proposition 2.5.5 is a special case of Theorem 1.9.5: the regular locus of each variety is open [EGA4, Section 6.12]. In dimension 1 the proof is easy, because regular and normal are the same condition on a local ring of dimension at most 1.
 
 ### The theorem
 
@@ -116,4 +116,4 @@ The main theorem is `isResolution_normalizationHom`. The statement `integralReso
 
 The resolution of curves by normalization is classical. For curves over an algebraically closed field it is in [Har, Chapter I, Section 6], where the nonsingular model of a function field of dimension 1 is built from its discrete valuation rings. The proof in this section is the proof by normalization of [Har, Chapter II, Exercise 3.8]. It works over each field, because the theorem of Noether holds over each field. Over a Noetherian domain that is not of finite type over a field, the normalization can fail to be finite (see the notes to Section 2.4), and then the proof fails at Proposition 2.5.4.
 
-The conductor argument of Lemma 2.5.1 is the simplest case of the criterion of Nagata for the openness of the normal locus [Mat, Section 31]. In higher dimension, normal and regular are different conditions. The normalization of a surface is normal, but it can be singular at finitely many points. Thus for surfaces the normalization is only the first step, and Volume 4 continues with blowups.
+The conductor argument of Lemma 2.5.1 is the simplest case of the criterion of Nagata for the openness of the normal locus [Mat, Section 24]. In higher dimension, normal and regular are different conditions. The normalization of a surface is normal, but it can be singular at finitely many points. Thus for surfaces the normalization is only the first step, and Volume 4 continues with blowups.

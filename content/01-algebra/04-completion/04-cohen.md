@@ -52,7 +52,7 @@ The map $\tau : \kappa \to R$ is a ring homomorphism. Let $\bar{x}, \bar{x}' \in
 
 For the uniqueness, let $K$ be any coefficient field. It is isomorphic to $\kappa$, so it is perfect. For $x \in K$ with image $\bar{x}$, the element $x^{1/p^n}$ of $K$ lifts $\bar{x}^{1/p^n}$. With $y_n = x^{1/p^n}$ we get $z_n = x$ for each $n$, so $\tau(\bar{x}) = x$. Thus $K = \tau(\kappa)$. $\square$
 
-The element $\tau(\bar{x})$ is the *Teichmüller lift* of $\bar{x}$. When $\kappa$ is not perfect, a coefficient field need not be unique, even in characteristic $0$.
+The element $\tau(\bar{x})$ is the *Teichmüller lift* of $\bar{x}$. A coefficient field need not be unique when $\kappa$ is not perfect. It also need not be unique in characteristic $0$, where each field is perfect. Example 4.4.5 shows both cases: take $F$ of characteristic $p$ for the first case, and $F = \mathbb{Q}$ for the second case.
 
 **Example 4.4.5.** Let $F$ be a field, let $k = F(s)$ be the field of rational functions in one variable $s$ and let $R = k[[t]]$. The field $k$ is a coefficient field of $R$. The element $s + t$ of $R$ is transcendental over $F$: for each nonzero $h \in F[T]$, the constant term of $h(s + t)$ is $h(s) \ne 0$, so $h(s + t)$ is a unit of $R$. Thus $F(s + t)$ is a subfield of $R$. It maps onto $F(s) = \kappa$, because $s + t$ maps to $s$. So $F(s + t)$ is another coefficient field. It is not $k$, because $s + t \notin k$.
 

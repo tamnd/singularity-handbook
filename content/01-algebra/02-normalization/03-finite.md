@@ -1,7 +1,7 @@
 ---
 title: Finiteness of the normalization
 nodes: [SG00000025, SG00000026, SG00000027]
-sources: [AM69, Mat, Har, Nag62, Stacks, Mathlib]
+sources: [AM69, Lan02, Mat, Har, Nag62, Stacks, Mathlib]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -34,7 +34,7 @@ Lean: `minpoly.isIntegrallyClosed_eq_field_fractions`, `Algebra.isIntegral_trace
 
 Let $m = [L : K(b)]$. With a basis of $L$ over $K(b)$, the matrix of multiplication by $b$ on $L$ is a block matrix with $m$ copies of the matrix of multiplication by $b$ on $K(b)$. The trace of the second matrix is $-c_1$, where $c_1$ is the second coefficient of $F$. Thus $\operatorname{Tr}_{L/K}(b) = -m c_1 \in P$. $\square$
 
-This is [AM69, Proposition 5.15]. The next fact is from field theory. If $L$ is separable over $K$, then the *trace form* $(u, v) \mapsto \operatorname{Tr}_{L/K}(uv)$ is a nondegenerate $K$-bilinear form on $L$ [AM69, Chapter 5, Exercise 27 and the proof of Proposition 5.17]. Thus for each basis $v_1, \dots, v_n$ of $L$ over $K$ there is a *dual basis* $w_1, \dots, w_n$ with
+This is [AM69, Proposition 5.15]. The next fact is from field theory. If $L$ is separable over $K$, then the *trace form* $(u, v) \mapsto \operatorname{Tr}_{L/K}(uv)$ is a nondegenerate $K$-bilinear form on $L$ [Lan02, Chapter VI, Section 5] and the proof of [AM69, Proposition 5.17]. Thus for each basis $v_1, \dots, v_n$ of $L$ over $K$ there is a *dual basis* $w_1, \dots, w_n$ with
 $$\operatorname{Tr}_{L/K}(v_i w_j) = \begin{cases} 1 & \text{if } i = j, \\ 0 & \text{if } i \ne j. \end{cases}$$
 The trace form of an inseparable extension is zero. For example, if $K = \mathbb{F}_p(t)$ and $L = K(t^{1/p})$, then $\operatorname{Tr}_{L/K}$ is the zero map. This is the reason why the separable case is easier.
 
