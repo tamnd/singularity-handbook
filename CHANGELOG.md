@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Fixed
+
+- Volume 7, Lemma 2.2.1 gives its Lean lemmas, and Corollary 2.2.3 states that it has no Lean proof yet. A new paragraph explains how the Lean proof of Theorem 2.2.2 uses the lemma. This removes two warnings of `shb check`.
+
 ## [0.3.2] - 2026-11-24
 
 ### Added
