@@ -14,7 +14,7 @@ A route is a method of proof that works in dimension at most 3, or in characteri
 
 Let $K$ be a function field over a field $k$, and let $v$ be a valuation of $K$ that is trivial on $k$. Let $X$ be a variety over $k$ with function field $K$. If the valuation ring of $v$ dominates a local ring $\mathcal{O}_{X,x}$, then $x$ is the *center* of $v$ on $X$. The valuation $v$ has *local uniformization* if there is a variety $X'$ with function field $K$ and a proper birational morphism $X' \to X$ such that the center of $v$ on $X'$ is a regular point.
 
-Zariski's method has two steps [Zar40, Zar44]. First, prove local uniformization for each valuation. Second, the space of all valuations, the Zariski-Riemann space, is quasi-compact. So finitely many of the local solutions are enough, and the second step patches them into one regular variety. Zariski did both steps in characteristic 0 in dimension at most 3. Cossart and Piltant did both steps in characteristic $p$ in dimension 3 (Section 2.1).
+Zariski's method has two steps [Zar40, Zar44]. First, prove local uniformization for each valuation. Second, the space of all valuations, the Zariski-Riemann space, is quasi-compact. So finitely many of the local solutions are enough, and the second step patches them into one regular variety. Zariski did both steps in characteristic 0 in dimension at most 3. Cossart and Piltant did both steps in characteristic $p$ in dimension 3 (Section 2.1). Volume 3 proves the quasi-compactness (Theorem 1.5.3) and the reduction of the first step to finitely many models (Proposition 4.1.2).
 
 **Conjecture 2.3.1.** Let $K$ be a function field of transcendence degree 4 over a field of characteristic $p > 0$. Each valuation of $K$ has local uniformization.
 
@@ -26,7 +26,7 @@ Node: SG0000001J · Lean: `Singularity.resolution_of_localUniformization_four` (
 
 Conjecture 2.3.2 is open in each characteristic. In characteristic 0 nobody needs it, because the global algorithm of Hironaka gives the resolution. Piltant gives an axiomatic form of Zariski's patching theorem in [Pil]. Thus the route of valuations needs two new theorems in dimension 4, not one.
 
-The results that hold in all dimensions are these. A valuation is an *Abhyankar valuation* if the Abhyankar inequality is an equality for it.
+The results that hold in all dimensions are these. A valuation is an *Abhyankar valuation* if the Abhyankar inequality is an equality for it. Volume 3, Chapter 2, proves the inequality and studies the case of equality.
 
 **Theorem 2.3.3 (Knaf and Kuhlmann).** Each Abhyankar valuation of a function field has local uniformization.
 

@@ -1,0 +1,3 @@
+# Valuations and valuation rings
+
+This chapter gives the basic objects of the volume. Section 1.1 defines Krull valuations and valuation rings, and it proves that the two notions are the same up to equivalence. Section 1.2 defines the rank and the rational rank of a valuation, and it relates the rank to the prime ideals of the valuation ring. Section 1.3 proves the extension theorem of Chevalley: each local subring of a field is dominated by a valuation ring. Section 1.4 defines the center of a valuation on a scheme. Section 1.5 defines the Zariski-Riemann space and proves that it is quasi-compact. Section 1.6 computes examples on the plane.

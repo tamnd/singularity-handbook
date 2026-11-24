@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 3, "Valuations", with four chapters at status drafted. Chapter 1 defines valuations and valuation rings, relates the rank to the prime ideals, proves the extension theorem of Chevalley (Theorem 1.3.2) and the quasi-compactness of the Zariski-Riemann space (Theorem 1.5.3, node SG0000000X), and computes the monomial and arc valuations of the plane. Chapter 2 proves the Abhyankar inequality (Theorem 2.1.5, node SG0000000Y) in the form for fields and in the local form of [Abh56], and it proves that the value group and the residue field are finitely generated in the case of equality. Chapter 3 gives the fundamental inequality, defines the defect (Definition 3.2.1, node SG00000010), proves that an extension without defect has best approximations, computes the Artin-Schreier extension with defect $p$ over the perfect hull of $\mathbb{F}_p((t))$, and defines key polynomials (Definition 3.3.3, node SG0000000Z) with the theorem of MacLane cited from [Mac36] and one MacLane chain computed by hand. Chapter 4 defines local uniformization, proves the reduction of Zariski to finitely many models (Proposition 4.1.2), and states the theorems of Zariski, Abhyankar, Cossart-Piltant (node SG0000001F), Knaf-Kuhlmann (node SG0000001E) and Temkin (node SG0000001G) with their sources.
+
+### Changed
+
+- The build workflow builds Volume 3.
+- Volume 9, the introduction of Chapter 2 and Section 2.3 refer to Volume 3. Example 2.2.3 refers to Volume 3, Proposition 3.2.5, for the proof of its last statements.
+- Volume 0, Section 5.1 describes Volume 3.
+
 ## [0.4.0] - 2026-11-24
 
 ### Added
