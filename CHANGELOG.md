@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 1.4 has the subsection "Computations". It reports the runs of the experiments E1 and E2 of the lab (tamnd/singularity#72). Example 1.4.6 is a new failure of the bound of the proof of Moh for $p = 3$, found by the lab and checked by hand. Remark 1.4.7 gives the candidate secondary invariants that the lab tests, and the steps where each one goes up.
+
 ## [0.3.3] - 2026-11-24
 
 ### Added

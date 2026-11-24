@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## The increase of the residual order
 
-In characteristic $0$, the residual order does not increase under a permissible blowup at the points where the order stays the same. This is the step that makes the induction of the proofs of resolution work. In characteristic $p$ the residual order can increase. In this section we state Moh's bound for one blowup, we compute an increase in a short example, and we describe the cycle of Hauser and Perlega, along which the residual order tends to infinity. We keep the notation of Section 1.3: $K$ is a perfect field of characteristic $p$, $q = p^e$, and $f = z^q + F(x)$.
+In characteristic $0$, the residual order does not increase under a permissible blowup at the points where the order stays the same. This is the step that makes the induction of the proofs of resolution work. In characteristic $p$ the residual order can increase. In this section we state Moh's bound for one blowup, we compute an increase in a short example, we describe the cycle of Hauser and Perlega, along which the residual order tends to infinity, and we report the computations of the lab of the project. We keep the notation of Section 1.3: $K$ is a perfect field of characteristic $p$, $q = p^e$, and $f = z^q + F(x)$.
 
 ### Moh's bound
 
@@ -84,6 +84,35 @@ Node: SG00000039 · Lean: `Singularity.Examples.hauserPerlegaCycle`, `Singularit
 
 The Lean proof checks each chart equation, each weak transform, each bound on the order and each residual order by computation in $K[x, y, u, v, w]$ over an arbitrary field of characteristic 2. It does not treat the other values of the parameters. It does not prove that the residual order tends to infinity when the cycle is repeated, because the next cycle starts from the shape with $Q' \neq 0$ and $A' \neq 1$, and the Lean proof covers only $Q = 0$ and $A = 1$. Thus Theorem 1.4.3 is still without a Lean proof.
 
+### Computations
+
+The lab of the project computes point blowups of purely inseparable equations over $\mathbb{F}_p$. Its experiment E1 makes random walks of point blowups and records the change of the residual order at each step. The engine follows the conventions of Section 1.3, with the residual order taken in the given coordinates after cleaning. The walks start from random clean polynomials $F$ in $n = 2, 3, 4$ variables with $\operatorname{ord} F \ge q + 1$, for $p = 2, 3, 5, 7$ and $q = p$ or $q = p^2$, and also $q = 8$ for $p = 2$. The divisor at the start is $V(x_1 \cdots x_n)$. Each step blows up the origin, chooses a chart and a point over $\mathbb{F}_p$ of the exceptional divisor, and stops when the order of $f'$ drops below $q$ or when the residual order becomes $0$.
+
+The runs of E1 have about $1.0 \cdot 10^7$ walks and $2.6 \cdot 10^7$ steps. They have these results.
+
+1. No step exceeds the bound of Theorem 1.4.1. That is, at each step $d' \le d + p^{e-1}$, with $d$ and $d'$ in the given coordinates.
+2. No walk exceeds the bound of the stability theorem. That is, at each step of a walk the residual order is at most $d_0 + p^{e-1}$, where $d_0$ is the residual order at the start. A walk has at most 12 blowups, so this does not contradict Theorem 1.4.3.
+3. For $p = 2$ and $p = 3$, in each case, some step has the increase $d' - d = p^{e-1}$, so the bound of Theorem 1.4.1 is sharp on these walks. For $q = 25$ the largest increase is $4$, and for $q = 49$ it is $6$. For $q = 49$ with $n = 3$ or $n = 4$, and for $q = 25$ with $n = 4$, no walk has an increase.
+4. The increases are rare. For $p = 2$, $n = 2$ and $q = 2$, the walks have $580121$ steps and $6770$ increases. For $p = 7$, $n = 2$ and $q = 49$, they have $1055815$ steps and $68$ increases.
+
+The runs of the lab are in the directory `lab/runs` of tamnd/singularity. Each run has its spec, its seed and its outputs, and a computation of the same spec gives the same outputs. The data are examples. They prove no statement, and they do not show that Theorem 1.4.1 holds in the given coordinates, because the walks are a small sample of the points and of the families.
+
+The walks also give new instances of the failure in Example 1.4.2. The next one has $p = 3$.
+
+**Example 1.4.6.** Let $p = 3$ and $q = 9$, and let
+$$F = 2 x_1^9 x_2^3 x_3^6 + 2 x_1^7 x_2^5 x_3^{10} + 2 x_1^{31} x_2^{15} x_3^{18}, \qquad E = V(x_1 x_2 x_3).$$
+No exponent of $F$ is in $9 \mathbb{N}^3$, so $F$ is clean. The exponents of $x_1, x_2, x_3$ that divide $F$ are $7, 3, 6$. So $G = 2 x_1^2 + 2 x_2^2 x_3^4 + 2 x_1^{24} x_2^{12} x_3^{12}$ and $d = 2$. The initial form of $F$ is $2 x_1^9 x_2^3 x_3^6 = (2 x_1^3 x_2 x_3^2)^3$, since $2^3 = 2$ in $\mathbb{F}_3$. It is a cube and it is not a ninth power. So $p^r = 3$, and the bound of the proof of Moh is $\lfloor 2/3 \rfloor \cdot 3 + 3 = 3$.
+
+Take the $x_3$-chart with the translation $x_2 \mapsto x_2 + 2$. That is, $\pi(x_1) = x_1 x_3$, $\pi(x_2) = x_3 (x_2 + 2)$ and $\pi(x_3) = x_3$. Then
+$$F' = x_3^{-9} \pi(F) = 2 x_1^9 (x_2 + 2)^3 x_3^9 + 2 x_1^7 (x_2 + 2)^5 x_3^{13} + 2 x_1^{31} (x_2 + 2)^{15} x_3^{55}.$$
+In characteristic $3$, $(x_2 + 2)^3 = x_2^3 + 2$. So the first term is $2 x_1^9 x_2^3 x_3^9 + x_1^9 x_3^9$, and the monomial $x_1^9 x_3^9$ is a ninth power. It is the only one, because the other monomials have the exponent $7$ or $31$ in $x_1$. Cleaning removes it. The translation of $x_2$ is not $0$, so the new divisor is $E' = V(x_1 x_3)$. The cleaned $F'$ is divisible by $x_1^7 x_3^9$ and by no higher power of $x_1$ or of $x_3$, so
+$$G' = 2 x_1^2 x_2^3 + 2 (x_2 + 2)^5 x_3^4 + 2 x_1^{24} (x_2 + 2)^{15} x_3^{46}.$$
+The constant term of $2 (x_2 + 2)^5$ is $2 \cdot 2^5 = 1$ in $\mathbb{F}_3$. So the initial form of $G'$ is $x_3^4$, and $d' = 4$. The order of $F'$ is $20 \ge 9$, so the order of $f'$ is still $9$.
+
+Thus $d' = 4$ exceeds the bound $3$ of the proof of Moh, and it agrees with Theorem 1.4.1, since $d + p^{e-1} = 2 + 3 = 5$. The mechanism is the same as in Example 1.4.2: a translation makes a $q$-th power appear in the term of the smallest order, and cleaning removes it. The walk of Example 1.4.6 is walk 7316 of the case $n = 3$, $q = 9$ in the run `2026-11-24-e1-p3-08768f1a`. The computation above checks it by hand. It has no Lean proof.
+
+**Remark 1.4.7.** A proof by induction needs an invariant that drops at each step, or at least in the long run. The experiment E2 tests four simple candidates on the walks of E1: the pair $(d, N)$ in the lexicographic order, with $N$ the number of terms of the initial form of $G$; the quotient $d/q$; the difference $d - p^r$, with $r$ as in Example 1.4.2; and the pair $(d, -r)$. For each $p$, each of them goes up at some step. For $d/q$ this is clear, since it goes up exactly at the increases of $d$. The bound of the proof of Moh fails on $111$ steps for $p = 2$ and on $30$ steps for $p = 3$, and on no step for $p = 5$ and $p = 7$. This does not show that the bound holds for $p \ge 5$, since the walks for $q = 25$ and $q = 49$ are short and they have few increases.
+
 ### Notes and references
 
-Moh's paper is [Moh87]. The counterexample to the stability theorem and the cycles are [HP19a]. Hauser and Perlega characterize the increase of the residual order in [HP19b]. Hauser introduced the term kangaroo point in [Hau08], and [Hau10] surveys the problem. The Lean file `Singularity/Example/HauserPerlegaCycle.lean` certifies Example 1.4.5. The lab of the project plans to reproduce the cycles of [HP19a] in experiment E1, and to test candidate secondary invariants on them in experiment E2.
+Moh's paper is [Moh87]. The counterexample to the stability theorem and the cycles are [HP19a]. Hauser and Perlega characterize the increase of the residual order in [HP19b]. Hauser introduced the term kangaroo point in [Hau08], and [Hau10] surveys the problem. The Lean file `Singularity/Example/HauserPerlegaCycle.lean` certifies Example 1.4.5. The lab of the project computes the example of [HP19a, Section 3] and one cycle of [HP19a, Section 4] again, and its results agree with the paper. The runs of E1 and E2 that this section describes are in `lab/runs` of tamnd/singularity, with the page https://singularity.tamnd.com/lab/.
