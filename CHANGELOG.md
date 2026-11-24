@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.8] - 2026-11-25
+
 ### Changed
 
 - The edition is 0.4.8, with the map at tamnd/singularity@7519db1.
