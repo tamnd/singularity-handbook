@@ -1,7 +1,7 @@
 ---
 title: Why the methods of characteristic zero fail
 nodes: [SG00000018, SG00000015, SG00000017, SG0000000C, SG00000010, SG0000001Q]
-sources: [Nar83, Abr25, Hau03, Hau10, HP19a, AT26, ATW24, CDLL26, Kuh-book, Kuh16, KR23, CKR25, CM17, Cut15]
+sources: [Nar83, Abr25, Hau03, Hau10, HP19a, AT26, ATW24, CDLL26, Kuh-book, Kuh10b, Kuh16, KR23, CKR25, CM17, Cut15]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -82,7 +82,7 @@ Node: SG00000010 · Lean: none yet
 $$(\vartheta - s_n)^p - (\vartheta - s_n) = t^{-1/p^n}.$$
 Thus $v(\vartheta - s_n) = -1/p^{n+1}$. These values increase with $n$ and are bounded by 0. The extension $L/K$ has degree $p$, and $e = f = 1$. So it has defect $p$. Volume 3, Proposition 3.2.5, proves the last statements, and it shows that the values $v(\vartheta - a)$ for $a \in K$ have no largest element. It is a standard example of [Kuh-book].
 
-The sequence $s_n$ approximates $\vartheta$ better and better, but it does not converge in $K$. This is the behaviour that makes local uniformization hard. In residue characteristic 0, the value group and the residue field determine the degree of each such extension. An extension with defect is different. In Example 2.2.3 the degree is $p$, but the value group and the residue field do not change, so they do not see the extension. Kuhlmann and Rzepka divide the Artin-Schreier defect extensions into dependent and independent ones [KR23]. Cutkosky, Kuhlmann and Rzepka show that a defect extension of degree $p$ is independent if and only if its module of relative Kähler differentials is zero [CKR25]. Cutkosky and Mourtada show that, in their setting, the defect of the extensions that come from projections is the only obstruction to the method of projections [CM17]. Cutkosky also shows that local monomialization, a step of his method in characteristic 0, fails in characteristic $p$ [Cut15].
+The sequence $s_n$ approximates $\vartheta$ better and better, but it does not converge in $K$. This is the behaviour that makes local uniformization hard. In residue characteristic 0, the value group and the residue field determine the degree of each such extension. An extension with defect is different. In Example 2.2.3 the degree is $p$, but the value group and the residue field do not change, so they do not see the extension. Kuhlmann divides the Artin-Schreier defect extensions into dependent and independent ones [Kuh10b]. Kuhlmann and Rzepka extend this division to Galois defect extensions of degree $p$ in mixed characteristic [KR23]. Cutkosky, Kuhlmann and Rzepka show that a Galois defect extension of degree $p$ is independent if and only if the module of relative Kähler differentials of its extension of valuation rings is zero [CKR25]. Cutkosky and Mourtada show that, in their setting, the defect of the extensions that come from projections is the only obstruction to the method of projections [CM17]. Cutkosky also shows that local monomialization, a step of his method in characteristic 0, fails in characteristic $p$ [Cut15].
 
 ### Notes and references
 

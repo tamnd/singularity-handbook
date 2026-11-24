@@ -12,7 +12,7 @@ A route is a method of proof that works in dimension at most 3, or in characteri
 
 ### Valuations: local uniformization and patching
 
-Let $K$ be a function field over a field $k$, and let $v$ be a valuation of $K$ that is trivial on $k$. Let $X$ be a variety over $k$ with function field $K$. If the valuation ring of $v$ dominates a local ring $\mathcal{O}_{X,x}$, then $x$ is the *center* of $v$ on $X$. The valuation $v$ has *local uniformization* if there is a variety $X'$ with function field $K$ and a proper birational morphism $X' \to X$ such that the center of $v$ on $X'$ is a regular point.
+Let $K$ be a function field over a field $k$, and let $v$ be a valuation of $K$ that is trivial on $k$. Let $X$ be a variety over $k$ with function field $K$. If the valuation ring of $v$ dominates a local ring $\mathcal{O}_{X,x}$, then $x$ is the *center* of $v$ on $X$. The valuation $v$ has *local uniformization* if, for each such $X$ on which $v$ has a center, there are a variety $X'$ with function field $K$ and a proper birational morphism $X' \to X$ such that the center of $v$ on $X'$ is a regular point.
 
 Zariski's method has two steps [Zar40, Zar44]. First, prove local uniformization for each valuation. Second, the space of all valuations, the Zariski-Riemann space, is quasi-compact. So finitely many of the local solutions are enough, and the second step patches them into one regular variety. Zariski did both steps in characteristic 0 in dimension at most 3. Cossart and Piltant did both steps in characteristic $p$ in dimension 3 (Section 2.1). Volume 3 proves the quasi-compactness (Theorem 1.5.3) and the reduction of the first step to finitely many models (Proposition 4.1.2).
 
@@ -20,13 +20,13 @@ Zariski's method has two steps [Zar40, Zar44]. First, prove local uniformization
 
 Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour` (the statement only)
 
-**Conjecture 2.3.2 (patching in dimension 4).** Let $X$ be a variety of dimension 4. If each valuation of the function field of $X$ has local uniformization, then $X$ has a resolution.
+**Conjecture 2.3.2 (patching in dimension 4).** Let $p$ be a prime, and let $X$ be a variety of dimension 4 over a field of characteristic $p$. If each valuation of the function field of each irreducible component of $X$ has local uniformization, then $X$ has a resolution.
 
 Node: SG0000001J · Lean: `Singularity.resolution_of_localUniformization_four` (the statement only)
 
 The Lean statements use the affine form of local uniformization (Volume 3, Proposition 4.1.6). The Lean statement of Conjecture 2.3.2 is for characteristic $p$. Its hypothesis is local uniformization in each transcendence degree at most 4, because a variety of dimension 4 can have components of smaller dimension. Local uniformization in transcendence degree at most 3 is known (Section 2.1), so this hypothesis is the same as Conjecture 2.3.1.
 
-Conjecture 2.3.2 is open in each characteristic. In characteristic 0 nobody needs it, because the global algorithm of Hironaka gives the resolution. Piltant gives an axiomatic form of Zariski's patching theorem in [Pil]. Thus the route of valuations needs two new theorems in dimension 4, not one.
+Conjecture 2.3.2 is open for each prime $p$. In characteristic 0 the same statement is true, because the global algorithm of Hironaka gives the resolution. But no proof of the patching step in dimension 4 by the method of Zariski is known in characteristic 0 either. Piltant gives an axiomatic form of Zariski's patching theorem in [Pil]. Thus the route of valuations needs two new theorems in dimension 4, not one.
 
 The results that hold in all dimensions are these. A valuation is an *Abhyankar valuation* if the Abhyankar inequality is an equality for it. Volume 3, Chapter 2, proves the inequality and studies the case of equality.
 
