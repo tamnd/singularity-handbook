@@ -65,7 +65,7 @@ In $K[[x]]$ the element $u$ is a unit, and the two inclusions give the theorem. 
 
 **Theorem 3.2.4.** Let $g \ne 0$ be clean with $\operatorname{ord} g \ge p$, and let $\rho = \rho(g)$. Let $g'_c$ be the clean part of $g'$ for the divisor $\Delta'$. Then $g'_c \ne 0$ and $\rho(g'_c) \le \rho$.
 
-Node: SG0000003N · Lean: none yet
+Node: SG0000003N · Lean: `Singularity.logJacobianOrder_cleanPart_le` (for polynomials, over a field $K$ of characteristic $p$)
 
 *Proof.* By part 2 of Theorem 3.1.4, $\Theta(g) \ne 0$. Since $\mathfrak{m} \Theta(g) \subseteq \Theta_0(g)$, also $\Theta_0(g) \ne 0$. The map $\pi$ is injective, so $\Theta'(g') \ne 0$ by Theorem 3.2.3. If $g'_c = 0$, then $g'$ is a $p$-th power, and $\Theta'(g') = \Theta'(0) = 0$ by Lemma 3.1.2. So $g'_c \ne 0$.
 
@@ -86,10 +86,16 @@ $$\rho(g'_c) = \operatorname{ord} W_0 = \operatorname{ord} W - |s| \le \operator
 
 The proof does not use the number of variables, and it does not need the point to be non-translated. It uses only part 1 of the dichotomy, where cleanness is necessary, and the order of the weak transform. For a base of dimension $3$ the theorem is in the thesis of Cossart [Cos87]. The theorem says that $\rho$ is a candidate for the second entry of a resolution invariant. It does not say that $\rho$ goes down. The hard question is what to do at the points where $\rho$ stays the same.
 
+The Lean proof of Theorem 3.2.4 is for $g \in K[x]$ and uses the two inclusions of Theorem 3.2.3 in $K[x]$. It does not use the ideal $W$ or unique factorization in $K[[x]]$. Let $\tau = \operatorname{ord} \Theta_0(g)$, so that $\tau = |r| + \sigma$ in the notation of the proof above. Each element of $\Theta_0(g)$ is divisible by $x^r$ and has order at least $\tau$, so each element of $\pi(\Theta_0(g))$ is divisible by $x_1^\tau x^e$, where $x^e = \prod_{i \in \Delta' \setminus \{1\}} x_i^{r_i}$. The inclusion $x_1^p u \, \Theta'(g') \subseteq \pi(\Theta_0(g))$ then gives that $x^b$ divides each element of $\Theta'(g')$, with $x^b = x_1^{\tau - p} x^e$. Here the factor $u$ cancels because its constant term is not $0$, and a monomial that divides $u \varphi$ divides $\varphi$. The other inclusion gives an element $\varphi$ of $\Theta'(g')$ with $\operatorname{ord} \varphi \le |b| + \rho$, from an element of $\Theta_0(g)$ as in the proof above. Theorem 3.1.4, part 1, applied to $g'_c$ gives $x^{r'}$ with $\Theta'(g'_c) = x^{r'} \widetilde\Theta(G')$. By Lemma 3.1.2, $\Theta'(g'_c) = \Theta'(g')$, so $x^b$ divides each element of $\Theta'(g'_c)$, and part 1 also gives $b \le r'$. So
+$$|r'| + \rho(g'_c) = \operatorname{ord} \Theta'(g'_c) \le \operatorname{ord} \varphi \le |b| + \rho \le |r'| + \rho.$$
+This gives $\rho(g'_c) \le \rho$.
+
 **Corollary 3.2.5.** In the situation of Theorem 3.2.4, let $d$ be the residual order of $g$ and let $d'$ be the residual order of $g'_c$. Then
 $$d' \le \rho(g'_c) + 1 \le \rho + 1 \le d + 1.$$
 
 *Proof.* The first and the last inequalities are part 2 of Theorem 3.1.4, at the new origin and at the old origin. The middle inequality is Theorem 3.2.4. $\square$
+
+Lean: `Singularity.residualOrderAlong_pointChart_le_logJacobianOrder` (the three inequalities) and `Singularity.residualOrderAlong_pointChart_le_add_one` (the inequality $d' \le d + 1$)
 
 For $q = p$, Moh's bound of Theorem 1.4.1 says that the residual order goes up by at most $p^{e-1} = 1$. The corollary gives this bound at each point of the exceptional divisor, and in each chart. It also shows when the residual order goes up. This happens only if $d' = d + 1$, so each inequality is an equality: $\rho$ stays the same, $g$ has type $0$ and $g'_c$ has type $1$.
 
