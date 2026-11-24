@@ -76,7 +76,7 @@ Conversely, assume the formula, and let $f \neq 0$ with $\deg f < m$. Assume tha
 
 **Lemma 3.3.7 (products in low degree).** Let $\varphi$ be a key polynomial for $\mu$. Let $a, b \in K[y]$ with $\deg a < m$ and $\deg b < m$, and write $ab = q\varphi + r$ with $\deg r < m$. Then $\mu(r) = \mu(ab)$ and $\mu(q\varphi) \ge \mu(ab)$.
 
-Lean: `Singularity.KeyPolynomial.map_mul_modByMonic`
+Lean: `Singularity.KeyPolynomial.map_mul_modByMonic` (the first claim; the second claim follows from the first by the ultrametric inequality, because $q\varphi = ab - r$)
 
 *Proof.* We can assume that $a \neq 0$ and $b \neq 0$. Since $\deg(ab) \le 2m - 2$, we have $\deg q < m$, so $r + q\varphi$ is the $\varphi$-expansion of $ab$. By Lemma 3.3.6, $\mu(ab) = \min(\mu(r), \mu(q\varphi))$. If $\mu(q\varphi) < \mu(r)$, then $\mu(ab - q\varphi) = \mu(r) > \mu(ab)$. Thus $ab$ is $\mu$-equivalent to $\varphi q$, and $\varphi$ $\mu$-divides $ab$. Since $\varphi$ is $\mu$-irreducible, it $\mu$-divides $a$ or $b$. This is not possible by minimality, because $a$ and $b$ are nonzero of degree less than $m$. So $\mu(r) \le \mu(q\varphi)$, and $\mu(r) = \mu(ab)$. $\square$
 

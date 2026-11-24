@@ -7,6 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - Volume 3, Section 3.3 has the new subsection "The step of MacLane". The new Lemma 3.3.9 is the inductive step of the chain of part 4 of Theorem 3.3.5, with a complete proof, and the new Lemma 3.3.10 is the first step. The text now says which parts of part 4 are proved and which are not. The text gives the Lean names from tamnd/singularity-lean#75.
+- Volume 3, Section 3.3: the Lean line of Lemma 3.3.7 says that `Singularity.KeyPolynomial.map_mul_modByMonic` proves only the first claim, and it gives the short argument for the second claim.
 
 ## [0.4.6] - 2026-11-24
 
