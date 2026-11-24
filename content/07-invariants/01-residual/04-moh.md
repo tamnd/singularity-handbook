@@ -1,6 +1,6 @@
 ---
 title: The increase of the residual order
-nodes: [SG00000015, SG00000016, SG00000017]
+nodes: [SG00000015, SG00000016, SG00000017, SG00000039]
 sources: [Moh87, HP19a, HP19b, Hau08, Hau10]
 status: drafted
 drafted_by: writer
@@ -51,7 +51,7 @@ The mechanism is visible in the computation. The term $w (x + y)^4$ of $G$ has a
 
 **Theorem 1.4.3 (Hauser and Perlega).** Let $K$ be an algebraically closed field of characteristic $p$. There is a purely inseparable equation $f = z^{p^3} + F(x_1, \dots, x_n)$ and an infinite sequence of point blowups such that the order of the strict transforms of $f$ stays $p^3$ and their residual orders tend to infinity. For $p = 2$ one can take $n = 5$, and for $p \ge 3$ one can take $n = 4$.
 
-Node: SG00000017 · Lean: none yet
+Node: SG00000017 · Lean: none yet (one cycle is certified, Example 1.4.5)
 
 We do not reproduce the proof, which is a long explicit computation [HP19a, Section 4]. We describe the case $p = 2$, with the variables $x, y, u, v, w$. Let $d$ be an even positive integer. The starting equation is
 $$f = z^8 + x^{8a+4} y^{8b+4} u^{8r} w^{8s-d} \bigl(w^d (\lambda + u^{2d+6} Q) + x^{d+1} u^{2d+6} A\bigr),$$
@@ -61,6 +61,29 @@ Theorem 1.4.3 disproves Moh's stability theorem for $e \ge 3$. For $e = 1$ the s
 
 **Remark 1.4.4.** Theorem 1.4.3 is not a counterexample to resolution in characteristic $p$. At several steps of the cycle, a center larger than a point is permissible, and a different sequence of blowups with a larger center need not make the residual order tend to infinity [HP19a, Section 3]. The examples show that, under point blowups in characteristic $p$, the pair (order, residual order) need not decrease in the long run. Thus a proof must choose the centers well, or it must use a secondary invariant that controls the increases.
 
+**Example 1.4.5 (one certified cycle).** Let $K$ be a field of characteristic 2, let $d = 2$, $a = b = r = 0$, $s = 1$, $\lambda = 1$, $A = 1$ and $Q = 0$. Then the starting equation of Theorem 1.4.3 is
+$$f_0 = z^8 + F_0, \qquad F_0 = x^4 y^4 w^6 (w^2 + x^3 u^{10}),$$
+and the divisor is $xyuw = 0$. The equation is clean, and its residual order along the divisor is $2$. The cycle has seven steps and 20 point blowups. In each chart the total transform of $F$ is $x_j^8 F'$, where $x_j$ is the variable of the chart, and $\operatorname{ord} F' \ge 8$. Thus the order of the strict transform stays 8 at each step. The table gives the blowups and the residual order along the new divisor.
+
+| Step | Blowup | Divisor after | Residual order |
+|---|---|---|---|
+| start | | $x, y, u, w$ | 2 |
+| 1 | $x$-chart, $y \mapsto y + 1$, $u \mapsto u + 1$, then $z \mapsto z + xw$ | $x, w$ | 6 |
+| 2 | $x$-chart | $x, w$ | 5 |
+| 3 | $u$-chart | $x, u, w$ | 5 |
+| 4 | $v$-chart | $x, u, v, w$ | 5 |
+| 5 | $w$-chart, $y \mapsto y + 1$, $v \mapsto v + 1$ | $x, u, w$ | 5 |
+| 6 | $u$-chart | $x, u, w$ | 4 |
+| 7 | $y$-chart, 14 times | $x, y, u, w$ | 4 |
+
+Only step 1 needs cleaning. After the translations, $F$ contains the monomial $x^8 w^8$, which is an eighth power, and the coordinate change $z \mapsto z + xw$ removes it. This is the increase from $d = 2$ to $d + 4 = 6$, the largest increase that Theorem 1.4.1 allows. After step 7 the equation is
+$$z^8 + x^{12} y^{2128} u^{84} w^{60} \bigl(w^4 (1 + y^{14} Q') + x^5 y^{14} A'\bigr)$$
+for polynomials $Q'$ and $A'$ with $A'(0) = 1$. This is the starting shape with $d + 2 = 4$ in place of $d$, and with $y$ and $u$ exchanged. In the general statement, the units that come from the translations are put into $A$ and $Q$. In the example they stay as explicit polynomials, so $Q'$ and $A'$ are not $0$ and $1$.
+
+Node: SG00000039 · Lean: `Singularity.Examples.hauserPerlegaCycle`, `Singularity.Examples.cycleF7_shape`
+
+The Lean proof checks each chart equation, each weak transform, each bound on the order and each residual order by computation in $K[x, y, u, v, w]$ over an arbitrary field of characteristic 2. It does not treat the other values of the parameters. It does not prove that the residual order tends to infinity when the cycle is repeated, because the next cycle starts from the shape with $Q' \neq 0$ and $A' \neq 1$, and the Lean proof covers only $Q = 0$ and $A = 1$. Thus Theorem 1.4.3 is still without a Lean proof.
+
 ### Notes and references
 
-Moh's paper is [Moh87]. The counterexample to the stability theorem and the cycles are [HP19a]. Hauser and Perlega characterize the increase of the residual order in [HP19b]. Hauser introduced the term kangaroo point in [Hau08], and [Hau10] surveys the problem. The lab of the project plans to reproduce the cycles of [HP19a] in experiment E1, and to test candidate secondary invariants on them in experiment E2.
+Moh's paper is [Moh87]. The counterexample to the stability theorem and the cycles are [HP19a]. Hauser and Perlega characterize the increase of the residual order in [HP19b]. Hauser introduced the term kangaroo point in [Hau08], and [Hau10] surveys the problem. The Lean file `Singularity/Example/HauserPerlegaCycle.lean` certifies Example 1.4.5. The lab of the project plans to reproduce the cycles of [HP19a] in experiment E1, and to test candidate secondary invariants on them in experiment E2.
