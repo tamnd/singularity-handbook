@@ -9,6 +9,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 3, Section 3.3 proves the first claim of part 3 of Theorem 3.3.5 in the new subsection "The first claim of part 3". The new Lemma 3.3.8 is the criterion for $\mu'$-divisibility. The text gives the Lean names from tamnd/singularity-lean#72.
 - Volume 3, Section 4.1 has the new Proposition 4.1.7, local uniformization in transcendence degree at most 1 in each characteristic, with a proof in the affine form. The text gives the Lean names from tamnd/singularity-lean#73.
 - Volume 0, Section 5.1 gives the new Lean proofs of Volume 3.
+- `EDITION` has the version 0.4.6 and the commit of tamnd/singularity with the records of tamnd/singularity-lean#72 and tamnd/singularity-lean#73.
 
 ## [0.4.5] - 2026-11-24
 
