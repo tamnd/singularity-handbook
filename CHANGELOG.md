@@ -10,6 +10,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- `EDITION` refers to the release v0.2.12 of tamnd/singularity.
 - Section 1.8 has the title "Generic regularity". Sections 1.7, 5.2 and 5.3, the introduction of Chapter 5 and Volume 0, Section 5.1 now say that the openness of the regular locus is proved in Lean over a perfect field, and that the case of an imperfect field is open.
 
 ## [0.2.11] - 2026-11-24
