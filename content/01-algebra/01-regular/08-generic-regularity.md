@@ -1,6 +1,6 @@
 ---
 title: Generic regularity in characteristic zero
-nodes: [SG0000002R, SG0000002S, SG0000002T, SG0000000K]
+nodes: [SG0000002R, SG0000002S, SG0000002T, SG0000002V, SG0000000K]
 sources: [Mat, AM69, Nag62, EGA4-7, Mathlib]
 status: drafted
 drafted_by: writer
@@ -86,13 +86,23 @@ Node: SG0000002T · Lean: `Singularity.Algebra.isOpen_regularLocus_of_charZero`
 
 **Example 1.8.11.** We use the method on the cuspidal cubic $D = k[x, y]/(y^2 - x^3)$ of Example 1.7.8, with $k$ of characteristic $0$. Let $A = k[x]$. Then $D = A[y]$, so we can take $z = y$ and $c = 1$. The minimal polynomial of $y$ is $F = Y^2 - x^3$, and $F'(y) = 2y$. Thus $f = 2y$. Since $2$ is a unit, $D(f) = D(y)$. A prime contains $y$ if and only if it contains $x$, because $y^2 = x^3$. Thus $D(f) = D(x)$, and this is the full regular locus, by Example 1.7.8. If $k$ has characteristic $2$, then $F' = 2Y = 0$ and the method gives nothing. In this case the extension $k(x, y)/k(x)$ is not separable, because $y/x$ is a square root of $x$.
 
+### The regular locus of a scheme
+
+**Theorem 1.8.12.** Let $k$ be a field of characteristic $0$ and let $X$ be a scheme that is locally of finite type over $k$. Then the regular locus of $X$ is open in $X$.
+
+Node: SG0000002V · Lean: `Singularity.regularLocus_isOpen_of_charZero`
+
+*Proof.* Let $x$ be a regular point of $X$, and let $U$ be an affine open set that contains $x$. Let $R = \Gamma(X, U)$. Then $R$ is of finite type over $k$, and $U \cong \operatorname{Spec} R$. For $y \in U$ with prime $\mathfrak{p}_y$ of $R$, the local ring $\mathcal{O}_{X, y}$ is isomorphic to $R_{\mathfrak{p}_y}$. Thus $y$ is a regular point of $X$ if and only if $\mathfrak{p}_y \in \operatorname{Reg}(R)$. By Theorem 1.8.10, $\operatorname{Reg}(R)$ is open, so the set of the regular points of $U$ is open in $U$. Since $U$ is open in $X$, this set is an open neighbourhood of $x$ in the regular locus. $\square$
+
+In Lean, the isomorphism $\mathcal{O}_{X, y} \cong R_{\mathfrak{p}_y}$ is `AlgebraicGeometry.IsAffineOpen.isLocalization_stalk`, and the comparison of the two regular loci is `Singularity.mem_regularLocus_iff_of_isAffineOpen`.
+
 ### Positive characteristic
 
-The proof of Theorem 1.8.8 uses only one property of characteristic $0$: the extension $K/L$ is separable. If $k$ is perfect, the fraction field of $D$ is separably generated over $k$ [Mat, Section 26], and with more care in the normalization lemma one can again get a separable extension $K/L$. Over an imperfect field this can fail, and the proof needs other tools, for example the theory of excellent rings [EGA4-7]. These cases are not in the Lean library. Thus the node SG0000000K, the openness of the regular locus of a variety over an arbitrary field, is still planned. The scheme form of the statement is also not proved.
+The proof of Theorem 1.8.8 uses only one property of characteristic $0$: the extension $K/L$ is separable. If $k$ is perfect, the fraction field of $D$ is separably generated over $k$ [Mat, Section 26], and with more care in the normalization lemma one can again get a separable extension $K/L$. Over an imperfect field this can fail, and the proof needs other tools, for example the theory of excellent rings [EGA4-7]. These cases are not in the Lean library. Thus the node SG0000000K, the openness of the regular locus of a variety over an arbitrary field, is still planned. Theorem 1.8.12 is the case of SG0000000K over a field of characteristic $0$.
 
 ### The Lean proof
 
-The results of this section are in `Singularity/Algebra/Jacobian.lean` and `Singularity/Algebra/GenericRegular.lean`. In Lean, $D$ is a ring with an algebra structure over $A$, and the condition $A \subseteq D$ is the class `FaithfulSMul A D`. The fraction fields are `FractionRing A` and `FractionRing D`, with the algebra structure `FractionRing.liftAlgebra`.
+The results of this section are in `Singularity/Algebra/Jacobian.lean`, `Singularity/Algebra/GenericRegular.lean` and `Singularity/Scheme/RegularLocus.lean`. In Lean, $D$ is a ring with an algebra structure over $A$, and the condition $A \subseteq D$ is the class `FaithfulSMul A D`. The fraction fields are `FractionRing A` and `FractionRing D`, with the algebra structure `FractionRing.liftAlgebra`.
 
 The proof of Theorem 1.8.8 uses these Mathlib results: `Field.exists_primitive_element` for the primitive element, `Ideal.under_ne_bot_of_algebraic_mem` for the element $a$ of Lemma 1.8.5, `IsLocalization.integerNormalization_spec` to clear the denominators in Lemma 1.8.6, `minpoly.isIntegrallyClosed_eq_field_fractions` for Lemma 1.8.7 and `minpoly.equivAdjoin` for the isomorphism $A[X]/(F) \cong A[z]$. Theorem 1.8.9 uses `exists_finite_inj_algHom_of_fg` for the normalization lemma and `MvPolynomial.isRegularRing_of_isRegularRing` for the regularity of $A$. The derivation $d/dX$ is `Polynomial.derivative'`. All the theorems of this section use only the three standard axioms of Lean.
 

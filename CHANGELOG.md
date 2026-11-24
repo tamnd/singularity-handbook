@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 1, Section 1.8, Theorem 1.8.12: the regular locus of a scheme that is locally of finite type over a field of characteristic $0$ is open.
+
 ## [0.2.9] - 2026-11-24
 
 ### Added
