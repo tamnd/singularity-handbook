@@ -54,7 +54,7 @@ and all these numbers are equal. So $\bar{R}$ is regular of dimension $d - 1$. $
 
 The hypothesis $x \notin \mathfrak{m}^2$ is necessary. If $x \in \mathfrak{m}^2$ and $x \ne 0$, then $\operatorname{edim} R/(x) = d$ by Lemma 1.1.5. The dimension of $R/(x)$ is $d - 1$, because $R$ is a domain (Theorem 1.3.3) and so $x$ is not a zero divisor [AM69, Corollary 11.18]. Thus $R/(x)$ is not regular. Example 1.2.4 is this case, with $R = k[x, y]_{(x,y)}$ and the element $y^2 - x^3$.
 
-Proposition 1.2.6 is [Stacks, Tag 00NQ]. A repeated application gives the following corollary. We give a direct proof.
+A repeated application of Proposition 1.2.6 gives the following corollary. We give a direct proof. The corollary is [Stacks, Tag 00NQ]. Proposition 1.2.6 also follows from that tag, because by Lemma 1.1.1 each $x \in \mathfrak{m} \setminus \mathfrak{m}^2$ is a member of a minimal set of generators of $\mathfrak{m}$.
 
 **Corollary 1.2.7 (regular systems of parameters).** Let $(R, \mathfrak{m})$ be a regular local ring of dimension $d$, and let $x_1, \dots, x_d$ generate $\mathfrak{m}$. Then for each $0 \le i \le d$ the ring $R_i = R/(x_1, \dots, x_i)$ is a regular local ring of dimension $d - i$. In particular, $R_d$ is the residue field $\kappa$.
 

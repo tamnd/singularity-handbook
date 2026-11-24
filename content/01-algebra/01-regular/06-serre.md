@@ -28,7 +28,7 @@ Thus each $R$-linear map $g \colon K \to \kappa$ extends to a map $g' \colon F \
 
 Let $n \ge 1$, and assume the result for $n - 1$. Take a presentation $0 \to K \to F \to M \to 0$. Since $F$ is free, $\operatorname{Ext}^j_R(F, \kappa) = 0$ for $j \ge 1$, and the long exact sequence gives an isomorphism $\operatorname{Ext}^n_R(K, \kappa) \cong \operatorname{Ext}^{n+1}_R(M, \kappa)$. Thus $\operatorname{Ext}^n_R(K, \kappa) = 0$, and by the induction hypothesis $\operatorname{pd}_R K \le n - 1$. The presentation then gives $\operatorname{pd}_R M \le n$. $\square$
 
-Lemma 1.6.1 is [Mat, Lemma 19.1], where it is stated with Tor. Mathlib has the same criterion with $\operatorname{Ext}^{n+1}_R(M, N) = 0$ for all finitely generated $N$. The point of the lemma is that one test module, the residue field, is sufficient.
+Lemma 1.6.1 is in [Mat, Section 19], where it is stated with Tor. Mathlib has the same criterion with $\operatorname{Ext}^{n+1}_R(M, N) = 0$ for all finitely generated $N$. The point of the lemma is that one test module, the residue field, is sufficient.
 
 ### Regular local rings have finite global dimension
 

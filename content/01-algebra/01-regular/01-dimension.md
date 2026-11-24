@@ -30,7 +30,7 @@ The main theorem of the dimension theory of Noetherian local rings compares $\di
 
 Lean: none yet
 
-We do not prove this theorem here. The proof compares $\dim R$ and $\delta(R)$ with the degree of the Hilbert-Samuel polynomial of $R$. See [AM69, Theorem 11.14] or [Mat, Theorem 13.4]. Chapter 2 of this volume treats the Hilbert-Samuel polynomial. Mathlib has the two inequalities that we use below, and we give their Lean names.
+We do not prove this theorem here. The proof compares $\dim R$ and $\delta(R)$ with the degree of the Hilbert-Samuel polynomial of $R$. See [AM69, Theorem 11.14] or [Mat, Theorem 13.4]. Chapter 3 of this volume treats the Hilbert-Samuel polynomial. Mathlib has the two inequalities that we use below, and we give their Lean names.
 
 **Corollary 1.1.3.** Let $(R, \mathfrak{m}, \kappa)$ be a Noetherian local ring. Then $\dim R \le \mu(\mathfrak{m}) = \operatorname{edim} R$.
 
@@ -61,7 +61,7 @@ Lean: `Singularity.Algebra.spanFinrank_maximalIdeal_quotient_add_one_le`, `Singu
 $$\bar{\mathfrak{m}}/\bar{\mathfrak{m}}^2 \cong \mathfrak{m}/(\mathfrak{m}^2 + (x)).$$
 This is the quotient of the vector space $\mathfrak{m}/\mathfrak{m}^2$ by the subspace that the class $\bar{x}$ of $x$ spans. That subspace has dimension 1 if $\bar{x} \ne 0$, that is, if $x \notin \mathfrak{m}^2$, and dimension 0 otherwise. $\square$
 
-The Lean proof does not use the cotangent spaces. It proves the two inequalities $\mu(\bar{\mathfrak{m}}) + 1 \le \mu(\mathfrak{m})$ for $x \in \mathfrak{m} \setminus \mathfrak{m}^2$ and $\mu(\mathfrak{m}) \le \mu(\bar{\mathfrak{m}}) + 1$ for each $x \in \mathfrak{m}$ with sets of generators. For the first inequality, write $\mathfrak{m} = (s_1, \dots, s_n)$ with $n = \mu(\mathfrak{m})$, and $x = \sum f_i s_i$. Not all $f_i$ are in $\mathfrak{m}$, since $x \notin \mathfrak{m}^2$. If $f_{i_0}$ is a unit, then $x$ can replace $s_{i_0}$, and the images of the other $n - 1$ elements generate $\bar{\mathfrak{m}}$. For the second inequality, lift a set of generators of $\bar{\mathfrak{m}}$ to $\mathfrak{m}$ and add $x$. With Lemma 1.1.1, the two inequalities are Lemma 1.1.5.
+The Lean proof does not use the cotangent spaces. It proves the two inequalities $\mu(\bar{\mathfrak{m}}) + 1 \le \mu(\mathfrak{m})$ for $x \in \mathfrak{m} \setminus \mathfrak{m}^2$ and $\mu(\mathfrak{m}) \le \mu(\bar{\mathfrak{m}}) + 1$ for each $x \in \mathfrak{m}$ with sets of generators. For the first inequality, write $\mathfrak{m} = (s_1, \dots, s_n)$ with $n = \mu(\mathfrak{m})$, and $x = \sum f_i s_i$. Not all $f_i$ are in $\mathfrak{m}$, since $x \notin \mathfrak{m}^2$. If $f_{i_0}$ is a unit, then $x$ can replace $s_{i_0}$, and the images of the other $n - 1$ elements generate $\bar{\mathfrak{m}}$. For the second inequality, lift a set of generators of $\bar{\mathfrak{m}}$ to $\mathfrak{m}$ and add $x$. Together, the two inequalities give the case $x \notin \mathfrak{m}^2$ of Lemma 1.1.5. For $x \in \mathfrak{m}^2$, the Lean result `Singularity.Algebra.spanFinrank_maximalIdeal_le_of_le_sq`, with $I = (x)$, gives $\mu(\mathfrak{m}) \le \mu(\bar{\mathfrak{m}})$. The reverse inequality holds because the images of a set of generators of $\mathfrak{m}$ generate $\bar{\mathfrak{m}}$.
 
 ### The Lean proof
 

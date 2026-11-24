@@ -4,4 +4,4 @@ A resolution must make the singularities of a variety better in a precise sense,
 
 Section 3.1 defines the Hilbert-Samuel function and proves its basic laws. The main result is that the function has finite values when the ideal contains a power of a maximal ideal. Section 3.2 defines the order of an element and proves its laws, with the intersection theorem of Krull.
 
-Section 3.3 proves the theorem of Hilbert and Serre on graded modules, and it deduces that the Hilbert-Samuel function is a polynomial in $n$ for large $n$. The Samuel multiplicity is the normalized leading coefficient of this polynomial. Section 3.3 defines it and proves its first laws. The value $e(R) = 1$ for a regular local ring is proved there only in dimension $0$ and $1$ in Lean.
+Section 3.3 proves the theorem of Hilbert and Serre on graded modules, and it deduces that the Hilbert-Samuel function is a polynomial in $n$ for large $n$. The Samuel multiplicity is the normalized leading coefficient of this polynomial. Section 3.3 defines it and proves its first laws. The value $e(R) = 1$ for a regular local ring is proved there in each dimension, with a Lean proof (Theorem 3.3.13).

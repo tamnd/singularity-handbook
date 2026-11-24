@@ -135,7 +135,7 @@ Node: SG00000036 · Lean: `Singularity.regularLocus_isOpen_of_perfectField`, `Si
 
 *Proof.* The proofs of Theorems 1.8.10 and 1.8.12 apply with no change, with Theorem 1.8.16 in place of Theorem 1.8.9. $\square$
 
-A field of characteristic $0$ is perfect, so Theorem 1.8.17 contains Theorems 1.8.10 and 1.8.12. In the Lean library, `Singularity.regularLocus_isOpen_of_charZero` is now a corollary of `Singularity.regularLocus_isOpen_of_perfectField`.
+A field of characteristic $0$ is perfect, so Theorem 1.8.17 contains Theorems 1.8.10 and 1.8.12. In the Lean library, `Singularity.regularLocus_isOpen_of_charZero` and `Singularity.regularLocus_isOpen_of_perfectField` are now corollaries of `Singularity.regularLocus_isOpen_of_field`, the case of an arbitrary field (Theorem 1.9.5).
 
 **Remark 1.8.18 (imperfect fields).** Let $k$ be an imperfect field of characteristic $p$, and let $t \in k$ have no $p$-th root in $k$. The ring $D = k[x]/(x^p - t)$ is a field, so it is regular. But the extension $D/k$ is not separable, and the derivative of $x^p - t$ is $0$. So the method of this section gives nothing for $D$, even though $D$ is regular. Example 6.2.7 gives a regular curve over such a field that is not smooth. The regular locus of an algebra of finite type over an imperfect field is still open, because such an algebra is excellent [EGA4-7, Section 7.8], [Mat, Section 32]. Section 1.9 gives a proof that does not use the theory of excellent rings. It uses the descent of regularity along flat local homomorphisms [Mat, Theorem 23.7] and a finite purely inseparable extension of $k$, and it is in the Lean library.
 
