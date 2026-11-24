@@ -1,0 +1,3 @@
+# The theorems of Hironaka
+
+This chapter states the main theorems of resolution in characteristic 0 and shows how they depend on each other. Section 1.1 states resolution, strong resolution, embedded resolution and the four forms of principalization of ideal sheaves, and it explains what it means for a resolution to be functorial. Section 1.2 proves that principalization implies resolution, which is the route of [Kol07, Chapter 3]: the rest of the volume proves principalization. Section 1.3 computes three examples by hand: the curves, where normalization suffices, the cusp, which needs three blowups for an embedded resolution, and the Whitney umbrella, whose singular locus is a line.

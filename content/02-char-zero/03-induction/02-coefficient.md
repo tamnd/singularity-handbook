@@ -1,0 +1,117 @@
+---
+title: The coefficient ideal
+nodes: []
+sources: [Kol07, Vil89, EH02, Wlo05, Mat]
+status: drafted
+drafted_by: writer
+reviewed_by: []
+---
+## The coefficient ideal
+
+Theorem 3.1.3 describes the points of order at least $m$ on $S_i$ by $m$ marked ideals with different marks. We now pack them into one marked ideal on $S$. Then we prove the going-down and going-up theorem, and we discuss the dependence on the choice of the hypersurface.
+
+### Definition and first properties
+
+**Definition 3.2.1 (coefficient ideal).** Let $(I, m)$ be a marked ideal with $m \ge 1$. The *coefficient ideal* of $(I, m)$ is the marked ideal $(C(I), m!)$ with
+$$C(I) = \sum_{j=0}^{m-1} \big( D^j(I) \big)^{m! / (m - j)}.$$
+For a smooth hypersurface $S$, we write $C_S(I) = C(I)|_S$, with the mark $m!$.
+
+The exponents make all the summands have the same expected order: if $D^j(I)$ has order $m - j$, then its power has order $m!$.
+
+**Lemma 3.2.2.** Let $N \ge 1$, let $B_1, \dots, B_t$ be ideal sheaves, and let $c_1, \dots, c_t \ge 1$ be integers that divide $N$. Let $B = \sum_j B_j^{N / c_j}$.
+
+1. At each closed point $x$, $\operatorname{ord}_x B \ge N$ if and only if $\operatorname{ord}_x B_j \ge c_j$ for all $j$. So $\operatorname{cosupp}(B, N) = \bigcap_j \operatorname{cosupp}(B_j, c_j)$.
+2. Let $\pi$ be the blowup of a smooth $Z \subseteq \operatorname{cosupp}(B, N)$, and let $B_j'$ be the transform of $(B_j, c_j)$. Then the transform of $(B, N)$ is $\sum_j (B_j')^{N / c_j}$.
+
+Lean: none yet
+
+*Proof.* (1) The graded ring of $\hat{\mathcal{O}}_{X, x}$ for the maximal ideal is a polynomial ring, so it has no zero divisors. Hence $\operatorname{ord}_x (fg) = \operatorname{ord}_x f + \operatorname{ord}_x g$, and $\operatorname{ord}_x (A^e) = e \operatorname{ord}_x A$ for each ideal $A$. The order of a sum of ideals is the minimum of the orders. So $\operatorname{ord}_x B = \min_j (N / c_j) \operatorname{ord}_x B_j$, and this is at least $N$ if and only if $\operatorname{ord}_x B_j \ge c_j$ for all $j$. (2) By (1), applied at the points of $Z$, $Z \subseteq \operatorname{cosupp}(B_j, c_j)$ for all $j$. Now apply Lemma 2.2.4 (1) and (2). $\square$
+
+**Proposition 3.2.3 (tuning by the coefficient ideal).** Let $(I, m)$ be a marked ideal with $m \ge 1$. A sequence of blowups with smooth centers is a blowup sequence of order at least $m$ for $(I, m)$ if and only if it is a blowup sequence of order at least $m!$ for $(C(I), m!)$. If this holds, then $\operatorname{cosupp}(I_i, m) = \operatorname{cosupp}(C_i, m!)$ for each $i$, where $C_i$ is the $i$th transform of $(C(I), m!)$.
+
+Lean: none yet
+
+*Proof.* Let $J^{(j)}_i$ be as in Theorem 2.2.7. We show by induction on $i$ that, if the first $i$ blowups are of order at least $m$ for $(I, m)$, then $C_i = \sum_j (J^{(j)}_i)^{m!/(m-j)}$ and $\operatorname{cosupp}(C_i, m!) = \operatorname{cosupp}(I_i, m)$. The first claim follows from Lemma 3.2.2 (2), applied $i$ times. By Lemma 3.2.2 (1), $\operatorname{cosupp}(C_i, m!) = \bigcap_j \operatorname{cosupp}(J^{(j)}_i, m - j)$. Since $J^{(0)}_i = I_i$, this set lies in $\operatorname{cosupp}(I_i, m)$. Conversely, at a point of $\operatorname{cosupp}(I_i, m)$ the ideal $D^j(I_i)$ has order at least $m - j$ by Lemma 2.1.4, and $J^{(j)}_i \subseteq D^j(I_i)$ by Theorem 2.2.7. So the two cosupports are equal, and the center $Z_i$ is allowed for one marked ideal if and only if it is allowed for the other. $\square$
+
+The point of the proposition is not the statement on $X$, which is easy, but the fact that $C(I)$ remembers the derivatives. The restriction of $C(I)$ to a hypersurface sees the derivatives in the normal direction.
+
+### Going down and going up
+
+**Theorem 3.2.4 (going down and going up).** Let $(I, m)$ be a marked ideal with $m \ge 1$, and let $S \subseteq X$ be a smooth hypersurface such that no irreducible component of $S$ lies in $\operatorname{cosupp}(I, m)$. Consider a sequence of blowups $X_r \to \dots \to X_0 = X$ with smooth centers $Z_i \subseteq S_i$, where $S_{i+1}$ is the birational transform of $S_i$, and the induced sequence $S_r \to \dots \to S_0 = S$. Then:
+
+1. the sequence on $X$ is a blowup sequence of order at least $m$ for $(I, m)$ if and only if the sequence on $S$ is a blowup sequence of order at least $m!$ for $(C_S(I), m!)$;
+2. if this holds, then each $Z_i$ has codimension at least 2 in $X_i$, no irreducible component of $S_i$ lies in $\operatorname{cosupp}(I_i, m)$, and
+$$S_i \cap \operatorname{cosupp}(I_i, m) = \operatorname{cosupp}(C_{S, i}, m!),$$
+where $C_{S, i}$ is the $i$th transform of $(C_S(I), m!)$ on $S$.
+
+Lean: none yet
+
+*Proof.* We argue by induction on the length. For $i = 0$, part (2) except the displayed equality is the hypothesis: a center in $S \cap \operatorname{cosupp}(I, m)$ contains no component of $S$, so it has codimension at least 2 in $X$. Assume that the first $i$ blowups are of order at least $m$ for $(I, m)$, equivalently of order at least $m!$ for $(C_S(I), m!)$, and that (2) holds up to $i$. Let $T^{(j)}_i$ be as in Theorem 3.1.3. By Theorem 3.1.3 (1), the $T^{(j)}_i$ are the transforms of the marked ideals $(D^j(I)|_S, m - j)$ on $S$. Restriction commutes with sums and products, so $C_S(I) = \sum_j (D^j(I)|_S)^{m!/(m-j)}$, and Lemma 3.2.2 (2) on $S$ gives $C_{S, i} = \sum_j (T^{(j)}_i)^{m!/(m-j)}$. By Lemma 3.2.2 (1) and Theorem 3.1.3 (2),
+$$\operatorname{cosupp}(C_{S, i}, m!) = \bigcap_{j=0}^{m-1} \operatorname{cosupp}(T^{(j)}_i, m - j) = S_i \cap \operatorname{cosupp}(I_i, m).$$
+Since $Z_i \subseteq S_i$, the center $Z_i$ lies in $\operatorname{cosupp}(I_i, m)$ if and only if it lies in $\operatorname{cosupp}(C_{S, i}, m!)$. This gives (1) for the first $i + 1$ blowups.
+
+It remains to see that no component of $S_{i+1}$ lies in $\operatorname{cosupp}(I_{i+1}, m)$; then $Z_{i+1}$ contains no component of $S_{i+1}$, so it has codimension at least 2 in $X_{i+1}$, and Theorem 3.1.3 applies to the next step. Let $S^\circ$ be a component of $S_{i+1}$. By the displayed equality for $i + 1$, it lies in $\operatorname{cosupp}(I_{i+1}, m)$ if and only if $C_{S, i+1}$ has order at least $m! \ge 1$ at all closed points of $S^\circ$. If $C_{S, i+1}$ is not zero on $S^\circ$, then its zero set meets $S^\circ$ in a proper closed subset, and outside this subset the order is 0. So this happens only if $C_{S, i+1}$ vanishes on $S^\circ$. The blowup $S_{i+1} \to S$ is birational on each component, and the transform of a marked ideal is an invertible sheaf times its pullback, so this happens only if $C_S(I)$ vanishes on the image component of $S$. That would mean that this component lies in $\operatorname{cosupp}(C_S(I), m!) = S \cap \operatorname{cosupp}(I, m)$, which is excluded. $\square$
+
+So, if $S$ is a hypersurface of maximal contact, order reduction on $X$ is the same as order reduction on $S$.
+
+**Corollary 3.2.5.** Let $m = \operatorname{max\text{-}ord} I \ge 1$, and let $H$ be a hypersurface of maximal contact for $I$ such that no component of $H$ lies in $\operatorname{cosupp}(I, m)$. Then the blowup sequences of order $m$ for $(I, m)$ are exactly the sequences with centers $Z_i \subseteq H_i$ that are blowup sequences of order at least $m!$ for $(C_H(I), m!)$ on $H$. For them, $\operatorname{cosupp}(I_i, m) = \operatorname{cosupp}(C_{H, i}, m!)$. In particular, $(I_r, m)$ has empty cosupport if and only if $(C_{H, r}, m!)$ has empty cosupport.
+
+Lean: none yet
+
+*Proof.* By Theorem 2.3.3 (2), the centers of each blowup sequence of order $m$ lie in the transforms $H_i$, and $\operatorname{cosupp}(I_i, m) \subseteq H_i$. Now apply Theorem 3.2.4 with $S = H$. $\square$
+
+**Example 3.2.6 (the Whitney umbrella).** Let $I = (x^2 - y^2 z)$ on $\mathbb{A}^3$, as in Example 1.3.3. The derivatives are $2x$, $-2yz$ and $-y^2$, so
+$$D(I) = (x, \; yz, \; y^2), \qquad D^2(I) = \mathcal{O}.$$
+So $m = \operatorname{max\text{-}ord} I = 2$, the locus $\operatorname{cosupp}(I, 2) = V(D(I))$ is the line $L = (x = y = 0)$, and $H = (x = 0)$ is a hypersurface of maximal contact. It is irreducible and it is not contained in $L$. The coefficient ideal is $C(I) = I + D(I)^2$, and in the coordinates $y, z$ of $H$,
+$$C_H(I) = (y^2 z) + (yz, \; y^2)^2 = (y^2 z, \; y^4) = y^2 \cdot (z, \; y^2).$$
+At a point of $H$ with $y \ne 0$ this ideal is the unit ideal. At a point of $L$ other than the origin it has order 2, and at the origin it has order 3. So $\operatorname{cosupp}(C_H(I), 2) = L$, as Corollary 3.2.5 predicts. The line $L$ is a smooth center of codimension 1 in $H$ and of codimension 2 in $\mathbb{A}^3$. Its blowup is the identity on $H$, and the transform of $(C_H(I), 2)$ is
+$$\mathcal{O}_H(2L) \cdot C_H(I) = (z, \; y^2),$$
+which has order at most 1 everywhere. So its cosupport for the mark 2 is empty, and by Corollary 3.2.5 the blowup of $L$ is a blowup sequence of order 2 with $\operatorname{cosupp}(I_1, 2) = \emptyset$. We check this on $X$: in the chart $x = x_1 y$ the transform of $(I, 2)$ is $(x_1^2 - z)$, and in the chart $y = y_1 x$ it is $(1 - y_1^2 z)$. Both have order at most 1. This is the computation of Example 1.3.3.
+
+Lean: none yet
+
+### The choice of the hypersurface
+
+Hypersurfaces of maximal contact are local, and they are not unique. For the induction to give a global and functorial result, the construction on $H$ must not depend on $H$. The coefficient ideals on two hypersurfaces of maximal contact are isomorphic in many examples.
+
+**Example 3.2.7.** Let $I = (xy - z^n)$ on $\mathbb{A}^3$ with $n \ge 2$. By Example 2.3.4, $m = 2$, $D(I) = (x, y, z^{n-1})$, and $H = (x = 0)$ and $H' = (x = y)$ are hypersurfaces of maximal contact. We use the coordinates $y, z$ on both. On $H$,
+$$C_H(I) = (z^n) + (y, \; z^{n-1})^2 = (y^2, \; y z^{n-1}, \; z^n),$$
+because $2n - 2 \ge n$. On $H'$, the restriction of $I$ is $(y^2 - z^n)$ and the restriction of $D(I)$ is $(y, z^{n-1})$, so
+$$C_{H'}(I) = (y^2 - z^n) + (y, \; z^{n-1})^2 = (y^2, \; y z^{n-1}, \; z^n).$$
+The restrictions of $I$ to $H$ and $H'$ are not isomorphic, since $(z^n)$ has order $n$ along a line and $(y^2 - z^n)$ has an isolated point of order 2. The coefficient ideals are the same.
+
+Lean: none yet
+
+In general the coefficient ideals on two hypersurfaces of maximal contact need not be identified by an automorphism. Kollár, following Włodarczyk [Wlo05], solves this by replacing $I$ by an ideal with an extra invariance property.
+
+**Definition 3.2.8 (MC-invariant ideals).** Let $m = \operatorname{max\text{-}ord} I \ge 1$. The ideal $I$ is *MC-invariant* if $MC(I) \cdot D(I) \subseteq I$.
+
+**Proposition 3.2.9 (automorphisms close to the identity).** Let $K$ be a field of characteristic 0, let $R = K[[x_1, \dots, x_n]]$ with maximal ideal $\mathfrak{m}$, and let $I$ and $B \subseteq \mathfrak{m}$ be ideals of $R$ with $B \cdot D(I) \subseteq I$. Let $\varphi$ be a $K$-algebra automorphism of $R$ with $\varphi(x_i) - x_i \in B$ for all $i$. Then $\varphi(I) = I$, and $\varphi(r) - r \in B$ for every $r \in R$.
+
+Lean: none yet
+
+*Proof.* First, $B \cdot D^{a+1}(I) \subseteq D^a(I)$ for all $a \ge 0$. For $a = 0$ this is the hypothesis. It suffices to show that the hypothesis passes from an ideal $J$ to $D(J)$. Let $b \in B$, $h \in D(J)$ and let $\partial$ be a partial derivative. Then
+$$b \, \partial h = \partial(bh) - (\partial b) \, h.$$
+Here $(\partial b) h \in D(J)$, and $bh \in B \cdot D(J) \subseteq J$, so $\partial(bh) \in D(J)$. Hence $B \cdot D(D(J)) \subseteq D(J)$. By induction, $B^j \cdot D^j(I) \subseteq B^{j-1} \cdot D^{j-1}(I) \subseteq \dots \subseteq I$ for all $j$.
+
+Let $b_i = \varphi(x_i) - x_i \in B$. Since $\varphi$ is a $K$-algebra homomorphism of complete local rings, it is continuous, and $\varphi(f) = f(x_1 + b_1, \dots, x_n + b_n)$. In characteristic 0 the Taylor formula holds in $R$:
+$$\varphi(f) = \sum_{\alpha} \frac{1}{\alpha!} \, \partial^\alpha f \cdot b^\alpha,$$
+where the series converges in the $\mathfrak{m}$-adic topology, because $b^\alpha \in \mathfrak{m}^{|\alpha|}$. For $f \in I$ the term of index $\alpha$ lies in $B^{|\alpha|} D^{|\alpha|}(I) \subseteq I$. Each ideal $A$ of the Noetherian local ring $R$ is closed, because $\bigcap_s (A + \mathfrak{m}^s) = A$ by the Krull intersection theorem for $R/A$ [Mat, Section 8]. So $\varphi(f) \in I$, and $\varphi(I) \subseteq I$. Then $I \subseteq \varphi^{-1}(I) \subseteq \varphi^{-2}(I) \subseteq \dots$ is an ascending chain of ideals, so $\varphi^{-k}(I) = \varphi^{-k-1}(I)$ for some $k$, and applying $\varphi^{k+1}$ gives $\varphi(I) = I$. For the last claim, apply the Taylor formula to $r$: every term with $\alpha \ne 0$ lies in $B$, and $B$ is closed. $\square$
+
+**Corollary 3.2.10 (formal uniqueness of maximal contact).** Let $I$ be MC-invariant with $m = \operatorname{max\text{-}ord} I$, let $E$ be a divisor with simple normal crossings, and let $x \in \operatorname{cosupp}(I, m)$ be a closed point. Let $H$ and $H'$ be hypersurfaces of maximal contact for $I$ near $x$ such that $H + E$ and $H' + E$ have simple normal crossings at $x$. Then there is an automorphism $\varphi$ of $\hat{\mathcal{O}}_{X, x}$ such that $\varphi(I \hat{\mathcal{O}}) = I \hat{\mathcal{O}}$, $\varphi$ maps the ideal of $\hat{H}$ to the ideal of $\hat{H}'$, it maps the ideal of each component of $\hat{E}$ to itself, and $\varphi(r) - r \in MC(I) \hat{\mathcal{O}}$ for all $r$.
+
+Lean: none yet
+
+*Proof.* Let $h, h' \in MC(I)$ be local equations of $H$ and $H'$, and let $e_2, \dots, e_t$ be local equations of the components of $E$ through $x$. Since $H + E$ and $H' + E$ have simple normal crossings, the classes of $h, e_2, \dots, e_t$ in $\mathfrak{m}_x / \mathfrak{m}_x^2$ are linearly independent, and so are those of $h', e_2, \dots, e_t$. The residue field $K = k(x)$ is infinite, so we can choose $x_{t+1}, \dots, x_n$ whose classes complete both families to a basis. By Lemma 2.1.1, $\hat{\mathcal{O}}_{X, x} = K[[h, e_2, \dots, e_t, x_{t+1}, \dots, x_n]]$, and also with $h'$ in place of $h$. Let $\varphi$ be the automorphism with $\varphi(h) = h'$ that fixes $K$ and the other coordinates. By the chain rule, the partial derivatives for the coordinates $h, e_2, \dots, x_n$ are combinations of those for $x_1, \dots, x_n$, and conversely, so $D(I)\hat{\mathcal{O}}$ is generated by $I \hat{\mathcal{O}}$ and its partial derivatives in either system. Then $\varphi(h) - h = h' - h \in MC(I)$, and the other coordinates are fixed. The ideal $MC(I)$ has order 1 at $x$, so it lies in $\mathfrak{m}_x$. Since $I$ is MC-invariant, $MC(I) \hat{\mathcal{O}} \cdot D(I \hat{\mathcal{O}}) \subseteq I \hat{\mathcal{O}}$. Proposition 3.2.9 with $B = MC(I) \hat{\mathcal{O}}$ gives the claims. $\square$
+
+The last property says that $\varphi$ is the identity on $\hat{\mathcal{O}} / MC(I) \hat{\mathcal{O}}$. Since $\operatorname{cosupp}(I, m) = V(MC(I))$ by Corollary 2.1.5, the automorphism does not move the points of order $m$. So a construction that is invariant under isomorphisms gives the same centers when it starts from $H$ or from $H'$.
+
+**Remark 3.2.11 (tuning and uniqueness in [Kol07]).** We state without proof the results of [Kol07, Chapter 3] that make this work. For $m = \operatorname{max\text{-}ord} I$, Kollár defines
+$$W_s(I) = \sum \Big\{ \prod_{j=0}^{m} D^j(I)^{c_j} \;:\; \sum_j (m - j) \, c_j \ge s \Big\}.$$
+For suitable $s$, the ideal $W_s(I)$ is MC-invariant, it has maximal order $s$, its maximal contact ideal is $MC(I)$, and the blowup sequences of order at least $m$ for $(I, m)$ are the blowup sequences of order at least $s$ for $(W_s(I), s)$ (Section "Tuning of ideals"). The formal automorphism of Corollary 3.2.10 can be replaced by two étale maps $U \rightrightarrows X$, and then two blowup sequences of order $m$ for an MC-invariant ideal that are equivalent under these maps are equal (Section "Uniqueness of maximal contact"). Section 3.3 uses these results only in the proof of Theorem 3.3.6.
+
+Lean: none yet
+
+### Notes and references
+
+The coefficient ideal $C(I)$ is the one of Villamayor [Vil89] and Encinas-Hauser [EH02]. Kollár discusses it in [Kol07, Chapter 3] and prefers the ideals $W_s(I)$, which are both D-balanced and MC-invariant. Theorem 3.2.4 replaces his going-up theorem for D-balanced ideals. Proposition 3.2.9 and Corollary 3.2.10 are the formal part of his uniqueness theorem, whose idea he attributes to Włodarczyk [Wlo05].

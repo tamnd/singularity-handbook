@@ -1,0 +1,59 @@
+---
+title: What the project checks
+nodes: [SG0000001P, SG00000004, SG0000000V, SG0000002C, SG0000003A, SG00000018, SG0000001Q]
+sources: [HirLean, Kol07, ATW24]
+status: drafted
+drafted_by: writer
+reviewed_by: []
+---
+## What the project checks
+
+A Lean proof shows that a Lean statement is true. This section says which Lean statements the project proves for this volume, what the build checks about them, and which results of the volume have no Lean statement.
+
+### The build and the axioms
+
+The package `SingularityBase` builds in its own workflow, because the base is a large build. When the package builds, the Lean kernel checks each proof in it and each proof that it imports, also the proof of Main Theorem I in the base. The project then records each declaration of the package with the axioms that it uses, in the file `records/base-charzero.json` of the map. The record of the edition lists 80 declarations. Each of them uses only the three standard axioms `propext`, `Quot.sound` and `Classical.choice`. In particular no proof that `Singularity.resolutionInDim_charZero` depends on, in the library or in the base, uses `sorry`, since a proof with `sorry` uses the axiom `sorryAx`. Volume 0, Chapter 1, explains how a reader can check these claims.
+
+The package also has a challenge for the tool `lake comparator`, in the folder `base/comparator`. The challenge states `Singularity.resolutionInDim_charZero` again with `sorry`. The tool checks that the theorem of the package has the same statement as the challenge, and that its proof uses only the three axioms above. Thus a reader who trusts the definitions in the challenge file does not need to read the proof.
+
+### What a black box means
+
+The project uses the statement of Main Theorem I in the base, and not its proof. The proof is checked by Lean, so the statement is true in Lean. The statement uses the definitions of the base: varieties, ideal sheaves, blowups and the singular locus. The project must check that these definitions mean what the text says. Volume 9, Section 1.2, does this for the conclusion: it proves that the morphism of the base satisfies our Definition 4.1.1. The proof of `Singularity.Base.regularLocus_eq_compl_singularLocus` shows that the regular locus of the project is the complement of the singular locus of the base. The fidelity checks of Volume 0, Section 2.5, test the definition `Singularity.IsResolution` on examples.
+
+The project does not check that the proof in the base follows Hironaka's paper or the proof of this volume. The base proves the theorem in its own way [HirLean]. The mathematics of Chapters 2 and 3 is a separate proof of the same theorem, in a stronger form, and Lean does not check it.
+
+### The results of this volume in the map
+
+The table lists the results of this volume that have a node of the map. The status of each node comes from the build, as in Volume 0, Section 1.2.
+
+| Result | Node | Lean |
+|---|---|---|
+| Theorem 1.1.1, Theorem 4.1.4 | SG0000001P, SG0000000D | `Singularity.ResolutionInDim`, `Singularity.resolutionInDim_charZero` |
+| Definition 1.1.2 | SG0000000V | `Singularity.IsSncDivisor` (definition) |
+| Theorem 1.3.1 | SG0000002C | `Singularity.Curves.integralResolutionInDim_one` |
+| Example 2.4.3 | SG00000018 | `Singularity.Examples.narasimhan` |
+| Definition 4.1.1 | SG00000004 | `Singularity.IsResolution` (definition) |
+| Theorem 4.1.2 | SG0000001Z | `Singularity.Base.integralResolutionInDim_zero` |
+| Theorem 4.1.3 | SG0000001Y | `Singularity.Reduction.reductionToIntegral` |
+| Theorem 4.1.5 | SG00000020 | `Singularity.Base.fcResolutionCharZero` |
+
+Two more results are near the text of this volume. Corollary 2.2.8 says that the maximal order does not go up under a blowup sequence of order $m$. The case of one polynomial and the blowup of a point, in each characteristic, is node SG0000003A, with the Lean theorem `Singularity.ord_le_of_pointChart`; Volume 7, Theorem 2.2.2, proves it. The weighted blowups of Section 3.3 are node SG0000001Q. That node has no Lean statement yet.
+
+### Results with no node
+
+The map has no node for these results of the volume, and the library has no Lean statement of them.
+
+1. The strong form of resolution, Theorem 1.1.3, with a projective morphism and a divisor with simple normal crossings.
+2. Embedded resolution in characteristic 0, Theorem 1.1.4. The library defines the conclusion in a weak form, `Singularity.IsEmbeddedResolution`, but it does not state the theorem in characteristic 0.
+3. Principalization, Theorems 1.1.5 to 1.1.7, and the functorial form, Theorem 1.1.8.
+4. Resolution from principalization, Theorem 1.2.1.
+5. The derivative ideals and the order, Section 2.1, and the derivatives of the transforms, Theorem 2.2.7.
+6. Maximal contact, Theorem 2.3.3.
+7. The restriction theorem, Theorem 3.1.3, and the coefficient ideal, Theorem 3.2.4.
+8. Order reduction for ideals and for marked ideals, Theorems 3.3.6 and 3.3.10, the monomial case, Theorem 3.3.8, and principalization from order reduction, Theorem 3.3.11.
+
+A Lean proof of these results would give a second proof of Theorem 4.1.4 that does not use the base, with the stronger conclusions of Chapter 1. It would need blowups of smooth varieties along smooth centers with their charts, the derivative ideals of an ideal sheaf on a smooth variety, and divisors with simple normal crossings with an order on their components. Mathlib and the library have some of these notions. The library defines divisors with simple normal crossings, and Volume 7 studies the order of a polynomial under the blowup of a point.
+
+### Notes and references
+
+The record `records/base-charzero.json` and the record `records/lean.json` of the map list the declarations, their files and their axioms. The pin of the base is in `base/lakefile.toml` of tamnd/singularity-lean, and the challenge is in `base/comparator`. For the base see [HirLean]. The proof of principalization that this volume follows is [Kol07, Chapter 3], and the weighted blowups are in [ATW24].
