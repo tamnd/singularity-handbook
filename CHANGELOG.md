@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-24
+
 ### Added
 
 - Volume 7, Chapter 2, "The point blowup". Section 2.1 gives the charts of a point blowup and the weak transform, with Proposition 2.1.1 from tamnd/singularity-lean#52. Section 2.2 proves that the order does not go up under a point blowup (Theorem 2.2.2, node SG0000003A, `Singularity.ord_le_of_pointChart`), defines the directrix and states that the points of the same order lie in the directrix (Theorem 2.2.5, node SG0000003B, no Lean proof). It has two examples, one in characteristic 2.
