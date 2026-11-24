@@ -11,6 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - The introduction of Chapter 1 and Section 1.7 refer to Section 1.8.
+- `EDITION` refers to the release v0.2.9 of tamnd/singularity.
 
 ## [0.2.8] - 2026-11-24
 
