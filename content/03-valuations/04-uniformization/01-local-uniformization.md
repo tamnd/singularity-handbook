@@ -16,7 +16,7 @@ In this section $K/k$ is a function field. A *model* of $K/k$ is an integral var
 
 The center of $v$ on $X'$ exists. Let $x$ be the center of $v$ on $X$. The inclusion $\mathcal{O}_{X,x} \subseteq \mathcal{O}_v$ gives a morphism $\operatorname{Spec} \mathcal{O}_v \to X$, and the valuative criterion of properness [Har, Chapter II, Theorem 4.7] lifts it to $X'$. The image $x'$ of the closed point is a center of $v$ on $X'$. This is the definition of Volume 9, Section 2.3.
 
-A trivial valuation has local uniformization, because its center is the generic point, and the local ring there is the field $K$. If $\dim X = 1$, then the normalization of $X$ is regular (Volume 1, Chapter 2), so each valuation has local uniformization. The definition asks for a regular center on one model. It does not ask that the model be regular elsewhere.
+A trivial valuation has local uniformization, because its center is the generic point, and the local ring there is the field $K$. If $\dim X = 1$, then the normalization of $X$ is regular, and the normalization morphism is finite and birational, so it is proper (Volume 1, Theorem 2.5.6). Thus each valuation has local uniformization. The definition asks for a regular center on one model. It does not ask that the model be regular elsewhere.
 
 ### The method of Zariski
 
@@ -40,7 +40,7 @@ The second step, *patching*, builds one regular model from $X_1, \dots, X_m$. A 
 
 Lean: none yet
 
-This is the main theorem of [Zar40]. In characteristic 0 it is now also a consequence of the theorem of Hironaka, because a resolution of a model gives a regular center for each valuation.
+This is the main theorem of [Zar40]. Zariski proves it for function fields over each ground field of characteristic 0. In characteristic 0 it is now also a consequence of the theorem of Hironaka, because a resolution of a model gives a regular center for each valuation.
 
 **Theorem 4.1.4 (Abhyankar).** Let $k$ be an algebraically closed field of characteristic $p > 0$, and let $K/k$ be a function field of transcendence degree 2. Then each valuation of $K/k$ has local uniformization.
 
@@ -48,8 +48,8 @@ Lean: none yet
 
 Abhyankar proved this in [Abh56s], and he deduced resolution of surfaces from it. Volume 4 proves resolution of surfaces by the method of Lipman, which does not use valuations. For threefolds over an algebraically closed field of characteristic $p > 5$, Abhyankar proved local uniformization and resolution [Abh66], and Cutkosky gives a shorter proof of resolution in this case [Cut09].
 
-**Theorem 4.1.5 (Cossart and Piltant).** Let $K/k$ be a function field of transcendence degree 3 over a field $k$ of characteristic $p > 0$. Then each valuation of $K/k$ has local uniformization.
+**Theorem 4.1.5 (Cossart-Piltant).** Let $K/k$ be a function field of transcendence degree 3 over a field $k$ of characteristic $p > 0$. Then each valuation of $K/k$ has local uniformization.
 
 Node: SG0000001F · Lean: `Singularity.localUniformization_three` (planned, no Lean statement yet)
 
-This is [CP08, CP09]. It is Theorem 2.1.5 of Volume 9, which explains the method and the patching step. We state the theorem as Volume 9 does. The two papers give the exact hypotheses on the field $k$.
+The papers [CP08, CP09] prove this theorem, and resolution of threefolds, when $k$ is differentially finite over a perfect subfield $k_0$, that is, when $\Omega_{k/k_0}$ has finite dimension over $k$. For example, each function field $k_0(\lambda_1, \dots, \lambda_s)$ over a perfect field $k_0$ is of this kind. For an arbitrary field $k$ of characteristic $p$, the theorem follows from the resolution of quasi-excellent schemes of dimension 3 [CP19]. Indeed, a model $X$ of $K/k$ is quasi-excellent, so there is a proper birational morphism $X' \to X$ with $X'$ regular, and the center of $v$ on $X'$ is a regular point. The theorem is Theorem 2.1.5 of Volume 9, which explains the method and the patching step.

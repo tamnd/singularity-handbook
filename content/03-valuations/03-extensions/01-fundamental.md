@@ -22,13 +22,13 @@ In particular $v$ has at most $n$ extensions to $L$.
 
 Lean: none yet
 
-For $g = 1$ this is Corollary 2.1.3. For $g \ge 2$ one combines the elements of Lemma 2.1.2 for the different $w_i$ with the approximation theorem for incomparable valuation rings. Lemma 3.1.1 shows that the rings $\mathcal{O}_{w_i}$ are incomparable. We do not prove the approximation theorem, and we cite the inequality from [ZS2, Chapter VI] and [Kuh-book].
+For $g = 1$ this is Corollary 2.1.3. For $g \ge 2$ one combines the elements of Lemma 2.1.2 for the different $w_i$ with the approximation theorem for incomparable valuation rings. Lemma 3.1.1 shows that the rings $\mathcal{O}_{w_i}$ are incomparable. We do not prove the approximation theorem, and we cite the inequality from [ZS2, Chapter VI, Section 11, Theorem 19]. The approximation theorem is [ZS2, Chapter VI, Section 10, Theorem 18].
 
 ### Henselian fields
 
 **Definition 3.1.3 (henselian field).** A valued field $(K, v)$ is *henselian* if $v$ has exactly one extension to each algebraic extension of $K$.
 
-If $(K, v)$ is henselian and $L/K$ is algebraic, then $L$ with the unique extension of $v$ is henselian, because an algebraic extension of $L$ is an algebraic extension of $K$. A field that is complete for a discrete valuation of rank 1 is henselian [Kuh-book]. For example, $k((t))$ with $\operatorname{ord}_t$ is henselian. The name comes from Hensel's lemma, which holds for the valuation ring of a henselian field. For complete local rings it is Lemma 4.4.3 of Volume 1.
+If $(K, v)$ is henselian and $L/K$ is algebraic, then $L$ with the unique extension of $v$ is henselian, because an algebraic extension of $L$ is an algebraic extension of $K$. A field that is complete for a valuation of rank 1 is henselian [Kuh-book, Chapter 9]. This holds in particular for a discrete valuation of rank 1. For example, $k((t))$ with $\operatorname{ord}_t$ is henselian. The name comes from Hensel's lemma, which holds for the valuation ring of a henselian field. For complete local rings it is Lemma 4.4.3 of Volume 1.
 
 When $(K, v)$ is henselian, Theorem 3.1.2 says $ef \le n$ for the unique extension. In general the fundamental inequality is strict. The defect of the next section measures the difference.
 

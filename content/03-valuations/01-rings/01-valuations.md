@@ -28,11 +28,11 @@ Lean: `Valuation` (in Mathlib, in the multiplicative notation)
 
 In Mathlib a valuation takes values in an ordered group with zero, written multiplicatively, and the inequality in condition 3 goes the other way. The additive form of Definition 1.1.2 is `AddValuation` in Mathlib. We use the additive form, as Zariski and Samuel do [ZS2, Chapter VI].
 
-**Lemma 1.1.3.** Let $v$ be a valuation of $K$ and let $x, y \in K$. Then $v(1) = v(-1) = 0$, $v(-x) = v(x)$, and $v(x^{-1}) = -v(x)$ for $x \ne 0$. If $v(x) \ne v(y)$, then $v(x + y) = \min(v(x), v(y))$.
+**Lemma 1.1.3.** Let $v$ be a valuation of $K$ and let $x, y \in K$. Then $v(1) = v(-1) = 0$, $v(-x) = v(x)$, and $v(x^{-1}) = -v(x)$ for $x \ne 0$. If $v(x) \ne v(y)$, then $v(x + y) = \min(v(x), v(y))$. More generally, let $x_1, \dots, x_n \in K$, and assume that the minimum of $v(x_1), \dots, v(x_n)$ is attained at exactly one index $i$. Then $v(x_1 + \dots + x_n) = v(x_i)$.
 
 Lean: none yet
 
-*Proof.* From $1 = 1 \cdot 1$ we get $v(1) = 2v(1)$, so $v(1) = 0$. From $1 = (-1)^2$ we get $2v(-1) = 0$, so $v(-1) = 0$ because $\Gamma$ is torsion free. Then $v(-x) = v(-1) + v(x) = v(x)$, and $v(x) + v(x^{-1}) = v(1) = 0$. Let $v(x) < v(y)$. Then $v(x + y) \ge v(x)$. Also $x = (x + y) + (-y)$, so $v(x) \ge \min(v(x + y), v(y))$. Since $v(x) < v(y)$, this minimum is $v(x + y)$, and $v(x + y) \le v(x)$. $\square$
+*Proof.* From $1 = 1 \cdot 1$ we get $v(1) = 2v(1)$, so $v(1) = 0$. From $1 = (-1)^2$ we get $2v(-1) = 0$, so $v(-1) = 0$ because $\Gamma$ is torsion free. Then $v(-x) = v(-1) + v(x) = v(x)$, and $v(x) + v(x^{-1}) = v(1) = 0$. Let $v(x) < v(y)$. Then $v(x + y) \ge v(x)$. Also $x = (x + y) + (-y)$, so $v(x) \ge \min(v(x + y), v(y))$. Since $v(x) < v(y)$, this minimum is $v(x + y)$, and $v(x + y) \le v(x)$. For the general claim, let $y$ be the sum of the terms $x_j$ with $j \ne i$. Each of these terms has $v(x_j) > v(x_i)$. By condition 3 and induction on the number of terms, $v(y) \ge \min_{j \ne i} v(x_j) > v(x_i)$. The two-term case gives $v(x_i + y) = v(x_i)$. $\square$
 
 ### Valuation rings
 

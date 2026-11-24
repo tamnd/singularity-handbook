@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## The Zariski-Riemann space
 
-Zariski collected all valuation rings of a function field into one topological space [Zar40, Zar44]. The main property of this space is quasi-compactness. It lets one pass from a local statement at each valuation to a statement about finitely many models. In this section we define the space and its topology, and we prove that it is quasi-compact.
+Zariski collected all valuation rings of a function field into one topological space, which he called the Riemann manifold, and he used it in his work on resolution [Zar40, Zar44]. He proved its quasi-compactness in a separate short note of 1944. The main property of this space is quasi-compactness. It lets one pass from a local statement at each valuation to a statement about finitely many models. In this section we define the space and its topology, and we prove that it is quasi-compact.
 
 ### The space and its topology
 
@@ -44,7 +44,7 @@ Conditions 1 and 2 say that $V$ is a subring of $K$ that contains $A$, and condi
 
 Now we compare the two topologies. For a finite $F \subseteq K$ the set $U(F)$ is the set of $V \in \operatorname{ZR}(K/A)$ whose indicator function is 1 at each point of $F$. This is the intersection of $\operatorname{ZR}(K/A)$ with a basic open set of $P$. So each open set of the Zariski topology is open in the topology induced by $P$. Let $\mathcal{U}$ be a cover of $\operatorname{ZR}(K/A)$ by Zariski open sets. These sets are open in the induced topology, so a finite subfamily of $\mathcal{U}$ covers $\operatorname{ZR}(K/A)$. $\square$
 
-This is the theorem of Zariski in [ZS2, Chapter VI]. The induced topology of $P$ is the *patch topology* (or constructible topology) of $\operatorname{ZR}(K/A)$. It is Hausdorff and compact. The Zariski topology is not Hausdorff, except in trivial cases. For example, if $V \subsetneq W$ are valuation rings, then each open set that contains $V$ also contains $W$.
+This is the theorem of Zariski in [ZS2, Chapter VI, Section 17, Theorem 40]. The induced topology of $P$ is the *patch topology* (or constructible topology) of $\operatorname{ZR}(K/A)$. It is Hausdorff and compact. The Zariski topology is not Hausdorff, except in trivial cases. For example, if $V \subsetneq W$ are valuation rings, then each open set that contains $V$ also contains $W$.
 
 ### Zariski-Riemann space and models
 
@@ -56,4 +56,4 @@ Lean: none yet
 
 This is the form in which quasi-compactness enters the method of Zariski. In Chapter 4, $\operatorname{Spec} B_v$ is an affine open set of a model on which $v$ has a regular center, and $G_v$ is its regular locus. The corollary then gives finitely many models such that each valuation has a regular center on one of them.
 
-The space $\operatorname{ZR}(K/k)$ is also the inverse limit of all projective models of $K/k$, with the maps $v \mapsto c_X(v)$ of Proposition 1.4.4 [ZS2, Chapter VI]. We do not use this description. Temkin uses relative forms of the Zariski-Riemann space in his work on inseparable local uniformization [Tem13].
+The space $\operatorname{ZR}(K/k)$ is also the inverse limit of all projective models of $K/k$, with the maps $v \mapsto c_X(v)$ of Proposition 1.4.4 [ZS2, Chapter VI, Section 17, Theorem 41]. We do not use this description. Temkin uses relative forms of the Zariski-Riemann space in his work on inseparable local uniformization [Tem13].

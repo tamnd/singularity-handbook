@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## Key polynomials
 
-Let $(K, v)$ be a valued field and let $y$ be an indeterminate. An extension of $v$ to a simple extension $K(s)$ is the same as a valuation on $K[y]$ that extends $v$. MacLane found a way to build such valuations in steps, by a sequence of polynomials in $y$ of increasing degree [Mac36]. The polynomials are the *key polynomials*. In this section we give the definitions, we state the main theorem with a citation, and we work out one example.
+Let $(K, v)$ be a valued field and let $y$ be an indeterminate. Let $K(s)$ be a simple extension, and let $\mathfrak{q}$ be the kernel of the map $K[y] \to K(s)$ with $y \mapsto s$. Thus $\mathfrak{q} = 0$ if $s$ is transcendental over $K$, and $\mathfrak{q} = (F)$ with $F$ the minimal polynomial of $s$ if $s$ is algebraic. An extension of $v$ to $K(s)$ is the same as a valuation on $K[y]$ that extends $v$ and has support $\mathfrak{q}$, in the sense defined below. MacLane found a way to build such valuations in steps, by a sequence of polynomials in $y$ of increasing degree [Mac36]. The polynomials are the *key polynomials*. In this section we give the definitions, we state the main theorem with a citation, and we work out one example.
 
 ### Valuations on a polynomial ring
 
@@ -18,7 +18,7 @@ Fix an ordered abelian group $\Gamma$ that contains $\Gamma_v$. A *valuation on 
 $$\operatorname{gr}_\mu = \bigoplus_{\gamma \in \Gamma} P_\gamma / P_\gamma^+.$$
 For $f$ with $\mu(f) < \infty$, the *initial form* $\operatorname{in}_\mu f$ is the class of $f$ in $P_{\mu(f)}/P_{\mu(f)}^+$. Two polynomials $f$ and $g$ are *$\mu$-equivalent* if $\operatorname{in}_\mu f = \operatorname{in}_\mu g$, that is, if $\mu(f - g) > \mu(f)$. We say that $f$ *$\mu$-divides* $g$ if $\operatorname{in}_\mu f$ divides $\operatorname{in}_\mu g$ in $\operatorname{gr}_\mu$.
 
-The product of $P_\gamma$ and $P_\delta$ is in $P_{\gamma + \delta}$, so $\operatorname{gr}_\mu$ is a graded ring. We have $\operatorname{in}_\mu(fg) = \operatorname{in}_\mu f \cdot \operatorname{in}_\mu g$, and this is not 0, because $\mu(fg) = \mu(f) + \mu(g)$. So $\operatorname{gr}_\mu$ is an integral domain.
+The product of $P_\gamma$ and $P_\delta$ is in $P_{\gamma + \delta}$, so $\operatorname{gr}_\mu$ is a graded ring. We have $\operatorname{in}_\mu(fg) = \operatorname{in}_\mu f \cdot \operatorname{in}_\mu g$, and this is not 0, because $\mu(fg) = \mu(f) + \mu(g)$. So the product of two nonzero homogeneous elements is not 0. Let $F$ and $G$ be nonzero elements of $\operatorname{gr}_\mu$. Each has finitely many nonzero homogeneous components, and the degrees are totally ordered. The component of $FG$ in the least degree is the product of the components of $F$ and $G$ in their least degrees, so it is not 0. Thus $\operatorname{gr}_\mu$ is an integral domain.
 
 **Lemma 3.3.2 (monomial valuations).** Let $\gamma \in \Gamma$. For $f = \sum_i a_iy^i$ with $a_i \in K$ let
 $$\mu_0(f) = \min_i\big(v(a_i) + i\gamma\big).$$
@@ -43,7 +43,7 @@ Let $\varphi$ be monic of degree $m \ge 1$. Each $f \in K[y]$ has a unique *$\va
 $$\mu'\Big(\sum_j a_j\varphi^j\Big) = \min_j\big(\mu(a_j) + j\gamma\big),$$
 with the $\varphi$-expansion on the left.
 
-**Theorem 3.3.5 (MacLane).** Let $\mu$, $\varphi$, $\gamma$ and $\mu' = [\mu; \varphi, \gamma]$ be as in Definition 3.3.4, and let $m = \deg \varphi$.
+**Theorem 3.3.5 (MacLane-Vaquié).** Let $\mu$, $\varphi$, $\gamma$ and $\mu' = [\mu; \varphi, \gamma]$ be as in Definition 3.3.4, and let $m = \deg \varphi$.
 
 1. $\mu'$ is a valuation on $K[y]$ that extends $v$. Its support is 0 if $\gamma < \infty$ and $(\varphi)$ if $\gamma = \infty$.
 2. $\mu \le \mu'$, $\mu'(f) = \mu(f)$ if $\deg f < m$, and $\mu'(\varphi) = \gamma > \mu(\varphi)$.
@@ -54,7 +54,7 @@ of augmentations with $\deg \varphi_0 = 1$, $\deg \varphi_i \le \deg \varphi_{i+
 
 Lean: none yet
 
-MacLane proved the theorem for a discrete valuation $v$ of rank 1 [Mac36]. Vaquié extended it to an arbitrary valuation $v$. He introduced the limit augmentations of part 4, and in the general case the chain can be indexed by an ordinal. The record [Mac36] covers both papers. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We do not prove the theorem. In the example below we use only parts 1 to 3, and we compute the last step by hand.
+MacLane proved parts 1 to 3, and part 4 without limit augmentations, for a discrete valuation $v$ of rank 1 [Mac36]. In that case the chain is finite or $\nu$ is its limit. Vaquié extended the theorem to an arbitrary valuation $v$ in a paper of 2007 on the extension of a valuation. He introduced the limit augmentations of part 4, and in the general case one indexes the chain by an ordinal. The bibliography of this handbook has no separate key for the paper of Vaquié yet. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We do not prove the theorem. In the example below we use only parts 1 to 3, and we compute the last step by hand.
 
 Over a henselian field $K$, part 4 for the valuation $\nu$ with support $(F)$ describes the extension of $v$ to $K[y]/(F)$. Defect is related to the limit augmentations of part 4. A family of key polynomials of the same degree whose values increase but have no maximum is the same phenomenon as the sequence $s_m$ of Proposition 3.2.5.
 

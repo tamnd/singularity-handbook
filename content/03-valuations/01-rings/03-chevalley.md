@@ -34,7 +34,7 @@ Step 3: each valuation ring is maximal. Let $W$ be a valuation ring of $K$ and l
 
 Steps 1 and 2 give the first claim. Steps 2 and 3 give the second claim: a maximal local subring is the ring $V$ of Step 1 for $A = V$, so it is a valuation ring. $\square$
 
-This is [ZS2, Chapter VI] and [Stacks, Tag 00IA]. The proof uses the axiom of choice. The valuation ring is not unique in general, and the examples of Section 1.6 give many valuation rings that dominate the same local ring.
+This is [ZS2, Chapter VI, Section 4] and [Stacks, Tag 00IA]. The proof uses the axiom of choice. The valuation ring is not unique in general, and the examples of Section 1.6 give many valuation rings that dominate the same local ring.
 
 **Corollary 1.3.3.** Let $K$ be a field, let $A \subseteq K$ be a subring and let $\mathfrak{p}$ be a prime ideal of $A$. Then there is a valuation ring $V$ of $K$ with $A \subseteq V$ and $\mathfrak{m}_V \cap A = \mathfrak{p}$.
 
