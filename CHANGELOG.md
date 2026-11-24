@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.3] - 2026-11-24
+
 ### Changed
 
 - Volume 3, Section 1.5 gives the Lean names of Definition 1.5.1 and Theorem 1.5.3, from tamnd/singularity-lean#64, and it explains the Lean proof of Theorem 1.5.3 by ultrafilters.
