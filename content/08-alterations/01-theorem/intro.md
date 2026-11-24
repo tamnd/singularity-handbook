@@ -1,0 +1,3 @@
+# The theorem of de Jong
+
+This chapter states the theorem of de Jong on alterations. Section 1.1 gives the definitions: alterations, their degree, generically étale alterations, divisors with simple normal crossings, and the strictly semistable schemes and pairs over a trait. It proves the elementary properties of alterations and gives examples. Section 1.2 states the theorem over a field and over a trait, and it proves the case of curves. Section 1.3 compares alterations with resolutions. It proves that a finite alteration of degree prime to $p$ splits, and it explains why this does not give a resolution.

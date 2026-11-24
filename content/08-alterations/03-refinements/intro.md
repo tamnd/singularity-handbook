@@ -1,0 +1,5 @@
+# Refinements: Galois, Gabber and Temkin
+
+The theorem of de Jong gives no control of the degree of the alteration. For many applications the degree matters. If the degree is invertible in a ring of coefficients, then a trace map splits the pullback, as in Proposition 1.3.2, and the cohomology of $X$ is a direct summand of the cohomology of the regular variety $X_1$. This chapter states the theorems that control the degree.
+
+Section 3.1 explains the Galois form of the theorem of de Jong: the alteration can be chosen as a Galois covering followed by a purely inseparable map. We prove the field theory behind it. Section 3.2 states the theorem of Gabber: for a prime $\ell$ different from the characteristic, the degree can be chosen prime to $\ell$. Section 3.3 states the theorem of Temkin: in characteristic $p > 0$, the degree can be chosen to be a power of $p$. For the open problem of this project, the result of Temkin is the closest to a resolution, and Section 3.3 explains what it does not give.
