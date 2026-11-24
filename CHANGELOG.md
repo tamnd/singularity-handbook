@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.3.2] - 2026-11-24
+
 ### Added
 
 - Volume 4, "Resolution of surfaces", with three chapters at status drafted. Chapter 1 defines the blowup, computes the blowup of a regular surface at a closed point in each characteristic (Theorem 1.1.7, with the Lean results of Volume 1, Section 1.10), and proves that a normal excellent surface has finitely many singular points. Chapter 2 states the theorem of Lipman (Theorem 2.2.1, node SG0000001B), proves its formal parts and the properties of rational singularities, and cites the two hard steps from [Lip78]. Section 2.3 computes the surfaces $xy = z^n$, the surface $z^p = x^{p+1} + y^{p+1}$ in characteristic $p$, and the surface $z^2 = x^4 + y^4$, where the blowup is not normal and the singularity is not rational. Chapter 3 states the embedded resolution of surfaces of Cossart, Jannsen and Saito (node SG0000001C) and gives the history.
