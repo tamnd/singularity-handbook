@@ -7,6 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - Volume 7, Section 1.2 has the new subsection "The purely inseparable equation". The new Proposition 1.2.7 proves that for $f = z^q + F$ with $q = p^e$ and $F$ clean, over a ring of exponential characteristic $p$, the coordinate $z$ attains the characteristic polyhedron, no vertex $v \ne 0$ is solvable, and $\Delta(f; x) = \frac{1}{q} N(F)$ for a polynomial $F$. It has a complete proof, Example 1.2.8 with $p = q = 2$ and $F = x^3 + y^5$, and Remark 1.2.9 on what is not proved. The text gives the Lean names from tamnd/singularity-lean#83. Volume 6, Sections 3.1, 3.2 and 4.2, and Volume 9, Section 2.3, refer to the new proposition.
+- Volume 3, Section 3.3 has the new subsection "Continuous families and limit augmentations". It constructs the limit augmentation of Vaquié [Vaq07] for a continuous family of augmentations of one degree. Definition 3.3.20 to Lemma 3.3.23 define the family, the stable polynomials and the limit $\mu_\infty$. Proposition 3.3.24 proves that $\mu_\infty$ agrees with $\nu$ on the stable polynomials, and that some polynomial is not stable exactly when the family does not reach $\nu$. Proposition 3.3.26 proves the properties of the limit key polynomials. Theorem 3.3.29 proves that the limit augmentation is a valuation with $\mu_i \le [\mu_\infty; \varphi, \nu(\varphi)] \le \nu$. The text says what part 4 of Theorem 3.3.5 still does not have. The text gives the Lean names from tamnd/singularity-lean#84.
 
 ## [0.4.8] - 2026-11-25
 

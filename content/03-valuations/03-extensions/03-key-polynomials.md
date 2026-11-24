@@ -54,9 +54,9 @@ Lean: `Singularity.augmentedValuationFun`
 $$\mu_0 = [v; \varphi_0, \gamma_0] < \mu_1 = [\mu_0; \varphi_1, \gamma_1] < \mu_2 < \cdots$$
 of augmentations with $\deg \varphi_0 = 1$, $\deg \varphi_i \le \deg \varphi_{i+1}$ and $\mu_i \le \nu$, in the following sense. Either the chain is finite and ends with $\nu$, or $\nu$ is the limit of the chain, or one needs *limit augmentations* along an infinite family of key polynomials of the same degree.
 
-Lean: `Singularity.augmentedValuation`, `Singularity.KeyPolynomial.augmentedValuationFun_mul`, `Singularity.augmentedValuation_le` (parts 1 and 2), `Singularity.KeyPolynomial.keyPolynomial_augmentedValuation` (the first claim of part 3), `Singularity.KeyPolynomial.muEquiv_augmentedValuation_sum_filter` and `Singularity.KeyPolynomial.augmentedValuation_sum_mul_pow` (the claim on the graded algebra in part 3, Proposition 3.3.19), `Singularity.exists_keyPolynomial_augmentedValuation` (one step of the chain of part 4, Lemma 3.3.9), `Singularity.macLaneChain_eventually_eq` (part 4 without limit augmentations for $\nu$ with discrete values, Theorem 3.3.12)
+Lean: `Singularity.augmentedValuation`, `Singularity.KeyPolynomial.augmentedValuationFun_mul`, `Singularity.augmentedValuation_le` (parts 1 and 2), `Singularity.KeyPolynomial.keyPolynomial_augmentedValuation` (the first claim of part 3), `Singularity.KeyPolynomial.muEquiv_augmentedValuation_sum_filter` and `Singularity.KeyPolynomial.augmentedValuation_sum_mul_pow` (the claim on the graded algebra in part 3, Proposition 3.3.19), `Singularity.exists_keyPolynomial_augmentedValuation` (one step of the chain of part 4, Lemma 3.3.9), `Singularity.macLaneChain_eventually_eq` (part 4 without limit augmentations for $\nu$ with discrete values, Theorem 3.3.12), `Singularity.ContinuousFamily.limitAugmentedValuation` (the limit augmentation of part 4 for one continuous family, Theorem 3.3.29)
 
-MacLane proved parts 1 to 3, and part 4 without limit augmentations, for a discrete valuation $v$ of rank 1 [Mac36]. In that case the chain is finite or $\nu$ is its limit. Vaquié extended the theorem to an arbitrary valuation $v$ [Vaq07]. He introduced the limit augmentations of part 4, and in the general case one indexes the chain by an ordinal. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We prove parts 1 and 2 and the first claim of part 3 below, and the claim on $\operatorname{gr}_{\mu'}$ in part 3 in Proposition 3.3.19. Of part 4 we prove the first step and the inductive step of the chain, in Lemmas 3.3.10 and 3.3.9, and the properties of the chain in Lemma 3.3.11. If the values of $\nu$ are discrete, for example if $\nu$ has values in $\mathbb{Z} \cup \{\infty\}$, we prove part 4 without limit augmentations in Theorem 3.3.12. Then the chain is finite and ends with $\nu$, or $\nu$ is its limit. Proposition 3.3.13 gives a criterion for a finite chain, and Example 3.3.14 shows that the chain can be infinite, also when $\nu$ has a nonzero support. Proposition 3.3.15 to Example 3.3.18 describe the choice of the key polynomials of the chain. We do not treat the limit augmentations, so we do not prove part 4 for other values of $\nu$. In the example below we use only parts 1 to 3, and we compute the last step by hand.
+MacLane proved parts 1 to 3, and part 4 without limit augmentations, for a discrete valuation $v$ of rank 1 [Mac36]. In that case the chain is finite or $\nu$ is its limit. Vaquié extended the theorem to an arbitrary valuation $v$ [Vaq07]. He introduced the limit augmentations of part 4, and in the general case one indexes the chain by an ordinal. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We prove parts 1 and 2 and the first claim of part 3 below, and the claim on $\operatorname{gr}_{\mu'}$ in part 3 in Proposition 3.3.19. Of part 4 we prove the first step and the inductive step of the chain, in Lemmas 3.3.10 and 3.3.9, and the properties of the chain in Lemma 3.3.11. If the values of $\nu$ are discrete, for example if $\nu$ has values in $\mathbb{Z} \cup \{\infty\}$, we prove part 4 without limit augmentations in Theorem 3.3.12. Then the chain is finite and ends with $\nu$, or $\nu$ is its limit. Proposition 3.3.13 gives a criterion for a finite chain, and Example 3.3.14 shows that the chain can be infinite, also when $\nu$ has a nonzero support. Proposition 3.3.15 to Example 3.3.18 describe the choice of the key polynomials of the chain. Definition 3.3.20 to Theorem 3.3.29 construct the limit augmentation of Vaquié for one continuous family of augmentations of one degree. We do not build the full chain with limit augmentations, so we do not prove part 4 for other values of $\nu$. In the example below we use only parts 1 to 3, and we compute the last step by hand.
 
 Over a henselian field $K$, part 4 for the valuation $\nu$ with support $(F)$ describes the extension of $v$ to $K[y]/(F)$. Defect is related to the limit augmentations of part 4. A family of key polynomials of the same degree whose values increase but have no maximum is the same phenomenon as the sequence $s_m$ of Proposition 3.2.5.
 
@@ -210,7 +210,7 @@ Since $\mathbb{Z}$ is dense in $\mathbb{Z}_p$, for each $n$ there is $b \in \mat
 $$\mu_{i+1}(y - b) = \min(v(a - b), \nu(y - a)) \le v_p(s - a) < \infty,$$
 because $s \ne a$. This completes the induction. If $s$ is algebraic, the degrees $\deg \varphi_i$ are at most $\deg F$ by Proposition 3.3.13. The chain is infinite, so by Proposition 3.3.13 the finite values $\nu(\varphi_i)$ are not bounded. $\square$
 
-For other value groups, a family of key polynomials of the same degree can have values that increase and are bounded. Then part 4 of Theorem 3.3.5 can need the limit augmentations of Vaquié [Vaq07]. We do not treat them.
+For other value groups, a family of key polynomials of the same degree can have values that increase and are bounded. Then part 4 of Theorem 3.3.5 can need the limit augmentations of Vaquié [Vaq07]. We construct the limit augmentation for one such family in Theorem 3.3.29 below.
 
 ### The choice of the key polynomial
 
@@ -295,6 +295,150 @@ $$\sum_{j=0}^N (d_j)_{\delta - j\gamma}\,(\operatorname{in} \varphi)^j.$$
 By part 1, $(d_j)_{\delta - j\gamma} \in \Delta_{\delta - j\gamma}$. Let $J$ be the set of the indices $j$ with $(d_j)_{\delta - j\gamma} \ne 0$. Then $k \in J$, and for $j \in J$ we can write $(d_j)_{\delta - j\gamma} = \operatorname{in} c_j$ with $c_j \ne 0$, $\deg c_j < m$ and $\mu(c_j) = \delta - j\gamma$. Let $h = \sum_{j \in J} c_j\varphi^j$. By part 3, $\mu'(h) = \delta$. As in part 2, the component of degree $\delta$ is the class of $h$ in $P_\delta/P_\delta^+$, and this class is $\operatorname{in} h \ne 0$. Thus $P(\operatorname{in} \varphi) \ne 0$. $\square$
 
 MacLane [Mac36] and Vaquié [Vaq07] give other proofs. The proof of part 1 uses $\gamma > \mu(\varphi)$, and the proof of part 4 uses $\gamma < \infty$. The Lean library has no graded algebra. It states parts 1 to 3 with $\mu'$-equivalence, as in Definition 3.3.3. The product of part 1 is `Singularity.KeyPolynomial.muEquiv_augmentedValuation_mul_modByMonic`, which says that $ab$ is $\mu'$-equivalent to its remainder $r$. Part 2 is `Singularity.KeyPolynomial.muEquiv_augmentedValuation_sum_filter`. The transcendence in part 4 follows from part 3, which is `Singularity.KeyPolynomial.augmentedValuation_sum_mul_pow`, and from the uniqueness of the $\varphi$-expansion, `Singularity.expansionCoeff_sum_mul_pow`.
+
+### Continuous families and limit augmentations
+
+We construct the limit augmentations of part 4 of Theorem 3.3.5 for a family of key polynomials of one degree. We follow Vaquié [Vaq07]. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give the corresponding notions in their approach to key polynomials [HMOS22]. In this section $\mu$ is a valuation on $K[y]$ that extends $v$ and has support 0, as in Definition 3.3.3, and $d \ge 1$.
+
+**Definition 3.3.20 (continuous family).** Let $I$ be a nonempty totally ordered set without a largest element. A *continuous family* of augmentations of $\mu$ of degree $d$ is a family $(\varphi_i, \gamma_i)_{i \in I}$ with these properties.
+
+1. Each $\varphi_i$ is a key polynomial for $\mu$ of degree $d$, and $\gamma_i \in \Gamma$ with $\gamma_i > \mu(\varphi_i)$.
+2. $\gamma_i < \gamma_j$ for $i < j$.
+3. $\mu(\varphi_j - \varphi_i) \ge \gamma_i$ for $i < j$.
+
+We write $\mu_i = [\mu; \varphi_i, \gamma_i]$.
+
+Lean: `Singularity.ContinuousFamily`
+
+In [Vaq07] and [HMOS22] the index set is well ordered. The proofs below use only a total order.
+
+**Lemma 3.3.21 (the family).** Let $i \le j$ in $I$.
+
+1. $\mu(\varphi_j) = \mu(\varphi_i)$, and $\mu_i = [\mu; \varphi_j, \gamma_i]$.
+2. $\mu_i \le \mu_j$, and $\mu_i(\varphi_j) = \gamma_i$.
+3. $\mu_j(a) = \mu(a)$ for each $a$ with $\deg a < d$.
+
+Lean: `Singularity.ContinuousFamily.val_apply_eq_of_le`, `Singularity.ContinuousFamily.val_le_val`, `Singularity.ContinuousFamily.val_key_of_le`, `Singularity.ContinuousFamily.val_of_degree_lt`
+
+*Proof.* We can assume that $i < j$. Part 1. Since $\mu(\varphi_j - \varphi_i) \ge \gamma_i > \mu(\varphi_i)$, we get $\mu(\varphi_j) = \mu(\varphi_i) < \gamma_i$. Lemma 3.3.16 with $\gamma = \gamma_i$ gives $[\mu; \varphi_i, \gamma_i] = [\mu; \varphi_j, \gamma_i]$. Part 2. Let $f = \sum_k a_k\varphi_j^k$ be the $\varphi_j$-expansion of $f$. By part 1 and $\gamma_i < \gamma_j$,
+$$\mu_i(f) = \min_k\big(\mu(a_k) + k\gamma_i\big) \le \min_k\big(\mu(a_k) + k\gamma_j\big) = \mu_j(f).$$
+By part 1 and part 2 of Theorem 3.3.5, $\mu_i(\varphi_j) = \gamma_i$. Part 3 is part 2 of Theorem 3.3.5. $\square$
+
+**Definition 3.3.22 (stable polynomials and the limit).** A polynomial $f \in K[y]$ is *stable* for the family if there is $i \in I$ with $\mu_j(f) = \mu_i(f)$ for each $j \ge i$. Then the *limit* $\mu_\infty(f)$ is this value $\mu_i(f)$. If $f$ is not stable, we set $\mu_\infty(f) = \infty$.
+
+Lean: `Singularity.ContinuousFamily.IsStable`, `Singularity.ContinuousFamily.stableValue`
+
+By part 2 of Lemma 3.3.21, $\mu_\infty(f) \ge \mu_i(f)$ for each $i$, and $\mu_\infty(f) = \sup_i \mu_i(f)$ for each stable $f$. By part 3, each polynomial of degree less than $d$ is stable, with $\mu_\infty(a) = \mu(a)$. If $f$ and $g$ are stable, then there is one index $i$ with $\mu_j(f) = \mu_\infty(f)$ and $\mu_j(g) = \mu_\infty(g)$ for each $j \ge i$. Thus $fg$ is stable, with $\mu_\infty(fg) = \mu_\infty(f) + \mu_\infty(g)$. The same holds for each finite set of stable polynomials.
+
+**Lemma 3.3.23 (stability).** Let $i < j$ in $I$ and $f \in K[y]$ with $\mu_i(f) = \mu_j(f)$. Then $f$ is stable, and $\mu_k(f) = \mu_i(f)$ for each $k \ge i$. If $f \ne 0$ and $r$ is the remainder of $f$ modulo $\varphi_j$, then $\mu_j(f - r) > \mu_j(f) = \mu(r)$. Thus a polynomial $f$ is not stable if and only if $\mu_i(f) < \mu_j(f)$ for all $i < j$.
+
+Lean: `Singularity.ContinuousFamily.val_sub_modByMonic_lt`, `Singularity.ContinuousFamily.val_eq_of_val_eq`, `Singularity.ContinuousFamily.not_isStable_iff`
+
+*Proof.* The claims are clear if $f = 0$. Let $f \ne 0$, and let $f = \sum_k a_k\varphi_j^k$ be the $\varphi_j$-expansion of $f$, so that $a_0 = r$. By Theorem 3.3.5, $\mu_j$ has support 0, so $\mu_j(f) < \infty$. By part 1 of Lemma 3.3.21, for each $k \ge 1$ with $a_k \ne 0$,
+$$\mu(a_k) + k\gamma_j > \mu(a_k) + k\gamma_i \ge \mu_i(f) = \mu_j(f).$$
+Thus $\mu_j(f - r) = \min_{k \ge 1}\big(\mu(a_k) + k\gamma_j\big) > \mu_j(f)$, and $\mu_j(f) = \mu(a_0) = \mu(r)$. Let $k \in I$ with $k \ge i$. If $k \le j$, then $\mu_i(f) \le \mu_k(f) \le \mu_j(f) = \mu_i(f)$ by part 2 of Lemma 3.3.21. Let $k > j$. By parts 2 and 3 of Lemma 3.3.21, $\mu_k(r) = \mu(r)$ and $\mu_k(f - r) \ge \mu_j(f - r) > \mu(r)$. So $\mu_k(f) = \mu_k(r + (f - r)) = \mu(r) = \mu_i(f)$. For the last claim, let $f$ be not stable and let $i < j$. Then $\mu_i(f) \le \mu_j(f)$ by part 2 of Lemma 3.3.21, and equality is not possible by the first claim. Conversely, if $\mu_i(f) < \mu_j(f)$ for all $i < j$, then $f$ is not stable, because $I$ has no largest element. $\square$
+
+**Proposition 3.3.24 (the limit and $\nu$).** Let $\nu$ be a valuation on $K[y]$ with $\mu_i \le \nu$ for each $i \in I$, and with $\nu(a) = \mu(a)$ for each $a$ with $\deg a < d$.
+
+1. $\mu_\infty(f) = \nu(f)$ for each stable $f$.
+2. Some polynomial is not stable if and only if there is $f \in K[y]$ with $\mu_i(f) \ne \nu(f)$ for each $i \in I$.
+
+Lean: `Singularity.ContinuousFamily.stableValue_eq_of_isStable` (part 1), `Singularity.ContinuousFamily.exists_not_isStable_iff` (part 2)
+
+*Proof.* Part 1. Let $f$ be stable and choose $i < j$ with $\mu_i(f) = \mu_j(f) = \mu_\infty(f)$. If $f = 0$, both sides are $\infty$. Let $f \ne 0$, and let $r$ be the remainder of $f$ modulo $\varphi_j$. By Lemma 3.3.23, $\mu_j(f - r) > \mu(r) = \mu_\infty(f)$. Since $\deg r < d$, we have $\nu(r) = \mu(r)$. Since $\mu_j \le \nu$, we have $\nu(f - r) \ge \mu_j(f - r) > \nu(r)$. Thus $\nu(f) = \nu(r) = \mu_\infty(f)$.
+
+Part 2. Let $f$ be not stable, and let $i \in I$. Choose $j > i$. By Lemma 3.3.23, $\mu_i(f) < \mu_j(f) \le \nu(f)$. Conversely, assume that each polynomial is stable, and let $f \in K[y]$. By part 1, $\mu_i(f) = \mu_\infty(f) = \nu(f)$ for all large $i$. $\square$
+
+For $i < j$ we have $\mu_i(\varphi_j) = \gamma_i < \gamma_j = \mu_j(\varphi_j) \le \nu(\varphi_j)$. Thus $\mu_i \ne \nu$ for each $i$, for each family below $\nu$. The condition of part 2 says that the family does not reach $\nu$ even polynomial by polynomial. The hypothesis on $\nu$ in degree less than $d$ does not follow from $\mu_i \le \nu$ alone. It holds in the situation of the step of MacLane. Indeed, assume that $\mu \le \nu$, that $\mu \ne \nu$, and that $d$ is the least degree of a monic polynomial $f$ with $\mu(f) < \nu(f)$. Then $\nu(a) = \mu(a)$ for each $a$ with $\deg a < d$, by part 1 of Lemma 3.3.9.
+
+**Definition 3.3.25 (limit key polynomial).** Assume that some polynomial is not stable. A *limit key polynomial* for the family is a monic polynomial $\varphi$ that is not stable, such that $\deg \varphi \le \deg f$ for each polynomial $f$ that is not stable. We say that $\varphi$ *divides $f$ in the limit* if there is $i \in I$ such that $\varphi$ $\mu_j$-divides $f$ for each $j \ge i$.
+
+Lean: `Singularity.ContinuousFamily.IsLimitKeyPolynomial`, `Singularity.ContinuousFamily.LimitDvd`
+
+A limit key polynomial exists. Indeed, let $f$ be a polynomial of least degree that is not stable. Then $f \ne 0$, because $0$ is stable. Let $c$ be the leading coefficient of $f$. If $c^{-1}f$ were stable, then $f = c \cdot c^{-1}f$ would be stable, because the constant $c$ is stable. So $c^{-1}f$ is a limit key polynomial.
+
+**Proposition 3.3.26 (limit key polynomials).** Let $\varphi$ be a limit key polynomial of degree $m$.
+
+1. $m \ge d$, and each polynomial of degree less than $m$ is stable.
+2. $\mu_i(\varphi) < \mu_j(\varphi)$ for all $i < j$.
+3. $\varphi$ divides $f$ in the limit if and only if $f$ is not stable.
+4. $\varphi$ does not divide 1 in the limit. If $\varphi$ divides $fg$ in the limit, then $\varphi$ divides $f$ or $g$ in the limit. If $\varphi$ divides $f$ in the limit, then $\deg f \ge m$.
+
+Lean: `Singularity.ContinuousFamily.exists_isLimitKeyPolynomial` (existence), `Singularity.ContinuousFamily.IsLimitKeyPolynomial.isStable_of_degree_lt` (part 1), `Singularity.ContinuousFamily.IsLimitKeyPolynomial.val_lt` (part 2), `Singularity.ContinuousFamily.IsLimitKeyPolynomial.limitDvd_iff` (part 3), `Singularity.ContinuousFamily.IsLimitKeyPolynomial.not_limitDvd_one`, `Singularity.ContinuousFamily.IsLimitKeyPolynomial.limitDvd_or_limitDvd`, `Singularity.ContinuousFamily.IsLimitKeyPolynomial.natDegree_le_of_limitDvd` (part 4)
+
+*Proof.* Part 1. The polynomials of degree less than $d$ are stable, so $m \ge d$. A nonzero polynomial of degree less than $m$ is stable by the choice of $\varphi$, and $0$ is stable. Part 2 is Lemma 3.3.23.
+
+Part 3. Assume that $\varphi$ divides $f$ in the limit and that $f$ is stable. Choose $k$ such that $\varphi$ $\mu_k$-divides $f$ and $\mu_l(f) = \mu_\infty(f)$ for each $l \ge k$. Then there is $h$ with $\mu_k(f - \varphi h) > \mu_k(f)$. In particular $\mu_k(f) < \infty$ and $\mu_k(\varphi h) = \mu_k(f)$, so $\mu_k(h) < \infty$. Choose $l > k$. By part 2 and Lemma 3.3.21,
+$$\mu_l(\varphi h) = \mu_l(\varphi) + \mu_l(h) > \mu_k(\varphi) + \mu_k(h) = \mu_k(f), \quad \mu_l(f - \varphi h) \ge \mu_k(f - \varphi h) > \mu_k(f).$$
+Thus $\mu_l(f) > \mu_k(f)$, which contradicts $\mu_l(f) = \mu_k(f)$.
+
+Conversely, let $f$ be not stable. Write $f = r + \varphi q$ with $\deg r < m$. By part 1, $r$ is stable. Choose $i_0$ with $\mu_j(r) = \mu_\infty(r)$ for each $j \ge i_0$. First assume that there is $i$ with $\mu_j(\varphi q) < \mu_\infty(r)$ for each $j \ge i$. Let $j \ge i$ and $j \ge i_0$. Then $\mu_j(\varphi q) < \mu_j(r)$, so $\mu_j(f) = \mu_j(\varphi q)$ and
+$$\mu_j(f - \varphi q) = \mu_j(r) > \mu_j(\varphi q) = \mu_j(f).$$
+Thus $\varphi$ $\mu_j$-divides $f$ for each such $j$, and $\varphi$ divides $f$ in the limit. Now assume that for each $i$ there is $j \ge i$ with $\mu_j(\varphi q) \ge \mu_\infty(r)$. We show that $f$ is stable, which is a contradiction. Choose such a $j$ with $j \ge i_0$. If $\mu_\infty(r) = \infty$, then $\mu_j(\varphi q) = \infty$, and for each $l \ge j$ we get $\mu_l(f) \ge \min(\mu_l(r), \mu_l(\varphi q)) \ge \min(\mu_\infty(r), \mu_j(\varphi q)) = \infty$. So $f$ is stable. Let $\mu_\infty(r) < \infty$, and choose $k > j$. If $\mu_j(q) = \infty$, then $\mu_k(\varphi q) = \infty > \mu_\infty(r)$. Otherwise part 2 gives
+$$\mu_k(\varphi q) = \mu_k(\varphi) + \mu_k(q) > \mu_j(\varphi) + \mu_j(q) = \mu_j(\varphi q) \ge \mu_\infty(r).$$
+For each $l \ge k$ we get $\mu_l(\varphi q) \ge \mu_k(\varphi q) > \mu_\infty(r) = \mu_l(r)$, so $\mu_l(f) = \mu_\infty(r)$. Thus $f$ is stable.
+
+Part 4. The polynomial 1 is stable, so $\varphi$ does not divide 1 in the limit by part 3. If $f$ and $g$ are stable, then $fg$ is stable. So if $\varphi$ divides $fg$ in the limit, then $fg$ is not stable by part 3, so $f$ or $g$ is not stable, and $\varphi$ divides $f$ or $g$ in the limit by part 3. If $\varphi$ divides $f$ in the limit, then $f$ is not stable, so $\deg f \ge m$ by the choice of $\varphi$. $\square$
+
+Part 4 says that $\varphi$ is irreducible and minimal for the divisibility in the limit. These are the properties that Vaquié uses to define the limit key polynomials [Vaq07]. We do not prove the converse, that each monic polynomial with these properties has the least degree among the polynomials that are not stable.
+
+**Lemma 3.3.27 (the limit in degree less than $m$).** Let $\varphi$ be a limit key polynomial of degree $m$, and let $\gamma \in \Gamma \cup \{\infty\}$ with $\gamma \ge \mu_i(\varphi)$ for each $i \in I$.
+
+1. Let $x_1, \ldots, x_n \in K[y]$ with $\deg x_t < m$. Then $\mu_\infty(x_1 + \cdots + x_n) \ge \min_t \mu_\infty(x_t)$. If the minimum is attained at exactly one index $t$, then $\mu_\infty(x_1 + \cdots + x_n) = \mu_\infty(x_t)$.
+2. Let $f \in K[y]$, and write $f = q\varphi + r$ with $\deg r < m$. Assume that $f$ and $q$ are stable. Then $\mu_\infty(r) = \mu_\infty(f)$ and $\mu_\infty(q) + \gamma \ge \mu_\infty(f)$.
+
+Lean: `Singularity.ContinuousFamily.IsLimitKeyPolynomial.stableValue_add_le`, `Singularity.ContinuousFamily.IsLimitKeyPolynomial.stableValue_add_eq_of_lt` (part 1), `Singularity.ContinuousFamily.IsLimitKeyPolynomial.stableValue_modByMonic`, `Singularity.ContinuousFamily.IsLimitKeyPolynomial.stableValue_divByMonic_mul_le` (part 2)
+
+*Proof.* Part 1. The polynomials $x_t$ and $x_1 + \cdots + x_n$ have degree less than $m$, so they are stable by part 1 of Proposition 3.3.26. These are finitely many stable polynomials, so there is $i \in I$ such that $\mu_i$ agrees with $\mu_\infty$ on all of them. Lemma 1.1.3 for the valuation $\mu_i$ gives the claims.
+
+Part 2. By part 1 of Proposition 3.3.26, $r$ is stable. Choose $i \in I$ such that $\mu_k(f) = \mu_\infty(f)$, $\mu_k(r) = \mu_\infty(r)$ and $\mu_k(q) = \mu_\infty(q)$ for each $k \ge i$, and choose $j > i$. Assume that $\mu_\infty(r) \ne \mu_\infty(f)$. Let $k \ge i$. Since $\varphi q = f - r$ and $\mu_k(f) \ne \mu_k(r)$, we get
+$$\mu_k(\varphi) + \mu_\infty(q) = \mu_k(\varphi q) = \min\big(\mu_\infty(f), \mu_\infty(r)\big).$$
+The right side does not depend on $k$, and it is finite, because $\mu_\infty(f)$ and $\mu_\infty(r)$ are not both $\infty$. So $\mu_\infty(q) < \infty$, and the cases $k = i$ and $k = j$ give $\mu_i(\varphi) = \mu_j(\varphi)$. This contradicts part 2 of Proposition 3.3.26. Thus $\mu_\infty(r) = \mu_\infty(f)$. For the second claim,
+$$\mu_\infty(q) + \gamma \ge \mu_i(q) + \mu_i(\varphi) = \mu_i(f - r) \ge \min\big(\mu_i(f), \mu_i(r)\big) = \mu_\infty(f). \quad \square$$
+
+Since the values $\mu_i(\varphi)$ increase strictly, the condition $\gamma \ge \mu_i(\varphi)$ for each $i$ gives $\gamma > \mu_i(\varphi)$ for each $i$. It is the analogue of the condition $\gamma > \mu(\varphi)$ of Definition 3.3.4.
+
+**Definition 3.3.28 (limit augmentation).** Let $\varphi$ be a limit key polynomial of degree $m$, and let $\gamma \in \Gamma \cup \{\infty\}$ with $\gamma \ge \mu_i(\varphi)$ for each $i \in I$. The *limit augmentation* $\mu' = [\mu_\infty; \varphi, \gamma]$ is
+$$\mu'\Big(\sum_j a_j\varphi^j\Big) = \min_j\big(\mu_\infty(a_j) + j\gamma\big),$$
+with the $\varphi$-expansion on the left and the convention $0 \cdot \gamma = 0$.
+
+Lean: `Singularity.ContinuousFamily.limitAugmentedValuationFun`
+
+The coefficients $a_j$ have degree less than $m$. So they are stable by part 1 of Proposition 3.3.26, and the values $\mu_\infty(a_j)$ are the limits of the values $\mu_i(a_j)$.
+
+**Theorem 3.3.29 (the limit augmentation).** Let $\varphi$, $\gamma$ and $\mu' = [\mu_\infty; \varphi, \gamma]$ be as in Definition 3.3.28.
+
+1. $\mu'$ is a valuation on $K[y]$ that extends $v$. We have $\mu'(a) = \mu_\infty(a)$ for each $a$ with $\deg a < m$, and $\mu'(\varphi) = \gamma$.
+2. $\mu_i \le \mu'$ for each $i \in I$.
+3. Let $\nu$ be a valuation on $K[y]$ with $\mu_i \le \nu$ for each $i \in I$, and with $\nu(a) = \mu(a)$ for each $a$ with $\deg a < d$. If $\gamma \le \nu(\varphi)$, then $\mu' \le \nu$. In particular $\gamma = \nu(\varphi)$ satisfies the condition of Definition 3.3.28, and
+$$\mu_i \le [\mu_\infty; \varphi, \nu(\varphi)] \le \nu \quad \text{for each } i \in I.$$
+
+Lean: `Singularity.ContinuousFamily.limitAugmentedValuation`, `Singularity.ContinuousFamily.IsLimitKeyPolynomial.limitAugmentedValuationFun_mul`, `Singularity.ContinuousFamily.IsLimitKeyPolynomial.limitAugmentedValuationFun_add_le_max`, `Singularity.ContinuousFamily.limitAugmentedValuationFun_of_degree_lt`, `Singularity.ContinuousFamily.limitAugmentedValuationFun_self` (part 1), `Singularity.ContinuousFamily.IsLimitKeyPolynomial.limitAugmentedValuationFun_le` (part 2), `Singularity.ContinuousFamily.IsLimitKeyPolynomial.map_le_limitAugmentedValuationFun`, `Singularity.ContinuousFamily.IsLimitKeyPolynomial.limitAugmentedValuationFun_map_le` (part 3)
+
+*Proof.* Part 1. We follow the proof of parts 1 and 2 of Theorem 3.3.5, with $\mu_\infty$ in place of $\mu$. The $\varphi$-expansion of $f + g$ is the sum of the expansions of $f$ and $g$. So part 1 of Lemma 3.3.27, applied to each coefficient, gives $\mu'(f + g) \ge \min(\mu'(f), \mu'(g))$. For $c$ of degree less than $m$ and $k \ge 0$, the $\varphi$-expansion of $c\varphi^k$ has one term, so $\mu'(c\varphi^k) = \mu_\infty(c) + k\gamma$. In particular $\mu'(a) = \mu_\infty(a)$ if $\deg a < m$, $\mu'(\varphi) = \gamma$, and $\mu'(0) = \infty$. For $c \in K$ we have $\deg c < d \le m$, so $\mu'(c) = \mu(c) = v(c)$ by part 3 of Lemma 3.3.21. Thus $\mu'$ extends $v$.
+
+We show that $\mu'(fg) = \mu'(f) + \mu'(g)$. Let $f = \sum_i a_i\varphi^i$ and $g = \sum_j b_j\varphi^j$, and write $a_ib_j = q_{ij}\varphi + r_{ij}$ with $\deg r_{ij} < m$. Since $\deg(a_ib_j) \le 2m - 2$, we have $\deg q_{ij} < m$. The polynomials $a_i$, $b_j$ and $q_{ij}$ are stable by part 1 of Proposition 3.3.26, so $a_ib_j$ is stable with $\mu_\infty(a_ib_j) = \mu_\infty(a_i) + \mu_\infty(b_j)$. By part 2 of Lemma 3.3.27,
+$$\mu_\infty(r_{ij}) = \mu_\infty(a_i) + \mu_\infty(b_j), \quad \mu_\infty(q_{ij}) + \gamma \ge \mu_\infty(a_i) + \mu_\infty(b_j).$$
+Now $fg = \sum_{i,j}\big(r_{ij}\varphi^{i+j} + q_{ij}\varphi^{i+j+1}\big)$. By the uniqueness of the $\varphi$-expansion, the coefficient of $\varphi^k$ in the expansion of $fg$ is
+$$c_k = \sum_{i + j = k} r_{ij} + \sum_{i + j = k - 1} q_{ij}.$$
+For a term $r_{ij}$ of $c_k$ we have $\mu_\infty(r_{ij}) + k\gamma = \big(\mu_\infty(a_i) + i\gamma\big) + \big(\mu_\infty(b_j) + j\gamma\big)$. For a term $q_{ij}$ of $c_k$ we have
+$$\mu_\infty(q_{ij}) + k\gamma = \mu_\infty(q_{ij}) + \gamma + (i + j)\gamma \ge \big(\mu_\infty(a_i) + i\gamma\big) + \big(\mu_\infty(b_j) + j\gamma\big).$$
+In both cases the right side is at least $\mu'(f) + \mu'(g)$. By part 1 of Lemma 3.3.27, $\mu_\infty(c_k) + k\gamma \ge \mu'(f) + \mu'(g)$ for each $k$, so $\mu'(fg) \ge \mu'(f) + \mu'(g)$.
+
+For the other inequality we can assume that $\mu'(f)$ and $\mu'(g)$ are finite. Let $i_0$ be the least index with $\mu_\infty(a_{i_0}) + i_0\gamma = \mu'(f)$, let $j_0$ be the least index with $\mu_\infty(b_{j_0}) + j_0\gamma = \mu'(g)$, and let $k = i_0 + j_0$. The term $r_{i_0j_0}$ of $c_k$ has $\mu_\infty(r_{i_0j_0}) + k\gamma = \mu'(f) + \mu'(g)$, and this value is finite. Let $t$ be another term of $c_k$. Then $t = r_{ij}$ with $i + j = k$ and $(i, j) \ne (i_0, j_0)$, or $t = q_{ij}$ with $i + j = k - 1$. In both cases $i < i_0$ or $j < j_0$. If $i < i_0$, then $\mu_\infty(a_i) + i\gamma > \mu'(f)$, and if $j < j_0$, then $\mu_\infty(b_j) + j\gamma > \mu'(g)$. With the inequalities above, $\mu_\infty(t) + k\gamma > \mu'(f) + \mu'(g) = \mu_\infty(r_{i_0j_0}) + k\gamma$. Since $k\gamma$ is finite, $\mu_\infty(t) > \mu_\infty(r_{i_0j_0})$. By part 1 of Lemma 3.3.27, $\mu_\infty(c_k) = \mu_\infty(r_{i_0j_0})$. Thus $\mu'(fg) \le \mu_\infty(c_k) + k\gamma = \mu'(f) + \mu'(g)$.
+
+Part 2. Let $i \in I$. By part 1 of Proposition 3.3.26, $d \le m$. Let $a$ have degree less than $d$. Then $\mu'(a) = \mu_\infty(a) = \mu(a)$ by part 1 of the theorem and part 3 of Lemma 3.3.21. We show that $\mu'(\varphi_i) \ge \gamma_i$. If $\deg \varphi_i < m$, then $\mu'(\varphi_i) = \mu_\infty(\varphi_i) \ge \mu_i(\varphi_i) = \gamma_i$. Let $\deg \varphi_i = m$, so $m = d$, and let $a = \varphi - \varphi_i$. The two polynomials are monic of degree $d$, so $\deg a < d$. Assume that $\mu(a) < \gamma_i$. For each $j \ge i$, part 2 of Lemma 3.3.21 gives $\mu_j(\varphi_i) \ge \mu_i(\varphi_i) = \gamma_i > \mu(a) = \mu_j(a)$, so $\mu_j(\varphi) = \mu_j(\varphi_i + a) = \mu(a)$. Then $\varphi$ is stable, and this is a contradiction. So $\mu(a) \ge \gamma_i$. Then
+$$\gamma \ge \mu_i(\varphi) \ge \min\big(\mu_i(\varphi_i), \mu_i(a)\big) = \min\big(\gamma_i, \mu(a)\big) = \gamma_i,$$
+and $\mu'(\varphi_i) \ge \min(\mu'(\varphi), \mu'(a)) = \min(\gamma, \mu(a)) \ge \gamma_i$. Now let $f = \sum_k c_k\varphi_i^k$ be the $\varphi_i$-expansion of $f$. Since $\deg c_k < d$,
+$$\mu'(f) \ge \min_k\big(\mu'(c_k) + k\mu'(\varphi_i)\big) \ge \min_k\big(\mu(c_k) + k\gamma_i\big) = \mu_i(f).$$
+
+Part 3. Let $f = \sum_j a_j\varphi^j$ be the $\varphi$-expansion of $f$. Each $a_j$ is stable, so $\nu(a_j) = \mu_\infty(a_j)$ by part 1 of Proposition 3.3.24. Since $\nu(\varphi) \ge \gamma$,
+$$\nu(f) \ge \min_j\big(\nu(a_j) + j\nu(\varphi)\big) \ge \min_j\big(\mu_\infty(a_j) + j\gamma\big) = \mu'(f).$$
+Since $\mu_i \le \nu$, we have $\nu(\varphi) \ge \mu_i(\varphi)$ for each $i$. So $\gamma = \nu(\varphi)$ satisfies the condition of Definition 3.3.28, and part 2 gives the last claim. $\square$
+
+The proof of part 1 does not use the strict inequality $\gamma > \mu_i(\varphi)$. The strict inequality for the terms $q_{ij}$ comes from the least indices $i_0$ and $j_0$. In the proof of Theorem 3.3.5 it came from $\gamma > \mu(\varphi)$.
+
+We do not prove that $\varphi$ is a key polynomial for $\mu'$, and we do not describe $\operatorname{gr}_{\mu'}$. We do not build the full chain of MacLane-Vaquié with limit steps, indexed by an ordinal, and we do not prove that this chain reaches $\nu$. So part 4 of Theorem 3.3.5 remains open in this text for valuations $\nu$ whose values are not discrete.
 
 ### The Lean definitions
 
