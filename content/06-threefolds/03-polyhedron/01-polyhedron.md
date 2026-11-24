@@ -25,7 +25,7 @@ In the proofs of this section we take $S = k[[u_1, \dots, u_n]]$ for a field $k$
 **Definition 3.1.1.** The polyhedron of $h$ in the coordinates $(u; X)$ is
 $$\Delta(h; u; X) = \operatorname{Conv}\Bigl( \bigcup_{i = 1}^{m} \bigcup_{a \in \mathcal{S}(f_{i, X})} \bigl( \tfrac{1}{i} a + \mathbb{R}_{\ge 0}^n \bigr) \Bigr) \subseteq \mathbb{R}_{\ge 0}^n.$$
 
-Node: SG00000014 · Lean: `Singularity.charPolyhedron` (the definition, invariance under $z \mapsto z + \psi$, and one direction of the vertex criterion)
+Node: SG00000014 · Lean: `Singularity.charPolyhedron` (the definition, invariance under $z \mapsto z + \psi$, and one direction of the vertex criterion) and Volume 7, Proposition 1.2.7, for $z^q + F$ with $F$ clean
 
 This is [CP19, Definition 2.2] with $J = \{1, \dots, n\}$. If $S = k[[u]]$, then $\Delta(h; u; X)$ is the convex hull of the sets $\frac{1}{i} N(f_{i, X})$, where $N$ is the Newton polyhedron of Volume 7, Definition 1.2.1. For $h = X^q + F$ it is $\frac{1}{q} N(F)$, the projected polyhedron of Volume 7, Section 1.2.
 
@@ -82,7 +82,7 @@ The lemma holds in each characteristic. Its second claim is Volume 7, Propositio
 
 Lean: none yet
 
-Parts 1 and 2 are [CP19, Proposition 2.7], which refers to the Vertex Preparation Lemma (3.10) and Theorem (4.8) of [Hir67]. Part 3 is the first statement of [CP19, Proposition 2.12], which [CP19] takes from [CP15, Corollary II.4]. We do not prove Theorem 3.1.5. Lemma 3.1.4 proves the implication "minimal implies no solvable vertex" of part 2 for $S = k[[u]]$: a solvable vertex can be removed. The converse, and the convergence of the translations in part 1, are the deep parts.
+Parts 1 and 2 are [CP19, Proposition 2.7], which refers to the Vertex Preparation Lemma (3.10) and Theorem (4.8) of [Hir67]. Part 3 is the first statement of [CP19, Proposition 2.12], which [CP19] takes from [CP15, Corollary II.4]. We do not prove Theorem 3.1.5. Lemma 3.1.4 proves the implication "minimal implies no solvable vertex" of part 2 for $S = k[[u]]$: a solvable vertex can be removed. The converse, and the convergence of the translations in part 1, are the deep parts, and they are not proved here. For $S = k[[u]]$ and $h = X^q + F$ with $q = p^e$ and $F$ clean, Volume 7, Proposition 1.2.7, proves directly that $\Delta(h; u; X)$ is minimal and has no solvable vertex, with a Lean proof. This special case does not prove the converse in general.
 
 The minimal polyhedron is the *characteristic polyhedron* $\Delta(h; u)$. It is the intersection of the polyhedra $\Delta(h; u; X - \varphi)$ over all $\varphi \in \hat S$. Volume 7, Section 1.2, takes the intersection only over the $\varphi$ with $\varphi(0) = 0$. If the image of $h$ in $k[X]$ is $X^m$, the two intersections agree: for $\varphi(0) \ne 0$ the constant term of $f_{m, X - \varphi}$ is $\varphi(0)^m \ne 0$, so $\Delta(h; u; X - \varphi)$ is the whole orthant. It depends on $u$, and it does not depend on the choice of $X$. A polyhedron $\Delta(h; u; X - \varphi)$ with no solvable vertex is called *minimal* [CP19, Definition 2.8].
 

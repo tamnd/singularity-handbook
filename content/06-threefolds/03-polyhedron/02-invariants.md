@@ -63,7 +63,7 @@ Let $f^{\mathrm{cl}}$ be the clean part of $f$ for $q = p$ (Volume 7, Definition
 4. $\epsilon(x) = \operatorname{ord} f^{\mathrm{cl}} - \sum_{j = 1}^{e} r_j = \operatorname{ord} G$, the residual order of $Z^p + f^{\mathrm{cl}}$ for $E$ in Volume 7, Definition 1.3.3.
 5. The numbers $\operatorname{ord} f^{\mathrm{cl}}$, $r_j$ and $\epsilon(x)$ do not change if we replace $u$ by another regular system of parameters $u'$ with $\operatorname{div}(u'_j) = \operatorname{div}(u_j)$ for $j \le e$, and compute the clean part in an expansion in $u'$.
 
-Node: SG00000013 · Lean: `Singularity.residualOrder` (the definition of the residual order; Proposition 3.2.4 has no Lean proof)
+Node: SG00000013 · Lean: `Singularity.residualOrder` (the definition of the residual order); the inclusion of part 1 is Volume 7, Proposition 1.2.7(1), which has a Lean proof, and the rest of Proposition 3.2.4 has no Lean proof
 
 *Proof.* Part 1. Let $\varphi \in S$ and $\chi = \varphi - g$. Then $f + \varphi^p = f^{\mathrm{cl}} - g^p + \varphi^p = f^{\mathrm{cl}} + \chi^p$. If $\chi = \sum_b c_b u^b$, then $\chi^p = \sum_b c_b^p u^{p b}$, because the Frobenius map is additive and continuous. So the support of $\chi^p$ lies in $p \mathbb{N}^n$, and the support of $f^{\mathrm{cl}}$ does not meet $p \mathbb{N}^n$. Thus no cancellation occurs, and $\operatorname{supp}(f + \varphi^p) \supseteq \operatorname{supp} f^{\mathrm{cl}}$. So $N(f + \varphi^p) \supseteq N(f^{\mathrm{cl}})$, which proves the inclusion. The minimum over $\varphi \in \hat S = S$ is attained at $\varphi = g$, so this is the characteristic polyhedron. Its vertices are points $a/p$ with $a \in \operatorname{supp} f^{\mathrm{cl}}$ (Volume 7, Lemma 1.2.2). Since $a \notin p \mathbb{N}^n$, $a/p \notin \mathbb{N}^n$.
 

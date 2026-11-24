@@ -39,7 +39,7 @@ We sort the proof of Theorem 1.1.3 into four parts, close to the plan of Section
 
 So part 2 is available, and parts 1, 3 and 4 need new theorems. Part 3 is the core of the problem. A proof of an analogue of Theorem 1.2.6 for $n = 4$ would not be enough by itself, because the reduction of part 1 also uses dimension 3. Volume 9, Section 2.3, describes this route, the route of characteristic polyhedra, together with the other routes.
 
-Node: SG00000014 · Lean: `Singularity.charPolyhedron` (the definition, invariance under $z \mapsto z + \psi$, and one direction of the vertex criterion)
+Node: SG00000014 · Lean: `Singularity.charPolyhedron` (the definition, invariance under $z \mapsto z + \psi$, and one direction of the vertex criterion) and Volume 7, Proposition 1.2.7, for $z^q + F$ with $F$ clean
 
 Cossart, Jannsen and Schober prove that the characteristic polyhedron is intrinsic [CJSch19], and Cossart and Schober use it to build an invariant that drops for surfaces without completion [CSch21]. These results are steps toward a theory of the polyhedron that does not depend on the dimension 3.
 

@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 7, Section 1.2 has the new subsection "The purely inseparable equation". The new Proposition 1.2.7 proves that for $f = z^q + F$ with $q = p^e$ and $F$ clean, over a ring of exponential characteristic $p$, the coordinate $z$ attains the characteristic polyhedron, no vertex $v \ne 0$ is solvable, and $\Delta(f; x) = \frac{1}{q} N(F)$ for a polynomial $F$. It has a complete proof, Example 1.2.8 with $p = q = 2$ and $F = x^3 + y^5$, and Remark 1.2.9 on what is not proved. The text gives the Lean names from tamnd/singularity-lean#83. Volume 6, Sections 3.1, 3.2 and 4.2, and Volume 9, Section 2.3, refer to the new proposition.
+
 ## [0.4.8] - 2026-11-25
 
 ### Changed
