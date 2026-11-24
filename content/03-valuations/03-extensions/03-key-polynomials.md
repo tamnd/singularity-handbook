@@ -24,7 +24,7 @@ The product of $P_\gamma$ and $P_\delta$ is in $P_{\gamma + \delta}$, so $\opera
 $$\mu_0(f) = \min_i\big(v(a_i) + i\gamma\big).$$
 Then $\mu_0$ is a valuation on $K[y]$ with support 0 that extends $v$. We write $\mu_0 = [v; y, \gamma]$.
 
-Lean: none yet
+Lean: `Singularity.monomialValuation`
 
 *Proof.* The inequality $\mu_0(f + g) \ge \min(\mu_0(f), \mu_0(g))$ holds term by term, and $\mu_0(fg) \ge \mu_0(f) + \mu_0(g)$ holds for the same reason. Let $g = \sum_j b_jy^j$. Let $i_0$ be the smallest index with $v(a_{i_0}) + i_0\gamma = \mu_0(f)$, and let $j_0$ be the smallest index with $v(b_{j_0}) + j_0\gamma = \mu_0(g)$. The coefficient of $y^{i_0 + j_0}$ in $fg$ is $\sum_{i + j = i_0 + j_0} a_ib_j$. The term $a_{i_0}b_{j_0}$ has value $\mu_0(f) + \mu_0(g) - (i_0 + j_0)\gamma$. Each other term has $i < i_0$ or $j < j_0$, so its value is strictly larger. By Lemma 1.1.3 the coefficient has value $\mu_0(f) + \mu_0(g) - (i_0 + j_0)\gamma$, so $\mu_0(fg) \le \mu_0(f) + \mu_0(g)$. $\square$
 
@@ -35,13 +35,15 @@ Lean: none yet
 1. $\varphi$ is *$\mu$-irreducible*: $\operatorname{in}_\mu \varphi$ is a prime element of $\operatorname{gr}_\mu$. Thus it is not a unit, and if $\varphi$ $\mu$-divides $fg$, then $\varphi$ $\mu$-divides $f$ or $g$.
 2. $\varphi$ is *$\mu$-minimal*: if $\varphi$ $\mu$-divides a nonzero $f$, then $\deg f \ge \deg \varphi$.
 
-Node: SG0000000Z · Lean: `Singularity.KeyPolynomial` (planned, no Lean statement yet)
+Node: SG0000000Z · Lean: `Singularity.KeyPolynomial`
 
 Let $\varphi$ be monic of degree $m \ge 1$. Each $f \in K[y]$ has a unique *$\varphi$-expansion* $f = \sum_j a_j\varphi^j$ with $\deg a_j < m$, by repeated division with remainder by $\varphi$.
 
 **Definition 3.3.4 (augmented valuation).** Let $\mu$ and $\varphi$ be as in Definition 3.3.3, and let $\gamma \in \Gamma \cup \{\infty\}$ with $\gamma > \mu(\varphi)$. The *augmented valuation* $\mu' = [\mu; \varphi, \gamma]$ is
 $$\mu'\Big(\sum_j a_j\varphi^j\Big) = \min_j\big(\mu(a_j) + j\gamma\big),$$
 with the $\varphi$-expansion on the left.
+
+Lean: `Singularity.augmentedValuationFun`
 
 **Theorem 3.3.5 (MacLane-Vaquié).** Let $\mu$, $\varphi$, $\gamma$ and $\mu' = [\mu; \varphi, \gamma]$ be as in Definition 3.3.4, and let $m = \deg \varphi$.
 
@@ -57,6 +59,12 @@ Lean: none yet
 MacLane proved parts 1 to 3, and part 4 without limit augmentations, for a discrete valuation $v$ of rank 1 [Mac36]. In that case the chain is finite or $\nu$ is its limit. Vaquié extended the theorem to an arbitrary valuation $v$ [Vaq07]. He introduced the limit augmentations of part 4, and in the general case one indexes the chain by an ordinal. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give a different approach to key polynomials for a simple extension $K(s)/K$ [HMOS22]. We do not prove the theorem. In the example below we use only parts 1 to 3, and we compute the last step by hand.
 
 Over a henselian field $K$, part 4 for the valuation $\nu$ with support $(F)$ describes the extension of $v$ to $K[y]/(F)$. Defect is related to the limit augmentations of part 4. A family of key polynomials of the same degree whose values increase but have no maximum is the same phenomenon as the sequence $s_m$ of Proposition 3.2.5.
+
+### The Lean definitions
+
+The Lean library states Definition 3.3.3 without the graded algebra $\operatorname{gr}_\mu$. Mathlib writes valuations multiplicatively, so the condition $\mu(f - g) > \mu(f)$ of Definition 3.3.1 becomes $\mu(f - g) < \mu(f)$. The library calls this relation `Singularity.MuEquiv`. It says that $f$ and $g$ have the same initial form. Then $\varphi$ $\mu$-divides $f$ if $f$ is $\mu$-equivalent to $\varphi h$ for some $h$. With this relation, `Singularity.IsMuIrreducible` and `Singularity.IsMuMinimal` are the two conditions of Definition 3.3.3, written for elements of $K[y]$ and not for elements of $\operatorname{gr}_\mu$. The two forms are equivalent, because each homogeneous element of $\operatorname{gr}_\mu$ is an initial form. The elementwise form needs only the valuation, and Mathlib does not yet have the graded algebra of a valuation.
+
+The library proves Lemma 3.3.2 as the valuation `Singularity.monomialValuation`. It also proves that $y$ is a key polynomial for $[v; y, \gamma]$, in `Singularity.keyPolynomial_X_monomialValuation`. This is the first step of each chain in part 4 of Theorem 3.3.5. For $a \in K$, the polynomial $y - a$ is a key polynomial for $[v; y, \gamma]$ if $v(a) \ge \gamma$. It is not a key polynomial if $v(a) < \gamma$, because then its initial form is the initial form of the unit $-a$. The $\varphi$-expansion is `Singularity.expansionCoeff`, and `Singularity.eq_sum_expansionCoeff` proves that the expansion gives $f$ back. The function `Singularity.augmentedValuationFun` is the right side of Definition 3.3.4. The library proves the ultrametric inequality for it, the inequality $\mu \le \mu'$, the equality $\mu'(f) = \mu(f)$ for $\deg f < m$ and the equality $\mu'(\varphi) = \gamma$. These are the parts of Theorem 3.3.5 that do not use multiplication. The multiplicativity of $\mu'$ in part 1 has no Lean proof, and parts 3 and 4 have no Lean proof.
 
 ### An example
 
