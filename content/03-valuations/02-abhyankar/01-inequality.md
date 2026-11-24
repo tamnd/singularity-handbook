@@ -36,7 +36,7 @@ Lean: none yet
 $$\operatorname{rr}(\Gamma_w/\Gamma_v) + \operatorname{trdeg}(Lw/Kv) \le \operatorname{trdeg}(L/K).$$
 More precisely, let $x_1, \dots, x_r \in L^\times$ be elements whose values are linearly independent over $\mathbb{Z}$ modulo $\Gamma_v$, and let $y_1, \dots, y_s \in \mathcal{O}_w$ be elements whose residues are algebraically independent over $Kv$. Then $x_1, \dots, x_r, y_1, \dots, y_s$ are algebraically independent over $K$.
 
-Lean: none yet
+Lean: `Singularity.abhyankar_inequality_relative`, `Singularity.algebraicIndependent_sumElim_of_hasExtension`
 
 Here $\operatorname{rr}(\Gamma_w/\Gamma_v) = \dim_\mathbb{Q}((\Gamma_w/\Gamma_v) \otimes \mathbb{Q})$. It is the largest number of elements of $\Gamma_w$ that are linearly independent over $\mathbb{Z}$ modulo $\Gamma_v$. The first statement follows from the second.
 
@@ -45,7 +45,7 @@ Here $\operatorname{rr}(\Gamma_w/\Gamma_v) = \dim_\mathbb{Q}((\Gamma_w/\Gamma_v)
 **Theorem 2.1.5 (Abhyankar inequality).** Let $K/k$ be a field extension and let $v$ be a valuation of $K/k$. Then
 $$\operatorname{rr} \Gamma_v + \operatorname{trdeg}(Kv/k) \le \operatorname{trdeg}(K/k).$$
 
-Node: SG0000000Y · Lean: `Singularity.abhyankar_inequality` (planned, no Lean statement yet)
+Node: SG0000000Y · Lean: `Singularity.abhyankar_inequality`
 
 *Proof.* Apply Theorem 2.1.4 to $(K/k, v)$. The restriction of $v$ to $k$ is trivial, so its value group is 0 and its residue field is $k$. $\square$
 
@@ -56,3 +56,7 @@ Lean: none yet
 *Proof.* Theorem 2.1.5 bounds the rational rank and the dimension. Proposition 1.2.5 bounds the rank by the rational rank, and Corollary 1.2.4 gives $\dim \mathcal{O}_v$ as the rank. $\square$
 
 Abhyankar proved the inequality in the local form of Section 2.3 [Abh56]. The field form above, with the proof by Lemma 2.1.2, is in [ZS2, Chapter VI, Section 10] and in [Kuh-book]. The proof uses no Noetherian ring, so it works for each extension of valued fields.
+
+### The Lean proof
+
+Theorems 2.1.4 and 2.1.5 have Lean proofs in `Singularity/Valuation/Abhyankar.lean`. In Lean the valuation of $K/k$ is a valuation subring $A$ of $K$ that contains $k$, and the rational rank is the dimension of $\mathbb{Q} \otimes_\mathbb{Z} \Gamma_v$ over $\mathbb{Q}$. In the relative form, the group $\Gamma_w/\Gamma_v$ is the image of $\Gamma_w$ in the quotient of the units of the value monoid of $w$ by the value group of the restriction of $w$ to $K$. This group is isomorphic to $\Gamma_w/\Gamma_v$. The Lean proof follows the proof of Theorem 2.1.4. It uses a form of Lemma 2.1.2 for polynomials, `Singularity.exists_valuation_aeval_eq`, in place of the form for linear combinations. The transcendence degrees are cardinals, so the inequalities hold also when they are infinite. Corollaries 2.1.3 and 2.1.6 have no Lean proof yet.
