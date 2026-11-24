@@ -4,6 +4,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Chapter 2, "The point blowup". Section 2.1 gives the charts of a point blowup and the weak transform, with Proposition 2.1.1 from tamnd/singularity-lean#52. Section 2.2 proves that the order does not go up under a point blowup (Theorem 2.2.2, node SG0000003A, `Singularity.ord_le_of_pointChart`), defines the directrix and states that the points of the same order lie in the directrix (Theorem 2.2.5, node SG0000003B, no Lean proof). It has two examples, one in characteristic 2.
+- Volume 1, Section 1.10, the charts of the blowup of a regular local ring. It proves that the associated graded ring is a polynomial ring over the residue field (Proposition 1.10.1), that $R[\mathfrak{m}/x]/(x)$ is a polynomial ring (Proposition 1.10.4) and that each chart is regular (Theorem 1.10.6, node SG0000003C, `Singularity.Algebra.isRegularRing_blowupChart` from tamnd/singularity-lean#53).
+
+### Changed
+
+- `EDITION` refers to the release v0.3.0 of tamnd/singularity.
+- Volume 0, Section 5.1 gives the status at release 0.3.0, with the milestone S2 complete.
+- The introduction of Volume 7 and Section 1.3 of Volume 7 refer to Theorem 2.2.2.
+
 ## [0.2.14] - 2026-11-24
 
 ### Added
