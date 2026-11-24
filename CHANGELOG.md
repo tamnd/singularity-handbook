@@ -7,10 +7,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Added
 
 - Volume 9, Chapter 2, "The open case". Section 2.1 states the known cases in dimension at most 3 (Lipman, Cossart-Jannsen-Saito, Abhyankar, Cutkosky, Cossart-Piltant) and what is still open there. Section 2.2 explains why the methods of characteristic 0 fail. It has a complete proof that the points of order 2 of the example of Narasimhan are not in a smooth hypersurface germ, an example over an imperfect field, and an Artin-Schreier extension with defect. Section 2.3 describes the routes to dimension 4: valuations and patching, characteristic polyhedra, Rees algebras, weighted blowups, the purely inseparable equations and alterations. Section 2.4 gives the special classes with a resolution in all dimensions, with a toric example, and the next steps of the project.
+- Volume 1, Section 1.9, the regular locus over an imperfect field. It proves the flat descent of regularity (Theorem 1.9.1), the descent of generic regularity along a finite injective map (Lemma 1.9.2), generic regularity over an arbitrary field (Theorem 1.9.4) and the openness of the regular locus of a scheme locally of finite type over an arbitrary field (Theorem 1.9.5). Each of these results has a Lean proof from tamnd/singularity-lean#47.
 
 ### Changed
 
 - Volume 7, Chapter 1 has the Lean names of tamnd/singularity-lean#45: the order and its laws, the Newton polyhedron, cleaning, the residual order, the chart of a point blowup, and the example of Section 1.4 (Example 1.4.2, `Singularity.Examples.kangaroo`). Section 1.4 says that the Lean statement of the bound of Moh is not proved.
+- Remark 1.8.18, Section 1.7, Theorem 5.3.3 and the introduction of Volume 1, Chapter 1 refer to Section 1.9. The node SG0000000K is proved for a field.
 
 ## [0.2.13] - 2026-11-24
 

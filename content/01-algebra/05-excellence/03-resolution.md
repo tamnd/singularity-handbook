@@ -26,11 +26,11 @@ The proposition is a direct consequence of the definition. The real content is i
 
 **Theorem 5.3.3.** Let $A$ be a quasi-excellent ring, for example a field, the ring $\mathbb{Z}$ or a complete Noetherian local ring. Let $X$ be a scheme locally of finite type over $A$. Then $\operatorname{Reg}(X)$ is open in $X$. In particular, the regular locus of a variety over any field is open.
 
-Node: SG0000000K · Lean: none yet
+Node: SG0000000K · Lean: `Singularity.regularLocus_isOpen_of_field` (the case of a field)
 
 *Proof.* The scheme $X$ is covered by affine open sets $\operatorname{Spec} B$ with $B$ a finitely generated $A$-algebra. Since $A$ is J-2, each such $B$ is J-1. Now argue as in the proof of Proposition 5.3.2. The rings in the list are quasi-excellent by Theorem 5.2.8. $\square$
 
-The proof uses Theorem 5.2.8, which this volume does not prove. For a field $k$ of characteristic $0$ the theorem is proved in Section 1.8: it is Theorem 1.8.12. In Lean it is `Singularity.regularLocus_isOpen_of_charZero`, and its proof uses the criterion of Nagata (Theorem 1.7.7, `Singularity.Algebra.isOpen_regularLocus_of_exists_isOpen`) and generic regularity in characteristic $0$ (Theorem 1.8.9). For a perfect field $k$ the theorem is Theorem 1.8.17, and in Lean it is `Singularity.regularLocus_isOpen_of_perfectField`. The other cases are not yet proved in Lean. In particular, the openness of the regular locus of a variety over an imperfect field is not yet proved in Lean, and the node SG0000000K is still planned.
+The proof uses Theorem 5.2.8, which this volume does not prove. For a field $k$ of characteristic $0$ the theorem is proved in Section 1.8: it is Theorem 1.8.12. In Lean it is `Singularity.regularLocus_isOpen_of_charZero`, and its proof uses the criterion of Nagata (Theorem 1.7.7, `Singularity.Algebra.isOpen_regularLocus_of_exists_isOpen`) and generic regularity in characteristic $0$ (Theorem 1.8.9). For a perfect field $k$ the theorem is Theorem 1.8.17, and in Lean it is `Singularity.regularLocus_isOpen_of_perfectField`. For an arbitrary field $k$ the theorem is Theorem 1.9.5, and in Lean it is `Singularity.regularLocus_isOpen_of_field`. Thus the node SG0000000K is proved for a field. The other cases of Theorem 5.3.3, for example $A = \mathbb{Z}$ or a complete local ring, are not yet proved in Lean.
 
 ### Resolution implies openness
 
