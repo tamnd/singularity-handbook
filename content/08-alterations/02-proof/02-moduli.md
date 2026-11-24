@@ -1,6 +1,6 @@
 ---
 title: Stable curves and their moduli
-nodes: [SG0000001K]
+nodes: [SG0000001K, SG0000004G, SG0000004H, SG0000004J]
 sources: [dJ96, DM69, Knu83]
 status: drafted
 drafted_by: writer
@@ -20,7 +20,7 @@ The condition says that each component has enough special points to have only fi
 
 **Theorem 2.2.2 (Deligne-Mumford, Knudsen).** Let $g, n \ge 0$ with $2g - 2 + n > 0$. The stable $n$-pointed curves of genus $g$ form an algebraic stack $\overline{\mathcal{M}}_{g,n}$ over $\mathbb{Z}$ that is proper and smooth over $\mathbb{Z}$. The smooth curves form an open substack $\mathcal{M}_{g,n}$.
 
-Lean: none yet
+Node: SG0000004G · Lean: none yet
 
 For $n = 0$ and $g \ge 2$ this is [DM69]. For pointed curves it is [Knu83]. The properness of $\overline{\mathcal{M}}_{g,n}$ contains the stable reduction theorem: over a discrete valuation ring $R$ with fraction field $K$, a smooth $n$-pointed curve of genus $g$ over $K$ extends, after a finite extension of $K$ and the base change to a localization of the integral closure of $R$, to a stable $n$-pointed curve, and the extension is unique up to a unique isomorphism. For $g \ge 2$ and $n = 0$ this is the stable reduction theorem of [DM69].
 
@@ -40,11 +40,15 @@ De Jong uses the following facts [dJ96, 2.24]. Fix $g \ge 0$, $n \ge 3$ and a pr
 2. There are a scheme $M$ over $\mathbb{Z}[1/\ell]$ and a smooth proper $n$-pointed curve of genus $g$ over $M$ with a level-$\ell$ structure that is a universal object: for each $T$ as in part 1, each smooth proper $n$-pointed curve of genus $g$ over $T$ with a level-$\ell$ structure is the pullback of the universal object by a unique morphism $T \to M$, and the isomorphism of the pullback with the curve is unique.
 3. There are a projective scheme $\overline{M}$ over $\mathbb{Z}[1/\ell]$, an open immersion $M \to \overline{M}$, and a stable $n$-pointed curve of genus $g$ over $\overline{M}$ whose restriction to $M$ is the universal curve of part 2.
 
+Node: SG0000004H · Lean: none yet
+
 By [dJ96, 2.24] these statements follow from Theorem 2.2.2 and the theory of the Jacobian. We use them as a hypothesis because the proofs are outside this handbook. Part 1 holds because $\operatorname{Pic}^0_{C/T}[\ell]$ is finite étale of rank $\ell^{2g}$ over $T$ when $\ell$ is invertible on $T$, and its geometric fibres are isomorphic to $(\mathbb{Z}/\ell)^{2g}$.
 
 The proof of de Jong only uses the following consequence.
 
 **Hypothesis 2.2.5 (extension after an alteration).** Let $k$ be an algebraically closed field, let $Y$ be a variety over $k$, let $U \subseteq Y$ be a nonempty open subscheme, let $n \ge 3$, and let $(C \to U, \sigma_1, \dots, \sigma_n)$ be a smooth proper $n$-pointed curve of genus $g$ over $U$ with geometrically connected fibres. Then there are a variety $Y'$ over $k$, a projective generically étale alteration $\psi \colon Y' \to Y$, a nonempty open subscheme $U' \subseteq \psi^{-1}(U)$, a stable $n$-pointed curve $(\mathcal{C}', \tau_1, \dots, \tau_n)$ of genus $g$ over $Y'$, and an isomorphism $\mathcal{C}'|_{U'} \cong C \times_U U'$ that maps $\tau_i$ to the pullback of $\sigma_i$ for each $i$. If $Y$ is projective, then $Y'$ is projective.
+
+Node: SG0000004J · Lean: none yet
 
 **Proposition 2.2.6.** Hypothesis 2.2.4 implies Hypothesis 2.2.5.
 

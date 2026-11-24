@@ -1,6 +1,6 @@
 ---
 title: Lifting along an étale generator
-nodes: [SG00000010, SG0000000Y]
+nodes: [SG00000010, SG0000000Y, SG0000004C]
 sources: [Kuh-book, ZS2, Mat, Zar40, Cut04]
 status: drafted
 drafted_by: writer
@@ -38,7 +38,7 @@ The name comes from geometry: the map from $\operatorname{Spec}$ of $\mathcal{O}
 
 Conversely, assume that $v$ is not trivial, that $e = 1$, that $Kv/K_0v_0$ is separable, and that $d = 1$. Then $K/K_0$ is separable, and there is an étale generator of $K/K_0$ at $v$.
 
-Lean: none yet
+Node: SG0000004C · Lean: none yet
 
 *Proof.* First part. Since $P'(z) \ne 0$, the extension $K/K_0$ is separable. Let $\bar{O}$ be the integral closure of $\mathcal{O}_{v_0}$ in $K$. It has finitely many maximal ideals $\mathfrak{m}_1, \dots, \mathfrak{m}_g$, one for each extension $v_1 = v, v_2, \dots, v_g$ of $v_0$ to $K$, and $\bar{O}_{\mathfrak{m}_i} = \mathcal{O}_{v_i}$ [ZS2, Chapter VI]. By Lemma 1.3.1, $\bar{O} \subseteq P'(z)^{-1}\mathcal{O}_{v_0}[z]$. Since $P'(z)$ is a unit of $\mathcal{O}_v$, it does not lie in $\mathfrak{q}$, so $\bar{O} \subseteq \mathcal{O}_{v_0}[z]_\mathfrak{q}$. An element of $\bar{O} \setminus \mathfrak{m}_1$ is a unit of $\mathcal{O}_v$, so it is a unit of the local ring $\mathcal{O}_{v_0}[z]_\mathfrak{q}$, whose maximal ideal is the trace of $\mathfrak{m}_v$. Thus $\mathcal{O}_v = \bar{O}_{\mathfrak{m}_1} \subseteq \mathcal{O}_{v_0}[z]_\mathfrak{q} \subseteq \mathcal{O}_v$.
 
@@ -54,7 +54,7 @@ The derivative. Let $P$ be the minimal polynomial of $z$ over $K_0$. Its coeffic
 
 **Theorem 1.3.4 (lifting).** Let $z$ be an étale generator of $K/K_0$ at $v$. If $v_0$ has local uniformization as a valuation of $K_0/k$, then $v$ has local uniformization as a valuation of $K/k$.
 
-Lean: none yet
+Node: SG0000004C · Lean: none yet
 
 *Proof.* We use Proposition 4.1.6 of Volume 3. Let $S \subseteq \mathcal{O}_v$ be finite. By Lemma 1.3.3, each $s \in S$ can be written $s = g_s/h_s$ with $g_s, h_s \in \mathcal{O}_{v_0}[z]$ and $h_s \notin \mathfrak{m}_v$. Write $g_s$ and $h_s$ as polynomials in $z$ with coefficients in $\mathcal{O}_{v_0}$. Let $T \subseteq \mathcal{O}_{v_0}$ be the finite set of these coefficients and of the coefficients of $P$. By local uniformization of $v_0$ there is an affine model $A_0$ of $K_0/k$ with $T \subseteq A_0 \subseteq \mathcal{O}_{v_0}$ such that $R_0 = (A_0)_{\mathfrak{p}_0}$ is regular, where $\mathfrak{p}_0$ is the center of $v_0$.
 

@@ -1,6 +1,6 @@
 ---
 title: The theorem of Zariski
-nodes: [SG0000000D, SG0000000X, SG0000001J]
+nodes: [SG0000000D, SG0000000X, SG0000001J, SG0000004F, SG0000004E]
 sources: [Zar40, Zar44, Hir64, Cut04, NS14, Tem13, Pil]
 status: drafted
 drafted_by: writer
@@ -22,7 +22,7 @@ A valuation $v$ of $K/k$ is *zero-dimensional* if its residue field $\kappa_v$ i
 
 **Lemma 1.4.2.** Let $v$ be a valuation of $K/k$, and let $y_1, \dots, y_m \in \mathcal{O}_v$ be elements whose residues are algebraically independent over $k$. Then $y_1, \dots, y_m$ are algebraically independent over $k$, the field $k' = k(y_1, \dots, y_m)$ is contained in $\mathcal{O}_v$, and $v$ is a valuation of the function field $K/k'$. If $v$ has local uniformization as a valuation of $K/k'$, then $v$ has local uniformization as a valuation of $K/k$. If the residues form a transcendence basis of $\kappa_v$ over $k$, then $v$ is zero-dimensional as a valuation of $K/k'$, and $\operatorname{trdeg}_{k'} K = \operatorname{trdeg}_k K - \operatorname{trdeg}_k \kappa_v$.
 
-Lean: none yet
+Node: SG0000004F · Lean: none yet
 
 *Proof.* The first claims are in the proof of Volume 3, Proposition 4.1.8, part 2: for a nonzero polynomial $Q$ over $k$, the residue of $Q(y)$ is $Q(\bar{y}) \ne 0$, so $Q(y)$ is a unit of $\mathcal{O}_v$. Thus $k' \subseteq \mathcal{O}_v$, and $K$ is finitely generated over $k'$.
 
@@ -46,7 +46,7 @@ Lean: none yet
 
 **Proposition 1.4.5.** Let $v$ be a valuation of $K/k$, let $X$ be a model of $K/k$ on which $v$ has a center, and let $\pi : X' \to X$ be a resolution of $X$, that is, a proper birational morphism with $X'$ regular. Then the center of $v$ on $X'$ is a regular point of $X'$. In particular, if each model of $K/k$ has a resolution, then each valuation of $K/k$ has local uniformization.
 
-Lean: none yet
+Node: SG0000004E · Lean: none yet
 
 *Proof.* The center of $v$ on $X'$ exists, by the valuative criterion of properness (see the remark after Volume 3, Definition 4.1.1). Each point of $X'$ is regular. So $\pi$ is a proper birational morphism as in Volume 3, Definition 4.1.1, and the center of $v$ on $X'$ is regular. $\square$
 
@@ -54,7 +54,7 @@ The proposition is trivial, but it shows how the two problems relate. Resolution
 
 **Corollary 1.4.6.** Theorem 1.4.1 follows from the theorem of Hironaka [Hir64].
 
-Lean: none yet
+Node: SG0000004E · Lean: none yet
 
 *Proof.* Let $X$ be a model of $K/k$. It is an integral variety over a field of characteristic 0. By the theorem of Hironaka, in the form of Volume 9, Theorem 1.2.6, it has a resolution. Proposition 1.4.5 gives the claim. $\square$
 

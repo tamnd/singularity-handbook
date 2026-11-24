@@ -1,6 +1,6 @@
 ---
 title: Semistable curves
-nodes: [SG0000000V]
+nodes: [SG0000000V, SG0000004K]
 sources: [dJ96, Mat, Liu]
 status: drafted
 drafted_by: writer
@@ -83,7 +83,7 @@ The local computations give the following theorem of de Jong.
 
 **Theorem 2.1.8 (de Jong).** Let $S$ be an excellent regular scheme, let $D \subseteq S$ be a divisor with strict normal crossings, and let $f \colon X \to S$ be a split semistable curve that is smooth over $S \setminus D$. There is a projective modification $\varphi \colon X_1 \to X$ such that the center of $\varphi$ lies in $\operatorname{Sing}(X)$, the composition $X_1 \to S$ is a split semistable curve smooth over $S \setminus D$, and $X_1$ is regular.
 
-Lean: none yet
+Node: SG0000004K · Lean: none yet
 
 This is [dJ96, Proposition 3.6]. The proof has two steps. First, [dJ96, Lemma 3.2] gives a projective modification with center in $\operatorname{Sing}(X)$ after which $X$ is still a split semistable curve, smooth over $S \setminus D$, and $\operatorname{Sing}(X)$ has codimension at least 3 in $X$. Its proof blows up an irreducible component $T$ of $\operatorname{Sing}(X)$ of codimension 2. Along $T$ the local equation is $uv = \varepsilon t_1^{n}$ with $n \ge 2$, and the blowup of $T$ replaces $n$ by $n - 2$, as in the second part of Example 2.1.6. After these blowups each exponent is 0 or 1, and the local equations are $uv = t_1 \cdots t_\mu$ with $2 \le \mu \le r$, as in Example 2.1.7 [dJ96, 3.5]. Second, one blows up, one at a time, the irreducible components $E$ of the inverse images $f^{-1}(D_i)$ of the components $D_i$ of $D$. Because $f$ is split, at a singular point where $D_i$ is $t_1 = 0$, the component $E$ is given by the ideal $(u, t_1)$ or $(v, t_1)$, and the blowup is computed by Proposition 2.1.5. De Jong shows that the blowups do not change the number of irreducible components of the inverse image of $D$, and that each blowup makes one more of them a Cartier divisor. When all of them are Cartier divisors, the local equation at each point has $\mu = 1$, and $X_1$ is regular by Corollary 2.1.4.
 

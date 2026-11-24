@@ -1,6 +1,6 @@
 ---
 title: Monomial valuations
-nodes: [SG0000000Y]
+nodes: [SG0000000Y, SG0000004D]
 sources: [ZS2, Ful93, Spi83]
 status: drafted
 drafted_by: writer
@@ -48,7 +48,7 @@ For $N$ large all coefficients are $\ge 0$, for each of the finitely many $e \in
 
 **Lemma 2.1.4 (lattice lemma).** Let $\Gamma \cong \mathbb{Z}^r$ be an ordered group, and let $D \subseteq \Gamma$ be a finite set of elements $\ge 0$. Then there is a basis $m_1, \dots, m_r$ of $\Gamma$ over $\mathbb{Z}$ such that each $m_i$ is positive and each $d \in D$ is a combination $\sum n_im_i$ with $n_i \in \mathbb{N}$.
 
-Lean: none yet
+Node: SG0000004D · Lean: none yet
 
 *Proof.* Let $V = \Gamma \otimes \mathbb{Q}$, which contains $\Gamma$. By Lemma 2.1.3 there is a positive basis $m_1, \dots, m_r$ of $V$ whose rational cone contains $D$. Each element of a basis of $\Gamma$ is a rational combination of the $m_i$. Let $N \ge 1$ be a common denominator of these coefficients, and replace each $m_i$ by $m_i/N$. Then the lattice $L = \bigoplus \mathbb{Z}m_i$ contains $\Gamma$, the $m_i$ are positive, and the rational cone is the same.
 
@@ -71,7 +71,7 @@ The proof is an algorithm. It needs to compare elements of $V$, which is possibl
 
 **Theorem 2.1.5 (monomial case).** Let $k$ be a field of any characteristic, and let $v$ be a monomial valuation of $K = k(x_1, \dots, x_r)$. Then $v$ has local uniformization. More precisely, for each finite subset $S$ of $\mathcal{O}_v$ there are Laurent monomials $u_1, \dots, u_r$ that form a basis of the group $M$, with $v(u_i) > 0$, such that $S \subseteq A_{(u_1, \dots, u_r)}$, where $A = k[u_1, \dots, u_r]$ is a polynomial ring.
 
-Lean: none yet
+Node: SG0000004D · Lean: none yet
 
 *Proof.* Let $S \subseteq \mathcal{O}_v$ be finite. Write each $s \in S$ as $s = f_s/g_s$ with polynomials $f_s, g_s \ne 0$. Write $f_s = c\,x^\alpha(1 + F_s)$, where $c\,x^\alpha$ is the term of least value and $F_s$ is a sum of terms $c'x^\varepsilon$ with $v(x^\varepsilon) > 0$. Write $g_s = d\,x^\beta(1 + G_s)$ in the same way. Then
 $$s = \frac{c}{d}\, x^{\alpha - \beta}\, \frac{1 + F_s}{1 + G_s}, \qquad v(x^{\alpha - \beta}) = v(s) \ge 0.$$
@@ -83,7 +83,7 @@ Let $A' = A[S]$. Then $S \subseteq A' \subseteq A_\mathfrak{p} \subseteq \mathca
 
 **Corollary 2.1.6.** Let $k$ be a field of any characteristic, let $K = k(y_1, \dots, y_t, x_1, \dots, x_r)$ be a field of rational functions, and let $v$ be a valuation of $K/k$ that is trivial on $k(y_1, \dots, y_t)$ and is a monomial valuation of $K = k(y)(x_1, \dots, x_r)$ over the field $k(y)$. Then $v$ has local uniformization, and $v$ is an Abhyankar valuation of $K/k$ with residue field $k(y_1, \dots, y_t)$.
 
-Lean: none yet
+Node: SG0000004D · Lean: none yet
 
 *Proof.* By Lemma 2.1.2 over the field $k(y)$, the residue field is $k(y)$ and $\Gamma_v \cong \mathbb{Z}^r$. So $\operatorname{rr}\Gamma_v + \operatorname{trdeg}_k Kv = r + t$. The residues of $y_1, \dots, y_t$ are $y_1, \dots, y_t$, which are algebraically independent over $k$. By Theorem 2.1.5 over $k(y)$ and Lemma 1.4.2, $v$ has local uniformization over $k$. $\square$
 

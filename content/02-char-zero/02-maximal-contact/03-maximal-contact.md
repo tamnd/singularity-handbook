@@ -1,6 +1,6 @@
 ---
 title: Hypersurfaces of maximal contact
-nodes: []
+nodes: [SG00000045]
 sources: [Kol07, Hir64, Gir75, Hau03, EH02]
 status: drafted
 drafted_by: writer
@@ -14,7 +14,7 @@ Let $I$ be an ideal sheaf on $X$ with maximal order $m \ge 1$. By Corollary 2.1.
 
 **Lemma 2.3.2 (local existence).** Let $m = \operatorname{max\text{-}ord} I \ge 1$ and let $x$ be a closed point with $\operatorname{ord}_x I = m$. Then there are an open set $U \ni x$ and a hypersurface of maximal contact $H \subseteq U$ for $I|_U$. Each hypersurface of maximal contact $H$ contains $\operatorname{cosupp}(I, m)$.
 
-Lean: none yet
+Node: SG00000045 · Lean: none yet
 
 *Proof.* By Lemma 2.1.4, $\operatorname{ord}_x MC(I) = 1$, so there is $h \in MC(I)_x$ with $h \notin \mathfrak{m}_x^2$. Then $h$ is part of a regular system of parameters at $x$, so $dh(x) \ne 0$, and $h$ is part of a system of local coordinates on some open set $U \ni x$. On $U$ the hypersurface $H = (h = 0)$ is smooth, and $\mathcal{O}_U(-H) = (h) \subseteq MC(I)$. For the last claim, $\operatorname{cosupp}(I, m)$ is the zero set of $MC(I)$ by Corollary 2.1.5, and this is contained in the zero set of each ideal contained in $MC(I)$. $\square$
 
@@ -26,7 +26,7 @@ A global hypersurface of maximal contact need not exist, and the local ones are 
 2. $\operatorname{cosupp}(I_i, m) \subseteq H_i$, and in particular the center $Z_i$ lies in $H_i$;
 3. $H_{i+1}$ is smooth, and it is a hypersurface of maximal contact for $I_{i+1}$ whenever $\operatorname{max\text{-}ord} I_{i+1} = m$.
 
-Lean: none yet
+Node: SG00000045 · Lean: none yet
 
 *Proof.* We prove (1) by induction on $i$. For $i = 0$ it is the definition, since $J^{(m-1)}_0 = D^{m-1}(I)$. The second inclusion holds for each $i$ by Theorem 2.2.7. Assume (1) for $i$. Then $\operatorname{cosupp}(I_i, m)$ lies in the zero set of $MC(I_i)$ by Lemma 2.1.4, and this lies in the zero set of $\mathcal{O}(-H_i)$, which is $H_i$. This is (2) for $i$. So $Z_i \subseteq H_i$. The center $Z_i$ is a smooth subvariety of the smooth hypersurface $H_i$, so $H_i$ has multiplicity 1 along $Z_i$ and
 $$\pi_i^* \mathcal{O}_{X_i}(-H_i) = \mathcal{O}_{X_{i+1}}(-H_{i+1} - F_i),$$
