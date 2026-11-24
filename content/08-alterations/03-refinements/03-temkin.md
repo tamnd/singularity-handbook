@@ -44,7 +44,7 @@ Temkin states that the method loses the Galois property: the alteration $b$ of T
 
 ### What the theorem gives for the open problem
 
-Let $X$ be a variety of dimension 4 over an algebraically closed field of characteristic $p > 0$. By Corollary 3.3.3 there is a regular alteration $X_1 \to X$ of degree $p^e$, generically étale. This is the strongest known result toward resolution of $X$, and it does not give a resolution. There are three reasons.
+Let $X$ be a variety of dimension 4 over an algebraically closed field of characteristic $p > 0$. By Corollary 3.3.3 there is a regular alteration $X_1 \to X$ of degree $p^e$, generically étale. It does not give a resolution. There are three reasons.
 
 1. The degree $p^e$ is not invertible in characteristic $p$, so the trace splitting of Proposition 1.3.2 fails. For coefficients in which $p$ is invertible, such as $\mathbb{Z}[1/p]$-modules, the trace argument works.
 2. The alteration is not Galois. If it were Galois with a group $G$, then by Section 3.1 the variety $X$ would be birational to $X_1/G$ up to a purely inseparable map, with $|G|$ a power of $p$ in the generically étale case. So $G$ would be a $p$-group, and its action on $X_1$ would be wild. No known method resolves such wild quotients in dimension 4 in general.

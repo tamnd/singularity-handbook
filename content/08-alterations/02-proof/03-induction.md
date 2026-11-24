@@ -1,7 +1,7 @@
 ---
 title: The reductions and the fibration in curves
 nodes: [SG0000001K]
-sources: [dJ96, Har, EGA4]
+sources: [dJ96, Stacks, EGA4]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -36,7 +36,7 @@ This step is the reason why the alteration of Theorem 1.2.1 can be inseparable o
 
 (iii) $X$ is projective.
 
-By Chow's lemma [Har, Exercise II.4.10] there is a modification $X' \to X$ with $X'$ quasi-projective, and Lemma 2.3.1 gives (ii). Assume (ii), and let $X \subseteq \bar X$ be an open immersion into a projective variety. Let $\bar Z$ be the union of the closure of $Z$ and of $\bar X \setminus X$. Assume that $\bar\varphi \colon \bar X_1' \to \bar X$ and $\bar j \colon \bar X_1' \to \bar X_1$ solve the problem for $(\bar X, \bar Z)$. Then $\bar X_1'$ is proper over $k$, since $\bar\varphi$ is proper and $\bar X$ is projective. So the open immersion $\bar j$ has a closed image, and as $\bar X_1$ is irreducible, $\bar j$ is an isomorphism. Let $X_1 = \bar\varphi^{-1}(X)$, let $\varphi_1$ be the restriction of $\bar\varphi$, and let $j_1$ be the inclusion of $X_1$ in $\bar X_1'$. Then $\varphi_1$ is an alteration, and since the closure of $Z$ meets $X$ in $Z$,
+By Chow's lemma for varieties [Stacks] there is a modification $X' \to X$ with $X'$ quasi-projective, and Lemma 2.3.1 gives (ii). Assume (ii), and let $X \subseteq \bar X$ be an open immersion into a projective variety. Let $\bar Z$ be the union of the closure of $Z$ and of $\bar X \setminus X$. Assume that $\bar\varphi \colon \bar X_1' \to \bar X$ and $\bar j \colon \bar X_1' \to \bar X_1$ solve the problem for $(\bar X, \bar Z)$. Then $\bar X_1'$ is proper over $k$, since $\bar\varphi$ is proper and $\bar X$ is projective. So the open immersion $\bar j$ has a closed image, and as $\bar X_1$ is irreducible, $\bar j$ is an isomorphism. Let $X_1 = \bar\varphi^{-1}(X)$, let $\varphi_1$ be the restriction of $\bar\varphi$, and let $j_1$ be the inclusion of $X_1$ in $\bar X_1'$. Then $\varphi_1$ is an alteration, and since the closure of $Z$ meets $X$ in $Z$,
 $$j_1(\varphi_1^{-1}(Z)) \cup (\bar X_1' \setminus X_1) = \bar\varphi^{-1}(\bar Z),$$
 which is a divisor with strict normal crossings. This is [dJ96, 4.6 and 4.7].
 

@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Review of Volumes 5 and 8. Volume 5, Examples 3.2.2 and 4.2.2 said that the resolution of one model, with Proposition 1.4.5, gives local uniformization. It gives a regular center over that model only, so the text now takes local uniformization from Proposition 3.1.2. Volume 8, Proposition 1.2.3 and Section 2.3 cited Chow's lemma from [Har, Exercise II.4.10], which assumes $X$ proper; they now cite [Stacks]. Volume 8, Section 2.4 referred to Proposition 2.4.5, which does not exist; it now refers to Proposition 2.4.3. Volume 8, Proposition 1.3.4 now says "no nonempty open subset". Volume 5, Section 4.2 now says that its Lean line for SG00000009 is the statement only. Volume 5, Section 4.1 now says that the proof of Temkin uses Berkovich analytic curves, not adic spaces. Volume 8, Section 3.3 no longer calls the theorem of Temkin the strongest known result toward resolution.
+
 ## [0.4.10] - 2026-11-25
 
 ### Added
