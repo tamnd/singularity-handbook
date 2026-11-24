@@ -1,7 +1,7 @@
 ---
 title: Regular schemes and resolutions
 nodes: [SG00000001, SG00000002, SG00000003, SG00000004, SG00000005]
-sources: [Ser55]
+sources: [Ser55, EGA4]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -39,4 +39,4 @@ Node: SG00000005 · Lean: `Singularity.IsVariety`
 
 Node: SG00000004 · Lean: `Singularity.IsResolution`
 
-Condition 3 asks that $\operatorname{Reg}(X)$ is open. For a variety this is a theorem (EGA IV, 6.12), but the definition does not use it. Conditions 3 and 4 together make $\pi$ birational on each component of $Y$ when $X$ is reduced, because each component of $Y$ meets $\pi^{-1}(U)$, and over $U$ the map is an isomorphism.
+Condition 3 asks that $\operatorname{Reg}(X)$ is open. For a variety this is a theorem of Nagata [EGA4, Section 6.12], but the definition does not use it. Conditions 3 and 4 together make $\pi$ birational on each component of $Y$ when $X$ is reduced, because each component of $Y$ meets $\pi^{-1}(U)$, and over $U$ the map is an isomorphism.

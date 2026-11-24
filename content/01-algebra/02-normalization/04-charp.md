@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## The normalization in characteristic p
 
-In this section we prove the theorem of E. Noether over each field. Section 2.3 proved it when the field of fractions of $A$ is separable over the field of fractions of a Noether normalization. Over a field of characteristic $p > 0$ this is not always so, and the trace form can be zero. We remove the condition in two steps. First we treat a purely inseparable extension of $k(y_1, \dots, y_s)$. There we use $q$-th roots in place of the trace. Then we reduce the general case to the purely inseparable case and to the separable case with the normal closure. The proof follows [Eis95, Corollary 13.13] and [Mat, Section 33].
+In this section we prove the theorem of E. Noether over each field. Section 2.3 proved it when the field of fractions of $A$ is separable over the field of fractions of a Noether normalization. Over a field of characteristic $p > 0$ this is not always so, and the trace form can be zero. We remove the condition in two steps. First we treat a purely inseparable extension of $k(y_1, \dots, y_s)$. There we use $q$-th roots in place of the trace. Then we reduce the general case to the purely inseparable case and to the separable case with the normal closure. The proof follows [Eis95, Corollary 13.13].
 
 Throughout the section, $k$ is a field of characteristic $p > 0$, $P = k[y_1, \dots, y_s]$ is a polynomial ring, and $K = \operatorname{Frac} P = k(y_1, \dots, y_s)$. The polynomial ring $P$ is Noetherian, and it is integrally closed by Example 2.1.5.
 
