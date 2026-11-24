@@ -51,7 +51,7 @@ The set $T(g)$ is a linear subspace of $K^n$. If $v \in T(g)$ and $c \in K$, we 
 
 **Theorem 2.2.5.** Let $f \in K[x]$ with $\operatorname{ord} f = m$, and let $f'$ be the weak transform of $f$ in the chart $\pi_{j,t}$, with the vector $v$ of the chart. If $\operatorname{ord} f' = m$, then $v \in T(f_m)$.
 
-Node: SG0000003B · Lean: none yet
+Node: SG0000003B · Lean: `Singularity.mem_directrix_of_ord_pointChart_eq`
 
 *Proof.* Let $h$ be as in the proof of Theorem 2.2.2. Then $m = \operatorname{ord} f' \le \operatorname{ord} h \le \deg h \le m$. So $h$ is homogeneous of degree $m$. Write $f_m = \sum_{k=0}^{m} x_j^{m-k} g_k$, where the $g_k$ do not contain $x_j$ and $g_k$ is homogeneous of degree $k$. Then $h = \sum_k g_k(y + t)$, where $y$ is the vector of the variables $x_i$ with $i \ne j$. The part of degree $m$ of $h$ is $g_m(y)$, so $h = g_m(y)$.
 
@@ -62,6 +62,10 @@ $$f_m(u + sv) = f_m(a, b + a t) = g_m(b) = g_m(w - u_j t).$$
 The right side does not contain $s$. We put $s = 0$ and get $g_m(w - u_j t) = f_m(u)$. Thus $f_m(u + sv) = f_m(u)$, and $v \in T(f_m)$. $\square$
 
 So the points of the exceptional divisor where the order stays $m$ lie in the projective space $\mathbb{P}(T(f_m))$. If $T(f_m) = 0$, then the order goes down at each point after one blowup. The converse of Theorem 2.2.5 is false, because the terms of $f$ of degree more than $m$ can also decrease the order, as the next examples show.
+
+The Lean library defines $T(g)$ as `Singularity.directrix`, a subspace of $K^n$, with the condition $g(x + sv) = g(x)$ in $K[x, s]$ as above. The Lean definition accepts each polynomial $g$, not only a homogeneous one. The lemma `Singularity.aeval_add_smul_of_mem_directrix` gives $g(x + cv) = g(x)$ for each $c \in K$ when $v \in T(g)$. For a homogeneous $g$ of degree $m$, one $c \neq 0$ with $g(x + cv) = g(x)$ is sufficient for $v \in T(g)$. Write $g(x + sv) = g(x) + \sum_{k \ge 1} s^k D_k(x)$, with $D_k$ homogeneous of degree $m - k$. Then $g(x + cv) - g(x) = \sum_{k \ge 1} c^k D_k(x)$, and the terms have different degrees, so each $D_k = 0$. For a polynomial that is not homogeneous this is false. Over $\mathbb{F}_p$ the polynomial $g = x_1^p - x_1$ satisfies $g(x + c e_1) = g(x)$ for each $c \in \mathbb{F}_p$, but $g(x + s e_1) - g(x) = s^p - s \neq 0$.
+
+The Lean proof of Theorem 2.2.5 does not use the ring $K[x_j, x_j^{-1}, y]$. It writes the chart with the translations $t$ as the chart with the translations $0$ after the linear change of variables $x_i \mapsto x_i + t_i x_j$ for $i \neq j$. The chart with the translations $0$ is injective, so the identity $f_m(x_j, y + x_j t) = g_m(y)$ follows from the equality of the two images. The last step, with the variables $u$ and $s$, is the same as in the proof above. The main theorems use only the axioms `propext`, `Classical.choice` and `Quot.sound`.
 
 **Example 2.2.6.** Let $f = z^2 - x^3 - y^4$ as in Example 2.1.3, so $f_2 = z^2$. In each characteristic, the condition $(z + s v_z)^2 = z^2$ gives $v_z = 0$. So $T(f_2)$ is the plane $z = 0$. The lines with $v_z \ne 0$ are not in the tangent cone, so they give no points of $V(f')$. In the $y$-chart, $f' = (z + t_z)^2 - y (x + t_x)^3 - y^2$. For $t_z = 0$ and $t_x \ne 0$, the term $-t_x^3 y$ has order $1$, so $\operatorname{ord} f' = 1$. For $t_z = t_x = 0$, we get $f' = z^2 - x^3 y - y^2$, and $\operatorname{ord} f' = 2$. In the $x$-chart, $f' = (z + t_z)^2 - x - x^2 (y + t_y)^4$, and the order is at most $1$. So exactly one point over the origin has order $2$, the line through $(0, 1, 0)$. This line is in $T(f_2)$, as Theorem 2.2.5 says, but the other lines of $T(f_2)$ do not keep the order.
 
