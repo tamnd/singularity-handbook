@@ -21,7 +21,7 @@ $$\Theta(F) = \bigl( x_i \partial_i F \ (i \in \Delta), \ \partial_j F \ (j \not
 
 Node: SG0000003E · Lean: `Singularity.LEAN_THETA`
 
-The ideal is the image of $F$ under all logarithmic derivations. For $\Delta = \emptyset$ it is the Jacobian ideal $(\partial_1 F, \dots, \partial_n F)$. For $\Delta = \{1, \dots, n\}$ it is $(x_1 \partial_1 F, \dots, x_n \partial_n F)$, the ideal of Section 3.2.
+The ideal is the image of $F$ under all logarithmic derivations. For $\Delta = \emptyset$ it is the Jacobian ideal $(\partial_1 F, \dots, \partial_n F)$. For $\Delta = \{1, \dots, n\}$ it is $(x_1 \partial_1 F, \dots, x_n \partial_n F)$, the ideal of Section 3.3.
 
 **Lemma 3.1.2.** For each $h \in R$, $\Theta(F + h^p) = \Theta(F)$.
 
@@ -29,7 +29,7 @@ Node: SG0000003E · Lean: `Singularity.LEAN_THETA_ADD_POW`
 
 *Proof.* For each derivation $D$, the Leibniz rule gives $D(h^p) = p h^{p-1} D(h) = 0$. So each generator of $\Theta(F + h^p)$ is the generator of $\Theta(F)$ with the same index. $\square$
 
-So $\Theta(F)$ depends only on the hypersurface $f = 0$, the divisor $E$ and the coordinates $x$, not on the choice of $z$. A change of the coordinates $x$ that keeps $E$ maps the module of logarithmic derivations to itself, so it maps $\Theta(F)$ to the log-Jacobian ideal of the new $F$. Cossart used this ideal for a base of dimension $3$ in his thesis, where it is called the Jacobian ideal [Cos87]. Posva gives a modern account of its transformation law [Pos24, Appendix A].
+So $\Theta(F)$ depends only on the hypersurface $f = 0$, the divisor $E$ and the coordinates $x$, not on the choice of $z$. A change of the coordinates $x$ that keeps $E$ maps the module of logarithmic derivations to itself, so it maps $\Theta(F)$ to the log-Jacobian ideal of the new $F$. Cossart used this ideal for a base of dimension $3$ in his thesis [Cos87]. Posva gives a modern account of its transformation law [Pos24, Appendix A].
 
 ### The operators on monomials
 
@@ -80,4 +80,4 @@ The Lean library states the dichotomy for polynomials over a field of characteri
 
 ### Notes and references
 
-For a base of dimension $3$, the ideal $\Theta(F)$ and its order are the invariant $\nu$ of the thesis of Cossart [Cos87], and Cossart and Piltant use it in their proof of resolution of threefolds [CP08]. The transformation law under blowups is in [Pos24, Appendix A]. The dichotomy of Theorem 3.1.4 holds in each dimension. The behaviour of $\rho$ under point blowups is the subject of a milestone of the project, and a later section will treat it. For a base of dimension $4$, the question whether a sequence of blowups makes $\rho$ drop is open.
+For a base of dimension $3$, the ideal $\Theta(F)$ and its order appear in the thesis of Cossart [Cos87], and Cossart and Piltant use it in their proof of resolution of threefolds [CP08]. The transformation law under blowups is in [Pos24, Appendix A]. The dichotomy of Theorem 3.1.4 holds in each dimension. Section 3.2 shows that $\rho$ does not go up under a point blowup. For a base of dimension $4$, the question whether a sequence of blowups makes $\rho$ drop is open.
