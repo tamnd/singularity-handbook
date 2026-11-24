@@ -11,6 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- `EDITION` refers to the release v0.2.13 of tamnd/singularity.
 - Remark 3.1.7 refers to Theorem 3.3.13. Remark 3.3.11 is now Lemma 3.3.11, Lemma 3.3.12, Theorem 3.3.13 and Remark 3.3.14.
 
 ## [0.2.12] - 2026-11-24
