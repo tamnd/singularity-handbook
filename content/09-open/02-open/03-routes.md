@@ -18,11 +18,13 @@ Zariski's method has two steps [Zar40, Zar44]. First, prove local uniformization
 
 **Conjecture 2.3.1.** Let $K$ be a function field of transcendence degree 4 over a field of characteristic $p > 0$. Each valuation of $K$ has local uniformization.
 
-Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour` (planned, no Lean statement yet)
+Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour` (the statement only)
 
 **Conjecture 2.3.2 (patching in dimension 4).** Let $X$ be a variety of dimension 4. If each valuation of the function field of $X$ has local uniformization, then $X$ has a resolution.
 
-Node: SG0000001J · Lean: `Singularity.resolution_of_localUniformization_four` (planned, no Lean statement yet)
+Node: SG0000001J · Lean: `Singularity.resolution_of_localUniformization_four` (the statement only)
+
+The Lean statements use the affine form of local uniformization (Volume 3, Proposition 4.1.6). The Lean statement of Conjecture 2.3.2 is for characteristic $p$. Its hypothesis is local uniformization in each transcendence degree at most 4, because a variety of dimension 4 can have components of smaller dimension. Local uniformization in transcendence degree at most 3 is known (Section 2.1), so this hypothesis is the same as Conjecture 2.3.1.
 
 Conjecture 2.3.2 is open in each characteristic. In characteristic 0 nobody needs it, because the global algorithm of Hironaka gives the resolution. Piltant gives an axiomatic form of Zariski's patching theorem in [Pil]. Thus the route of valuations needs two new theorems in dimension 4, not one.
 
@@ -30,13 +32,13 @@ The results that hold in all dimensions are these. A valuation is an *Abhyankar 
 
 **Theorem 2.3.3 (Knaf-Kuhlmann).** Each Abhyankar valuation of a function field has local uniformization.
 
-Node: SG0000001E · Lean: `Singularity.localUniformization_abhyankar` (planned, no Lean statement yet)
+Node: SG0000001E · Lean: `Singularity.localUniformization_abhyankar` (the statement only)
 
 Knaf and Kuhlmann prove this with a separable extension of the residue fields [KK05], and Cutkosky removes this condition [Cut20]. The valuations that are not Abhyankar valuations are the hard case. They can have defect (Section 2.2).
 
 **Theorem 2.3.4 (Temkin).** Each valuation of a function field $K$ has local uniformization after a finite purely inseparable extension of $K$.
 
-Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (planned, no Lean statement yet)
+Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (the statement only)
 
 Temkin proves this in [Tem13]. He also reduces local uniformization to valuations of height one [Tem23]. Herrera Govantes, Olalla Acosta, Spivakovsky and Teissier prove that valuations have tight extensions to the completion [HOST26]. This was a conjecture of Teissier, and it is a step in his program for local uniformization.
 

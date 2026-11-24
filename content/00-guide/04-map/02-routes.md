@@ -26,6 +26,6 @@ Three nodes of the map mark the first open targets of the routes: the purely ins
 
 Node: SG00000009 · Lean: `Singularity.PurelyInseparableHypersurfaceResolution`
 
-Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour`
+Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour` (the statement only)
 
 Node: SG0000001R · Lean: `Singularity.WeightedInvariantCharP`
