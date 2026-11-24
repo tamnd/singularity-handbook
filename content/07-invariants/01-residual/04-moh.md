@@ -8,16 +8,45 @@ reviewed_by: []
 ---
 ## The increase of the residual order
 
-In characteristic $0$, the residual order does not increase under a permissible blowup at the points where the order stays the same. This is the step that makes the induction of the proofs of resolution work. In characteristic $p$ the residual order can increase. In this section we state Moh's bound for one blowup, we compute an increase in a short example, we describe the cycle of Hauser and Perlega, along which the residual order tends to infinity, and we report the computations of the lab of the project. We keep the notation of Section 1.3: $K$ is a perfect field of characteristic $p$, $q = p^e$, and $f = z^q + F(x)$.
+In characteristic $0$, the residual order does not increase under a permissible blowup at the points where the order stays the same. This is the step that makes the induction of the proofs of resolution work. In characteristic $p$ the residual order can increase. In this section we prove Moh's bound for one point blowup, we compute an increase in a short example, we describe the cycle of Hauser and Perlega, along which the residual order tends to infinity, and we report the computations of the lab of the project. We keep the notation of Section 1.3: $K$ is a perfect field of characteristic $p$, $q = p^e$, and $f = z^q + F(x)$.
 
 ### Moh's bound
 
-**Theorem 1.4.1 (Moh).** Let $f = z^q + F$ with $F$ clean, let $E$ be a normal crossings divisor as in Section 1.3, and let $d$ be the residual order of $f$ for $E$. Let $\pi$ be a permissible blowup, and let $a$ be a point over the origin where the strict transform $f'$ has order $q$. Then the residual order $d'$ of $f'$ at $a$ for the transform $E'$ of $E$ satisfies
+**Theorem 1.4.1 (Moh, for a point blowup).** Let $K$ be a field of characteristic $p$, let $q = p^e$, and let $F \in K[x_1, \dots, x_n]$ be a clean polynomial with $F \ne 0$ and $\operatorname{ord} F \ge q$. Let $E = V(\prod_{i \in \Delta} x_i)$, and let $d$ be the residual order of $f = z^q + F$ for $E$. Take the $x_j$-chart of the point blowup with the translations $t_i$, so that $\pi(F) = x_j^q F'$ and $f' = z^q + F'$ (Lemma 1.3.7), and let $E'$ be the new divisor of Section 1.3. Let $d'$ be the residual order of $f'$ for $E'$, in the coordinates of the chart and after cleaning. Then
 $$d' \le d + p^{e-1}.$$
+If $q$ does not divide $\operatorname{ord} F$, then $d' \le d$.
 
-Node: SG00000015 · Lean: `Singularity.moh_bound` (the statement only, not proved)
+Node: SG00000015 · Lean: `Singularity.residualOrderAlong_pointChart_le`, `Singularity.residualOrderAlong_pointChart_le_of_not_dvd`, `Singularity.moh_bound_holds`
 
-We do not prove Theorem 1.4.1. It is from [Moh87], and [HP19a, Section 3] states it in this form. The Lean statement `Singularity.moh_bound` measures the residual order after cleaning in the given coordinates. By Proposition 1.3.5 this number does not depend on the choice of the coordinates $x$ that keep $E$. The Lean statement is not proved, and no Lean theorem uses it. Hauser gives a further analysis of the increase and necessary conditions on $F$ for an increase in [Hau10], and Hauser and Perlega characterize the increase in [HP19b]. Hauser studies the points where the invariant increases, the *kangaroo points*, in [Hau08].
+The theorem is from [Moh87], and [HP19a, Section 3] states it in this form. The papers measure the residual order in coordinates that the resolution chooses. Theorem 1.4.1 measures it after cleaning in the given coordinates, and it needs no hypothesis on them. By Proposition 1.3.5 this number does not depend on the choice of the coordinates $x$ that keep $E$. It does not need the hypothesis $\operatorname{ord} F' \ge q$, and $K$ need not be perfect or algebraically closed. The Lean proposition `Singularity.moh_bound` is the statement with these extra hypotheses, and `Singularity.moh_bound_holds` proves it. The Lean theorems are for polynomials and for point blowups. A blowup with a larger permissible center is not treated here.
+
+The proof uses linear operators that are diagonal in the basis of the monomials. We write $|\beta| = \beta_1 + \dots + \beta_n$ for $\beta \in \mathbb{N}^n$, and $e_i$ for the unit vectors. An operator $S$ on $K[x]$ is *diagonal* with the weight $w$ if $S(x^\beta) = w(\beta) x^\beta$ for each $\beta$. A diagonal operator does not lower the order, and it keeps the monomials of $P$ with $w(\beta) \ne 0$. We use three such operators, for $h \ge 1$ and an index $i$:
+
+* the operator $\Theta^{(h)}$ with the weight $\binom{|\beta|}{h}$;
+* the operator $\theta_j^{(h)}$ with the weight $\binom{\beta_j}{h}$;
+* the operator $x_i^h D_i^{(h)}$ with the weight $\binom{\beta_i}{h}$, where $D_i^{(h)}(x^\beta) = \binom{\beta_i}{h} x^{\beta - h e_i}$ is the Hasse derivative.
+
+We also use two facts on binomial coefficients in characteristic $p$. Since $(1 + s)^{p^v b} = (1 + s^{p^v})^b$, the coefficient $\binom{p^v b}{h}$ is $0$ in $K$ if $p^v \nmid h$. So if $q \mid a$ and $0 < h < q$, then $\binom{a}{h} = 0$ in $K$. And if $q \nmid a$, write $a = p^v b$ with $p \nmid b$. Then $v < e$ and $\binom{a}{p^v} = b \ne 0$ in $K$.
+
+*Proof.* Let $m = \operatorname{ord} F$, and let $x^\alpha$ be a monomial of $F$ with $|\alpha| = m$. Write $F = x^r G$ as in Definition 1.3.3, with $r_i = 0$ for $i \notin \Delta$. Then $\operatorname{ord} G = d$ and $m = |r| + d$.
+
+*Step 1: the monomial factor of $F'$.* For $i \ne j$, $\pi(x_i) = x_j (x_i + t_i)$. So $\pi(x^r) = x_j^{|r|} x^{N'} U$, where $N'_i = r_i$ for $i \ne j$ with $t_i = 0$, $N'_i = 0$ for the other $i$, and $U = \prod_{i \ne j, t_i \ne 0} (x_i + t_i)^{r_i}$. Each monomial of $G$ has degree at least $d$, so $\pi(G) = x_j^d G_1$ for a polynomial $G_1$. Thus
+$$F' = x^N U G_1, \qquad N = (m - q) e_j + N'.$$
+So $x^N$ divides each monomial of $F'$, and also each monomial of the clean part $C$ of $F'$. The vector $N$ is $0$ outside $\{j\} \cup \{ i \in \Delta : i \ne j, t_i = 0 \}$, and this set is the set of the components of $E'$. So the exponents $r'$ of Definition 1.3.3 for $C$ and $E'$ satisfy $r' \ge N$. If $C \ne 0$, this gives $d' = \operatorname{ord} C - |r'|$, and thus
+$$d' + |N| \le \operatorname{ord} C. \tag{1}$$
+
+*Step 2: a diagonal operator on $F$.* Let $S$ be diagonal with a weight $w$ such that $w(\alpha) \ne 0$. Then $\operatorname{ord} S(F) = m$, since $S$ does not lower the order and keeps $x^\alpha$. The support of $S(F)$ is in the support of $F$, so $S(F) = x^r H$ with $\operatorname{ord} H = m - |r| = d$. As in Step 1, $\pi(S(F)) = x_j^{|r|} x^{N'} U \pi(H)$. By Theorem 2.2.2, the weak transform $x_j^{-d} \pi(H)$ has order at most $d$, so $\operatorname{ord} \pi(H) \le 2d$. The orders of $x^{N'}$ and $U$ are $|N'|$ and $0$, so
+$$\operatorname{ord} \pi(S(F)) \le |r| + |N'| + 2d = m + |N'| + d. \tag{2}$$
+
+*Step 3: the case $q \nmid m$.* Take $h = p^v$ with $v < e$ and $\binom{m}{h} \ne 0$ in $K$. Apply (2) with $S = \Theta^{(h)}$. The $x_j$-exponent of each monomial of $\pi(x^\beta) = x_j^{|\beta|} \prod_{i \ne j} (x_i + t_i)^{\beta_i}$ is $|\beta|$, so $\theta_j^{(h)} \pi(P) = \pi(\Theta^{(h)} P)$ for each $P$. Since $h < q$, $\binom{\beta_j + q}{h} = \binom{\beta_j}{h}$ in $K$, so $\theta_j^{(h)}(x_j^q P) = x_j^q \theta_j^{(h)} P$. The operator $\theta_j^{(h)}$ kills the monomials in $q \mathbb{N}^n$, so $\theta_j^{(h)} F' = \theta_j^{(h)} C$. Thus
+$$\pi(\Theta^{(h)} F) = \theta_j^{(h)}(x_j^q F') = x_j^q \theta_j^{(h)} C.$$
+The operator $\theta_j^{(h)}$ does not lower the order. With (2), $q + \operatorname{ord} C \le m + |N'| + d$. In particular $C \ne 0$. Since $|N| = m - q + |N'|$, (1) gives $d' \le d$.
+
+*Step 4: the case $q \mid m$.* Since $F$ is clean, $\alpha \notin q \mathbb{N}^n$. If $q \mid \alpha_i$ for each $i \ne j$, then $q \mid m - \sum_{i \ne j} \alpha_i = \alpha_j$, a contradiction. So there is an $i \ne j$ with $q \nmid \alpha_i$. Take $h = p^v$ with $v < e$ and $\binom{\alpha_i}{h} \ne 0$ in $K$, and apply (2) with $S = x_i^h D_i^{(h)}$. The operator $D_i^{(h)}$ is the coefficient of $s^h$ of the substitution $x_i \mapsto x_i + s$. The chart sends $x_i + s$ to $x_j (x_i + t_i) + x_j s$, so $D_i^{(h)} \pi(P) = x_j^h \pi(D_i^{(h)} P)$. Also $D_i^{(h)}$ commutes with the multiplication by $x_j^q$, and it kills the monomials in $q \mathbb{N}^n$, so $D_i^{(h)} F' = D_i^{(h)} C$. Thus
+$$\pi(x_i^h D_i^{(h)} F) = (x_i + t_i)^h x_j^h \pi(D_i^{(h)} F) = (x_i + t_i)^h D_i^{(h)} \pi(F) = (x_i + t_i)^h x_j^q D_i^{(h)} C.$$
+The operator $x_i^h D_i^{(h)}$ does not lower the order, so $\operatorname{ord} C \le h + \operatorname{ord} D_i^{(h)} C$. With (2), $q + \operatorname{ord} C \le h + m + |N'| + d$. In particular $C \ne 0$. Then (1) gives $d' \le d + h \le d + p^{e-1}$. $\square$
+
+The Lean proof follows these steps. It defines the operators as the coefficients of $s^h$ of the substitutions $x_i \mapsto x_i + s$, $x_j \mapsto x_j (1 + s)$ and $x_l \mapsto x_l (1 + s)$ for each $l$, from $K[x]$ to $K[x][s]$. It proves the two chain rules of Steps 3 and 4 as identities of ring maps. The main theorems use only the axioms `propext`, `Classical.choice` and `Quot.sound`. Hauser gives a further analysis of the increase and necessary conditions on $F$ for an increase in [Hau10], and Hauser and Perlega characterize the increase in [HP19b]. Hauser studies the points where the invariant increases, the *kangaroo points*, in [Hau08].
 
 Moh also claimed a stronger result, the *stability theorem*: along a sequence of permissible blowups under which the order of the strict transforms of $f$ stays $q$, the residual order never exceeds $d + p^{e-1}$ [Moh87]. If it were true, the residual order could not increase without bound, and a refined invariant might drop in the long run. The rest of this section shows that the claim is false.
 
@@ -95,7 +124,7 @@ The runs of E1 have about $1.0 \cdot 10^7$ walks and $2.6 \cdot 10^7$ steps. The
 3. For $p = 2$ and $p = 3$, in each case, some step has the increase $d' - d = p^{e-1}$, so the bound of Theorem 1.4.1 is sharp on these walks. For $q = 25$ the largest increase is $4$, and for $q = 49$ it is $6$. For $q = 49$ with $n = 3$ or $n = 4$, and for $q = 25$ with $n = 4$, no walk has an increase.
 4. The increases are rare. For $p = 2$, $n = 2$ and $q = 2$, the walks have $580121$ steps and $6770$ increases. For $p = 7$, $n = 2$ and $q = 49$, they have $1055815$ steps and $68$ increases.
 
-The runs of the lab are in the directory `lab/runs` of tamnd/singularity. Each run has its spec, its seed and its outputs, and a computation of the same spec gives the same outputs. The data are examples. They prove no statement, and they do not show that Theorem 1.4.1 holds in the given coordinates, because the walks are a small sample of the points and of the families.
+The runs of the lab are in the directory `lab/runs` of tamnd/singularity. Each run has its spec, its seed and its outputs, and a computation of the same spec gives the same outputs. The data are examples. They prove no statement. Theorem 1.4.1 proves the bound of result 1 for a point blowup in the given coordinates, so the data are a check of the engine and not of the theorem.
 
 The walks also give new instances of the failure in Example 1.4.2. The next one has $p = 3$.
 
