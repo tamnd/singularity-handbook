@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- The edition is 0.4.8, with the map at tamnd/singularity@7519db1.
 - The intros of Volume 3 and of its Chapter 4 now say that Propositions 4.1.7 and 4.1.8 prove local uniformization in two easy cases.
 - Volume 3, Section 3.3 has the new subsections "The choice of the key polynomial" and "The graded algebra of an augmentation". The key polynomial of a step of the chain is not unique, and the augmentation depends on the choice: Example 3.3.18 gives two choices with different augmentations. Proposition 3.3.15 proves that all key polynomials of the step have the same degree and are $\mu$-equivalent, Lemma 3.3.16 and Proposition 3.3.17 compare the augmentations, and the text says that there is no maximal choice in general [Vaq07]. Proposition 3.3.19 proves the claim of part 3 of Theorem 3.3.5 on the graded algebra, in the form with $\mu$-equivalence of the library. The text gives the Lean names from tamnd/singularity-lean#80.
 - Volume 3, Section 4.1 has the new subsection "Divisorial valuations". The new Proposition 4.1.8 proves local uniformization for a valuation ring that is essentially of finite type over $k$, and for each valuation with $\operatorname{trdeg}_k K \le \operatorname{trdeg}_k \kappa_v + 1$, in particular for each divisorial valuation, in each characteristic. It has a complete proof and its Lean line, from tamnd/singularity-lean#81.
