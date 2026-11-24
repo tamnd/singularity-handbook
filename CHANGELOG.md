@@ -15,6 +15,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 7, Chapter 1 has the Lean names of tamnd/singularity-lean#45: the order and its laws, the Newton polyhedron, cleaning, the residual order, the chart of a point blowup, and the example of Section 1.4 (Example 1.4.2, `Singularity.Examples.kangaroo`). Section 1.4 says that the Lean statement of the bound of Moh is not proved.
 - Remark 1.8.18, Section 1.7, Theorem 5.3.3 and the introduction of Volume 1, Chapter 1 refer to Section 1.9. The node SG0000000K is proved for a field.
 - Volume 9, Example 2.2.1 (Narasimhan) has the Lean name of tamnd/singularity-lean#50, and a paragraph on the Lean proof.
+- The guide, Section 2.4, gives SG00000017 as not proved and SG00000039 as the certified cycle.
 
 ## [0.2.13] - 2026-11-24
 
