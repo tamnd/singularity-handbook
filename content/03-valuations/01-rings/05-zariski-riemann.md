@@ -16,6 +16,8 @@ Zariski collected all valuation rings of a function field into one topological s
 $$U(F) = \{V \in \operatorname{ZR}(K/A) : F \subseteq V\}.$$
 The *Zariski topology* on $\operatorname{ZR}(K/A)$ is the topology with the sets $U(F)$ as a basis of open sets.
 
+Lean: `Singularity.ZariskiRiemann`, `Singularity.ZariskiRiemann.basicOpen`
+
 The sets $U(F)$ form a basis of a topology, because $U(\emptyset)$ is the whole space and $U(F) \cap U(G) = U(F \cup G)$. If $B = A[f_1, \dots, f_n]$, then $U(\{f_1, \dots, f_n\}) = \operatorname{ZR}(K/B)$, so $\operatorname{ZR}(K/B)$ is an open subset of $\operatorname{ZR}(K/A)$. For a function field $K/k$, the space $\operatorname{ZR}(K/k)$ is the set of all valuations of $K/k$, up to equivalence.
 
 The next proposition relates the space to the spectrum of a ring. For a subring $B \subseteq K$ we define the *center map* $c_B : \operatorname{ZR}(K/B) \to \operatorname{Spec} B$ by $c_B(V) = \mathfrak{m}_V \cap B$. If $\operatorname{Frac} B = K$, then $c_B(V)$ is the center of $V$ on $\operatorname{Spec} B$ by Lemma 1.4.2.
@@ -30,7 +32,7 @@ Lean: none yet
 
 **Theorem 1.5.3 (Zariski).** Let $K$ be a field and let $A \subseteq K$ be a subring. Then $\operatorname{ZR}(K/A)$ is quasi-compact. In particular, for a function field $K/k$ the space $\operatorname{ZR}(K/k)$ is quasi-compact.
 
-Node: SG0000000X · Lean: `Singularity.ZariskiRiemann.compactSpace` (planned, no Lean statement yet)
+Node: SG0000000X · Lean: `Singularity.ZariskiRiemann.compactSpace`
 
 *Proof.* Let $2 = \{0, 1\}$ with the discrete topology, and let $P = 2^K$ be the set of all maps $K \to 2$ with the product topology. By the theorem of Tychonoff, $P$ is compact. A subset of $K$ is the same as its indicator function, so $\operatorname{ZR}(K/A)$ is a subset of $P$.
 
@@ -45,6 +47,8 @@ Conditions 1 and 2 say that $V$ is a subring of $K$ that contains $A$, and condi
 Now we compare the two topologies. For a finite $F \subseteq K$ the set $U(F)$ is the set of $V \in \operatorname{ZR}(K/A)$ whose indicator function is 1 at each point of $F$. This is the intersection of $\operatorname{ZR}(K/A)$ with a basic open set of $P$. So each open set of the Zariski topology is open in the topology induced by $P$. Let $\mathcal{U}$ be a cover of $\operatorname{ZR}(K/A)$ by Zariski open sets. These sets are open in the induced topology, so a finite subfamily of $\mathcal{U}$ covers $\operatorname{ZR}(K/A)$. $\square$
 
 This is the theorem of Zariski in [ZS2, Chapter VI, Section 17, Theorem 40]. The induced topology of $P$ is the *patch topology* (or constructible topology) of $\operatorname{ZR}(K/A)$. It is Hausdorff and compact. The Zariski topology is not Hausdorff, except in trivial cases. For example, if $V \subsetneq W$ are valuation rings, then each open set that contains $V$ also contains $W$.
+
+The Lean proof of Theorem 1.5.3 uses ultrafilters in place of the theorem of Tychonoff. The two arguments are the same in substance. Let $\mathcal{U}$ be an ultrafilter on $\operatorname{ZR}(K/A)$, and let $V$ be the set of the elements $x \in K$ such that the set of the points that contain $x$ is in $\mathcal{U}$. Each of the three conditions above holds for the indicator function of $V$, because each condition involves finitely many sets and an ultrafilter is closed under finite intersections. For $x \ne 0$, each point contains $x$ or $x^{-1}$, so one of the two sets is in $\mathcal{U}$. Thus $V$ is a valuation ring that contains $A$, and $\mathcal{U}$ converges to $V$ in the Zariski topology. A space in which each ultrafilter converges is quasi-compact. In Lean, $A$ is a ring with a homomorphism to $K$, and $V$ contains the image of $A$. The proof is in `Singularity/Valuation/ZariskiRiemann.lean`.
 
 ### Zariski-Riemann space and models
 
