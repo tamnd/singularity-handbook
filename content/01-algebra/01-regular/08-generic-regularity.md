@@ -131,7 +131,7 @@ Let $A_0 = k[t_1, \dots, t_s] \subseteq D$. It is a polynomial ring, because the
 1. Let $R$ be an algebra of finite type over $k$. Then $\operatorname{Reg}(R)$ is open in $\operatorname{Spec} R$.
 2. Let $X$ be a scheme that is locally of finite type over $k$. Then the regular locus of $X$ is open in $X$.
 
-Node: SG00000036 · Lean: `Singularity.Algebra.isOpen_regularLocus_of_perfectField`, `Singularity.regularLocus_isOpen_of_perfectField`
+Node: SG00000036 · Lean: `Singularity.regularLocus_isOpen_of_perfectField`, `Singularity.Algebra.isOpen_regularLocus_of_perfectField`
 
 *Proof.* The proofs of Theorems 1.8.10 and 1.8.12 apply with no change, with Theorem 1.8.16 in place of Theorem 1.8.9. $\square$
 
