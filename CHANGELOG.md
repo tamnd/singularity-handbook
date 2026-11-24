@@ -7,6 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Added
 
 - Volume 1, Section 3.3, the multiplicity of a regular local ring. It proves that $(\mathfrak{m}^{n+1} : a) = \mathfrak{m}^n$ for the first element $a$ of a regular sequence that generates $\mathfrak{m}$ (Lemma 3.3.12), and that a regular local ring of dimension $d$ has $\ell(R/\mathfrak{m}^{n+1}) = \binom{n+d}{d}$ and $e(R) = 1$ (Theorem 3.3.13). Each of these results has a Lean proof. Remark 3.3.14 states the converse of Nagata and gives a ring that shows that the converse needs a hypothesis.
+- Volume 7, "Invariants in positive characteristic", Chapter 1, the order and the residual order. Section 1.1 proves the laws of the order and the closedness of the locus of order at least $d$ with Hasse derivatives. Section 1.2 defines the Newton polyhedron and proves the theorem of Ostrowski (Theorem 1.2.4). Section 1.3 defines cleaning and the residual order of a purely inseparable equation, after [HP19a]. Section 1.4 states the bound of Moh, computes the example of [HP19a] in which the residual order increases from $5$ to $7$ in one blowup (Example 1.4.2), and states the cycles of Hauser and Perlega (Theorem 1.4.3). These sections do not have Lean proofs yet.
 
 ### Changed
 
