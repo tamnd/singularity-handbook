@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.6] - 2026-11-24
+
 ### Changed
 
 - Volume 3, Section 3.3 proves the first claim of part 3 of Theorem 3.3.5 in the new subsection "The first claim of part 3". The new Lemma 3.3.8 is the criterion for $\mu'$-divisibility. The text gives the Lean names from tamnd/singularity-lean#72.
