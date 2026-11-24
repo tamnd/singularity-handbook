@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.10] - 2026-11-25
+
 ### Added
 
 - Volume 7, Chapter 3, "The log-Jacobian ideal", is new. Section 3.1 defines the ideal, proves that it does not change when a p-th power is added, and proves the dichotomy $d - 1 \le \rho \le d$ for a clean $F$ (Theorem 3.1.4). Section 3.2 proves the transformation law under a point blowup (Theorem 3.2.3) and proves that $\rho$ does not go up (Theorem 3.2.4). Section 3.3 gives the Newton criterion for $z^p + g$ (Theorem 3.3.3) and the mod $p$ Euler identity (Proposition 3.3.6). The Lean lines name the theorems of tamnd/singularity-lean#85, tamnd/singularity-lean#86 and tamnd/singularity-lean#87. Theorem 3.2.3 and Theorem 3.2.4 have no Lean proof yet.
@@ -11,7 +13,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
-- The map in `EDITION` is now at tamnd/singularity@cdfe3b3, which has the nodes SG0000003E to SG0000003N of Volume 7 and the nodes SG00000040 to SG0000004K of Volumes 2, 5 and 8.
+- The edition is 0.4.10, with the map at tamnd/singularity@11300a2, the release 0.4.10 of the map. This map has the nodes SG0000003E to SG0000003N of Volume 7 and the nodes SG00000040 to SG0000004K of Volumes 2, 5 and 8.
 - Volumes 2, 5 and 8 have Node lines for the new nodes SG00000040 to SG0000004K of tamnd/singularity#123. Each line has the form `Node: TAG · Lean: none yet`, and the tags are in the `nodes` of their sections. Volume 8, Hypotheses 2.2.4 and 2.2.5 now have Node lines. Volume 2, Section 4.2 lists the results with a node and no Lean statement, and Volume 8, Section 4.1 lists the four new nodes of the volume.
 
 ## [0.4.9] - 2026-11-25
