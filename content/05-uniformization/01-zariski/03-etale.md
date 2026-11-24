@@ -1,0 +1,91 @@
+---
+title: Lifting along an étale generator
+nodes: [SG00000010, SG0000000Y]
+sources: [Kuh-book, ZS2, Mat, Zar40, Cut04]
+status: drafted
+drafted_by: writer
+reviewed_by: []
+---
+## Lifting along an étale generator
+
+Let $K/k$ be a function field, and let $K_0$ be a subfield with $k \subseteq K_0$ and $[K : K_0]$ finite. Then $K_0$ is a function field over $k$ too. Let $v$ be a valuation of $K/k$ and $v_0$ its restriction to $K_0$. In this section we give a condition under which local uniformization passes from $v_0$ to $v$. We use the ramification index $e = (\Gamma_v : \Gamma_{v_0})$ and the residue degree $f = [Kv : K_0v_0]$ of Volume 3, Section 2.1.
+
+We also use the henselization. We recall the facts that we need, from [Kuh-book]. Let $K_0^h$ be the henselization of $(K_0, v_0)$, and let $K^h$ be the henselization of $(K, v)$. Then $K^h$ contains $K_0^h$, and $K^h = K \cdot K_0^h$. The extensions $K_0^h/K_0$ and $K^h/K$ are immediate and separable algebraic. Hensel's lemma holds in a henselian field: a monic polynomial over the valuation ring whose reduction has a simple root has a root with this residue. If $K = K_0(z)$ with $z$ separable over $K_0$, with minimal polynomial $P$, then the irreducible factors of $P$ over $K_0^h$ correspond to the extensions of $v_0$ to $K$. The factor $P_1$ for $v$ is the minimal polynomial of $z$ over $K_0^h$, where $z$ is seen in $K^h$, and $\deg P_1 = [K^h : K_0^h]$. As in Volume 3, Section 3.2, the *defect* of $v$ over $v_0$ is
+$$d = \frac{[K^h : K_0^h]}{ef}.$$
+It is the defect of the henselian extension $K^h/K_0^h$ in the sense of Volume 3, Definition 3.2.1, because henselizations are immediate. The defect is node SG00000010 of the map (planned, no Lean statement yet).
+
+### The trace dual basis
+
+**Lemma 1.3.1 (Euler).** Let $L/F$ be a finite separable extension of degree $n$, let $z$ be a primitive element with minimal polynomial $P$, and write
+$$\frac{P(Z)}{Z - z} = \sum_{j=0}^{n-1} b_jZ^j, \qquad b_j \in F[z].$$
+Then $\operatorname{Tr}_{L/F}(z^ib_j/P'(z)) = \delta_{ij}$ for $0 \le i, j \le n - 1$. If $F$ is the fraction field of an integrally closed domain $O$, $z$ is integral over $O$, and $\bar{O}$ is the integral closure of $O$ in $L$, then $P'(z)\bar{O} \subseteq O[z]$.
+
+Lean: none yet
+
+*Proof.* Let $\sigma_1, \dots, \sigma_n$ be the embeddings of $L$ into an algebraic closure of $F$, and $z_k = \sigma_k(z)$. They are distinct. For $0 \le i \le n - 1$, the polynomials
+$$Z^i \quad \text{and} \quad \sum_{k=1}^n z_k^i\, \frac{P(Z)}{(Z - z_k)P'(z_k)}$$
+have degree less than $n$ and agree at the $n$ points $z_k$. So they are equal. The coefficient of $Z^j$ on the right is $\sum_k \sigma_k(z^ib_j/P'(z)) = \operatorname{Tr}(z^ib_j/P'(z))$. This gives the first claim. So the basis $b_j/P'(z)$ is dual to the basis $z^i$ for the trace form, and each $\beta \in L$ is
+$$\beta = \sum_j \operatorname{Tr}(\beta z^j)\, \frac{b_j}{P'(z)}.$$
+In the second claim the coefficients of $P$ lie in $O$, because $O$ is integrally closed, so $b_j \in O[z]$. For $\beta \in \bar{O}$ the trace $\operatorname{Tr}(\beta z^j)$ is integral over $O$ and lies in $F$, so it lies in $O$. Thus $P'(z)\beta \in O[z]$. $\square$
+
+**Definition 1.3.2 (étale generator).** An *étale generator* of $K/K_0$ at $v$ is an element $z \in \mathcal{O}_v$ with $K = K_0(z)$ such that the minimal polynomial $P$ of $z$ over $K_0$ has coefficients in $\mathcal{O}_{v_0}$ and $P'(z)$ is a unit of $\mathcal{O}_v$.
+
+The name comes from geometry: the map from $\operatorname{Spec}$ of $\mathcal{O}_{v_0}[z] = \mathcal{O}_{v_0}[Z]/(P)$ to $\operatorname{Spec} \mathcal{O}_{v_0}$ is étale at the center of $v$.
+
+### Existence of an étale generator
+
+**Lemma 1.3.3.** Let $z$ be an étale generator of $K/K_0$ at $v$, and let $\mathfrak{q} = \mathfrak{m}_v \cap \mathcal{O}_{v_0}[z]$. Then $\mathcal{O}_v = \mathcal{O}_{v_0}[z]_\mathfrak{q}$.
+
+Conversely, assume that $v$ is not trivial, that $e = 1$, that $Kv/K_0v_0$ is separable, and that $d = 1$. Then $K/K_0$ is separable, and there is an étale generator of $K/K_0$ at $v$.
+
+Lean: none yet
+
+*Proof.* First part. Since $P'(z) \ne 0$, the extension $K/K_0$ is separable. Let $\bar{O}$ be the integral closure of $\mathcal{O}_{v_0}$ in $K$. It has finitely many maximal ideals $\mathfrak{m}_1, \dots, \mathfrak{m}_g$, one for each extension $v_1 = v, v_2, \dots, v_g$ of $v_0$ to $K$, and $\bar{O}_{\mathfrak{m}_i} = \mathcal{O}_{v_i}$ [ZS2, Chapter VI]. By Lemma 1.3.1, $\bar{O} \subseteq P'(z)^{-1}\mathcal{O}_{v_0}[z]$. Since $P'(z)$ is a unit of $\mathcal{O}_v$, it does not lie in $\mathfrak{q}$, so $\bar{O} \subseteq \mathcal{O}_{v_0}[z]_\mathfrak{q}$. An element of $\bar{O} \setminus \mathfrak{m}_1$ is a unit of $\mathcal{O}_v$, so it is a unit of the local ring $\mathcal{O}_{v_0}[z]_\mathfrak{q}$, whose maximal ideal is the trace of $\mathfrak{m}_v$. Thus $\mathcal{O}_v = \bar{O}_{\mathfrak{m}_1} \subseteq \mathcal{O}_{v_0}[z]_\mathfrak{q} \subseteq \mathcal{O}_v$.
+
+Second part. Since $v$ is not trivial and $\Gamma_v/\Gamma_{v_0}$ is finite, $v_0$ is not trivial. The degree $[K^h : K_0^h]$ is $def = f$.
+
+Separability. Choose $\bar{\theta} \in Kv$ with $Kv = K_0v_0(\bar{\theta})$ and $\bar{\theta} \ne 0$. This is possible by the theorem of the primitive element, and if $Kv = K_0v_0$ we take $\bar{\theta} = 1$. Let $\mu$ be its minimal polynomial over $K_0v_0$. It is separable of degree $f$, and $\mu(0) \ne 0$. Lift $\mu$ to a monic polynomial $\tilde{\mu}$ with coefficients in $\mathcal{O}_{v_0}$. Its discriminant reduces to the discriminant of $\mu$, which is not 0, so $\tilde{\mu}$ is separable. The residue field of $K^h$ is $Kv$. By Hensel's lemma, $\tilde{\mu}$ has a root $\vartheta \in K^h$ with residue $\bar{\theta}$. The field $K_0^h(\vartheta)$ has degree at most $f$ over $K_0^h$, and its residue field contains $\bar{\theta}$, so its residue degree is at least $f$. By the fundamental inequality (Volume 3, Corollary 2.1.3), its degree is $f$, so $K^h = K_0^h(\vartheta)$ is separable over $K_0^h$. Since $K_0^h/K_0$ is separable algebraic, $K^h/K_0$ is separable, and so is $K/K_0$.
+
+The generator. By the Chinese remainder theorem there is $z_0 \in \bar{O}$ with $z_0 \equiv \bar{\theta}$ modulo $\mathfrak{m}_1$, because $\bar{O}/\mathfrak{m}_1 = Kv$, and $z_0 \in \mathfrak{m}_i$ for $i \ge 2$. Choose a primitive element $\theta$ of $K/K_0$. After multiplication by a nonzero element of $\mathcal{O}_{v_0}$ we may assume $\theta \in \bar{O}$. Choose $a \in \mathfrak{m}_{v_0}$ with $a \ne 0$. The extension $K/K_0$ has only finitely many intermediate fields, because it is separable. If two of the elements $z_0 + a^t\theta$, for distinct $t \ge 1$, generate the same field $M$, then $\theta \in M$ and $z_0 \in M$, so $M = K$. Thus $z = z_0 + a^t\theta$ generates $K$ for some $t \ge 1$. Since $a^t\theta \in a\bar{O} \subseteq \mathfrak{m}_i$ for each $i$, the element $z$ has the same residues as $z_0$.
+
+The derivative. Let $P$ be the minimal polynomial of $z$ over $K_0$. Its coefficients lie in $\mathcal{O}_{v_0}$, because $z$ is integral over $\mathcal{O}_{v_0}$. Over $K_0^h$ write $P = P_1P_2 \cdots P_g$ as above, where $P_1$ belongs to $v$ and has degree $f$. The roots of each $P_i$ are integral over the valuation ring of $K_0^h$, so the $P_i$ have coefficients in this valuation ring. Since $P_1(z) = 0$ in $K^h$, the reduction $\bar{P}_1$ has the root $\bar{\theta}$. So $\mu$ divides $\bar{P}_1$, and both are monic of degree $f$. Thus $\bar{P}_1 = \mu$. For $i \ge 2$, the roots of $P_i$ are conjugate over $K_0^h$ to the image of $z$ in the henselization of $(K, v_i)$, which has positive value. The extension of the valuation of $K_0^h$ to an algebraic closure is unique, so all roots of $P_i$ have positive value, and $\bar{P}_i = Z^{\deg P_i}$. Write $P = P_1Q$. Then $P'(z) = P_1'(z)Q(z)$ in $K^h$, and its residue is $\mu'(\bar{\theta})\, \bar{\theta}^{\,n - f}$, where $n = [K : K_0]$. This is not 0, because $\mu$ is separable and $\bar{\theta} \ne 0$. So $P'(z)$ is a unit of $\mathcal{O}_v$. $\square$
+
+### The lifting theorem
+
+**Theorem 1.3.4 (lifting).** Let $z$ be an étale generator of $K/K_0$ at $v$. If $v_0$ has local uniformization as a valuation of $K_0/k$, then $v$ has local uniformization as a valuation of $K/k$.
+
+Lean: none yet
+
+*Proof.* We use Proposition 4.1.6 of Volume 3. Let $S \subseteq \mathcal{O}_v$ be finite. By Lemma 1.3.3, each $s \in S$ can be written $s = g_s/h_s$ with $g_s, h_s \in \mathcal{O}_{v_0}[z]$ and $h_s \notin \mathfrak{m}_v$. Write $g_s$ and $h_s$ as polynomials in $z$ with coefficients in $\mathcal{O}_{v_0}$. Let $T \subseteq \mathcal{O}_{v_0}$ be the finite set of these coefficients and of the coefficients of $P$. By local uniformization of $v_0$ there is an affine model $A_0$ of $K_0/k$ with $T \subseteq A_0 \subseteq \mathcal{O}_{v_0}$ such that $R_0 = (A_0)_{\mathfrak{p}_0}$ is regular, where $\mathfrak{p}_0$ is the center of $v_0$.
+
+Let $A_1 = A_0[z]$. Since $P$ is monic with coefficients in $A_0$ and irreducible over $K_0$, the ring $A_0[Z]/(P)$ is a free $A_0$-module with basis $1, Z, \dots, Z^{n-1}$, and it embeds in $K_0[Z]/(P) = K$. So $A_1 \cong A_0[Z]/(P)$. It is an affine model of $K/k$, and $A_1 \subseteq \mathcal{O}_v$. Let $\mathfrak{q}_1$ be the center of $v$ on $A_1$. Then $\mathfrak{q}_1 \cap A_0 = \mathfrak{p}_0$, and the local ring $(A_1)_{\mathfrak{q}_1}$ is the localization of $S_0 = R_0[Z]/(P)$ at the prime $\mathfrak{Q}$ over $\mathfrak{q}_1$.
+
+We show that $(S_0)_\mathfrak{Q}$ is regular. Let $\kappa_0$ be the residue field of $R_0$, let $\bar{P}$ be the image of $P$ in $\kappa_0[Z]$, and let $\zeta$ be the image of $z$ in the residue field of $\mathfrak{Q}$. Then $\bar{P}(\zeta) = 0$, and $\bar{P}'(\zeta) \ne 0$, because $P'(z)$ is a unit of $\mathcal{O}_v$. Let $\mu_0$ be the minimal polynomial of $\zeta$ over $\kappa_0$. Then $\bar{P} = \mu_0 Q_0$ with $\mu_0 \nmid Q_0$. The fiber ring $S_0/\mathfrak{m}_{R_0}S_0 = \kappa_0[Z]/(\bar{P})$, localized at $\mathfrak{Q}$, is $\kappa_0[Z]_{(\mu_0)}/(\mu_0)$, a field. So $\mathfrak{m}_{R_0}(S_0)_\mathfrak{Q}$ is the maximal ideal of $(S_0)_\mathfrak{Q}$. The ring $S_0$ is free over $R_0$, so $(S_0)_\mathfrak{Q}$ is flat over $R_0$, and its dimension is $\dim R_0$ plus the dimension of the fiber, which is 0 [Mat, Theorem 15.1]. So the maximal ideal of $(S_0)_\mathfrak{Q}$ is generated by $\dim (S_0)_\mathfrak{Q}$ elements, and $(S_0)_\mathfrak{Q}$ is regular.
+
+Finally let $A' = A_1[S]$. For $s \in S$, the elements $g_s$ and $h_s$ lie in $A_1$, and $h_s \notin \mathfrak{q}_1$. So $A_1 \subseteq A' \subseteq (A_1)_{\mathfrak{q}_1}$. By Lemma 1.1.1, the local ring of $A'$ at the center of $v$ is $(A_1)_{\mathfrak{q}_1}$, which is regular. Thus $S \subseteq A' \subseteq \mathcal{O}_v$ with a regular center. $\square$
+
+The proof does not need the condition $\operatorname{trdeg}_k K = 2$, and it holds in each characteristic. It reduces local uniformization of $v$ to local uniformization of $v_0$ whenever an étale generator exists. Chapter 2 uses it in all dimensions.
+
+### Surfaces in characteristic 0
+
+**Theorem 1.3.5.** Let $k$ be a field of characteristic 0, let $K/k$ be a function field of transcendence degree 2, and let $v$ be a valuation of $K/k$. Assume that there are $x, y \in K$, algebraically independent over $k$, such that the restriction $v_0$ of $v$ to $K_0 = k(x, y)$ has $\Gamma_{v_0} = \Gamma_v$. Then $v$ has local uniformization.
+
+Lean: none yet
+
+*Proof.* If $v$ is trivial, there is nothing to prove. The extension $K/K_0$ is finite, because $K$ is finitely generated of transcendence degree 2 over $k$. By assumption $e = 1$. The residue fields have characteristic 0, so $Kv/K_0v_0$ is separable. By Volume 3, Corollary 3.2.2, applied to the henselian field $K_0^h$ and its finite extension $K^h$, the defect $d$ is 1. By Lemma 1.3.3 there is an étale generator of $K/K_0$ at $v$. By Corollary 1.2.8, $v_0$ has local uniformization. By Theorem 1.3.4, $v$ has local uniformization. $\square$
+
+**Corollary 1.3.6.** Let $k$ be a field of characteristic 0, let $K/k$ be a function field of transcendence degree 2, and let $v$ be a valuation of $K/k$ whose value group $\Gamma_v$ is finitely generated. Then $v$ has local uniformization.
+
+Lean: none yet
+
+*Proof.* The group $\Gamma_v$ is torsion free and finitely generated, so $\Gamma_v \cong \mathbb{Z}^r$, and $r \le 2$ by the Abhyankar inequality (Volume 3, Theorem 2.1.5). If $r = 0$, then $v$ is trivial. If $r = 1$, choose $x \in K$ such that $v(x)$ generates $\Gamma_v$. An element algebraic over $k$ has value 0, because $v$ is trivial on $k$ and $\Gamma_v$ is torsion free. So $x$ is transcendental over $k$. Choose $y \in K$ transcendental over $k(x)$. Then $\Gamma_{k(x, y)}$ contains $v(x)$, so it is $\Gamma_v$. If $r = 2$, choose $x, y \in K$ such that $v(x), v(y)$ is a basis of $\Gamma_v$. If $x$ and $y$ were algebraically dependent over $k$, the field $k(x, y)$ would have transcendence degree at most 1, and its value group would have rational rank at most 1 by the Abhyankar inequality. But it contains $v(x)$ and $v(y)$. So $x$ and $y$ are algebraically independent, and $\Gamma_{k(x, y)} = \Gamma_v$. In each case Theorem 1.3.5 applies. $\square$
+
+Which valuations of a surface in characteristic 0 are left? Let $\Gamma_v$ be not finitely generated. If $\operatorname{rr}\Gamma_v + \operatorname{trdeg}_k Kv = 2$, then $v$ is an Abhyankar valuation, and $\Gamma_v$ is finitely generated (Volume 3, Corollary 2.2.4). So $\operatorname{rr}\Gamma_v = 1$ and $Kv$ is algebraic over $k$. The rank is at most the rational rank, so $v$ has rank 1, and $\Gamma_v$ is isomorphic to a subgroup of $\mathbb{Q}$ that is not cyclic, for example $\mathbb{Z}[1/2]$. These are the valuations of rank 1 and rational rank 1 that are not discrete. For $K = k(x, y)$ they are covered by Corollary 1.2.8. For a finite extension $K$ of $k(x, y)$, the method of this section needs a subfield $K_0$ with $\Gamma_{v_0} = \Gamma_v$. We do not prove that such a subfield exists, and we do not prove this case here. It is covered by the theorem of Zariski (Section 1.4) and by the resolution of surfaces (Proposition 3.1.2).
+
+The discrete valuations of rank 1 are covered by Corollary 1.3.6. An example is the arc valuation $v(g) = \operatorname{ord}_t g(t, \varphi(t))$ of Volume 3, Example 1.6.6, with $\varphi$ transcendental over $k(t)$, and its extensions to finite extensions of $k(x, y)$.
+
+**Example 1.3.7.** Let $k$ have characteristic 0, let $K = k(x, y, z)$ with $z^2 = x^3 + y^5$, and let $v$ be an extension to $K$ of the monomial valuation $v_0$ of $k(x, y)$ with $v_0(x) = 1$ and $v_0(y) = \sqrt{2}$. The surface $z^2 = x^3 + y^5$ is singular at the origin, and $v$ is centered there. Since $v_0(x^3 + y^5) = 3$, we get $v(z) = 3/2$. So $\Gamma_v$ contains $\frac{1}{2}\mathbb{Z} + \mathbb{Z}\sqrt{2}$, and since $e \le 2$ we get $\Gamma_v = \frac{1}{2}\mathbb{Z} + \mathbb{Z}\sqrt{2}$ and $e = 2$ over $k(x, y)$. Theorem 1.3.5 does not apply to the subfield $k(x, y)$. Now let $u = z/x$, with $v(u) = 1/2$. The values $1/2$ and $\sqrt{2}$ of $u$ and $y$ are linearly independent over $\mathbb{Z}$, so $u$ and $y$ are algebraically independent, and $\Gamma_{k(u, y)} = \Gamma_v$. Also $K = k(u, y, x)$, where $x$ is a root of $X^3 - u^2X^2 + y^5$. So Theorem 1.3.5 applies to the subfield $k(u, y)$, and $v$ has local uniformization. The restriction of $v$ to $k(u, y)$ is the monomial valuation with weights $1/2$ and $\sqrt{2}$, because distinct monomials in $u$ and $y$ have distinct values.
+
+### Notes and references
+
+The henselization and the correspondence between extensions of valuations and factors over the henselization are in [Kuh-book]. The integral closure of a valuation ring in a finite extension is [ZS2, Chapter VI]. The idea to reduce to a subfield with the same value group, and to lift along an unramified extension, is the idea of Zariski [Zar40], here in a simple form. The book [Cut04] gives a complete treatment of surfaces in characteristic 0. None of the results of this section is in the Lean library.
