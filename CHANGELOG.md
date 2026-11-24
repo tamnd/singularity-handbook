@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-11-24
+
 ### Fixed
 
 - Volume 0, Section 5.1 gives the results of Volume 7, Chapter 2 after the results of Chapter 1.
