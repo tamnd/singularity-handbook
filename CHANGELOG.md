@@ -13,6 +13,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - The build workflow builds Volume 3.
 - Volume 9, the introduction of Chapter 2 and Section 2.3 refer to Volume 3. Example 2.2.3 refers to Volume 3, Proposition 3.2.5, for the proof of its last statements.
 - Volume 0, Section 5.1 describes Volume 3.
+- `EDITION` has the version 0.4.1 and the commit of tamnd/singularity with the new papers on valuations.
 
 ### Fixed
 
