@@ -1,0 +1,9 @@
+# Excellent rings
+
+A Noetherian ring can be badly behaved. Its regular locus need not be open, its completion can be far from the ring, and its normalization need not be finite. Grothendieck isolated a class of Noetherian rings, the excellent rings, in which these problems do not occur. The class contains the rings that occur in algebraic geometry: fields, the ring $\mathbb{Z}$, complete local rings, and the rings of finite type over any of these. The class is closed under localization and under the passage to algebras of finite type.
+
+Excellence is the natural setting for resolution of singularities. If a scheme has a resolution, then its regular locus is open. Grothendieck proved a strong converse: if all the integral schemes of finite type over a Noetherian scheme have resolutions, then the scheme is quasi-excellent. Thus the class of quasi-excellent schemes is the largest class where one can hope for resolution. Nagata gave examples of Noetherian rings that are not excellent, and resolution fails for them.
+
+Section 5.1 defines geometric regularity, regular homomorphisms and G-rings, the rings whose formal fibres are geometrically regular. Section 5.2 defines the J-2 property, universally catenary rings and excellent rings, and lists the main examples. Section 5.3 proves that the regular locus of a quasi-excellent scheme is open, states the theorem of Grothendieck on resolution and quasi-excellence, and gives the example of Nagata.
+
+The chapter uses the results of Chapter 1 on the regular locus and of Chapter 4 on completion. Many results of the theory of excellent rings have long proofs. We state these results with references, and we prove the results that follow from the earlier chapters. The openness of the regular locus is proved in Lean for schemes locally of finite type over a field of characteristic $0$ (Sections 1.7 and 1.8). The case of positive characteristic is not yet proved in Lean.
