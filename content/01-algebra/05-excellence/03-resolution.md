@@ -30,7 +30,7 @@ Node: SG0000000K · Lean: none yet
 
 *Proof.* The scheme $X$ is covered by affine open sets $\operatorname{Spec} B$ with $B$ a finitely generated $A$-algebra. Since $A$ is J-2, each such $B$ is J-1. Now argue as in the proof of Proposition 5.3.2. The rings in the list are quasi-excellent by Theorem 5.2.8. $\square$
 
-The proof uses Theorem 5.2.8, which this volume does not prove. For a field $k$ of characteristic $0$ the theorem is proved in Section 1.8: it is Theorem 1.8.12. In Lean it is `Singularity.regularLocus_isOpen_of_charZero`, and its proof uses the criterion of Nagata (Theorem 1.7.7, `Singularity.Algebra.isOpen_regularLocus_of_exists_isOpen`) and generic regularity in characteristic $0$ (Theorem 1.8.9). The other cases are not yet proved in Lean. In particular, the openness of the regular locus of a variety over a field of positive characteristic is not yet proved in Lean, and the node SG0000000K is still planned.
+The proof uses Theorem 5.2.8, which this volume does not prove. For a field $k$ of characteristic $0$ the theorem is proved in Section 1.8: it is Theorem 1.8.12. In Lean it is `Singularity.regularLocus_isOpen_of_charZero`, and its proof uses the criterion of Nagata (Theorem 1.7.7, `Singularity.Algebra.isOpen_regularLocus_of_exists_isOpen`) and generic regularity in characteristic $0$ (Theorem 1.8.9). For a perfect field $k$ the theorem is Theorem 1.8.17, and in Lean it is `Singularity.regularLocus_isOpen_of_perfectField`. The other cases are not yet proved in Lean. In particular, the openness of the regular locus of a variety over an imperfect field is not yet proved in Lean, and the node SG0000000K is still planned.
 
 ### Resolution implies openness
 

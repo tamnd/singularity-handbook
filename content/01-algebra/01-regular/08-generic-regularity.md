@@ -1,14 +1,14 @@
 ---
-title: Generic regularity in characteristic zero
-nodes: [SG0000002R, SG0000002S, SG0000002T, SG0000002V, SG0000000K]
+title: Generic regularity
+nodes: [SG0000002R, SG0000002S, SG0000002T, SG0000002V, SG00000035, SG00000036, SG0000000K]
 sources: [Mat, AM69, Nag62, EGA4-7, Mathlib]
 status: drafted
 drafted_by: writer
 reviewed_by: []
 ---
-## Generic regularity in characteristic zero
+## Generic regularity
 
-Section 1.7 reduced the openness of the regular locus of a variety to one property: each domain $D$ of finite type over the field $k$ must have a nonempty open set of regular points. In this section we prove this property when $k$ has characteristic $0$. The method is classical. We write $D$, up to a localization, as a hypersurface $A[X]/(F)$ over a polynomial ring $A$, and then we use the Jacobian criterion for a hypersurface. As a corollary, the regular locus of an algebra of finite type over a field of characteristic $0$ is open (Theorem 1.8.10).
+Section 1.7 reduced the openness of the regular locus of a variety to one property: each domain $D$ of finite type over the field $k$ must have a nonempty open set of regular points. In this section we prove this property when $k$ has characteristic $0$, and then when $k$ is perfect. The method is classical. We write $D$, up to a localization, as a hypersurface $A[X]/(F)$ over a polynomial ring $A$, and then we use the Jacobian criterion for a hypersurface. As a corollary, the regular locus of an algebra of finite type over a field of characteristic $0$ is open (Theorem 1.8.10). The same method works over a perfect field, with a separating transcendence basis in place of the normalization lemma (Theorems 1.8.16 and 1.8.17).
 
 A ring $A$ is *regular* when it is Noetherian and $A_\mathfrak{p}$ is a regular local ring for each prime $\mathfrak{p}$ of $A$. By Corollary 1.6.9, it is sufficient to examine the maximal ideals. A *derivation* of $A$ is an additive map $\partial : A \to A$ with $\partial(ab) = a \, \partial b + b \, \partial a$ for all $a, b \in A$.
 
@@ -96,15 +96,56 @@ Node: SG0000002V · Lean: `Singularity.regularLocus_isOpen_of_charZero`
 
 In Lean, the isomorphism $\mathcal{O}_{X, y} \cong R_{\mathfrak{p}_y}$ is `AlgebraicGeometry.IsAffineOpen.isLocalization_stalk`, and the comparison of the two regular loci is `Singularity.mem_regularLocus_iff_of_isAffineOpen`.
 
-### Positive characteristic
+### Perfect fields
 
-The proof of Theorem 1.8.8 uses only one property of characteristic $0$: the extension $K/L$ is separable. If $k$ is perfect, the fraction field of $D$ is separably generated over $k$ [Mat, Section 26], and with more care in the normalization lemma one can again get a separable extension $K/L$. Over an imperfect field this can fail, and the proof needs other tools, for example the theory of excellent rings [EGA4-7]. These cases are not in the Lean library. Thus the node SG0000000K, the openness of the regular locus of a variety over an arbitrary field, is still planned. Theorem 1.8.12 is the case of SG0000000K over a field of characteristic $0$.
+The proof of Theorem 1.8.8 uses only one property of characteristic $0$: the extension $K/L$ is separable. So the proof gives the next result with no change.
+
+**Theorem 1.8.13.** Let $A \subseteq D$ be as above, with $A$ a regular ring, and assume that $K/L$ is separable. Then there is $f \neq 0$ in $D$ with $D(f) \subseteq \operatorname{Reg}(D)$.
+
+Lean: `Singularity.Algebra.exists_ne_zero_basicOpen_subset_regularLocus_of_isSeparable`
+
+Over a perfect field of characteristic $p$, the normalization lemma does not always give a separable extension $K/L$. We use a separating transcendence basis in its place, and for this we must first localize $D$. The next two lemmas let us do this.
+
+**Lemma 1.8.14.** Let $A$ be a regular ring and let $S$ be a multiplicative subset of $A$. Then $S^{-1}A$ is a regular ring.
+
+Lean: `Singularity.Algebra.isRegularRing_of_isLocalization`
+
+*Proof.* The ring $S^{-1}A$ is Noetherian [AM69, Proposition 7.3]. Each prime of $S^{-1}A$ is $S^{-1}\mathfrak{p}$ for a prime $\mathfrak{p}$ of $A$ with $\mathfrak{p} \cap S = \emptyset$ [AM69, Proposition 3.11], and the local ring of $S^{-1}A$ at $S^{-1}\mathfrak{p}$ is isomorphic to $A_\mathfrak{p}$. This ring is regular, because $A$ is regular. $\square$
+
+**Lemma 1.8.15.** Let $D$ be a domain, let $h \neq 0$ in $D$, and assume that there is $g \neq 0$ in $D_h$ with $D(g) \subseteq \operatorname{Reg}(D_h)$. Then there is $f \neq 0$ in $D$ with $D(f) \subseteq \operatorname{Reg}(D)$.
+
+Lean: `Singularity.Algebra.exists_ne_zero_basicOpen_subset_regularLocus_of_away`
+
+*Proof.* Write $g = a/h^m$ with $a \in D$. Then $a \neq 0$, and we let $f = ah$. Then $f \neq 0$, because $D$ is a domain. Let $P$ be a prime of $D$ with $f \notin P$. Then $h \notin P$, so $PD_h$ is a prime of $D_h$, and $D_P$ is isomorphic to the local ring of $D_h$ at $PD_h$. Also $a \notin P$, so $g \notin PD_h$. Thus $PD_h \in \operatorname{Reg}(D_h)$, and $D_P$ is regular. $\square$
+
+**Theorem 1.8.16.** Let $k$ be a perfect field and let $D$ be a domain of finite type over $k$. Then there is $f \neq 0$ in $D$ with $D(f) \subseteq \operatorname{Reg}(D)$.
+
+Node: SG00000035 · Lean: `Singularity.Algebra.exists_ne_zero_basicOpen_subset_regularLocus_of_perfectField`
+
+*Proof.* The fraction field $K$ of $D$ is a finitely generated extension of $k$. Since $k$ is perfect, $K$ has a separating transcendence basis $t_1, \dots, t_s$ over $k$: the $t_i$ are algebraically independent over $k$, and $K$ is a finite separable extension of $k(t_1, \dots, t_s)$ [Mat, Theorem 26.2], [Stacks, Tag 030W]. Write $t_i = a_i/b$ with $a_i, b \in D$ and $b \neq 0$. By Lemma 1.8.15 it is sufficient to prove the theorem for $D_b$, which has the same fraction field and contains the $t_i$. So we can assume that $t_i \in D$.
+
+Let $A_0 = k[t_1, \dots, t_s] \subseteq D$. It is a polynomial ring, because the $t_i$ are algebraically independent. Let $d_1, \dots, d_m$ generate $D$ as an algebra over $k$. Each $d_j$ is algebraic over $k(t_1, \dots, t_s)$, so after we clear the denominators, it satisfies an equation $c_j d_j^{n_j} + (\text{lower terms}) = 0$ with coefficients in $A_0$ and $c_j \neq 0$. Let $c = c_1 \cdots c_m$ and $A = (A_0)_c$. Then each $d_j$ is integral over $A$, so $D_c = A[d_1, \dots, d_m]$ is a finite $A$-module [AM69, Corollary 5.2]. The ring $A$ is regular by Lemma 1.8.14, because $A_0$ is regular [Mat, Section 19]. It is integrally closed, because it is a localization of a unique factorization domain [AM69, Proposition 5.12]. The fraction field of $A$ is $L = k(t_1, \dots, t_s)$, and the fraction field of $D_c$ is $K$, so $K/L$ is separable. Theorem 1.8.13 gives $g \neq 0$ in $D_c$ with $D(g) \subseteq \operatorname{Reg}(D_c)$, and Lemma 1.8.15 completes the proof. $\square$
+
+**Theorem 1.8.17.** Let $k$ be a perfect field.
+
+1. Let $R$ be an algebra of finite type over $k$. Then $\operatorname{Reg}(R)$ is open in $\operatorname{Spec} R$.
+2. Let $X$ be a scheme that is locally of finite type over $k$. Then the regular locus of $X$ is open in $X$.
+
+Node: SG00000036 · Lean: `Singularity.Algebra.isOpen_regularLocus_of_perfectField`, `Singularity.regularLocus_isOpen_of_perfectField`
+
+*Proof.* The proofs of Theorems 1.8.10 and 1.8.12 apply with no change, with Theorem 1.8.16 in place of Theorem 1.8.9. $\square$
+
+A field of characteristic $0$ is perfect, so Theorem 1.8.17 contains Theorems 1.8.10 and 1.8.12. In the Lean library, `Singularity.regularLocus_isOpen_of_charZero` is now a corollary of `Singularity.regularLocus_isOpen_of_perfectField`.
+
+**Remark 1.8.18 (imperfect fields).** Let $k$ be an imperfect field of characteristic $p$, and let $t \in k$ have no $p$-th root in $k$. The ring $D = k[x]/(x^p - t)$ is a field, so it is regular. But the extension $D/k$ is not separable, and the derivative of $x^p - t$ is $0$. So the method of this section gives nothing for $D$, even though $D$ is regular. Example 6.2.7 gives a regular curve over such a field that is not smooth. The regular locus of an algebra of finite type over an imperfect field is still open, because such an algebra is excellent [EGA4-7, Section 7.8], [Mat, Section 32]. One proof uses the descent of regularity along flat local homomorphisms [Mat, Theorem 23.7] and a finite purely inseparable extension of $k$. This case is not in the Lean library. Thus the node SG0000000K, the openness of the regular locus of a variety over an arbitrary field, is still planned.
+
+Lean: none yet
 
 ### The Lean proof
 
-The results of this section are in `Singularity/Algebra/Jacobian.lean`, `Singularity/Algebra/GenericRegular.lean` and `Singularity/Scheme/RegularLocus.lean`. In Lean, $D$ is a ring with an algebra structure over $A$, and the condition $A \subseteq D$ is the class `FaithfulSMul A D`. The fraction fields are `FractionRing A` and `FractionRing D`, with the algebra structure `FractionRing.liftAlgebra`.
+The results of this section are in `Singularity/Algebra/Jacobian.lean`, `Singularity/Algebra/GenericRegular.lean`, `Singularity/Algebra/GenericRegularPerfect.lean` and `Singularity/Scheme/RegularLocus.lean`. In Lean, $D$ is a ring with an algebra structure over $A$, and the condition $A \subseteq D$ is the class `FaithfulSMul A D`. The fraction fields are `FractionRing A` and `FractionRing D`, with the algebra structure `FractionRing.liftAlgebra`.
 
-The proof of Theorem 1.8.8 uses these Mathlib results: `Field.exists_primitive_element` for the primitive element, `Ideal.under_ne_bot_of_algebraic_mem` for the element $a$ of Lemma 1.8.5, `IsLocalization.integerNormalization_spec` to clear the denominators in Lemma 1.8.6, `minpoly.isIntegrallyClosed_eq_field_fractions` for Lemma 1.8.7 and `minpoly.equivAdjoin` for the isomorphism $A[X]/(F) \cong A[z]$. Theorem 1.8.9 uses `exists_finite_inj_algHom_of_fg` for the normalization lemma and `MvPolynomial.isRegularRing_of_isRegularRing` for the regularity of $A$. The derivation $d/dX$ is `Polynomial.derivative'`. All the theorems of this section use only the three standard axioms of Lean.
+The proof of Theorem 1.8.8 uses these Mathlib results: `Field.exists_primitive_element` for the primitive element, `Ideal.under_ne_bot_of_algebraic_mem` for the element $a$ of Lemma 1.8.5, `IsLocalization.integerNormalization_spec` to clear the denominators in Lemma 1.8.6, `minpoly.isIntegrallyClosed_eq_field_fractions` for Lemma 1.8.7 and `minpoly.equivAdjoin` for the isomorphism $A[X]/(F) \cong A[z]$. Theorem 1.8.9 uses `exists_finite_inj_algHom_of_fg` for the normalization lemma and `MvPolynomial.isRegularRing_of_isRegularRing` for the regularity of $A$. The derivation $d/dX$ is `Polynomial.derivative'`. The proof of Theorem 1.8.16 uses `exists_isTranscendenceBasis_and_isSeparable_of_perfectField` of Mathlib for the separating transcendence basis. All the theorems of this section use only the three standard axioms of Lean.
 
 ### Notes and references
 
