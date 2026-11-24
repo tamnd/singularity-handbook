@@ -9,6 +9,8 @@ A fault fails the check:
 - a tag in `nodes` or on a Node line is not a node of the map;
 - a key in `sources` is not a paper of the map;
 - a line starts with "Node:" and does not have the form of a Node line;
+- a Node line marks a Lean name as "the statement only", and records/lean.json exists and does not have
+  the name;
 - an en dash, an em dash or a word of the banned list in the prose.
 
 A warning does not fail the check:
@@ -91,6 +93,11 @@ def _body(rel: str, body: str, offset: int, fm_nodes: set, smap: Map, faults: li
             if known and nm not in known:
                 warns.append(f"{rel}:{i}: the Lean name {nm} is not the Lean name of {tag} in the map "
                              f"({', '.join(sorted(known))})")
+        if smap.records is not None and "statement only" in ln:
+            for nm in names:
+                if nm not in smap.records:
+                    faults.append(f"{rel}:{i}: the Lean name {nm} is marked as a statement, but it is not in "
+                                  f"records/lean.json")
     if open_stmt:
         warns.append(f"{rel}:{open_stmt[0]}: {open_stmt[1]} with no Node line")
 

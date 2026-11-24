@@ -56,7 +56,7 @@ These examples do not refute resolution, because other centers are permissible (
 
 In characteristic 0 the invariant is compatible with smooth morphisms. This gives two results at the same time. The local blowups glue to a global blowup, and the resolution is compatible with étale maps and with group actions. The weighted method of Abramovich, Temkin and Włodarczyk [ATW24] has the same property. In characteristic $p$ the natural analogues lose it. For the Whitney umbrella in characteristic 2, the natural analogue of the invariant of [ATW24] is not upper semicontinuous, and it is not invariant under smooth morphisms [Abr25, Remark 5.9.3]. Abramovich and Temkin also show that, in characteristic 2, weighted blowups cannot resolve a pinch point in a way that keeps the normal crossings locus [AT26].
 
-Node: SG0000001Q · Lean: `Singularity.weightedBlowup_invariant_lt` (the statement only)
+Node: SG0000001Q · Lean: `Singularity.weightedBlowup_invariant_lt` (planned, no Lean statement yet)
 
 A different classical method also fails. The Nash blowup replaces each point by the limits of the tangent spaces at nearby regular points. Castillo, Duarte, Leyton-Álvarez and Liendo show that the iteration of the normalized Nash blowup does not resolve some toric varieties of dimension 4 and higher, in each characteristic [CDLL26]. So this method fails in dimension 4 in all characteristics, not only in characteristic $p$.
 

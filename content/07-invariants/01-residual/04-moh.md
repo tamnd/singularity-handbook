@@ -15,7 +15,7 @@ In characteristic $0$, the residual order does not increase under a permissible 
 **Theorem 1.4.1 (Moh).** Let $f = z^q + F$ with $F$ clean, let $E$ be a normal crossings divisor as in Section 1.3, and let $d$ be the residual order of $f$ for $E$. Let $\pi$ be a permissible blowup, and let $a$ be a point over the origin where the strict transform $f'$ has order $q$. Then the residual order $d'$ of $f'$ at $a$ for the transform $E'$ of $E$ satisfies
 $$d' \le d + p^{e-1}.$$
 
-Node: SG00000015 · Lean: Singularity.moh_bound (the statement only, not proved)
+Node: SG00000015 · Lean: `Singularity.moh_bound` (the statement only, not proved)
 
 We do not prove Theorem 1.4.1. It is from [Moh87], and [HP19a, Section 3] states it in this form. The Lean statement `Singularity.moh_bound` measures the residual order in the given coordinates. The papers measure it in coordinates that the resolution chooses, so the Lean statement may need a hypothesis on the coordinates. No Lean theorem uses it. Hauser gives a further analysis of the increase and necessary conditions on $F$ for an increase in [Hau10], and Hauser and Perlega characterize the increase in [HP19b]. Hauser studies the points where the invariant increases, the *kangaroo points*, in [Hau08].
 

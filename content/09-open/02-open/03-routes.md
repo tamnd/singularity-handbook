@@ -18,11 +18,11 @@ Zariski's method has two steps [Zar40, Zar44]. First, prove local uniformization
 
 **Conjecture 2.3.1.** Let $K$ be a function field of transcendence degree 4 over a field of characteristic $p > 0$. Each valuation of $K$ has local uniformization.
 
-Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour` (the statement only)
+Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour` (planned, no Lean statement yet)
 
 **Conjecture 2.3.2 (patching in dimension 4).** Let $X$ be a variety of dimension 4. If each valuation of the function field of $X$ has local uniformization, then $X$ has a resolution.
 
-Node: SG0000001J · Lean: `Singularity.resolution_of_localUniformization_four` (the statement only)
+Node: SG0000001J · Lean: `Singularity.resolution_of_localUniformization_four` (planned, no Lean statement yet)
 
 Conjecture 2.3.2 is open in each characteristic. In characteristic 0 nobody needs it, because the global algorithm of Hironaka gives the resolution. Piltant gives an axiomatic form of Zariski's patching theorem in [Pil]. Thus the route of valuations needs two new theorems in dimension 4, not one.
 
@@ -30,13 +30,13 @@ The results that hold in all dimensions are these. A valuation is an *Abhyankar 
 
 **Theorem 2.3.3 (Knaf and Kuhlmann).** Each Abhyankar valuation of a function field has local uniformization.
 
-Node: SG0000001E · Lean: `Singularity.localUniformization_abhyankar` (the statement only)
+Node: SG0000001E · Lean: `Singularity.localUniformization_abhyankar` (planned, no Lean statement yet)
 
 Knaf and Kuhlmann prove this with a separable extension of the residue fields [KK05], and Cutkosky removes this condition [Cut20]. The valuations that are not Abhyankar valuations are the hard case. They can have defect (Section 2.2).
 
 **Theorem 2.3.4 (Temkin).** Each valuation of a function field $K$ has local uniformization after a finite purely inseparable extension of $K$.
 
-Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (the statement only)
+Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (planned, no Lean statement yet)
 
 Temkin proves this in [Tem13]. He also reduces local uniformization to valuations of height one [Tem23]. Herrera Govantes, Olalla Acosta, Spivakovsky and Teissier prove that valuations have tight extensions to the completion [HOST26]. This was a conjecture of Teissier, and it is a step in his program for local uniformization.
 
@@ -54,7 +54,7 @@ The school of Villamayor replaces an ideal by a Rees algebra that is closed unde
 
 **Theorem 2.3.5 (Benito, Bravo and Encinas).** A Noetherian local ring is regular if and only if its Samuel slope is infinite.
 
-Node: SG00000019 · Lean: `Singularity.samuelSlope_eq_top_iff` (the statement only)
+Node: SG00000019 · Lean: `Singularity.samuelSlope_eq_top_iff` (planned, no Lean statement yet)
 
 This is [BBE25]. In each of these programs the invariants are defined in all dimensions. The missing step is to prove that they drop. In characteristic $p$ the elimination algebra loses information, and the final case of the induction is not a monomial case as in characteristic 0.
 
@@ -64,7 +64,7 @@ In characteristic 0, Abramovich, Temkin and Włodarczyk [ATW24], and McQuillan [
 
 **Conjecture 2.3.6.** There is an invariant of a singular point in characteristic $p$, of the form of the weighted invariant, that drops under a weighted blowup of a fourfold.
 
-Node: SG0000001R · Lean: `Singularity.WeightedInvariantCharP` (the statement only)
+Node: SG0000001R · Lean: `Singularity.WeightedInvariantCharP` (planned, no Lean statement yet)
 
 Section 2.2 gives the obstructions for this route. The natural analogue of the invariant fails in characteristic 2 [Abr25], and weighted blowups cannot keep the normal crossings locus of a pinch point. Conjecture 2.3.6 is vague, because it does not fix the form of the invariant. The map uses it as a research target, not as a precise statement.
 
@@ -84,15 +84,15 @@ An *alteration* of a variety $X$ is a proper, surjective and generically finite 
 
 **Theorem 2.3.8 (de Jong).** Each variety over a field has a regular alteration.
 
-Node: SG0000001K · Lean: `Singularity.exists_regular_alteration` (the statement only)
+Node: SG0000001K · Lean: `Singularity.exists_regular_alteration` (planned, no Lean statement yet)
 
 **Theorem 2.3.9 (Gabber).** Let $\ell \ne p$ be a prime. Each variety over a field of characteristic $p$ has a regular alteration of degree prime to $\ell$.
 
-Node: SG0000001M · Lean: `Singularity.exists_regular_alteration_coprime` (the statement only)
+Node: SG0000001M · Lean: `Singularity.exists_regular_alteration_coprime` (planned, no Lean statement yet)
 
 **Theorem 2.3.10 (Temkin).** Each variety over a perfect field of characteristic $p$ has a regular alteration whose degree is a power of $p$.
 
-Node: SG0000001N · Lean: `Singularity.exists_regular_p_alteration` (the statement only)
+Node: SG0000001N · Lean: `Singularity.exists_regular_p_alteration` (planned, no Lean statement yet)
 
 These are [dJ96], [ILO14] and [Tem17]. The degree of an alteration is the degree of the extension of the function fields. By Theorems 2.3.9 and 2.3.10, the degree can avoid each prime $\ell \ne p$, and it can be a power of $p$. It cannot be 1 by these methods. A route through alterations must descend a resolution of $X'$ to $X$. Assume that the extension of the function fields is Galois with group $G$. Then $X$ is birational to the quotient $X'/G$. When the degree is a power of $p$, the group $G$ is a $p$-group, and its action in characteristic $p$ is wild. Nobody knows how to resolve such quotients in dimension 4 in general.
 

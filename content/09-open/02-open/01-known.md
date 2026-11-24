@@ -30,7 +30,7 @@ The embedded problem for surfaces is also solved.
 
 **Theorem 2.1.3 (Cossart, Jannsen and Saito).** Let $Z$ be a regular excellent scheme and let $X \subseteq Z$ be a reduced closed subscheme of dimension at most 2. There is a canonical sequence of blowups in permissible centers after which the strict transform of $X$ is regular and has normal crossings with the exceptional divisor.
 
-Node: SG0000001C · Lean: `Singularity.embeddedResolution_surface` (the statement only)
+Node: SG0000001C · Lean: `Singularity.embeddedResolution_surface` (planned, no Lean statement yet)
 
 The proof [CJS20] uses the Hilbert-Samuel function of Volume 1, the directrix, and the characteristic polyhedron of Hironaka. It is free of the characteristic, and it includes the case of mixed characteristic. It is the main source of invariants for the route of characteristic polyhedra in Section 2.3.
 
@@ -40,7 +40,7 @@ Abhyankar proved resolution of threefolds over an algebraically closed field of 
 
 **Theorem 2.1.4 (Cossart and Piltant).** Let $X$ be a reduced quasi-excellent Noetherian scheme of dimension at most 3. Then there is a proper birational morphism $Y \to X$ with $Y$ regular that is an isomorphism over the regular locus of $X$. In particular, $\mathrm{Res}(p, 3)$ holds for each $p$.
 
-Node: SG0000001V · Lean: `Singularity.resolution_quasiExcellent_three` (the statement only)
+Node: SG0000001V · Lean: `Singularity.resolution_quasiExcellent_three` (planned, no Lean statement yet)
 
 Node: SG0000001D · Lean: `Singularity.ResolutionInDim` (the statement only)
 
@@ -48,7 +48,7 @@ The proof is in three papers. The first two [CP08, CP09] prove birational resolu
 
 **Theorem 2.1.5 (Cossart and Piltant).** Let $K$ be a function field of transcendence degree 3 over a field $k$ of characteristic $p > 0$. Each valuation of $K$ over $k$ has local uniformization.
 
-Node: SG0000001F · Lean: `Singularity.localUniformization_three` (the statement only)
+Node: SG0000001F · Lean: `Singularity.localUniformization_three` (planned, no Lean statement yet)
 
 Then they patch the local solutions together. Section 2.3 defines local uniformization and explains the patching. For local uniformization, Cossart and Piltant reduce to purely inseparable equations and to Artin-Schreier equations, and they control them with the characteristic polyhedron. Their arguments project the polyhedron to the space of two variables, and they treat many cases one at a time. This analysis is special to three variables.
 
