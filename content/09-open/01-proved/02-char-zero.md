@@ -29,9 +29,9 @@ For a proof see [Har, II.7.13] for parts 2 and 3, and [Har, Section II.7] for pa
 
 **Theorem 1.2.2 (Hironaka, Main Theorem I, integral form).** Let $k$ be a field of characteristic 0 and let $X$ be an integral variety over $k$. Then there is a coherent ideal sheaf $\mathcal{I}$ on $X$ such that the support of $\mathcal{I}$ is the singular locus $\operatorname{Sing}(X) = X \setminus \operatorname{Reg}(X)$ and the blowup $\operatorname{Bl}_{\mathcal{I}} X$ is regular.
 
-Node: SG0000001P · Lean: `Singularity.Base.hironaka` (planned, no Lean statement yet)
+Node: SG0000001P · Lean: `Singularity.ResolutionInDim`, `Singularity.resolutionInDim_charZero`
 
-In the base the theorem is `AlgebraicGeometry.exists_support_eq_singularLocus_isRegular_blowUp`. The project plans the name above for the same theorem in its own vocabulary.
+In the base the theorem is `AlgebraicGeometry.exists_support_eq_singularLocus_isRegular_blowUp`. The library states the resolution in each dimension as `Singularity.ResolutionInDim` and proves it in characteristic 0 as `Singularity.resolutionInDim_charZero`, from the theorem of the base. The Lean form gives one proper birational morphism, and not a sequence of blowups.
 
 Hironaka's own Main Theorem I gives a finite sequence of blowups along regular centres. The base states the theorem in the form above, with one ideal sheaf whose support is the singular locus. We use it as a black box. The proof is the subject of Volume 2, which follows Kollár's book [Kol07]. For the meaning of a proof in the base, and for the checks that the project runs on it, see Volume 0, Chapter 1.
 

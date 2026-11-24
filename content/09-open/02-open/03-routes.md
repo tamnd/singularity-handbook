@@ -46,7 +46,7 @@ Temkin proves this in [Tem13]. He also reduces local uniformization to valuation
 
 Let $f = z^m + \sum_{k < m} a_k(x) z^k$ in $K[[x, z]]$. Volume 7, Section 1.2, defines the projected polyhedron of $f$ and the characteristic polyhedron, which is the intersection of the projected polyhedra over all choices of $z$ [Hir67]. The characteristic polyhedron does not depend on the choice of $z$. Cossart, Jannsen and Schober prove that it is intrinsic [CJSch19], and Cossart and Schober build from it an invariant that drops in dimension 2 without completion [CSch21].
 
-Node: SG00000014 · Lean: none yet
+Node: SG00000014 · Lean: `Singularity.charPolyhedron` (the definition, invariance under $z \mapsto z + \psi$, and one direction of the vertex criterion)
 
 The polyhedron exists in each dimension, and the first invariants of [CJS20] (the Hilbert-Samuel function and the directrix) do not go up in each dimension. The missing step is an invariant of the polyhedron that drops for $z^p + g(x_1, \dots, x_4)$. In dimension 3, Cossart and Piltant control the polyhedron by projections to two variables [CP08]. No such control is known for a polyhedron in the space of four variables.
 
