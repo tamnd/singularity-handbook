@@ -10,6 +10,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 3, Section 3.3 has the new subsection "Key polynomials for the limit augmentation". Lemma 3.3.30 gives the criterion for divisibility by the limit key polynomial $\varphi$ in the limit augmentation $\mu' = [\mu_\infty; \varphi, \gamma]$. Theorem 3.3.31 proves that $\varphi$ is a key polynomial for $\mu'$, with no new hypothesis. Proposition 3.3.32 proves that each monic $\psi$ of degree $\deg \varphi$ with $\nu(\psi) \ge \nu(\varphi)$ is again a limit key polynomial. Theorem 3.3.33 proves that $[\mu_\infty; \varphi, \nu(\varphi)]$ agrees with $\nu$ up to degree $\deg \varphi$ if and only if $\varphi$ has the largest $\nu$-value among the monic polynomials of its degree, and gives one limit step of the chain in this case. The text says that the largest value is not proved to exist and that the full chain with limit steps is not built. The text gives the Lean names from tamnd/singularity-lean#99.
 - The introduction of Volume 7, Chapter 3 now gives Section 3.5.
 - `EDITION` now pins the map at 101428c, which has the node SG0000004S.
 
