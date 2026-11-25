@@ -84,7 +84,7 @@ The proof of Theorem 1.1.3 in [CP19] has four parts.
 
 1. A reduction of Theorem 1.1.3 to local uniformization, by the method of Zariski [CP19, Section 4.1]. Volume 3, Chapter 4 explains the first step of this patching.
 2. A reduction of local uniformization to equations of degree $p$ of two kinds: purely inseparable equations $X^p - f$ and Artin-Schreier equations [CP19, Proposition 4.10]. Chapter 2 of this volume gives this reduction.
-3. An invariant $\iota(x) = (m(x), \omega(x), \kappa(x))$ of a point $x$ on such an equation, defined with the characteristic polyhedron of Hironaka [Hir67]. The invariant does not increase under permissible blowups [CP19, Theorem 3.13]. Chapter 3 of this volume defines the polyhedron and the first invariants.
+3. An invariant $\iota(x) = (m(x), \omega(x), \kappa(x))$ of a point $x$ on such an equation, defined with the characteristic polyhedron of Hironaka [Hir67]. At a point with $m = p$ and $\omega > 0$, the invariant does not increase under permissible blowups of the first and the second kind [CP19, Theorem 3.13]. Chapter 3 of this volume defines the polyhedron and the first invariants.
 4. A proof that, along a given valuation, a suitable sequence of permissible blowups makes $\iota$ drop. This is the Projection Theorem [CP19, Theorem 5.5], and the induction on $\iota$ gives [CP19, Theorem 1.5].
 
 Part 4 is the long part. It fills Chapters 5 to 9 of [CP19], and we do not reproduce it. Chapter 4 of this volume explains where the dimension 3 is used.

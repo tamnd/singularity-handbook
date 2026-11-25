@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## The invariants of Cossart and Piltant
 
-In this section we define the invariants $\delta$, $d_j$, $\epsilon$ and $\omega$ of [CP19, Sections 2.1 to 2.5], and we prove their first properties. For the purely inseparable equations $X^p + f$ over a perfect field we prove that the cleaning of Volume 7, Section 1.3, gives the minimal polyhedron, without the theorem of Hironaka. Then $\epsilon$ is the residual order of Volume 7. We state the theorem of Cossart and Piltant that the invariant $\iota = (m, \omega, \kappa)$ does not increase under permissible blowups.
+In this section we define the invariants $\delta$, $d_j$, $\epsilon$ and $\omega$ of [CP19, Sections 2.1, 2.2, 2.5 and 2.7], and we prove their first properties. For the purely inseparable equations $X^p + f$ over a perfect field we prove that the cleaning of Volume 7, Section 1.3, gives the minimal polyhedron, without the theorem of Hironaka. Then $\epsilon$ is the residual order of Volume 7. We state the theorem of Cossart and Piltant that the invariant $\iota = (m, \omega, \kappa)$ does not increase under permissible blowups.
 
 We keep the notation of Section 3.1, with $S = k[[u_1, \dots, u_n]]$ in the proofs. Let $X = \operatorname{Spec} S[X]/(h)$ and let $\eta \colon X \to \operatorname{Spec} S$ be the projection. For a point $y \in X$ with prime ideal $M_y \subset S[X]$, the *multiplicity* $m(y)$ is the order of $h$ in the regular local ring $S[X]_{M_y}$, as in Section 1.2. By Theorem 3.1.5(1) there are translations $Z = X - \theta$ such that $\Delta(h; u; Z)$ is minimal.
 
@@ -96,7 +96,7 @@ The value of $\omega$ is not determined by the polyhedron [CP19, Remark 2.70]. S
 Let $Y \subset X$ be an integral closed subscheme that contains $x$, with generic point $y$ and $m(y) = p$. It is *permissible of the first kind* at $x$ if it is Hironaka-permissible for $E$ at $x$ and $\epsilon(y) = \epsilon(x)$ [CP19, Definition 3.1]. The point $Y = \{x\}$ is always permissible of the first kind. It is *permissible of the second kind* if it is Hironaka-permissible, $\epsilon(y) = \epsilon(x) - 1$, and two more conditions hold [CP19, Definition 3.5]. Cossart and Piltant show by an example that resolution by Hironaka-permissible blowups can require a curve of the second kind [CP19, Example 3.6]. For the blowup $\pi$ along such a center, let $x' \in \pi^{-1}(x)$, let $s'$ be its image in the blowup of $\operatorname{Spec} S$, let $S'$ be the local ring at $s'$ and let $E'$ be the reduced total transform of $E$ at $s'$. The strict transform of $h$ defines the triple $(S', h', E')$, and $\iota(x')$ is computed for it.
 
 **Theorem 3.2.6 (Cossart-Piltant).** Let $S$ be an excellent regular local ring of dimension $n \ge 1$ with residue field of characteristic $p$. Let $h \in S[X]$ be a reduced monic polynomial of degree $p$ that satisfies condition 1 or condition 2 of Theorem 1.2.6, and assume that $(S, h, E)$ satisfies condition (E). Let $x$ be the point over $\mathfrak{m}_S$ with $m(x) = p$, and assume $\omega(x) > 0$. Let $\pi$ be the blowup along a center $Y$ that is permissible of the first or the second kind at $x$, with generic point $y$, and let $x' \in \pi^{-1}(x)$. Then
-$$\iota(x') \le \iota(x).$$ If $\epsilon(x') > \epsilon(x)$, then $h$ is purely inseparable at $x$ (the case $i_0 = p$), $\epsilon(y) = \epsilon(x) = \omega(x)$, and $\delta(y) \in \mathbb{N}$.
+$$\iota(x') \le \iota(x).$$ If $\epsilon(x') > \epsilon(x)$, then in well adapted coordinates $(u; Z)$ the initial form $\operatorname{in}_{\mathbf{1}} h$ of Definition 3.1.3 has no terms in $Z^1, \dots, Z^{p-1}$ (the case $i_0 = p$ of [CP19]), $\epsilon(y) = \epsilon(x) = \omega(x)$, and $\delta(y) \in \mathbb{N}$.
 
 Lean: none yet
 
@@ -106,15 +106,15 @@ This is part of [CP19, Theorem 3.13]. The values $\kappa \ge 2$ are not distingu
 
 Lean: none yet
 
-This is [CP19, Theorem 2.81]. Its proof is combinatorial, as in characteristic 0: it finds a center for which $\delta$ drops, and $\delta \in \frac{1}{p} \mathbb{N}$ cannot drop forever. So the hard case of Theorem 1.2.6 is $m(x) = p$ and $\omega(x) > 0$.
+This is [CP19, Theorem 2.81]. Its proof is combinatorial, as in characteristic 0: it finds a center for which $\delta$ drops, and $\delta \in \frac{1}{p!} \mathbb{N}$ cannot drop forever. So the hard case of Theorem 1.2.6 is $m(x) = p$ and $\omega(x) > 0$.
 
 ### Comparison with Moh's bound
 
-Theorem 3.2.6 explains why Cossart and Piltant use $\omega$ and not $\epsilon$. By Proposition 3.2.4(4), $\epsilon$ is the residual order. Moh's bound, Theorem 1.4.1 of Volume 7 with $q = p$, says that a permissible blowup can increase the residual order by at most $p^0 = 1$.
+Theorem 3.2.6 explains why Cossart and Piltant use $\omega$ and not $\epsilon$. By Proposition 3.2.4(4), $\epsilon$ is the residual order. Moh's bound, Theorem 1.4.1 of Volume 7 with $q = p$, says that a point blowup can increase the residual order by at most $p^0 = 1$.
 
-Node: SG00000015 · Lean: `Singularity.moh_bound` (the statement only, not proved)
+Node: SG00000015 · Lean: `Singularity.moh_bound_holds` (for point blowups of polynomials)
 
-The residual order can increase by $1$ (Section 3.3). Since $\omega \in \{\epsilon - 1, \epsilon\}$, an increase of $\epsilon$ by $1$ can leave $\omega$ unchanged. Theorem 3.2.6 says that this is what happens: $\omega$ never increases. For $q = p^e$ with $e \ge 2$ the increase of the residual order can be larger (Volume 7, Theorem 1.4.3). The reduction of Chapter 2 needs only equations of degree $p$, so this case does not occur in [CP19]. Cossart and Piltant know no analogue of $\omega$ with the properties of Theorem 3.2.6 for the equations $X^{p^e} + f$ with $e \ge 2$, and they refer to the work of Moh [Moh14] and of Hauser and Perlega [HP19a] on these equations [CP19, Section 1].
+The residual order can increase by $1$ (Section 3.3). Since $\omega \in \{\epsilon - 1, \epsilon\}$, an increase of $\epsilon$ by $1$ can leave $\omega$ unchanged. Theorem 3.2.6 says that this is what happens: under its hypotheses, $\omega$ does not increase. For $q = p^e$ with $e \ge 2$ the increase of the residual order can be larger (Volume 7, Example 1.4.2 and Theorem 1.4.3). The reduction of Chapter 2 needs only equations of degree $p$, so this case does not occur in [CP19]. Cossart and Piltant know no analogue of $\omega$ with the properties of Theorem 3.2.6 for the equations $X^{p^e} + f$ with $e \ge 2$, and they refer to the work of Moh [Moh14] and of Hauser and Perlega [HP19a] on these equations [CP19, Section 1].
 
 **Example 3.2.8.** Let $p = 3$, let $k$ be perfect of characteristic 3, let $S = k[[u_1, u_2, u_3]]$, let $h = Z^3 + u_1 u_2 u_3$ and let $E = \operatorname{div}(u_1 u_2 u_3)$. This is Example 2.3.4 at the origin. The series $f = u_1 u_2 u_3$ is clean, so $(u; Z)$ is well adapted and $\Delta(h; u) = (\frac13, \frac13, \frac13) + \mathbb{R}_{\ge 0}^3$. So $\delta(x) = 1$ and $m(x) = 3$. Further $d_1 = d_2 = d_3 = \frac13$, $r = (1, 1, 1)$ and $G = 1$. So $\epsilon(x) = 0$ and $\omega(x) = 0$, and Theorem 3.2.7 applies. Here one point blowup suffices. In the $u_1$-chart, with $u_2 = u_1(u'_2 + t_2)$, $u_3 = u_1(u'_3 + t_3)$ and $Z = u_1 Z'$, the strict transform is
 $$h' = Z'^3 + (u'_2 + t_2)(u'_3 + t_3).$$
@@ -124,4 +124,4 @@ Lean: none yet
 
 ### Notes and references
 
-The definitions follow [CP19, Sections 2.1, 2.2 and 2.6]. Proposition 3.2.4 is not stated in this form in [CP19]. It is the special case of [CP19, Propositions 2.10 and 2.26] for $X^p + f$ over a perfect field, with a direct proof. The residual order and its increase are studied by Moh [Moh87] and by Hauser and Perlega [HP19a]. Volume 7, Section 1.4, gives the examples of the increase.
+The definitions follow [CP19, Sections 2.1, 2.2, 2.5 and 2.7]. Proposition 3.2.4 is not stated in this form in [CP19]. It is the special case of [CP19, Propositions 2.10 and 2.26] for $X^p + f$ over a perfect field, with a direct proof. The residual order and its increase are studied by Moh [Moh87] and by Hauser and Perlega [HP19a]. Volume 7, Section 1.4, gives the examples of the increase.
