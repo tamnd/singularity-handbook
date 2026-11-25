@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.18] - 2026-11-25
+
 ### Added
 
 - Volume 9, Section 3.2, the second report of the milestone S7: the end case of the log-Jacobian route. At a point with $\rho = 0$ the equation is binomial after a change of the formal coordinates. The section gives the Lean proof of the first part and what the result does not give.
@@ -15,7 +17,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - The introduction of Volume 9, Chapter 3 now gives Sections 3.2 and 3.3.
 - Volume 7, Section 3.6 now gives the Lean names of tamnd/singularity-lean#107 for Proposition 3.6.1, Corollary 3.6.3 and Example 3.6.4. Corollary 3.6.2 has no Lean proof.
 - Volume 7, Proposition 3.5.1 now gives the Lean names of tamnd/singularity-lean#100, and the subsection on the Lean proof says which steps use that $F$ is clean.
-- `EDITION` now pins the map at 6a17cd4, which has the Lean fields of SG0000004S and SG0000004T from tamnd/singularity#156 and tamnd/singularity#157.
+- The edition is 0.4.18, with the map at tamnd/singularity@1fdcc3c, the release 0.4.18 of the map. This map has the Lean fields of SG0000004S and SG0000004T. Volume 0, Section 5.1 describes edition 0.4.18.
 - Volume 3, Section 3.3 has a new subsection on the chain of MacLane-Vaquié with limit steps (Definition 3.3.37 to Theorem 3.3.46), with the Lean names of tamnd/singularity-lean#109. A round in one degree uses the complete family of all monic polynomials of this degree. Either $\nu$ is the limit of a chain of ordinary and limit steps, or $\nu$ is the limit of a continuous family over a valuation of the chain. For $\nu$ with nonzero support, a finite chain ends with $\nu$, for any values. Theorem 3.3.5 and the text on part 4 now say what is proved and what is not.
 
 ## [0.4.17] - 2026-11-25
