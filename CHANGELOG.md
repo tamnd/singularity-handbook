@@ -4,10 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.13] - 2026-11-25
+
 ### Changed
 
 - Volume 7, Theorem 3.2.4 and Corollary 3.2.5 now give the Lean names of tamnd/singularity-lean#93. A new paragraph after the proof of Theorem 3.2.4 explains the Lean proof in $K[x]$. It uses divisibility by monomials in the place of the ideal $W$ and of unique factorization in $K[[x]]$.
-- `EDITION` now pins the map at 4769c7d, which has the Lean field of SG0000003N.
+- The edition is 0.4.13, with the map at tamnd/singularity@4352077, the release 0.4.13 of the map. This map has the Lean field of SG0000003N.
 
 ## [0.4.12] - 2026-11-25
 
