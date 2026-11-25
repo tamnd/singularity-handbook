@@ -11,6 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- The edition pins the map release 0.4.24, with the node SG00000050.
 - Volume 7, Section 3.8 and Volume 9, Section 3.5 no longer say that the forms of the weak transforms lie in the span of the new forms in the cases from the first to the first. A larger test found 17 points of 2,583 where this is false. Both sections now refer to the new sections.
 
 ## [0.4.23] - 2026-11-25
