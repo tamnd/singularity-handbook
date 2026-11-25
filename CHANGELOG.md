@@ -4,8 +4,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.7 gives the points where the log-Jacobian order $\rho$ stays under a point blowup. Theorem 3.7.1 says that they lie in the directrices of the initial forms of the elements of order $\rho$ of $\widetilde\Theta_0(G)$ or of $\widetilde\Theta(G)$, Corollary 3.7.2 says that $\rho$ goes down if these directrices meet only in $0$, Corollary 3.7.3 gives the case of the initial form of $G$, and Example 3.7.4 shows that the first case is false with $\widetilde\Theta(G)$. The Lean names are from tamnd/singularity-lean#119. This is the node SG0000004X, for the milestone S7.8 (tamnd/singularity#164).
+- Volume 9, Section 3.4 gives the same result as the fourth research report of the milestone S7, with what it does not give.
+
 ### Changed
 
+- `EDITION` now pins the map at 3256549, the release 0.4.22 of the map, with the nodes SG0000004X, SG0000004Y and SG0000004Z.
 - Volume 5, Section 1.3 has the Lean name of tamnd/singularity-lean#118: the existence of an étale generator in the case $f = [K : K_0]$, with a separable residue extension. The general case has no Lean proof.
 - Volume 5, Section 1.3 has the Lean names of tamnd/singularity-lean#116: the lemma of Euler (Lemma 1.3.1), the étale generator (Definition 1.3.2), the first part of Lemma 1.3.3 and the lifting theorem (Theorem 1.3.4). The second part of Lemma 1.3.3 is now the node SG0000004Y of the map, with no Lean proof.
 
