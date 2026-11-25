@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.28] - 2026-11-26
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.28.
 - Volume 7, Section 3.9 has Theorems 3.9.10 and 3.9.11. If $\rho$ stays, the old point is in the first case and no component of the divisor leaves, then the new point is in the first case, and $\tau_\rho$ does not go down. The theorems have no hypothesis on $p$. These are the nodes SG00000055 and SG00000056, for the milestone S7.14 (tamnd/singularity#209).
 - Volume 9, Section 3.10 gives the same result as the tenth research report of the milestone S7, with the two kinds of steps where $\tau_\rho$ can go down.
 
