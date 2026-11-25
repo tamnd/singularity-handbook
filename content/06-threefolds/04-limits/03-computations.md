@@ -100,6 +100,6 @@ The agreement of the cases $n = 3$ and $n = 4$ is what Section 4.1 leads one to 
 
 ### Notes and references
 
-The invariants and Theorem 3.2.6 are from [CP19, Sections 2.6 and 3]. The walks and the residual order follow Hauser and Perlega [HP19a, Section 2], and Volume 7, Section 1.4, reports the experiments E1 and E2 on the same walks. Moh's bound is from [Moh87]. The specs of E4 are `lab/specs/e4-p2.yaml`, `lab/specs/e4-p3.yaml` and `lab/specs/e4-p5.yaml` of tamnd/singularity, and the runs `2026-11-25-e4-p2-b049ce95`, `2026-11-25-e4-p3-5fdbdc69` and `2026-11-25-e4-p5-1ebbb9f0` are in `lab/runs`. Each run has its seed, and a computation of the same spec gives the same outputs. Lemma 4.3.1 and Example 4.3.3 are ours.
+The invariants and Theorem 3.2.6 are from [CP19, Sections 2.7 and 3]. The walks and the residual order follow Hauser and Perlega [HP19a, Section 2], and Volume 7, Section 1.4, reports the experiments E1 and E2 on the same walks. Moh's bound is from [Moh87]. The specs of E4 are `lab/specs/e4-p2.yaml`, `lab/specs/e4-p3.yaml` and `lab/specs/e4-p5.yaml` of tamnd/singularity, and the runs `2026-11-25-e4-p2-b049ce95`, `2026-11-25-e4-p3-5fdbdc69` and `2026-11-25-e4-p5-1ebbb9f0` are in `lab/runs`. Each run has its seed, and a computation of the same spec gives the same outputs. Lemma 4.3.1 and Example 4.3.3 are ours.
 
 Node: SG00000014 · Lean: `Singularity.charPolyhedron` (the definition of the characteristic polyhedron; the invariants of this section have no Lean definition yet)

@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Referee fixes in Volume 6. Step 1 of the plan in Section 2.2 now cites [CP19, Propositions 4.6 and 4.8] for the reduction to complete local domains. Case 2 of condition (E), Definition 2.2.3, now also asks that $E$ lies in the locus $p = 0$ when $S$ has characteristic 0, as in [CP19, Definition 2.32]. Theorem 3.2.6 now says that the initial form of $h$ has no terms in $Z^1, \dots, Z^{p-1}$, and no longer says that $h$ is purely inseparable. The note after Theorem 3.2.7 now has $\delta \in \frac{1}{p!} \mathbb{N}$. The citations of Section 3.2 and Section 4.3 now give [CP19, Section 2.7], where $\omega$ is defined. The plan in Section 1.2, the list in Section 4.1 and the remarks after Theorem 3.2.6 and in Section 4.2 now give the hypotheses of [CP19, Theorem 3.13]: condition (E), $m = p$, $\omega > 0$ and a center of the first or the second kind. Moh's bound is now stated for point blowups, and its Node lines give `Singularity.moh_bound_holds`, which proves it. Example 2.3.4 now says hyperplane for $z = 0$ in $\mathbb{A}^4$.
+
 ## [0.4.14] - 2026-11-25
 
 ### Changed

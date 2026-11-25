@@ -16,7 +16,7 @@ Let $S$ be an excellent regular local ring of dimension $n \ge 1$, and let $h \i
 
 1. The theorem of Hironaka on the characteristic polyhedron, Theorem 3.1.5.
 2. The definitions of $\delta$, $d_j$, $\epsilon$, $\omega$ and $\iota$ (Section 3.2), and Propositions 3.2.2 and 3.2.4. Our proofs of these propositions do not use $n = 3$.
-3. The invariant $\iota$ does not increase under permissible blowups, Theorem 3.2.6.
+3. Under condition (E), at a point with $m = p$ and $\omega > 0$, the invariant $\iota$ does not increase under permissible blowups, Theorem 3.2.6.
 4. If $\omega(x) = 0$, then Hironaka-permissible blowups along a valuation make the multiplicity less than $p$, Theorem 3.2.7.
 
 [CP19] proves more in each dimension: permissibility is stable under regular base change [CP19, Theorem 3.8], and a Hironaka-permissible center is permissible on a dense open subset [CP19, Theorem 3.22]. Cossart and Piltant describe these results as a guideline for $n \ge 4$ [CP19, Remark 1.7].

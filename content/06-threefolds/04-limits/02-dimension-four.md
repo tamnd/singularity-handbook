@@ -51,9 +51,9 @@ Node: SG00000016 · Lean: `Singularity.Examples.kangaroo` (the computation of Ex
 
 Node: SG00000017 · Lean: none yet (one cycle is certified, Example 1.4.5 of Volume 7)
 
-For $q = p$, Moh's bound allows an increase of the residual order by at most $1$ under a permissible blowup, and Example 3.3.1 shows such an increase. Proposition 3.2.4 shows that, for $X^p + f$ over a perfect field, the residual order is the invariant $\epsilon$ of Cossart and Piltant, and Theorem 3.2.6 shows that $\omega \in \{\epsilon - 1, \epsilon\}$ does not increase. Both facts hold for each $n$. So for the equations $z^p + g(x_1, \dots, x_4)$ the difficulty is not an increase of $\omega$ but the lack of a proof that it decreases.
+For $q = p$, Moh's bound allows an increase of the residual order by at most $1$ under a point blowup, and Example 3.3.1 shows such an increase. Proposition 3.2.4 shows that, for $X^p + f$ over a perfect field, the residual order is the invariant $\epsilon$ of Cossart and Piltant, and Theorem 3.2.6 shows that $\omega \in \{\epsilon - 1, \epsilon\}$ does not increase under its hypotheses. Both facts hold for each $n$. So for the equations $z^p + g(x_1, \dots, x_4)$ the difficulty is not an increase of $\omega$ but the lack of a proof that it decreases.
 
-Node: SG00000015 · Lean: `Singularity.moh_bound` (the statement only, not proved)
+Node: SG00000015 · Lean: `Singularity.moh_bound_holds` (for point blowups of polynomials)
 
 Hauser and Perlega study the residual order in all dimensions [HP19a], and Hauser explains why the equations $z^p + g$ are the core of the problem [Hau10]. Volume 7 develops this approach, and Volume 9, Section 1.5, states the problem P1 for these equations.
 

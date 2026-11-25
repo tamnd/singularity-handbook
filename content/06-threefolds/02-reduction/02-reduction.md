@@ -20,7 +20,7 @@ This is [CP19, Proposition 4.10]. Together with Theorem 1.2.6, it proves Theorem
 
 Node: SG0000001V · Lean: `Singularity.resolution_quasiExcellent_three` (planned, no Lean statement yet)
 
-*Plan of the proof.* Step 1 (patching). By [CP19, Section 4.1], it suffices to prove local uniformization for each complete local domain $(A, \mathfrak{m}_A)$ of dimension 3 and each valuation of its fraction field with center $\mathfrak{m}_A$, and one may assume that the valuation has rank 1. Here local uniformization means that a finite sequence of local blowups along the valuation makes the center regular. The patching follows the method of Zariski [Zar44], as Volume 3, Chapter 4 explains for function fields. It uses the principalization of ideals on regular excellent schemes of dimension 3 [CP19, Proposition 4.4] and the embedded resolution of surfaces. In the equal characteristic 0 case the theorem is known, so one may assume that the residue field of the valuation has characteristic $p > 0$.
+*Plan of the proof.* Step 1 (patching). By [CP19, Propositions 4.6 and 4.8], it suffices to prove local uniformization for each complete local domain $(A, \mathfrak{m}_A)$ of dimension 3 and each valuation of its fraction field with center $\mathfrak{m}_A$, and one may assume that the valuation has rank 1. Here local uniformization means that a finite sequence of local blowups along the valuation makes the center regular. The patching follows the method of Zariski [Zar44], as Volume 3, Chapter 4 explains for function fields. It uses the principalization of ideals on regular excellent schemes of dimension 3 [CP19, Proposition 4.4] and the embedded resolution of surfaces. In the equal characteristic 0 case the theorem is known, so one may assume that the residue field of the valuation has characteristic $p > 0$.
 
 Step 2 (a regular subring). By the Noether normalization theorem for complete local rings [Mat, Theorem 29.4], there is a complete regular local ring $S \subseteq A$ of dimension 3 such that $A$ is a finite $S$-module. Let $F$ and $K$ be the fraction fields of $S$ and $A$. Then $K/F$ is a finite extension. The center of the valuation on $S$ is regular, so local uniformization holds for $F$. The task is to carry it up along $K/F$.
 
@@ -57,7 +57,7 @@ The proof of Theorem 1.2.6 uses one more hypothesis, which the reduction can pro
 **Definition 2.2.3 (condition (E)).** The triple $(S, h, E)$ satisfies *condition (E)* if the residue field of $S$ has characteristic $p$ and one of these holds.
 
 1. In case 1 of Theorem 1.2.6, the image under $\eta$ of the locus $\operatorname{Sing}_p X$ of the points of multiplicity $p$ of $X$ is contained in $E$.
-2. In case 2 of Theorem 1.2.6, the discriminant locus of $\eta$ is contained in $E$.
+2. In case 2 of Theorem 1.2.6, the discriminant locus of $\eta$ is contained in $E$. If $S$ has characteristic 0, then also each component of $E$ lies in the locus $p = 0$, that is $E \subseteq \operatorname{div}(p)_{\mathrm{red}}$.
 
 This is [CP19, Definition 2.32]. In dimension 3 one can achieve condition (E) by preparatory blowups, with the known resolution theorems for schemes of dimension 2 [CP19, Corollary 4.19]. Section 2.3 gives a simple test for condition (E) in case 1, and Section 3.3 uses it in the examples. The divisor $E$ is the place where the earlier blowups leave their trace, as in characteristic 0, and the invariants of Chapter 3 depend on $E$.
 
