@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.25] - 2026-11-26
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.25.
 - Volume 7, Section 3.9 has Examples 3.9.5 and 3.9.6, for $p = 2$ in five and four variables. In each one $\rho$ stays, both points are in the first case, $p$ divides $|r| + d$, and $\tau_\rho$ goes down. So the hypothesis of Theorem 3.9.1 is necessary. This is the node SG00000051, for the milestone S7.11 (tamnd/singularity#198).
 - Volume 9, Section 3.7 gives the same result as the seventh research report of the milestone S7, with what it means for route R1.
 
