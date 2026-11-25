@@ -4,4 +4,6 @@ This chapter has the results of the project on the open case. Chapter 1 gives th
 
 Section 3.1 is the first result. It is about the purely inseparable equations $z^p + g = 0$ of Section 2.3, and the blowup of a regular center of positive dimension. A residual order of the log-Jacobian ideal does not go up under this blowup when the center satisfies two conditions of equimultiplicity, in each number of variables. An example shows that the second condition cannot be omitted.
 
+Section 3.2 is the second result. It finds the singularities at a point where the residual order $\rho$ of the log-Jacobian ideal is $0$. After a change of the formal coordinates the equation is $z^p + x^r$ or $z^p + x^r x_j$, a binomial equation, and binomial varieties have a resolution in each characteristic.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.
