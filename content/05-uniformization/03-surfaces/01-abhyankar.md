@@ -56,4 +56,4 @@ In characteristic 0 we have $d = 1$ and the residue extension is separable, so o
 
 ### Notes and references
 
-The theorem of Abhyankar is [Abh56s]. The book [Cut04] gives an account of the resolution of surfaces in characteristic $p$. The resolution of excellent surfaces is [Lip78], and Volume 4 proves it. Proposition 3.1.4 is a standard fact of ramification theory [Kuh-book]. None of the results of this section is in the Lean library.
+The theorem of Abhyankar is [Abh56s]. The book [Cut04] gives an account of the resolution of surfaces in characteristic $p$. The resolution of excellent surfaces is [Lip78]. Volume 4 gives the structure of its proof and cites the hard steps. Proposition 3.1.4 is a standard fact of ramification theory [Kuh-book]. None of the results of this section is in the Lean library.
