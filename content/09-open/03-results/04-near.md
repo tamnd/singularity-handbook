@@ -39,7 +39,7 @@ Part 4. Here $\sigma \ge d = \rho + 1$. The element $\partial_j G$ of $\widetild
 
 ### The Lean proof
 
-The Lean library proves parts 1 and 2 and the example for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianNearPoint.lean`. Part 1 is `Singularity.chartVector_mem_directrix_of_logJacobianOrder_eq`, and part 2 is `Singularity.chartVector_mem_directrix_of_logJacobianOrder_eq_of_idealOrd`. The corollary for $T_\rho(g) = 0$ is `Singularity.logJacobianOrder_cleanPart_lt_of_directrix_eq_bot`, and the example is `Singularity.nearPointExample_not_mem_directrix`. Parts 3 and 4 have no Lean proof.
+The Lean library proves the four parts and the example for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianNearPoint.lean`. Part 1 is `Singularity.chartVector_mem_directrix_of_logJacobianOrder_eq`, and part 2 is `Singularity.chartVector_mem_directrix_of_logJacobianOrder_eq_of_idealOrd`. The corollary for $T_\rho(g) = 0$ is `Singularity.logJacobianOrder_cleanPart_lt_of_directrix_eq_bot`, and the example is `Singularity.nearPointExample_not_mem_directrix`. Part 3 is `Singularity.chartVector_mem_directrix_initialForm_of_logJacobianOrder_eq`, and part 4 is `Singularity.chartVector_mem_directrix_pderiv_initialForm_of_logJacobianOrder_eq`.
 
 ### What the result does not give
 
@@ -50,7 +50,7 @@ The Lean library proves parts 1 and 2 and the example for polynomials over a fie
 
 ### Status
 
-The map gives SG0000004X the status of a node with a Lean proof of parts 1 and 2. An outside expert has not yet read the result, and the milestone S7 asks for this. The proof uses only Theorem 2.2.5 of Volume 7 and the proof of Theorem 3.2.4, and we expect that experts know it in some form. We do not know a published statement of it in each dimension.
+The map gives SG0000004X the status of a node with a Lean proof of the four parts. An outside expert has not yet read the result, and the milestone S7 asks for this. The proof uses only Theorem 2.2.5 of Volume 7 and the proof of Theorem 3.2.4, and we expect that experts know it in some form. We do not know a published statement of it in each dimension.
 
 ### Notes and references
 
