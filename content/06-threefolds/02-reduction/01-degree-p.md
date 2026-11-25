@@ -63,7 +63,7 @@ Let $(K, v)$ be a henselian valued field whose residue field has characteristic 
 
 Node: SG00000010 · Lean: `Singularity.Valuation.defect` (planned, no Lean statement yet)
 
-Cossart and Piltant use their deep Theorem 1.2.6 only for the immediate steps. For the steps that are not immediate there is a much simpler proof [CP19, Remark 4.11], given in the case of equal characteristic in [CP08]. Kuhlmann studies the immediate extensions of degree $p$, the defect extensions, in [Kuh-book].
+For the Galois steps of degree $p$, Cossart and Piltant need their deep Theorem 1.2.6 only for the immediate steps. For the Galois steps that are not immediate there is a much simpler proof [CP19, Remark 4.11], given in the case of equal characteristic in [CP08]. Kuhlmann studies the immediate extensions of degree $p$, the defect extensions, in [Kuh-book].
 
 In mixed characteristic, $K$ has characteristic 0 and its residue field has characteristic $p$. Then a Galois extension of degree $p$ need not be an Artin-Schreier extension of $K$, but it is still a Galois extension with group $\mathbb{Z}/p\mathbb{Z}$. This is why Theorem 1.2.6 states its second case with the Galois group and not with an equation.
 

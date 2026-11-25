@@ -19,7 +19,7 @@ Let $S$ be an excellent regular local ring of dimension $n \ge 1$, and let $h \i
 3. Under condition (E), at a point with $m = p$ and $\omega > 0$, the invariant $\iota$ does not increase under permissible blowups, Theorem 3.2.6.
 4. If $\omega(x) = 0$, then Hironaka-permissible blowups along a valuation make the multiplicity less than $p$, Theorem 3.2.7.
 
-[CP19] proves more in each dimension: permissibility is stable under regular base change [CP19, Theorem 3.8], and a Hironaka-permissible center is permissible on a dense open subset [CP19, Theorem 3.22]. Cossart and Piltant describe these results as a guideline for $n \ge 4$ [CP19, Remark 1.7].
+[CP19] proves more in each dimension: permissibility is stable under regular base change [CP19, Theorem 3.8], and a Hironaka-permissible center is permissible on a dense open subset [CP19, Theorem 3.22]. Cossart and Piltant describe the results of [CP19, Section 3.3], which contains Theorem 3.22, as a guideline for $n \ge 4$ [CP19, Remark 1.7].
 
 So in each dimension the main invariant does not go up. The missing part is a proof that it goes down. For $n = 3$ this is the Projection Theorem [CP19, Theorem 5.5], and its proof fills Chapters 5 to 9 of [CP19].
 
