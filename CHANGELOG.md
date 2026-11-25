@@ -11,7 +11,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
-- The edition pins the map release 0.4.26, with the node SG00000051.
+- The edition pins the map release 0.4.27, with the node SG00000051 and its Lean proof.
+- Volume 7, Section 3.9 and Volume 9, Section 3.7 give the Lean names of tamnd/singularity-lean#128 for Example 3.9.5, and Section 3.9 has a paragraph on the Lean proof of the example.
 - Volume 7, Section 3.9 no longer says that the case where $p$ divides $|r| + d$ is open. It explains where the proof fails in the examples, and why a definition of $T_\rho$ with $\widetilde\Theta(G)$ in the first case does not help.
 - Volume 9, Section 3.6 and the introductions of Volume 7, Chapter 3 and Volume 9, Chapter 3 refer to the new result.
 
