@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.9 has Example 3.9.9, for $p = 3$ in three variables. Here $\rho$ stays, the old point is in the first case, $p$ divides $|r| + d$, and the new point is in the second case. So the hypothesis of Proposition 3.9.7 is necessary. This is the node SG00000054, for the milestone S7.13 (tamnd/singularity#208).
+- Volume 9, Section 3.9 gives the same result as the ninth research report of the milestone S7, with the data of a test that records the divisor at each step.
+
+### Changed
+
+- The edition pins the map release 0.4.31, with the node SG00000054 and its Lean proof.
+- Volume 7, Section 3.9 has a paragraph on the Lean proof of Example 3.9.9, the list of the combinations of the cases refers to Example 3.9.9, and the introduction of Volume 9, Chapter 3 refers to Section 3.9.
+
 ## [0.4.26] - 2026-11-26
 
 ### Added
