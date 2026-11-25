@@ -22,9 +22,11 @@ For $\varepsilon \in \mathbb{Z}^r$ we write $x^\varepsilon = \prod x_i^{\varepsi
 2. The residue field of $v$ is $k$.
 3. $v$ is an Abhyankar valuation with $\operatorname{rr}\Gamma_v = r$.
 
-Lean: none yet
+Lean: `Singularity.IsMonomialValuation.isAbhyankarValuation` (part 3)
 
 *Proof.* The map is a surjective homomorphism onto $\bigoplus \mathbb{Z}\gamma_i$, and it is injective because the $\gamma_i$ are independent. Each polynomial has a value of the form $\alpha \cdot \gamma$, so $\Gamma_v = \bigoplus \mathbb{Z}\gamma_i$. Since distinct monomials have distinct values, the initial form of a polynomial $f$ in the sense of Volume 3, Lemma 1.6.1, is one term $c_\alpha x^\alpha$. By the residue formula there, the residue of $f/g$ with $v(f) = v(g)$ is the residue of $c_\alpha x^\alpha/(d_\alpha x^\alpha) = c_\alpha/d_\alpha \in k$. So $Kv = k$. Then $\operatorname{rr}\Gamma_v + \operatorname{trdeg}_k Kv = r = \operatorname{trdeg}_k K$. $\square$
+
+The Lean proof of part 3 does not use part 2. In Lean, a monomial valuation is a valuation $v$ of $K/k$ and elements $x_1, \dots, x_r \in K^\times$ that generate $K$ as a field over $k$, such that the values $v(x_i)$ are linearly independent over $\mathbb{Z}$. Then $\operatorname{rr}\Gamma_v \ge r$. The field $K$ is algebraic over $k(x_1, \dots, x_r)$, so $\operatorname{trdeg}_k K \le r$. The Abhyankar inequality (Volume 3, Theorem 2.1.5) gives $\operatorname{rr}\Gamma_v + \operatorname{trdeg}_k Kv \le \operatorname{trdeg}_k K \le r \le \operatorname{rr}\Gamma_v$. So all these numbers are equal, $\operatorname{trdeg}_k Kv = 0$, and $v$ is an Abhyankar valuation. The Lean library does not prove parts 1 and 2.
 
 ### Cones in ordered groups
 
@@ -48,7 +50,7 @@ For $N$ large all coefficients are $\ge 0$, for each of the finitely many $e \in
 
 **Lemma 2.1.4 (lattice lemma).** Let $\Gamma \cong \mathbb{Z}^r$ be an ordered group, and let $D \subseteq \Gamma$ be a finite set of elements $\ge 0$. Then there is a basis $m_1, \dots, m_r$ of $\Gamma$ over $\mathbb{Z}$ such that each $m_i$ is positive and each $d \in D$ is a combination $\sum n_im_i$ with $n_i \in \mathbb{N}$.
 
-Node: SG0000004D · Lean: none yet
+Node: SG0000004D · Lean: `Singularity.latticeLemma`, `Singularity.latticeLemma_of_injective` (the form with matrices of Lemma 2.1.8)
 
 *Proof.* Let $V = \Gamma \otimes \mathbb{Q}$, which contains $\Gamma$. By Lemma 2.1.3 there is a positive basis $m_1, \dots, m_r$ of $V$ whose rational cone contains $D$. Each element of a basis of $\Gamma$ is a rational combination of the $m_i$. Let $N \ge 1$ be a common denominator of these coefficients, and replace each $m_i$ by $m_i/N$. Then the lattice $L = \bigoplus \mathbb{Z}m_i$ contains $\Gamma$, the $m_i$ are positive, and the rational cone is the same.
 
@@ -67,11 +69,29 @@ Since $t \in \Lambda^*$, the coefficient $c \cdot t$ is an integer. So $\Gamma \
 
 The proof is an algorithm. It needs to compare elements of $V$, which is possible for an explicit ordered group such as a subgroup of $\mathbb{R}$ with an explicit basis.
 
+The Lean proof of Lemma 2.1.4 does not use Lemma 2.1.3 or the group $V$. It uses the same induction as the proof of Lemma 2.1.3, but on $\Gamma$ itself, and Lemma 2.1.8 for the archimedean step. We give it here.
+
+*Second proof.* We use induction on $r$. For $r = 0$ there is nothing to prove. Let $r \ge 1$, let $b_1, \dots, b_r$ be a basis of $\Gamma$, and let $t = \sum_i |b_i| > 0$.
+
+The subgroup $H$. Let $H$ be the set of $a \in \Gamma$ with $n|a| < t$ for each $n \in \mathbb{N}$. Since $n|a + b| \le 2n\max(|a|, |b|)$, the set $H$ is a subgroup. It is convex: if $0 \le a \le c$ and $c \in H$, then $n|a| \le n|c| < t$. Also $t \notin H$. For each $a \in \Gamma$ we have $a = \sum_i c_ib_i$ with $c_i \in \mathbb{Z}$, so $|a| \le Nt$ with $N = \sum_i |c_i|$. If $a \notin H$, then $t \le n|a|$ for some $n \ge 1$.
+
+The splitting. If $na \in H$ with $n \ge 1$, then $|a| \le |na|$, so $a \in H$. Thus $\Gamma/H$ is torsion free. It is finitely generated, so it is free. So there is a subgroup $W$ with $\Gamma = H \oplus W$. The groups $H$ and $W$ are free of ranks $h$ and $s$ with $h + s = r$, and $s \ge 1$ because $t \notin H$. Write $a = a_H + a_W$ for the decomposition of $a \in \Gamma$. If $w \in W$ is not zero, then $w \notin H$.
+
+Positivity. Let $a \ge 0$ in $\Gamma$. We show that $a_W \ge 0$. If $a_W < 0$, then $0 < -a_W \le a_H$, and convexity gives $-a_W \in H$. This is false, because $a_W \ne 0$. Similarly, if $w \in W$ is positive and $c \in H$, then $w + c > 0$. Otherwise $0 < w \le -c$, and convexity gives $w \in H$.
+
+The archimedean step. The order of $\Gamma$ restricts to $W$, and $W$ is archimedean. Let $0 < a, b$ in $W$. Then $a \notin H$, so $t \le n a$ for some $n \ge 1$, and $b \le N t \le Nn a$ for some $N$. By the theorem of Hölder [ZS2, Chapter VI], there is an injective homomorphism of ordered groups $\psi : W \to \mathbb{R}$. Let $w_1, \dots, w_s$ be a basis of $W$ and let $\gamma = (\psi(w_1), \dots, \psi(w_s)) \in \mathbb{R}^s$. Then $a \cdot \gamma = \psi(\sum_i a_iw_i) \ne 0$ for each nonzero $a \in \mathbb{Z}^s$. The elements $d_W$ with $d \in D$ are $\ge 0$, so their coefficient vectors $a$ have $a \cdot \gamma \ge 0$. Lemma 2.1.8 gives a basis $q_1, \dots, q_s$ of $W$ with $\psi(q_i) > 0$, so $q_i > 0$, such that $d_W = \sum_i \lambda_i(d)q_i$ with $\lambda_i(d) \in \mathbb{N}$ for each $d \in D$.
+
+The induction. The elements of $D \cap H$ are $\ge 0$. Since $h < r$, the induction hypothesis gives a basis $m_1, \dots, m_h$ of $H$ of positive elements such that each element of $D \cap H$ has coefficients in $\mathbb{N}$. For $d \in D$ write $d_H = \sum_j c_j(d)m_j$ with $c_j(d) \in \mathbb{Z}$.
+
+The shear. Let $m = \sum_j m_j \in H$, and for $N \in \mathbb{N}$ let $q_i^N = q_i - Nm$. Then $q_i^N > 0$ by the positivity step, and $m_1, \dots, m_h, q_1^N, \dots, q_s^N$ is a basis of $\Gamma$. For $d \in D$ we have
+$$d = \sum_i \lambda_i(d)q_i^N + \sum_j \Big(c_j(d) + N\sum_i \lambda_i(d)\Big)m_j.$$
+If $d_W = 0$, then $d \in D \cap H$, and all coefficients are in $\mathbb{N}$. If $d_W \ne 0$, then $\sum_i \lambda_i(d) \ge 1$, and the coefficients are in $\mathbb{N}$ for $N$ large. Since $D$ is finite, one $N$ works for all $d \in D$. $\square$
+
 ### Local uniformization of monomial valuations
 
 **Theorem 2.1.5 (monomial case).** Let $k$ be a field of any characteristic, and let $v$ be a monomial valuation of $K = k(x_1, \dots, x_r)$. Then $v$ has local uniformization. More precisely, for each finite subset $S$ of $\mathcal{O}_v$ there are Laurent monomials $u_1, \dots, u_r$ that form a basis of the group $M$, with $v(u_i) > 0$, such that $S \subseteq A_{(u_1, \dots, u_r)}$, where $A = k[u_1, \dots, u_r]$ is a polynomial ring.
 
-Node: SG0000004D · Lean: none yet
+Node: SG0000004D · Lean: `Singularity.hasLocalUniformization_of_isMonomialValuation`
 
 *Proof.* Let $S \subseteq \mathcal{O}_v$ be finite. Write each $s \in S$ as $s = f_s/g_s$ with polynomials $f_s, g_s \ne 0$. Write $f_s = c\,x^\alpha(1 + F_s)$, where $c\,x^\alpha$ is the term of least value and $F_s$ is a sum of terms $c'x^\varepsilon$ with $v(x^\varepsilon) > 0$. Write $g_s = d\,x^\beta(1 + G_s)$ in the same way. Then
 $$s = \frac{c}{d}\, x^{\alpha - \beta}\, \frac{1 + F_s}{1 + G_s}, \qquad v(x^{\alpha - \beta}) = v(s) \ge 0.$$
@@ -131,8 +151,8 @@ Node: SG0000004D · Lean: `Singularity.hasLocalUniformization_of_isMonomialValua
 
 *Proof.* Let $\gamma_i = \varphi(v(x_i))$. Then $\varphi(v(x^a)) = a \cdot \gamma$ for each $a \in \mathbb{Z}^r$. Since $\varphi$ is injective and preserves the order, $v(x^a) \ge 0$ if and only if $a \cdot \gamma \ge 0$, and $v(x^a) > 0$ if and only if $a \cdot \gamma > 0$. Also $a \cdot \gamma = 0$ gives $v(x^a) = 0$, so $a = 0$. Thus Lemma 2.1.8 applies to $\gamma$, and it gives the hypothesis of Proposition 2.1.9. $\square$
 
-In Lean the valuation is multiplicative, and $\varphi$ maps the value group to $\mathbb{R}_{\ge 0}$. The weights are $\gamma_i = -\log\varphi(v(x_i))$. The Lean statement does not say that $v$ is an Abhyankar valuation. This is Lemma 2.1.2, which is not in the library.
+In Lean the valuation is multiplicative, and $\varphi$ maps the value group to $\mathbb{R}_{\ge 0}$. The weights are $\gamma_i = -\log\varphi(v(x_i))$. The Lean statement does not say that $v$ is an Abhyankar valuation. This is part 3 of Lemma 2.1.2, which is `Singularity.IsMonomialValuation.isAbhyankarValuation`. The Lean proof of Theorem 2.1.5 for each rank, `Singularity.hasLocalUniformization_of_isMonomialValuation`, is Proposition 2.1.9 together with Lemma 2.1.4 in the form with matrices. It applies the lemma to the map $\varepsilon \mapsto v(x^\varepsilon)$ from $\mathbb{Z}^r$ to $\Gamma_v$, which is injective.
 
 ### Notes and references
 
-The ring $A = k[u_1, \dots, u_r]$ is the coordinate ring of a smooth affine toric chart, and the lattice lemma says that the toric charts with a positive basis exhaust the valuation ring of a monomial valuation. Toric varieties and their resolution by regular subdivisions are in [Ful93], and in Volume 9, Section 2.4. Another combinatorial problem of resolution, the polyhedra game of Hironaka, is solved in [Spi83]. The Lean library has the one-variable step of a monomial valuation, `Singularity.monomialValuation`, which extends a valuation of $K$ to $K[X]$ with a given value of $X$. It proves Lemma 2.1.8, Proposition 2.1.9 and Corollary 2.1.10, so Theorem 2.1.5 for value groups of rank 1. It does not have Lemmas 2.1.2, 2.1.3 and 2.1.4, so it does not have Theorem 2.1.5 for value groups of higher rank.
+The ring $A = k[u_1, \dots, u_r]$ is the coordinate ring of a smooth affine toric chart, and the lattice lemma says that the toric charts with a positive basis exhaust the valuation ring of a monomial valuation. Toric varieties and their resolution by regular subdivisions are in [Ful93], and in Volume 9, Section 2.4. Another combinatorial problem of resolution, the polyhedra game of Hironaka, is solved in [Spi83]. The Lean library has the one-variable step of a monomial valuation, `Singularity.monomialValuation`, which extends a valuation of $K$ to $K[X]$ with a given value of $X$. It proves Lemma 2.1.8, Proposition 2.1.9, Corollary 2.1.10, the lattice lemma (Lemma 2.1.4) by the second proof, and Theorem 2.1.5 for value groups of each rank. It proves part 3 of Lemma 2.1.2, but not parts 1 and 2. It does not have Lemma 2.1.3 or Corollary 2.1.6.
