@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.9 has Proposition 3.9.7 and Corollary 3.9.8. If $\rho$ stays, the old point is in the first case and $p$ does not divide $|r| + d$, then the new point is in the first case, and $\tau_\rho$ does not go down. So Theorem 3.9.1 holds with no hypothesis on the new point. The section also lists the combinations of the cases where $\tau_\rho$ can go down. These are the nodes SG00000052 and SG00000053, for the milestone S7.12 (tamnd/singularity#201).
+- Volume 9, Section 3.8 gives the same result as the eighth research report of the milestone S7, with a table of the combinations and the data of a test of sequences of blowups.
+
+### Changed
+
+- The edition pins the map release 0.4.28, with the nodes SG00000052 and SG00000053.
+- Volume 7, Section 3.9 has a paragraph on the Lean proof of Proposition 3.9.7 and Corollary 3.9.8, and the introduction of Volume 9, Chapter 3 refers to Section 3.8.
+
 ## [0.4.25] - 2026-11-26
 
 ### Added

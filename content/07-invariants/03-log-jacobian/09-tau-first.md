@@ -1,6 +1,6 @@
 ---
 title: The codimension from the first case to the first case
-nodes: [SG00000050, SG00000051]
+nodes: [SG00000050, SG00000051, SG00000052, SG00000053]
 sources: [Hir67]
 status: drafted
 drafted_by: writer
@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## The codimension from the first case to the first case
 
-Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays, if the new point is in the second case. The proof sends each element $h$ of $H(g)$ to its weak transform $h'$, and it uses that $h'$ is an element of $H(g'_c)$. If the new point is in the first case, this step can fail, also when the old point is in the first case. Example 3.9.4 below shows this for $p = 2$. In this section we prove that $\tau_\rho$ still does not go down from the first case to the first case, if $p$ does not divide $|r| + d$. The proof does not transport all the elements of $H(g)$. In the first case the initial forms of $H(g)$ come from the elements $r_i G + x_i \partial_i G$, one for each $i \in \Delta$. We transport only those elements whose weak transform is exactly an element of $\widetilde\Theta_0(G')$, and we add one more element, the Euler element of Corollary 3.7.3. A short computation with derivatives shows that these elements are sufficient. Examples 3.9.5 and 3.9.6 show that the theorem is false if $p$ divides $|r| + d$.
+Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays, if the new point is in the second case. The proof sends each element $h$ of $H(g)$ to its weak transform $h'$, and it uses that $h'$ is an element of $H(g'_c)$. If the new point is in the first case, this step can fail, also when the old point is in the first case. Example 3.9.4 below shows this for $p = 2$. In this section we prove that $\tau_\rho$ still does not go down from the first case to the first case, if $p$ does not divide $|r| + d$. The proof does not transport all the elements of $H(g)$. In the first case the initial forms of $H(g)$ come from the elements $r_i G + x_i \partial_i G$, one for each $i \in \Delta$. We transport only those elements whose weak transform is exactly an element of $\widetilde\Theta_0(G')$, and we add one more element, the Euler element of Corollary 3.7.3. A short computation with derivatives shows that these elements are sufficient. Examples 3.9.5 and 3.9.6 show that the theorem is false if $p$ divides $|r| + d$. Proposition 3.9.7 shows that the hypothesis on the new point is not necessary. If $p$ does not divide $|r| + d$, the new point is always in the first case.
 
 We use the setting and the notation of Section 3.8. So $g = x^r G$ with $d = \operatorname{ord} G$, the chart is $\pi = \pi_{1,t}$ with the vector $v = (1, t_2, \dots, t_n)$, and the new divisor is
 $$\Delta' = \{1\} \cup \{ i \in \Delta : i \ne 1, \ t_i = 0 \}.$$
@@ -150,6 +150,45 @@ $$\tau_\rho(g'_c) = 1 < \tau_\rho(g).$$
 
 As in Example 3.9.5, the form $F$ comes only from $e_x$ and $e_y$, with $v_x = v_y = 1$, and the Euler element is $0$. At the new point the form $(x + z)^2 w + y^3$ is the initial form of $\partial_x G'$, which is in $\widetilde\Theta(G')$ and not in $\widetilde\Theta_0(G')$. We do not know if there is an example with $n = 3$.
 
+### The new point is in the first case
+
+Theorem 3.9.1 has a hypothesis on each of the two points. The hypothesis on the new point follows from the other hypotheses. The proof uses the Euler element again, but now as an element of order $d$ in $\Theta'_0(g'_c)$, and not for the directrix.
+
+**Proposition 3.9.7.** Assume that $\rho' = \rho$, that $g$ is in the first case, and that $|r| + d$ is not $0$ in $K$. Then $g'_c$ is in the first case.
+
+Node: SG00000052 · Lean: `Singularity.idealOrd_logJacobianTangent_cleanPart_of_caseA` (for polynomials)
+
+*Proof.* By part 1 of Lemma 3.9.2, $\rho = d$, and the old point has $\sigma = d$. Let $\sigma' = \operatorname{ord} \widetilde\Theta_0(G')$. The proof of Theorem 3.2.4, applied at the new point, gives $\sigma' = \rho'$ or $\sigma' = \rho' + 1$. So we must show that $\sigma' \le \rho'$. Since $r'_j = 0$ for $j \notin \Delta'$, we have $\Theta'_0(g'_c) = x^{r'} \widetilde\Theta_0(G')$, and each element of $\Theta'_0(g'_c)$ has order at least $|r'| + \sigma'$. We find an element of $\Theta'_0(g'_c)$ of order at most $|r'| + d$.
+
+The Euler element $e$ has order $d$, since its homogeneous part of degree $d$ is $(|r| + d) F \ne 0$. The first part of the proof of Lemma 3.9.3 gives
+$$\pi(x^r e) = x_1^p \, x_1 \partial_1 g'.$$
+This part of the proof uses only Lemma 3.2.2 and $p = 0$ in $K$. It does not use the case of the new point. Since $1 \in \Delta'$, the element $x_1 \partial_1 g'$ is in $\Theta'_0(g')$, and $\Theta'_0(g') = \Theta'_0(g'_c)$ by Lemma 3.1.2. The second part of the proof of Lemma 3.9.3 also does not use the case of the new point. With $\pi(x^r) = u \, x_1^{|r|} x^e$ and $\pi(e) = x_1^d e'$, it gives
+$$x_1 \partial_1 g' = u \, x^b e', \qquad x^b = x_1^{|r| + d - p} x^e,$$
+where $u$ is a unit. Since $\sigma = d$, this $x^b$ is the monomial of the proof of Theorem 3.2.4, and that proof gives $r' = b + s$ with $s \ge 0$. So $|b| \le |r'|$. By Theorem 2.2.2, $\operatorname{ord} e' \le d$. So
+$$|r'| + \sigma' \le \operatorname{ord} (x_1 \partial_1 g') = |b| + \operatorname{ord} e' \le |r'| + d.$$
+This gives $\sigma' \le d = \rho = \rho'$, so $\sigma' = \rho'$, and $g'_c$ is in the first case. $\square$
+
+The proof uses the hypothesis $\rho' = \rho$ only in the last step. Without it, the proof gives $\sigma' \le \rho$.
+
+**Corollary 3.9.8.** Assume that $\rho' = \rho$, that $g$ is in the first case, and that $|r| + d$ is not $0$ in $K$. Then $\tau_\rho(g'_c) \ge \tau_\rho(g)$.
+
+Node: SG00000053 · Lean: `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_ne_zero` (for polynomials)
+
+*Proof.* By Proposition 3.9.7, $g'_c$ is in the first case. Then Theorem 3.9.1 applies. $\square$
+
+The hypothesis on $|r| + d$ is necessary in Proposition 3.9.7. If $p$ divides $|r| + d$, the Euler element has order larger than $d$, and the new point can be in the second case. A random test of sequences of at most four point blowups recorded the cases at the two points of each step where $\rho$ stays. For $(p, n) = (2, 3), (2, 4)$ and $(3, 3)$, it found 5,961, 1,403 and 2,288 steps from a point in the first case with $p \nmid |r| + d$. At each of these steps the new point is in the first case, as Proposition 3.9.7 says, and $\tau_\rho$ does not go down. The test also found 501, 123 and 63 steps from a point in the first case with $p \mid |r| + d$ to a point in the second case.
+
+### Where the codimension can go down
+
+Proposition 3.8.2, Example 3.8.3, Corollary 3.9.8 and Examples 3.9.5 and 3.9.6 together give an answer for each combination of the cases at a point where $\rho$ stays.
+
+1. If the new point is in the second case, then $\tau_\rho$ does not go down (Proposition 3.8.2). The old point can be in either case.
+2. If the old point is in the first case and $p$ does not divide $|r| + d$, then the new point is in the first case, and $\tau_\rho$ does not go down (Corollary 3.9.8).
+3. If the old point is in the second case and the new point is in the first case, then $\tau_\rho$ can go down (Example 3.8.3).
+4. If the old point is in the first case, $p$ divides $|r| + d$ and the new point is in the first case, then $\tau_\rho$ can go down (Examples 3.9.5 and 3.9.6).
+
+So $\tau_\rho$ can go down only if the new point is in the first case, and the old point is in the second case or $p$ divides $|r| + d$. In the test above, $\tau_\rho$ went down at 93, 49 and 43 steps from the second case to the first case. It went down at 2 steps from the first case to the first case with $p \mid |r| + d$, both for $(p, n) = (2, 4)$, and at no other step.
+
 ### The Lean proof
 
 The Lean library proves Theorem 3.9.1, Lemma 3.9.2, Lemma 3.9.3 and Example 3.9.4 for polynomials over a field of characteristic $p$, with the standard axioms only, in the file `Singularity/Invariant/LogJacobianDirectrixCaseA.lean`. Theorem 3.9.1 is `Singularity.finrank_logJacobianDirectrix_cleanPart_le_of_caseA` in the form $\dim T_\rho(g'_c) \le \dim T_\rho(g)$, and `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_caseA` in the form with $\tau_\rho$.
@@ -160,6 +199,8 @@ The ideal $\widetilde\Theta_0(G)$ is `Singularity.residualLogJacobianTangent`, a
 
 In the file `Singularity/Invariant/LogJacobianDirectrixDrop.lean`, the Lean library proves Example 3.9.5 over $\mathbb{F}_2$, with the polynomials written out. `Singularity.tauRhoDropExample_hyp` gives the data: $g$ is clean of order at least $2$, the chart gives $\pi(g) = w^2 g'$, the new divisor is $\{y, z, w\}$, the clean part is $g'_c$, and $|r| + d$ is $0$ in $\mathbb{F}_2$. `Singularity.tauRhoDropExample_cases` shows that both points are in the first case, in the form $\operatorname{ord} \Theta_0 = |r| + \rho$. `Singularity.tauRhoDropExample_finrank` gives $\rho = \rho' = 3$ and the dimensions $2$ and $3$ of the two directrices, and `Singularity.tauRhoDropExample_codim` gives $\tau_\rho(g) = 3$ and $\tau_\rho(g'_c) = 2$. The library does not prove Example 3.9.6.
 
+In the file `Singularity/Invariant/LogJacobianCaseAStable.lean`, the Lean library proves Proposition 3.9.7 and Corollary 3.9.8 for polynomials, with the standard axioms only. As in Theorem 3.9.1, the Lean statements have the hypothesis $\rho = d$ in the place of the hypothesis that $g$ is in the first case. Proposition 3.9.7 is `Singularity.idealOrd_logJacobianTangent_cleanPart_of_caseA`, in the form $\operatorname{ord} \Theta'_0(g'_c) = |r'| + d$. The main step is `Singularity.idealOrd_logJacobianTangent_cleanPart_le_of_pointChart_eq`. It says that an element $x^r \psi$ of $\Theta_0(g)$ with $\operatorname{ord} \psi = d$ and an exact transport into $\Theta'_0(g'_c)$ gives $\operatorname{ord} \Theta'_0(g'_c) \le |r'| + d$. Corollary 3.9.8 is `Singularity.finrank_logJacobianDirectrix_cleanPart_le_of_ne_zero` in the form with the dimensions, and `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_ne_zero` in the form with $\tau_\rho$.
+
 ### Notes and references
 
-The method is the method of Hironaka for the codimension of the directrix [Hir67], as in Section 3.8. The use of the Euler element is the same as in Corollary 3.7.3. Theorem 3.9.1 and Example 3.9.4 are a result of the milestone S7.10 of this project, and Examples 3.9.5 and 3.9.6 are a result of the milestone S7.11. Volume 9, Section 3.6 gives the result as a research report.
+The method is the method of Hironaka for the codimension of the directrix [Hir67], as in Section 3.8. The use of the Euler element is the same as in Corollary 3.7.3. Theorem 3.9.1 and Example 3.9.4 are a result of the milestone S7.10 of this project, Examples 3.9.5 and 3.9.6 are a result of the milestone S7.11, and Proposition 3.9.7 and Corollary 3.9.8 are a result of the milestone S7.12. Volume 9, Sections 3.6, 3.7 and 3.8 give the results as research reports.
