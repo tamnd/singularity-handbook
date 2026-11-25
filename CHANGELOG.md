@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.17] - 2026-11-25
+
 ### Changed
 
 - `EDITION` now pins the map at 56bd1ff, the release 0.4.17 of the map, and Volume 0, Section 5.1 describes edition 0.4.17.
