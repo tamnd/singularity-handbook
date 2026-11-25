@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, referee fixes. The introduction said that nothing in the volume is proved in Lean. It now gives the Lean status of the records: the quasi-compactness of the Zariski-Riemann space, the Abhyankar inequality, parts 1 to 3 of MacLane-Vaquié and the results on part 4 up to Theorems 3.3.44 and 3.3.46, and Propositions 4.1.7 and 4.1.8, with the statements of Theorems 4.1.5, 4.2.1 and 4.2.2. It says that part 4 is proved for discrete values, not only for rank 1, and that Volume 5 proves more cases. Section 4.2 no longer says that the volume proves no local uniformization, and it cites [Tem13] without the theorem number that we cannot confirm. Section 4.1 lists the four facts of the fidelity file and points to the Lean proof of the monomial case in Volume 5. Section 3.3 no longer says that it only states the main theorem, and the intro of Chapter 3 writes $K(s)$ for the simple extension.
+
 ## [0.4.20] - 2026-11-25
 
 ### Changed
