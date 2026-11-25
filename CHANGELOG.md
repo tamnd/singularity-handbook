@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 5, Section 2.1 has a new subsection on the case of rank 1, with the Lean names of tamnd/singularity-lean#110: the lattice lemma in rank 1 (Lemma 2.1.8) in the dual form with cones, local uniformization of a monomial valuation from the conclusion of the lattice lemma (Proposition 2.1.9), and the monomial case for value groups of rank 1 (Corollary 2.1.10). The notes of Section 2.1 and the introductions of Volume 5 and of its Chapter 2 now say what the library proves.
+
 ## [0.4.18] - 2026-11-25
 
 ### Added
