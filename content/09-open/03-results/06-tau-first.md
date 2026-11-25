@@ -43,7 +43,7 @@ The Lean library proves the theorem and the example for polynomials over a field
 
 ### What the result does not give
 
-1. It does not cover the case where $p$ divides $|r| + d$. Then the proof has no element with the initial form $F$. A random test found 398 points of this kind with an index $i$ with $\Phi_i \ne 0$ and $v_i \ne 0$. At 397 of them the proof works without the Euler element, and at the last one $\tau_\rho$ stays. We do not know a proof for this case.
+1. It does not cover the case where $p$ divides $|r| + d$. Then the proof has no element with the initial form $F$, and Section 3.7 shows that the theorem is then false.
 2. It does not say that $\rho$ goes down. Since $\tau_\rho$ can go down from the second case to the first case, the pair $(\rho, -\tau_\rho)$ is still not a resolution invariant.
 3. It is for point blowups only, as the results of Sections 3.4 and 3.5.
 
