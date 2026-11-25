@@ -92,4 +92,4 @@ The results of this section are in `Singularity/Algebra/BlowupChart.lean`. The L
 
 ### Notes and references
 
-Proposition 1.10.1 is [Mat, Theorem 14.4]. The regularity of the blowup of a regular scheme along a regular center is a standard step of each resolution proof. Hironaka proves it in [Hir64]. For the blowup itself, see [Har, Section II.7].
+Proposition 1.10.1 is [AM69, Theorem 11.22]. Matsumura treats it in [Mat, Section 14]. The regularity of the blowup of a regular scheme along a regular center is a standard step of each resolution proof. Hironaka proves it in [Hir64]. For the blowup itself, see [Har, Section II.7].

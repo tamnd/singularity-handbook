@@ -75,7 +75,7 @@ The next example is a regular curve over an imperfect field that is not smooth. 
 
 **Example 6.2.7.** Let $p$ be an odd prime, let $k = \mathbb{F}_p(t)$, let $f = y^2 - x^p + t$ in $k[x, y]$ and let $A = k[x, y]/(f)$. Then $A$ is a regular ring of dimension $1$, but $A$ is not smooth over $k$.
 
-Node: SG0000000C · Lean: none yet
+Node: SG0000000C · Lean: `Singularity.exists_regular_not_smooth` (planned, no Lean statement yet)
 
 *Proof.* The polynomial $x^p - t$ is irreducible in $k[x]$, because $t$ is not a $p$-th power in $k$ (Example 6.1.4, and the argument of Lemma 6.2.2). So it is not a square in $k(x)$, and $f$ is irreducible. Thus $A$ is a domain of dimension $1$. Let $\mathfrak{q}$ be a prime of $k[x, y]$ that contains $f$, and let $P = k[x, y]$. The local ring $P_\mathfrak{q}$ is regular [Mat, Section 19].
 

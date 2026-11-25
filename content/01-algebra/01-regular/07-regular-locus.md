@@ -41,7 +41,7 @@ The set $O$ is open. For $i \ge 2$, the prime $\mathfrak{p}_i$ is not contained 
 
 Now let $\mathfrak{z}$ be in the closure of $Z$. Then $\mathfrak{z}$ contains some $\mathfrak{p}_i$. If $\mathfrak{z} \in U$, then $\mathfrak{p}_i \in U$, because $U$ is stable under generization. This is not possible, so $\mathfrak{z} \in Z$. Thus $Z$ is closed. $\square$
 
-Lemma 1.7.3 is the topological criterion of Nagata [Mat, Theorem 24.2]. Matsumura states it as an equivalence. The converse is clear, because an open set $U$ contains $D(f)$ for some $f \notin \mathfrak{p}$.
+Lemma 1.7.3 is the topological criterion of Nagata [Mat, Section 24]. Matsumura states it as an equivalence. The converse is clear, because an open set $U$ contains $D(f)$ for some $f \notin \mathfrak{p}$.
 
 ### Spreading a regular system of parameters
 
@@ -106,4 +106,4 @@ Lemma 1.7.3 uses the Mathlib lemmas `PrimeSpectrum.zeroLocus_vanishingIdeal_eq_c
 
 ### Notes and references
 
-The criterion is due to Nagata [Nag62], and our proof follows [Mat, Section 24]. Matsumura proves Lemma 1.7.3 as [Mat, Theorem 24.2] and then uses it for several loci: the regular locus, the normal locus and the Cohen-Macaulay locus. A Noetherian ring in which $\operatorname{Reg}(B)$ is open for each finitely generated $A$-algebra $B$ is called J-2. Grothendieck proved that each excellent ring is J-2 [EGA4-7], and a ring of finite type over a field is excellent. The Lean proof of the openness of the regular locus of a variety is complete over each field, perfect or not (Theorem 1.9.5, `Singularity.regularLocus_isOpen_of_field`).
+The criterion is due to Nagata [Nag62], and our proof follows [Mat, Section 24]. Matsumura proves Lemma 1.7.3 in [Mat, Section 24] and then uses it for several loci: the regular locus, the normal locus and the Cohen-Macaulay locus. A Noetherian ring $A$ in which $\operatorname{Reg}(B)$ is open for each finitely generated $A$-algebra $B$ is called J-2. An excellent ring is J-2 by definition (Definition 5.2.7), and Grothendieck proved that each ring of finite type over a field is excellent [EGA4-7], so such a ring is J-2. The Lean proof of the openness of the regular locus of a variety is complete over each field, perfect or not (Theorem 1.9.5, `Singularity.regularLocus_isOpen_of_field`).
