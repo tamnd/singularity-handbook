@@ -16,7 +16,7 @@ We use the notation of Volume 6, Section 3.2. Let $k$ be a perfect field of char
 
 **Proposition 3.6.1.** In this setting, $\omega(x) = \rho(f)$.
 
-Node: SG0000004T
+Node: SG0000004T · Lean: `Singularity.cpOmega_eq_logJacobianOrder` (for polynomials)
 
 *Proof.* By Volume 6, Proposition 3.2.4(4), $\epsilon(x) = \operatorname{ord} G = d$. The initial form of $f = u^r G$ is $F = U^r \operatorname{in}(G)$, because the graded ring $k[U_1, \dots, U_n]$ is a domain. For $j > e$ we have $r_j = 0$, so $U^r$ does not contain $U_j$, and
 $$\frac{\partial F}{\partial U_j} = U^r \, \frac{\partial \operatorname{in}(G)}{\partial U_j}.$$
@@ -61,7 +61,7 @@ This does not contradict Theorem 3.2.6 of Volume 6, because condition (E) fails 
 
 ### The Lean proof
 
-The Lean library does not yet prove the results of this section. For polynomials, Proposition 3.6.1 follows from part 3 of Theorem 3.1.4, which is `Singularity.logJacobianOrder_add_one_eq_iff`, and Corollary 3.6.3 follows from `Singularity.logJacobianOrder_cleanPart_le` and `Singularity.logJacobianOrder_cleanPart_le_center`. Corollary 3.6.2 needs the module of the logarithmic derivations of $K[[x]]$ and the changes of the coordinates, which are not in the library.
+The Lean library proves Proposition 3.6.1, Corollary 3.6.3 and Example 3.6.4 for polynomials over a field of characteristic $p$, in the file `Singularity/Invariant/CossartPiltantOmega.lean`. The definition `Singularity.cpOmega` follows Definition 3.2.5 of Volume 6. It takes the initial form $F$ of $f$ as the homogeneous component of $f$ of degree $\operatorname{ord} f$, and the residual order $\epsilon$ as the order of $G$, with $f = u^r G$. The proof of `Singularity.cpOmega_eq_logJacobianOrder` is the proof above. The initial form of $u^r G$ is $U^r \operatorname{in}(G)$, and for a free index $j$ the derivative $\partial_j$ commutes with the factor $U^r$. Then part 3 of Theorem 3.1.4, `Singularity.logJacobianOrder_add_one_eq_iff`, gives the two cases. Corollary 3.6.3 is `Singularity.cpOmega_cleanPart_le` for the point blowup and `Singularity.cpOmega_cleanPart_le_center` for the center with (H1) and (H2). They follow from Proposition 3.6.1 and the theorems `Singularity.logJacobianOrder_cleanPart_le` and `Singularity.logJacobianOrder_cleanPart_le_center`. Example 3.6.4 is `Singularity.centerExample_cpOmega_lt`, with the two values in `Singularity.centerExample_cpOmega` and `Singularity.centerExample_cpOmega_cleanPart`. Corollary 3.6.2 has no Lean proof, because it needs the module of the logarithmic derivations of $K[[x]]$ and the changes of the coordinates, which are not in the library.
 
 ### Notes and references
 
