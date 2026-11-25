@@ -22,7 +22,7 @@ A valuation $v$ of $K/k$ is *zero-dimensional* if its residue field $\kappa_v$ i
 
 **Lemma 1.4.2.** Let $v$ be a valuation of $K/k$, and let $y_1, \dots, y_m \in \mathcal{O}_v$ be elements whose residues are algebraically independent over $k$. Then $y_1, \dots, y_m$ are algebraically independent over $k$, the field $k' = k(y_1, \dots, y_m)$ is contained in $\mathcal{O}_v$, and $v$ is a valuation of the function field $K/k'$. If $v$ has local uniformization as a valuation of $K/k'$, then $v$ has local uniformization as a valuation of $K/k$. If the residues form a transcendence basis of $\kappa_v$ over $k$, then $v$ is zero-dimensional as a valuation of $K/k'$, and $\operatorname{trdeg}_{k'} K = \operatorname{trdeg}_k K - \operatorname{trdeg}_k \kappa_v$.
 
-Node: SG0000004F · Lean: none yet
+Node: SG0000004F · Lean: `Singularity.algebraicIndependent_of_residue`, `Singularity.mem_of_mem_adjoin_residue`, `Singularity.HasLocalUniformization.of_intermediateField` (all claims but the last)
 
 *Proof.* The first claims are in the proof of Volume 3, Proposition 4.1.8, part 2: for a nonzero polynomial $Q$ over $k$, the residue of $Q(y)$ is $Q(\bar{y}) \ne 0$, so $Q(y)$ is a unit of $\mathcal{O}_v$. Thus $k' \subseteq \mathcal{O}_v$, and $K$ is finitely generated over $k'$.
 
@@ -75,4 +75,4 @@ Volume 3, Proposition 4.1.2, shows that local uniformization in dimension $n$ gi
 
 ### Notes and references
 
-The theorem of Zariski is [Zar40], and the patching theorem is [Zar44]. The theorem of Hironaka is [Hir64]. The reduction to rank 1 is [NS14]. Lemma 1.4.2, Corollary 1.4.3, Proposition 1.4.5 and Corollary 1.4.6 are not in the Lean library. The library proves the case $\operatorname{trdeg}_k K \le 1$ of Theorem 1.4.1 in each characteristic, in `Singularity.hasLocalUniformization_of_trdeg_le_one`, and the case of Volume 3, Proposition 4.1.8, in `Singularity.hasLocalUniformization_of_trdeg_le_trdeg_residueField_add_one`.
+The theorem of Zariski is [Zar40], and the patching theorem is [Zar44]. The theorem of Hironaka is [Hir64]. The reduction to rank 1 is [NS14]. The Lean library proves the claims of Lemma 1.4.2 except the last one. The Lean statement of the step from $k'$ to $k$, `Singularity.HasLocalUniformization.of_intermediateField`, holds for each subfield $k' \subseteq \mathcal{O}_v$ that contains $k$ and is finitely generated over $k$. Corollary 1.4.3, Proposition 1.4.5 and Corollary 1.4.6 are not in the Lean library. The library proves the case $\operatorname{trdeg}_k K \le 1$ of Theorem 1.4.1 in each characteristic, in `Singularity.hasLocalUniformization_of_trdeg_le_one`, and the case of Volume 3, Proposition 4.1.8, in `Singularity.hasLocalUniformization_of_trdeg_le_trdeg_residueField_add_one`.
