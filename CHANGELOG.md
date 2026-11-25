@@ -11,6 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- The edition pins the map release 0.4.33, with the nodes SG00000055 and SG00000056 and their Lean proofs.
 - Volume 7, Section 3.9 has a paragraph on the Lean proof of Theorems 3.9.10 and 3.9.11, and the list of the combinations of the cases says that a drop from the first case to the first case needs a leaving component. Volume 9, Section 3.9 refers to Section 3.10, and the introduction of Volume 9, Chapter 3 refers to Section 3.10.
 
 ## [0.4.27] - 2026-11-26
