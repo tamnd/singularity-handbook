@@ -28,7 +28,7 @@ For a trivially valued $K_0 = k$ this says that the valuation of $F/k$ is an Abh
 
 Lean: none yet
 
-This is the main theorem of [Kuh10]. We use it only for a trivially valued ground field $k$. Then it says: each Abhyankar valuation of a function field over $k$ gives a defectless valued field. Its proof is long, and it uses the ramification theory of [Kuh-book]. The defect is node SG00000010 of the map (planned, no Lean statement yet).
+This is the main theorem of [Kuh10]. We use it only for a trivially valued ground field $k$. Then it says: each Abhyankar valuation of a function field over $k$ gives a defectless valued field. Its proof is long, and it uses the ramification theory of [Kuh-book]. The defect is node SG00000010 of the map, with the planned Lean name `Singularity.Valuation.defect` (no Lean statement yet).
 
 ### The proof of Theorem 2.2.1
 

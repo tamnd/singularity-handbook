@@ -53,7 +53,7 @@ with the convention $v_i(0) = \infty$.
 
 Lean: none yet
 
-*Proof.* The element $x$ is prime, because $R/xR$ is a discrete valuation ring. So $\bar{x} \ne 0$. If $p$ is associate to $y$, then $C = R/yR$ is a discrete valuation ring with uniformizer $\bar{x}$, so $s = 1$ and both sides are 1. Assume now that $p$ is associate to neither $x$ nor $y$. Then $\bar{x} \ne 0$ and $\bar{y} \ne 0$. Let $I$ be the set of $i$ with $v_i(\bar{x}) \le v_i(\bar{y})$, and $J$ its complement.
+*Proof.* The element $x$ is prime, because $R/xR$ is a discrete valuation ring. So $\bar{x} \ne 0$. Let $I$ be the set of $i$ with $v_i(\bar{x}) \le v_i(\bar{y})$, and $J$ its complement. If $p$ is associate to $y$, then $C = R/yR$ is a discrete valuation ring with uniformizer $\bar{x}$, so $s = 1$, both sides are 1, $I = \{1\}$ and $J$ is empty. Assume now that $p$ is associate to neither $x$ nor $y$. Then $\bar{x} \ne 0$ and $\bar{y} \ne 0$.
 
 Consider the chart $B = R[y/x]$ and the strict transform $p' \in B$, with $p = x^bp'$. We claim that the kernel of the map $B \to \operatorname{Frac} C$ that extends $R \to C$ is $p'B$. The map exists, because $B \subseteq R_x$ and $\bar{x} \ne 0$. Its kernel is $pR_x \cap B = p'B_x \cap B$. Now $x$ is a nonzerodivisor on $B/p'B$: if $xc = p'd$ with $c, d \in B$, then $p'd \in xB$, and $p' \notin xB$ by Lemma 1.1.5, so $d = xd'$ because $xB$ is prime, and then $c = p'd'$. Thus $p'B_x \cap B = p'B$, and
 $$C' = B/p'B \cong C[\bar{y}/\bar{x}] \subseteq \operatorname{Frac} C.$$
@@ -80,7 +80,7 @@ Lean: none yet
 
 If $p$ is associate to $x$, then $b = 1$ and $p'$ is a unit, so the left side is 0. The right side is the length of $R/(f, x)$ minus $a$. Since $f \in \mathfrak{m}^a$, the image of $f$ in the discrete valuation ring $R/xR$ lies in the $a$-th power of its maximal ideal, so this length is at least $a$. The inequality holds.
 
-Assume now that $p$ is not associate to $x$. Let $C = R/pR$, with branches $W_1, \dots, W_s$, and let $I$ and $J$ be as in the proof of Lemma 1.2.4. By Lemma 1.2.3,
+Assume now that $p$ is not associate to $x$. Let $C = R/pR$, with branches $W_1, \dots, W_s$, and let $I$ and $J$ be as in the proof of Lemma 1.2.4. If $p$ is associate to $y$, then $J$ is empty. The description $C' = B/p'B \cong C[\bar{y}/\bar{x}]$ in that proof uses only $\bar{x} \ne 0$, so it holds in this case too. By Lemma 1.2.3,
 $$i_R(f, p) = \lambda_C(C/\bar{f}C) = \sum_i [\kappa_i : \kappa]\, v_i(\bar{f}).$$
 For $i \in J$ we have $v_i(\bar{y}) < v_i(\bar{x})$. Since $f$ is a sum of multiples of the monomials $x^jy^{a-j}$, we get $v_i(\bar{f}) \ge a\,v_i(\bar{y})$. For $i \in I$ the element $\bar{y}/\bar{x}$ lies in $W_i$, so $W_i$ contains $C' = C[\bar{y}/\bar{x}]$ and the image $\bar{f}'$ of $f'$. Then $v_i(\bar{f}) = a\,v_i(\bar{x}) + v_i(\bar{f}')$. With Lemma 1.2.4 we get
 $$i_R(f, p) \ge ab + \sum_{i \in I} [\kappa_i : \kappa]\, v_i(\bar{f}').$$

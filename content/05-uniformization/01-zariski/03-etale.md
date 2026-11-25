@@ -12,7 +12,7 @@ Let $K/k$ be a function field, and let $K_0$ be a subfield with $k \subseteq K_0
 
 We also use the henselization. We recall the facts that we need, from [Kuh-book]. Let $K_0^h$ be the henselization of $(K_0, v_0)$, and let $K^h$ be the henselization of $(K, v)$. Then $K^h$ contains $K_0^h$, and $K^h = K \cdot K_0^h$. The extensions $K_0^h/K_0$ and $K^h/K$ are immediate and separable algebraic. Hensel's lemma holds in a henselian field: a monic polynomial over the valuation ring whose reduction has a simple root has a root with this residue. If $K = K_0(z)$ with $z$ separable over $K_0$, with minimal polynomial $P$, then the irreducible factors of $P$ over $K_0^h$ correspond to the extensions of $v_0$ to $K$. The factor $P_1$ for $v$ is the minimal polynomial of $z$ over $K_0^h$, where $z$ is seen in $K^h$, and $\deg P_1 = [K^h : K_0^h]$. As in Volume 3, Section 3.2, the *defect* of $v$ over $v_0$ is
 $$d = \frac{[K^h : K_0^h]}{ef}.$$
-It is the defect of the henselian extension $K^h/K_0^h$ in the sense of Volume 3, Definition 3.2.1, because henselizations are immediate. The defect is node SG00000010 of the map (planned, no Lean statement yet).
+It is the defect of the henselian extension $K^h/K_0^h$ in the sense of Volume 3, Definition 3.2.1, because henselizations are immediate. The defect is node SG00000010 of the map, with the planned Lean name `Singularity.Valuation.defect` (no Lean statement yet).
 
 ### The trace dual basis
 
