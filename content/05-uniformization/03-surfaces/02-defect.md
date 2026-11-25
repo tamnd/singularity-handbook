@@ -37,7 +37,7 @@ In Example 3.2.2 the product $efd$ is $[K^h : K_0^h]$, with $K_0 = k(x, y)$. The
 
 ### Defect extensions in the other volumes
 
-The basic example of a defect extension is the Artin-Schreier extension of Volume 3, Proposition 3.2.5. It is an extension of degree $p$ of a henselian field with value group $\mathbb{Z}[1/p]$ and residue field $\mathbb{F}_p$, with $e = f = 1$ and $d = p$. Volume 9, Example 2.2.3, gives the same phenomenon over the perfect hull of $\mathbb{F}_p((t))$. Kuhlmann classifies Artin-Schreier defect extensions into two types [Kuh10b]. The defect is node SG00000010 of the map (planned, no Lean statement yet).
+The basic example of a defect extension is the Artin-Schreier extension of Volume 3, Proposition 3.2.5. It is an extension of degree $p$ of a henselian field with value group $\mathbb{Z}[1/p]$ and residue field $\mathbb{F}_p$, with $e = f = 1$ and $d = p$. Volume 9, Example 2.2.3, gives the same phenomenon over the perfect hull of $\mathbb{F}_p((t))$. Kuhlmann classifies Artin-Schreier defect extensions into two types [Kuh10b]. The defect is node SG00000010 of the map, with the planned Lean name `Singularity.Valuation.defect` (no Lean statement yet).
 
 For valuations of function fields the defect is the main obstruction to the methods of this chapter and of Chapter 2. Cutkosky-Mourtada study the defect as an obstruction to local uniformization by these methods [CM17]. Cutkosky shows that the defect can behave erratically in towers of extensions [Cut21]. Cutkosky also shows that local monomialization of finite extensions, which holds in characteristic 0, fails in characteristic $p$ [Cut15]. The valuations of function fields of surfaces are classified in [Spi90].
 

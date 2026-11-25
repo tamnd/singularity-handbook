@@ -50,7 +50,7 @@ Node: SG0000004E · Lean: none yet
 
 *Proof.* The center of $v$ on $X'$ exists, by the valuative criterion of properness (see the remark after Volume 3, Definition 4.1.1). Each point of $X'$ is regular. So $\pi$ is a proper birational morphism as in Volume 3, Definition 4.1.1, and the center of $v$ on $X'$ is regular. $\square$
 
-The proposition is trivial, but it shows how the two problems relate. Resolution gives one model that is good for all valuations at once. Local uniformization gives a model for each valuation, and then one must patch these models. In dimension at most 3, the known proofs go the other way: they prove local uniformization first and then patch [Zar44].
+The proposition is trivial, but it shows how the two problems relate. Resolution gives one model that is good for all valuations at once. Local uniformization gives a model for each valuation, and then one must patch these models. Several proofs in dimension at most 3 go the other way: they prove local uniformization first and then patch, as Zariski did for threefolds [Zar44].
 
 **Corollary 1.4.6.** Theorem 1.4.1 follows from the theorem of Hironaka [Hir64].
 
@@ -64,7 +64,7 @@ This is not a proof that one would give to understand local uniformization, beca
 
 The proof of Zariski [Zar40] is algebraic and works with valuations directly. It does not use the theorem of Hironaka, which came later and uses other methods. We do not give a summary of its steps here, because we cannot make one short and exact. The reader can find the method of Zariski for surfaces in [Cut04], which also contains a proof of resolution in characteristic 0. Sections 1.1 to 1.3 of this chapter follow the same ideas in the case of surfaces: quadratic transforms for $k(x, y)$, and a finite extension $K/k(x, y)$ that is unramified at the valuation.
 
-There are two later proofs of Theorem 1.4.1 that go through general results.
+Two later works treat Theorem 1.4.1 through general results. The first gives a second proof, and the second gives a reduction.
 
 1. The theorem of Temkin [Tem13] holds in each characteristic. In characteristic 0 each finite purely inseparable extension is trivial, so the theorem gives local uniformization of $v$ itself. Section 4.1 states the theorem and shows how it gives local uniformization. In characteristic 0 this is a second proof of Theorem 1.4.1.
 2. Novacoski-Spivakovsky [NS14] reduce local uniformization to valuations of rank 1. Together with Lemma 1.4.2, this reduces the problem to valuations of rank 1 whose residue field is algebraic over the ground field. We do not state the precise hypotheses of [NS14] here.

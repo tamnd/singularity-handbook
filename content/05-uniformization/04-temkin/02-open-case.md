@@ -63,13 +63,13 @@ Volume 9, Conjecture 2.3.7, asks for a resolution, which is a global statement. 
 
 ### The defect in the tower
 
-Each step $K_i/K_{i-1}$ of the tower has degree $p$. So after the henselization, one of $e$, $f$ and $d$ for this step is $p$, as in Example 3.2.2. If $e = p$ or $f = p$, the step is seen by the value group or the residue field. If $d = p$, it is seen by neither, and this is the defect of Chapter 3 (node SG00000010, planned, no Lean statement yet). Volume 3, Section 4.2, shows that a purely inseparable extension can even create a defect. The method of Section 1.3 lifts local uniformization only through extensions with an étale generator. An étale generator $z$ has $P'(z) \ne 0$, so its minimal polynomial is separable. Hence a purely inseparable step of degree $p$ never has an étale generator. So Theorem 1.3.4 is of no use in the tower, and the inseparable case needs a new method.
+Each step $K_i/K_{i-1}$ of the tower has degree $p$. So after the henselization, one of $e$, $f$ and $d$ for this step is $p$, as in Example 3.2.2. If $e = p$ or $f = p$, the step is seen by the value group or the residue field. If $d = p$, it is seen by neither, and this is the defect of Chapter 3 (node SG00000010, planned Lean name `Singularity.Valuation.defect`, no Lean statement yet). Volume 3, Section 4.2, shows that a purely inseparable extension can even create a defect. The method of Section 1.3 lifts local uniformization only through extensions with an étale generator. An étale generator $z$ has $P'(z) \ne 0$, so its minimal polynomial is separable. Hence a purely inseparable step of degree $p$ never has an étale generator. So Theorem 1.3.4 is of no use in the tower, and the inseparable case needs a new method.
 
 ### The open steps in dimension 4
 
 Volume 9, Section 2.3, describes the route of valuations in dimension 4. It needs two theorems, which are open.
 
-The first one is Volume 9, Conjecture 2.3.1: let $K$ be a function field of transcendence degree 4 over a field of characteristic $p > 0$. Each valuation of $K$ has local uniformization.
+The first one is Volume 9, Conjecture 2.3.1: let $K$ be a function field of transcendence degree 4 over a field $k$ of characteristic $p > 0$. Each valuation of $K$ that is trivial on $k$ has local uniformization.
 
 Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour` (the statement only)
 
@@ -83,7 +83,7 @@ Two other results of Temkin go in the same direction. He reduces local uniformiz
 
 This is Volume 9, Theorem 2.3.10: each variety over a perfect field of characteristic $p$ has a regular alteration whose degree is a power of $p$.
 
-Node: SG0000001N · Lean: none yet (planned, no Lean statement yet)
+Node: SG0000001N · Lean: `Singularity.exists_regular_p_alteration` (planned, no Lean statement yet)
 
 This is [Tem17], and Volume 8 treats alterations. The alteration is not birational, as the map of Example 4.2.2 is not birational. In both results the variety becomes regular only after an extension of the function field whose degree is a power of $p$. To descend the regularity to $X$ is the open problem.
 
