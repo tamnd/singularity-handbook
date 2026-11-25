@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- `EDITION` now pins the map at d89d32f, the release 0.4.21 of the map, and Volume 0, Section 5.1 describes edition 0.4.21.
 - Volume 3, Section 3.3 gives the Lean lines of Lemma 3.3.48 to Theorem 3.3.52, the finite chain criterion of MacLane-Vaquié, now that the records of the map have the names of tamnd/singularity-lean#115. Definition 3.3.47 also gives `Singularity.MuDvd`. The introduction of Volume 3 and the Lean notes of Section 3.3 no longer say that the records do not have these names.
 
 - Volume 3, Section 3.3 adds the finite chain criterion of MacLane-Vaquié. Definition 3.3.47 states key polynomials for a valuation with any support. Theorem 3.3.51 proves that finitely many steps of MacLane-Vaquié reach $\nu$ if and only if $\nu$ has a key polynomial, for any value group and support, and Theorem 3.3.52 gives part 4 in three cases, with Lemmas 3.3.48 to 3.3.50. The proofs follow tamnd/singularity-lean#115. Part 4 of Theorem 3.3.5 no longer says that one needs limit augmentations along an infinite family. It now says that $\nu$ is the limit of a continuous family of one degree, and that $\nu$ has no key polynomial. The introduction of Volume 3 and Volume 0, Section 5.1 give the new status of part 4.
