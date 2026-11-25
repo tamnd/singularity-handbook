@@ -60,4 +60,4 @@ Lean: none yet
 
 This is the form in which quasi-compactness enters the method of Zariski. In Chapter 4, $\operatorname{Spec} B_v$ is an affine open set of a model on which $v$ has a regular center, and $G_v$ is its regular locus. The corollary then gives finitely many models such that each valuation has a regular center on one of them.
 
-The space $\operatorname{ZR}(K/k)$ is also the inverse limit of all projective models of $K/k$, with the maps $v \mapsto c_X(v)$ of Proposition 1.4.4 [ZS2, Chapter VI, Section 17, Theorem 41]. We do not use this description. Temkin uses relative forms of the Zariski-Riemann space in his work on inseparable local uniformization [Tem13].
+The space $\operatorname{ZR}(K/k)$ is also the inverse limit of all projective models of $K/k$, with the maps $v \mapsto c_X(v)$ of Proposition 1.4.4 [ZS2, Chapter VI, Section 17]. We do not use this description. Temkin uses relative forms of the Zariski-Riemann space in his work on inseparable local uniformization [Tem13].

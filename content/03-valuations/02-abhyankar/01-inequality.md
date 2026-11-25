@@ -55,7 +55,7 @@ Lean: none yet
 
 *Proof.* Theorem 2.1.5 bounds the rational rank and the dimension. Proposition 1.2.5 bounds the rank by the rational rank, and Corollary 1.2.4 gives $\dim \mathcal{O}_v$ as the rank. $\square$
 
-Abhyankar proved the inequality in the local form of Section 2.3 [Abh56]. The field form above, with the proof by Lemma 2.1.2, is in [ZS2, Chapter VI, Section 10] and in [Kuh-book]. The proof uses no Noetherian ring, so it works for each extension of valued fields.
+Abhyankar proved the inequality in the local form of Section 2.3 [Abh56]. The field form above, with the proof by Lemma 2.1.2, is in [ZS2, Chapter VI] and in [Kuh-book]. The proof uses no Noetherian ring, so it works for each extension of valued fields.
 
 ### The Lean proof
 
