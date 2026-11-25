@@ -4,7 +4,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 9, Chapter 3, the research results. Section 3.1 is the first report of the milestone S7: the residual order of the log-Jacobian ideal does not go up under the blowup of a regular center that satisfies (H1) and (H2), and Example 3.1.2 shows that (H2) cannot be omitted. The section gives the statement, the proof, the Lean names of tamnd/singularity-lean#95 and tamnd/singularity-lean#96, what the result does not give, and its status.
+
 ### Changed
+
+- The introduction of Volume 9 now gives Chapter 3.
 
 - Volume 7, Theorem 3.4.5 and Example 3.4.6 now give the Lean names of tamnd/singularity-lean#96. A new paragraph after the proof of Theorem 3.4.5 gives the form of (H1) and (H2) in the Lean statement, with the factor $x^r$, and explains why it is the same as the form with $G$.
 - `EDITION` now pins the map at 4181a17, which has the Lean fields of SG0000004Q and SG0000004R.
