@@ -12,7 +12,7 @@ This section reports the first research result of the milestone S7. It is about 
 
 ### The problem
 
-Let $K$ be an algebraically closed field of characteristic $p$, and let $X \subseteq \mathbb{A}^{n+1}$ be the hypersurface $z^p + g(x_1, \dots, x_n) = 0$. A resolution algorithm for $X$ blows up regular centers, and after each blowup it must show that an invariant goes down. Away from a divisor, the change $z \mapsto z + h$ replaces $g$ by $g + h^p$, so the invariant must not depend on the class of $g$ modulo $p$-th powers. The residual order of Volume 7, Chapter 1, depends on this class, and Moh's bound shows that it can go up by one under a point blowup. The kangaroo points of Hauser are the points where it goes up [Hau10].
+Let $K$ be an algebraically closed field of characteristic $p$, and let $X \subseteq \mathbb{A}^{n+1}$ be the hypersurface $z^p + g(x_1, \dots, x_n) = 0$. A resolution algorithm for $X$ blows up regular centers, and after each blowup it must show that an invariant goes down. Away from a divisor, the change $z \mapsto z + h$ replaces $g$ by $g + h^p$, so the invariant must not depend on the class of $g$ modulo $p$-th powers. The residual order of Volume 7, Chapter 1, depends on this class, and it can go up under a point blowup. Moh's bound says that it goes up by at most one. The kangaroo points of Hauser are the points where it goes up [Hau10].
 
 Volume 7, Chapter 3, replaces $g$ by its log-Jacobian ideal $\Theta(g)$. This ideal does not change when a $p$-th power is added to $g$. Its residual order $\rho$ differs from the residual order $d$ of $g$ by at most one, and $\rho$ does not go up under a point blowup (Volume 7, Theorem 3.2.4). The Lean library proves these facts.
 
@@ -65,7 +65,7 @@ The Lean statement of the theorem does not assume that $g$ is clean. It assumes 
 
 The result is one step. It does not prove Conjecture 2.3.7 in four variables, and it does not prove a case of $\mathrm{Res}(p, 4)$.
 
-1. It says that $\rho$ does not go up. It does not say that $\rho$ goes down. At the points where $\rho$ stays the same, a resolution algorithm needs a second invariant, and the cycles of Hauser and Perlega [HP19a] are the first test for each candidate.
+1. It says that $\rho$ does not go up. It does not say that $\rho$ goes down. At the points where $\rho$ stays the same, a resolution algorithm needs a second invariant. The cycles of Hauser and Perlega [HP19a] are for $z^q + F$ with $q = p^3$. They test a candidate once it is extended to $z^q + g$ (item 3).
 2. It is local and in coordinates. A center rule must choose centers that satisfy (H1) and (H2) at each point, and the rule must be independent of the coordinates. A natural candidate is the locus where the pair $(\rho, \operatorname{ord}_0 \widetilde\Theta_C(G))$ is maximal. We do not know whether this locus is regular, or whether a sequence of such blowups ends.
 3. It is for the equations $z^p + g$. The case $z^q + g$ with $q = p^e$ and $e \ge 2$ needs the operators $\partial^{(\beta)}$ of Volume 1, Section 6.3, in place of the derivations (Volume 7, Remark 3.1.8).
 4. The Lean proof is in $K[x]$, not in $K[[x]]$.
