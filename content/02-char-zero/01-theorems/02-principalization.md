@@ -55,4 +55,4 @@ The induction goes in the order: marked ideals in dimension $n - 1$ give ideals 
 
 ### Notes and references
 
-Theorem 1.2.1 and Example 1.2.2 are from [Kol07, Chapter 3], Section "Statement of the main theorems". The fact that a maximal ideal of a regular local ring of dimension $c$ needs exactly $c$ generators is the definition of a regular local ring [Mat, Section 14]. The fact that the resolution produced by an embedded method need not be a sequence of smooth blowups of $X$ is a known feature of all the canonical algorithms, see also [BM97].
+Theorem 1.2.1 is from [Kol07, Chapter 3], Section "Statement of the main theorems". Example 1.2.2 is from Section "Order reduction for ideals" of the same chapter, where Kollár attributes it to Bierstone-Milman. The fact that a maximal ideal of a regular local ring of dimension $c$ needs exactly $c$ generators is the definition of a regular local ring [Mat, Section 14]. The fact that the resolution produced by an embedded method need not be a sequence of smooth blowups of $X$ is a known feature of all the canonical algorithms, see also [BM97].
