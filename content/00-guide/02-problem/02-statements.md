@@ -32,4 +32,4 @@ has dimension $n$. It is purely inseparable over the affine space $\mathbb{A}^n_
 
 Node: SG00000009 · Lean: `Singularity.PurelyInseparableHypersurfaceResolution`
 
-For $n \le 3$ this is a case of the theorem on threefolds. For $n = 4$, $X_g$ is a fourfold and the conjecture is open. Many of the known difficulties of characteristic $p$ already show in this family. Hauser studies it in detail in his survey of 2010.
+We call Conjecture 2.2.4 the core problem P1. For $n \le 3$ this is a case of the theorem on threefolds. For $n \ge 4$ the conjecture is open. For $n = 4$, $X_g$ is a fourfold. Many of the known difficulties of characteristic $p$ already show in this family. Hauser studies it in detail in his survey of 2010 [Hau10].

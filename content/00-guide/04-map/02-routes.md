@@ -28,4 +28,4 @@ Node: SG00000009 · Lean: `Singularity.PurelyInseparableHypersurfaceResolution`
 
 Node: SG0000001H · Lean: `Singularity.LocalUniformizationFour` (the statement only)
 
-Node: SG0000001R · Lean: `Singularity.WeightedInvariantCharP`
+Node: SG0000001R · Lean: `Singularity.WeightedInvariantCharP` (planned, no Lean statement yet)
