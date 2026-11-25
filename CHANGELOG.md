@@ -7,12 +7,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Added
 
 - Volume 7, Section 3.5, the end case of the log-Jacobian ideal. Proposition 3.5.1 says that $\rho = 0$ if and only if the equation is of type 0 or of type 1. Theorem 3.5.3 gives the normal forms $z^p + x^r$ and $z^p + x^r x_j$ over $K[[x]]$, so the equation is binomial. Example 3.5.2 shows why the proposition needs a clean $F$.
+- Volume 7, Section 3.6, the invariant $\omega$ of Cossart and Piltant. Proposition 3.6.1 says that $\omega = \rho$ for the equations $Z^p + f$ over a perfect field. Corollary 3.6.2 gives the independence of $\omega$ from the well adapted coordinates. Corollary 3.6.3 says that $\omega$ does not go up under a point blowup and under the blowup of a center with (H1) and (H2), in each dimension and without condition (E). Example 3.6.4 is a Hironaka-permissible blowup at which $\omega$ goes up from $2$ to $3$.
 
 ### Changed
 
 - Volume 3, Section 3.3 has the new subsection "Key polynomials for the limit augmentation". Lemma 3.3.30 gives the criterion for divisibility by the limit key polynomial $\varphi$ in the limit augmentation $\mu' = [\mu_\infty; \varphi, \gamma]$. Theorem 3.3.31 proves that $\varphi$ is a key polynomial for $\mu'$, with no new hypothesis. Proposition 3.3.32 proves that each monic $\psi$ of degree $\deg \varphi$ with $\nu(\psi) \ge \nu(\varphi)$ is again a limit key polynomial. Theorem 3.3.33 proves that $[\mu_\infty; \varphi, \nu(\varphi)]$ agrees with $\nu$ up to degree $\deg \varphi$ if and only if $\varphi$ has the largest $\nu$-value among the monic polynomials of its degree, and gives one limit step of the chain in this case. The text says that the largest value is not proved to exist and that the full chain with limit steps is not built. The text gives the Lean names from tamnd/singularity-lean#99.
-- The introduction of Volume 7, Chapter 3 now gives Section 3.5.
-- `EDITION` now pins the map at 101428c, which has the node SG0000004S.
+- The introduction of Volume 7, Chapter 3 now gives Sections 3.5 and 3.6.
+- Volume 6, the remark after Definition 3.2.5 now refers to Volume 7, Section 3.6.
+- `EDITION` now pins the map at da3d7f5, which has the nodes SG0000004S and SG0000004T.
 
 ## [0.4.15] - 2026-11-25
 
