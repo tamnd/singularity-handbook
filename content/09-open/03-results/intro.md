@@ -12,4 +12,6 @@ Section 3.4 is the fourth result. It finds the points where the residual order $
 
 Section 3.5 is the fifth result. It studies the codimension $\tau_\rho$ of the subspace of Section 3.4. At a point where $\rho$ stays, $\tau_\rho$ does not go down if the new point is in the second case of Section 3.4. An example for $p = 2$ shows that $\tau_\rho$ can go down when the old point is in the second case and the new point is in the first case.
 
+Section 3.6 is the sixth result. At a point where $\rho$ stays and both points are in the first case, $\tau_\rho$ does not go down if $p$ does not divide $|r| + d$. With Section 3.5, each combination of the cases has an answer, except the combination from the first case to the first case when $p$ divides $|r| + d$. From the second case to the first case, $\tau_\rho$ can go down.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.

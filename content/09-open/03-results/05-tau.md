@@ -38,7 +38,7 @@ The Lean library proves both parts for polynomials over a field of characteristi
 ### What the result does not give
 
 1. It does not say that $\rho$ goes down. Since $\tau_\rho$ can go down from the second case to the first case, the pair $(\rho, -\tau_\rho)$ can go up, and it is not a resolution invariant. An invariant that compares the case before $\tau_\rho$ also fails, because at the points where $\rho$ stays the case can change in both directions.
-2. The cases from the first to the first have no proof. A random test found 286 points of this kind where $\rho$ stays, and at each of them the transported forms lie in the span of the new forms, so $\tau_\rho$ does not go down there. The test found no point of this kind where $\tau_\rho$ goes down.
+2. It does not cover the cases from the first to the first. Section 3.6 proves that $\tau_\rho$ does not go down in these cases when $p$ does not divide $|r| + d$. The case where $p$ divides $|r| + d$ is open.
 3. It is for point blowups only, as the result of Section 3.4.
 
 ### Status
