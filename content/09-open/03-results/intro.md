@@ -6,4 +6,6 @@ Section 3.1 is the first result. It is about the purely inseparable equations $z
 
 Section 3.2 is the second result. It finds the singularities at a point where the residual order $\rho$ of the log-Jacobian ideal is $0$. After a change of the formal coordinates the equation is $z^p + x^r$ or $z^p + x^r x_j$, a binomial equation, and binomial varieties have a resolution in each characteristic.
 
+Section 3.3 is the third result. It compares the residual order $\rho$ of the log-Jacobian ideal with the invariant $\omega$ of Cossart and Piltant. For the equations $z^p + g$ over a perfect field the two invariants are equal. So $\omega$ does not depend on the coordinates, and it does not go up under the blowups of Section 3.1, in each dimension and without the condition (E) of Cossart and Piltant.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.
