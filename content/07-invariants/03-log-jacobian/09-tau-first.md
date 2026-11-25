@@ -1,6 +1,6 @@
 ---
 title: The codimension from the first case to the first case
-nodes: [SG00000050]
+nodes: [SG00000050, SG00000051]
 sources: [Hir67]
 status: drafted
 drafted_by: writer
@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## The codimension from the first case to the first case
 
-Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays, if the new point is in the second case. The proof sends each element $h$ of $H(g)$ to its weak transform $h'$, and it uses that $h'$ is an element of $H(g'_c)$. If the new point is in the first case, this step can fail, also when the old point is in the first case. Example 3.9.4 below shows this for $p = 2$. In this section we prove that $\tau_\rho$ still does not go down from the first case to the first case, if $p$ does not divide $|r| + d$. The proof does not transport all the elements of $H(g)$. In the first case the initial forms of $H(g)$ come from the elements $r_i G + x_i \partial_i G$, one for each $i \in \Delta$. We transport only those elements whose weak transform is exactly an element of $\widetilde\Theta_0(G')$, and we add one more element, the Euler element of Corollary 3.7.3. A short computation with derivatives shows that these elements are sufficient. The case where $p$ divides $|r| + d$ is open.
+Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays, if the new point is in the second case. The proof sends each element $h$ of $H(g)$ to its weak transform $h'$, and it uses that $h'$ is an element of $H(g'_c)$. If the new point is in the first case, this step can fail, also when the old point is in the first case. Example 3.9.4 below shows this for $p = 2$. In this section we prove that $\tau_\rho$ still does not go down from the first case to the first case, if $p$ does not divide $|r| + d$. The proof does not transport all the elements of $H(g)$. In the first case the initial forms of $H(g)$ come from the elements $r_i G + x_i \partial_i G$, one for each $i \in \Delta$. We transport only those elements whose weak transform is exactly an element of $\widetilde\Theta_0(G')$, and we add one more element, the Euler element of Corollary 3.7.3. A short computation with derivatives shows that these elements are sufficient. Examples 3.9.5 and 3.9.6 show that the theorem is false if $p$ divides $|r| + d$.
 
 We use the setting and the notation of Section 3.8. So $g = x^r G$ with $d = \operatorname{ord} G$, the chart is $\pi = \pi_{1,t}$ with the vector $v = (1, t_2, \dots, t_n)$, and the new divisor is
 $$\Delta' = \{1\} \cup \{ i \in \Delta : i \ne 1, \ t_i = 0 \}.$$
@@ -68,7 +68,7 @@ Now let $w \in T_\rho(g'_c)$ with $w_1 = 0$, and let $i \in \Delta$ with $\Phi_i
 
 So $w \in T_\rho(g)$. We showed that $T_\rho(g'_c) \cap L \subseteq T_\rho(g) \cap L$ for the hyperplane $L$ given by $w_1 = 0$. Since $v \in T_\rho(g)$ and $v_1 = 1$, the count of dimensions at the end of the proof of Proposition 3.8.2 gives $\dim T_\rho(g'_c) \le \dim T_\rho(g)$, so $\tau_\rho(g'_c) \ge \tau_\rho(g)$. $\square$
 
-The assumption that $|r| + d$ is not $0$ in $K$ is used twice. It gives $\rho = d$, and it makes the Euler element an element of $H(g)$ with the initial form $(|r| + d) F$. Without this element, the proof has no control of the forms $\Phi_i$ with $v_i \ne 0$.
+The assumption that $|r| + d$ is not $0$ in $K$ is used twice. It gives $\rho = d$, and it makes the Euler element an element of $H(g)$ with the initial form $(|r| + d) F$. Without this element, the proof has no control of the forms $\Phi_i$ with $v_i \ne 0$, and Example 3.9.5 shows that the theorem then fails.
 
 ### An example
 
@@ -96,7 +96,59 @@ A random test checked the combination from the first case to the first case. It 
 
 ### The case where $p$ divides $|r| + d$
 
-Then the Euler element has order larger than $d$, and the proof has no element of $H(g)$ with the initial form $F$. The test found 673 points of this kind. At 398 of them some $\Phi_i \ne 0$ has $v_i \ne 0$. At each of these 398 points the vector $v$ is in $T(F)$, and at 397 of them each such $\Phi_i$ is a linear combination of the forms $\Phi_k$ with $v_k = 0$. At these 397 points the proof of Theorem 3.9.1 applies without the Euler element. At the last point, for $(p, n) = (3, 4)$, this fails, but $\tau_\rho$ stays. We do not know if $\tau_\rho$ can go down in this case.
+Then the Euler element has order larger than $d$, and the proof has no element of $H(g)$ with the initial form $F$. The next example shows that the theorem is then false.
+
+**Example 3.9.5.** Let $p = 2$, $n = 5$ with the variables $x, y, z, w, u$, $\Delta = \{x, y, z, w\}$ and
+$$g = x z^2 w u^2 + x y z w u^2.$$
+No monomial of $g$ is a square, so $g$ is clean, and $\operatorname{ord} g = 6 \ge p$. Here $r = (1, 0, 1, 1, 0)$, so $x^r = x z w$, and
+$$G = z u^2 + y u^2 = (y + z) u^2, \qquad d = 3, \qquad F = G.$$
+So $|r| + d = 6$, and this is $0$ in $K$. In characteristic $2$,
+$$e_x = G, \qquad e_y = y u^2, \qquad e_z = G + z u^2 = y u^2, \qquad e_w = G, \qquad \partial_u G = 0.$$
+So $\widetilde\Theta(G) = \widetilde\Theta_0(G)$ is generated by $G$ and $y u^2$, and $\rho = \sigma = 3$. The point is in the first case, with the forms $(y + z) u^2$ and $y u^2$. We write a vector of $K^5$ as $a = (a_x, a_y, a_z, a_w, a_u)$. The directrix of $y u^2$ is $\{a_y = a_u = 0\}$, since $(y + s a_y)(u + s a_u)^2 = y u^2$ in $K[x, s]$ only for $a_y = a_u = 0$. In the same way the directrix of $(y + z) u^2$ is $\{a_y + a_z = 0, \ a_u = 0\}$. So
+$$T_\rho(g) = \{ a_y = a_z = a_u = 0 \}, \qquad \tau_\rho(g) = 3.$$
+Since $G$ is homogeneous of degree $d$, the Euler element is $e = |r| G + \sum_k x_k \partial_k G = (|r| + d) G = 6 G = 0$.
+
+Take the $w$-chart $\pi(x) = w (x + 1)$, $\pi(y) = w y$, $\pi(z) = w z$, $\pi(w) = w$, $\pi(u) = w u$ at the point with $t_x = 1$ and $t_y = t_z = t_u = 0$, with the vector $v = (1, 0, 0, 1, 0)$. This vector is in $T_\rho(g)$, as Theorem 3.7.1 says. Then $\pi(g) = w^6 (x + 1) (z^2 + y z) u^2$, so
+$$g' = w^4 (x + 1) (z^2 + y z) u^2 = w^4 \bigl( x z^2 u^2 + z^2 u^2 + (x + 1) y z u^2 \bigr).$$
+The monomial $w^4 z^2 u^2$ is a square, so the clean part is
+$$g'_c = w^4 \bigl( x z^2 u^2 + (x + 1) y z u^2 \bigr).$$
+Since $t_x \ne 0$, the component $x = 0$ leaves the divisor, and $\Delta' = \{y, z, w\}$. Here $r' = (0, 0, 1, 4, 0)$ and
+$$G' = x z u^2 + (x + 1) y u^2.$$
+In characteristic $2$,
+$$e'_y = (x + 1) y u^2, \qquad e'_z = G' + x z u^2 = (x + 1) y u^2, \qquad e'_w = 4 G' = 0, \qquad \partial_u G' = 0,$$
+and the derivative in the direction that left the divisor is
+$$\partial_x G' = z u^2 + y u^2 = (y + z) u^2.$$
+The ideal $\widetilde\Theta(G')$ contains $\partial_x G'$, so $\rho' = 3 = \rho$. The ideal $\widetilde\Theta_0(G')$ is generated by $(x + 1) y u^2$ and the elements $x_k (y + z) u^2$, of order $4$. So $\sigma' = 3$, the new point is in the first case, and the only form of order $3$ of $\widetilde\Theta_0(G')$ is $y u^2$, up to a factor. So
+$$T_\rho(g'_c) = \{ a_y = a_u = 0 \}, \qquad \tau_\rho(g'_c) = 2 < \tau_\rho(g).$$
+
+Node: SG00000051
+
+The example shows where the proof of Theorem 3.9.1 fails. The old forms are $F$ and $y u^2$. The form $y u^2$ comes from $e_y$, with $v_y = 0$, and its weak transform is exact. The form $F$ comes from $e_x$ and $e_w$, with $v_x = v_w = 1$, and the Euler element is $0$. So no element of $H(g)$ with an exact weak transform has the initial form $F$. At the new point the form $(y + z) u^2$ is still there, as the initial form of $\partial_x G'$, but this element is in $\widetilde\Theta(G')$ and not in $\widetilde\Theta_0(G')$. In the first case the definition of $T_\rho(g'_c)$ uses only $\widetilde\Theta_0(G')$, so it does not see this form.
+
+This suggests to define $T_\rho$ with $\widetilde\Theta(G)$ also in the first case. Then in Example 3.9.5 both values are $3$. But this form of $\tau$ is worse. A random test for $(p, n) = (2, 3), (2, 4), (2, 5), (3, 3)$ and $(3, 4)$ found many points where it goes down from the first case to the first case, also when $p$ does not divide $|r| + d$. The reason is the same. An element $\partial_l G$ with $l \notin \Delta$ has no exact transport, since $\partial_l$ is not a logarithmic derivation. So Theorem 3.9.1 needs the ideal $\widetilde\Theta_0(G)$ in the first case, and the hypothesis on $|r| + d$ is necessary.
+
+The drop is rare. For $p = 2$ and $n = 3$, a random test found 6,290 points where $\rho$ stays, $p$ divides $|r| + d$ and both points are in the first case, and $\tau_\rho$ does not go down at any of them. For $n = 4$ the test found the next example. It has three monomials, and the mechanism is the same as in Example 3.9.5.
+
+**Example 3.9.6.** Let $p = 2$, $n = 4$ with the variables $x, y, z, w$, $\Delta = \{x, y, w\}$ and
+$$g = x y z^2 w^2 + x^3 y w^2 + x^3 y^2 z^3 w.$$
+Here $r = (1, 1, 0, 1)$, and
+$$G = (x + z)^2 w + x^2 y z^3, \qquad d = 3, \qquad F = (x + z)^2 w.$$
+So $|r| + d = 6$, and this is $0$ in $K$. In characteristic $2$,
+$$e_x = G, \qquad e_y = (x + z)^2 w, \qquad e_w = x^2 y z^3, \qquad \partial_z G = x^2 y z^2.$$
+So $\rho = \sigma = 3$, the point is in the first case, and the only form of order $3$ of $\widetilde\Theta_0(G)$ is $F$, up to a factor. With $a = (a_x, a_y, a_z, a_w)$,
+$$T_\rho(g) = \{ a_x + a_z = 0, \ a_w = 0 \}, \qquad \tau_\rho(g) = 2.$$
+Take the $y$-chart $\pi(x) = y (x + 1)$, $\pi(y) = y$, $\pi(z) = y (z + 1)$, $\pi(w) = y w$, with the vector $v = (1, 1, 1, 0)$ in $T_\rho(g)$. Since $(z + 1)^2 + (x + 1)^2 = (x + z)^2$ in characteristic $2$,
+$$g' = y^4 (x + 1) (x + z)^2 w^2 + y^7 (x + 1)^3 (z + 1)^3 w.$$
+The square monomials of $g'$ are $y^4 x^2 w^2$ and $y^4 z^2 w^2$, so
+$$g'_c = y^4 x (x + z)^2 w^2 + y^7 (x + 1)^3 (z + 1)^3 w.$$
+Since $t_x \ne 0$, the component $x = 0$ leaves the divisor, and $\Delta' = \{y, w\}$. Here $r' = (0, 4, 0, 1)$ and
+$$G' = x (x + z)^2 w + y^3 (x + 1)^3 (z + 1)^3.$$
+In characteristic $2$,
+$$e'_y = e'_w = y^3 (x + 1)^3 (z + 1)^3, \qquad \partial_x G' = (x + z)^2 w + y^3 (x + 1)^2 (z + 1)^3, \qquad \partial_z G' = y^3 (x + 1)^3 (z + 1)^2.$$
+So $\rho' = 3 = \rho$. The ideal $\widetilde\Theta_0(G')$ is generated by $e'_y$ and the elements $x_k \partial_x G'$ and $x_k \partial_z G'$, of order $4$. So $\sigma' = 3$, the new point is in the first case, and the only form of order $3$ of $\widetilde\Theta_0(G')$ is $y^3$. Its directrix is $\{a_y = 0\}$, so
+$$\tau_\rho(g'_c) = 1 < \tau_\rho(g).$$
+
+As in Example 3.9.5, the form $F$ comes only from $e_x$ and $e_y$, with $v_x = v_y = 1$, and the Euler element is $0$. At the new point the form $(x + z)^2 w + y^3$ is the initial form of $\partial_x G'$, which is in $\widetilde\Theta(G')$ and not in $\widetilde\Theta_0(G')$. We do not know if there is an example with $n = 3$.
 
 ### The Lean proof
 
@@ -108,4 +160,4 @@ The ideal $\widetilde\Theta_0(G)$ is `Singularity.residualLogJacobianTangent`, a
 
 ### Notes and references
 
-The method is the method of Hironaka for the codimension of the directrix [Hir67], as in Section 3.8. The use of the Euler element is the same as in Corollary 3.7.3. Theorem 3.9.1 and Example 3.9.4 are a result of the milestone S7.10 of this project. Volume 9, Section 3.6 gives the result as a research report.
+The method is the method of Hironaka for the codimension of the directrix [Hir67], as in Section 3.8. The use of the Euler element is the same as in Corollary 3.7.3. Theorem 3.9.1 and Example 3.9.4 are a result of the milestone S7.10 of this project, and Examples 3.9.5 and 3.9.6 are a result of the milestone S7.11. Volume 9, Section 3.6 gives the result as a research report.
