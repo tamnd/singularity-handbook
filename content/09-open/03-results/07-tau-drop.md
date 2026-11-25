@@ -22,7 +22,7 @@ We use the setting of Volume 7, Section 3.9.
 $$g = x z^2 w u^2 + x y z w u^2.$$
 Then $\rho = 3$, $|r| + d = 6$, the point is in the first case, and $\tau_\rho(g) = 3$. In the $w$-chart at the point with $t_x = 1$, the value of $\rho$ stays, the new point is in the first case, and $\tau_\rho(g'_c) = 2$.
 
-Node: SG00000051
+Node: SG00000051 · Lean: `Singularity.tauRhoDropExample_codim`
 
 So the hypothesis that $p$ does not divide $|r| + d$ in Theorem 3.6.1 is necessary. Example 3.9.6 of Volume 7 gives a second example, with $n = 4$ and three monomials.
 
@@ -46,7 +46,7 @@ So route R1 needs a secondary invariant that sees the forms of the derivatives $
 
 ### Status
 
-The map gives SG00000051 the status of a counterexample. The Lean proof of the example is in progress. An outside expert has not yet read the result, and the milestone S7 asks for this. We do not know a published statement of it.
+The map gives SG00000051 the status of a counterexample with a Lean proof. The Lean library proves Example 3.7.1 over $\mathbb{F}_2$ with the standard axioms only, in `Singularity/Invariant/LogJacobianDirectrixDrop.lean`. The data are `Singularity.tauRhoDropExample_hyp`, the two cases are `Singularity.tauRhoDropExample_cases`, and the two values of $\tau_\rho$ are `Singularity.tauRhoDropExample_codim`. An outside expert has not yet read the result, and the milestone S7 asks for this. We do not know a published statement of it.
 
 ### Notes and references
 
