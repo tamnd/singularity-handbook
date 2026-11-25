@@ -31,7 +31,7 @@ The proof uses two lemmas. The first one describes $T_\rho(g)$ in the first case
 1. Then $\rho = d$, and $T_\rho(g)$ is the intersection of the subspaces $T(\Phi_i)$ for the $i \in \Delta$ with $\Phi_i \ne 0$. Also $T_\rho(g) \subseteq T(F)$.
 2. Assume also that $\rho' = \rho$. If $i \in \Delta$ and $v_i \ne 0$, then $\partial_i F = 0$ and $\Phi_i = r_i F$.
 
-Node: SG00000050 · Lean: `Singularity.ord_sum_smul_add_X_mul_pderiv` (the Euler element), `Singularity.pderiv_eq_zero_of_mem_directrix` (part 2)
+Lean: `Singularity.ord_sum_smul_add_X_mul_pderiv` (the Euler element), `Singularity.pderiv_eq_zero_of_mem_directrix` (part 2)
 
 *Proof.* Part 1. Each generator of $\widetilde\Theta_0(G)$ has order at least $d$, so $\sigma \ge d$. In the first case $\sigma = \rho$, so $\rho \ge d$. The Euler element is in $\widetilde\Theta_0(G)$, and its homogeneous part of degree $d$ is $(|r| + d) F \ne 0$. So $\sigma \le d$, and $\rho = \sigma = d$.
 
@@ -43,7 +43,7 @@ Both $\partial_v F$ and $\partial_v \Phi_i$ are $0$, so $v_i \partial_i F = 0$. 
 
 **Lemma 3.9.3.** Assume that $\rho' = \rho = d$ and that $g$ and $g'_c$ are both in the first case. Let $h$ be the Euler element $e$, or the element $e_i$ for an $i \in \Delta$ with $v_i = 0$. If $\operatorname{ord} h = d$, then $h' \in H(g'_c)$.
 
-Node: SG00000050 · Lean: `Singularity.pointChart_X_mul_pderiv_of_ne_of_eq_zero`, `Singularity.pointChart_sum_X_mul_pderiv`, `Singularity.mem_directrix_of_mem_logJacobianDirectrix_cleanPart`
+Lean: `Singularity.pointChart_X_mul_pderiv_of_ne_of_eq_zero`, `Singularity.pointChart_sum_X_mul_pderiv`, `Singularity.mem_directrix_of_mem_logJacobianDirectrix_cleanPart`
 
 *Proof.* First we compute $\pi(x^r h)$. Let $i \in \Delta$ with $v_i = 0$, so $i \ne 1$ and $t_i = 0$. Then $\pi(x_i) = x_1 x_i$, and Lemma 3.2.2 gives $\pi(x_i \partial_i k) = x_1 x_i \, \pi(\partial_i k) = x_i \partial_i \pi(k)$ for each $k$. With $k = g$ and $\pi(g) = x_1^p g'$, and since $x^r e_i = x_i \partial_i g$,
 $$\pi(x^r e_i) = x_i \partial_i (x_1^p g') = x_1^p \, x_i \partial_i g'.$$
@@ -88,7 +88,7 @@ The weak transform of $e_x = z^2$ is $z^2$. It is in $\widetilde\Theta(G')$, bec
 $$y^{-2} \pi(G) = z^2 + y^2 (x + 1) = (x + 1)^{-1} G',$$
 which is in $\widetilde\Theta_0(G')$, as Lemma 3.9.3 says. A vector $w$ with $w_2 = 0$ and $w_2 = w_3$ has $w_3 = 0$, so it is in $T(F)$.
 
-Node: SG00000050 · Lean: `Singularity.tauRhoCaseAExample_hyp`, `Singularity.tauRhoCaseAExample_not_mem`
+Lean: `Singularity.tauRhoCaseAExample_hyp`, `Singularity.tauRhoCaseAExample_not_mem`
 
 ### What a random test found
 
