@@ -8,4 +8,6 @@ Section 3.2 is the second result. It finds the singularities at a point where th
 
 Section 3.3 is the third result. It compares the residual order $\rho$ of the log-Jacobian ideal with the invariant $\omega$ of Cossart and Piltant. For the equations $z^p + g$ over a perfect field the two invariants are equal. So $\omega$ does not depend on the coordinates, and it does not go up under the blowups of Section 3.1, in each dimension and without the condition (E) of Cossart and Piltant.
 
+Section 3.4 is the fourth result. It finds the points where the residual order $\rho$ of the log-Jacobian ideal stays under a point blowup. They lie in the projective space of a linear subspace, the analogue for $\rho$ of the directrix of Hironaka. If this subspace is $0$, then $\rho$ goes down at each point after one blowup. The result does not say that $\rho$ goes down in general, and this is the open step of route R1.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.
