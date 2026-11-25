@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## Regular schemes and resolutions
 
-Let $(R, \mathfrak{m}, \kappa)$ be a Noetherian local ring. By Krull's principal ideal theorem, the maximal ideal $\mathfrak{m}$ needs at least $\dim R$ generators, and the minimal number of generators is $\dim_\kappa \mathfrak{m}/\mathfrak{m}^2$.
+Let $(R, \mathfrak{m}, \kappa)$ be a Noetherian local ring. By Krull's principal ideal theorem, the maximal ideal $\mathfrak{m}$ needs at least $\dim R$ generators, and by Nakayama's lemma the minimal number of generators is $\dim_\kappa \mathfrak{m}/\mathfrak{m}^2$.
 
 **Definition 2.1.1 (regular local ring).** A Noetherian local ring $R$ is *regular* when $\dim_\kappa \mathfrak{m}/\mathfrak{m}^2 = \dim R$.
 

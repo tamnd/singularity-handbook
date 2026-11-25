@@ -15,11 +15,11 @@ The table gives the known cases of $\mathrm{Res}(p, n)$. The column "Node" gives
 | each $p$, $n = 0$ | elementary, proved below | SG0000001W |
 | $p = 0$, each $n$ | Hironaka, 1964 | SG0000000D |
 | each $p$, $n = 1$ | normalization | SG0000001A |
-| each $p$, $n = 2$ | Abhyankar, 1956; Lipman, 1978 for excellent surfaces | SG0000001B |
-| $p > 5$, $n = 3$ | Abhyankar, 1966 | SG0000001D |
+| each $p$, $n = 2$ | Abhyankar, 1956, over an algebraically closed field; Lipman, 1978 for excellent surfaces | SG0000001B |
+| $p > 5$, $n = 3$ | Abhyankar, 1966, over an algebraically closed field | SG0000001D |
 | each $p$, $n = 3$ | Cossart and Piltant, 2008, 2009 and 2019 | SG0000001D |
 
-The case of dimension 0 is elementary, and it is the first theorem that the project proves in Lean. We give the proof, because it shows how the definitions of the last two sections work together. Volume 9, Chapter 1 gives the results of this section again, with complete proofs, examples, and an explanation of each Lean proof.
+The case of dimension 0 is elementary, and it is the first theorem that the project proves in Lean. We give the proof, because it shows how the definitions of the last two sections work together. Volume 9, Chapter 1 gives the proved results of this section again, with complete proofs, examples, and an explanation of each Lean proof.
 
 **Theorem 2.3.1 (dimension 0).** Let $p \ge 0$. Then $\mathrm{Res}(p, 0)$ holds. More exactly, a reduced scheme $X$ of dimension at most 0 is regular, so the identity of $X$ is a resolution of $X$.
 
@@ -67,5 +67,7 @@ The status of SG0000000D on the map is "proved". Before release 0.2.5 it was "pr
 **Theorem 2.3.5 (de Jong).** Let $X$ be a variety over a field $k$. There is a regular variety $Y$ and a proper, surjective and generically finite morphism $Y \to X$.
 
 Node: SG0000001K · Lean statement: `Singularity.deJongAlteration` (no proof)
+
+Volume 8, Theorem 1.2.1 gives the full theorem for an integral variety, and Theorem 2.3.5 follows from it component by component. The Lean statement is the theorem for an integral variety in a weaker form: the compactification is proper and not projective, and the statement leaves out the generically étale part. It has no proof in Lean.
 
 Such a morphism is an *alteration*. An alteration is weaker than a resolution, because it can have a degree greater than 1 over the generic point. For many questions of cohomology an alteration is sufficient, but it does not answer the problem of this handbook. Proposition 2.5.2 shows that the statement of the project does not accept an alteration as a resolution.

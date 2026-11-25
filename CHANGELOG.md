@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 0, referee fixes. Section 5.1 now gives the current Lean status of the results that its first summary names: the bound of Moh for a point blowup and the claim on the graded algebra of MacLane-Vaquié have Lean proofs, part 4 of MacLane-Vaquié has a Lean proof for discrete values of rank 1 and for nonzero support but not for support 0 with values that are not discrete, the theorems of Zariski and Abhyankar on local uniformization have no Lean statement, and Proposition 4.1.8 of Volume 3 and Corollary 2.1.10 of Volume 5 have Lean proofs. The summary of S1 is in the past tense, a dangling label is fixed, and the note on $\omega$ in edition 0.4.18 says that it needs an algebraically closed field. Section 2.4 states maximal contact in the right coordinates, describes the residual order and the bound of Moh for $z^q + g$, and says that the cycle of Hauser-Perlega is for $z^{p^3} + g$. Section 2.2 names the core problem P1, the table of Section 2.3 says where Abhyankar needs an algebraically closed field, and Section 2.3 explains how the Lean statement of the theorem of de Jong differs from Theorem 2.3.5. Section 4.1 corrects the volumes of the tiers T3, T5 and T6, and Section 4.2 marks `Singularity.WeightedInvariantCharP` as planned. Sections 2.1 and 3.1 add Nakayama's lemma and the Noetherian hypothesis.
+
 ## [0.4.19] - 2026-11-25
 
 ### Changed

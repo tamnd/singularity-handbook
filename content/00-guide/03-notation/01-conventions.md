@@ -16,7 +16,7 @@ A scheme is not assumed Noetherian or separated. For a scheme $X$ and a point $x
 
 The dimension of a scheme is the Krull dimension of its topological space. The empty scheme has dimension $-\infty$. In Lean this is `topologicalKrullDim`, with values in `WithBot ℕ∞`.
 
-The order of an element $f \neq 0$ of a local ring $(R, \mathfrak{m})$ is the largest $d$ with $f \in \mathfrak{m}^d$. The order of an ideal is the minimum of the orders of its elements.
+The order of an element $f \neq 0$ of a Noetherian local ring $(R, \mathfrak{m})$ is the largest $d$ with $f \in \mathfrak{m}^d$. The order of an ideal is the minimum of the orders of its elements.
 
 A blowup of $X$ along a closed subscheme $Z$ is written $\operatorname{Bl}_Z X \to X$. A blowup is *permissible* when $Z$ is regular and $X$ is normally flat along $Z$.
 
