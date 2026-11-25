@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- `EDITION` now pins the map at b2b76e2, the release 0.4.20 of the map, and Volume 0, Section 5.1 describes edition 0.4.20.
 - Volume 5, Sections 1.4 and 2.1 have the Lean names of tamnd/singularity-lean#113: parts 1 and 2 of Lemma 2.1.2, of Corollary 2.1.6 and of Lemma 1.4.2 except its last claim. Corollary 2.1.6 now says that its local uniformization is over $k$, not over $k(y)$, and why the proof of Theorem 2.2.1 needs this form. Section 2.1 gives the Lean proof of parts 1 and 2 of Lemma 2.1.2.
 
 - Volume 5, Section 2.1 has the Lean names of tamnd/singularity-lean#111: the lattice lemma in each rank (Lemma 2.1.4), the monomial case for value groups of each rank (Theorem 2.1.5), and part 3 of Lemma 2.1.2. A second proof of Lemma 2.1.4 follows the Lean proof: induction on a convex subgroup, Lemma 2.1.8 on the archimedean complement, and a shear. The notes of Section 2.1 and the introductions of Volume 5 and of its Chapter 2 now say what the library proves.
