@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.22] - 2026-11-25
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.22.
 - Volume 7, Section 3.7 gives the points where the log-Jacobian order $\rho$ stays under a point blowup. Theorem 3.7.1 says that they lie in the directrices of the initial forms of the elements of order $\rho$ of $\widetilde\Theta_0(G)$ or of $\widetilde\Theta(G)$, Corollary 3.7.2 says that $\rho$ goes down if these directrices meet only in $0$, Corollary 3.7.3 gives the case of the initial form of $G$, and Example 3.7.4 shows that the first case is false with $\widetilde\Theta(G)$. The Lean names are from tamnd/singularity-lean#119. This is the node SG0000004X, for the milestone S7.8 (tamnd/singularity#164).
 - Volume 9, Section 3.4 gives the same result as the fourth research report of the milestone S7, with what it does not give.
 
