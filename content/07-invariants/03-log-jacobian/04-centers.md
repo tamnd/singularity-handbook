@@ -97,7 +97,7 @@ Condition (H1) says that $\widetilde\Theta(G)$ is equimultiple along $C$: its or
 
 **Theorem 3.4.5.** Let $g \ne 0$ be clean with $g \in I_C^p$, and assume (H1) and (H2). Let $g'_c$ be the clean part of $g'$ for the divisor $\Delta'$. Then $g'_c \ne 0$ and $\rho(g'_c) \le \rho$.
 
-Node: SG0000004Q · Lean: none yet
+Node: SG0000004Q · Lean: `Singularity.logJacobianOrder_cleanPart_le_center` (for polynomials, with (H1) and (H2) in the form below)
 
 *Proof.* By part 2 of Theorem 3.1.4, $\Theta(g) \ne 0$, so $\Theta_C(g) \supseteq I_C \Theta(g)$ is not $0$. The map $\pi$ is injective, so $\Theta'(g') \ne 0$ by Theorem 3.4.3. If $g'_c = 0$, then $g'$ is a $p$-th power, and $\Theta'(g') = 0$ by Lemma 3.1.2. So $g'_c \ne 0$.
 
@@ -116,6 +116,13 @@ $$\rho(g'_c) = \operatorname{ord}_0 W_0 = \operatorname{ord}_0 W - |s| \le \oper
 
 The proof does not use the number of variables. Condition (H1) gives an element of order $\rho$ in $\widetilde\Theta(G)$ that is equimultiple along $C$, and condition (H2) gives one in $\widetilde\Theta_C(G)$ when the factor $x_1$ of the first case is not available. Without these conditions, the elements of the smallest order at the origin can have a smaller order along $C$, and then Lemma 3.4.4 does not apply.
 
+The Lean statement of Theorem 3.4.5 uses the factor $x^r$ in place of $G$. With $g = x^r G$ as above, the conditions are:
+
+- (H1) each element of $\Theta(g)$ is $x^r q$ with $q \in I_C^\rho$;
+- (H2) each element of $\Theta_C(g)$ is $x^r q$ with $q \in I_C^{\rho + 1}$, or $\Theta_C(g)$ contains an element $x^r q$ with $\operatorname{ord} q = \rho$.
+
+Since $\Theta(g) = x^r \widetilde\Theta(G)$, $\Theta_C(g) = x^r \widetilde\Theta_C(G)$ and $I_C \widetilde\Theta(G) \subseteq \widetilde\Theta_C(G) \subseteq \widetilde\Theta(G)$, these are the conditions above. The Lean statement does not assume that $g$ is clean. It assumes only that $\rho$ is finite, and for a clean $g \ne 0$ this follows from Theorem 3.1.4. The proof follows the proof above, in $K[x]$, with divisibility by monomials in place of the ideal $W$, as for Theorem 3.2.4.
+
 ### Condition (H2) cannot be omitted
 
 **Example 3.4.6.** Let $p = 2$, $n = 3$ with the coordinates $(x, y, w)$, $\Delta = \{3\}$, so $E = V(w)$, and let $g = y^2 w + y^3$. Let $C = V(x, y)$, so $c = 2$ with $x_1 = x$ and $x_2 = y$.
@@ -130,7 +137,9 @@ Take the $x$-chart without translation: $\pi(x) = x$, $\pi(y) = x y$ and $\pi(w)
 $$x \partial_x g' = x y^3, \qquad w \partial_w g' = y^2 w, \qquad \partial_y g' = 2 y w + 3 x y^2 = x y^2.$$
 So $\Theta'(g') = (x y^3, y^2 w, x y^2) = (y^2 w, x y^2)$. Neither $x$ nor $w$ divides both generators, so $\widetilde\Theta(G') = (y^2 w, x y^2)$, and $\rho(g'_c) = 3$. Thus $\rho$ goes up from $2$ to $3$.
 
-Node: SG0000004R · Lean: none yet
+Node: SG0000004R · Lean: `Singularity.centerExample_logJacobianOrder_cleanPart` ($\rho(g'_c) = 3$, over $\mathbb{F}_2$)
+
+Lean: `Singularity.centerExample_logJacobianOrder` ($\rho = 2$), `Singularity.centerExample_H1` and `Singularity.centerExample_not_H2` (the conditions in the form of the Lean statement of Theorem 3.4.5)
 
 We can check Theorem 3.4.3 in this example. Here $\Theta_C(g) = (y^2 w, x y^2, y^3)$, and $x^{-2} \pi(\Theta_C(g)) = (y^2 w, x y^2, x y^3) = (y^2 w, x y^2)$, which is $\Theta'(g')$. The proof of Theorem 3.4.5 fails at one place. Here $\sigma = 2 = \rho$, but each element of $\widetilde\Theta_C(G)$ has order at least $3$ at the origin, so Lemma 3.4.4 gives no element of order $2$ in $W$. The element $y^2$ of order $\rho = 2$ in $\widetilde\Theta(G)$ gives only $x y^2 \in \widetilde\Theta_C(G)$, and $x^{-2} \pi(x y^2) = x y^2$ has order $3$.
 
