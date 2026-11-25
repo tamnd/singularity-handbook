@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.5, the end case of the log-Jacobian ideal. Proposition 3.5.1 says that $\rho = 0$ if and only if the equation is of type 0 or of type 1. Theorem 3.5.3 gives the normal forms $z^p + x^r$ and $z^p + x^r x_j$ over $K[[x]]$, so the equation is binomial. Example 3.5.2 shows why the proposition needs a clean $F$.
+
+### Changed
+
+- The introduction of Volume 7, Chapter 3 now gives Section 3.5.
+- `EDITION` now pins the map at 101428c, which has the node SG0000004S.
+
 ## [0.4.15] - 2026-11-25
 
 ### Added
