@@ -1,6 +1,6 @@
 ---
 title: Lifting along an étale generator
-nodes: [SG00000010, SG0000000Y, SG0000004C]
+nodes: [SG00000010, SG0000000Y, SG0000004C, SG0000004Y]
 sources: [Kuh-book, ZS2, Mat, Zar40, Cut04]
 status: drafted
 drafted_by: writer
@@ -20,7 +20,7 @@ It is the defect of the henselian extension $K^h/K_0^h$ in the sense of Volume 3
 $$\frac{P(Z)}{Z - z} = \sum_{j=0}^{n-1} b_jZ^j, \qquad b_j \in F[z].$$
 Then $\operatorname{Tr}_{L/F}(z^ib_j/P'(z)) = \delta_{ij}$ for $0 \le i, j \le n - 1$. If $F$ is the fraction field of an integrally closed domain $O$, $z$ is integral over $O$, and $\bar{O}$ is the integral closure of $O$ in $L$, then $P'(z)\bar{O} \subseteq O[z]$.
 
-Lean: none yet
+Lean: `Singularity.aeval_derivative_minpoly_mul_mem_adjoin` (the claim $P'(z)\bar{O} \subseteq O[z]$)
 
 *Proof.* Let $\sigma_1, \dots, \sigma_n$ be the embeddings of $L$ into an algebraic closure of $F$, and $z_k = \sigma_k(z)$. They are distinct. For $0 \le i \le n - 1$, the polynomials
 $$Z^i \quad \text{and} \quad \sum_{k=1}^n z_k^i\, \frac{P(Z)}{(Z - z_k)P'(z_k)}$$
@@ -30,6 +30,8 @@ In the second claim the coefficients of $P$ lie in $O$, because $O$ is integrall
 
 **Definition 1.3.2 (étale generator).** An *étale generator* of $K/K_0$ at $v$ is an element $z \in \mathcal{O}_v$ with $K = K_0(z)$ such that the minimal polynomial $P$ of $z$ over $K_0$ has coefficients in $\mathcal{O}_{v_0}$ and $P'(z)$ is a unit of $\mathcal{O}_v$.
 
+Lean: `Singularity.IsEtaleGenerator`
+
 The name comes from geometry: the map from $\operatorname{Spec}$ of $\mathcal{O}_{v_0}[z] = \mathcal{O}_{v_0}[Z]/(P)$ to $\operatorname{Spec} \mathcal{O}_{v_0}$ is étale at the center of $v$.
 
 ### Existence of an étale generator
@@ -38,7 +40,9 @@ The name comes from geometry: the map from $\operatorname{Spec}$ of $\mathcal{O}
 
 Conversely, assume that $v$ is not trivial, that $e = 1$, that $Kv/K_0v_0$ is separable, and that $d = 1$. Then $K/K_0$ is separable, and there is an étale generator of $K/K_0$ at $v$.
 
-Node: SG0000004C · Lean: none yet
+Node: SG0000004C · Lean: `Singularity.IsEtaleGenerator.centerSubring_closure_eq` (first part)
+
+Node: SG0000004Y · Lean: none yet (second part)
 
 *Proof.* First part. Since $P'(z) \ne 0$, the extension $K/K_0$ is separable. Let $\bar{O}$ be the integral closure of $\mathcal{O}_{v_0}$ in $K$. It has finitely many maximal ideals $\mathfrak{m}_1, \dots, \mathfrak{m}_g$, one for each extension $v_1 = v, v_2, \dots, v_g$ of $v_0$ to $K$, and $\bar{O}_{\mathfrak{m}_i} = \mathcal{O}_{v_i}$ [ZS2, Chapter VI]. By Lemma 1.3.1, $\bar{O} \subseteq P'(z)^{-1}\mathcal{O}_{v_0}[z]$. Since $P'(z)$ is a unit of $\mathcal{O}_v$, it does not lie in $\mathfrak{q}$, so $\bar{O} \subseteq \mathcal{O}_{v_0}[z]_\mathfrak{q}$. An element of $\bar{O} \setminus \mathfrak{m}_1$ is a unit of $\mathcal{O}_v$, so it is a unit of the local ring $\mathcal{O}_{v_0}[z]_\mathfrak{q}$, whose maximal ideal is the trace of $\mathfrak{m}_v$. Thus $\mathcal{O}_v = \bar{O}_{\mathfrak{m}_1} \subseteq \mathcal{O}_{v_0}[z]_\mathfrak{q} \subseteq \mathcal{O}_v$.
 
@@ -54,7 +58,7 @@ The derivative. Let $P$ be the minimal polynomial of $z$ over $K_0$. Its coeffic
 
 **Theorem 1.3.4 (lifting).** Let $z$ be an étale generator of $K/K_0$ at $v$. If $v_0$ has local uniformization as a valuation of $K_0/k$, then $v$ has local uniformization as a valuation of $K/k$.
 
-Node: SG0000004C · Lean: none yet
+Node: SG0000004C · Lean: `Singularity.hasLocalUniformization_of_etaleGenerator`
 
 *Proof.* We use Proposition 4.1.6 of Volume 3. Let $S \subseteq \mathcal{O}_v$ be finite. By Lemma 1.3.3, each $s \in S$ can be written $s = g_s/h_s$ with $g_s, h_s \in \mathcal{O}_{v_0}[z]$ and $h_s \notin \mathfrak{m}_v$. Write $g_s$ and $h_s$ as polynomials in $z$ with coefficients in $\mathcal{O}_{v_0}$. Let $T \subseteq \mathcal{O}_{v_0}$ be the finite set of these coefficients and of the coefficients of $P$. By local uniformization of $v_0$ there is an affine model $A_0$ of $K_0/k$ with $T \subseteq A_0 \subseteq \mathcal{O}_{v_0}$ such that $R_0 = (A_0)_{\mathfrak{p}_0}$ is regular, where $\mathfrak{p}_0$ is the center of $v_0$.
 
@@ -88,4 +92,4 @@ The discrete valuations of rank 1 are covered by Corollary 1.3.6. An example is 
 
 ### Notes and references
 
-The henselization and the correspondence between extensions of valuations and factors over the henselization are in [Kuh-book]. The integral closure of a valuation ring in a finite extension is [ZS2, Chapter VI]. The idea to reduce to a subfield with the same value group, and to lift along an unramified extension, is the idea of Zariski [Zar40], here in a simple form. The book [Cut04] gives a complete treatment of surfaces in characteristic 0. None of the results of this section is in the Lean library.
+The henselization and the correspondence between extensions of valuations and factors over the henselization are in [Kuh-book]. The integral closure of a valuation ring in a finite extension is [ZS2, Chapter VI]. The idea to reduce to a subfield with the same value group, and to lift along an unramified extension, is the idea of Zariski [Zar40], here in a simple form. The book [Cut04] gives a complete treatment of surfaces in characteristic 0. The library tamnd/singularity-lean proves Lemma 1.3.1 in the form $P'(z)\bar{O} \subseteq O[z]$, Definition 1.3.2, the first part of Lemma 1.3.3 and Theorem 1.3.4. The Lean proof of Lemma 1.3.1 uses the dual of $O[z]$ for the trace form, as the proof above does. The Lean proof of Theorem 1.3.4 follows the proof above. Its central step is `Singularity.isRegularLocalRing_localization_adjoinRoot`: if $P$ is monic, $A$ is regular at the prime under $\mathfrak{Q}$, and $P'$ is not in $\mathfrak{Q}$, then $A[Z]/(P)$ is regular at $\mathfrak{Q}$. The second part of Lemma 1.3.3, the existence of an étale generator, has no Lean proof. Theorem 1.3.5 and Corollary 1.3.6 have no Lean proof.
