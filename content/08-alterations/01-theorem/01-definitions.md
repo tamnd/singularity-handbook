@@ -14,11 +14,13 @@ In this volume a *variety* over a field $k$ is an integral scheme that is separa
 
 **Definition 1.1.1 (alteration).** Let $X$ be a Noetherian integral scheme. An *alteration* of $X$ is an integral scheme $X'$ with a morphism $\varphi \colon X' \to X$ that is proper and dominant, such that there is a nonempty open subset $U \subseteq X$ over which $\varphi^{-1}(U) \to U$ is finite. A *modification* of $X$ is an alteration $\varphi$ that is birational, that is, an isomorphism over a nonempty open subset of $X$.
 
+Lean: `Singularity.IsAlteration` (the alteration; the Lean form does not ask that $X$ is Noetherian)
+
 This is [dJ96, 2.20] and [dJ96, 2.17]. A dominant morphism of integral schemes sends the generic point to the generic point. Indeed, $\varphi(X') = \varphi(\overline{\{\eta_{X'}\}})$ lies in the closure of $\varphi(\eta_{X'})$, and this closure is all of $X$ because $\varphi$ is dominant. A proper dominant morphism is surjective, because its image is closed and dense. A composition of modifications is a modification.
 
 **Lemma 1.1.2.** Let $\varphi \colon X' \to X$ be an alteration, and let $U$ be as in Definition 1.1.1. Then $k(X')$ is a finite extension of $k(X)$, and the generic fibre $\varphi^{-1}(\eta_X)$ is the single point $\eta_{X'}$.
 
-Lean: none yet
+Lean: `Singularity.IsAlteration.eq_genericPoint` (the generic fibre is $\eta_{X'}$; the finite extension of function fields is not in Lean yet)
 
 *Proof.* Let $V = \operatorname{Spec} A$ be a nonempty affine open subset of $U$. A finite morphism is affine, so $\varphi^{-1}(V) = \operatorname{Spec} B$ with $B$ a finite $A$-algebra. The open set $\varphi^{-1}(V)$ contains $\eta_{X'}$, so it is not empty and $B$ is a domain with fraction field $k(X')$. Let $K = k(X) = \operatorname{Frac}(A)$. The ring $B \otimes_A K$ is a localization of $B$, so it is a domain, and it is a finite dimensional $K$-vector space. A domain of finite dimension over a field is a field. So $B \otimes_A K$ is a field that contains $B$ and lies in $\operatorname{Frac}(B)$, and so $B \otimes_A K = k(X')$. This proves that $[k(X') : K]$ is finite. The generic fibre is $\operatorname{Spec}(B \otimes_A K)$, which is one point. $\square$
 
@@ -46,7 +48,7 @@ This is the last remark of [dJ96, 2.20]. If $k$ has characteristic 0, then every
 
 **Lemma 1.1.6.** Let $\psi \colon X' \to X$ and $\varphi \colon X'' \to X'$ be alterations. Then $\psi \circ \varphi$ is an alteration of degree $\deg \psi \cdot \deg \varphi$. If $\psi$ and $\varphi$ are generically étale, then so is $\psi \circ \varphi$.
 
-Lean: none yet
+Lean: `Singularity.IsAlteration.comp` (the composite is an alteration; the degree and the generically étale part are not in Lean yet)
 
 *Proof.* The composition is proper and dominant. Let $U \subseteq X$ be a nonempty open subset over which $\psi$ is finite, and let $U' \subseteq X'$ be a nonempty open subset over which $\varphi$ is finite. The set $\psi(X' \setminus U')$ is closed, since $\psi$ is proper. It does not contain $\eta_X$, since by Lemma 1.1.2 the only point of $X'$ over $\eta_X$ is $\eta_{X'}$, and $\eta_{X'} \in U'$. Let $U_1 = U \setminus \psi(X' \setminus U')$. Then $\psi^{-1}(U_1) \subseteq U'$, so $\varphi$ is finite over $\psi^{-1}(U_1)$, and $\psi \circ \varphi$ is finite over $U_1$. The formula for the degree is the tower law for $k(X) \subseteq k(X') \subseteq k(X'')$. The last claim follows from Lemma 1.1.5, because a separable extension of a separable extension is separable. $\square$
 
@@ -101,7 +103,7 @@ The resolutions of Volume 0, Definition 2.1.5 are the Lean definition `Singulari
 1. Let $\pi \colon Y \to X$ be a resolution in the sense of Volume 0, Definition 2.1.5. Then $Y$ is integral and $\pi$ is a modification, so it is an alteration of degree 1 with $Y$ regular.
 2. An alteration of $X$ of degree greater than 1 is not a resolution of $X$.
 
-Lean: none yet
+Lean: `Singularity.IsResolution.isIntegral`, `Singularity.IsResolution.isAlteration` (part 1 without the degree; part 2 is not in Lean yet)
 
 *Proof.* The regular locus $\operatorname{Reg}(X)$ is open, because a finitely generated algebra over a field is excellent [Mat]. It contains $\eta_X$, because the local ring there is a field. So $\operatorname{Reg}(X)$ is a nonempty open subset of $X$, and it is irreducible. (1) The morphism $\pi$ is an isomorphism over $\operatorname{Reg}(X)$, so $\pi^{-1}(\operatorname{Reg}(X))$ is irreducible, and it is dense in $Y$. So $Y$ is irreducible. A regular scheme is reduced, so $Y$ is integral. The morphism $\pi$ is proper and an isomorphism over a dense open subset, so it is a modification. (2) A resolution is an isomorphism over the nonempty open set $\operatorname{Reg}(X)$, so it induces an isomorphism of function fields and has degree 1. $\square$
 
@@ -109,4 +111,4 @@ The converse of (1) is false. The blowup of a closed point of $\mathbb{A}^2_k$ i
 
 ### Notes and references
 
-The definitions follow Section 2 of [dJ96]. The Lean library has the regular schemes (`Singularity.IsRegularScheme`, node SG00000002), the resolutions (`Singularity.IsResolution`, node SG00000004) and the divisors with simple normal crossings (`Singularity.IsSncDivisor`, node SG0000000V). It has no definition of an alteration yet. A Lean definition would ask for an integral scheme, a proper dominant morphism, and a nonempty open set over which the morphism is finite, as in Definition 1.1.1.
+The definitions follow Section 2 of [dJ96]. The Lean library has the regular schemes (`Singularity.IsRegularScheme`, node SG00000002), the resolutions (`Singularity.IsResolution`, node SG00000004) and the divisors with simple normal crossings (`Singularity.IsSncDivisor`, node SG0000000V). The file `Singularity/Alteration/Basic.lean` defines the alterations as `Singularity.IsAlteration`: a proper dominant morphism of integral schemes that is finite over a nonempty open set, as in Definition 1.1.1. It proves that the identity and a composite of alterations are alterations (`Singularity.IsAlteration.id`, `Singularity.IsAlteration.comp`), that the generic fibre is one point (`Singularity.IsAlteration.eq_genericPoint`), that a proper morphism that is an isomorphism over a nonempty open set is an alteration (`Singularity.IsAlteration.of_isIso_restrict`), and that a resolution of an integral scheme is an alteration (`Singularity.IsResolution.isAlteration`). The degree, the generically étale alterations, Lemma 1.1.4 and the normalization are not in Lean yet.
