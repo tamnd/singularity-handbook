@@ -11,7 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
-- The edition pins the map release 0.4.28, with the nodes SG00000052 and SG00000053.
+- The edition pins the map release 0.4.29, with the nodes SG00000052 and SG00000053 and their Lean proofs.
 - Volume 7, Section 3.9 has a paragraph on the Lean proof of Proposition 3.9.7 and Corollary 3.9.8, and the introduction of Volume 9, Chapter 3 refers to Section 3.8.
 
 ## [0.4.25] - 2026-11-26
