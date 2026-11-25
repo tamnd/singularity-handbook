@@ -28,7 +28,7 @@ Node: SG00000058 · Lean: `Singularity.fullDirectrixExample_finrank`
 
 ### The proof in short
 
-The proof of Theorem 3.5.1 shows that the weak transform $h'$ of each $h \in H(g)$ is an element of $\widetilde\Theta(G')$ of order $\rho$. This part of the proof does not use the case of the new point. The case of the new point is used only to put $h'$ in $H(g'_c)$, and with the full set $\widetilde H(g'_c)$ this step is not necessary. The rest of the proof is the count of dimensions of Hironaka.
+The proof of Theorem 3.5.1 shows that the weak transform $h'$ of each $h \in H(g)$ is an element of $\widetilde\Theta(G')$ of order $\rho$. This part of the proof does not use the case of the new point. The case of the new point is used only to put $h'$ in $H(g'_c)$, and with the full set $\widetilde H(g'_c)$ this step is not necessary. The rest of the proof is the count of dimensions of Hironaka. The proof also gives $\widetilde\tau(g'_c) \ge \tau_\rho(g)$ at each step where $\rho$ stays, in each case of the two points. The case of $g$ is used only for $\tau_\rho(g) = \widetilde\tau(g)$.
 
 In the example, the element $\partial_y G = z$ is in $\widetilde H(g)$ because $y \notin \Delta$. At the new point $y$ is a component of the divisor, and only $y \partial_y$ is a generator. The weak transform $z$ is not in $\widetilde\Theta(G')$, and its form is lost. No component of $\Delta$ leaves at this step. The exceptional divisor is a new component, and the new component removes a derivation.
 
