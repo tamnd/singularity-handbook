@@ -54,7 +54,7 @@ For a fixed $D$, distinct $a$ give distinct values $\delta_a$, because the $\gam
 
 Step 3: a lower bound for the length. For $N \ge 1$ we have $\mathfrak{m}^N \subseteq P_{N\mu}$. Let $\delta_1 < \delta_2 < \dots < \delta_t$ be values in $\Gamma_v$ with $0 \le \delta_j < N\mu$. Then
 $$R \supseteq P_{\delta_1} \supseteq P_{\delta_1}^+ \supseteq P_{\delta_2} \supseteq P_{\delta_2}^+ \supseteq \dots \supseteq P_{\delta_t}^+ \supseteq P_{N\mu} \supseteq \mathfrak{m}^N.$$
-The module $R/\mathfrak{m}^N$ has finite length. By Lemma 3.1.2 and Lemma 3.1.4 of Volume 1,
+The module $R/\mathfrak{m}^N$ has finite length. By Lemmas 3.1.2 and 3.1.4 of Volume 1,
 $$\ell(R/\mathfrak{m}^N) \ge \sum_{j=1}^t \dim_\kappa P_{\delta_j}/P_{\delta_j}^+.$$
 Let $M = \lfloor (N - 1)/(2k_0) \rfloor$ and $D = M$. Let $a \in \mathbb{N}^r$ with $|a| \le M$. Then $2a \cdot \gamma \le 2Mk_0\mu < N\mu$ and $2D\beta \le 2Mk_0\mu < N\mu$, so $2\delta_a < 2N\mu$ and $\delta_a < N\mu$. We apply the inequality to the distinct values $\delta_a$ with $|a| \le M$, and we use Step 2:
 $$\ell(R/\mathfrak{m}^N) \ge \binom{M + r}{r}\binom{M + s}{s} \ge \frac{M^{r+s}}{r!\,s!}.$$
