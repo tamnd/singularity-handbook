@@ -16,4 +16,6 @@ Section 3.6 is the sixth result. At a point where $\rho$ stays and both points a
 
 Section 3.7 is the seventh result. It shows that $\tau_\rho$ can go down from the first case to the first case when $p$ divides $|r| + d$, with an example for $p = 2$ in five variables. So the hypothesis of Section 3.6 is necessary, and with Section 3.5 each combination of the cases has an answer. The pair $(\rho, -\tau_\rho)$ is not a resolution invariant, and route R1 needs a different secondary invariant.
 
+Section 3.8 is the eighth result. If $\rho$ stays, the old point is in the first case and $p$ does not divide $|r| + d$, then the new point is also in the first case. So $\tau_\rho$ can go down only in two combinations of the cases, and the section gives a table of all the combinations.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.
