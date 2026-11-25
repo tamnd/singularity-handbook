@@ -16,7 +16,7 @@ over a field $k$ of characteristic $p$. They are the case $n = 3$ of the problem
 
 **Lemma 2.3.1.** The following are equivalent: (a) $X_g$ is reduced; (b) $h$ is irreducible in $R[z]$; (c) $g \notin R^p$, where $R^p = \{ a^p : a \in R \}$.
 
-Lean: none yet
+Lean: `Singularity.X_pow_add_C_tfae_threefold` (for $R = k[x, y, w]$, also with "$R[z]/(h)$ is a domain"), `Singularity.X_pow_add_C_tfae` (for each integrally closed domain $R$ of characteristic $p$)
 
 *Proof.* If $g = a^p$ with $a \in R$, then $h = (z + a)^p$, and $z + a$ is a nonzero nilpotent element of $R[z]/(h)$. So (a) implies (c). Let $K = k(x, y, w)$. If $g = b^p$ with $b \in K$, then $b$ is a root of the monic polynomial $T^p - g \in R[T]$, so $b$ is integral over $R$. Since $R$ is a unique factorization domain, it is integrally closed, and $b \in R$. So (c) gives $g \notin K^p$, and also $-g \notin K^p$, since $-1 = (-1)^p$. By Lemma 2.1.1, $h = z^p - (-g)$ is irreducible in $K[z]$. Since $h$ is monic, Gauss's lemma shows that $h$ is irreducible in $R[z]$. So (c) implies (b). Finally, $R[z]$ is a unique factorization domain, so an irreducible element generates a prime ideal, and $R[z]/(h)$ is a domain. So (b) implies (a). $\square$
 
