@@ -9,6 +9,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 6, Chapter 2 has the Lean names of tamnd/singularity-lean#123. Proposition 2.1.4 (a Galois extension of degree $p^r$ in characteristic $p$ is a tower of Artin-Schreier steps) has its Lean line. Section 2.2 has a new subsection on the induction on the degree in Steps 3 and 4 of Proposition 2.2.1: the Lean library proves it with the step of degree $p$ as an explicit hypothesis, and it does not prove this hypothesis or Proposition 2.2.1. The introduction of Volume 6 says this.
 - Volume 5, Section 2.2 has a new subsection on the case of one extension. Proposition 2.2.7 gives local uniformization over a monomial subfield when the residue field extension is separable of full degree, with a complete proof and the Lean name of tamnd/singularity-lean#121.
 
+### Added
+
+- Volume 7, Section 3.8 gives the codimension $\tau_\rho$ of the directrix of the log-Jacobian order. Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays if the new point is in the second case, and Example 3.8.3, for $p = 2$, shows that $\tau_\rho$ can go down from the second case to the first case. This is the node SG0000004Z, for the milestone S7.9 (tamnd/singularity#173).
+- Volume 9, Section 3.5 gives the same result as the fifth research report of the milestone S7, with what it does not give.
+
 ## [0.4.22] - 2026-11-25
 
 ### Added
