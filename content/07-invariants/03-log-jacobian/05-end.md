@@ -21,7 +21,7 @@ We use the notation of Section 3.1. The equation is $z^p + F$, the divisor is $E
 
 In type 0 we have $d = 0$, and in type 1 we have $d = 1$.
 
-Node: SG0000004S
+Node: SG0000004S · Lean: `Singularity.logJacobianOrder_eq_zero_iff`
 
 *Proof.* The ideal $\widetilde\Theta(G)$ has an element of order $0$ if and only if one of its generators has a constant term that is not $0$, because the elements of order at least $1$ form the ideal $(x)$, and an ideal is in $(x)$ if and only if each of its generators is in $(x)$. The constant terms of the generators are
 $$(r_i G + x_i \partial_i G)(0) = r_i G(0) \ (i \in \Delta), \qquad (\partial_j G)(0) \ (j \notin \Delta).$$
@@ -63,7 +63,7 @@ So the points with $\rho = 0$ are not an obstacle. Two questions remain. The fir
 
 ### The Lean proof
 
-The Lean library proves Proposition 3.5.1 for polynomials over a field of characteristic $p$. It does not prove Theorem 3.5.3, because the change of the coordinates needs the ring $K[[x]]$ and the roots of units in it.
+The Lean library proves Proposition 3.5.1 for polynomials over a field of characteristic $p$, in the file `Singularity/Invariant/LogJacobianEndCase.lean`. The proof follows the proof above. First, `Singularity.logJacobianOrder_eq_zero_iff_exists` says that $\rho = 0$ if and only if some generator of $\widetilde\Theta(G)$ has a constant term that is not $0$, and this holds for each $F$. Then the two types follow. The theorem `Singularity.logJacobianOrder_eq_zero_iff_ord` gives the form with $d$. The Lean statements show which hypotheses each step needs. Only the direction to type 0 uses that $F$ is clean (`Singularity.exists_not_dvd_divisorExponent_of_constantCoeff_ne_zero`). The converses `Singularity.logJacobianOrder_eq_zero_of_type_zero` and `Singularity.logJacobianOrder_eq_zero_of_type_one` hold for each $F$, and so does `Singularity.exists_constantCoeff_pderiv_ne_zero_of_constantCoeff_eq_zero`, the direction to type 1. The hypothesis $F \ne 0$ is not necessary: for $F = 0$ we have $\rho = \infty$, and the two sides of the equivalence are false. The library does not prove Theorem 3.5.3, because the change of the coordinates needs the ring $K[[x]]$ and the roots of units in it.
 
 ### Notes and references
 

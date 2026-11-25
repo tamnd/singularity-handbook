@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 9, Section 3.2, the second report of the milestone S7: the end case of the log-Jacobian route. At a point with $\rho = 0$ the equation is binomial after a change of the formal coordinates. The section gives the Lean proof of the first part and what the result does not give.
+
+### Changed
+
+- The introduction of Volume 9, Chapter 3 now gives Section 3.2.
+- Volume 7, Proposition 3.5.1 now gives the Lean names of tamnd/singularity-lean#100, and the subsection on the Lean proof says which steps use that $F$ is clean.
+- `EDITION` now pins the map at b7a15af, which has the Lean field of SG0000004S from tamnd/singularity#156.
+
 ## [0.4.17] - 2026-11-25
 
 ### Changed
