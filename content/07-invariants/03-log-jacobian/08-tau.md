@@ -102,7 +102,7 @@ Take the $y$-chart $\pi(x) = x y$, $\pi(y) = y$, $\pi(z) = y z$ at its origin, w
 $$x, \qquad r'_y G' + y \partial_y G' = y z, \qquad r'_z G' + z \partial_z G' = x.$$
 So $\rho' = 1 = \rho$, and $\rho$ stays. Each generator is in $\widetilde\Theta_0(G')$, so $\sigma' = 1$ and $g'_c$ is in the first case. The forms of order $1$ are the multiples of $x$, so $\widetilde T(g'_c) = T_\rho(g'_c)$ is the plane $w_x = 0$. Thus $\tau_\rho(g'_c) = 1 = \tau_\rho(g)$, but $\widetilde\tau(g'_c) = 1 < 2 = \widetilde\tau(g)$.
 
-Node: SG00000058 · Lean: `Singularity.fullDirectrixExample_finrank`
+Node: SG00000058 · Lean: `Singularity.fullDirectrixExample_codim`
 
 In the example, the element $\partial_y G = z$ of $\widetilde H(g)$ has the weak transform $z$, and $z$ is not in the ideal $(x, y z) = \widetilde\Theta(G')$. The derivation $\partial_y$ is in the list of generators at the old point, because $y \notin \Delta$. At the new point $y \in \Delta'$, and only $y \partial_y$ is in the list. Note that $v = e_y$ is in $\widetilde T(g)$. So the drop does not come from the choice of the center, but from the change of the divisor.
 

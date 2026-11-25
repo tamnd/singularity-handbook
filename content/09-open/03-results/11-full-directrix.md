@@ -24,7 +24,7 @@ Node: SG00000057 · Lean: `Singularity.logJacobianFullDirectrixCodim_le_cleanPar
 
 **Example 3.11.2.** Let $p = 2$, $\Delta = \{x, z\}$ and $g = y z^2 + x z$. Then $g$ is in the first case, with $\tau_\rho(g) = 1$ and $\widetilde\tau(g) = 2$. At the origin of the $y$-chart, $g' = g$, $\Delta' = \{x, y, z\}$, $\rho$ stays, and the new point is in the first case with $\tau_\rho(g'_c) = 1$ and $\widetilde\tau(g'_c) = 1$.
 
-Node: SG00000058 · Lean: `Singularity.fullDirectrixExample_finrank`
+Node: SG00000058 · Lean: `Singularity.fullDirectrixExample_codim`
 
 ### The proof in short
 
