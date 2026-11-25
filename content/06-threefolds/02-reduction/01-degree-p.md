@@ -53,9 +53,11 @@ because $y^p - g^{p-1} y = g^p (\theta^p - \theta)$. In Lean this identity is `S
 
 **Proposition 2.1.4.** Let $L/K$ be a finite Galois extension whose Galois group $P$ has order $p^r$. Then there is a tower $K = L_0 \subset L_1 \subset \dots \subset L_r = L$ in which each $L_i/L_{i-1}$ is an Artin-Schreier extension of degree $p$.
 
-Lean: none yet
+Lean: `Singularity.exists_artinSchreier_tower`, `Singularity.exists_isGalois_finrank_eq_prime`
 
 *Proof.* We first show that $P$ has a chain of subgroups $1 = P_r \subset P_{r-1} \subset \dots \subset P_0 = P$ with $P_i$ normal in $P_{i-1}$ and $[P_{i-1} : P_i] = p$. We argue by induction on $r$. For $r = 0$ there is nothing to prove. For $r \ge 1$, the center $C$ of $P$ is nontrivial by the class equation [Lan02, Chapter I]. Choose $g \in C$ of order $p$; it exists, since a power of each element of $C$ different from 1 has order $p$. The subgroup $\langle g \rangle$ is normal in $P$, because $g$ is central. By induction, $P/\langle g \rangle$ has such a chain, and its preimage in $P$, followed by $\langle g \rangle \supset 1$, is a chain for $P$. Now let $L_i = L^{P_i}$. Then $L_i \subset L_{i+1}$. The extension $L/L_i$ is Galois with group $P_i$, and $P_{i+1}$ is normal in $P_i$, so by Galois theory $L_{i+1}/L_i$ is Galois with group $P_i/P_{i+1}$ of order $p$. Theorem 2.1.3, Part 2, applied to $L_{i+1}/L_i$, shows that it is an Artin-Schreier extension. Since $P_0 = P$ and $P_r = 1$, we have $L_0 = K$ and $L_r = L$. $\square$
+
+The Lean proof builds the tower from the bottom, by induction on $r$. For $r \ge 1$, the theorem of Sylow gives a subgroup $H$ of $P$ of order $p^{r-1}$. Its index $p$ is the smallest prime factor of $|P|$, so $H$ is normal in $P$. The fixed field $L_1 = L^H$ is then Galois over $K$ of degree $p$, and $L/L_1$ is Galois of degree $p^{r-1}$. This is `Singularity.exists_isGalois_finrank_eq_prime`. Theorem 2.1.3, Part 2, gives the Artin-Schreier generator of $L_1/K$, and the induction for $L/L_1$ gives the other steps.
 
 ### Valuations on steps of degree p
 
