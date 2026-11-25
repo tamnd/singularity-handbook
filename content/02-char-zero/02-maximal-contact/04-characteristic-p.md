@@ -14,7 +14,7 @@ The proofs of Sections 2.1 to 2.3 use the characteristic in three places.
 2. Proposition 2.1.7 divides by $\beta!$, with $|\beta| < r$. This gives $I \subseteq I_Z^m$ for each smooth $Z \subseteq \operatorname{cosupp}(I, m)$. In positive characteristic the same statement holds by the theorem of Zariski-Nagata, so this use is not essential.
 3. Lemma 2.1.1 uses that the residue fields are separable over $k$. This holds also over a perfect field of positive characteristic.
 
-The first use is the essential one. The chart formulas of Lemma 2.2.6 hold in every characteristic, and so does Theorem 2.2.7. But in characteristic $p$ the derivative ideal does not compute the order, and the inclusion of Theorem 2.3.3 gives nothing when $MC(I)$ has no element of order 1.
+The first use is the essential one. The chart formulas of Lemma 2.2.6 hold in every characteristic. Theorem 2.2.7 holds over a perfect field of any characteristic, with the theorem of Zariski-Nagata in place of Proposition 2.1.7, because its proof needs only the inequality $\operatorname{ord}_x D^j(I) \ge \operatorname{ord}_x I - j$, and this inequality holds in every characteristic. But in characteristic $p$ the derivative ideal does not compute the order, and the inclusion of Theorem 2.3.3 gives nothing when $MC(I)$ has no element of order 1.
 
 ### Small orders
 

@@ -147,7 +147,7 @@ Node: SG00000042 · Lean: none yet
 
 *Proof.* Apply (M$_n$) with $m = 1$. A blowup sequence of order at least 1 is a sequence whose centers lie in $V(I_i)$, and $\operatorname{cosupp}(I_r, 1) = \emptyset$ means $I_r = \mathcal{O}_{X_r}$. Since $I_{i+1} = \mathcal{O}(F_i) \cdot \pi_i^* I_i$, we get $\Pi^* I = \mathcal{O}(-G) \cdot I_r = \mathcal{O}(-G)$, with $G$ the sum of the pullbacks to $X_r$ of the exceptional divisors $F_i$. By induction, $\Pi_i^* I = \mathcal{O}(-G_i) \cdot I_i \subseteq I_i$, where $\Pi_i \colon X_i \to X$, so $Z_i \subseteq V(I_i) \subseteq \Pi_i^{-1}(V(I))$. $\square$
 
-With (M$_0$) and Theorems 3.3.6 and 3.3.10, induction on $n$ gives (M$_n$) for all $n$. So Theorem 3.3.11 proves Theorem 1.1.6, with $E = \emptyset$, and Theorem 1.1.7, after we order the index set of $E$ in any way. The functorial forms of the steps give Theorem 1.1.8 [Kol07, Chapter 3]. For an unordered divisor $E$, Kollár first blows up the intersections of the components of $E$ to make them disjoint; these centers need not lie over $V(I)$.
+With (M$_0$) and Theorems 3.3.6 and 3.3.10, induction on $n$ gives (M$_n$) for all $n$. Theorem 3.3.6 needs (M$_{n-1}$) in the functorial form, and our proof of Theorem 3.3.10 gives only existence, so this induction uses the functorial form of Theorem 3.3.10 from [Kol07, Chapter 3]. So Theorem 3.3.11 proves Theorem 1.1.6, with $E = \emptyset$, and Theorem 1.1.7, after we order the index set of $E$ in any way. The functorial forms of the steps give Theorem 1.1.8 [Kol07, Chapter 3]. For an unordered divisor $E$, Kollár first blows up the intersections of the components of $E$ to make them disjoint; these centers need not lie over $V(I)$.
 
 ### The map of the induction
 
@@ -157,7 +157,7 @@ The proof has the following structure. Each arrow is a theorem of this volume; t
 2. (M$_{n-1}$) gives Lemma 3.3.4, by the going-up theorem (Theorem 3.2.4, which rests on the restriction theorem, Theorem 3.1.3, and on Theorem 2.2.7) and Lemma 3.3.3.
 3. Lemma 3.3.4 and maximal contact (Theorem 2.3.3) give Theorem 3.3.5, with one cited fact on simple normal crossings in Step A.
 4. Theorem 3.3.5, tuning (Remark 3.2.11, cited), uniqueness of maximal contact (Corollary 3.2.10, with the étale form cited) and globalization (cited) give (O$_n$), Theorem 3.3.6.
-5. (O$_n$), Lemma 3.3.7 and Theorem 3.3.8 give (M$_n$), Theorem 3.3.10.
+5. (O$_n$), Lemma 3.3.7 and Theorem 3.3.8 give (M$_n$), Theorem 3.3.10. Step 4 in dimension $n + 1$ needs the functorial form of (M$_n$), which is cited.
 6. (M$_n$) with the mark 1 gives principalization, Theorem 3.3.11, and so Theorems 1.1.6 and 1.1.7; Theorem 1.2.1 then gives resolution.
 
 The characteristic is used in step 2, through Lemma 2.1.4 and the division by $k!$ in Theorem 3.1.3, in step 3, through Theorem 2.3.3, and in step 4, through Proposition 3.2.9. Section 2.4 explains why each of these fails in characteristic $p$.
@@ -172,4 +172,4 @@ Node: SG0000001Q · Lean: `Singularity.weightedBlowup_invariant_lt` (planned, no
 
 ### Notes and references
 
-The structure of the induction, Lemma 3.3.4, Theorems 3.3.5, 3.3.6 and 3.3.10, and Example 3.3.9 are from [Kol07, Chapter 3], Sections "Plan of proof", "Order reduction for ideals" and "Order reduction for marked ideals". The monomial case, Theorem 3.3.8, follows Kollár's Step 3 with the coefficients attached to the components. Włodarczyk's proof [Wlo05] has the same shape, with a homogenized coefficient ideal in place of $W_s(I)$. The Lean library does not state principalization; Chapter 4 explains what it states instead (node SG0000001P).
+The structure of the induction, Lemma 3.3.4, Theorems 3.3.5, 3.3.6 and 3.3.10, and Example 3.3.9 are from [Kol07, Chapter 3], Sections "Plan of the proof", "Order reduction for ideals" and "Order reduction for marked ideals". The monomial case, Theorem 3.3.8, follows Kollár's Step 3 with the coefficients attached to the components. Włodarczyk's proof [Wlo05] has the same shape, with a homogenized coefficient ideal in place of $W_s(I)$. The Lean library does not state principalization; Chapter 4 explains what it states instead (node SG0000001P).
