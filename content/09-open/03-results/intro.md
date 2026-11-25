@@ -10,4 +10,6 @@ Section 3.3 is the third result. It compares the residual order $\rho$ of the lo
 
 Section 3.4 is the fourth result. It finds the points where the residual order $\rho$ of the log-Jacobian ideal stays under a point blowup. They lie in the projective space of a linear subspace, the analogue for $\rho$ of the directrix of Hironaka. If this subspace is $0$, then $\rho$ goes down at each point after one blowup. The result does not say that $\rho$ goes down in general, and this is the open step of route R1.
 
+Section 3.5 is the fifth result. It studies the codimension $\tau_\rho$ of the subspace of Section 3.4. At a point where $\rho$ stays, $\tau_\rho$ does not go down if the new point is in the second case of Section 3.4. An example for $p = 2$ shows that $\tau_\rho$ can go down when the old point is in the second case and the new point is in the first case.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.
