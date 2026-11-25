@@ -11,7 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Added
 
-- Volume 7, Section 3.8 gives the codimension $\tau_\rho$ of the directrix of the log-Jacobian order. Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays if the new point is in the second case, and Example 3.8.3, for $p = 2$, shows that $\tau_\rho$ can go down from the second case to the first case. This is the node SG0000004Z, for the milestone S7.9 (tamnd/singularity#173).
+- Volume 7, Section 3.8 gives the codimension $\tau_\rho$ of the directrix of the log-Jacobian order. Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays if the new point is in the second case, and Example 3.8.3, for $p = 2$, shows that $\tau_\rho$ can go down from the second case to the first case. The Lean names are from tamnd/singularity-lean#122. This is the node SG0000004Z, for the milestone S7.9 (tamnd/singularity#173).
 - Volume 9, Section 3.5 gives the same result as the fifth research report of the milestone S7, with what it does not give.
 
 ## [0.4.22] - 2026-11-25

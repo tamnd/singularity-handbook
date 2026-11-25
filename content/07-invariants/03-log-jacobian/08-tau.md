@@ -18,7 +18,7 @@ We use the setting and the notation of Section 3.7. So $\pi = \pi_{1,t}$ is the 
 $$T_\rho(g) = \bigcap_{h \in H(g)} T(\operatorname{in}(h)),$$
 and $\tau_\rho(g) = n - \dim T_\rho(g)$ is its codimension.
 
-Node: SG0000004Z
+Node: SG0000004Z · Lean: `Singularity.logJacobianDirectrix`
 
 This is the subspace of Section 3.7, and Theorem 3.7.1 says that $v \in T_\rho(g)$ when $\rho' = \rho$. The set $H(g)$ is not empty, because $\widetilde\Theta_0(G)$ has order $\rho$ in the first case and $\widetilde\Theta(G)$ has order $\rho$ in the second case. If $\rho = 0$, then $H(g)$ contains a unit, its initial form is a nonzero constant, and $T_\rho(g) = K^n$.
 
@@ -28,7 +28,7 @@ To compute $T_\rho(g)$ we need only finitely many elements. Let $h_1, \dots, h_m
 
 **Proposition 3.8.2.** Assume that $\rho' = \rho$ and that $g'_c$ is in the second case. Then $\tau_\rho(g'_c) \ge \tau_\rho(g)$.
 
-Node: SG0000004Z
+Node: SG0000004Z · Lean: `Singularity.logJacobianDirectrixCodim_le_cleanPart` (for polynomials)
 
 *Proof.* We write $y = (x_2, \dots, x_n)$, so $x = (x_1, y)$, and $t = (t_2, \dots, t_n)$. Let $h \in H(g)$ and let $h' = x_1^{-\rho} \pi(h)$ be its weak transform in the chart. We show three facts about $h'$.
 
@@ -66,7 +66,7 @@ which is clean, and $\Delta' = \{1\}$. Here $r' = (1, 0, 0)$ and $G' = x y z^2 +
 $$r'_1 G' + x \partial_x G' = y^2 z + z^2, \qquad \partial_y G' = x z^2, \qquad \partial_z G' = y^2,$$
 with the orders $2$, $3$ and $2$. So $\rho' = 2 = \rho$, and $\rho$ stays. But the first generator is also in $\widetilde\Theta_0(G')$, so $\sigma' = 2$, and $g'_c$ is in the first case. The other generators of $\widetilde\Theta_0(G')$ are the elements $x_k \partial_y G'$ and $x_k \partial_z G'$, of order at least $3$. So each element of $H(g'_c)$ has an initial form $c z^2$ with $c \ne 0$, and $T_\rho(g'_c) = \{w_3 = 0\}$. So $\tau_\rho(g'_c) = 1 < 2 = \tau_\rho(g)$.
 
-Node: SG0000004Z
+Node: SG0000004Z · Lean: `Singularity.tauRhoExample_finrank`
 
 In the example, the weak transform of $\partial_z G = y^2$ is $y^2 = \partial_z G'$. It is an element of $\widetilde\Theta(G')$ of order $\rho$, but it is not in $\widetilde\Theta_0(G')$, so it is not in $H(g'_c)$. This is the step of the proof that fails. The old point is in the second case and the new point is in the first case.
 
@@ -74,7 +74,9 @@ A random test checked the other combinations of the cases. It used random clean 
 
 ### The Lean proof
 
-The Lean proof is not yet merged.
+The Lean library proves Proposition 3.8.2 and Example 3.8.3 for polynomials over a field of characteristic $p$, with the standard axioms only, in the file `Singularity/Invariant/LogJacobianDirectrix.lean`. As in Section 3.7, the Lean definitions use the element $\psi = x^r h$ of $\Theta_0(g)$ or of $\Theta(g)$ in the place of $h$. The ideal of the case is `Singularity.logJacobianCaseIdeal`. It is $\Theta_0(g)$ if $\operatorname{ord} \Theta_0(g) = |r| + \rho$ and $\Theta(g)$ in the other case. The subspace $T_\rho(g)$ is `Singularity.logJacobianDirectrix`, and $\tau_\rho(g)$ is `Singularity.logJacobianDirectrixCodim`.
+
+The remark on the generators after Definition 3.8.1 is `Singularity.homogeneousComponent_mem_span_of_mem_span`, with the form for directrices `Singularity.le_directrix_homogeneousComponent_of_mem_span`. The count of dimensions at the end of the proof of Proposition 3.8.2 is a separate lemma, `Singularity.finrank_iInf_directrix_pointChart_le`, for any family of polynomials of order at least $m$ whose weak transforms have order at least $m$. Proposition 3.8.2 is `Singularity.finrank_logJacobianDirectrix_cleanPart_le` in the form $\dim T_\rho(g'_c) \le \dim T_\rho(g)$, and `Singularity.logJacobianDirectrixCodim_le_cleanPart` in the form with $\tau_\rho$. In Example 3.8.3, `Singularity.tauRhoExample_cases` gives the two cases, and `Singularity.tauRhoExample_finrank` gives $\rho = \rho' = 2$, $\dim T_\rho(g) = 1$ and $\dim T_\rho(g'_c) = 2$.
 
 ### Notes and references
 

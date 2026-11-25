@@ -23,7 +23,7 @@ We use the setting of Volume 7, Section 3.8. The point is in the first case if $
 1. If the new point is in the second case, then $\tau_\rho(g'_c) \ge \tau_\rho(g)$.
 2. If the old point is in the second case and the new point is in the first case, then $\tau_\rho(g'_c) < \tau_\rho(g)$ can occur. For $p = 2$, $g = x y z^2 + y^2 z + x z^2$ and $E = \emptyset$, the value of $\tau_\rho$ goes from $2$ to $1$ at the origin of the $x$-chart, and $\rho = 2$ stays.
 
-Node: SG0000004Z
+Node: SG0000004Z · Lean: `Singularity.logJacobianDirectrixCodim_le_cleanPart` (part 1, for polynomials)
 
 ### The proof
 
@@ -33,7 +33,7 @@ Part 2. Volume 7, Example 3.8.3, computes the generators of the two ideals. At t
 
 ### The Lean proof
 
-The Lean proof is not yet merged.
+The Lean library proves both parts for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianDirectrix.lean`. Part 1 is `Singularity.logJacobianDirectrixCodim_le_cleanPart`, and part 2 is `Singularity.tauRhoExample_cases` and `Singularity.tauRhoExample_finrank`.
 
 ### What the result does not give
 
@@ -43,7 +43,7 @@ The Lean proof is not yet merged.
 
 ### Status
 
-The map gives SG0000004Z the status of a planned node. An outside expert has not yet read the result, and the milestone S7 asks for this. The proof uses only the theorem of Section 3.4 and the method of Hironaka for $\tau$. We do not know a published statement of it.
+The map gives SG0000004Z the status of a node with a Lean proof of both parts. An outside expert has not yet read the result, and the milestone S7 asks for this. The proof uses only the theorem of Section 3.4 and the method of Hironaka for $\tau$. We do not know a published statement of it.
 
 ### Notes and references
 
