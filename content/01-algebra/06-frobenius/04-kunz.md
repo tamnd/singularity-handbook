@@ -66,7 +66,7 @@ Lean: none yet
 
 **Theorem 6.4.7 (Kunz).** Let $R$ be a Noetherian ring of characteristic $p$. Then $R$ is regular if and only if the Frobenius of $R$ is flat. In particular, a Noetherian local ring of characteristic $p$ is regular if and only if its Frobenius is flat.
 
-Node: SG0000000N · Lean: none yet
+Node: SG0000000N · Lean: `Singularity.isRegularLocalRing_iff_flat_frobenius` (planned, no Lean statement yet)
 
 *Proof that a regular ring has a flat Frobenius.* By Lemma 6.4.2, it is sufficient to treat the local rings $R_\mathfrak{p}$, and they are regular local rings. So let $(R, \mathfrak{m}, \kappa)$ be a regular local ring of characteristic $p$ and dimension $d$, and let $\iota : R \to \hat{R}$ be its completion. By Theorem 4.3.3, $\hat{R}$ is a complete regular local ring of dimension $d$. It contains the field $\mathbb{F}_p$, so by Theorem 4.4.7, $\hat{R} \cong \kappa[[x_1, \dots, x_d]]$. By Proposition 6.4.5, the Frobenius $F_{\hat{R}}$ is flat.
 

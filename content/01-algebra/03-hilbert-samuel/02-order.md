@@ -51,7 +51,7 @@ Statement 4 is an inequality. Let $R = k[x, y]/(xy)$ and $I = (x, y)$. Then $\op
 
 Node: SG0000002F · Lean: `Singularity.Algebra.order_eq_top_iff`
 
-*Proof.* By Proposition 3.2.3, $\operatorname{ord}_I(0) = \infty$. Conversely, if $\operatorname{ord}_I(f) = \infty$, then by Lemma 3.2.2 the element $f$ is in $\bigcap_n I^n$. Since $I \subseteq \mathfrak{m}$, this intersection is in $\bigcap_n \mathfrak{m}^n$, and $\bigcap_n \mathfrak{m}^n = 0$ by the intersection theorem of Krull [AM69, Corollary 10.20]. $\square$
+*Proof.* By Proposition 3.2.3, $\operatorname{ord}_I(0) = \infty$. Conversely, if $\operatorname{ord}_I(f) = \infty$, then by Lemma 3.2.2 the element $f$ is in $\bigcap_n I^n$. Since $I \subseteq \mathfrak{m}$, this intersection is in $\bigcap_n \mathfrak{m}^n$, and $\bigcap_n \mathfrak{m}^n = 0$ by the intersection theorem of Krull (Corollary 4.1.8). $\square$
 
 The theorem is false without the hypothesis that $R$ is Noetherian. Let $R$ be the ring of germs at $0$ of smooth functions $\mathbb{R} \to \mathbb{R}$, with the maximal ideal $\mathfrak{m}$ of the germs that vanish at $0$. The germ of $e^{-1/x^2}$ (extended by $0$ at $0$) is not $0$, but it is in each $\mathfrak{m}^n$.
 

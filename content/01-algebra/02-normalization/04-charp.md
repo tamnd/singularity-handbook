@@ -95,7 +95,7 @@ Node: SG0000002A · Lean: `Singularity.Curves.isDedekindDomain_integralClosure`
 
 *Proof.* The proof of Corollary 2.3.6 applies without change, with Theorem 2.4.7 in place of Corollary 2.3.5. $\square$
 
-Thus the affine part of the resolution of curves holds over each field. This is the first result of the project that is true in characteristic $p$ with no extra hypothesis. Section 2.5 glues the affine pieces and proves that the normalization of each integral curve is a resolution. In higher dimension, the normalization of a surface is not regular in general, and Volume 4 needs more tools.
+Thus the affine part of the resolution of curves holds over each field. This result is true in characteristic $p$ with no extra hypothesis on the field. Section 2.5 glues the affine pieces and proves that the normalization of each integral curve is a resolution. In higher dimension, the normalization of a surface is not regular in general, and Volume 4 needs more tools.
 
 ### The Lean proof
 

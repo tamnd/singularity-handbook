@@ -54,7 +54,7 @@ Lean: `Singularity.Algebra.exists_ne_zero_basicOpen_subset_regularLocus_of_finit
 
 *Proof.* Let $x_1, \dots, x_m$ generate $D$ over $k$. Let $\Omega$ be an algebraic closure of the fraction field of $D$, and let $P \subseteq \Omega$ be the perfect closure of $k$, the set of the elements $a$ with $a^{p^n} \in k$ for some $n$. Let $F = P(x_1, \dots, x_m) \subseteq \Omega$.
 
-Step 1. The field $F$ is finitely generated over the perfect field $P$. So it has a separating transcendence basis $s_1, \dots, s_t$ over $P$ [Mat, Theorem 26.2]: the $s_i$ are algebraically independent over $P$, and each $x_j$ is separable over $P(s_1, \dots, s_t)$.
+Step 1. The field $F$ is finitely generated over the perfect field $P$. So it has a separating transcendence basis $s_1, \dots, s_t$ over $P$ [Mat, Section 26]: the $s_i$ are algebraically independent over $P$, and each $x_j$ is separable over $P(s_1, \dots, s_t)$.
 
 Step 2. We go down to a finite extension of $k$. Each $s_i$ is a quotient of two polynomials in the $x_j$ with coefficients in $P$. Each $x_j$ has a minimal polynomial over $P(s_1, \dots, s_t)$, and its coefficients are quotients of polynomials in the $s_i$ with coefficients in $P$. Let $E \subseteq P$ be the finite set of all these coefficients, and let $L = k(E)$. Each element of $E$ is algebraic over $k$, so $L$ is a finite extension of $k$. Now $s_i \in L(x_1, \dots, x_m)$, and the $s_i$ are algebraically independent over $L$, because they are independent over $P \supseteq L$. The minimal polynomial of $x_j$ over $P(s)$ has coefficients in $L(s)$, and it is separable. So $x_j$ is separable over $L(s)$. Thus $L(x_1, \dots, x_m)$ is a finite separable extension of $L(s_1, \dots, s_t)$, and it is separably generated over $L$.
 
