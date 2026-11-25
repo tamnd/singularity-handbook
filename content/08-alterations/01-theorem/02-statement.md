@@ -19,7 +19,7 @@ We state the theorem of de Jong over a field and over a trait. Then we prove the
 
 If $k$ is perfect, then $\varphi_1$ can be chosen generically étale.
 
-Node: SG0000001K · Lean: `Singularity.exists_regular_alteration` (planned, no Lean statement yet)
+Node: SG0000001K · Lean statement: `Singularity.deJongAlteration` (no proof)
 
 This is [dJ96, Theorem 4.1]. Here variety means an integral variety, as in Section 1.1. The proof of de Jong gives more [dJ96, Remark 4.2]. The morphism $\bar X_1 \to \operatorname{Spec} k$ factors through $\operatorname{Spec} k_1$ for a finite extension $k_1$ of $k$, such that $\bar X_1$ is geometrically irreducible and smooth over $k_1$. If $k$ is perfect, then $\bar X_1$ is smooth over $k$.
 
@@ -27,7 +27,9 @@ The theorem has three parts. The source $X_1$ is regular, since it is open in th
 
 **Corollary 1.2.2.** Let $X$ be a variety over a field $k$ in the sense of Volume 0, Definition 2.1.4, so reduced, separated and of finite type, but possibly reducible. Then there are a regular scheme $Y$, quasi-projective over $k$, and a proper surjective morphism $Y \to X$ that is generically finite: each irreducible component of $Y$ maps onto an irreducible component of $X$ with a finite extension of function fields.
 
-Node: SG0000001K · Lean: `Singularity.exists_regular_alteration` (planned, no Lean statement yet)
+Node: SG0000001K · Lean statement: `Singularity.deJongAlteration` (no proof)
+
+Lean: `Singularity.regularAlterationInDim_of_deJongAlteration` (for an integral variety, from the Lean statement of Theorem 1.2.1; with no quasi-projective part)
 
 *Proof.* Let $X^{(1)}, \dots, X^{(m)}$ be the irreducible components of $X$ with their reduced structure. Each is an integral variety. If $X^{(i)}$ is not empty, then $\emptyset$ is a proper closed subset of $X^{(i)}$, and Theorem 1.2.1 with $Z = \emptyset$ gives an alteration $\varphi_i \colon Y_i \to X^{(i)}$ with $Y_i$ open in a regular projective variety. So $Y_i$ is regular and quasi-projective. Let $Y = \bigsqcup_i Y_i$ with the morphism to $X$ given by $\varphi_i$ followed by the closed immersion $X^{(i)} \to X$. A finite disjoint union of regular schemes is regular. The morphism is proper, because each $\varphi_i$ is proper and a closed immersion is proper. It is surjective, because each $\varphi_i$ is surjective and the $X^{(i)}$ cover $X$. The extensions of the function fields are finite by Lemma 1.1.2. $\square$
 
@@ -64,4 +66,4 @@ This is [dJ96, Theorem 6.5]. It is the alteration form of the semistable reducti
 
 The theorem is the main theorem of [dJ96]. De Jong writes that the methods are elementary, except for the use of the moduli of stable pointed curves. The survey in the introduction of [dJ96] lists applications to cohomology: the existence of smooth compactifications up to alteration is enough for many results on étale cohomology and on the weights of Deligne. The book [Liu] gives the theory of curves over a field and over a Dedekind scheme that we use in Chapter 2.
 
-In Lean, the node SG0000001K has the planned name `Singularity.exists_regular_alteration`. It is not in the library. Chapter 4 proposes the form of the statement and of the hypothesis on the moduli of stable curves.
+In Lean, the file `Singularity/Alteration/Statement.lean` states Theorem 1.2.1 as the proposition `Singularity.deJongAlteration`. It is a definition, not a theorem, and the library does not prove it. The Lean statement is weaker than Theorem 1.2.1 in two points. It asks that $\bar X_1$ is proper over $k$, because Mathlib has no projective morphisms. It leaves out the generically étale part. The file also proves that the statement gives a regular alteration of each integral variety (`Singularity.regularAlterationInDim_of_deJongAlteration`), and that resolution of singularities in dimension $n$ gives the same in dimension $n$ (`Singularity.regularAlterationInDim_of_resolutionInDim`). The library has no Lean form of the hypothesis on the moduli of stable curves, because Mathlib has no curves with ordinary double points. Chapter 4 proposes the form of this hypothesis.

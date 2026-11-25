@@ -14,7 +14,7 @@ The theorems of this volume are on route R6 of the map, the route through altera
 
 | Node | Content | Section | Lean |
 | --- | --- | --- | --- |
-| SG0000001K | de Jong, regular alterations | Theorem 1.2.1 | `Singularity.exists_regular_alteration`, planned, no statement yet |
+| SG0000001K | de Jong, regular alterations | Theorem 1.2.1 | `Singularity.deJongAlteration`, a statement with no proof |
 | SG0000001M | Gabber, degree prime to $\ell$ | Corollary 3.2.5 | `Singularity.exists_regular_alteration_coprime`, planned, no statement yet |
 | SG0000001N | Temkin, degree a power of $p$ | Corollary 3.3.3 | `Singularity.exists_regular_p_alteration`, planned, no statement yet |
 | SG0000001G | inseparable local uniformization | Section 3.3 | `Singularity.localUniformization_inseparable`, statement only |
@@ -37,7 +37,7 @@ Q-08 asks for a first form of the theorem of de Jong that takes the moduli of st
 
 We propose Hypothesis 2.2.5 as the named hypothesis of the first Lean statement. It needs the definitions of a family of semistable and of stable pointed curves, but no moduli functor, no level structure and no representability. It is also the exact point where Chapter 2 uses the moduli, in Step 6 of Section 2.3. The statement with Hypothesis 2.2.4 can come later, together with a Lean proof of Proposition 2.2.6. A formalization of [DM69] itself is a large separate project.
 
-The proposed Lean statement has the form "Hypothesis 2.2.5 implies Theorem 1.2.1". Its conclusion uses `Singularity.IsRegularScheme` and `Singularity.IsSncDivisor`, which are in the library. It also needs a definition of an alteration of an integral scheme, Definition 1.1.1, which is not in the library. The name of the hypothesis and the name of the definition are not fixed. The node SG0000001K plans the name `Singularity.exists_regular_alteration` for the theorem.
+The proposed Lean statement has the form "Hypothesis 2.2.5 implies Theorem 1.2.1". Its conclusion uses `Singularity.IsRegularScheme` and `Singularity.IsSncDivisor`, which are in the library. It also uses the definition of an alteration of an integral scheme, Definition 1.1.1, which is `Singularity.IsAlteration` in the library. The library states Theorem 1.2.1 with no hypothesis as `Singularity.deJongAlteration`, with "proper" in place of "projective" and with no generically étale part, and it does not prove it. The library does not state Hypothesis 2.2.5, because Mathlib has no semistable curves and no projective morphisms. The name of the hypothesis is not fixed.
 
 ### The pieces that the proof needs
 
