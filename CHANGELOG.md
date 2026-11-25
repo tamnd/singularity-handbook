@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- The introduction of Volume 3 now says that Chapter 3 proves parts 1 to 3 of the theorem of MacLane-Vaquié, and part 4 for discrete values of rank 1 and for nonzero support. It cites part 4 only for support 0 with values that are not discrete.
+
 ### Added
 
 - Volume 9, Section 3.2, the second report of the milestone S7: the end case of the log-Jacobian route. At a point with $\rho = 0$ the equation is binomial after a change of the formal coordinates. The section gives the Lean proof of the first part and what the result does not give.
