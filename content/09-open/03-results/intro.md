@@ -18,4 +18,6 @@ Section 3.7 is the seventh result. It shows that $\tau_\rho$ can go down from th
 
 Section 3.8 is the eighth result. If $\rho$ stays, the old point is in the first case and $p$ does not divide $|r| + d$, then the new point is also in the first case. So $\tau_\rho$ can go down only in two combinations of the cases, and the section gives a table of all the combinations.
 
+Section 3.9 is the ninth result. It shows with an example for $p = 3$ that the hypothesis on $|r| + d$ in Section 3.8 is necessary. If $p$ divides $|r| + d$, the new point can be in the second case. In the example and in all the steps of a random test, a component of the divisor leaves at such a step.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.
