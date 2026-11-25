@@ -4,6 +4,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.14] - 2026-11-25
+
 ### Changed
 
 - Volume 6 has the new Section 4.3, which reports the experiment E4 of the lab. It computes the invariants $\delta$, $\epsilon$, $\omega$ and $\iota$ of Cossart-Piltant on the random point blowups of the lab for $n = 3$ and $n = 4$ and $p = 2, 3, 5$. No step has $\omega$ or $\iota$ going up, and each increase of $\epsilon$ has the form of Theorem 3.2.6. The section proves the test for $\omega$ (Lemma 4.3.1), derives the point center case of Theorem 3.2.6 (Corollary 4.3.2), checks one step for $n = 4$ by hand (Example 4.3.3) and lists what the data does not show. The introductions of the volume and of Chapter 4 mention it.
