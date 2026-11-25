@@ -82,7 +82,7 @@ Apply the lemma at each point of $Y$ to the local equations of the components th
 
 ### Semistable schemes over a trait
 
-A *trait* is the spectrum $S$ of a discrete valuation ring $R$, with generic point $\eta$, closed point $s$ and a uniformizer $\pi$. An $S$-variety is an integral separated scheme of finite type and flat over $S$ [dJ96, 2.15]. Its special fibre $X_s = V(\pi)$ is a principal divisor on $X$.
+A *trait* is the spectrum $S$ of a complete discrete valuation ring $R$ [dJ96, 2.12], with generic point $\eta$, closed point $s$ and a uniformizer $\pi$. An $S$-variety is an integral separated scheme of finite type and flat over $S$ [dJ96, 2.15]. Its special fibre $X_s = V(\pi)$ is a principal divisor on $X$.
 
 **Definition 1.1.12 (strictly semistable).** Let $S$ be a trait and let $X$ be an $S$-variety. Let $X_i$, $i \in I$, be the irreducible components of $X_s$, and for $J \subseteq I$ nonempty let $X_J = \bigcap_{i \in J} X_i$ be the scheme theoretic intersection. Then $X$ is *strictly semistable* over $S$ if the generic fibre $X_\eta$ is smooth over $\kappa(\eta)$, the special fibre $X_s$ is reduced, each $X_i$ is a divisor on $X$, and each $X_J$ is smooth over $\kappa(s)$ of codimension $\# J$ in $X$.
 
