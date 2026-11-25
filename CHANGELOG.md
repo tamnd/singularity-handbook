@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.8 has the full codimension $\widetilde\tau$ of the directrix, with all of $\widetilde\Theta(G)$ in both cases. Theorem 3.8.4 proves that $\widetilde\tau$ does not go down at a step from the second case where $\rho$ stays, and Example 3.8.5 for $p = 2$ shows that it can go down at a step from the first case. These are the nodes SG00000057 and SG00000058, for the milestone S7.15 (tamnd/singularity#218). The section also has a paragraph on the Lean proof.
+- Volume 9, Section 3.11 gives the same result as the eleventh research report of the milestone S7, with the table of the combinations of the cases for $\tau_\rho$ and $\widetilde\tau$.
+
+### Changed
+
+- The edition pins the map release 0.4.35, with the nodes SG00000057 and SG00000058 and their Lean proofs.
+- The introduction of Volume 7, Chapter 3, the introduction of Volume 9, Chapter 3, and Volume 9, Section 3.10 refer to the new results.
+
 ## [0.4.28] - 2026-11-26
 
 ### Added

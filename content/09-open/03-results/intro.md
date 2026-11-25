@@ -22,4 +22,6 @@ Section 3.9 is the ninth result. It shows with an example for $p = 3$ that the h
 
 Section 3.10 is the tenth result. If $\rho$ stays, the old point is in the first case and no component of the divisor leaves, then the new point is in the first case and $\tau_\rho$ does not go down, with no hypothesis on $p$. So $\tau_\rho$ can go down only in two kinds of steps, and the section lists them.
 
+Section 3.11 is the eleventh result. The full codimension $\widetilde\tau$, which uses all of $\widetilde\Theta(G)$ in both cases, does not go down at a step from the second case. An example for $p = 2$ shows that it can go down at a step from the first case.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.
