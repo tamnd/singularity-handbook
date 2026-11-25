@@ -24,13 +24,15 @@ By Theorem 1.5.5, Conjecture 2.1.1 contains the core problem P1 for $n = 4$: the
 
 Node: SG0000001B · Lean: `Singularity.ResolutionInDim` (the statement only)
 
-The proof of Lipman [Lip78] is not embedded. It alternates two steps: the normalization, and the blowup of the singular points. A normal surface has only finitely many singular points, so each blowup has a finite center. Lipman proves that the process stops after finitely many steps. The proof uses the rational singularities of surfaces and does not use an invariant that drops. Artin gives a shorter account in [Art86].
+The proof of Lipman [Lip78] is not embedded. It alternates two steps: the normalization, and the blowup of the singular points. A normal surface has only finitely many singular points, so each blowup has a finite center. Lipman proves that the process stops after finitely many steps. The proof uses the rational singularities of surfaces. Artin gives a shorter account in [Art86].
 
 The embedded problem for surfaces is also solved.
 
 **Theorem 2.1.3 (Cossart-Jannsen-Saito).** Let $Z$ be a regular excellent scheme and let $X \subseteq Z$ be a reduced closed subscheme of dimension at most 2. There is a canonical sequence of blowups in permissible centers after which the strict transform of $X$ is regular and has normal crossings with the exceptional divisor.
 
-Node: SG0000001C · Lean: `Singularity.EmbeddedResolutionSurface` (the statement only)
+Node: SG0000001C · Lean: `Singularity.EmbeddedResolutionSurface` (the statement only, in a weaker form)
+
+The Lean statement is weaker than Theorem 2.1.3 in two ways. Mathlib has no excellent schemes, so $Z$ is of finite type over a field. Mathlib has no blowups of schemes, so the statement asks for one proper morphism and not for a sequence of permissible blowups.
 
 The proof [CJS20] uses the Hilbert-Samuel function of Volume 1, the directrix, and the characteristic polyhedron of Hironaka. It is free of the characteristic, and it includes the case of mixed characteristic. It is the main source of invariants for the route of characteristic polyhedra in Section 2.3.
 
@@ -54,7 +56,7 @@ Then they patch the local solutions together. Section 2.3 defines local uniformi
 
 ### What is still open in dimension 3
 
-Theorem 2.1.4 is a non-embedded resolution. Embedded resolution of a threefold in a smooth fourfold by a sequence of blowups in regular centers is open in characteristic $p$. Cutkosky calls it the fundamental open problem in [Cut09]. Kollár [Kol20] and Bhatt, Ma, Patakfalvi, Schwede, Tucker, Waldron and Witaszek [BMP20] proved the existence of projective log resolutions for quasi-excellent schemes of dimension at most 3. They note that their theorems do not give a resolution by a sequence of blowups in regular centers [BMP20]. Thus the embedded problem in dimension 3 and the problem in dimension 4 are close. A method that solves the problem in dimension 4 must at least handle the embedded problem in dimension 3.
+Theorem 2.1.4 is a non-embedded resolution. Embedded resolution of a threefold in a smooth fourfold by a sequence of blowups in regular centers is open in characteristic $p$. Kollár constructs resolutions with an ample exceptional divisor from projective resolutions, and he gets such resolutions for arithmetic singularities of dimension 3 [Kol20]. Bhatt, Ma, Patakfalvi, Schwede, Tucker, Waldron and Witaszek develop the minimal model program for arithmetic threefolds whose residue characteristics are greater than 5 [BMP20]. Neither result is an embedded resolution by a sequence of blowups in regular centers. Thus the embedded problem in dimension 3 and the problem in dimension 4 are close. A method that solves the problem in dimension 4 must at least handle the embedded problem in dimension 3.
 
 ### Notes and references
 

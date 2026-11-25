@@ -44,17 +44,19 @@ The proof shows more. The curve $C$ has embedding dimension 4 at the origin, so 
 
 On a hypersurface of maximal contact, the second entry of the invariant of characteristic 0 is the order of the residual factor of the coefficient ideal. It does not go up under a permissible blowup at the points where the order stays the same. Volume 7, Section 1.3, defines the analogue for the purely inseparable equations $z^q + F$, the residual order. Volume 7, Section 1.4, shows that it can go up. Theorem 1.4.1 there, of Moh, bounds the increase in one blowup by $p^{e-1}$, where $q = p^e$.
 
-Node: SG00000015 · Lean: `Singularity.moh_bound` (the statement only, not proved)
+Node: SG00000015 · Lean: `Singularity.moh_bound_holds` (for point blowups, in the given coordinates)
 
 Example 1.4.2 of Volume 7 is a point blowup in characteristic 2 along which the residual order goes from 5 to 7. The cycles of Hauser and Perlega [HP19a], Theorem 1.4.3 of Volume 7, are infinite sequences of point blowups along which the residual order goes to infinity.
 
-Node: SG00000017 · Lean: none yet
+Node: SG00000017 · Lean: `Singularity.Examples.hauserPerlega_unbounded` (planned, no Lean statement yet)
+
+The theorem `Singularity.Examples.hauserPerlegaCycle` certifies one cycle of [HP19a], for one choice of the parameters. It does not certify the iteration of the cycle.
 
 These examples do not refute resolution, because other centers are permissible (Remark 1.4.4 of Volume 7). But they show that the residual order alone is not an invariant that drops. A proof must add an entry to the invariant that pays for the increases, or it must choose the centers so that the increases do not occur.
 
 ### The invariant is not functorial
 
-In characteristic 0 the invariant is compatible with smooth morphisms. This gives two results at the same time. The local blowups glue to a global blowup, and the resolution is compatible with étale maps and with group actions. The weighted method of Abramovich, Temkin and Włodarczyk [ATW24] has the same property. In characteristic $p$ the natural analogues lose it. For the Whitney umbrella in characteristic 2, the natural analogue of the invariant of [ATW24] is not upper semicontinuous, and it is not invariant under smooth morphisms [Abr25, Remark 5.9.3]. Abramovich and Temkin also show that, in characteristic 2, weighted blowups cannot resolve a pinch point in a way that keeps the normal crossings locus [AT26].
+In characteristic 0 the invariant is compatible with smooth morphisms. This gives two results at the same time. The local blowups glue to a global blowup, and the resolution is compatible with étale maps and with group actions. The weighted method of Abramovich, Temkin and Włodarczyk [ATW24] has the same property. In characteristic $p$ the natural analogues lose it. Abramovich gives two failures of the natural analogue of the invariant of [ATW24] in [Abr25, Remark 5.9.3]. For the Whitney umbrella in characteristic 2, the center that the analogue gives is not the locus where the analogue is maximal. For the system $(x^2 + y^2 z, z^{100})$, the analogue is not invariant under smooth morphisms. Abramovich and Temkin also show that, in characteristic 2, weighted blowups cannot resolve a pinch point in a way that keeps the normal crossings locus [AT26].
 
 Node: SG0000001Q · Lean: `Singularity.weightedBlowup_invariant_lt` (planned, no Lean statement yet)
 
@@ -66,7 +68,7 @@ Over a perfect field, a variety is regular if and only if it is smooth. Over an 
 
 **Example 2.2.2.** Let $k = \mathbb{F}_p(t)$ and $A = k[x]/(x^p - t)$. The polynomial $x^p - t$ is irreducible over $k$, because $t$ is not a $p$-th power in $k$. Thus $A$ is a field, and $\operatorname{Spec} A$ is regular. But $\operatorname{Spec} A$ is not smooth over $k$: over the algebraic closure, $x^p - t = (x - t^{1/p})^p$, so $A \otimes_k \bar{k}$ is not reduced.
 
-Node: SG0000000C · Lean: none yet
+Node: SG0000000C · Lean: `Singularity.exists_regular_not_smooth` (planned, no Lean statement yet)
 
 The proofs of characteristic 0 and the Jacobian criterion use smoothness. Over an imperfect field we must work with regularity, and the Jacobian criterion needs a $p$-basis of $k$. Volume 1 treats the regular locus over an imperfect field. Cossart and Piltant include imperfect fields in dimension 3 [CP19].
 
@@ -76,14 +78,14 @@ The last failure is in the theory of valuations. Let $(K, v)$ be a valued field,
 $$[L : K] = d \, e \, f,$$
 where $d$ is a power of the residue characteristic $p$ [Kuh-book]. This is the lemma of Ostrowski. The number $d$ is the *defect* of $L/K$. In residue characteristic 0 the defect is always 1. In residue characteristic $p$ it can be $p$ or more.
 
-Node: SG00000010 · Lean: none yet
+Node: SG00000010 · Lean: `Singularity.Valuation.defect` (planned, no Lean statement yet)
 
 **Example 2.2.3.** Let $K$ be the perfect hull of $\mathbb{F}_p((t))$, with the $t$-adic valuation. The value group of $K$ is $\mathbb{Z}[1/p]$ and the residue field is $\mathbb{F}_p$. Let $\vartheta$ be a root of $X^p - X - 1/t$, and let $L = K(\vartheta)$. Let $s_n = \sum_{i=1}^n t^{-1/p^i} \in K$. Then $s_n^p = t^{-1} + s_{n-1}$, so
 $$(\vartheta - s_n)^p - (\vartheta - s_n) = t^{-1/p^n}.$$
 Thus $v(\vartheta - s_n) = -1/p^{n+1}$. These values increase with $n$ and are bounded by 0. The extension $L/K$ has degree $p$, and $e = f = 1$. So it has defect $p$. Volume 3, Proposition 3.2.5, proves the last statements, and it shows that the values $v(\vartheta - a)$ for $a \in K$ have no largest element. It is a standard example of [Kuh-book].
 
-The sequence $s_n$ approximates $\vartheta$ better and better, but it does not converge in $K$. This is the behaviour that makes local uniformization hard. In residue characteristic 0, the value group and the residue field determine the degree of each such extension. An extension with defect is different. In Example 2.2.3 the degree is $p$, but the value group and the residue field do not change, so they do not see the extension. Kuhlmann divides the Artin-Schreier defect extensions into dependent and independent ones [Kuh10b]. Kuhlmann and Rzepka extend this division to Galois defect extensions of degree $p$ in mixed characteristic [KR23]. Cutkosky, Kuhlmann and Rzepka show that a Galois defect extension of degree $p$ is independent if and only if the module of relative Kähler differentials of its extension of valuation rings is zero [CKR25]. Cutkosky and Mourtada show that, in their setting, the defect of the extensions that come from projections is the only obstruction to the method of projections [CM17]. Cutkosky also shows that local monomialization, a step of his method in characteristic 0, fails in characteristic $p$ [Cut15].
+The sequence $s_n$ approximates $\vartheta$ better and better, but it does not converge in $K$. This is the behaviour that makes local uniformization hard. In residue characteristic 0, the value group and the residue field determine the degree of each such extension. An extension with defect is different. In Example 2.2.3 the degree is $p$, but the value group and the residue field do not change, so they do not see the extension. Kuhlmann divides the Artin-Schreier defect extensions into dependent and independent ones [Kuh10b]. Kuhlmann and Rzepka extend this division to Galois defect extensions of degree $p$ in mixed characteristic [KR23]. Cutkosky, Kuhlmann and Rzepka show that a Galois defect extension of degree $p$ is independent if and only if the module of relative Kähler differentials of its extension of valuation rings is zero [CKR25]. Cutkosky and Mourtada show that, in their setting, the defect of the extensions that come from projections is the only obstruction to the method of projections [CM17]. Cutkosky proved earlier that local monomialization holds in characteristic 0. In [Cut15] he shows that local monomialization, and also weak local monomialization, can fail along a valuation for an extension of algebraic local rings in algebraic function fields of dimension at least 2 over a field of positive characteristic.
 
 ### Notes and references
 
-The survey [Hau10] gives the failures of this section with more examples. Abramovich's notes [Abr25] explain the failures of the weighted method, and they are the best source for the methods of characteristic 0 since 2018. The book draft [Kuh-book] and the paper [Kuh16] are the sources for defect.
+The survey [Hau10] gives the failures of this section with more examples. Abramovich's notes [Abr25] explain the failures of the weighted method, and they describe the method of characteristic 0 for a general reader, with remarks on characteristic $p$. The book draft [Kuh-book] and the paper [Kuh16] are the sources for defect.

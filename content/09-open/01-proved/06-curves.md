@@ -24,7 +24,7 @@ Node: SG0000001A · Lean: `Singularity.Curves.resolutionInDim_one`
 
 The Lean development proves Theorem 1.6.1 and Corollary 1.6.2 with only the three standard axioms. The Lean proof of the corollary applies `Singularity.Curves.resolutionInDim_one_of_reductionToIntegral` to the proof of Theorem 1.3.1.
 
-For $p = 0$ the result also follows from Section 1.2, but the proof here is much simpler and does not use the base. For $p > 0$ the result is new in the project. It is the case $n = 1$ of the open statement. The case $n = 2$ is a theorem of Abhyankar and Lipman, and $n = 3$ is a theorem of Cossart and Piltant. These cases are not yet in Lean. The case $n \ge 4$ is open.
+For $p = 0$ the result also follows from Section 1.2, but the proof here is much simpler and does not use the base. For $p > 0$ the result is classical, and its Lean proof is new in the project. It is the case $n = 1$ of the statement $\mathrm{Res}(p, n)$. The case $n = 2$ is a theorem of Abhyankar and Lipman, and $n = 3$ is a theorem of Cossart and Piltant. These cases are not yet in Lean. The case $n \ge 4$ is open.
 
 ### Notes and references
 
