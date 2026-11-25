@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 5, Section 2.2 has a new subsection on the case of one extension. Proposition 2.2.7 gives local uniformization over a monomial subfield when the residue field extension is separable of full degree, with a complete proof and the Lean name of tamnd/singularity-lean#121.
+
 ## [0.4.22] - 2026-11-25
 
 ### Added

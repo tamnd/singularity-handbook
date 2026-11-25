@@ -64,6 +64,22 @@ Lean: none yet
 
 Cutkosky proved local uniformization of Abhyankar valuations without the hypothesis that $Kv/k$ is separable [Cut20]. This is the full form of Volume 3, Theorem 4.2.1. The Lean statement `Singularity.localUniformization_abhyankar` has the hypothesis of Theorem 2.2.1, so it does not express the general form. Temkin gives another proof of the separable case as a step of his proof of inseparable local uniformization [Tem13]. Section 4.1 explains where it enters.
 
+### The case of one extension
+
+The proof of Theorem 2.2.1 is short in one case: the residue field extension has the full degree. Then there is no ramification, no defect and no splitting, and the stability theorem is not necessary. The Lean library proves this case.
+
+**Proposition 2.2.7.** Let $k \subseteq K_0 \subseteq K$ be fields with $[K : K_0] = n$ finite, let $v$ be a valuation of $K/k$, and let $v_0$ be its restriction to $K_0$. Assume that $K_0 = k(y_1, \dots, y_t, x_1, \dots, x_r)$ is a field of rational functions, that $v_0$ is trivial on $k(y)$ and is a monomial valuation of $K_0$ over $k(y)$, and that $Kv/K_0v_0$ is separable of degree $n$. Then $K/K_0$ is separable, and $v$ has local uniformization.
+
+Node: SG0000001E · Lean: `Singularity.hasLocalUniformization_of_monomial_of_finrank_residueField_eq`
+
+*Proof.* By Corollary 2.1.6, $v_0$ has local uniformization as a valuation of $K_0/k$. By Theorem 1.3.4 it is sufficient to find an étale generator of $K/K_0$ at $v$. Choose $\bar{\theta}$ with $Kv = K_0v_0(\bar{\theta})$, by the theorem of the primitive element, and choose $z \in \mathcal{O}_v$ with residue $\bar{\theta}$. Let $\mu$ be the minimal polynomial of $\bar{\theta}$ over $K_0v_0$. It is separable of degree $n$.
+
+First we show that $v(p(z)) = \min_i v_0(a_i)$ for each nonzero $p = \sum_{i < n} a_iZ^i$ with $a_i \in K_0$. Choose $j$ with $v_0(a_j)$ least and divide $p$ by $a_j$. Then all coefficients lie in $\mathcal{O}_{v_0}$ and one of them is 1. The residue of $p(z)$ is $\sum_i \bar{a}_i\bar{\theta}^i$, a nonzero polynomial in $\bar{\theta}$ of degree less than $n$. It is not 0, because $1, \bar{\theta}, \dots, \bar{\theta}^{n-1}$ are linearly independent over $K_0v_0$. So $v(p(z)) = 0$ after the division, and the claim follows.
+
+By the claim, $p(z) \ne 0$ for each nonzero $p$ of degree less than $n$. So $[K_0(z) : K_0] \ge n$, and $K = K_0(z)$. Let $P = Z^n + p$ be the minimal polynomial of $z$ over $K_0$, with $\deg p < n$. Then $p(z) = -z^n$ has value at least 0, so all coefficients of $p$ lie in $\mathcal{O}_{v_0}$ by the claim. The reduction $\bar{P}$ is monic of degree $n$ and has the root $\bar{\theta}$, so $\bar{P} = \mu$. Since $\mu$ is separable, $\mu'(\bar{\theta}) \ne 0$, and $P'(z)$ is a unit of $\mathcal{O}_v$. In particular $P'(z) \ne 0$, so $K/K_0$ is separable, and $z$ is an étale generator. $\square$
+
+The proof of Proposition 2.2.7 is the case $f = n$ of the second part of Lemma 1.3.3. It needs no henselization, because $v$ is the only extension of $v_0$ to $K$. The Lean proof follows it: `Singularity.exists_valuation_aeval_eq_of_natDegree_lt` is the claim on $v(p(z))$, and `Singularity.exists_isEtaleGenerator_of_finrank_residueField_eq` gives the étale generator. Example 2.2.4 is not in this case, because its extension is ramified. To use Proposition 2.2.7 for an Abhyankar valuation, one must choose $x$ and $y$ in $K$ so that $v$ is monomial on $k(y, x)$ and the residue field extension has the full degree. This section does not show that such a choice always exists. The proof of Theorem 2.2.1 uses the henselization and Theorem 2.2.2 in place of such a choice.
+
 ### Notes and references
 
 Theorem 2.2.1 is the main theorem of [KK05]. Their theorem gives a smooth center, and the Lean statement asks only for a regular center. Theorem 2.2.2 is the main theorem of [Kuh10]. The general case without separability is [Cut20]. Lemma 1.3.3, Theorem 1.3.4 and Theorem 2.2.2 are not in the Lean library, so the proof above is not checked in Lean. A Lean proof along these lines needs the henselization, the defect, and the generalized stability theorem.
