@@ -29,7 +29,7 @@ Node: SG0000000M · Lean: `Singularity.Algebra.finite_integralClosure` (part 1, 
 
 2. An excellent ring is a Nagata ring, that is, for each prime $\mathfrak{p}$ of $R$ and each finite extension $L$ of $\kappa(\mathfrak{p})$, the integral closure of $R/\mathfrak{p}$ in $L$ is finite over $R/\mathfrak{p}$ [EGA4-7, Section 7.8], [Stacks]. Apply this with $L = \kappa(\mathfrak{p})$ for the minimal primes $\mathfrak{p}$ of $R$. This gives the finiteness. A finite $R$-algebra is of finite type, so it is excellent by Theorem 5.2.8 of Volume 1. For the dimension, let $R \subseteq R'$ be an integral extension. By the going up theorem [AM69, Theorem 5.11], each chain of primes of $R$ lifts to a chain of $R'$. By incomparability [AM69, Corollary 5.9], each chain of $R'$ contracts to a chain of $R$ of the same length. Thus $\dim R' = \dim R$. $\square$
 
-For a Noetherian ring that is not excellent, the normalization can fail to be finite. Section 2.2 explains why such a ring has no resolution.
+For a Noetherian ring that is not excellent, the normalization can fail to be finite. Proposition 2.2.2 shows that a Noetherian domain whose normalization is not finite has no resolution.
 
 ### The singular points
 
