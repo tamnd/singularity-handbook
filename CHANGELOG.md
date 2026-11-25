@@ -18,6 +18,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - The introduction of Volume 7, Chapter 3 now gives Sections 3.5 and 3.6.
 - Volume 6, the remark after Definition 3.2.5 now refers to Volume 7, Section 3.6.
 - `EDITION` now pins the map at da3d7f5, which has the nodes SG0000004S and SG0000004T.
+- Volume 4, referee fixes. The introduction now says that the text cites three steps of [Lip78], not two: the bound on $H^1$, the fact that the process reaches rational singularities, and the end of the process. Section 1.2 now says that a Noetherian domain whose normalization is not finite has no resolution (Proposition 2.2.2), and not that each ring that is not excellent has no resolution. Sections 1.1 and 3.1 cite the lemma of [Stacks] on regular quotients of a regular local ring without a tag number. Theorem 1.1.7 now gives the node SG0000003C. Section 2.2 no longer says that no step of the proof of [Lip78] uses the characteristic of a residue field, and its notes now say that the Lean library does not prove Theorem 2.2.1. Section 3.1 no longer says that a canonical embedded resolution glues for the local embeddings of a variety. It refers to the non-embedded theorem of [CJS20] instead.
 
 ## [0.4.15] - 2026-11-25
 

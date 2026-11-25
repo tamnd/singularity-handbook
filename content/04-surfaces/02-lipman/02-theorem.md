@@ -63,8 +63,8 @@ The proof of the existence of $n$ in [Lip78] has three steps. The table lists th
 
 *Step 3.* By Lemma 2.1.5, rational singularities stay rational in the later steps of the process. This part is formal, and we prove it here. Lipman then makes a detailed study of rational singularities, and he shows that the process stops on a surface with only rational singularities [Lip78]. The rational double points need a separate argument. We cite this step.
 
-The proof is free of the characteristic. No step uses a hypersurface of maximal contact, and no step uses the characteristic of a residue field. This is the reason why the resolution of surfaces is known in every characteristic and in mixed characteristic. The examples of Section 2.3 show the process in characteristic $p$.
+The proof is free of the characteristic. No step uses a hypersurface of maximal contact. Thus the proof of [Lip78] works in every characteristic and in mixed characteristic. The examples of Section 2.3 show the process in characteristic $p$.
 
 ### Notes and references
 
-Theorem 2.2.1 is the theorem of [Lip78]. Artin gives a shorter account of the proof in [Art86]. The chapter "Resolution of Surfaces" of [Stacks] gives a complete proof that follows Lipman. Liu discusses the desingularization of surfaces and the minimal desingularization in [Liu]. For the excellence of varieties see Corollary 5.2.9 of Volume 1.
+Theorem 2.2.1 is the theorem of [Lip78]. Artin gives a shorter account of the proof in [Art86]. The chapter "Resolution of Surfaces" of [Stacks] gives a complete proof that follows Lipman. Liu discusses the desingularization of surfaces and the minimal desingularization in [Liu]. For the excellence of varieties see Corollary 5.2.9 of Volume 1. The Lean library has the statement `Singularity.ResolutionInDim`, and $\mathrm{Res}(p, 2)$ is the case $n = 2$ of it. The Lean library does not prove Theorem 2.2.1 or this case.
