@@ -26,7 +26,7 @@ We work in a slightly more general setting, as de Jong does in [dJ96, 4.18]. Let
 
 Let $T$ be the closure of the graph of $\beta$ in $\mathcal{C} \times_S X$, with its reduced structure. It is integral, because the graph is isomorphic to $\mathcal{C}|_U$, which is integral: it is flat over $U$ with geometrically connected and reduced fibres and an irreducible generic fibre. The projections $\mathrm{pr}_1 \colon T \to \mathcal{C}$ and $\mathrm{pr}_2 \colon T \to X$ are proper and are isomorphisms over $U$, so they are modifications.
 
-Let $S' \to S$ be a modification. Then the strict transforms of $X$, $\mathcal{C}$ and $T$ over $S'$ again have the properties (a) to (c), (e) and (g), and the strict transform of $T$ is the closure of the graph of the pullback of $\beta$ [dJ96, 4.18]. The flattening theorem of Raynaud-Gruson, in the form of [dJ96, 2.19], gives a modification $S' \to S$ such that the strict transforms of the projective morphisms $X \to S$ and $T \to S$ are flat. After a further normalization of $S$, we may assume:
+Let $S' \to S$ be a modification. Then the strict transforms of $X$, $\mathcal{C}$ and $T$ over $S'$ again have the properties (a) to (c), (e) and (g), and the strict transform of $T$ is the closure of the graph of the pullback of $\beta$ [dJ96, 4.18]. The flattening theorem of Raynaud-Gruson, in the form of [dJ96, 2.19], gives a modification $S' \to S$ such that the strict transforms of the proper morphisms $X \to S$ and $T \to S$ are flat. After a further normalization of $S$, we may assume:
 
 (h) $X$ and $T$ are flat over $S$;
 

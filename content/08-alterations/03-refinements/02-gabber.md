@@ -48,7 +48,7 @@ This is [ILO14, Exposé X, Theorem 2.1]. A relative strict normal crossings divi
 
 *Step 2 (a Galois alteration).* A variant of the theorem of de Jong, due to Gabber-Vidal, gives an equivariant alteration with group $G_1$, from a scheme $X_2$ that is regular, with the inverse image of $Z$ a strict normal crossings divisor. It is constructed with a pluri-nodal fibration, as in Chapter 2 and in [dJ97]. It lies over a finite extension $S_1$ of the base field, and over a dense open subset it is of Galois type: a Galois étale covering followed by a universal homeomorphism. Let $L$ be an $\ell$-Sylow subgroup of $G_1$. By the group theory of Lemma 3.2.2, the morphism $X_2 / L \to X$ is an $\ell'$-alteration over $S_1 / L$, and $S_1/L$ has degree prime to $\ell$ over $k$.
 
-*Step 3 (the modification theorem).* The quotient $X_2/L$ is a quotient of a log smooth scheme by a tame group. The modification theorem of Gabber [ILO14, Exposé X, Theorem 1.1] gives a projective modification of $X_2/L$ with the properties of the theorem. A modification has degree 1, so the composition is still an $\ell'$-alteration. $\square$
+*Step 3 (the modification theorem).* The quotient $X_2/L$ is a quotient of a log smooth scheme by a tame group. The modification theorem of Gabber [ILO14, Exposé X, Theorem 1.1], followed by a log étale desingularization, gives a projective modification of $X_2/L$ with the properties of the theorem. A modification has degree 1, so the composition is still an $\ell'$-alteration. $\square$
 
 Illusie-Temkin also give a second proof, by induction on the dimension, in which one passes to the quotient by an $\ell$-Sylow subgroup at each step of the induction [ILO14, Exposé X, Section 3]. They prove variants over more general bases in the same exposé.
 
@@ -68,4 +68,4 @@ In the usual convention, a strict normal crossings divisor also has the property
 
 ### Notes and references
 
-The theorem of Gabber was announced in letters and talks and is written in [ILO14], in particular in Exposé X by Illusie-Temkin. The earlier result of de Jong on Galois alterations [dJ97] gives the Galois alteration of Step 2 over a field. The map has node SG0000001M for Corollary 3.2.5 in the form of the statement for a variety. Nothing in this section is in the Lean library.
+The theorem of Gabber is written in [ILO14], in particular in Exposé X by Illusie-Temkin. The earlier result of de Jong on Galois alterations [dJ97] gives the Galois alteration of Step 2 over a field. The map has node SG0000001M for Corollary 3.2.5 in the form of the statement for a variety. Nothing in this section is in the Lean library.

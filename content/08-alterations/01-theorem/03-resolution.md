@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## Alterations and resolution
 
-This section compares the theorem of de Jong with the problem of this handbook. The problem asks for a resolution of each variety of dimension 4 in characteristic $p$, in the sense of Volume 0, Definition 2.1.5. Theorem 1.2.1 gives a regular alteration $\varphi \colon X_1 \to X$. The alteration fails to be a resolution in two ways. Its degree $d$ can be greater than 1, and even when $d = 1$ the morphism need not be an isomorphism over the regular locus. We study the degree. When $d$ is prime to $p$, the structure sheaf of a normal $X$ is a direct summand of the direct image of the structure sheaf of $X_1$. When $p$ divides $d$, this fails in general, and the theorems of Gabber and Temkin in Chapter 3 show that the powers of $p$ are the only obstruction left by these methods.
+This section compares the theorem of de Jong with the problem of this handbook. The problem asks for a resolution of each variety of dimension 4 in characteristic $p$, in the sense of Volume 0, Definition 2.1.5. Theorem 1.2.1 gives a regular alteration $\varphi \colon X_1 \to X$. The alteration fails to be a resolution in two ways. Its degree $d$ can be greater than 1, and even when $d = 1$ the morphism need not be an isomorphism over the regular locus. We study the degree. When $d$ is prime to $p$ and $\varphi$ is finite, the structure sheaf of a normal $X$ is a direct summand of the direct image of the structure sheaf of $X_1$. When $p$ divides $d$, this fails in general, and the theorems of Gabber and Temkin in Chapter 3 show that the powers of $p$ are the only obstruction left by these methods.
 
 ### The trace
 
