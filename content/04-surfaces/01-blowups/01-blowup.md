@@ -64,17 +64,17 @@ This is [Har, Section II.7]. Thus we can compute the blowup of a hypersurface as
 
 **Lemma 1.1.6.** Let $k$ be a field and let $F \in k[x, y, z]$ be nonzero with $F(0) = 0$. Let $m \ge 1$ be the least degree of a monomial of $F$, and let $F_m$ be the homogeneous part of degree $m$ of $F$. Let $\pi$ be the blowup of $\mathbb{A}^3_k$ at the origin. The chart $R[I/x]$, with $R = k[x, y, z]$ and $I = (x, y, z)$, is the polynomial ring $k[x, y_1, z_1]$ with $y = x y_1$ and $z = x z_1$. In this chart
 
-$$F(x, x y_1, x z_1) = x^m F_1(x, y_1, z_1),$$
+$$F(x, x y_1, x z_1) = x^m F'(x, y_1, z_1),$$
 
-where $x$ does not divide $F_1$ and $F_1(0, y_1, z_1) = F_m(1, y_1, z_1)$. The strict transform of $V(F)$ in this chart is $V(F_1)$, and the exceptional divisor in this chart is $V(x)$.
+where $x$ does not divide $F'$ and $F'(0, y_1, z_1) = F_m(1, y_1, z_1)$. The strict transform of $V(F)$ in this chart is $V(F')$, and the exceptional divisor in this chart is $V(x)$.
 
 Lean: none yet
 
 *Proof.* The ring $R[I/x] = k[x, y/x, z/x]$ is generated over $k$ by three elements, and its field of fractions $k(x, y, z)$ has transcendence degree 3. Thus the three generators are algebraically independent, and $R[I/x]$ is a polynomial ring in $x$, $y_1 = y/x$ and $z_1 = z/x$.
 
-Write $F = \sum_{d \ge m} F_d$ with $F_d$ homogeneous of degree $d$. Then $F_d(x, x y_1, x z_1) = x^d F_d(1, y_1, z_1)$. Thus $F(x, x y_1, x z_1) = x^m F_1$ with $F_1 = \sum_{d \ge m} x^{d - m} F_d(1, y_1, z_1)$, and $F_1(0, y_1, z_1) = F_m(1, y_1, z_1)$. This polynomial is not zero, because $F_m(x, y, z) = x^m F_m(1, y/x, z/x)$ and $F_m \ne 0$. Thus $x$ does not divide $F_1$.
+Write $F = \sum_{d \ge m} F_d$ with $F_d$ homogeneous of degree $d$. Then $F_d(x, x y_1, x z_1) = x^d F_d(1, y_1, z_1)$. Thus $F(x, x y_1, x z_1) = x^m F'$ with $F' = \sum_{d \ge m} x^{d - m} F_d(1, y_1, z_1)$, and $F'(0, y_1, z_1) = F_m(1, y_1, z_1)$. This polynomial is not zero, because $F_m(x, y, z) = x^m F_m(1, y/x, z/x)$ and $F_m \ne 0$. Thus $x$ does not divide $F'$.
 
-By Lemma 1.1.3, the exceptional divisor in the chart is $V(x)$. By the discussion after Definition 1.1.4, the ideal of the strict transform is $(x^m F_1 : x^\infty)$. The ring $k[x, y_1, z_1]$ is a factorial domain and $x$ is a prime element that does not divide $F_1$. If $x^k b \in (x^m F_1)$, then $F_1$ divides $x^k b$, so $F_1$ divides $b$. Thus $(x^m F_1 : x^\infty) = (F_1)$. $\square$
+By Lemma 1.1.3, the exceptional divisor in the chart is $V(x)$. By the discussion after Definition 1.1.4, the ideal of the strict transform is $(x^m F' : x^\infty)$. The ring $k[x, y_1, z_1]$ is a factorial domain and $x$ is a prime element that does not divide $F'$. If $x^k b \in (x^m F')$, then $F'$ divides $x^k b$, so $F'$ divides $b$. Thus $(x^m F' : x^\infty) = (F')$. $\square$
 
 The charts $R[I/y]$ and $R[I/z]$ are the same with the roles of the variables exchanged. The intersection of the strict transform with the exceptional divisor is $V(x, F_m(1, y_1, z_1))$ in the chart. It is the part of the projective tangent cone $V(F_m) \subseteq \mathbb{P}^2_k$ in the chart.
 
@@ -124,7 +124,7 @@ Lean: none yet
 
 ### The blowup along a regular curve
 
-A blowup along a closed subscheme whose ideal is already invertible does nothing. We show that this is the case for a regular curve on a regular surface. The proof works in each dimension. Thus the centers of the resolution of a surface are points, and a blowup along a regular curve changes the scheme only in dimension $3$ or more.
+A blowup along a closed subscheme whose ideal is already invertible does nothing. We show that this is the case for a regular curve on a regular surface. The proof works in each dimension. Thus the blowup of a regular surface along a regular curve is an isomorphism, and the blowup of a regular scheme along a regular curve can change the scheme only in dimension $3$ or more.
 
 **Theorem 1.1.11.** Let $(R, \mathfrak{m})$ be a regular local ring of dimension $d$, and let $P$ be an ideal of $R$ such that $R/P$ is a regular local ring of dimension $d - 1$. Then there is an element $x \in \mathfrak{m} \setminus \mathfrak{m}^2$ with $P = (x)$. In particular, $P$ is a prime ideal.
 
