@@ -4,6 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 7, Section 3.4 now gives the Lean names of tamnd/singularity-lean#95 for Definition 3.4.1, Lemma 3.4.2, Theorem 3.4.3 and Lemma 3.4.4. Two new paragraphs explain the Lean form of Theorem 3.4.3 in $K[x]$, as two inclusions, and the Lean proof of Lemma 3.4.4, which reduces to a point blowup in the variables of the center. Theorem 3.4.5 and Example 3.4.6 have no Lean proof yet.
+- `EDITION` now pins the map at e89a33b, which has the Lean field of SG0000004P.
+
 ## [0.4.13] - 2026-11-25
 
 ### Changed
