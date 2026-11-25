@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Referee fixes in Volume 2. Theorem 1.1.4 and the Notes of Section 1.1 no longer call embedded resolution the second main theorem of [Hir64]. The proof that resolution gives Theorem 1.1.5 now asks for an integral quasi-projective variety and the projective resolution of Theorem 1.1.3. The gluing example of Kollár in Section 1.1 has its missing hypotheses, and its last claim is attributed to Kollár. Section 2.4 says that Theorem 2.2.7 needs a perfect field and the theorem of Zariski-Nagata in characteristic $p$. Section 3.2 says that its blowup sequences take $E = \emptyset$, and the remark after Corollary 3.2.10 claims only the first center, formally. Section 3.3 says that the induction uses the functorial form of Theorem 3.3.10, which is cited. The titles of the sections of [Kol07, Chapter 3] are corrected.
 - Volume 7, Section 3.4 now gives the Lean names of tamnd/singularity-lean#95 for Definition 3.4.1, Lemma 3.4.2, Theorem 3.4.3 and Lemma 3.4.4. Two new paragraphs explain the Lean form of Theorem 3.4.3 in $K[x]$, as two inclusions, and the Lean proof of Lemma 3.4.4, which reduces to a point blowup in the variables of the center. Theorem 3.4.5 and Example 3.4.6 have no Lean proof yet.
 - `EDITION` now pins the map at e89a33b, which has the Lean field of SG0000004P.
 

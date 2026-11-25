@@ -63,4 +63,4 @@ The order of $f$ is 2 at every point of $L$, so the order alone does not see tha
 
 ### Notes and references
 
-The cusp and the umbrella are examples of [Kol07, Chapter 3], Section "Examples", and of [Hau03]. The resolution of plane curves by point blowups is classical; see [Har, Section V.3] and [Cut04]. For the failure of maximal contact in positive characteristic, see Section 2.4 and Volume 9, Section 2.2.
+The cusp and the umbrella are examples of [Kol07, Chapter 3], Section "Examples of resolutions", and of [Hau03]. The resolution of plane curves by point blowups is classical; see [Har, Section V.3] and [Cut04]. For the failure of maximal contact in positive characteristic, see Section 2.4 and Volume 9, Section 2.2.
