@@ -1,6 +1,6 @@
 ---
 title: The codimension from the first case to the first case
-nodes: [SG00000050, SG00000051, SG00000052, SG00000053, SG00000054]
+nodes: [SG00000050, SG00000051, SG00000052, SG00000053, SG00000054, SG00000055, SG00000056]
 sources: [Hir67]
 status: drafted
 drafted_by: writer
@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## The codimension from the first case to the first case
 
-Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays, if the new point is in the second case. The proof sends each element $h$ of $H(g)$ to its weak transform $h'$, and it uses that $h'$ is an element of $H(g'_c)$. If the new point is in the first case, this step can fail, also when the old point is in the first case. Example 3.9.4 below shows this for $p = 2$. In this section we prove that $\tau_\rho$ still does not go down from the first case to the first case, if $p$ does not divide $|r| + d$. The proof does not transport all the elements of $H(g)$. In the first case the initial forms of $H(g)$ come from the elements $r_i G + x_i \partial_i G$, one for each $i \in \Delta$. We transport only those elements whose weak transform is exactly an element of $\widetilde\Theta_0(G')$, and we add one more element, the Euler element of Corollary 3.7.3. A short computation with derivatives shows that these elements are sufficient. Examples 3.9.5 and 3.9.6 show that the theorem is false if $p$ divides $|r| + d$. Proposition 3.9.7 shows that the hypothesis on the new point is not necessary. If $p$ does not divide $|r| + d$, the new point is always in the first case. Example 3.9.9 shows that this is false if $p$ divides $|r| + d$.
+Proposition 3.8.2 says that $\tau_\rho$ does not go down at a point where $\rho$ stays, if the new point is in the second case. The proof sends each element $h$ of $H(g)$ to its weak transform $h'$, and it uses that $h'$ is an element of $H(g'_c)$. If the new point is in the first case, this step can fail, also when the old point is in the first case. Example 3.9.4 below shows this for $p = 2$. In this section we prove that $\tau_\rho$ still does not go down from the first case to the first case, if $p$ does not divide $|r| + d$. The proof does not transport all the elements of $H(g)$. In the first case the initial forms of $H(g)$ come from the elements $r_i G + x_i \partial_i G$, one for each $i \in \Delta$. We transport only those elements whose weak transform is exactly an element of $\widetilde\Theta_0(G')$, and we add one more element, the Euler element of Corollary 3.7.3. A short computation with derivatives shows that these elements are sufficient. Examples 3.9.5 and 3.9.6 show that the theorem is false if $p$ divides $|r| + d$. Proposition 3.9.7 shows that the hypothesis on the new point is not necessary. If $p$ does not divide $|r| + d$, the new point is always in the first case. Example 3.9.9 shows that this is false if $p$ divides $|r| + d$. Theorems 3.9.10 and 3.9.11 show that the hypothesis on $|r| + d$ can be replaced by a hypothesis on the divisor. If no component of the divisor leaves in the chart, then the new point is in the first case, and $\tau_\rho$ does not go down.
 
 We use the setting and the notation of Section 3.8. So $g = x^r G$ with $d = \operatorname{ord} G$, the chart is $\pi = \pi_{1,t}$ with the vector $v = (1, t_2, \dots, t_n)$, and the new divisor is
 $$\Delta' = \{1\} \cup \{ i \in \Delta : i \ne 1, \ t_i = 0 \}.$$
@@ -205,16 +205,58 @@ The mechanism is the same as in Example 3.9.5. The forms $\Phi_x = y^3$ and $\Ph
 
 A random test of sequences of at most four point blowups recorded the cases at the two points of each step where $\rho$ stays. For $(p, n) = (2, 3), (2, 4)$ and $(3, 3)$, it found 5,961, 1,403 and 2,288 steps from a point in the first case with $p \nmid |r| + d$. At each of these steps the new point is in the first case, as Proposition 3.9.7 says, and $\tau_\rho$ does not go down. The test also found 501, 123 and 63 steps from a point in the first case with $p \mid |r| + d$ to a point in the second case.
 
+### The first case without a leaving component
+
+In Example 3.9.9 the component $z = 0$ of the divisor leaves, and the test found a leaving component at each step from the first case with $p \mid |r| + d$ to the second case. In this subsection we show that this is not an accident. We say that a component $i \in \Delta$ with $i \ne 1$ *leaves* in the chart if $t_i \ne 0$. So for $i \in \Delta$ we have $v_i = 0$ if and only if $i \ne 1$ and $i$ does not leave. Let
+$$R = \{ i \in \Delta : \Phi_i \ne 0 \}.$$
+
+First we collect the facts of Lemma 3.9.2 that hold with no hypothesis on $|r| + d$. Assume that $g$ is in the first case. Each generator of $\widetilde\Theta_0(G)$ has order at least $d$, so $\sigma \ge d$, and Theorem 3.1.4 gives $\rho \le d$. In the first case $\sigma = \rho$, so $\rho = \sigma = d$. The second paragraph of the proof of Lemma 3.9.2 uses only $\rho = d$. So $\partial_l F = 0$ for $l \notin \Delta$, the elements $x_k \partial_l G$ with $l \notin \Delta$ have order at least $d + 1$, and $T_\rho(g)$ is the intersection of the subspaces $T(\Phi_i)$ for $i \in R$. Since $\sigma = d$, some generator $e_i$ has order $d$, so $R$ is not empty. The homogeneous part of degree $d$ of the Euler element is $\sum_{i \in R} \Phi_i = (|r| + d) F$.
+
+**Theorem 3.9.10.** Assume that $\rho' = \rho$ and that $g$ is in the first case. Assume that $R$ contains an index $i \ne 1$ that does not leave, or that $R = \{1\}$. Then $g'_c$ is in the first case. In particular, this holds if no component of $\Delta$ leaves.
+
+Node: SG00000055 · Lean: `Singularity.idealOrd_logJacobianTangent_cleanPart_of_forall_eq_zero` (for polynomials)
+
+*Proof.* The proof of Proposition 3.9.7 uses only two properties of the Euler element $e$. It is an element of $\widetilde\Theta_0(G)$ of order $d$, and $\pi(x^r e) = x_1^p \, D g'$ for a derivation $D$ of $\Theta'_0$. The hypothesis on $|r| + d$ is used only to get $\rho = d$ and $\operatorname{ord} e = d$. We have $\rho = d$ by the facts above. So it is sufficient to find an element $h$ with the two properties.
+
+If $i \in R$, $i \ne 1$ and $i$ does not leave, let $h = e_i$. Then $\operatorname{ord} e_i = d$ since $\Phi_i \ne 0$, and $v_i = 0$. The first part of the proof of Lemma 3.9.3 gives $\pi(x^r e_i) = x_1^p \, x_i \partial_i g'$, and $i \in \Delta'$.
+
+If $R = \{1\}$, let $h = e$. The homogeneous part of degree $d$ of $e$ is $\sum_{i \in R} \Phi_i = \Phi_1 \ne 0$, so $\operatorname{ord} e = d$. The first part of the proof of Lemma 3.9.3 gives $\pi(x^r e) = x_1^p \, x_1 \partial_1 g'$.
+
+In both cases the proof of Proposition 3.9.7 with $h$ in the place of $e$ gives $\sigma' \le d = \rho'$, so $g'_c$ is in the first case.
+
+Assume now that no component of $\Delta$ leaves. Since $R$ is not empty, either $R$ contains an index $i \ne 1$, and then $i$ does not leave, or $R = \{1\}$. $\square$
+
+In Example 3.9.9 we have $R = \{x, z\}$, the direction of the chart is $x$, and $z$ leaves. So neither hypothesis of Theorem 3.9.10 holds. The sum $\Phi_x + \Phi_z$ is $0$, and the Euler element does not give an element of order $d$.
+
+**Theorem 3.9.11.** Assume that $\rho' = \rho$, that $g$ is in the first case, and that no component of $\Delta$ leaves. Then $\tau_\rho(g'_c) \ge \tau_\rho(g)$.
+
+Node: SG00000056 · Lean: `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_forall_eq_zero` (for polynomials)
+
+*Proof.* If $p$ does not divide $|r| + d$, this is Corollary 3.9.8. So assume that $p$ divides $|r| + d$. By Theorem 3.9.10, $g'_c$ is in the first case, and $\rho = \rho' = d$. So Lemma 3.9.3 applies. Its proof does not use the hypothesis on $|r| + d$. By the facts above, $T_\rho(g)$ is the intersection of the $T(\Phi_i)$ for $i \in R$.
+
+We follow the proof of Theorem 3.9.1. Let $w \in T_\rho(g'_c)$ with $w_1 = 0$, and let $i \in R$. We show that $w \in T(\Phi_i)$.
+
+1. If $i \ne 1$, then $v_i = 0$, since $i$ does not leave. The element $e_i$ has order $d$, so $e_i \in H(g)$, and $e'_i \in H(g'_c)$ by Lemma 3.9.3. The general fact of the proof of Theorem 3.9.1 gives $w \in T(\Phi_i)$.
+2. If $i = 1$, then $\sum_{k \in R} \Phi_k = (|r| + d) F = 0$, so
+$$\Phi_1 = - \sum_{k \in R \setminus \{1\}} \Phi_k.$$
+The set $R \setminus \{1\}$ is not empty, since $\Phi_1 \ne 0$. By the first step, $w \in T(\Phi_k)$ for each $k \in R \setminus \{1\}$, that is, $\Phi_k(x + s w) = \Phi_k(x)$ in $K[x, s]$. Then the same identity holds for the sum, so $w \in T(\Phi_1)$.
+
+So $w \in T_\rho(g)$. The count of dimensions at the end of the proof of Theorem 3.9.1 gives $\tau_\rho(g'_c) \ge \tau_\rho(g)$. $\square$
+
+The case $p \nmid |r| + d$ and the case $p \mid |r| + d$ use the Euler element in opposite ways. If $p$ does not divide $|r| + d$, the Euler element gives the form $F$, and it controls the forms $\Phi_i$ of the leaving components. If $p$ divides $|r| + d$, the Euler element gives the linear relation between the forms $\Phi_i$, and this relation controls $\Phi_1$. In both cases the forms $\Phi_i$ of the components that do not leave are controlled by Lemma 3.9.3.
+
+A second random test took points in the first case and each chart where $\rho$ stays. For $(p, n) = (2, 3)$ and $(3, 3)$ it found 3,456 and 870 steps that satisfy the hypothesis of Theorem 3.9.10, and at each of them the new point is in the first case. It found 270 and 64 steps to the second case. At each of these $p$ divides $|r| + d$, the set $R$ has two elements, and the hypothesis of Theorem 3.9.10 fails. A third test took the steps where no component leaves. For $(p, n) = (2, 3), (2, 4), (3, 3)$ and $(5, 3)$ it found 3,176, 745, 698 and 175 steps. At each of them the new point is in the first case, and $\tau_\rho$ does not go down, as Theorems 3.9.10 and 3.9.11 say.
+
 ### Where the codimension can go down
 
-Proposition 3.8.2, Example 3.8.3, Corollary 3.9.8 and Examples 3.9.5, 3.9.6 and 3.9.9 together give an answer for each combination of the cases at a point where $\rho$ stays.
+Proposition 3.8.2, Example 3.8.3, Corollary 3.9.8, Examples 3.9.5, 3.9.6 and 3.9.9 and Theorem 3.9.11 together give an answer for each combination of the cases at a point where $\rho$ stays.
 
 1. If the new point is in the second case, then $\tau_\rho$ does not go down (Proposition 3.8.2). The old point can be in either case. Example 3.9.9 shows a step from the first case with $p \mid |r| + d$ to the second case.
 2. If the old point is in the first case and $p$ does not divide $|r| + d$, then the new point is in the first case, and $\tau_\rho$ does not go down (Corollary 3.9.8).
 3. If the old point is in the second case and the new point is in the first case, then $\tau_\rho$ can go down (Example 3.8.3).
-4. If the old point is in the first case, $p$ divides $|r| + d$ and the new point is in the first case, then $\tau_\rho$ can go down (Examples 3.9.5 and 3.9.6).
+4. If the old point is in the first case, $p$ divides $|r| + d$ and the new point is in the first case, then $\tau_\rho$ can go down (Examples 3.9.5 and 3.9.6). By Theorem 3.9.11, this can occur only if a component of the divisor leaves.
 
-So $\tau_\rho$ can go down only if the new point is in the first case, and the old point is in the second case or $p$ divides $|r| + d$. In the test above, $\tau_\rho$ went down at 93, 49 and 43 steps from the second case to the first case. It went down at 2 steps from the first case to the first case with $p \mid |r| + d$, both for $(p, n) = (2, 4)$, and at no other step.
+So $\tau_\rho$ can go down only in two situations. In the first, the old point is in the second case and the new point is in the first case. In the second, both points are in the first case, $p$ divides $|r| + d$, and a component of the divisor leaves. In the test after Example 3.9.9, $\tau_\rho$ went down at 93, 49 and 43 steps from the second case to the first case. It went down at 2 steps from the first case to the first case with $p \mid |r| + d$, both for $(p, n) = (2, 4)$, and at no other step.
 
 ### The Lean proof
 
@@ -230,6 +272,8 @@ In the file `Singularity/Invariant/LogJacobianCaseAStable.lean`, the Lean librar
 
 In the file `Singularity/Invariant/LogJacobianCaseAUnstable.lean`, the Lean library proves Example 3.9.9 over $\mathbb{F}_3$, with the polynomials written out. `Singularity.caseAToCaseBExample_hyp` gives the data: $g$ is clean, the chart gives $\pi(g) = x^3 g'$, the new divisor is $\{x\}$, the clean part is $g'_c$, the exponents are $r$ and $r'$, the residual factors are $G$ and $G'$, $d = 3$, and $|r| + d$ is $0$ in $\mathbb{F}_3$. `Singularity.caseAToCaseBExample_cases` shows that the old point is in the first case and the new point is in the second case, in the forms $\operatorname{ord} \Theta_0(g) = |r| + \rho$ and $\operatorname{ord} \Theta'_0(g'_c) = |r'| + \rho' + 1$. `Singularity.caseAToCaseBExample_rho` gives $\rho = \rho' = 3$. `Singularity.caseAToCaseBExample_not_caseA` shows that the conclusion of Proposition 3.9.7 fails, so the hypothesis on $|r| + d$ cannot be omitted. `Singularity.caseAToCaseBExample_finrank` gives the dimensions $2$ and $1$ of the two directrices, and `Singularity.caseAToCaseBExample_codim` gives $\tau_\rho(g) = 1$ and $\tau_\rho(g'_c) = 2$.
 
+In the file `Singularity/Invariant/LogJacobianNoLeave.lean`, the Lean library proves Theorems 3.9.10 and 3.9.11 for polynomials, with the standard axioms only and with no hypothesis on $p$. As before, the Lean statements have the hypothesis $\rho = d$ in the place of the hypothesis that $g$ is in the first case. The fact that $R$ is not empty is `Singularity.exists_mem_ord_smul_add_X_mul_pderiv_eq`. Theorem 3.9.10 has three forms. `Singularity.idealOrd_logJacobianTangent_cleanPart_of_ne_of_eq_zero` uses an index $i \in R$ with $i \ne 1$ that does not leave, `Singularity.idealOrd_logJacobianTangent_cleanPart_of_lt_ord` uses $R = \{1\}$, and `Singularity.idealOrd_logJacobianTangent_cleanPart_of_forall_eq_zero` uses that no component leaves. Each form gives $\operatorname{ord} \Theta'_0(g'_c) = |r'| + d$. All three use the main step of Proposition 3.9.7, `Singularity.idealOrd_logJacobianTangent_cleanPart_le_of_pointChart_eq`. Theorem 3.9.11 is `Singularity.finrank_logJacobianDirectrix_cleanPart_le_of_forall_eq_zero` in the form with the dimensions, and `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_forall_eq_zero` in the form with $\tau_\rho$.
+
 ### Notes and references
 
-The method is the method of Hironaka for the codimension of the directrix [Hir67], as in Section 3.8. The use of the Euler element is the same as in Corollary 3.7.3. Theorem 3.9.1 and Example 3.9.4 are a result of the milestone S7.10 of this project, Examples 3.9.5 and 3.9.6 are a result of the milestone S7.11, Proposition 3.9.7 and Corollary 3.9.8 are a result of the milestone S7.12, and Example 3.9.9 is a result of the milestone S7.13. Volume 9, Sections 3.6 to 3.9 give the results as research reports.
+The method is the method of Hironaka for the codimension of the directrix [Hir67], as in Section 3.8. The use of the Euler element is the same as in Corollary 3.7.3. Theorem 3.9.1 and Example 3.9.4 are a result of the milestone S7.10 of this project, Examples 3.9.5 and 3.9.6 are a result of the milestone S7.11, Proposition 3.9.7 and Corollary 3.9.8 are a result of the milestone S7.12, Example 3.9.9 is a result of the milestone S7.13, and Theorems 3.9.10 and 3.9.11 are a result of the milestone S7.14. Volume 9, Sections 3.6 to 3.10 give the results as research reports.

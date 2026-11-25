@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.9 has Theorems 3.9.10 and 3.9.11. If $\rho$ stays, the old point is in the first case and no component of the divisor leaves, then the new point is in the first case, and $\tau_\rho$ does not go down. The theorems have no hypothesis on $p$. These are the nodes SG00000055 and SG00000056, for the milestone S7.14 (tamnd/singularity#209).
+- Volume 9, Section 3.10 gives the same result as the tenth research report of the milestone S7, with the two kinds of steps where $\tau_\rho$ can go down.
+
+### Changed
+
+- The edition pins the map release 0.4.33, with the nodes SG00000055 and SG00000056 and their Lean proofs.
+- Volume 7, Section 3.9 has a paragraph on the Lean proof of Theorems 3.9.10 and 3.9.11, and the list of the combinations of the cases says that a drop from the first case to the first case needs a leaving component. Volume 9, Section 3.9 refers to Section 3.10, and the introduction of Volume 9, Chapter 3 refers to Section 3.10.
+
 ## [0.4.27] - 2026-11-26
 
 ### Added
