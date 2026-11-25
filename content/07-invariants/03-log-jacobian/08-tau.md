@@ -70,7 +70,7 @@ Node: SG0000004Z · Lean: `Singularity.tauRhoExample_finrank`
 
 In the example, the weak transform of $\partial_z G = y^2$ is $y^2 = \partial_z G'$. It is an element of $\widetilde\Theta(G')$ of order $\rho$, but it is not in $\widetilde\Theta_0(G')$, so it is not in $H(g'_c)$. This is the step of the proof that fails. The old point is in the second case and the new point is in the first case.
 
-A random test checked the other combinations of the cases. It used random clean $g$ and random charts for $(p, n) = (2, 3), (3, 3), (2, 4)$ and $(5, 3)$, and it computed $T_\rho$ from the generators, as above, with a search over $\mathbb{F}_p^n$. It found 1,054 points where $\rho$ stays and the cases go from the first to the first, from the first to the second, or from the second to the second. At none of them does $\tau_\rho$ go down. Proposition 3.8.2 covers the last two combinations. For the cases from the first to the first, the test found that at each of 286 points the transported forms $\operatorname{in}(h')$ lie in the span of the initial forms of $H(g'_c)$. With this fact the proof above also applies to these points, but we have no proof of the fact. At 12 of 345 points with the cases from the second to the first, $\tau_\rho$ went down by $1$.
+A random test checked the other combinations of the cases. It used random clean $g$ and random charts for $(p, n) = (2, 3), (3, 3), (2, 4)$ and $(5, 3)$, and it computed $T_\rho$ from the generators, as above, with a search over $\mathbb{F}_p^n$. It found 1,054 points where $\rho$ stays and the cases go from the first to the first, from the first to the second, or from the second to the second. At none of them does $\tau_\rho$ go down. Proposition 3.8.2 covers the last two combinations. For the cases from the first to the first, the forms $\operatorname{in}(h')$ of the weak transforms need not lie in the span of the initial forms of $H(g'_c)$, so the proof above does not apply. Example 3.9.4 shows this, and Section 3.9 gives a different proof for these cases when $p$ does not divide $|r| + d$. At 12 of 345 points with the cases from the second to the first, $\tau_\rho$ went down by $1$.
 
 ### The Lean proof
 
@@ -80,4 +80,4 @@ The remark on the generators after Definition 3.8.1 is `Singularity.homogeneousC
 
 ### Notes and references
 
-The codimension of the directrix and the theorem that it does not go down at the points where the order stays are from [Hir67]. Proposition 3.8.2 and Example 3.8.3 are a result of the milestone S7.9 of this project. Volume 9, Section 3.5 gives the result as a research report.
+The codimension of the directrix and the theorem that it does not go down at the points where the order stays are from [Hir67]. Proposition 3.8.2 and Example 3.8.3 are a result of the milestone S7.9 of this project. Volume 9, Section 3.5 gives the result as a research report. Section 3.9 continues with the cases from the first to the first.

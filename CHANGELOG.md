@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.9 proves that the codimension $\tau_\rho$ of the directrix of the log-Jacobian order does not go down at a point where $\rho$ stays and both points are in the first case, if $p$ does not divide $|r| + d$ (Theorem 3.9.1). Lemma 3.9.2 gives $\Phi_i = r_i F$ for the indices with $v_i \ne 0$, and Lemma 3.9.3 gives the exact weak transforms of the elements $r_i G + x_i \partial_i G$ with $v_i = 0$ and of the Euler element. Example 3.9.4, for $p = 2$, shows that the weak transform of an element of $H(g)$ need not be in $H(g'_c)$. This is the node SG00000050, for the milestone S7.10 (tamnd/singularity#193).
+- Volume 9, Section 3.6 gives the same result as the sixth research report of the milestone S7, with what it does not give.
+
+### Changed
+
+- Volume 7, Section 3.8 and Volume 9, Section 3.5 no longer say that the forms of the weak transforms lie in the span of the new forms in the cases from the first to the first. A larger test found 17 points of 2,583 where this is false. Both sections now refer to the new sections.
+
 ## [0.4.23] - 2026-11-25
 
 ### Changed
