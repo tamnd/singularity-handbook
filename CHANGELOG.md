@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 5, Section 1.3 has the Lean name of tamnd/singularity-lean#118: the existence of an étale generator in the case $f = [K : K_0]$, with a separable residue extension. The general case has no Lean proof.
 - Volume 5, Section 1.3 has the Lean names of tamnd/singularity-lean#116: the lemma of Euler (Lemma 1.3.1), the étale generator (Definition 1.3.2), the first part of Lemma 1.3.3 and the lifting theorem (Theorem 1.3.4). The second part of Lemma 1.3.3 is now the node SG0000004Y of the map, with no Lean proof.
 
 ## [0.4.21] - 2026-11-25
