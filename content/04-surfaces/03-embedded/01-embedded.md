@@ -1,7 +1,7 @@
 ---
 title: Embedded resolution and history
 nodes: [SG0000000T, SG0000000V, SG0000001C]
-sources: [CJS20, Zar39, Zar40, Zar44, Abh56s, Abh56, Abh66, CGO, Lip78, Hir64, Benn70, BenV13, HP24, Cut04, Kol07, CP19, Har, Stacks, Mat]
+sources: [CJS20, Zar39, Zar40, Zar44, Abh56s, Abh56, Abh66, CGO, Lip78, Hir64, Hir67b, Benn70, BenV13, HP24, Cut04, Kol07, CP19, Har, Stacks, Mat]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -61,17 +61,17 @@ In Example 2.3.6 the embedded process can not use the normalization. After the b
 
 ### History
 
-Zariski proved the resolution of surfaces over a field of characteristic 0 by normalization and point blowups. The paper [Zar39] gives this proof for algebraic surfaces. He then proved local uniformization in characteristic 0 [Zar40], and he used it for the resolution of threefolds in characteristic 0 [Zar44].
+Zariski proved the resolution of algebraic surfaces in characteristic 0 [Zar39]. He then proved local uniformization in characteristic 0 [Zar40], and he used it for the resolution of threefolds in characteristic 0 [Zar44].
 
-Abhyankar proved the resolution of surfaces over an algebraically closed field of characteristic $p > 0$ [Abh56s]. His proof goes through local uniformization along each valuation of the function field. The paper [Abh56] studies the valuations centered in a local domain, and it contains the inequality of Abhyankar. Later Abhyankar proved the embedded resolution of surfaces in characteristic $p$, and he used it for threefolds in characteristic $p > 5$ [Abh66].
+Abhyankar proved the resolution of surfaces over an algebraically closed field of characteristic $p > 0$ [Abh56s]. His proof goes through local uniformization along each valuation of the function field. The paper [Abh56] studies the valuations centered in a local domain, and it contains the inequality of Abhyankar. Later Abhyankar proved the embedded resolution of surfaces in a nonsingular threefold over an algebraically closed field of characteristic $p > 0$, and he used it for threefolds over an algebraically closed field of characteristic $p > 5$ [Abh66].
 
-Hironaka [Hir64] proved resolution and embedded resolution in characteristic 0 in each dimension. Later he gave a proof of the resolution of excellent surfaces in each characteristic, with the characteristic polyhedron. The volume [CGO] treats the resolution of excellent surfaces along these lines. Lipman [Lip78] proved Theorem 2.2.1 for each excellent surface with no embedding. Cossart, Jannsen and Saito [CJS20] proved the canonical embedded version, Theorem 3.1.4.
+Hironaka [Hir64] proved resolution and embedded resolution in characteristic 0 in each dimension. Later he gave a proof of the resolution of excellent surfaces in each characteristic, with the characteristic polyhedron [Hir67b]. The volume [CGO] treats the resolution of excellent surfaces along these lines. Lipman [Lip78] proved Theorem 2.2.1 for each reduced excellent surface with no embedding. Cossart, Jannsen and Saito [CJS20] proved the canonical embedded version, Theorem 3.1.4.
 
 Benito and Villamayor defined an invariant in characteristic $p$ by elimination, and they used it for the embedded resolution of two-dimensional schemes [BenV13]. Hauser and Perlega treat the embedded resolution of surfaces in a regular threefold in characteristic $p$ [HP24]. The book of Cutkosky [Cut04] gives the resolution of surfaces, and it gives the method of Abhyankar in a short form. The lectures of Kollár [Kol07] treat resolution in characteristic 0.
 
 ### What is open
 
-For dimension 3, Cossart-Piltant [CP19] prove a non-embedded resolution of each reduced quasi-excellent Noetherian scheme of dimension at most 3. The embedded resolution of a threefold in a regular scheme of dimension 4 in characteristic $p$, by blowups in regular centers, is still open. The resolution of varieties of dimension 4 and higher in characteristic $p$ is open. Volume 9 explains the state of these problems. This volume shows the case of surfaces, where every characteristic is known.
+For dimension 3, Cossart-Piltant [CP19] prove a non-embedded resolution of each reduced separated quasi-excellent Noetherian scheme of dimension at most 3. The embedded resolution of a threefold in a regular scheme of dimension 4 in characteristic $p$, by blowups in regular centers, is still open. The resolution of varieties of dimension 4 and higher in characteristic $p$ is open. Volume 9 explains the state of these problems. This volume shows the case of surfaces, where every characteristic is known.
 
 ### Notes and references
 
