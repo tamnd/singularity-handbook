@@ -36,7 +36,7 @@ A random test of sequences of at most four point blowups for $(p, n) = (2, 3), (
 
 The table of Section 3.8 has the row "first case, $p \mid |r| + d$, to the second case". The example shows that this row occurs, and Volume 7, Proposition 3.8.2, shows that $\tau_\rho$ does not go down in it. So the table is correct, and the row is not empty.
 
-The test data also suggests a new hypothesis. In the example and in all the steps of the test, a component of the divisor leaves. The milestone S7.14 of this project studies the steps where no component leaves.
+The test data also suggests a new hypothesis. In the example and in all the steps of the test, a component of the divisor leaves. Section 3.10 proves that this is necessary. If no component leaves, the new point is in the first case, also when $p$ divides $|r| + d$.
 
 ### Status
 
