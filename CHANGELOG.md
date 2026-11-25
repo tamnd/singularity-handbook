@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 6, Section 2.2 gives the Lean names of the passage from the decomposition field to the inertia field (tamnd/singularity-lean#124).
 - Volume 6, Chapter 2 has the Lean names of tamnd/singularity-lean#123. Proposition 2.1.4 (a Galois extension of degree $p^r$ in characteristic $p$ is a tower of Artin-Schreier steps) has its Lean line. Section 2.2 has a new subsection on the induction on the degree in Steps 3 and 4 of Proposition 2.2.1: the Lean library proves it with the step of degree $p$ as an explicit hypothesis, and it does not prove this hypothesis or Proposition 2.2.1. The introduction of Volume 6 says this.
 - Volume 5, Section 2.2 has a new subsection on the case of one extension. Proposition 2.2.7 gives local uniformization over a monomial subfield when the residue field extension is separable of full degree, with a complete proof and the Lean name of tamnd/singularity-lean#121.
 
