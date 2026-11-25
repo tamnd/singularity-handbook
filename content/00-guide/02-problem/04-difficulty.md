@@ -26,4 +26,4 @@ Node: SG00000039 · Lean: `Singularity.Examples.hauserPerlegaCycle`
 
 A fourth difference is about the field. Over an imperfect field, such as $\mathbb{F}_p(t)$, a regular variety need not be smooth. For example, the curve $y^2 = x^p - t$ over $\mathbb{F}_p(t)$ with $p$ odd is regular, and it is not smooth at the point $x^p = t$, $y = 0$. So the statement "each variety has a resolution by a smooth variety" is false over imperfect fields, and the project uses "regular".
 
-Node: SG0000000C · Lean: `Singularity.exists_regular_not_smooth`
+Node: SG0000000C · Lean: `Singularity.exists_regular_not_smooth` (planned, no Lean statement yet)

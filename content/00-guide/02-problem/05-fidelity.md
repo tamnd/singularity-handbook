@@ -50,7 +50,7 @@ In particular, a proof of the open case $\mathrm{Res}(p, 4)$ gives P1 for $n = 4
 
 The statement with "smooth" in place of "regular" is false over an imperfect field (Section 2.4). The Lean proof of this third instance is planned.
 
-Node: SG0000000C · Lean: `Singularity.exists_regular_not_smooth`
+Node: SG0000000C · Lean: `Singularity.exists_regular_not_smooth` (planned, no Lean statement yet)
 
 The project is not the only place where the problem is stated in Lean. google-deepmind/formal-conjectures states it as `resolution_of_singularities`, with a different definition of a resolution: an integral scheme $Y$, smooth over $k$, with a proper morphism $Y \to X$ that is birational over $X$. That statement is for integral $X$ over a perfect field. If the two statements disagree where they meet, then one of them is wrong. The next proposition is the check.
 

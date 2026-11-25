@@ -4,6 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 1, referee fixes. Citations to [Mat] whose theorem numbers were not sure now cite the section only (Sections 13, 16, 24 and 26). Proposition 1.10.1 now cites [AM69, Theorem 11.22]. The Krull intersection theorem now refers to Corollary 4.1.8, and Section 2.3 cites [Stacks] for Nagata rings without a tag number. Section 1.7 now says that an excellent ring is J-2 by definition. Section 1.8 now names the rings that Grothendieck proved to be excellent. Section 2.3 now defines a Japanese ring correctly. The proof of Theorem 3.3.13 now gives the formula for $\chi_R(n)$ only for $n \ge 1$. Section 5.2 now gives a correct example of a regular algebra over an imperfect field that is not smooth. The introduction of Chapter 5 now says that resolution fails for some schemes of finite type over a ring that is not excellent. Theorems 4.4.7 and 6.4.7 and Example 6.2.7 now give the planned Lean names of their nodes.
+- Volume 0, Sections 2.4 and 2.5 now mark `Singularity.exists_regular_not_smooth` of SG0000000C as planned. The library does not have this name.
+
 ## [0.4.16] - 2026-11-25
 
 ### Added
@@ -24,7 +29,6 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - `EDITION` now pins the map at 6f980c4, the release 0.4.16 of the map, and Volume 0, Section 5.1 describes edition 0.4.16.
 - `EDITION` now pins the map at da3d7f5, which has the nodes SG0000004S and SG0000004T.
 - Volume 4, referee fixes. The introduction now says that the text cites three steps of [Lip78], not two: the bound on $H^1$, the fact that the process reaches rational singularities, and the end of the process. Section 1.2 now says that a Noetherian domain whose normalization is not finite has no resolution (Proposition 2.2.2), and not that each ring that is not excellent has no resolution. Sections 1.1 and 3.1 cite the lemma of [Stacks] on regular quotients of a regular local ring without a tag number. Theorem 1.1.7 now gives the node SG0000003C. Section 2.2 no longer says that no step of the proof of [Lip78] uses the characteristic of a residue field, and its notes now say that the Lean library does not prove Theorem 2.2.1. Section 3.1 no longer says that a canonical embedded resolution glues for the local embeddings of a variety. It refers to the non-embedded theorem of [CJS20] instead.
-- Volume 1, referee fixes. Citations to [Mat] whose theorem numbers were not sure now cite the section only (Sections 13, 16, 24 and 26). Proposition 1.10.1 now cites [AM69, Theorem 11.22]. The Krull intersection theorem now refers to Corollary 4.1.8, and Section 2.3 cites [Stacks] for Nagata rings without a tag number. Section 1.7 now says that an excellent ring is J-2 by definition. Section 1.8 now names the rings that Grothendieck proved to be excellent. Section 2.3 now defines a Japanese ring correctly. The proof of Theorem 3.3.13 now gives the formula for $\chi_R(n)$ only for $n \ge 1$. Section 5.2 now gives a correct example of a regular algebra over an imperfect field that is not smooth. The introduction of Chapter 5 now says that resolution fails for some schemes of finite type over a ring that is not excellent. Theorems 4.4.7 and 6.4.7 and Example 6.2.7 now give the planned Lean names of their nodes.
 
 ## [0.4.15] - 2026-11-25
 
