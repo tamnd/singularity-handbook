@@ -20,7 +20,7 @@ We use the setting of Volume 7, Section 3.9. So $g = x^r G$, $d = \operatorname{
 
 **Theorem 3.6.1.** Assume that $\rho(g'_c) = \rho(g)$, that the old point and the new point are both in the first case, and that $p$ does not divide $|r| + d$. Then $\tau_\rho(g'_c) \ge \tau_\rho(g)$.
 
-Node: SG00000050
+Node: SG00000050 · Lean: `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_caseA` (for polynomials)
 
 ### The proof
 
@@ -37,6 +37,10 @@ So each vector of $T_\rho(g'_c)$ with first coordinate $0$ is in $T_\rho(g)$, an
 
 For $p = 2$, $g = x z^2 + x^2 y^3$ and $\Delta = \{x\}$, the point is in the first case with $\rho = 2$ and $T_\rho(g) = T(z^2)$. In the $y$-chart at the point with $t_x = 1$, the value of $\rho$ stays, the new point is in the first case, and $T_\rho(g'_c) = T((z + y)^2)$. The weak transform of $G + x \partial_x G = z^2$ is $z^2$, and it is not an element of the new definition. So the method of Section 3.5 does not apply. The Euler element is $G$, and its weak transform gives the new form $(z + y)^2$. Both values of $\tau_\rho$ are $1$.
 
+### The Lean proof
+
+The Lean library proves the theorem and the example for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianDirectrixCaseA.lean`. The theorem is `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_caseA`, and the example is `Singularity.tauRhoCaseAExample_hyp` and `Singularity.tauRhoCaseAExample_not_mem`. The Lean theorem assumes $\rho = d$ in the place of the first case at the old point. If $p$ does not divide $|r| + d$, the Euler element shows that the two hypotheses are equivalent.
+
 ### What the result does not give
 
 1. It does not cover the case where $p$ divides $|r| + d$. Then the proof has no element with the initial form $F$. A random test found 398 points of this kind with an index $i$ with $\Phi_i \ne 0$ and $v_i \ne 0$. At 397 of them the proof works without the Euler element, and at the last one $\tau_\rho$ stays. We do not know a proof for this case.
@@ -45,7 +49,7 @@ For $p = 2$, $g = x z^2 + x^2 y^3$ and $\Delta = \{x\}$, the point is in the fir
 
 ### Status
 
-The map gives SG00000050 the status of a node with a proof in the handbook. The Lean proof is in progress. An outside expert has not yet read the result, and the milestone S7 asks for this. The proof uses only Sections 3.4 and 3.5 and the Euler identity. We do not know a published statement of it.
+The map gives SG00000050 the status of a node with a Lean proof. An outside expert has not yet read the result, and the milestone S7 asks for this. The proof uses only Sections 3.4 and 3.5 and the Euler identity. We do not know a published statement of it.
 
 ### Notes and references
 

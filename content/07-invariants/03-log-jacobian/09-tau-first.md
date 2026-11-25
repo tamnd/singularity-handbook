@@ -22,7 +22,7 @@ It is an element of $\widetilde\Theta_0(G)$, and by the Euler identity its homog
 
 **Theorem 3.9.1.** Assume that $\rho' = \rho$, that $g$ and $g'_c$ are both in the first case, and that $|r| + d$ is not $0$ in $K$. Then $\tau_\rho(g'_c) \ge \tau_\rho(g)$.
 
-Node: SG00000050
+Node: SG00000050 · Lean: `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_caseA` (for polynomials)
 
 The proof uses two lemmas. The first one describes $T_\rho(g)$ in the first case, and the second one gives the elements whose weak transforms are exact.
 
@@ -31,7 +31,7 @@ The proof uses two lemmas. The first one describes $T_\rho(g)$ in the first case
 1. Then $\rho = d$, and $T_\rho(g)$ is the intersection of the subspaces $T(\Phi_i)$ for the $i \in \Delta$ with $\Phi_i \ne 0$. Also $T_\rho(g) \subseteq T(F)$.
 2. Assume also that $\rho' = \rho$. If $i \in \Delta$ and $v_i \ne 0$, then $\partial_i F = 0$ and $\Phi_i = r_i F$.
 
-Node: SG00000050
+Node: SG00000050 · Lean: `Singularity.ord_sum_smul_add_X_mul_pderiv` (the Euler element), `Singularity.pderiv_eq_zero_of_mem_directrix` (part 2)
 
 *Proof.* Part 1. Each generator of $\widetilde\Theta_0(G)$ has order at least $d$, so $\sigma \ge d$. In the first case $\sigma = \rho$, so $\rho \ge d$. The Euler element is in $\widetilde\Theta_0(G)$, and its homogeneous part of degree $d$ is $(|r| + d) F \ne 0$. So $\sigma \le d$, and $\rho = \sigma = d$.
 
@@ -43,7 +43,7 @@ Both $\partial_v F$ and $\partial_v \Phi_i$ are $0$, so $v_i \partial_i F = 0$. 
 
 **Lemma 3.9.3.** Assume that $\rho' = \rho = d$ and that $g$ and $g'_c$ are both in the first case. Let $h$ be the Euler element $e$, or the element $e_i$ for an $i \in \Delta$ with $v_i = 0$. If $\operatorname{ord} h = d$, then $h' \in H(g'_c)$.
 
-Node: SG00000050
+Node: SG00000050 · Lean: `Singularity.pointChart_X_mul_pderiv_of_ne_of_eq_zero`, `Singularity.pointChart_sum_X_mul_pderiv`, `Singularity.mem_directrix_of_mem_logJacobianDirectrix_cleanPart`
 
 *Proof.* First we compute $\pi(x^r h)$. Let $i \in \Delta$ with $v_i = 0$, so $i \ne 1$ and $t_i = 0$. Then $\pi(x_i) = x_1 x_i$, and Lemma 3.2.2 gives $\pi(x_i \partial_i k) = x_1 x_i \, \pi(\partial_i k) = x_i \partial_i \pi(k)$ for each $k$. With $k = g$ and $\pi(g) = x_1^p g'$, and since $x^r e_i = x_i \partial_i g$,
 $$\pi(x^r e_i) = x_i \partial_i (x_1^p g') = x_1^p \, x_i \partial_i g'.$$
@@ -88,6 +88,8 @@ The weak transform of $e_x = z^2$ is $z^2$. It is in $\widetilde\Theta(G')$, bec
 $$y^{-2} \pi(G) = z^2 + y^2 (x + 1) = (x + 1)^{-1} G',$$
 which is in $\widetilde\Theta_0(G')$, as Lemma 3.9.3 says. A vector $w$ with $w_2 = 0$ and $w_2 = w_3$ has $w_3 = 0$, so it is in $T(F)$.
 
+Node: SG00000050 · Lean: `Singularity.tauRhoCaseAExample_hyp`, `Singularity.tauRhoCaseAExample_not_mem`
+
 ### What a random test found
 
 A random test checked the combination from the first case to the first case. It used random clean $g$, random $\Delta$ and random charts for $(p, n) = (2, 3), (2, 4), (3, 3)$ and $(3, 4)$, and it computed the forms $\Phi_i$ and the directrices by a search over $\mathbb{F}_p^n$. It found 3,776 points where $\rho$ stays and both points are in the first case. At each of them $\rho = d$. At 3,103 of them $|r| + d$ is not $0$ in $K$, and at 1,493 of these some $\Phi_i \ne 0$ has $v_i \ne 0$. At these points the weak transform of $e_i$ is not exact, and the proof needs part 2 of Lemma 3.9.2. At each of the 3,103 points each $\Phi_i$ is a linear combination of $F$ and the forms $\Phi_k$ with $v_k = 0$, as the proof says. A second test with 2,583 points from the first case to the first case found 17 points where the initial form of a weak transform is not in the span of the initial forms of $H(g'_c)$, and no point where $\tau_\rho$ goes down.
@@ -95,6 +97,14 @@ A random test checked the combination from the first case to the first case. It 
 ### The case where $p$ divides $|r| + d$
 
 Then the Euler element has order larger than $d$, and the proof has no element of $H(g)$ with the initial form $F$. The test found 673 points of this kind. At 398 of them some $\Phi_i \ne 0$ has $v_i \ne 0$. At each of these 398 points the vector $v$ is in $T(F)$, and at 397 of them each such $\Phi_i$ is a linear combination of the forms $\Phi_k$ with $v_k = 0$. At these 397 points the proof of Theorem 3.9.1 applies without the Euler element. At the last point, for $(p, n) = (3, 4)$, this fails, but $\tau_\rho$ stays. We do not know if $\tau_\rho$ can go down in this case.
+
+### The Lean proof
+
+The Lean library proves Theorem 3.9.1, Lemma 3.9.2, Lemma 3.9.3 and Example 3.9.4 for polynomials over a field of characteristic $p$, with the standard axioms only, in the file `Singularity/Invariant/LogJacobianDirectrixCaseA.lean`. Theorem 3.9.1 is `Singularity.finrank_logJacobianDirectrix_cleanPart_le_of_caseA` in the form $\dim T_\rho(g'_c) \le \dim T_\rho(g)$, and `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_caseA` in the form with $\tau_\rho$.
+
+The Lean theorem has the hypothesis $\rho = d$ in the place of the hypothesis that $g$ is in the first case. If $|r| + d$ is not $0$ in $K$, the two hypotheses are equivalent. Part 1 of Lemma 3.9.2 gives $\rho = d$ in the first case. Conversely, if $\rho = d$, then the Euler element gives $\sigma \le d = \rho$, and $\sigma \ge \rho$ always, so $g$ is in the first case. The hypothesis that $g'_c$ is in the first case is the equation $\operatorname{ord} \Theta'_0(g'_c) = |r'| + d$.
+
+The ideal $\widetilde\Theta_0(G)$ is `Singularity.residualLogJacobianTangent`, and the equation $\Theta_0(x^r G) = x^r \widetilde\Theta_0(G)$ of Lemma 3.1.2 is `Singularity.logJacobianTangent_monomial_mul`. The proof of part 2 of Lemma 3.9.2 uses the identity $\Phi(x + s v) = \Phi(x)$ through the chain rule for the translation by $v$, `Singularity.pderiv_some_translate`. In Lemma 3.9.3, the Lean proof gets $x^b = x^{r'}$ in a different way. It shows that $b \le r'$, and the equation $\operatorname{ord} \Theta'_0(g'_c) = |r'| + d$ gives $|r'| \le |b|$, because $D g' = u \, x^b h'$ is an element of $\Theta'_0(g'_c)$ of order $|b| + d$. The proof then does not cancel the unit $u$. It shows that $u h'$ is in the definition of $T_\rho(g'_c)$, and it uses that the constant term of $u$ is not $0$, so $u h'$ and $h'$ have the same initial form up to a nonzero factor. In Example 3.9.4, `Singularity.tauRhoCaseAExample_not_mem` shows that $g'$ is clean and that the transforms $y z^2$ and $y (x + 1) z^2$ of $x e_x$ are not in $\Theta'_0(g'_c)$.
 
 ### Notes and references
 
