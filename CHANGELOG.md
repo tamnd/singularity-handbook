@@ -4,6 +4,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.13 now answers Question 3.13.13. Lemma 3.13.14 bounds the order of $G$ along a subvariety by the order of the whole log-Jacobian ideal. Example 3.13.15 is a run in the first case with $\tau_\rho = 1$ that takes the corners for ever and lies on no subvariety along which the order of $G$ is at least $\rho$, for each $p$ and each $n \ge 3$. So Hypothesis 3.13.12 (H4') is false. Remark 3.13.16 gives a run of the same type in the second case, and Question 3.13.18 states the corrected form with curves in the divisor. Volume 9, Section 3.15 reports the result as Lemma 3.15.6 and Example 3.15.7.
+
+### Changed
+
+- The introductions of Volumes 7 and 9 and the status text of Volume 7, Hypothesis 3.12.5 now give the new result. The introduction of Volume 7, Section 3.13 now gives the correct numbers of Hypothesis 3.13.12 and Question 3.13.13.
+
 ## [0.4.41] - 2026-11-26
 
 ### Added
