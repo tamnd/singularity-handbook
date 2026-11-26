@@ -1,0 +1,215 @@
+---
+title: Origin runs in all dimensions
+nodes: [SG0000005X, SG0000005Y, SG0000005Z, SG00000060, SG00000061]
+sources: [CJS20]
+status: drafted
+drafted_by: writer
+reviewed_by: []
+---
+## Origin runs in all dimensions
+
+Theorem 3.13.20 treats a run in three variables where each step is at the origin of the $y$-chart or of the $z$-chart. In this section we treat the runs where each step is at the origin of a chart, in each number $n$ of variables and with each set of charts. We call them origin runs. There are two results. First, an origin run that uses all $n$ charts an infinite number of times reaches $\rho = 0$ after a number of steps that we can bound (Theorem 3.14.5). So for $n = 3$ an origin run with $\rho \ge 1$ uses at most two charts from some point on, and the case of three charts in Section 3.13 is empty. Second, if an origin run uses $k$ charts an infinite number of times, with $2 \le k \le n - 1$, then the $k$ corner curves have the order of $G$ at least $\rho$ (Theorem 3.14.7). So Question 3.13.18 has a positive answer for each origin run, in each dimension $n \ge 3$ (Corollary 3.14.8). Example 3.14.9 shows that in four variables an origin run can use three charts an infinite number of times, and that then no subvariety of dimension $2$ or $3$ has the order of $G$ at least $\rho$. So the corner curves are the right conclusion, and the surfaces are not.
+
+The proof of Theorem 3.13.20 uses the angle between two columns and a primitive vector on a ray. These arguments exclude a rational ray, but for three or more charts the limit could be in a rational plane, and they do not exclude this. We replace them with a potential $\Phi$ for the difference of two exponent vectors (Lemma 3.14.2). The potential does not go up, and it goes down at each stretch of steps that uses all the charts.
+
+We use the setting and the notation of Sections 3.12 and 3.13. So $K$ is a field of characteristic $p$, $g \in K[[x_1, \dots, x_n]]$ is clean for the divisor $\Delta$, and $g = x^r G$, where $r_i$ is the least exponent of $x_i$ in $g$ for $i \in \Delta$ and $r_i = 0$ for $i \notin \Delta$. We write $J = \widetilde\Theta(G)$. It has the generators $r_i G + x_i \partial_i G$ for $i \in \Delta$ and $\partial_j G$ for $j \notin \Delta$, and $\rho = \operatorname{ord} J$, $d = \operatorname{ord} G$. By Theorem 3.1.4, $d \in \{\rho, \rho + 1\}$. For an exponent vector $e \in \mathbb{N}^n$ we write $|e| = e_1 + \dots + e_n$, and we write $e \ge e'$ if $e_i \ge e'_i$ for each $i$.
+
+### Origin steps
+
+Let $P_N = (g_N, \Delta_N)$ be a point with $g_N$ clean and $\operatorname{ord} g_N \ge p$. An *origin run* from $P_N$ is a sequence of points $P_N, P_{N+1}, \dots$, finite or infinite, where $P_{m+1}$ is the origin of the $x_{j_m}$-chart of the blowup of $P_m$, in the coordinates that come from those of $P_N$, and $\operatorname{ord} g_m \ge p$ for each $m$. The index $j_m$ is the *letter* of the step. A *window* is a finite stretch of consecutive steps.
+
+**Lemma 3.14.1.** In an origin run, $g_{m+1}$ is clean, and $\Delta_{m+1} = \Delta_m \cup \{j_m\}$. Each term $c \, x^e$ of $g_m$ goes to the term $c \, x^{e'}$ of $g_{m+1}$, where $e'_j = |e| - p$ for $j = j_m$ and $e'_i = e_i$ for $i \ne j$. This map of the supports is injective, and it keeps the order $\ge$. The difference $\delta = e - f$ of two exponent vectors goes to the vector with $\delta_j$ replaced by $|\delta|$.
+
+*Proof.* Let $j = j_m$. The chart is $\pi(x_j) = x_j$ and $\pi(x_i) = x_j x_i$ for $i \ne j$, and with $z = x_j z'$ the new $g$ is $x_j^{-p} \pi(g_m)$. So the monomial $x^e$ goes to $x^{e'}$ with $e'_j = e_j + \sum_{i \ne j} e_i - p = |e| - p$, and this is not negative since $\operatorname{ord} g_m \ge p$. The map $e \mapsto e'$ is the matrix $A$ that is the identity with the row $j$ replaced by $(1, \dots, 1)$, followed by the translation by $-p$ in the entry $j$. The determinant of $A$ is $1$. So the map is injective, and modulo $p$ it is a bijection of $(\mathbb{Z} / p)^n$ that sends the class $0$ to the class $0$. Thus distinct monomials stay distinct, no two terms cancel, the coefficients do not change, and a monomial of a class other than $0$ goes to a monomial of a class other than $0$. So $g_{m+1}$ is clean, and no cleaning is necessary. The exceptional divisor is $V(x_j)$, and for $i \ne j$ the strict transform of $V(x_i)$ is $V(x_i)$ in the new coordinates. If $j \in \Delta_m$, the strict transform of $V(x_j)$ does not meet the chart. So $\Delta_{m+1} = \Delta_m \cup \{j\}$ in both cases. If $e \ge f$, then $|e| \ge |f|$, so $e' \ge f'$. The translation cancels in the difference, so $\delta$ goes to $A \delta$, and $(A \delta)_j = |\delta|$. $\square$
+
+At $P_m$ the exceptional divisor $E_m$ is $V(x_{j_{m-1}})$. If $j_m \ne j_{m-1}$, then the strict transform of $E_m$ is $V(x_{j_{m-1}})$ in the coordinates of $P_{m+1}$, and it passes through the origin, so the step is a corner step. If $j_m = j_{m-1}$, the strict transform of $E_m$ does not meet the chart. So a step of an origin run is a corner step exactly when its letter differs from the letter of the step before, and an infinite origin run has an infinite number of corner steps if and only if at least two letters occur an infinite number of times. If only one letter occurs from some point on, the run follows a coordinate curve, and Theorem 3.13.6 applies.
+
+### A potential for differences
+
+Let $\delta \in \mathbb{Z}^k$. We call $\delta$ *strictly mixed* if it has an entry $< 0$ and an entry $> 0$. Let $P$ be the sum of the positive entries of $\delta$, let $Q$ be the sum of the absolute values of the negative entries, let $S = P - Q$ be the sum of all the entries, and put $\Phi(\delta) = \min(P, Q)$. A *step* with the letter $j \in \{1, \dots, k\}$ replaces $\delta_j$ by $S$. By Lemma 3.14.1 this is what an origin step does to the difference of two exponent vectors, if we look only at the entries of a set of $k$ letters that contains the letters of the run.
+
+**Lemma 3.14.2.** Let $\delta \in \mathbb{Z}^k$.
+
+1. A step does not make $\Phi$ larger.
+2. Let $\delta$ be strictly mixed. If $S > 0$, then a step at a negative entry makes $\Phi$ strictly smaller. If $S < 0$, then a step at a positive entry makes $\Phi$ strictly smaller. If $S = 0$, then a step at a nonzero entry makes $\Phi$ strictly smaller, and a step at a zero entry does not change $\delta$.
+3. If $\delta \ge 0$ or $\delta \le 0$, then the same holds after each step.
+4. Let $W_1, \dots, W_w$ be disjoint windows of steps in this order, each window with all $k$ letters. If $\delta$ is strictly mixed at the end of $W_w$, then $w \le \Phi(\delta_0) - 1$, where $\delta_0$ is the vector before $W_1$.
+
+Node: SG0000005X
+
+*Proof.* Parts 1 and 2. If $\delta$ is not strictly mixed, then $\Phi = 0$, and part 3 below shows that it stays $0$. So let $\delta$ be strictly mixed, and let $S > 0$. Then $\Phi = Q$. A step at an entry $\delta_j < 0$ removes $|\delta_j|$ from $Q$ and adds the positive number $S$ to $P$, so the new $Q$ is $Q - |\delta_j| < Q$, and the new $\Phi$ is at most the new $Q$. A step at an entry $\delta_j \ge 0$ does not change $Q$, since the new entry $S$ is positive, so the new $\Phi$ is at most $Q$. The case $S < 0$ is the same with the signs exchanged. Let $S = 0$, so $P = Q = \Phi$. A step at $\delta_j > 0$ replaces $\delta_j$ by $0$, so the new $P$ is $P - \delta_j < \Phi$. A step at $\delta_j < 0$ is the same with $Q$. A step at $\delta_j = 0$ replaces $0$ by $S = 0$.
+
+Part 3. If $\delta \ge 0$, then $S \ge 0$, so the new entry is not negative. The case $\delta \le 0$ is the same.
+
+Part 4. By part 3, $\delta$ is strictly mixed at each point before the end of $W_w$, since a vector that is not strictly mixed stays so. We show that $\Phi$ goes down in each window $W$ before which $\delta$ is strictly mixed and after which it is strictly mixed. Assume that $\Phi$ does not change in $W$. By part 1, $\Phi$ is then the same after each step of $W$. Let $S > 0$ at the start of $W$. Each step keeps $Q$, and the new $\Phi = \min(P', Q)$ equals $Q$ only if $P' \ge Q$, so $S$ stays $\ge 0$. While $S > 0$, no step is at a negative entry, by part 2. If $S$ becomes $0$, then by part 2 each later step is at a zero entry, and it changes nothing. So no step of $W$ is at an entry that is negative at the start of $W$, and such an entry exists since $\delta$ is strictly mixed. Its letter is not in $W$. This is false, since $W$ has all $k$ letters. The case $S < 0$ is the same, and the case $S = 0$ at the start is the second case above. So $\Phi$ goes down by at least $1$ in each of the windows $W_1, \dots, W_w$. Since $\Phi \ge 1$ for a strictly mixed vector, $\Phi(\delta_0) - w \ge 1$. $\square$
+
+For example, let $k = 3$ and $\delta = (3, -2, 0)$. Then $P = 3$, $Q = 2$, $S = 1$ and $\Phi = 2$. The step $3$ gives $(3, -2, 1)$, with $\Phi = 2$ and $S = 2$. The step $1$ is at a positive entry, and it gives $(2, -2, 1)$ with $\Phi = 2$. The step $2$ is at the negative entry, and it gives $(2, 1, 1)$, which is not strictly mixed. The window $3, 1, 2$ has all three letters, and after it $\delta$ is not strictly mixed, as part 4 says, since $\Phi(\delta_0) - 1 = 1$ allows at most one window.
+
+### The exponent columns
+
+Fix a set $L$ of $k \ge 2$ letters, and let $U$ be the set of the other coordinates. Assume that from $P_N$ on each step has a letter in $L$. For an exponent vector $e$ put
+$$\sigma(e) = \sum_{u \in U} e_u, \qquad q_t(e) = (k - 1) e_t + \sigma(e) - p \quad (t \in L),$$
+and $q(e) = (q_t(e))_{t \in L} \in \mathbb{Z}^k$. By Lemma 3.14.1 the steps do not change the entries $e_u$ for $u \in U$, so $\sigma$ does not change along the run. Let $c_s \in \mathbb{Z}^k$, for $s \in L$, be the vectors with $c_s$ the unit vector of $s$ at $P_N$, where a step with the letter $j$ replaces $c_j$ by $\sum_{t \in L} c_t$ and keeps the other $c_s$. We call them the *exponent columns* of the run.
+
+**Lemma 3.14.3.** At $P_m$ the exponent of $x_s$, $s \in L$, in the image of the monomial $x^e$ of $g_N$ is
+$$E_s(e) = \frac{q(e) \cdot c_s - \sigma(e) + p}{k - 1},$$
+and the exponent of $x_u$, $u \in U$, is $e_u$. The matrix with the columns $c_s$ has the determinant $1$, and the cone $K_m$ spanned by the columns at $P_m$ contains the cone $K_{m+1}$.
+
+*Proof.* At $P_N$ the formula gives $((k - 1) e_s + \sigma - p - \sigma + p)/(k - 1) = e_s$. Assume the formula at $P_m$. Then $q(e) \cdot c_t = (k - 1) E_t + \sigma - p$ for each $t$. After a step with the letter $j$ the new column is $\sum_t c_t$, and the formula gives
+$$\frac{(k - 1) \sum_t E_t + k (\sigma - p) - \sigma + p}{k - 1} = \sum_{t \in L} E_t + \sigma - p.$$
+This is $|e| - p$ for the exponent vector at $P_m$, which is the new exponent of $x_j$ by Lemma 3.14.1. The other exponents do not change. A step adds the other columns to the column $c_j$, so it keeps the determinant, and the new column is in $K_m$. $\square$
+
+For $n = 3$, $L = \{y, z\}$ and $U = \{x\}$, the monomial $x^i y^j z^k$ has $\sigma = i$ and $q = (i + j - p, \, i + k - p)$. So the lemma gives
+$$E_s = (i + j, \, i + k) \cdot c_s - i - p \, (|c_s|_1 - 1),$$
+where $|c_s|_1$ is the sum of the entries of $c_s$. This is the formula before Lemma 3.13.19. For example, let $g = x^p y z$ with $\Delta = \{y, z\}$, and take one $y$-step. Then $c_1 = (1, 1)$, $c_2 = (0, 1)$, and the formula gives $E_1 = 2 (p + 1) - p - p = 2$ and $E_2 = 1$, so $g_1 = x^p y^2 z$, as the chart gives.
+
+**Proposition 3.14.4.** Assume that each letter of $L$ occurs an infinite number of times. Then:
+
+1. The cones $K_m$ shrink to one ray $\mathbb{R}_{\ge 0} \, \omega$. The entries of $\omega$ are positive and rationally independent.
+2. $|c_s| \to \infty$ and $c_s / |c_s| \to \omega / |\omega|$ for each $s \in L$.
+
+*Proof.* The columns have entries $\ge 0$, so each $K_m$ is in the closed positive orthant. The sets of the unit vectors in $K_m$ are nested, compact and not empty, so the intersection $K$ of the cones is a closed cone with a nonzero vector.
+
+First let $\delta \in \mathbb{Z}^k$ be nonzero, and assume that $\delta \cdot \omega = 0$ for a nonzero $\omega \in K$. Let $\delta_m$ be the vector with the entries $\delta \cdot c_s$ at $P_m$. A step with the letter $j$ replaces $\delta \cdot c_j$ by $\delta \cdot \sum_t c_t = \sum_t \delta \cdot c_t$, so $\delta_m$ changes by the rule of Lemma 3.14.2. Also $\delta_m \ne 0$, since the columns are a basis. Write $\omega = \sum_s \lambda_s c_s$ with $\lambda_s \ge 0$, not all $0$, at some $P_m$. If $\delta_m \ge 0$ for some $m$, then $\delta_{m'} \ge 0$ for $m' \ge m$, by part 3 of the lemma, and the sum $S$ of its entries is positive. A step replaces an entry $\delta_j \le S$ by $S$, so $S$ does not go down, and the new entry is positive. After a window with all letters, all entries are positive. At such a point $\delta \cdot \omega = \sum_s \lambda_s (\delta_{m'})_s > 0$, which is false. The case $\delta_m \le 0$ is the same. So $\delta_m$ is strictly mixed for each $m$. There are an infinite number of disjoint windows with all letters, so this contradicts part 4 of Lemma 3.14.2. Thus no nonzero integer vector is orthogonal to a nonzero vector of $K$. So the entries of each nonzero $\omega \in K$ are rationally independent, and in particular none of them is $0$.
+
+Now assume that $K$ contains two independent vectors $\omega_1$ and $\omega_2$. There is a real vector $\delta$ with $\delta \cdot \omega_1 > 0 > \delta \cdot \omega_2$. This is an open condition, so there is a rational $\delta$, and after a multiplication an integer $\delta$. On the segment from $\omega_1$ to $\omega_2$ the function $\delta \cdot \omega$ changes its sign, so it is $0$ at a vector of the segment, which is nonzero and in $K$. This is false by the first step. So $K$ is one ray. This gives part 1.
+
+Part 2. After one window with all letters, all entries of the columns are at least $1$. Then a step with the letter $j$ adds at least one nonzero column to $c_j$, so $|c_j|$ goes up. Each letter occurs an infinite number of times, so $|c_s| \to \infty$. For $m' \ge m$ the column $c_s$ at $P_{m'}$ is in $K_m$, so each limit point of $c_s / |c_s|$ is a unit vector in each $K_m$, that is, in $K$. Thus the limit is $\omega / |\omega|$. $\square$
+
+### All the letters
+
+**Theorem 3.14.5.** Let $n \ge 2$, and let $P_N, P_{N+1}, \dots$ be an origin run. Let $P_M$ be a point such that each of the $n$ letters occurs among the steps from $P_N$ to $P_M$. Let $V$ be the set of the minimal exponent vectors of $g_M$ for the order $\ge$, and let $W$ be the largest value of $\Phi(e - f) - 1$ for $e, f \in V$ with $e - f$ strictly mixed, or $W = 0$ if there is no such pair. Then:
+
+1. If $G_m$ is a unit for some $m \ge M$, then $G$ is a unit and $\rho = 0$ at $P_m$ and at each later point.
+2. If the steps after $P_M$ contain $W + 1$ disjoint windows, each with all $n$ letters, then $\rho = 0$ at the end of the last window.
+3. In an origin run with $\rho \ge 1$ at each point, at least one letter occurs only a finite number of times.
+
+Node: SG0000005Y
+
+*Proof.* By Lemma 3.14.1, $\Delta_m$ is the set of all coordinates for $m \ge M$. By Dickson's lemma, each subset of $\mathbb{N}^n$ has only a finite number of minimal elements, and each element is $\ge$ one of them. So $V$ is finite. Let $m \ge M$. By Lemma 3.14.1 the step map from the support of $g_M$ to the support of $g_m$ is a bijection that keeps $\ge$. If the image of $e$ is minimal at $P_m$ and $e \notin V$, then some $f \in V$ has $f \le e$ and $f \ne e$, and the image of $f$ is below the image of $e$ and different from it. This is false. So the minimal vectors at $P_m$ are images of vectors of $V$.
+
+Since $\Delta_m$ has all the coordinates, $r$ is the vector of the least exponents of $g_m$. So $G_m$ is a unit if and only if $x^r$ is a monomial of $g_m$, that is, if and only if one exponent vector is $\le$ all the others. By Dickson's lemma this holds if and only if there is exactly one minimal vector, that is, if and only if no two minimal vectors are incomparable. Two vectors are incomparable exactly when their difference is strictly mixed.
+
+Part 1. If $G_m$ is a unit, let $e_*$ be the unique minimal vector at $P_m$. Then $e - e_* \ge 0$ for each exponent vector $e$, and by Lemma 3.14.1 and part 3 of Lemma 3.14.2 this stays true at each later point. So $G$ stays a unit. If $G$ is a unit, then $x^r$ is a monomial of the clean series $g$, so $r \not\equiv 0 \pmod p$, and some $r_i \not\equiv 0$. The generator $r_i G + x_i \partial_i G$ of $J$ then has a nonzero constant term, so $\rho = 0$.
+
+Part 2. Assume that $G$ is not a unit at the end of the last window $W_{W+1}$. Then there are two incomparable minimal vectors there. They are the images of some $e, f \in V$, and the difference of the images is strictly mixed. By part 3 of Lemma 3.14.2, $e - f$ is strictly mixed too. Part 4 of Lemma 3.14.2 with the windows $W_1, \dots, W_{W+1}$ gives $W + 1 \le \Phi(e - f) - 1 \le W$. This is false. So $G$ is a unit, and $\rho = 0$ by part 1.
+
+Part 3. If each letter occurs an infinite number of times, then there is a point $P_M$ as in the theorem, and after it there are an infinite number of disjoint windows with all $n$ letters. Part 2 gives a point with $\rho = 0$. $\square$
+
+The theorem does not need $\rho$ to be the same along the run, and it does not need the run to be infinite. It needs no condition on $\Delta_N$. For example, let $p = 2$, $n = 2$, $\Delta = \{1, 2\}$ and $g = x_1^3 x_2 + x_1 x_2^3$. The two exponent vectors have the difference $(2, -2)$, with $\Phi = 2$ and the sum $0$. The step $1$ gives $g_1 = x_1^2 x_2 + x_1^2 x_2^3$, and the difference becomes $(0, -2)$, as part 2 of Lemma 3.14.2 says. Then $r = (2, 1)$, $G_1 = 1 + x_2^2$ is a unit, and $\rho = 0$, since $r_2 = 1$ is odd. The step $2$ gives the same $g_2 = g_1$, so at the point $P_2$ after both letters the set $V$ has one vector and $W = 0$.
+
+For $n = 3$ the theorem shows that an origin run with $\rho \ge 1$ at each point uses at most two letters from some point on. If $\Delta = \{y, z\}$ at $P_N$ and the letter $x$ occurs, then $\Delta = \{x, y, z\}$ after its first occurrence, and the theorem applies from the first point after which all three letters have occurred. So the case of three letters in Section 3.13 does not occur when $\rho \ge 1$.
+
+### Some of the letters
+
+Now let $P_N, P_{N+1}, \dots$ be an origin run, let $L$ be a set of $k$ letters with $2 \le k \le n - 1$, and assume that each step has a letter in $L$, that each letter of $L$ occurs an infinite number of times, and that $L \subseteq \Delta_N$. Let $U$ be the set of the other coordinates, and let $\omega$ be the vector of Proposition 3.14.4. A coordinate in $U$ can be in $\Delta_N$ or not, and by Lemma 3.14.1, $\Delta_m \cap U = \Delta_N \cap U$ for each $m$. For $u \in U$ let $r_u$ be the least exponent of $x_u$ in $g_N$ if $u \in \Delta_N$, and $r_u = 0$ otherwise, and let $r_U = \sum_{u \in U} r_u$. The steps keep the exponents of $x_u$, so $r_u$ is the entry of $r$ at each $P_m$.
+
+For $e$ in the support of $g_N$ the number $q(e) \cdot \omega$ is $(k - 1) \sum_t e_t \omega_t + \sigma(e) |\omega|_1 - p |\omega|_1$, where $|\omega|_1$ is the sum of the entries. The entries of $\omega$ are positive, so only a finite number of $e$ have $q(e) \cdot \omega$ below a given bound, and the least value of $q \cdot \omega$ on the support is taken. Since the entries of $\omega$ are rationally independent, it is taken at one vector $q_0 \in \mathbb{Z}^k$. Let $F$ be the set of the monomials of $g_N$ with $q = q_0$. For $t \in L$ two monomials of $F$ have the same $(k - 1) e_t + \sigma$, and $\sigma \le q_{0, t} + p$, so $F$ is finite. Let $\sigma_0$ and $\sigma_{\min}$ be the largest and the least value of $\sigma$ on $F$, and let $F_{\mathrm{top}}$ be the set of the monomials of $F$ with $\sigma = \sigma_0$. The monomials of $F_{\mathrm{top}}$ have the same exponents of the $x_t$, $t \in L$, so they differ only in the variables of $U$. Let $T$ be one of them. For a monomial $\mu$ of $g_N$ put $\Delta q(\mu) = q(\mu) - q_0$ and $\Delta \sigma(\mu) = \sigma(\mu) - \sigma_0$. By Lemma 3.14.3,
+$$E_s(\mu) - E_s(T) = \frac{\Delta q(\mu) \cdot c_s - \Delta \sigma(\mu)}{k - 1}.$$
+If $\mu \in F$, then $\Delta q(\mu) = 0$, and $E_s(\mu) - E_s(T) = (\sigma_0 - \sigma(\mu))/(k - 1)$. This is an integer, since it is the difference of two exponents.
+
+**Lemma 3.14.6.** There is an $m_0$ such that for each $m \ge m_0$, each monomial $\mu$ of $g_N$ that is not in $F$, and each $s \in L$,
+$$\Delta q(\mu) \cdot c_s \ge \max(1, \Delta \sigma(\mu)).$$
+
+*Proof.* Take $m_0$ after one window with all the letters of $L$, so that all entries of the columns are at least $1$. By Dickson's lemma, the set of the minimal monomials of $g_N$ for the order $\ge$ of the exponents is finite. Let $\mu'$ be minimal and not in $F$. Then $\Delta q(\mu') \cdot \omega > 0$, by the choice of $q_0$. By part 2 of Proposition 3.14.4, $\Delta q(\mu') \cdot c_s = |c_s| \, \Delta q(\mu') \cdot (c_s / |c_s|)$ goes to infinity. So, after a larger choice of $m_0$, the inequality holds for these $\mu'$, which are a finite set.
+
+Now let $\mu$ be a monomial not in $F$, and let $\mu' \ne \mu$ be a minimal monomial with $\mu' \le \mu$. The vector
+$$q(\mu) - q(\mu') = (k - 1) (e_L(\mu) - e_L(\mu')) + (\sigma(\mu) - \sigma(\mu')) (1, \dots, 1)$$
+has entries $\ge 0$, and it is not $0$, since otherwise $\mu$ and $\mu'$ have the same exponents of the $x_t$ and the same $\sigma$, and then $\mu = \mu'$. The entries of $c_s$ are at least $1$, so $(q(\mu) - q(\mu')) \cdot c_s$ is at least the sum of the entries of $q(\mu) - q(\mu')$, which is at least $\max(1, \sigma(\mu) - \sigma(\mu'))$. If $\mu' \notin F$, then
+$$\Delta q(\mu) \cdot c_s \ge \max(1, \Delta \sigma(\mu')) + \max(1, \sigma(\mu) - \sigma(\mu')) \ge \max(1, \Delta \sigma(\mu)).$$
+If $\mu' \in F$, then $\Delta q(\mu') = 0$ and $\sigma(\mu') \le \sigma_0$, so $\Delta q(\mu) \cdot c_s \ge \max(1, \sigma(\mu) - \sigma(\mu')) \ge \max(1, \Delta \sigma(\mu))$. $\square$
+
+The lemma replaces Lemma 3.13.19. Its proof uses Dickson's lemma, and not the box argument of Lemma 3.13.19, which is written for two letters. This also covers a power series with an infinite support.
+
+**Theorem 3.14.7.** In this setting, there is an $m_0$ such that for each $m \ge m_0$:
+
+1. $r_s = E_s(T)$ at $P_m$ for each $s \in L$. So $T$ has the least exponent of each $x_s$, $s \in L$.
+2. The initial form of $G_m$ is
+$$h = \sum_{\mu \in F_{\mathrm{top}}} c_\mu \, x_U^{e_U(\mu) - r_U},$$
+where $c_\mu$ is the coefficient of $\mu$ in $g_N$ and $x_U^{e_U(\mu) - r_U}$ is the product of the $x_u^{e_u(\mu) - r_u}$ for $u \in U$. It is a nonzero form in the variables of $U$ of the degree $d_m = \sigma_0 - r_U$, and $d_m \in \{\rho(P_m), \rho(P_m) + 1\}$.
+3. For each $t \in L$, the curve $C_t$, the zero set of the $x_u$ for $u \in U$ and of the $x_s$ for $s \in L$ with $s \ne t$, lies in the components $V(x_s)$, $s \ne t$, of $\Delta_m$, and $\nu^G_{C_t}(P_m) = d_m \ge \rho(P_m)$.
+4. If $U = \{u\}$ and $\rho(P_m) = d_m - 1$, then $h = c \, x_u^{d_m}$ with $c \ne 0$, and the forms of degree $\rho$ of $J$ at $P_m$ are the multiples of $x_u^\rho$ by the elements of $K$.
+
+There is an $m_1 \ge m_0$ such that for each $m \ge m_1$ and each $S \subseteq L$ with $1 \le |S| \le k - 2$:
+
+5. The coordinate stratum $Z_S = V(x_U, x_S)$, the zero set of the $x_u$ for $u \in U$ and of the $x_s$ for $s \in S$, has
+$$\nu^G_{Z_S}(P_m) = d_m - \frac{(k - 1 - |S|)(\sigma_0 - \sigma_{\min})}{k - 1}.$$
+Also $\nu^G_{V(x_U)}(P_m)$ is the least value of $\sigma$ on the support of $g_N$ minus $r_U$, and this is at most $d_m - (\sigma_0 - \sigma_{\min})$.
+
+Node: SG0000005Z
+
+*Proof.* Let $m_0$ be as in Lemma 3.14.6, and let $m \ge m_0$.
+
+Part 1. If $\mu \notin F$, then the lemma gives $\Delta q(\mu) \cdot c_s \ge \Delta \sigma(\mu)$, so $E_s(\mu) \ge E_s(T)$. If $\mu \in F$, then $E_s(\mu) - E_s(T) = -\Delta \sigma(\mu)/(k - 1) \ge 0$. Since $s \in L \subseteq \Delta_m$, $r_s$ is the least exponent of $x_s$ in $g_m$, and this is $E_s(T)$.
+
+Part 2. By part 1, by Lemma 3.14.1 and by the remark on $r_u$ above, $G_m$ is the sum of the terms $c_\mu \prod_{s \in L} x_s^{E_s(\mu) - E_s(T)} \, x_U^{e_U(\mu) - r_U}$. The term of $\mu$ has the degree $\sum_{s \in L} (E_s(\mu) - E_s(T)) + \sigma(\mu) - r_U$. Its difference from $\sigma_0 - r_U$ is
+$$\sum_{s \in L} \frac{\Delta q(\mu) \cdot c_s - \Delta \sigma(\mu)}{k - 1} + \Delta \sigma(\mu) = \frac{\sum_{s \in L} \Delta q(\mu) \cdot c_s - \Delta \sigma(\mu)}{k - 1}.$$
+If $\mu \notin F$, the lemma gives $\sum_s \Delta q(\mu) \cdot c_s \ge k \max(1, \Delta \sigma(\mu)) > \Delta \sigma(\mu)$, since $k \ge 2$, so the difference is positive. If $\mu \in F$ and $\sigma(\mu) < \sigma_0$, the difference is $-\Delta \sigma(\mu)/(k - 1) > 0$. If $\mu \in F_{\mathrm{top}}$, the difference is $0$, and the exponents of the $x_s$, $s \in L$, are $0$. The monomials of $F_{\mathrm{top}}$ are distinct, and by Lemma 3.14.1 their terms keep their coefficients. So the part of the least degree of $G_m$ is $h \ne 0$, and $d_m = \sigma_0 - r_U$. By Theorem 3.1.4, $d_m \in \{\rho(P_m), \rho(P_m) + 1\}$.
+
+Part 3. The term of $\mu$ in $g_m$ has the order $\sum_{s \ne t} E_s(\mu) + \sigma(\mu)$ along $C_t$, where the sum is over $s \in L$ with $s \ne t$. Its difference from the value at $T$ is
+$$\sum_{s \ne t} \frac{\Delta q(\mu) \cdot c_s - \Delta \sigma(\mu)}{k - 1} + \Delta \sigma(\mu) = \sum_{s \ne t} \frac{\Delta q(\mu) \cdot c_s}{k - 1},$$
+since there are $k - 1$ letters $s \ne t$. This is positive for $\mu \notin F$ by the lemma, and $0$ for $\mu \in F$. So the order of $g_m$ along $C_t$ is $\sigma_0 + \sum_{s \ne t} E_s(T)$. The series $g_m$ is clean, and $C_t$ is a coordinate subvariety, so Lemma 3.13.1 gives this number as the clean order. The components of $\Delta_m$ that contain $C_t$ are the $V(x_s)$ for $s \in L$ with $s \ne t$, and the $V(x_u)$ for $u \in U \cap \Delta_m$. There is at least one of the first kind, since $k \ge 2$. By Definition 3.13.2 and part 1,
+$$\nu^G_{C_t}(P_m) = \sigma_0 + \sum_{s \ne t} E_s(T) - \sum_{s \ne t} r_s - r_U = d_m,$$
+and $d_m \ge \rho(P_m)$ by part 2.
+
+Part 4. If $U = \{u\}$, then two monomials of $F_{\mathrm{top}}$ have the same exponents of the $x_t$ and the same exponent $\sigma_0$ of $x_u$. So $F_{\mathrm{top}}$ has one monomial, and $h = c \, x_u^{d}$ with $d = d_m$ and $c \ne 0$. The coordinates are $L \cup \{u\}$. For $s \in L$ the generator $r_s G_m + x_s \partial_s G_m$ has the order at least $d$. If $u \in \Delta_m$, the generator $r_u G_m + x_u \partial_u G_m$ has the order at least $d$ too, and then $\rho \ge d$. So $\rho = d - 1$ gives $u \notin \Delta_m$, and the last generator is $\partial_u G_m$, with the part $d c \, x_u^{d - 1}$ of degree $d - 1$. All other generators have the order at least $d > \rho$, so $d c \ne 0$, and the part of degree $\rho$ of each element of $J$ is a multiple of $x_u^\rho$ by an element of $K$. This is the argument of part 3 of Theorem 3.13.20.
+
+Part 5. Let $1 \le |S| \le k - 2$. The term of $\mu$ has the order $\sum_{s \in S} E_s(\mu) + \sigma(\mu)$ along $Z_S$. As in part 3, its difference from the value at $T$ is
+$$\sum_{s \in S} \frac{\Delta q(\mu) \cdot c_s}{k - 1} + \frac{(k - 1 - |S|) \, \Delta \sigma(\mu)}{k - 1}.$$
+For $\mu \in F$ this is $-(k - 1 - |S|)(\sigma_0 - \sigma(\mu))/(k - 1)$, and the least value on $F$ is $-(k - 1 - |S|)(\sigma_0 - \sigma_{\min})/(k - 1)$. For the finite set of the minimal monomials $\mu$ not in $F$, the sum $\sum_{s \in S} \Delta q(\mu) \cdot c_s$ goes to infinity, since $|S| \ge 1$, and $\Delta \sigma(\mu) \ge -\sigma_0$. So there is an $m_1 \ge m_0$ such that for $m \ge m_1$ the difference is positive for these monomials. A monomial $\mu$ that is not minimal is above a minimal monomial $\mu'$, so its image at $P_m$ is above the image of $\mu'$ by Lemma 3.14.1, and its order along $Z_S$ is at least the order of $\mu'$. So the order of $g_m$ along $Z_S$ is the value at $T$ minus $(k - 1 - |S|)(\sigma_0 - \sigma_{\min})/(k - 1)$. The components of $\Delta_m$ that contain $Z_S$ are the $V(x_s)$ for $s \in S$ and the $V(x_u)$ for $u \in U \cap \Delta_m$. As in part 3, Lemma 3.13.1 and part 1 give the formula. For $V(x_U)$ the order of the term of $\mu$ is $\sigma(\mu)$, which does not change along the run, and the components of $\Delta_m$ that contain $V(x_U)$ are the $V(x_u)$ for $u \in U \cap \Delta_m$. Since $\sigma_{\min}$ is a value of $\sigma$ on the support, the least value of $\sigma$ is at most $\sigma_{\min} = \sigma_0 - (\sigma_0 - \sigma_{\min})$. $\square$
+
+So the coordinate strata $Z_S$ with $1 \le |S| \le k - 2$ have $\nu^G = d_m$ if $F = F_{\mathrm{top}}$, and $\nu^G < d_m$ if not. The corner curves, with $|S| = k - 1$, are the only coordinate strata in the corner where the spread of $\sigma$ on $F$ always cancels out. Part 5 is about the coordinate strata only, and not about all the subvarieties.
+
+For $n = 3$ and $k = 2$ the theorem is Theorem 3.13.20, and Lemma 3.14.6 gives the two inequalities of Lemma 3.13.19. For example, take Example 3.13.15, with $g = x^p y z + y^{p+2} z^{p+1}$, $L = \{y, z\}$ and $U = \{x\}$. The monomial $x^p y z$ has $\sigma = p$ and $q = (1, 1)$, and the monomial $y^{p+2} z^{p+1}$ has $\sigma = 0$ and $q = (2, 1)$. Since $\omega$ has positive entries, $q_0 = (1, 1)$, $F = F_{\mathrm{top}} = \{x^p y z\}$, $h = x^p$ and $d_m = p$. So both corner curves have $\nu^G = p$, as in Remark 3.13.17. For $k = n$ the set $U$ is empty, $\sigma = 0$, and the same computation shows that $G_m$ is a unit. This is Theorem 3.14.5 again, without the bound.
+
+### The answer to Question 3.13.18 for origin runs
+
+**Corollary 3.14.8.** Let $n \ge 3$, and let $P_0, P_1, \dots$ be an infinite origin run with $\rho \ge 1$ at each point and an infinite number of corner steps. Then the set $L$ of the letters that occur an infinite number of times has $2 \le |L| \le n - 1$. For each $m$ large enough there are $|L|$ regular coordinate curves at $P_m$, each in a component of $\Delta_m$, with $\nu^G = d_m \ge \rho$. So Question 3.13.18 has a positive answer for each origin run, in each dimension $n \ge 3$. For $n = 3$, $|L| = 2$, and this is Theorem 3.13.20 after a change of the names of the variables.
+
+Node: SG00000060
+
+*Proof.* By the remark after Lemma 3.14.1, an infinite number of corner steps means that at least two letters occur an infinite number of times. By part 3 of Theorem 3.14.5, at most $n - 1$ letters do. Choose $N$ after the last step with a letter not in $L$ and after the first step of each letter of $L$. Then $L \subseteq \Delta_N$ by Lemma 3.14.1, and $P_N, P_{N+1}, \dots$ is an origin run in the coordinates of $P_N$ that satisfies the hypotheses of Theorem 3.14.7. Part 3 of the theorem gives the curves $C_t$, $t \in L$. $\square$
+
+The answer is for origin runs only, that is, for runs with no translation in the coordinates of $P_N$ from some point on. The letters, the cone and the curves $C_t$ depend on these coordinates, as in Theorem 3.13.20.
+
+### Three charts in four variables
+
+**Example 3.14.9.** Let $n = 4$, let $p$ be a prime, $\Delta = \{1, 2, 3\}$ and
+$$g = x_1 x_4^p + x_1^2 x_2 x_3 x_4^{p-2}.$$
+Then each word in the letters $1, 2, 3$ is an origin run with $\rho = d = p$ at each point, and $G_m = x_4^p + x_1 x_2 x_3 x_4^{p-2}$. At each point:
+
+1. the three curves $V(x_4, x_s, x_t)$ with $s \ne t$ in $\{1, 2, 3\}$ have $\nu^G = p$;
+2. the three surfaces $V(x_4, x_s)$ have $\nu^G = p - 1$, and $V(x_4)$ has $\nu^G = p - 2$;
+3. no regular formal subvariety of dimension $2$ or $3$ has $\nu^G \ge \rho$.
+
+So in four variables an origin run where $\rho$ stays can use three charts an infinite number of times, and the corner curves are the only candidates of Question 3.13.18. The example plays the role of Example 3.13.15 in four variables.
+
+Node: SG00000061
+
+*Proof.* The series $g$ is clean: the first monomial has the exponent $1$ of $x_1$, and the second has the exponent $1$ of $x_2$. Its order is $p + 1 \ge p$. The difference of the two exponent vectors is $(1, 1, 1, -2)$, with the sum $1$. By Lemma 3.14.1, a step with the letter $1$, $2$ or $3$ replaces that entry by the sum $1$, so the difference stays $(1, 1, 1, -2)$. The exponent of $x_4$ does not change. So at $P_m$ the exponent vectors are $(a, b, c, p)$ and $(a + 1, b + 1, c + 1, p - 2)$ for some $a, b, c \ge 0$, both have $|e| \ge p$, and each step is defined. By Lemma 3.14.1, $g_m$ is clean with the same coefficients, $r = (a, b, c, 0)$ and $G_m = x_4^p + x_1 x_2 x_3 x_4^{p-2}$, so $d = p$.
+
+The value of $\rho$. The generators of $J$ are $r_s G + x_s \partial_s G = r_s x_4^p + (r_s + 1) x_1 x_2 x_3 x_4^{p-2}$ for $s = 1, 2, 3$, and $\partial_4 G = (p - 2) x_1 x_2 x_3 x_4^{p-3}$ for $p \ge 3$. For $p = 2$ we have $G = x_4^2 + x_1 x_2 x_3$ and $\partial_4 G = 0$. Each generator has the order at least $p$. The monomial $x^r x_4^p$ of the clean series $g_m$ is not a $p$-th power, so some $r_s$ is not $0$ modulo $p$, and then the generator of $s$ has the part $r_s x_4^p \ne 0$ of degree $p$. So $\rho = p = d$.
+
+Parts 1 and 2. The coordinates are adapted to the coordinate strata, and $g_m$ is clean, so Lemma 3.13.1 gives the clean orders from the two monomials. Along $V(x_4, x_2, x_3)$ both monomials have the order $b + c + p$, the components of $\Delta$ that contain the curve are $V(x_2)$ and $V(x_3)$, and $\nu^G = b + c + p - b - c = p$. The other two curves are the same. Along $V(x_4, x_1)$ the orders are $a + p$ and $a + 1 + p - 2$, and the only component of $\Delta$ that contains the surface is $V(x_1)$, so $\nu^G = p - 1$. Along $V(x_4)$ the orders are $p$ and $p - 2$, and no component of $\Delta$ contains $V(x_4)$, so $\nu^G = p - 2$. These values agree with part 5 of Theorem 3.14.7: here $k = 3$, $U = \{4\}$, both monomials have $q = (2, 0, 0)$ at $P_0$, so $F$ has both monomials, $\sigma_0 = p$ and $\sigma_{\min} = p - 2$.
+
+Part 3. Let $Z$ be a regular formal subvariety with $\nu^G_Z \ge \rho = p$. By Lemma 3.13.14, $J \subseteq I_Z^{p-1}$. A regular parameter of the ambient ring is not in $\mathfrak{m}^2$, so it is not in $I_Z^2$, and its order along $Z$ is $0$ or $1$. Let $p \ge 3$. Then $p - 2 \not\equiv 0$, so $x_1 x_2 x_3 x_4^{p-3} \in J$. Thus $x_1 x_2 x_3 x_4^{p-2} \in J$, and with an $r_s \not\equiv 0$ also $x_4^p \in J$. Since $p - 1 \ge 1$ and $I_Z$ is prime, $x_4 \in I_Z$, so $\operatorname{ord}_Z(x_4) = 1$. Since $\operatorname{ord}_Z$ is a valuation and $x_1 x_2 x_3 x_4^{p-3} \in I_Z^{p-1}$, we get $\operatorname{ord}_Z(x_1 x_2 x_3) \ge 2$. Each $\operatorname{ord}_Z(x_s)$ is $0$ or $1$, so $Z$ lies in two of $V(x_1)$, $V(x_2)$, $V(x_3)$ and in $V(x_4)$. This is a curve, so $\dim Z \le 1$. Let $p = 2$. The second monomial $x^{r + (1, 1, 1, 0)}$ of $g_m$ is not a square, so $r$ is not $(1, 1, 1, 0)$ modulo $2$, and some $r_t$ is even. The first monomial is not a square, so some $r_s$ is odd. The generator of $s$ is $x_4^2$, and the generator of $t$ is $x_1 x_2 x_3$. Both are in $I_Z$, so $Z \subseteq V(x_4)$ and $Z \subseteq V(x_s)$ for some $s$. If $\dim Z = 3$, then $Z = V(x_4)$, with $\nu^G = 0$. If $\dim Z = 2$, then $Z = V(x_4, x_s)$, with $\nu^G = 1$. In both cases $\nu^G < 2$. $\square$
+
+Here are the numbers for $p = 3$. At $P_0$ we have $g = x_1 x_4^3 + x_1^2 x_2 x_3 x_4$. The step $1$ sends the exponent vectors $(1, 0, 0, 3)$ and $(2, 1, 1, 1)$ to $(1, 0, 0, 3)$ and $(2, 1, 1, 1)$, so it does not change $g$. The step $2$ sends them to $(1, 1, 0, 3)$ and $(2, 2, 1, 1)$, so $g_2 = x_1 x_2 (x_4^3 + x_1 x_2 x_3 x_4)$, with $r = (1, 1, 0, 0)$. The generator of $x_1$ is $x_4^3 + 2 x_1 x_2 x_3 x_4$, so $\rho = 3$. The curve $V(x_4, x_1, x_2)$ has the clean order $\min(2 + 3, 4 + 1) = 5$ and $\nu^G = 5 - 1 - 1 = 3$, and the surface $V(x_4, x_1)$ has the clean order $\min(4, 3) = 3$ and $\nu^G = 3 - 1 = 2$.
+
+The example is in the setting of this chapter: $f = z^p + g$, the base has dimension $4$, $g$ is clean for a divisor with normal crossings, and $\rho = p \ge 1$ is the same at each point. The point has the type $0$, since $\rho = d$, and the initial form of $G_m$ is the $p$-th power $x_4^p$.
+
+### Remarks
+
+**Remark 3.14.10.** The analogue of the irrational slope $\theta$ of Theorem 3.13.20 is a monomial valuation. In the setting of Theorem 3.14.7 let $v$ be the monomial valuation at $P_N$ with $v(x_s) = \omega_s$ for $s \in L$ and $v(x_u) = |\omega|_1 / (k - 1)$ for $u \in U$. It has the real rank $1$ and the rational rank $k$, and $(k - 1) \, v(x^e) = q(e) \cdot \omega + p \, |\omega|_1$, so the monomials of $g_N$ with the least value of $v$ are the monomials of $F$. For $k = 2$ this is $v(x) = v(y) + v(z)$, which is the form $(i + j) + \theta (i + k)$ of Section 3.13. The valuation is centered at each $P_m$. To see this, write $\omega = \sum_s w_s c_s$ at $P_m$. The chart $j$ changes the weights by $w_s \mapsto w_s - w_j$ for $s \ne j$, so $w = (w_s)$ is the weight vector of $v$ on the $x_s$ at $P_m$, and the weight of each $x_u$ becomes $\sum_s w_s / (k - 1)$. No $w_s$ is $0$, since otherwise $\omega$ is in the span of $k - 1$ integer vectors, against Proposition 3.14.4. So all weights at $P_m$ are positive, and $v$ is centered at $P_m$. Since the columns go to infinity, $w \to 0$. Thus each origin run that uses the letters of $L$ an infinite number of times is the sequence of the centers of $v$, and the letter of each step is the variable of the least weight.
+
+**Remark 3.14.11.** Computer tests over $\mathbb{F}_2$, $\mathbb{F}_3$ and $\mathbb{F}_5$, and for some tests $\mathbb{F}_7$, agree with the results of this section. Two independent sets of scripts did the tests, with no shared code.
+
+1. Lemma 3.14.2. An exhaustive test of parts 1, 2 and 3 on all vectors in a box found no failure in $882$ transitions for $k = 2$, $6591$ for $k = 3$ and $9604$ for $k = 4$. A full search of all words to the depth $10$ for $k = 3$ and $9$ for $k = 4$ found no violation of part 4. The bound $\Phi(\delta_0) - 1$ is reached for $\Phi(\delta_0) = 1, 2, 3$, so it is sharp for small $\Phi(\delta_0)$. A second test of part 1 found no increase of $\Phi$ in $23712$ transitions for $k = 3$, $40120$ for $k = 4$ and $66330$ for $k = 5$.
+2. Lemma 3.14.3. The formula for $E_s$ agrees with the charts in $60079$ random cases. A search for periodic words with a fixed rational direction found none among the three-letter words of the lengths $3$ to $12$ ($519156$ words of the length $12$) and the four-letter words of the lengths $4$ to $9$ ($46620$ words of the length $9$).
+3. Theorem 3.14.5. A full search of the words found no violation of the bound for $n = 3$ to the depth $9$, from $146$, $143$ and $146$ starts for $p = 2, 3, 5$, and for $n = 4$ to the depths $7$ and $6$, from $60$ starts each for $p = 2, 3$. The bound is reached in some cases, for example with $W = 2$ and two windows for $p = 5$. A search of all origin branches that keep $\rho$, for $n = 3$ to the depth $14$, from $367$, $375$ and $387$ starts with $3754057$, $3318393$ and $2271974$ nodes for $p = 2, 3, 5$, found no branch that uses all three letters after $P_M$. For $n = 4$ to the depth $10$, from $148$, $146$ and $147$ starts, some of which reached the cap of the search, no branch uses all four letters after $P_M$.
+4. Theorem 3.14.7. Random runs of the length $50$ or $60$ in the letters of $L$, for $(n, k) = (3, 2)$, $(4, 2)$, $(4, 3)$, $(5, 3)$ and $(5, 4)$ and $p = 2, 3, 5$, $14530$ runs in total, found no failure of parts 1, 2, 3 and 5 or of $d_m \in \{\rho, \rho + 1\}$. Of them, $3003$ runs were built with $F \ne F_{\mathrm{top}}$. In a second test of same-$\rho$ runs with $(n, k) = (4, 3)$, the surfaces $V(x_4, x_s)$ had $\nu^G < \rho$ in $3$ of $858$ cases for $p = 2$ and in no case for $p = 3, 5$. So random runs rarely show the failure of part 5, and Example 3.14.9 is a special family.
+5. Example 3.14.9. For $p = 2, 3, 5, 7$, all $3280$ words of the length $0$ to $7$ and $300$ random words of the length $300$, with $114904$ points for each $p$, gave no failure of the claims on $g_m$, $G_m$, $\rho = d = p$ and the three values of $\nu^G$. For $p = 2$ the classes of $r$ modulo $2$ are the $6$ nonzero classes other than $(1, 1, 1)$, as the proof needs.
+
+### Notes and references
+
+The results of this section are a result of the milestone S7.18 of this project (tamnd/singularity#245). They come from notes 31 and 32 of the research notes, with the corrections of the second note. None of them has a Lean proof yet. The use of the history of the divisor is from [CJS20]. Several questions are open. The first is the runs with translations. For $n = 3$ this is the setting of Theorem 3.13.27 and Corollary 3.13.28. For $n = 4$ and $k = 2$ the translations in the two free coordinates form a vector, and $h$ is a binary form, and we do not know whether only a finite number of the translations can be nonzero. The second is the runs that leave a component of $\Delta$ an infinite number of times. The third is part 4 of Theorem 3.14.7: it is proved for $|U| = 1$, and the directrix in the case $|U| \ge 2$ is open. The fourth is the bound $W$ of Theorem 3.14.5: we do not know whether it can be replaced by a bound that does not depend on the coordinates. Last, the corner curves need not resolve the point, as Example 3.13.21 shows, so the results of this section do not give a resolution strategy.
