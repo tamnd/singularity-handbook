@@ -109,7 +109,7 @@ The definition of a rational singularity uses the cohomology of the whole modifi
 **Proposition 2.1.9.** Assume that $X = \operatorname{Spec} A$ is affine, and let $f : Y \to X$ be a normal modification. Let $D \subseteq Y$ be a closed subscheme.
 
 1. The restriction map $H^1(Y, \mathcal{O}_Y) \to H^1(D, \mathcal{O}_D)$ is onto.
-2. If $A$ is local, then $\ell_A(H^1(D, \mathcal{O}_D)) \le \ell_A(H^1(Y, \mathcal{O}_Y)) \le N$, where $N$ is the integer of Theorem 2.1.6.
+2. If $A$ is local of dimension 2, then $\ell_A(H^1(D, \mathcal{O}_D)) \le \ell_A(H^1(Y, \mathcal{O}_Y)) \le N$, where $N$ is the integer of Theorem 2.1.6.
 3. If $X$ has rational singularities, then $H^1(D, \mathcal{O}_D) = 0$.
 
 Lean: none yet
@@ -124,7 +124,7 @@ The sheaf $\mathcal{I}_D$ is coherent and $X$ is affine, so $H^2(Y, \mathcal{I}_
 
 3. By [Har, Proposition III.8.5], $H^1(Y, \mathcal{O}_Y)$ is the module of global sections of $R^1 f_* \mathcal{O}_Y$, and this sheaf is 0. Part 1 gives the claim. $\square$
 
-Part 2 is the form in which the bound of Lipman controls the curves. Let $A$ be local with residue field $\kappa$, and let $C \subseteq Y$ be an integral curve that maps to the closed point. Then $C$ is proper over $\kappa$, and $\ell_A(H^1(C, \mathcal{O}_C)) = \dim_\kappa H^1(C, \mathcal{O}_C)$, because $\mathfrak{m}$ kills $\mathcal{O}_C$. If $C$ is regular and $H^0(C, \mathcal{O}_C) = \kappa$, this number is the genus of $C$. Thus the genus of each curve over the singular point, in each normal modification, is at most $N$. Example 2.3.6 and Example 2.3.14 show curves of genus 1.
+Part 2 is the form in which the bound of Lipman controls the curves. Let $A$ be local of dimension 2 with residue field $\kappa$, and let $C \subseteq Y$ be an integral curve that maps to the closed point. Then $C$ is proper over $\kappa$, and $\ell_A(H^1(C, \mathcal{O}_C)) = \dim_\kappa H^1(C, \mathcal{O}_C)$, because $\mathfrak{m}$ kills $\mathcal{O}_C$. If $C$ is regular and $H^0(C, \mathcal{O}_C) = \kappa$, this number is the genus of $C$. Thus the genus of each curve over the singular point, in each normal modification, is at most $N$. Example 2.3.6 and Example 2.3.14 show curves of genus 1.
 
 **Corollary 2.1.10.** Let $A$ be an excellent normal local domain of dimension 2 with residue field $\kappa$, and assume that $A$ has a rational singularity. Let $f : Y \to \operatorname{Spec} A$ be a normal modification, and let $C, C' \subseteq Y$ be distinct integral closed curves that map to the closed point.
 
@@ -148,7 +148,7 @@ is exact. The ring $H^0(D, \mathcal{O}_D)$ is not 0, because $D$ is not empty, s
 
 3. The curve $C$ is proper over $\kappa$ and regular, and $H^1(C, \mathcal{O}_C) = 0$ by part 1. Since $\kappa$ is algebraically closed and $C$ is integral and proper, $H^0(C, \mathcal{O}_C) = \kappa$. Thus $C$ has genus 0. A regular proper curve of genus 0 over an algebraically closed field is isomorphic to $\mathbb{P}^1_\kappa$ [Har, Section IV.1]. $\square$
 
-Assume also that $Y$ is regular at the point $t$ of part 2. Then the local equations $a$ and $b$ of $C$ and $C'$ at $t$ satisfy $\ell(\mathcal{O}_{Y,t}/(a, b)) = 1$. Thus $(a, b)$ is the maximal ideal, and $a, b$ is a regular system of parameters. So two exceptional curves of a resolution of a rational singularity meet in at most one point, and they meet transversally there. The resolutions of Section 2.3 show this: their exceptional curves form chains and trees of projective lines. Lipman proves more in his theory of rational singularities, for example that the dual graph is a tree. We do not use these facts.
+Assume also that $Y$ is regular at the point $t$ of part 2. Then the local equations $a$ and $b$ of $C$ and $C'$ at $t$ satisfy $\ell(\mathcal{O}_{Y,t}/(a, b)) = 1$. Thus $(a, b)$ is the maximal ideal, and $a, b$ is a regular system of parameters. So let $Y$ be a resolution of a rational singularity, and let $C, C'$ be two exceptional curves with $H^0(C, \mathcal{O}_C) = H^0(C', \mathcal{O}_{C'}) = \kappa$. This holds for example if $\kappa$ is algebraically closed. Then $C$ and $C'$ meet in at most one point, and they meet transversally there. The resolutions of Section 2.3 show this: their exceptional curves form chains and trees of projective lines. Lipman proves more in his theory of rational singularities, for example that the dual graph is a tree. We do not use these facts.
 
 ### Notes and references
 
