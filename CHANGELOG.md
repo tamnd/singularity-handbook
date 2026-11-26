@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.31] - 2026-11-26
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.31.
+
 ### Changed
 
 - Volume 6, Section 2.2 gives the passage from the base field to the decomposition field without the henselization (tamnd/singularity-lean#141).
