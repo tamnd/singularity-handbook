@@ -10,6 +10,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- The map is at the release 0.4.48.
 - Volume 7, Section 3.12 tells which parts of Hypothesis 3.12.5 Section 3.13 proves and which part is false.
 
 ## [0.4.40] - 2026-11-26
