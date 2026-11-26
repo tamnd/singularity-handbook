@@ -25,7 +25,7 @@ Node: SG0000005B · Lean: `Singularity.logJacobianDirectrixCodim_le_fullDirectri
 
 **Example 3.13.2.** Let $p = 2$, $\Delta = \{x, z\}$ and $g = x^3 z + x z^3 + x^4 y z$, as in Volume 7, Example 3.11.2. Then $P_0$ is in the first case with $\rho = 2$ and $\tau_\rho = 1$. A chart in the direction $x$ with $t_y = t_z = 1$ gives a point $P_1$ of the second case with $\tau_\rho = 2$, and the component $z = 0$ leaves. The chart in the direction $y$ at the origin gives a point $P_2$ of the first case with $\tau_\rho = 1$. So $\tau_\rho$ goes $1, 2, 1$, and $\widetilde\tau(P_2) = 2$. The directrices $T_\rho(P_0) = \{a_x = a_z\}$ and $T_\rho(P_2) = \{a_x = 0\}$ are different planes.
 
-Node: SG0000005C
+Node: SG0000005C · Lean: `Singularity.KangarooExample.kangarooExample`
 
 **Conjecture 3.13.3.** Let $P_0, P_1, \dots, P_m$ be a kangaroo path. Then $\tau_\rho(P_m) \ge \tau_\rho(P_0)$.
 
@@ -79,7 +79,7 @@ Lemma 3.13.4 stays useful for each of these directions. At a point of the first 
 
 ### Status
 
-The map gives SG0000005B the status "proved". The map gives SG0000005D the status "refuted", since the Lean library proves the negation, and SG0000005G the status "proved". The map gives SG0000005C the status "planned", since the example is checked by hand and by a test, but not yet by a Lean computation. The Lean library proves Proposition 3.13.1 for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianKangaroo.lean`, and it states Conjecture 3.13.3 as `Singularity.KangarooPathConjecture`. It proves the negation for $p = 2$ and three variables as `Singularity.KangarooCounterexample.not_kangarooPathConjecture`, by the computation of Example 3.13.6 over $\mathbb{F}_2$. It proves Lemma 3.13.4 in `Singularity/Invariant/LogJacobianCaseAForms.lean`, with no hypothesis on the field, and the map gives SG0000005E the status "proved". It proves Proposition 3.13.5 in `Singularity/Invariant/LogJacobianKangarooSmall.lean`, and the map gives SG0000005F the status "proved". An outside expert has not yet read the result, and the milestone S7 asks for this.
+The map gives SG0000005B the status "proved". The map gives SG0000005D the status "refuted", since the Lean library proves the negation, and SG0000005G the status "proved". The map gives SG0000005C the status "proved", since the Lean library checks the computation of Example 3.13.2 over $\mathbb{F}_2$ as `Singularity.KangarooExample.kangarooExample` in `Singularity/Invariant/LogJacobianKangarooExample.lean`. The theorem checks the cases and the values of $\tau_\rho$ at $P_0$, $P_1$ and $P_2$. The Lean library proves Proposition 3.13.1 for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianKangaroo.lean`, and it states Conjecture 3.13.3 as `Singularity.KangarooPathConjecture`. It proves the negation for $p = 2$ and three variables as `Singularity.KangarooCounterexample.not_kangarooPathConjecture`, by the computation of Example 3.13.6 over $\mathbb{F}_2$. It proves Lemma 3.13.4 in `Singularity/Invariant/LogJacobianCaseAForms.lean`, with no hypothesis on the field, and the map gives SG0000005E the status "proved". It proves Proposition 3.13.5 in `Singularity/Invariant/LogJacobianKangarooSmall.lean`, and the map gives SG0000005F the status "proved". An outside expert has not yet read the result, and the milestone S7 asks for this.
 
 ### Notes and references
 
