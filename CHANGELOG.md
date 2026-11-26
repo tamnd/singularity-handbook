@@ -17,6 +17,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - The line `singularity` of `EDITION` now pins the map commit df4e564 of tamnd/singularity, which has the nodes SG0000005X to SG00000061.
+- Volume 7, Lemma 3.14.2 and Theorem 3.14.5 name their Lean proofs in `Singularity/Invariant/OriginRuns.lean`, and Volume 9, Section 3.16 reports this.
 
 ## [0.4.50] - 2026-11-27
 
