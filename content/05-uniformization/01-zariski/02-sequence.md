@@ -1,12 +1,14 @@
 ---
 title: The theorem of Abhyankar on quadratic sequences
 nodes: [SG00000023, SG0000004A, SG0000004B]
-sources: [Abh56, Zar39, Eis95, Mat, Cut04]
+sources: [Abh56, Abh56s, Zar39, Eis95, Mat, Cut04]
 status: drafted
 drafted_by: writer
 reviewed_by: []
 ---
 ## The theorem of Abhyankar on quadratic sequences
+
+Section 1.1 gives one step. A single step rarely improves anything, as the cusp below shows: after one blowup the strict transform of the cusp is regular, but it is still tangent to the exceptional curve. So we must iterate, and we must know that the iteration ends. For a valuation it does not end in general: the rings grow forever. What we can hope for is weaker and sufficient. Each element of $\mathcal{O}_v$ should lie in one ring of the sequence. Then each finite set of elements lies in one ring, and this is what local uniformization needs. The proof needs an invariant that is a nonnegative integer and that drops at each step. In dimension 2 the intersection number of two curves is such an invariant. The inequality of Noether says that it drops by at least the product of the multiplicities.
 
 We keep the notation of Section 1.1. Let $v$ be a valuation of $K$ that dominates $R$. Put $R_0 = R$. If $R_n$ is a regular local ring of dimension 2 that $v$ dominates, let $R_{n+1}$ be the quadratic transform of $R_n$ along $v$. If $R_n$ is a discrete valuation ring, the sequence stops, and $R_n = \mathcal{O}_v$ by Proposition 1.1.3. This gives the *quadratic sequence* $R_0 \subseteq R_1 \subseteq \dots$ along $v$. The aim of this section is the theorem of Abhyankar: the union of the sequence is $\mathcal{O}_v$. The invariant that decreases is the intersection number of two curves.
 
@@ -91,6 +93,8 @@ Each term is at most the term $[\kappa_i : \kappa]\, v_i(\bar{f}')$ above, becau
 
 Noether proved the equality $i_R(f, g) = ab + \sum i_{R'}(f', g')$, where the sum is over all points $R'$ of the first neighbourhood of $R$, weighted by the degrees of their residue fields. We need only the inequality at one point.
 
+*Example (the weights in the inequality of Noether).* Let $k = \mathbb{Q}$, let $R = \mathbb{Q}[x, y]_{(x, y)}$, and let $v$ be the valuation of Example 1.1.8.2, so that $R_1$ is the localization of $B = R[y_1]$ at $(x, y_1^2 - 2)$, with residue field $\mathbb{Q}(\sqrt{2})$. Let $f = y^2 - 2x^2$ and $g = y^2 - 2x^2 - x^3$. A common prime factor would divide $f - g = x^3$, and $x$ does not divide $f$, so $f$ and $g$ have no common prime factor. We have $(f, g) = (f, x^3)$. A Gröbner basis of this ideal is $\{2x^2 - y^2, xy^2, y^4\}$, and the standard monomials are $1, x, y, xy, y^2, y^3$. So $i_R(f, g) = 6$. Also $a = b = 2$, so $i_R(f, g) - ab = 2$. The strict transforms are $f' = y_1^2 - 2$ and $g' = y_1^2 - 2 - x$, so $R_1/(f', g') = R_1/(x, y_1^2 - 2)$ is the residue field of $R_1$, and $i_{R_1}(f', g') = 1$. The inequality $1 \le 2$ is strict. In the other chart $R[x/y]$, with $x = yx_1$, the strict transform of $f$ is $1 - 2x_1^2$, a unit at the origin. So $R_1$ is the only point of the first neighbourhood where $f'$ and $g'$ meet, and the equality of Noether reads $6 = 4 + [\mathbb{Q}(\sqrt{2}) : \mathbb{Q}] \cdot 1$. The factor $[\kappa(\mathfrak{n}) : \kappa]$ in the last line of the proof of Proposition 1.2.5 is exactly the factor that is lost when we look at one point. We computed the Gröbner basis with sympy.
+
 ### The theorem
 
 **Theorem 1.2.6 (Abhyankar).** Let $R$ be a regular local ring of dimension 2, essentially of finite type over a field, and let $v$ be a valuation of $K = \operatorname{Frac} R$ that dominates $R$. Let $(R_n)$ be the quadratic sequence along $v$. Then
@@ -107,6 +111,8 @@ $$i_{R_{n+1}}(F_{n+1}, G_{n+1}) = (a - b)\, i_{R_{n+1}}(x, G_n') + i_{R_{n+1}}(F
 and the right side is $i_{R_n}(F_n, G_n) - b^2$. In the same way, if $b \ge a$, the intersection number drops by at least $a^2$. So it drops by at least $c^2 \ge 1$.
 
 An intersection number is a nonnegative integer. So after finitely many steps one of $F_n$ and $G_n$ is a unit of $R_n$. If $G_n$ is a unit, then $z \in R_n$. If $F_n$ is a unit and $G_n$ is not, then $v(z) = -v(G_n) < 0$, because $v$ dominates $R_n$. This contradicts $z \in \mathcal{O}_v$. So $z \in R_n$ for some $n$. $\square$
+
+*Remark (why dimension 2).* The proof uses dimension 2 in two places. First, two elements without a common prime factor generate an ideal primary to $\mathfrak{m}$ (Lemma 1.2.2), so their intersection number is a finite integer. In dimension 3 two such elements define a curve, and $R/(f, g)$ has dimension 1. There is no integer invariant of a quotient $F/G$ that the same argument can use. Second, the transform of a regular local ring of dimension 2 is again regular of dimension 2 or a valuation ring (Proposition 1.1.3), so the induction stays in the same class. In dimension 3 the analogue of Theorem 1.2.6 is false. Let $R = k[x, y, z]_{(x, y, z)}$, and let $v$ be the monomial valuation with values in $\mathbb{Z} \times \mathbb{R}$, ordered lexicographically, given by $v(x) = (0, 1)$, $v(y) = (1, 0)$ and $v(z) = (1, \sqrt{2})$. The monomial $x^iy^jz^l$ has value $(j + l, i + l\sqrt{2})$, and distinct monomials have distinct values. So the least value of a monomial of a polynomial is attained once, and this least value defines a valuation, as in Example 1.2.11. Put $y_n = y/x^n$ and $z_n = z/x^n$. Then $v(y_n) = (1, -n)$ and $v(z_n) = (1, \sqrt{2} - n)$, and both are larger than $v(x) = (0, 1)$. As in Example 1.2.11, the blowup of the closed point along $v$ gives $R_n = k[x, y_n, z_n]_{(x, y_n, z_n)}$ for each $n$, and $x$ is the parameter of least value at each step. The element $z/y = z_n/y_n$ has value $(0, \sqrt{2}) > 0$, so it lies in $\mathcal{O}_v$. It lies in no $R_n$, because $y_n$ and $z_n$ are non-associate primes of the factorial ring $R_n$. So the union of the rings $R_n$ is a proper subring of $\mathcal{O}_v$. In dimension at least 3 one must blow up curves and other centers, and the choice of centers is the real problem. Section 1.4 and Chapter 2 return to this.
 
 Abhyankar proved the theorem for each regular local ring of dimension 2 [Abh56]. Our proof uses the finiteness of integral closure, which holds in the essentially finite type case. In higher dimension Zariski does not use the quadratic sequence alone, and his proof is much longer (Section 1.4).
 
@@ -130,6 +136,8 @@ Node: SG0000004B · Lean: none yet
 
 The corollary holds in each characteristic, also for valuations with a defect in the sense of Chapter 3. In characteristic $p$ the difficulty of surfaces is the passage from $k(x, y)$ to a finite extension $K$. The next section does this passage when the extension is étale at the valuation.
 
+*Remark (the characteristic).* Theorem 1.2.6 and Corollaries 1.2.7 and 1.2.8 hold in each characteristic, and no step of the proofs looks at the characteristic. The characteristic enters through the hypothesis of Corollary 1.2.7, a model whose local ring at the center of $v$ is regular. For $k(x, y)$ the plane gives such a model. For a finite extension $K$ of $k(x, y)$ we must produce one, and the natural attempt is to lift a good chart of $k(x, y)$ to $K$. In characteristic 0 this works, by Section 1.3. In characteristic $p$ the lift can fail, for example when $K/k(x, y)$ has a defect at $v$ (Chapter 3). Abhyankar proved local uniformization for surfaces over an algebraically closed field of characteristic $p$ [Abh56s] by other means.
+
 **Example 1.2.9.** We continue Example 1.1.7, with $v(x) = 1$ and $v(y) = \sqrt{2}$. The quadratic sequence is $R_n = k[x_n, y_n]_{(x_n, y_n)}$, where the pair of values $(v(x_n), v(y_n))$ follows the subtractive algorithm of Euclid. We start with $(1, \sqrt{2})$. Since $1 < \sqrt{2}$, we put $x_1 = x$ and $y_1 = y/x$, with values $(1, \sqrt{2} - 1)$. Now $v(y_1) < v(x_1)$, so $x_2 = x_1/y_1 = x^2/y$ and $y_2 = y_1$, with values $(2 - \sqrt{2}, \sqrt{2} - 1)$. Again $v(y_2) < v(x_2)$, so $x_3 = x_2/y_2 = x^3/y^2$, with value $3 - 2\sqrt{2}$. The element $z = x^3/y^2$ has $v(z) > 0$, and it is not in $R_0$, $R_1$ or $R_2$, but it lies in $R_3$. Since $\sqrt{2}$ is irrational, the algorithm never stops, and each $R_n$ has dimension 2. Each element of $\mathcal{O}_v$ is in some $R_n$ by Theorem 1.2.6, although no $R_n$ is equal to $\mathcal{O}_v$. The ring $\mathcal{O}_v$ is not Noetherian, because $\Gamma_v = \mathbb{Z} + \mathbb{Z}\sqrt{2}$ is not discrete.
 
 The proof of Theorem 1.2.6 is an algorithm. It writes $z$ as a quotient and follows the quotient up the sequence. The next example runs the algorithm on the element $z$ of Example 1.2.9 and records the intersection numbers.
@@ -151,6 +159,17 @@ Example 1.2.9 has rank 1. The quadratic sequence of a valuation of rank 2 behave
 3. The proof of Theorem 1.2.6 puts $z = y/x^n$ in $R_n$. Start with $F_0 = y$ and $G_0 = x^n$, with intersection number $n$. At each step $a = 1$, the strict transform of $F_j = y_j$ is $y_{j+1}$, and $G_{j+1} = x^{n-j-1}$. The intersection number drops by $1 = a^2$ at each step. After $n$ steps $G_n = 1$. The element $y/x^n$ is not in $R_{n-1}$, because $x$ does not divide $y_{n-1}$ in the factorial ring $R_{n-1}$.
 
 So the sequence never stops, although $\Gamma_v$ is finitely generated. A Noetherian valuation ring is a field or a discrete valuation ring, and $\dim \mathcal{O}_v = 2$. So $\mathcal{O}_v$ is not Noetherian, and no $R_n$ is equal to $\mathcal{O}_v$.
+
+*Example (the uniformization of the cusp branch).* Example 1.2.11 follows a line. We now follow a singular curve. Let $R = k[x, y]_{(x, y)}$ over any field $k$, and let $g = y^2 - x^3$. The map $f \mapsto f(t^2, t^3)$ from $k[x, y]$ to $k[t]$ has kernel $gk[x, y]$. For $f \ne 0$ write $f = g^mf_1$ with $g$ not dividing $f_1$, and put
+$$v(f) = (m, \operatorname{ord}_t f_1(t^2, t^3)) \in \mathbb{Z}^2,$$
+with the lexicographic order. This is a valuation of rank 2. Additivity is clear. For the triangle inequality, if $f$ and $f^*$ have the same first coordinate $m$, then $f + f^* = g^m(f_1 + f_1^*)$, and either $g$ divides $f_1 + f_1^*$, so that the first coordinate grows, or the second coordinate is at least the minimum. The center of $v$ on $R$ is $\mathfrak{m}$, with $v(x) = (0, 2)$, $v(y) = (0, 3)$ and $v(g) = (1, 0)$. The first coordinate is the order along the curve $g = 0$. The second coordinate is the valuation of the branch, which sees a point of the curve. The quadratic sequence runs as follows.
+
+1. In $R_0$ we have $v(x) < v(y)$. Put $y_1 = y/x$, with $v(y_1) = (0, 1) > 0$. So $h = Y$ and $R_1 = k[x, y_1]_{(x, y_1)}$. Here $g = x^2(y_1^2 - x)$, the strict transform of Example 1.1.7.
+2. In $R_1$ we have $v(y_1) = (0, 1) < (0, 2) = v(x)$. So the parameter of the transform is $y_1$. Put $x_2 = x/y_1$, with $v(x_2) = (0, 1)$. Then $h = X$ and $R_2 = k[x_2, y_1]_{(x_2, y_1)}$. Here $g = x_2^2y_1^3(y_1 - x_2)$.
+3. In $R_2$ we have $v(x_2) = v(y_1) = (0, 1)$. Choose $x_2$ as the parameter. The element $y_1/x_2$ has value 0, and on the branch it maps to $t/t = 1$, so its residue is 1 and $h = Y - 1$. Put $y_3 = y_1/x_2 - 1$. Then $R_3$ is the localization of $k[x_2, y_3]$ at $(x_2, y_3)$, and
+$$x = x_2^2(1 + y_3), \qquad y = x_2^3(1 + y_3)^2, \qquad g = x_2^6(1 + y_3)^3y_3.$$
+
+In $R_3$ the element $1 + y_3$ is a unit. So $x$, $y$ and $g$ are each a unit times a monomial in the regular system of parameters $x_2, y_3$. The strict transform $y_3 = 0$ of the cusp is regular and is transverse to the exceptional curve $x_2 = 0$. This is the embedded resolution of the cusp, seen from the valuation. From $R_3$ on, $v(x_2) = (0, 1)$ and $v(y_3) = v(g) - 6v(x_2) = (1, -6)$, and the sequence goes on as in Example 1.2.11, with $x_2$ in place of $x$ and $y_3$ in place of $y$. The three formulas above were checked with sympy. The intersection numbers also show the progress. In $R_0$ we have $i_{R_0}(g, x) = \dim_k k[y]/(y^2) = 2$. In $R_3$ the strict transform $y_3$ of $g$ meets the strict transform of $x$, which is the unit $1 + y_3$, with intersection number 0.
 
 ### Notes and references
 
