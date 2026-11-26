@@ -80,6 +80,39 @@ Let $\ell = 3$. The 3-Sylow subgroup is the alternating group $A_3$, of index 2.
 
 The subgroups of $S_3$ have the orders 1, 2, 3 and 6, so their indices are 6, 3, 2 and 1. No subgroup has an index prime to 6 except $S_3$ itself, and its quotient is $X$. So the method of Proposition 3.2.3 gives one alteration for each prime $\ell$, and no alteration other than the identity of $X$ whose degree is prime to 2 and to 3 at the same time. In characteristic $p$ we want a degree prime to each $\ell \ne p$, and Section 3.3 explains how Temkin obtains it.
 
+### Two further statements of Gabber
+
+The theorem of Gabber has a form over a base of dimension 1, which is the analogue of Theorem 1.2.5, and a local form over quasi-excellent schemes. We state both, because they show what the method gives in mixed characteristic and in a local setting.
+
+**Theorem 3.2.7 (Gabber, over a base of dimension 1).** Let $S$ be a separated, integral, Noetherian, excellent, regular scheme of dimension 1, with generic point $\eta$. Let $X$ be a scheme that is separated, flat and of finite type over $S$, let $\ell$ be a prime invertible on $S$, and let $Z \subseteq X$ be a nowhere dense closed subset. There are a finite extension $\eta'$ of $\eta$ of degree prime to $\ell$, with $S'$ the normalization of $S$ in $\eta'$, a projective $\ell'$-alteration $h \colon \tilde X \to X$ over $S' \to S$ with $\tilde X$ regular and quasi-projective over $S'$, a strict normal crossings divisor $\tilde T$ on $\tilde X$, and a finite closed subset $\Sigma$ of $S'$, such that:
+
+1. outside $\Sigma$, the morphism $\tilde X \to S'$ is smooth and $\tilde T$ is a relative divisor with normal crossings over $S'$;
+2. étale locally around each geometric point of a fibre of $\tilde X$ over a point $s' \in \Sigma$, the pair $(\tilde X, \tilde T)$ is isomorphic to the pair
+$$S'[u_1^{\pm 1}, \dots, u_s^{\pm 1}, t_1, \dots, t_n]/(u_1^{b_1} \cdots u_s^{b_s} t_1^{a_1} \cdots t_r^{a_r} - \pi), \qquad V(t_{r+1} \cdots t_m),$$
+around the point $u_i = 1$, $t_j = 0$, with $1 \le r \le m \le n$, positive integers $a_1, \dots, a_r, b_1, \dots, b_s$ whose greatest common divisor with the characteristic exponent $p$ of $k(s')$ is 1, and $\pi$ a uniformizer at $s'$;
+3. $h^{-1}(Z)$, with its reduced structure, is contained in the union of the reduced fibres of $\tilde X$ over $\Sigma$ and of $\tilde T$.
+
+Lean: none yet
+
+This is [ILO14, Exposé X, Theorem 2.4]. Compare with the semistable form of de Jong, Theorem 1.2.5. There the special fibre becomes a reduced divisor with strict normal crossings, so all the exponents are 1, but the degree of the alteration is not controlled. Here the degree is prime to $\ell$, and the price is that the special fibre can have multiplicities $a_j$ and $b_i$. The theorem does not say that the multiplicities can be removed by an alteration of degree prime to $\ell$.
+
+**Theorem 3.2.8 (Gabber, local uniformization prime to $\ell$).** Let $X$ be a Noetherian quasi-excellent scheme, let $Z$ be a nowhere dense closed subset of $X$, and let $\ell$ be a prime invertible on $X$. There is a finite family of morphisms $p_i \colon X_i \to X$, covering for the topology of $\ell'$-alterations, such that for each $i$ the scheme $X_i$ is regular and connected and $p_i^{-1}(Z)$ is the support of a divisor with strict normal crossings.
+
+Lean: none yet
+
+This is [ILO14, Introduction, Theorem 2]. The *topology of $\ell'$-alterations* is a Grothendieck topology in which both the $\ell'$-alterations of Definition 3.2.1 and the Nisnevich coverings are covering families [ILO14, Exposé II]. So the theorem is local in two senses: one may pass to an $\ell'$-alteration, and one may work locally for the Nisnevich topology. It holds for all quasi-excellent schemes, also in mixed characteristic and without a base field. Gabber uses it in place of resolution in the proof of the finiteness theorem for étale cohomology of quasi-excellent schemes [ILO14, Introduction]. The morphisms $p_i$ are not open immersions and are not of degree 1. So the theorem is a local uniformization only after an $\ell'$-alteration. It is not the local uniformization of Volume 3 for the valuations of the function field, and it does not give a resolution.
+
+### Why the theorem of Gabber does not give resolution
+
+The theorem of Gabber is the strongest known form of the theorem of de Jong for coefficients prime to $\ell$. It does not give resolution in characteristic $p > 0$, for the following reasons.
+
+1. It controls the degree only at one prime $\ell \ne p$ at a time. Different $\ell$ give different alterations (Remark 1 above), and Example 3.2.6 shows that the Sylow method cannot remove two primes at once.
+2. It says nothing about the $p$-part of the degree. The $\ell$-Sylow subgroup $P$ of Proposition 3.2.3 contains no element of order $p$, but the remaining alteration $X'/P \to X$ can have degree divisible by $p$.
+3. The modification theorem treats the tame quotient $X_2/L$ in Step 3 of the proof, because the action is tame and the scheme has a log regular structure. It makes the action very tame by an equivariant modification, and then the desingularization of Kato and Nizioł of log regular schemes resolves the quotient. The proof of the modification theorem uses the theory of canonical desingularization in characteristic 0 [ILO14, Introduction]. None of this applies to wild actions.
+4. Theorem 3.2.8 is local for a topology in which the alterations are coverings. A local statement of this kind does not glue to a global modification.
+
+So, with the theorem of Temkin (Section 3.3), the theorem of Gabber reduces the obstruction to resolution to the $p$-part of the degree, and this part is open in dimension at least 4.
+
 ### Notes and references
 
 The theorem of Gabber is written in [ILO14], in particular in Exposé X by Illusie-Temkin. The earlier result of de Jong on Galois alterations [dJ97] gives the Galois alteration of Step 2 over a field. The map has node SG0000001M for Corollary 3.2.5 in the form of the statement for a variety. Nothing in this section is in the Lean library.
