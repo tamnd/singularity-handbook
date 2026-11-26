@@ -73,6 +73,18 @@ since $\partial^\beta(x'^\gamma)$ is zero if $\gamma \not\ge \beta$, is divisibl
 
 For an ideal sheaf $I$ and a smooth closed subvariety $Z$, let $\operatorname{ord}_Z I$ be the minimum of $\operatorname{ord}_x I$ over the closed points $x \in Z$. Proposition 2.1.7 says that $I \subseteq I_Z^{\operatorname{ord}_Z I}$. In particular, $Z \subseteq \operatorname{cosupp}(I, m)$ if and only if $I \subseteq I_Z^m$. This is the form in which we use it: it lets us divide the pullback of $I$ to a blowup of $Z$ by the $m$th power of the equation of the exceptional divisor.
 
+### Two computations
+
+The next example computes the derivative ideals in two cases. It shows how Corollary 2.1.5 finds the locus of maximal order, and that this locus can be singular even when the ideal has a simple form.
+
+**Example 2.1.8.** (1) Let $f = y^2 - x^5$ on $\mathbb{A}^2$. The partial derivatives are $\partial_x f = -5x^4$ and $\partial_y f = 2y$. So
+$$D(f) = (y^2 - x^5, \; x^4, \; y) = (y, \; x^4), \qquad D^2(f) \ni \partial_y(y) = 1.$$
+By Corollary 2.1.5, $\operatorname{max\text{-}ord} f = 2$, and $\operatorname{cosupp}(f, 2) = V(y, x^4)$ is the origin. The ideal $D(f)$ has order 1 at the origin, as Lemma 2.1.4 says, and it contains the element $y$ of order 1. We use this ideal as a running example in Sections 2.2, 2.3 and 3.2.
+
+(2) Let $f = z^2 - x^2 y^2$ on $\mathbb{A}^3$. The partial derivatives are $-2xy^2$, $-2x^2y$ and $2z$. Since $f = z \cdot z - x \cdot xy^2$, we get
+$$D(f) = (z, \; xy^2, \; x^2 y), \qquad D^2(f) = \mathcal{O}.$$
+So $\operatorname{max\text{-}ord} f = 2$, and $\operatorname{cosupp}(f, 2) = V(z, xy^2, x^2y) = V(z, xy)$ is the union of the $x$-axis and the $y$-axis. This locus is singular at the origin, so we cannot blow it up as a smooth center. Proposition 2.1.7, applied to each axis, says that $f \in (y, z)^2 \cap (x, z)^2$. We can see this directly: $f = z^2 - x^2 y^2$, and both terms lie in both ideals. The two axes lie in the smooth surface $(z = 0)$, and $z \in D(f)$. Section 2.3 shows that this is not an accident.
+
 ### Notes and references
 
 Derivatives of the equations appear in resolution since Hironaka [Hir64]. The presentation with derivative ideals follows [Kol07, Chapter 3]. In every characteristic the statement of Proposition 2.1.7 follows from the theorem of Zariski-Nagata, but the proof above needs $\beta! \ne 0$. The fact that the completion of a Noetherian local ring is faithfully flat is in [Mat] and [AM69, Chapter 10].
