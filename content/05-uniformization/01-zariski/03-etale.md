@@ -30,6 +30,8 @@ have degree less than $n$ and agree at the $n$ points $z_k$. So they are equal. 
 $$\beta = \sum_j \operatorname{Tr}(\beta z^j)\, \frac{b_j}{P'(z)}.$$
 In the second claim the coefficients of $P$ lie in $O$, because $O$ is integrally closed, so $b_j \in O[z]$. For $\beta \in \bar{O}$ the trace $\operatorname{Tr}(\beta z^j)$ is integral over $O$ and lies in $F$, so it lies in $O$. Thus $P'(z)\beta \in O[z]$. $\square$
 
+*Example (Lemma 1.3.1 for a quadratic extension).* Let $F = \mathbb{Q}$, $L = \mathbb{Q}(\sqrt{5})$ and $z = \sqrt{5}$, with $P = Z^2 - 5$. Then $P(Z)/(Z - z) = Z + z$, so $b_0 = z$ and $b_1 = 1$, and $P'(z) = 2z$. The dual basis is $b_0/P'(z) = \frac{1}{2}$ and $b_1/P'(z) = 1/(2\sqrt{5})$. Indeed $\operatorname{Tr}(\frac{1}{2}) = 1$, $\operatorname{Tr}(z/2) = 0$, $\operatorname{Tr}(1/(2z)) = 0$ and $\operatorname{Tr}(z/(2z)) = 1$. Now let $O = \mathbb{Z}$. The integral closure is $\bar{O} = \mathbb{Z}[\beta]$ with $\beta = (1 + \sqrt{5})/2$, and it is larger than $O[z] = \mathbb{Z}[\sqrt{5}]$. The lemma says that $P'(z)\bar{O} \subseteq O[z]$, and indeed $2\sqrt{5}\,\beta = 5 + \sqrt{5}$. The element $P'(z) = 2\sqrt{5}$ is not a unit at the primes over 2 and 5, and these are the primes where $O[z]$ is not integrally closed or not étale. At a valuation where $P'(z)$ is a unit, the lemma gives $\bar{O} \subseteq O[z]$ after localization, and this is how the first part of Lemma 1.3.3 uses it.
+
 **Definition 1.3.2 (étale generator).** An *étale generator* of $K/K_0$ at $v$ is an element $z \in \mathcal{O}_v$ with $K = K_0(z)$ such that the minimal polynomial $P$ of $z$ over $K_0$ has coefficients in $\mathcal{O}_{v_0}$ and $P'(z)$ is a unit of $\mathcal{O}_v$.
 
 Lean: `Singularity.IsEtaleGenerator`
