@@ -1,6 +1,6 @@
 ---
 title: Runs along a curve
-nodes: []
+nodes: [SG0000005H, SG0000005J]
 sources: [Hir64, CJS20, Nar83]
 status: drafted
 drafted_by: writer
@@ -35,6 +35,8 @@ Let $P_k$ be the point $(\{y\}, g_k)$, and let $C = V(x, z)$ be the $y$-axis. Th
 3. The ideal $\widetilde\Theta(G_k)$ is contained in $I_C^4$, where $I_C = (x, z)$, and $\rho = 4$ at each point of $C$.
 
 So $P_0, P_1, P_2, \dots$ is an infinite run, and the runs of $P_0$ do not end.
+
+Node: SG0000005H · Lean: `Singularity.CurveRuns.curveRun`
 
 *Proof.* Part 1. The monomial $x^4 y^{2k+1}$ has an odd exponent of $y$, and the monomial $x^2 y^{3k+1} z^3$ has an odd exponent of $z$. So no monomial of $g_k$ is a square, and $g_k$ is clean. The largest power of $y$ that divides $g_k$ is $y^{2k+1}$, since $2k + 1 \le 3k + 1$. So $r = (0, 2k+1, 0)$ and
 $$G_k = x^4 + x^2 y^k z^3.$$
@@ -75,6 +77,8 @@ Let $P_k$ be the point $(\{x, z\}, g_k)$, let $G = y^2 z + x^5 y^3$, and let $\g
 
 So $P_0, P_1, P_2, \dots$ is an infinite run, and it starts at an isolated point of the locus where $\rho \ge 3$.
 
+Node: SG0000005J · Lean: `Singularity.CurveRuns.isolatedRun` (parts 1 and 2)
+
 *Proof.* Part 1. The monomial $x^{5 + 3k} y^2 z^3$ has an odd exponent of $z$, and the monomial $x^{10 + 3k} y^3 z^2$ has an odd exponent of $y$. So no monomial of $g_k$ is a square, and $g_k$ is clean. The largest power of $x$ that divides $g_k$ is $x^{5 + 3k}$, and the largest power of $z$ is $z^2$. The variable $y$ is not in $\Delta$, so $r_y = 0$. Thus $r = (5 + 3k, 0, 2)$, and $g_k = x^{5 + 3k} z^2 G$ with $G = y^2 z + x^5 y^3$. The term $y^2 z$ is not divisible by $x$, and the term $x^5 y^3$ is not divisible by $z$. Both terms have degree at least $3$, and $y^2 z$ has degree $3$, so $d = \operatorname{ord} G = 3$. The generators of $\widetilde\Theta(G)$ are the two elements $r_i G + x_i \partial_i G$ for $i = x, z$ and the free derivative $\partial_y G$. With $r_x = 5 + 3k$ and $r_z = 2$, and with the coefficients modulo $2$, we get
 $$e_x = (5 + 3k) y^2 z + (10 + 3k) x^5 y^3 = (k + 1) y^2 z + k x^5 y^3,$$
 $$e_z = 2 G + z \partial_z G = y^2 z, \qquad \partial_y G = 2 y z + 3 x^5 y^2 = x^5 y^2.$$
@@ -107,7 +111,7 @@ Examples 3.12.2 and 3.12.4 show that the question "does each run end" has the an
 
 **Hypothesis 3.12.5 (H4).** Let $P_0, P_1, P_2, \dots$ be an infinite run, and let $g = x^r G$ and $\rho$ be the data of $P_0$. Then the run follows a formal curve $\gamma$ through $P_0$, and the order of $G$ along $\gamma$ is at least $\rho$, that is, $G \in I_\gamma^\rho$.
 
-This is an open question. We do not know a proof or a counterexample. Example 3.12.2 and Remark 3.12.3 are infinite runs that satisfy the conclusion, with $\gamma = C$ and with the curve $x = 0$. Example 3.12.4 satisfies it with the $x$-axis $\gamma$, by part 3.
+This was an open question when we stated it. Section 3.13 proves the second half for $n \ge 2$ and the whole statement for $n = 2$, and it shows that the first half is false for $n = 3$ (Example 3.13.10). It also shows that $G \in I_\gamma^\rho$ must be read with the intrinsic order $\nu^G_\gamma$ of Definition 3.13.2. Example 3.12.2 and Remark 3.12.3 are infinite runs that satisfy the conclusion, with $\gamma = C$ and with the curve $x = 0$. Example 3.12.4 satisfies it with the $x$-axis $\gamma$, by part 3.
 
 **Remark 3.12.6.** The first form of H4 in this section asked for $\widetilde\Theta(G) \subseteq I_\gamma^\rho$ in place of $G \in I_\gamma^\rho$. This form is false, by Example 3.12.4. There $\rho = 3$, and no formal curve $\gamma'$ through the origin has $\widetilde\Theta(G) \subseteq I_{\gamma'}^3$. For a proof, let $v$ be the order along $\gamma'$, that is, $v(h)$ is the largest $m$ with $h \in I_{\gamma'}^m$. Since $K[[x]] / I_{\gamma'}$ is regular, the graded ring of $I_{\gamma'}$ is a polynomial ring over $K[[s]]$, so $v(h h') = v(h) + v(h')$. Also $I_{\gamma'}^2 \subseteq \mathfrak{m}^2$, so $v(x), v(y), v(z) \le 1$. If $\widetilde\Theta(G) \subseteq I_{\gamma'}^3$, then $2 v(y) + v(z) = v(y^2 z) \ge 3$, so $v(y) = v(z) = 1$, and $I_{\gamma'}$ contains the prime ideal $(y, z)$ of height $2$. Both ideals have height $2$, so $I_{\gamma'} = (y, z)$ and $v(x) = 0$. Then $v(x^5 y^2) = 2 < 3$, which is a contradiction. In Example 3.12.2 the two forms agree, since there $\widetilde\Theta(G_k) \subseteq I_C^4$ and $G_k \in I_C^4$.
 
