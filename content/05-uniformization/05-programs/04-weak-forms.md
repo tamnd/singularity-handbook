@@ -1,7 +1,7 @@
 ---
 title: Weak forms and the status of the programs
 nodes: [SG0000001K, SG0000001M, SG0000001N, SG0000001G, SG0000001H, SG0000001J, SG00000007]
-sources: [dJ96, dJ97, AdJ97, ILO14, Tem17, Tem13, Tem23, KK05, KK09, Cut15, Cut20, CM17, Kuh10b, KR23, CKR25, Nov24, NS14, HOST26, Zar44, Abh66, CP08, CP09, CP19, CJS20, BV10, BenV13, BBE25, KM16, ATW24, McQ20, AQS24, AT26, HP24, HW14, Hau10]
+sources: [dJ96, dJ97, AdJ97, ILO14, Tem17, Tem13, Tem23, KK05, KK09, Cut15, Cut20, CM17, Kuh10b, KR23, CKR25, Nov24, NS14, HOST26, Zar44, Abh66, CP08, CP09, CP19, CJS20, BV10, BenV13, BBE25, KM16, ATW24, McQ20, AQS24, AT26, HP24, HW14, Hau10, Cut99, Hir17]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -40,11 +40,11 @@ The table lists the programs of this chapter. The column "proved" gives the stro
 | Inseparable local uniformization | local uniformization after a purely inseparable extension [Tem13], height reduction [Tem23] | regularity does not descend (Section 4.2) |
 | Defect theory | classification of Artin-Schreier defect [Kuh10b, KR23, CKR25], the defect as the obstruction to the projection method [CM17] | no method that removes a dependent defect by blowups |
 | Key polynomials, tight extensions | generators of extensions [Nov24], reduction to rank 1 [NS14], tight extensions in a recent preprint [HOST26] | control of limit key polynomials in transcendence degree 4 |
-| Local monomialization | true in characteristic 0 (Cutkosky, 1999) | false in characteristic $p$ [Cut15] |
+| Local monomialization | true in characteristic 0 [Cut99] | false in characteristic $p$ [Cut15] |
 | Characteristic polyhedron | embedded surfaces [CJS20], threefolds [CP08, CP09, CP19] | the reduction to degree $p$ and the Projection Theorem in dimension 4 |
 | Rees algebras, elimination | stratification [BV10], strong monomial case [BenV13], Samuel slope [BBE25] | a decreasing invariant outside the monomial case |
 | Idealistic filtrations | an algorithm in dimension 3 [KM16] | the program in dimension at least 4 |
-| Hironaka, infinitely near points | announcement (manuscript of 2017) | not checked by the community |
+| Hironaka, infinitely near points | announcement [Hir17] | not checked by the community |
 | Weighted blowups | resolution in characteristic 0 [ATW24, McQ20] | the invariant fails in characteristic $p$ [AQS24, AT26] |
 | Purely inseparable equations | embedded surfaces in dimension 3 [HP24], $z^p + g(x, y)$ [HW14] | $z^p + g(x_1, \dots, x_4)$ (Volume 9, Conjecture 2.3.7) |
 | Alterations | regular alterations of degree prime to $\ell$ or a power of $p$ [dJ96, ILO14, Tem17] | degree 1, the descent along wild or inseparable extensions |
@@ -53,4 +53,4 @@ Local uniformization in transcendence degree 4 and resolution of fourfolds in ch
 
 ### Notes and references
 
-Volume 8 proves the theorem of de Jong and states the refinements of Gabber and Temkin. Volume 9, Chapter 2, states the open problems and the routes. The memoir of Cutkosky of 1999 on local monomialization has no key in the map.
+Volume 8 proves the theorem of de Jong and states the refinements of Gabber and Temkin. Volume 9, Chapter 2, states the open problems and the routes. For local monomialization in characteristic 0 see [Cut99].

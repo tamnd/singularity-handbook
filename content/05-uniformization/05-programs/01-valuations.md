@@ -1,7 +1,7 @@
 ---
 title: Programs of valuation theory
 nodes: [SG0000001E, SG0000001G, SG00000010, SG0000001H, SG0000001J, SG0000000X]
-sources: [Zar40, Zar44, Zar44b, Pil, KK05, KK09, Kuh10, Kuh10b, Kuh16, Kuh25, KR23, CKR25, Kuh-book, Cut15, Cut20, Cut21, CM17, Tem13, Tem23, NS14, HMOS22, Nov24, Mac36, Vaq07, Tei03, Tei14, Tev14, HOST26, Abh56s, Abh66]
+sources: [Zar40, Zar44, Zar44b, Pil, KK05, KK09, Kuh10, Kuh10b, Kuh16, Kuh25, KR23, CKR25, Kuh-book, Kuh00, San17, Cut99, CP04, Cut24, Cut15, Cut20, Cut21, CM17, Tem13, Tem23, NS14, HMOS22, Nov24, Mac36, Vaq07, Tei03, Tei14, Tev14, HOST26, Abh56s, Abh66]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -68,13 +68,13 @@ Kuhlmann divides the Artin-Schreier defect extensions into two classes, the *dep
 
 Three later results develop this classification. Kuhlmann and Rzepka extend the classification to mixed characteristic, and they prove that deeply ramified fields admit only independent defect extensions of prime degree [KR23]. Cutkosky, Kuhlmann and Rzepka prove that a Galois defect extension of prime degree is independent if and only if its module of relative Kähler differentials of the valuation rings is zero [CKR25]. Kuhlmann studies the higher ramification groups of these extensions in [Kuh25]. These are theorems of valuation theory. They give a precise language for the obstruction. They do not yet give a method to remove a defect by blowups.
 
-*Remark.* The tame fields of Kuhlmann are defectless, and their model theory is well understood [Kuh16]. Kuhlmann proposed to prove local uniformization by reduction to a tame situation, and he described this program in a paper of 2000 on the valuation theoretic and model theoretic aspects of local uniformization. The program explains why the theorem of Knaf and Kuhlmann needs a finite extension: the extension makes the field closer to a tame field. To remove the extension one has to control the defect extensions that occur on the way down. This step is open.
+*Remark.* The tame fields of Kuhlmann are defectless, and their model theory is well understood [Kuh16]. Kuhlmann proposed to prove local uniformization by reduction to a tame situation, and he described this program in [Kuh00]. The program explains why the theorem of Knaf and Kuhlmann needs a finite extension: the extension makes the field closer to a tame field. To remove the extension one has to control the defect extensions that occur on the way down. This step is open.
 
 ### Key polynomials
 
 The second tool is the theory of key polynomials. Let $(K, v)$ be a valued field and let $\mu$ be an extension of $v$ to $K(x)$. MacLane constructs $\mu$ from $v$ by a sequence of augmentations along key polynomials when $v$ is discrete of rank 1 [Mac36], and Vaquié extends the theory to each valuation, with limit augmentations [Vaq07]. Volume 3, Theorem 3.3.5, states the theorem of MacLane and Vaquié, Theorem 3.3.51 gives the criterion for a finite chain, and Example 3.3.14 gives an infinite chain. Herrera Govantes, Mahboub, Olalla Acosta and Spivakovsky give an equivalent theory of key polynomials for simple extensions of valued fields [HMOS22].
 
-Key polynomials measure the defect. For a simple extension, the defect is a product of the degrees of the limit steps in a complete set of key polynomials. This was proved by San Saturnino in a preprint of 2014, and he deduces a form of local uniformization for valuations of rank 1 under inductive assumptions of no defect. Novacoski proves that sequences of key polynomials give generators of an extension of valuation rings when the initial index equals the ramification index, and he deduces the conjecture of Knaf in the case of pure extensions [Nov24].
+Key polynomials measure the defect. For a simple extension, the defect is a product of the degrees of the limit steps in a complete set of key polynomials. San Saturnino proved this [San17], and he deduces a form of local uniformization for valuations of rank 1 under inductive assumptions of no defect. Novacoski proves that sequences of key polynomials give generators of an extension of valuation rings when the initial index equals the ramification index, and he deduces the conjecture of Knaf in the case of pure extensions [Nov24].
 
 *Remark.* The program of Spivakovsky uses key polynomials to construct the local uniformization of a valuation of rank 1 step by step. Each key polynomial is a candidate for a new regular parameter after a blowup. The limit key polynomials are the places where the defect enters: in the worked example above, the polynomials $X - c_n$ form an infinite sequence with no limit in $K$. A proof of Conjecture 2.3.1 of Volume 9 along these lines would need to control the limit key polynomials in four variables. This is open.
 
@@ -88,13 +88,13 @@ The program needs to pass from $R$ to its completion $\hat{R}$ without a change 
 
 The relative form of local uniformization is *local monomialization*. Let $k$ be a field, let $K \subseteq L$ be algebraic function fields over $k$ with $L/K$ finite, let $v$ be a valuation of $L$ that is trivial on $k$, and let $R \subseteq S$ be regular local rings, essentially of finite type over $k$, with fraction fields $K$ and $L$, such that $S$ dominates $R$ and $v$ dominates $S$. A *local monomialization* of $R \to S$ along $v$ is a pair of sequences of blowups in regular centers along $v$, $R \to R'$ and $S \to S'$, such that $S'$ dominates $R'$, and there are regular parameters $u_1, \dots, u_n$ of $R'$ and $x_1, \dots, x_n$ of $S'$, units $\gamma_i$ of $S'$ and a matrix $(a_{ij})$ of natural numbers with nonzero determinant such that
 $$u_i = \gamma_i \prod_{j = 1}^{n} x_j^{a_{ij}} \quad \text{for } 1 \le i \le n.$$
-Cutkosky proved that local monomialization exists in characteristic 0 in a memoir of 1999. In characteristic $p$ it fails.
+Cutkosky proved that local monomialization exists in characteristic 0 [Cut99]. In characteristic $p$ it fails.
 
 **Theorem 5.1.3 (Cutkosky).** Let $k$ be a field of characteristic $p > 0$ with at least 3 elements, and let $n \ge 2$. There are algebraic function fields $K \subseteq L$ of transcendence degree $n$ over $k$, with $L/K$ finite, a valuation $v$ of $L$ that is trivial on $k$, and regular local rings $R \subseteq S$ as above, such that $R \to S$ has no local monomialization along $v$. The same example has no weak local monomialization.
 
 Lean: none yet
 
-This is the main result of [Cut15]. The examples come from defect extensions. Cutkosky and Piltant had earlier shown that the stronger form of monomialization, *strong local monomialization*, which asks that the matrix be of a special triangular form, fails for a tower of two Artin-Schreier defect extensions of function fields of surfaces, in a paper of 2004 on the ramification of valuations. In that paper they also prove strong local monomialization for defectless extensions of function fields of dimension 2. Cutkosky later gave an example in a tower of two independent defect extensions, in a preprint of 2023. Cutkosky also shows that in dimension 2 there are stable monomial forms along suitable sequences of blowups, but that they can change in an erratic way under further blowups, with examples from towers of Artin-Schreier defect extensions [Cut21].
+This is the main result of [Cut15]. The examples come from defect extensions. Cutkosky and Piltant had earlier shown that the stronger form of monomialization, *strong local monomialization*, which asks that the matrix be of a special triangular form, fails for a tower of two Artin-Schreier defect extensions of function fields of surfaces [CP04]. In that paper they also prove strong local monomialization for defectless extensions of function fields of dimension 2. Cutkosky later gave an example in a tower of two independent defect extensions [Cut24]. Cutkosky also shows that in dimension 2 there are stable monomial forms along suitable sequences of blowups, but that they can change in an erratic way under further blowups, with examples from towers of Artin-Schreier defect extensions [Cut21].
 
 *Remark.* Theorem 5.1.3 is not a counterexample to local uniformization. Local uniformization concerns one field, and local monomialization concerns a map between two fields. But the theorem shows that the relative method, which in characteristic 0 passes from a subfield $K_0$ to $K$, cannot be used in characteristic $p$ without control of the defect. This agrees with Proposition 3.1.4 and Example 3.2.3.
 
@@ -104,4 +104,4 @@ These are theorems: local uniformization of Abhyankar valuations in each charact
 
 ### Notes and references
 
-Volume 3, Chapters 3 and 4, give the valuation theory that this section uses. For the defect see [Kuh-book]. Kuhlmann's paper of 2000, the memoir of Cutkosky of 1999 on local monomialization, the paper of Cutkosky and Piltant of 2004, the preprint of Cutkosky of 2023 and the preprint of San Saturnino of 2014 have no key in the map, and we name them in words.
+Volume 3, Chapters 3 and 4, give the valuation theory that this section uses. For the defect see [Kuh-book]. For the program of Kuhlmann see [Kuh00]. For local monomialization and its failure see [Cut99, CP04, Cut15, Cut24]. For key polynomials and the defect see [San17].
