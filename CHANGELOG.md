@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 4, Section 1.1 gives the Stacks tag 00NR for the regular quotients of a regular local ring.
 - Volume 3, Section 4.2 cites Volume 6, Lemma 2.1.5 and its Lean name for the unique extension of a valuation to a purely inseparable extension.
 
 ## [0.4.29] - 2026-11-26
