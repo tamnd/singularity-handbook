@@ -1,6 +1,6 @@
 ---
 title: Runs that follow no curve
-nodes: []
+nodes: [SG0000005K]
 sources: [CP19, CJS20, Hir64, Chr79]
 status: drafted
 drafted_by: writer
@@ -152,6 +152,8 @@ In each dimension, a formal curve $\gamma$ with $G \in I_\gamma^\rho$ gives an a
 ### The hypothesis on surfaces
 
 **Hypothesis 3.13.12 (H4').** Let $P_0, P_1, P_2, \dots$ be an infinite run with $\rho \ge 1$. Then there are an $N \ge 0$ and a regular formal subvariety $Z$ of positive dimension at $P_N$ such that $P_k$ is on the strict transform of $Z$ for each $k \ge N$, and $\nu^G_Z(P_N) \ge \rho$.
+
+Node: SG0000005K
 
 Examples 3.12.2, 3.12.4, 3.13.10 and 3.13.11 satisfy the hypothesis, with $Z$ the $y$-axis, the $x$-axis, the plane $V(x)$ and the plane $W$. Theorem 3.13.8 proves it for $n = 2$, with $N = 0$ and a curve. By Lemma 3.13.5 and Theorem 3.13.6, a run with a finite number of corner steps satisfies it with a curve. So the hypothesis is open only for the runs with an infinite number of corner steps.
 

@@ -1,6 +1,6 @@
 ---
 title: Runs along a curve
-nodes: []
+nodes: [SG0000005H, SG0000005J]
 sources: [Hir64, CJS20, Nar83]
 status: drafted
 drafted_by: writer
@@ -35,6 +35,8 @@ Let $P_k$ be the point $(\{y\}, g_k)$, and let $C = V(x, z)$ be the $y$-axis. Th
 3. The ideal $\widetilde\Theta(G_k)$ is contained in $I_C^4$, where $I_C = (x, z)$, and $\rho = 4$ at each point of $C$.
 
 So $P_0, P_1, P_2, \dots$ is an infinite run, and the runs of $P_0$ do not end.
+
+Node: SG0000005H · Lean: `Singularity.CurveRuns.curveRun`
 
 *Proof.* Part 1. The monomial $x^4 y^{2k+1}$ has an odd exponent of $y$, and the monomial $x^2 y^{3k+1} z^3$ has an odd exponent of $z$. So no monomial of $g_k$ is a square, and $g_k$ is clean. The largest power of $y$ that divides $g_k$ is $y^{2k+1}$, since $2k + 1 \le 3k + 1$. So $r = (0, 2k+1, 0)$ and
 $$G_k = x^4 + x^2 y^k z^3.$$
@@ -74,6 +76,8 @@ Let $P_k$ be the point $(\{x, z\}, g_k)$, let $G = y^2 z + x^5 y^3$, and let $\g
 4. Let $Q = (a, b, c) \in K^3$ be a point with $Q \ne 0$. Then $\rho(Q) \le 2$, and $\rho(Q) = 2$ if $Q$ is a point of $\gamma$. So the origin is an isolated point of the locus where $\rho \ge 3$.
 
 So $P_0, P_1, P_2, \dots$ is an infinite run, and it starts at an isolated point of the locus where $\rho \ge 3$.
+
+Node: SG0000005J · Lean: `Singularity.CurveRuns.isolatedRun` (parts 1 and 2)
 
 *Proof.* Part 1. The monomial $x^{5 + 3k} y^2 z^3$ has an odd exponent of $z$, and the monomial $x^{10 + 3k} y^3 z^2$ has an odd exponent of $y$. So no monomial of $g_k$ is a square, and $g_k$ is clean. The largest power of $x$ that divides $g_k$ is $x^{5 + 3k}$, and the largest power of $z$ is $z^2$. The variable $y$ is not in $\Delta$, so $r_y = 0$. Thus $r = (5 + 3k, 0, 2)$, and $g_k = x^{5 + 3k} z^2 G$ with $G = y^2 z + x^5 y^3$. The term $y^2 z$ is not divisible by $x$, and the term $x^5 y^3$ is not divisible by $z$. Both terms have degree at least $3$, and $y^2 z$ has degree $3$, so $d = \operatorname{ord} G = 3$. The generators of $\widetilde\Theta(G)$ are the two elements $r_i G + x_i \partial_i G$ for $i = x, z$ and the free derivative $\partial_y G$. With $r_x = 5 + 3k$ and $r_z = 2$, and with the coefficients modulo $2$, we get
 $$e_x = (5 + 3k) y^2 z + (10 + 3k) x^5 y^3 = (k + 1) y^2 z + k x^5 y^3,$$
