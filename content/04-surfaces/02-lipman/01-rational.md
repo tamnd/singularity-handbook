@@ -1,7 +1,7 @@
 ---
 title: Rational singularities
 nodes: []
-sources: [Lip78, Art86, Har, Stacks, Mat]
+sources: [Lip78, Art86, Har, Stacks, Mat, AM69]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -41,6 +41,8 @@ Lean: none yet
 5. By part 3, the fibres of $f$ have dimension at most 1. For a projective morphism this gives $R^i f_* \mathcal{F} = 0$ for $i \ge 2$ by the theorem on formal functions [Har, Corollary III.11.2]. The same argument works for a proper morphism [Stacks]: the completion of the stalk of $R^i f_* \mathcal{F}$ at $x$ is a limit of groups $H^i$ on the thickenings of the fibre, and these vanish for $i \ge 2$ by the theorem of Grothendieck [Har, Theorem III.2.7]. The last claim follows from [Har, Proposition III.8.5]. $\square$
 
 ### The definition
+
+Lemma 2.1.2 says that for an affine $X$ and a normal modification $Y \to X$, the group $H^1(Y, \mathcal{O}_Y)$ is a module of finite length, supported at the singular points of $X$ of dimension 2. This module measures how much the modification changes the structure sheaf. For a curve the analogous module is always 0, because a normal curve is regular (Theorem 1.4.2 of Volume 1). For a surface it can be nonzero. In Example 2.3.6 a resolution of $z^2 = x^4 + y^4$ has a curve of genus 1 over the singular point, and $H^1$ is a line. In Example 2.3.7 the resolution of $xy = z^2$ has a projective line over the singular point, and $H^1 = 0$. The rational singularities are those for which no normal modification produces such a module.
 
 **Definition 2.1.3.** The scheme $X$ has *rational singularities* if $R^1 f_* \mathcal{O}_Y = 0$ for each normal modification $f : Y \to X$. Let $A$ be an excellent normal local domain of dimension 2. Then $A$ has a *rational singularity* if $\operatorname{Spec} A$ has rational singularities.
 
@@ -83,6 +85,22 @@ By Lemma 2.1.2 for $h$, we have $H^2(Y, \mathcal{O}_Y) = 0$. Thus
 $$\ell_A(H^1(Y', \mathcal{O}_{Y'})) = \ell_A(H^1(Y, \mathcal{O}_Y)) + \ell_A(H^0(Y, R^1 g_* \mathcal{O}_{Y'})),$$
 
 and the lengths are finite by Lemma 2.1.2. By the choice of $Y$, the left side is at most $\ell_A(H^1(Y, \mathcal{O}_Y))$. Thus $H^0(Y, R^1 g_* \mathcal{O}_{Y'}) = 0$. The sheaf $R^1 g_* \mathcal{O}_{Y'}$ is supported on finitely many closed points, as in the proof of Lemma 2.1.5, so it is 0. Since $g$ is arbitrary, $Y$ has rational singularities. $\square$
+
+### Rationality is local
+
+The definition asks for a condition on all normal modifications of $X$. The next lemma reduces it to the local rings of $X$ at its points of dimension 2. These points are closed, by the proof of Lemma 1.2.3. Thus we can check rationality at one point at a time.
+
+**Lemma 2.1.8.** Assume that for each point $x \in X$ with $\dim \mathcal{O}_{X,x} = 2$, the ring $\mathcal{O}_{X,x}$ has a rational singularity. Then $X$ has rational singularities.
+
+Lean: none yet
+
+*Proof.* Let $f : Y \to X$ be a normal modification, and let $x \in X$. Let $\mathcal{O} = \mathcal{O}_{X,x}$, let $Y_x = Y \times_X \operatorname{Spec} \mathcal{O}$, and let $f_x : Y_x \to \operatorname{Spec} \mathcal{O}$ be the projection. As in the proof of Lemma 2.1.2, part 4, flat base change gives $(R^1 f_* \mathcal{O}_Y)_x \cong H^1(Y_x, \mathcal{O}_{Y_x})$. If $\dim \mathcal{O} \le 1$, this group is 0 by Lemma 2.1.2, part 4.
+
+Let $\dim \mathcal{O} = 2$. We show that $f_x$ is a normal modification. It is proper, since properness is stable under base change [Har, Corollary II.4.8]. As in the proof of Lemma 2.1.2, part 2, the scheme $Y_x$ is covered by the spectra of the rings $B_\Sigma$, where $\operatorname{Spec} B$ is an affine open of $Y$ and $\Sigma$ is a multiplicative subset of $B$. Each $B$ is an integrally closed domain with field of fractions $K$, and so is each $B_\Sigma$ [AM69, Proposition 5.12]. Thus $Y_x$ is a normal integral scheme with function field $K$. Let $U \subseteq X$ be a dense open set such that $f^{-1}(U) \to U$ is an isomorphism. It contains the generic point of $X$. Its inverse image $U_x$ in $\operatorname{Spec} \mathcal{O}$ contains the generic point, so it is a dense open set. The morphism $f_x^{-1}(U_x) \to U_x$ is the base change of $f^{-1}(U) \to U$, so it is an isomorphism. In particular $f_x^{-1}(U_x)$ is a nonempty open subset of the integral scheme $Y_x$, so it is dense. Thus $f_x$ is a normal modification. Since $\mathcal{O}$ has a rational singularity, $R^1 f_{x*} \mathcal{O}_{Y_x} = 0$. Its module of global sections is $H^1(Y_x, \mathcal{O}_{Y_x})$ [Har, Proposition III.8.5], so this group is 0.
+
+Thus all stalks of $R^1 f_* \mathcal{O}_Y$ are 0, and $R^1 f_* \mathcal{O}_Y = 0$. Since $f$ is arbitrary, $X$ has rational singularities. $\square$
+
+The converse is also true, but its proof needs more. A normal modification of $\operatorname{Spec} \mathcal{O}_{X,x}$ must be extended to a normal modification of an open neighbourhood of $x$. We do not use the converse.
 
 ### Notes and references
 

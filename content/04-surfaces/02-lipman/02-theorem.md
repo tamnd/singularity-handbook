@@ -47,6 +47,18 @@ Let $\operatorname{Spec} R \subseteq X$ be an affine open and let $B = \Gamma(\p
 
 Lean: none yet
 
+### Two runs of the process
+
+The process can stop at each of its two operations. The next example stops after the normalization. The surfaces $xy = z^n$ of Proposition 2.3.2 are normal, and for them the process consists of blowups only.
+
+**Example 2.2.4.** Let $k$ be a field and let $X = V(x^2 - y^2z) \subseteq \mathbb{A}^3_k$ be the Whitney umbrella of Example 1.2.7. Then $X_0 = \mathbb{A}^2_k$, so the process stops with $n = 0$. The normalization $\nu : \mathbb{A}^2_k \to X$ is a resolution of $X$. It is finite, and no curve of $\mathbb{A}^2_k$ maps to a point.
+
+Lean: none yet
+
+*Proof.* By Example 1.2.7, the normalization of $X$ is $\nu : \mathbb{A}^2_k \to X$, and $\mathbb{A}^2_k$ is regular. By the second part of the proof of Theorem 2.2.1, with $n = 0$, the morphism $\nu$ is a resolution. A finite morphism has finite fibres, so no curve maps to a point. $\square$
+
+The resolution of Example 2.2.4 is not an isomorphism over the whole singular locus. It is an isomorphism over $\operatorname{Reg}(X) = X \setminus L$, as condition 3 of the definition asks. For a normal surface $X_0 = X$, and the blowups do the work.
+
 ### The structure of the proof
 
 The proof of the existence of $n$ in [Lip78] has three steps. The table lists them and says where each part is.
@@ -61,10 +73,10 @@ The proof of the existence of $n$ in [Lip78] has three steps. The table lists th
 
 *Step 2.* By Theorem 2.1.6, the length of $H^1(Y, \mathcal{O}_Y)$ is bounded over the normal modifications $Y$ of $\operatorname{Spec} A$. By Proposition 2.1.7, a normal modification with the largest length has only rational singularities. We prove Proposition 2.1.7 here, and we cite Theorem 2.1.6. Lipman then shows that the sequence $X_0, X_1, \dots$ itself reaches, after finitely many steps, a scheme with only rational singularities [Lip78]. We do not reproduce this part of the argument.
 
-*Step 3.* By Lemma 2.1.5, rational singularities stay rational in the later steps of the process. This part is formal, and we prove it here. Lipman then makes a detailed study of rational singularities, and he shows that the process stops on a surface with only rational singularities [Lip78]. The rational double points need a separate argument. We cite this step.
+*Step 3.* By Lemma 2.1.5, rational singularities stay rational in the later steps of the process. By Lemma 2.1.8, it suffices to know rationality at each point of dimension 2. These parts are formal, and we prove them here. Lipman then makes a detailed study of rational singularities, and he shows that the process stops on a surface with only rational singularities [Lip78]. The rational double points need a separate argument. We cite this step.
 
 The proof is free of the characteristic. No step uses a hypersurface of maximal contact. Thus the proof of [Lip78] works in every characteristic and in mixed characteristic. The examples of Section 2.3 show the process in characteristic $p$.
 
 ### Notes and references
 
-Theorem 2.2.1 is the theorem of [Lip78]. Artin gives a shorter account of the proof in [Art86]. The chapter "Resolution of Surfaces" of [Stacks] gives a complete proof that follows Lipman. Liu discusses the desingularization of surfaces and the minimal desingularization in [Liu]. For the excellence of varieties see Corollary 5.2.9 of Volume 1. The Lean library has the statement `Singularity.ResolutionInDim`, and $\mathrm{Res}(p, 2)$ is the case $n = 2$ of it. The Lean library does not prove Theorem 2.2.1 or this case. The map plans the theorem `Singularity.resolutionInDim_two` (planned, no Lean statement yet) for $\mathrm{Res}(p, 2)$ in each characteristic [Lip78]. The plan is to prove it in the project, or to get it from the Lean proof of the theorem of Lipman in the library AxiomMath/Stacks (`exists_isResolution_of_isExcellent_of_ringKrullDim_eq_two`). Models wrote that proof, and nobody has reviewed it yet. The bridge needs a human review of that proof and of its definitions, and it is not done.
+Theorem 2.2.1 is the theorem of [Lip78]. Artin gives a shorter account of the proof in [Art86]. The chapter "Resolution of Surfaces" of [Stacks] gives a complete proof that follows Lipman. Liu states the theorem as [Liu, Theorem 8.3.44], and he discusses the desingularization of surfaces and the minimal desingularization in [Liu, Chapters 8 and 9]. For the excellence of varieties see Corollary 5.2.9 of Volume 1. The Lean library has the statement `Singularity.ResolutionInDim`, and $\mathrm{Res}(p, 2)$ is the case $n = 2$ of it. The Lean library does not prove Theorem 2.2.1 or this case. The map plans the theorem `Singularity.resolutionInDim_two` (planned, no Lean statement yet) for $\mathrm{Res}(p, 2)$ in each characteristic [Lip78]. The plan is to prove it in the project, or to get it from the Lean proof of the theorem of Lipman in the library AxiomMath/Stacks (`exists_isResolution_of_isExcellent_of_ringKrullDim_eq_two`). Models wrote that proof, and nobody has reviewed it yet. The bridge needs a human review of that proof and of its definitions, and it is not done.
