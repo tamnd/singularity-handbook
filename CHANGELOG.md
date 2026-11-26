@@ -12,6 +12,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - The introduction of Volume 7, Chapter 3, the introduction of Volume 9, Chapter 3, and Volume 7, Section 3.10 refer to the new results.
+- `EDITION` pins the map at the release 0.4.39, which has the new nodes.
 
 ## [0.4.31] - 2026-11-26
 
