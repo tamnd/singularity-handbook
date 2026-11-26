@@ -35,7 +35,7 @@ Let $T_\rho(g)$ be the intersection of the subspaces $T(\operatorname{in}(h))$ f
 
 Node: SG0000004X · Lean: `Singularity.logJacobianOrder_cleanPart_lt_of_directrix_eq_bot` (for polynomials)
 
-The two cases of the theorem are related to the type $d - \rho$ of Definition 3.1.5. Each generator of $\widetilde\Theta_0(G)$ has order at least $d$, so $\sigma \ge d$. If $\rho = d - 1$, then $\sigma = \rho + 1$, and we are in part 2. If $\rho = d$, both cases can occur. The next corollary gives elements of order $\rho$ in terms of $G$.
+The two cases of the theorem are related to the type $d - \rho$ of Definition 3.1.5. Each generator of $\widetilde\Theta_0(G)$ has order at least $d$, so $\sigma \ge d$. If $\rho = d - 1$, then $\sigma = \rho + 1$, and we are in part 2. If $\rho = d$, then $\sigma = d = \rho$ by Lemma 3.10.1 below, and we are in part 1. So part 1 is the type $0$, and part 2 is the type $1$. The next corollary gives elements of order $\rho$ in terms of $G$.
 
 **Corollary 3.7.3.** In the situation of Theorem 3.7.1:
 

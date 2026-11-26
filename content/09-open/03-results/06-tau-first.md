@@ -39,7 +39,7 @@ For $p = 2$, $g = x z^2 + x^2 y^3$ and $\Delta = \{x\}$, the point is in the fir
 
 ### The Lean proof
 
-The Lean library proves the theorem and the example for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianDirectrixCaseA.lean`. The theorem is `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_caseA`, and the example is `Singularity.tauRhoCaseAExample_hyp` and `Singularity.tauRhoCaseAExample_not_mem`. The Lean theorem assumes $\rho = d$ in the place of the first case at the old point. If $p$ does not divide $|r| + d$, the Euler element shows that the two hypotheses are equivalent.
+The Lean library proves the theorem and the example for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianDirectrixCaseA.lean`. The theorem is `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_caseA`, and the example is `Singularity.tauRhoCaseAExample_hyp` and `Singularity.tauRhoCaseAExample_not_mem`. The Lean theorem assumes $\rho = d$ in the place of the first case at the old point. If $p$ does not divide $|r| + d$, the Euler element shows that the two hypotheses are equivalent. Volume 7, Lemma 3.10.1 shows that they are equivalent for each $p$.
 
 ### What the result does not give
 

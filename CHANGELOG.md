@@ -4,9 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.10 shows that the case of a point is its type. Lemma 3.10.1 proves that the order $\sigma$ of $\widetilde\Theta_0(G)$ is the residual order $d$ for each clean $g$, and Corollary 3.10.2 gives that the first case is the type $0$ and the second case is the type $1$. Theorem 3.10.3 proves that, at a step where $\rho$ stays and no component of the divisor leaves, $d$ does not go up, and $\tau_\rho$ does not go down if $d$ stays. So $d$ goes down by one at each step from the second case to the first case, and the triple $(\rho, d, \tau_\rho)$ does not get worse. These are the nodes SG00000059 and SG0000005A, for the milestone S7.16 (tamnd/singularity#225). The section also computes $d$ in Example 3.8.3, explains Example 3.2.6, lists the steps where the triple can get worse, and has a paragraph on the Lean proof.
+- Volume 9, Section 3.12 gives the same result as the twelfth research report of the milestone S7, with the table of the combinations of the cases for $d$, $\tau_\rho$ and the triple.
+
 ### Changed
 
 - Volume 5, Section 2.2 explains the choice of the monomial subfield of an Abhyankar valuation and its Lean names (tamnd/singularity-lean#138), and corrects the Lean status of Lemma 1.3.3 and Theorem 1.3.4.
+- Volume 7, Section 3.7 corrects the sentence after Corollary 3.7.2. It said that both cases can occur if $\rho = d$. By Lemma 3.10.1 the point is then in the first case.
+- The introduction of Volume 7, Chapter 3, the introduction of Volume 9, Chapter 3, Volume 7, Section 3.9, and Volume 9, Sections 3.6, 3.10 and 3.11 refer to the new results.
 - Volume 4, Section 1.1 gives the Stacks tag 00NR for the regular quotients of a regular local ring.
 - Volume 3, Section 4.2 cites Volume 6, Lemma 2.1.5 and its Lean name for the unique extension of a valuation to a purely inseparable extension.
 
