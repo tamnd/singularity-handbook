@@ -66,9 +66,9 @@ Let $(R, \mathfrak{m})$ be a Noetherian local ring. An ideal $I$ is $\mathfrak{m
 
 Lean: `Singularity.Algebra.hilbertSamuel_self_one`
 
-Now let $k$ be a field, let $A = k[x_1, \dots, x_d]$ and let $R = A_\mathfrak{n}$ with $\mathfrak{n} = (x_1, \dots, x_d)$. By Lemma 3.1.4 and Proposition 3.1.3, part 2, $\chi_R(n+1) - \chi_R(n) = \dim_k \mathfrak{m}^n / \mathfrak{m}^{n+1}$. Each element $s \in A \setminus \mathfrak{n}$ is a unit modulo $\mathfrak{n}^{n+1}$, because its image in $A/\mathfrak{n}^{n+1}$ is outside the only maximal ideal. Thus $A/\mathfrak{n}^{n+1} = R/\mathfrak{m}^{n+1}$, and $\mathfrak{m}^n/\mathfrak{m}^{n+1}$ is isomorphic to $\mathfrak{n}^n/\mathfrak{n}^{n+1}$. It has a basis of the monomials of degree $n$, and there are $\binom{n+d-1}{d-1}$ of them. Thus
-$$\chi_R(n) = \sum_{i=0}^{n-1} \binom{i+d-1}{d-1} = \binom{n+d-1}{d}.$$
-For large $n$ this is a polynomial in $n$ of degree $d = \dim R$ with leading coefficient $1/d!$.
+Now let $k$ be a field, let $A = k[x_1, \dots, x_d]$ and let $R = A_\mathfrak{n}$ with $\mathfrak{n} = (x_1, \dots, x_d)$. We write $j$ for the index, to avoid a clash with the ideal $\mathfrak{n}$. By Lemma 3.1.4 and Proposition 3.1.3, part 2, $\chi_R(j+1) - \chi_R(j) = \dim_k \mathfrak{m}^j / \mathfrak{m}^{j+1}$. Each element $s \in A \setminus \mathfrak{n}$ is a unit modulo $\mathfrak{n}^{j+1}$, because its image in $A/\mathfrak{n}^{j+1}$ is outside the only maximal ideal. Thus $A/\mathfrak{n}^{j+1} = R/\mathfrak{m}^{j+1}$, and $\mathfrak{m}^j/\mathfrak{m}^{j+1}$ is isomorphic to $\mathfrak{n}^j/\mathfrak{n}^{j+1}$. It has a basis of the monomials of degree $j$, and there are $\binom{j+d-1}{d-1}$ of them. Thus
+$$\chi_R(j) = \sum_{i=0}^{j-1} \binom{i+d-1}{d-1} = \binom{j+d-1}{d}.$$
+For large $j$ this is a polynomial in $j$ of degree $d = \dim R$ with leading coefficient $1/d!$.
 
 Lean: none yet
 

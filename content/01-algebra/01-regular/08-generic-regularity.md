@@ -139,6 +139,20 @@ A field of characteristic $0$ is perfect, so Theorem 1.8.17 contains Theorems 1.
 
 **Remark 1.8.18 (imperfect fields).** Let $k$ be an imperfect field of characteristic $p$, and let $t \in k$ have no $p$-th root in $k$. The ring $D = k[x]/(x^p - t)$ is a field, so it is regular. But the extension $D/k$ is not separable, and the derivative of $x^p - t$ is $0$. So the method of this section gives nothing for $D$, even though $D$ is regular. Example 6.2.7 gives a regular curve over such a field that is not smooth. The regular locus of an algebra of finite type over an imperfect field is still open, because such an algebra is excellent [EGA4-7, Section 7.8], [Mat, Section 32]. Section 1.9 gives a proof that does not use the theory of excellent rings. It uses the descent of regularity along flat local homomorphisms [Mat, Theorem 23.7] and a finite purely inseparable extension of $k$, and it is in the Lean library.
 
+Proposition 1.8.2 asks for a derivation of $A$, not for a $k$-linear derivation. Over an imperfect field this difference matters. A derivation that moves the constants can detect regularity where all the $k$-linear derivations fail. The next example shows this.
+
+**Example 1.8.19 (the Jacobian criterion over $\mathbb{F}_p(t)$).** Let $p$ be an odd prime, let $k = \mathbb{F}_p(t)$, let $P = k[x, y]$, let $f = y^2 - x^p + t$ and let $A = P/(f)$. This is the curve of Example 6.2.7.
+
+First we use the $k$-linear derivations $\partial/\partial x$ and $\partial/\partial y$. They give
+$$\frac{\partial f}{\partial x} = -p x^{p-1} = 0, \qquad \frac{\partial f}{\partial y} = 2y.$$
+Let $\mathfrak{n} = (x^p - t, y)$. This ideal is maximal, because $P/\mathfrak{n} = k[x]/(x^p - t)$ is a field, and it contains $f$. Both partial derivatives are in $\mathfrak{n}$. So the $k$-linear derivations do not show that $A$ is regular at $\mathfrak{n}$. In fact, no $k$-linear derivation $\partial$ of $P$ does, because $\partial f = (\partial y) \cdot 2y - (\partial x) \cdot p x^{p-1} = 2y \, \partial y$ is in $\mathfrak{n}$.
+
+Now let $\partial_t$ be the derivation of $P$ that differentiates the coefficients with respect to $t$. That is, $\partial_t$ is the unique derivation of $P$ with $\partial_t x = \partial_t y = 0$ that extends the derivation $d/dt$ of $\mathbb{F}_p(t)$. It is a derivation of $P$, but it is not $k$-linear. It gives $\partial_t f = 1$. The ring $P$ is regular [Mat, Section 19], so Corollary 1.8.3 shows that $D(1) = \operatorname{Spec} A$ is in $\operatorname{Reg}(A)$. Thus $A$ is regular. This is a second proof of the regularity in Example 6.2.7, and it is shorter than the first one.
+
+The derivation $\partial_t$ does not survive a base change. Let $k' = k(a)$ with $a^p = t$. Each derivation $\partial$ of $k'[x, y]$ satisfies $\partial t = \partial(a^p) = p a^{p-1} \, \partial a = 0$. Over $k'$ we have $f = y^2 - (x - a)^p$, and $f$ is in the square of the maximal ideal $(x - a, y)$, because $p \ge 3$. So $A \otimes_k k'$ is not regular at this point, by Proposition 1.2.10. The derivation $\partial_t$ exists over $k$ because $t$ is not a $p$-th power in $k$, and this is the reason why the regularity of $A$ is not stable under the extension of the base field. Section 6.2 describes all the derivations of $k$ with the $p$-bases of $k$.
+
+Lean: none yet
+
 ### The Lean proof
 
 The results of this section are in `Singularity/Algebra/Jacobian.lean`, `Singularity/Algebra/GenericRegular.lean`, `Singularity/Algebra/GenericRegularPerfect.lean` and `Singularity/Scheme/RegularLocus.lean`. In Lean, $D$ is a ring with an algebra structure over $A$, and the condition $A \subseteq D$ is the class `FaithfulSMul A D`. The fraction fields are `FractionRing A` and `FractionRing D`, with the algebra structure `FractionRing.liftAlgebra`.

@@ -59,7 +59,7 @@ with each $P_i$ projective. If there is no such $n$, then $\operatorname{pd}_R M
 
 Lean: `CategoryTheory.projectiveDimension` (in Mathlib)
 
-**Lemma 1.5.5.** Let $M$ be a finitely generated $R$-module and let $x \in \mathfrak{m}$ be a nonzerodivisor on $M$. Then $\operatorname{pd}_R(M/xM) = \operatorname{pd}_R M + 1$.
+**Lemma 1.5.5.** Let $M$ be a nonzero finitely generated $R$-module and let $x \in \mathfrak{m}$ be a nonzerodivisor on $M$. Then $\operatorname{pd}_R(M/xM) = \operatorname{pd}_R M + 1$.
 
 Lean: `ModuleCat.projectiveDimension_quotSMulTop_eq_succ_of_isSMulRegular` (in Mathlib)
 

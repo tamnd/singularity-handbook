@@ -32,7 +32,7 @@ We prove Theorem 5.2.3 only for a field $k$. A finitely generated $k$-algebra is
 
 **Definition 5.2.4.** A Noetherian ring $A$ is *catenary* if, for each pair of primes $\mathfrak{p} \subseteq \mathfrak{q}$ of $A$, all the maximal chains of primes from $\mathfrak{p}$ to $\mathfrak{q}$ have the same length. It is *universally catenary* if each finitely generated $A$-algebra is catenary.
 
-A quotient of a catenary ring is catenary, and a localization of a catenary ring is catenary, because the primes of $A/I$ and of $S^{-1}A$ are primes of $A$ with the same order. In the same way, a quotient and a localization of a universally catenary ring are universally catenary.
+A quotient of a catenary ring is catenary, and a localization of a catenary ring is catenary, because the primes of $A/I$ and of $S^{-1}A$ are primes of $A$ with the same order. A quotient of a universally catenary ring $A$ is universally catenary, because a finitely generated $A/I$-algebra is a finitely generated $A$-algebra. A localization $S^{-1}A$ of a universally catenary ring $A$ is universally catenary. Indeed, a finitely generated $S^{-1}A$-algebra has the form $C = S^{-1}A[X_1, \dots, X_m]/J$. Let $J_0$ be the inverse image of $J$ in $A[X_1, \dots, X_m]$ and let $C_0 = A[X_1, \dots, X_m]/J_0$. Then $S^{-1}J_0 = J$, because each element of $J$ is a fraction $g/s$ with $g \in J_0$ and $s \in S$. Localization is exact, so $C = S^{-1}C_0$. The ring $C_0$ is a finitely generated $A$-algebra, so it is catenary, and its localization $C$ is catenary.
 
 **Theorem 5.2.5.** A Cohen-Macaulay ring is universally catenary. In particular, a regular ring is universally catenary.
 

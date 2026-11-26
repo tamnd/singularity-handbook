@@ -58,8 +58,8 @@ This is in [EGA4-7, Section 7.9], where Grothendieck states it with a weaker hyp
 
 By Theorem 5.3.6, the quasi-excellent schemes form the largest class of locally Noetherian schemes, stable under morphisms of finite type, in which each integral scheme has a resolution. Grothendieck suggested that each quasi-excellent scheme has a resolution [EGA4-7, Section 7.9]. This is known in these cases:
 
-1. quasi-excellent schemes of characteristic $0$, that is, over $\mathbb{Q}$, by Temkin [Tem08];
-2. excellent schemes of dimension $2$, by Lipman [Lip78];
+1. reduced quasi-excellent schemes of characteristic $0$, that is, over $\mathbb{Q}$, by Temkin [Tem08];
+2. reduced excellent schemes of dimension $2$, by Lipman [Lip78];
 3. reduced quasi-excellent schemes of dimension at most $3$, also in mixed characteristic, by Cossart and Piltant [CP19].
 
 The third case is the node SG0000001V of the map. Its Lean statement is planned. In general, the problem is open. Volume 0 describes the open cases.
@@ -79,6 +79,28 @@ $$F \otimes_K K' = F[T]/(T^p - c) = F[T]/((T - f)^p),$$
 because $f \in F$ and $\operatorname{char} F = p$. The element $T - f$ is nilpotent and not $0$. So $F \otimes_K K'$ is not reduced, and it is not a regular ring. Thus $F$ is not geometrically regular over $K$. $\square$
 
 The ring $R$ in Example 5.3.7 is regular, so $\operatorname{Spec} R$ is its own resolution. By Theorem 5.3.6, some integral scheme of finite type over $\operatorname{Spec} R$ has no resolution. Nagata used this ring and rings built from it to give examples of bad Noetherian rings, among them rings whose normalization is not finite [Nag62, Appendix].
+
+We now show that the field $K'$ of Example 5.3.7 gives such a ring. We keep the notation of the example: $f = \sum_i b_i x^i$, $c = f^p \in R$, $F = k((x))$, and $K' = K(f) \subseteq F$. The map $K[T]/(T^p - c) \to K'$ with $T \mapsto f$ is an isomorphism, because $T^p - c$ is irreducible over $K$.
+
+**Proposition 5.3.8.** Let $R'$ be the integral closure of $R$ in $K'$. Then $R'$ is not a finite $R$-module.
+
+Lean: none yet
+
+*Proof.* Assume that $R'$ is a finite $R$-module. We derive a contradiction in three steps.
+
+*Step 1. $R'$ is a discrete valuation ring.* The ring $R'$ is a finite module over the Noetherian ring $R$, so it is Noetherian. It is a domain, and it is integral over $R$, so $\dim R' = \dim R = 1$ [AM69, Corollary 5.9 and Theorem 5.11]. Let $y \in R'$. Then $y^p \in K$, because $K'^p = K^p(c) \subseteq K$, and $y^p$ is integral over $R$. The ring $R$ is a discrete valuation ring, so it is integrally closed, and $y^p \in R$. Let $\mathfrak{Q}$ be a maximal ideal of $R'$. Then $\mathfrak{Q} \cap R = xR$ [AM69, Corollary 5.8], and $y \in \mathfrak{Q}$ if and only if $y^p \in xR$, because $\mathfrak{Q}$ is prime. So $\mathfrak{Q}$ is the set of the $y$ with $y^p \in xR$, and $R'$ has only one maximal ideal. Thus $R'$ is a Noetherian local domain of dimension $1$, and it is integrally closed. By Theorem 1.4.2, $R'$ is a discrete valuation ring. Let $\pi$ be a uniformizer. Then $xR' = \pi^e R'$ for some $e \ge 1$.
+
+*Step 2. $R' \otimes_R \hat{R}$ is a domain.* By Theorem 4.2.6, with $I = xR$, the natural map $R' \otimes_R \hat{R} \to \varprojlim_n R'/x^n R'$ is an isomorphism. It is a homomorphism of rings. Since $x^n R' = \pi^{en} R'$, the system $(R'/x^n R')$ is the subsystem of $(R'/\pi^m R')$ for the indices $m = en$. These indices are cofinal, so the two limits are the same. Thus $R' \otimes_R \hat{R}$ is isomorphic to the completion of the local ring $R'$ at its maximal ideal. This completion is a regular local ring by Theorem 4.3.3, so it is a domain by Theorem 1.3.3.
+
+*Step 3. A nilpotent element.* The element $f$ is in $R'$, because $f^p = c \in R$. It is also in $\hat{R} = k[[x]]$. Let $z = f \otimes 1 - 1 \otimes f$ in $R' \otimes_R \hat{R}$. Then $z^p = c \otimes 1 - 1 \otimes c = 0$, because the ring has characteristic $p$ and $c \in R$. We show that $z \ne 0$. The module $\hat{R}$ is flat over $R$ by Theorem 4.2.7, so the inclusion $R' \subseteq K'$ gives an injective map $R' \otimes_R \hat{R} \to K' \otimes_R \hat{R}$. Also
+$$K' \otimes_R \hat{R} = K' \otimes_K (K \otimes_R \hat{R}) = K' \otimes_K F = F[T]/(T^p - c).$$
+The image of $z$ is the class of $T - f$. This class is not $0$, because the classes of $1, T, \dots, T^{p-1}$ are a basis of $F[T]/(T^p - c)$ over $F$. So $z$ is a nonzero nilpotent element of a domain. This is a contradiction. $\square$
+
+**Example 5.3.9 (a normalization that is not finite).** Let $D = R[f] \subseteq K'$. Since $f$ is integral over $R$, the ring $D$ is a finite $R$-module, so $D$ is a Noetherian domain, and $\dim D = 1$ [AM69, Theorem 5.11]. Each $y \in D$ has $y^p \in R$, so the argument of Step 1 shows that $D$ is local. The field of fractions of $D$ is $K'$. An element of $K'$ is integral over $D$ if and only if it is integral over $R$, because $D$ is integral over $R$ [AM69, Corollary 5.4]. So the normalization of $D$ is $R'$. If $R'$ were a finite $D$-module, then it would be a finite $R$-module, since $D$ is a finite $R$-module. By Proposition 5.3.8, this is not the case.
+
+Thus $D$ is a Noetherian local domain of dimension $1$ whose normalization is not finite. It is finite over the discrete valuation ring $R$. For $X = \operatorname{Spec} D$, the proof of Theorem 2.5.6 fails at Proposition 2.5.4: the normalization of $X$ is not a finite morphism. This does not show that $X$ has no resolution, and we do not claim it. The example shows that the theorem of Noether (Theorem 2.4.7) needs a hypothesis such as finite type over a field.
+
+Lean: none yet
 
 ### Notes and references
 

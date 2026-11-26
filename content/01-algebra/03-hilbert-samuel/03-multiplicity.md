@@ -146,6 +146,38 @@ The polynomial $P(X) = \binom{X+d-1}{d}$ has degree $d = \dim R$ and leading coe
 
 Lean: none yet
 
+### Hypersurfaces
+
+For a hypersurface, the Hilbert-Samuel function depends only on the dimension and on the order of the equation. So the multiplicity of a hypersurface is the order of its equation (Section 3.2). We use the notation $\operatorname{in}(a)$ of Section 1.10 for the initial form of an element $a \ne 0$ of a regular local ring, and the convention $\binom{m}{n} = 0$ for $0 \le m < n$.
+
+**Proposition 3.3.15.** Let $(S, \mathfrak{m})$ be a regular local ring of dimension $n \ge 1$, let $f \in \mathfrak{m}^d \setminus \mathfrak{m}^{d+1}$ with $d \ge 1$, and let $R = S/(f)$. Then for each $N \ge 0$,
+$$\chi_R(N) = \binom{N + n - 1}{n} - \binom{N - d + n - 1}{n} \quad \text{if } N \ge d, \qquad \chi_R(N) = \binom{N + n - 1}{n} \quad \text{if } N \le d.$$
+The ring $R$ has dimension $n - 1$, and $e(R) = e_{n-1}(\mathfrak{m}R, R) = d$.
+
+Lean: none yet
+
+*Proof.* The maximal ideal of $R$ is $\mathfrak{m}R$, and $R/\mathfrak{m}^N R = S/(\mathfrak{m}^N + fS)$. First we show that $(\mathfrak{m}^N : f) = \mathfrak{m}^{N-d}$ for $N \ge d$. If $g \in \mathfrak{m}^{N-d}$, then $fg \in \mathfrak{m}^N$. Conversely, let $g \ne 0$ with $fg \in \mathfrak{m}^N$, and let $g \in \mathfrak{m}^i \setminus \mathfrak{m}^{i+1}$. The ring $\operatorname{gr}(S)$ is a domain (Proposition 1.10.1), so $\operatorname{in}(fg) = \operatorname{in}(f) \operatorname{in}(g)$ is a nonzero element of degree $d + i$. Thus $fg \notin \mathfrak{m}^{d+i+1}$, so $N \le d + i$ and $g \in \mathfrak{m}^{N-d}$. For $N \le d$ we have $f \in \mathfrak{m}^N$, so $(\mathfrak{m}^N : f) = S$.
+
+Multiplication by $f$ gives an exact sequence
+$$0 \to S/(\mathfrak{m}^N : f) \xrightarrow{\ f\ } S/\mathfrak{m}^N \to S/(\mathfrak{m}^N + fS) \to 0.$$
+By Theorem 3.3.13, $\ell(S/\mathfrak{m}^j) = \binom{j + n - 1}{n}$ for each $j \ge 0$. The additivity of length gives the formula for $\chi_R$. The ring $S$ is a domain (Theorem 1.3.3) and $f \ne 0$, so $\dim R = n - 1$ by Proposition 1.2.10.
+
+For the multiplicity, apply $\Delta$ to the formula for $N \ge d$. Pascal's rule gives $\Delta \binom{N + c}{j} = \binom{N + c}{j - 1}$ for $j \ge 1$ and $N + c \ge 0$. After $n - 1$ steps,
+$$(\Delta^{n-1} \chi_R)(N) = \binom{N + n - 1}{1} - \binom{N - d + n - 1}{1} = d$$
+for $N \ge d$. By Definition 3.3.7, $e_{n-1}(\mathfrak{m}R, R) = d$. $\square$
+
+With Proposition 1.2.10, this gives a special case of the theorem of Nagata in Remark 3.3.14: a hypersurface $R = S/(f)$ is regular if and only if $e(R) = 1$. Indeed, both conditions say that $f \notin \mathfrak{m}^2$.
+
+**Example 3.3.16.** Let $k$ be a field and let $S$ be the local ring of $\mathbb{A}^n_k$ at the origin. For a polynomial $f$ with $f(0) = 0$, the order $d$ is the smallest degree of a monomial of $f$ (Example 3.2.6). We list some values of Proposition 3.3.15, and we checked each of them by a direct count of monomials in $k[x_1, \dots, x_n]/(\mathfrak{n}^N + (f))$.
+
+*Plane curves*, $n = 2$. Then $\chi_R(N) = \binom{N+1}{2} - \binom{N - d + 1}{2} = dN - \binom{d}{2}$ for $N \ge d - 1$. The cusp $y^2 - x^3$ and the node $y^2 - x^2 - x^3$ both have $\chi_R(N) = 2N - 1$ for $N \ge 1$ and $e(R) = 2$. So the multiplicity does not separate the cusp from the node. The curves $x^3 + y^5$ and $x^2 y + y^4$ have $\chi_R(N) = 3N - 3$ for $N \ge 2$ and $e(R) = 3$. More generally, $x^a + y^b$ with $1 \le a \le b$ has multiplicity $a$.
+
+*Surfaces*, $n = 3$. Then $d = 2$ gives $\chi_R(N) = \binom{N+2}{3} - \binom{N}{3} = N^2$ for $N \ge 2$, and $e(R) = 2$. This holds for the cone $xy - z^2$, for each surface $A_m$ given by $xy - z^{m+1}$ with $m \ge 1$, and for the Whitney umbrella $x^2 - y^2 z$, whose order is $2$ because of the monomial $x^2$. The cubic cone $x^3 + y^3 + z^3$ has $d = 3$, and its values $\chi_R(1), \dots, \chi_R(6)$ are $1, 4, 10, 19, 31, 46$, with $\Delta^2 \chi_R(N) = 3$ for $N \ge 3$.
+
+The multiplicity is a coarse invariant. The surfaces $A_m$ all have the same Hilbert-Samuel function, but they behave differently under blowup. One blowup of the vertex resolves $A_1$ (Example 1.10.8). For $m \ge 3$, let $a = x/z$ and $b = y/z$. Then $ab = z^{m-1}$ in the chart for $z$ of the blowup of $A_m$ at the vertex. The ring $k[z, a, b]/(ab - z^{m-1})$ is a domain of dimension $2$ that maps onto this chart, and the chart is a domain of dimension $2$, so the map is an isomorphism. By Proposition 1.2.10 this chart has a singular point at the origin, of type $A_{m-2}$. The resolution algorithms use the order with finer invariants, which Volume 3 and Volume 4 develop.
+
+Lean: none yet
+
 ### The Lean proof
 
 The results of this section are in `Singularity/Algebra/FiniteDifference.lean`, `Singularity/Algebra/HilbertSerre.lean`, `Singularity/Algebra/Multiplicity.lean` and `Singularity/Algebra/MultiplicityRegular.lean`. The forward difference is `fwdDiff` of Mathlib, with the notation `Δ_[1]`. In Lean, the Hilbert-Samuel function has values in $\mathbb{N} \cup \{\infty\}$, so the file `Multiplicity.lean` uses the integer function `hilbertSamuelInt`, and `samuelMultiplicity I M d` is the eventual value of `Δ_[1]^[d]` applied to it.

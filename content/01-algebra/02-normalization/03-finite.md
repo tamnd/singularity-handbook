@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## Finiteness of the normalization
 
-Let $A$ be a domain. The normalization $\tilde{A}$ is a subring of $\operatorname{Frac} A$ that contains $A$, but in general it need not be a finite $A$-module. Nagata found a Noetherian local domain of dimension 1 whose normalization is not finite [Nag62, Appendix]. For a finitely generated domain over a field, E. Noether proved that $\tilde{A}$ is always finite. In this section we prove her theorem when a field extension is separable, and in particular in characteristic 0. The tool is the trace form of a separable field extension.
+Let $A$ be a domain. The normalization $\tilde{A}$ is a subring of $\operatorname{Frac} A$ that contains $A$, but in general it need not be a finite $A$-module. Nagata found a Noetherian local domain of dimension 1 whose normalization is not finite [Nag62, Appendix]. Example 5.3.9 constructs a ring of this kind and proves this property. For a finitely generated domain over a field, E. Noether proved that $\tilde{A}$ is always finite. In this section we prove her theorem when a field extension is separable, and in particular in characteristic 0. The tool is the trace form of a separable field extension.
 
 Throughout the section, $P$ is an integrally closed domain, $K = \operatorname{Frac} P$, $L$ is a finite field extension of $K$, and $B$ is the integral closure of $P$ in $L$.
 

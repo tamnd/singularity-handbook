@@ -60,7 +60,7 @@ Step 2. We go down to a finite extension of $k$. Each $s_i$ is a quotient of two
 
 Step 3. Let $S = L[x_1, \dots, x_m] \subseteq \Omega$. It is a domain of finite type over $L$, and its fraction field is $L(x_1, \dots, x_m)$. By Proposition 1.9.3, $S$ is generically regular. Also $D \subseteq S$, and $S = D[E]$. Each element of $E$ is integral over $k \subseteq D$, so $S$ is a finitely generated $D$-module. By Lemma 1.9.2, $D$ is generically regular. $\square$
 
-The proof does not use the ring $D \otimes_k L$. This ring can be not reduced, as Remark 1.8.18 shows for $L = k(t^{1/p})$, and its regular locus does not determine that of $D$. The subring $S$ of $\Omega$ avoids this problem.
+The proof does not use the ring $D \otimes_k L$. This ring can be not reduced. For example, let $D = k[x]/(x^p - t)$ as in Remark 1.8.18 and $L = k(t^{1/p})$. Then $D \otimes_k L = L[x]/(x^p - t) = L[x]/((x - t^{1/p})^p)$, and the class of $x - t^{1/p}$ is a nonzero nilpotent element. Thus $D$ is a field, but $D \otimes_k L$ is not reduced, and its regular locus does not determine that of $D$. The subring $S$ of $\Omega$ avoids this problem.
 
 ### The regular locus is open
 
