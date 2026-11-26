@@ -208,6 +208,30 @@ The sequences in the proposition consist of blowups along $\mu$. Cossart and Pil
 
 Theorem 3.2.6 is used inside the proof of Theorem 3.2.11. There Cossart and Piltant consider sequences of blowups along $\mu$ for which conditions (G) and (E) hold and $(m(x_i), \omega(x_i))$ does not increase [CP19, Section 5.2]. For centers of the first or the second kind this holds by Theorem 3.2.6 and [CP19, Propositions 2.28 and 2.34]. The projection number can increase along such a sequence. A point $x_i$ with $\iota(x_i) \ge \iota(x)$ is *very near* $x$ [CP19, Definition 5.4]. The work of Chapters 6 to 9 of [CP19] is to choose the centers so that, for each $\mu$, a point that is not very near $x$ comes after finitely many steps.
 
+### An example of the first step
+
+The next example computes Proposition 3.2.9 in all the charts. It also shows that a point blowup can make $\delta$ larger when $\epsilon(x) = 0$.
+
+**Example 3.2.13.** Let $p = 3$, let $k$ be algebraically closed of characteristic 3, let $S = k[[u_1, u_2, u_3]]$, let
+$$h = Z^3 + f, \qquad f = u_1^2 u_2^2 u_3,$$
+and let $E = \operatorname{div}(u_1 u_2 u_3)$. The exponent $(2, 2, 1)$ is not in $3 \mathbb{N}^3$, so $f$ is clean. We have $\operatorname{ord} f = 5 \ge 3$, so $m(x) = 3$ and $\delta(x) = \frac53$. Further $r = (2, 2, 1)$ and $G = 1$, so $\epsilon(x) = 0$ and $\omega(x) = 0$.
+
+*The sets $J$.* The sets $J \subseteq \{1, 2, 3\}$ with $R = \sum_{j \in J} r_j \ge 3$ are $\{1, 2\}$ with $R = 4$, $\{1, 3\}$ and $\{2, 3\}$ with $R = 3$, and $\{1, 2, 3\}$ with $R = 5$. The first three sets are minimal for inclusion, and $\{1, 2, 3\}$ is not.
+
+*The center $V(Z, u_1, u_2)$.* In the $u_1$-chart at the point $t_2$, we have $u_2 = u_1 (v_2 + t_2)$ and
+$$f' = u_1^{-3} f = u_1 (v_2 + t_2)^2 u_3.$$
+Each monomial of $f'$ has the exponent $1$ in $u_1$, so $f'$ is clean. If $t_2 = 0$, then $f' = u_1 v_2^2 u_3$ has order 4, so $\delta(x') = \frac43 = \delta(x) - \frac13$, the bound of Proposition 3.2.9. The new divisor is $\operatorname{div}(u_1 v_2 u_3)$, and again $\epsilon(x') = \omega(x') = 0$. If $t_2 \ne 0$, then $f'$ contains $t_2^2 u_1 u_3$, so $\operatorname{ord} f' = 2 < 3$, and $m(x') < 3$ by Proposition 3.2.2(3). The origin of the $u_2$-chart gives $f' = v_1^2 u_2 u_3$, again of order 4. Here $3 \nmid r_3$ and $3 \notin J$, so this is case 1 of the proof of Proposition 3.2.9.
+
+*The center $V(Z, u_1, u_3)$.* In the $u_1$-chart at the point $t_3$, we get $f' = u_2^2 (v_3 + t_3)$. It has order 3 if $t_3 = 0$ and order 2 if $t_3 \ne 0$. At the origin of the $u_3$-chart, $f' = v_1^2 u_2^2$ has order 4. So $\delta(x') \le \frac43$ at each point, as Proposition 3.2.9 says. The center $V(Z, u_2, u_3)$ gives the same orders, with $u_1$ and $u_2$ exchanged.
+
+*The point blowup.* The set $\{1, 2, 3\}$ is not minimal, and the point blowup is the blowup with this $J$. At the origin of the $u_3$-chart, $u_1 = u_3 v_1$ and $u_2 = u_3 v_2$, and
+$$f' = u_3^{-3} \, u_3^4 v_1^2 v_2^2 \, u_3 = v_1^2 v_2^2 u_3^2.$$
+The exponent $(2, 2, 2)$ is not in $3 \mathbb{N}^3$, so $f'$ is clean, and $\operatorname{ord} f' = 6$. So $\delta(x') = 2 > \frac53 = \delta(x)$, and $\epsilon(x') = \omega(x') = 0$. The invariant $\iota(x') = (3, 0, 1)$ is equal to $\iota(x)$. Theorem 3.2.6 does not apply here, since $\omega(x) = 0$. But $\delta$ goes up, and the induction on $\delta$ in the proof of Theorem 3.2.7 needs a center with a minimal set $J$.
+
+Lean: none yet
+
+We computed each chart of Example 3.2.13 by computer, with the coordinates $t \in \mathbb{F}_3$, and by hand for each $t \in k$. The example $f = u_1 u_2 u_3^2$ with $p = 2$ after Proposition 3.2.9 shows the same effect, but there the order only stays the same.
+
 ### Notes and references
 
 The definitions follow [CP19, Sections 2.1, 2.2, 2.5 and 2.7]. Proposition 3.2.4 is not stated in this form in [CP19]. It is the special case of [CP19, Propositions 2.10 and 2.26] for $X^p + f$ over a perfect field, with a direct proof. The residual order and its increase are studied by Moh [Moh87] and by Hauser and Perlega [HP19a]. Volume 7, Section 1.4, gives the examples of the increase.

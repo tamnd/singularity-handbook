@@ -1,7 +1,7 @@
 ---
 title: The plan of the proofs
 nodes: [SG0000001F, SG00000018, SG0000001C]
-sources: [Abh66, Cut09, CP08, CP09, CP19, Zar44, Hir67, Hir67b, Cos92, Cut04]
+sources: [Abh66, Cut09, CP08, CP09, CP19, Zar44, Hir67, Hir67b, Cos92, Cut04, Jac]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -99,6 +99,24 @@ Let $\mu$ be a valuation of $L$ with center $\mathfrak{m}_S$ on $S$. Then there 
 Node: SG0000001F · Lean: `Singularity.localUniformization_three` (the statement only)
 
 This is [CP19, Theorem 1.5], stated here in short form. The node SG0000001F is local uniformization of function fields of transcendence degree 3, and Theorem 1.2.6 is the main step of its proof, so we list the node here. The Lean statement is the statement of local uniformization, and it is not a statement of Theorem 1.2.6.
+
+### One equation in three characteristics
+
+The next example shows Proposition 1.2.5 at work, and it shows what changes when $m = p$.
+
+**Example 1.2.7.** Let $k$ be an algebraically closed field of characteristic $p$, let $A = k[x, y, w]$, and let
+$$h = z^2 + x^3 + y^3 + w^3 \in A[z].$$
+Here $m = 2$ and $a_1 = 0$, so $z' = z$. The partial derivatives of $h$ are $2z$, $3x^2$, $3y^2$ and $3w^2$. Over a perfect field a point of the hypersurface $X = V(h)$ is singular if and only if all the partial derivatives vanish at it, by the Jacobian criterion [Jac].
+
+*The case $p \ge 5$.* Then $2$ and $3$ are units, so the only singular point is the origin. There $\operatorname{ord} h = 2$, and the origin lies on $V(z)$, as Proposition 1.2.5 says.
+
+*The case $p = 3$.* Then $2! = 2$ is a unit, so Proposition 1.2.5 applies. The Frobenius map gives $h = z^2 + (x + y + w)^3$, and the partial derivatives are $2z$, $0$, $0$ and $0$. So the singular locus of $X$ is the plane $V(z, x + y + w)$. Let $(0, a, b, c)$ be a closed point of this plane, so that $a + b + c = 0$. After the translation $x \mapsto x + a$, $y \mapsto y + b$, $w \mapsto w + c$ we get $h = z^2 + (x + y + w)^3$ again, of order 2. So each point of the plane has $\operatorname{ord} h = 2$, and the plane lies in the regular hypersurface $V(z')$, as Proposition 1.2.5 says. The hypersurface $X$ is singular in codimension 1, so it is not normal. In characteristic 3 the cusp $z^2 + s^3$ appears along a whole plane, while in characteristic $p \ge 5$ the singularity is isolated.
+
+*The case $p = 2$.* Then $2! = 0$ in $k$, and Proposition 1.2.5 does not apply. Now $h = z^2 + g$ with $g = x^3 + y^3 + w^3$, an equation of the form $z^p + g$ of Section 2.3. Since $D h = 2z = 0$, no derivative in $z$ gives the hypersurface $V(z')$. The partial derivatives of $g$ are $x^2$, $y^2$ and $w^2$, so the origin is the only singular point, by Lemma 2.3.2. Here the locus of multiplicity 2 is a point, so it lies in a regular hypersurface. Example 3.3.4 computes the invariants of Cossart and Piltant at this point, and it resolves the singularity by two blowups.
+
+Lean: none yet
+
+We checked the partial derivatives of Example 1.2.7 by computer. The example does not show the failure of maximal contact for $m = p$. For that failure one needs a locus of multiplicity $p$ that is not contained in a regular hypersurface, as in the example of Narasimhan.
 
 ### Notes and references
 

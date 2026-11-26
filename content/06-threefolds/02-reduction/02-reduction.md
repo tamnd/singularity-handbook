@@ -84,7 +84,7 @@ The proof of Theorem 1.2.6 uses one more hypothesis, which the reduction can pro
 1. In case 1 of Theorem 1.2.6, the image under $\eta$ of the locus $\operatorname{Sing}_p X$ of the points of multiplicity $p$ of $X$ is contained in $E$.
 2. In case 2 of Theorem 1.2.6, the discriminant locus of $\eta$ is contained in $E$. If $S$ has characteristic 0, then also each component of $E$ lies in the locus $p = 0$, that is $E \subseteq \operatorname{div}(p)_{\mathrm{red}}$.
 
-This is [CP19, Definition 2.32]. In dimension 3 one can achieve condition (E) by preparatory blowups, with the known resolution theorems for schemes of dimension 2 [CP19, Corollary 4.19]. Section 2.3 gives a simple test for condition (E) in case 1, and Section 3.3 uses it in the examples. The divisor $E$ is the place where the earlier blowups leave their trace, as in characteristic 0, and the invariants of Chapter 3 depend on $E$.
+This is [CP19, Definition 2.32]. In dimension 3 one can achieve condition (E) by preparatory blowups, with the known theorems on regular schemes of dimension 2 and 3: the embedded resolution of surfaces and the principalization of ideals [CP19, Propositions 4.2 to 4.4 and Corollary 4.19]. Section 4.1 lists these theorems. Section 2.3 gives a simple test for condition (E) in case 1, and Section 3.3 uses it in the examples. The divisor $E$ is the place where the earlier blowups leave their trace, as in characteristic 0, and the invariants of Chapter 3 depend on $E$.
 
 ### Notes and references
 

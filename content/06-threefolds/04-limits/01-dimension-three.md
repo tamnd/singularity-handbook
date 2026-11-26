@@ -57,13 +57,15 @@ Cossart and Piltant state that the locus of multiplicity $p$ is $V(Z, u_1, u_2) 
 $$\varphi(Z) = \varphi(u_1) = \varphi(u_3) = 0, \qquad \varphi(u_2) = t, \qquad \varphi(u_4) = \vartheta(t)^p$$
 lies on $X$. Its Zariski closure is the surface $V(Z, u_1, u_3)$, since $\vartheta$ is transcendental. Blow up the closed point along the arc, in the $u_2$-chart. For $p \ge 2$ the first step has no translation: with $u_1 = u_2 u'_1$, $u_3 = u_2 u'_3$, $u_4 = u_2 v_4$ and $Z = u_2 T_1$ we get
 $$u_2^{-p} h = T_1^p + u_2 \bigl( u_2^p v_4 u_3'^p + u'_3 u_1'^p \bigr).$$
+The arc goes through the origin $x_1$ of this chart, since $\varphi(u_4)/\varphi(u_2) = \vartheta(t)^p/t$ has order $p - 1 \ge 1$. We compute the invariants at $x_1$. The new divisor is $E_1 = \operatorname{div}(u'_1 u_2)$. The series $f_1 = u_2^{p + 1} v_4 u_3'^p + u_2 u'_3 u_1'^p$ is clean, since $v_4$ and $u'_3$ have the exponent 1 in its two monomials. Its order is $\min(2p + 2, p + 2) = p + 2$, so $m(x_1) = p$ and $\delta(x_1) = (p + 2)/p$. The smallest exponents are $r_1 = 0$ for $u'_1$ and $r_2 = 1$ for $u_2$, so $\epsilon(x_1) = p + 1 = \epsilon(x)$. The initial form is $U_1^p U_2 U_3$, and $U_3$ is not in $E_1$, so $\omega(x_1) = p = \omega(x)$. So $(m, \omega)$ does not change, while $\delta$ goes up.
+
 Cossart and Piltant show that after $r$ such blowups the strict transform is
 $$h_r = T_r^p + u_2^r \bigl( u_2^p v_4^{(r)} (u_3^{(r)})^p + u_3^{(r)} (u_1^{(r)})^p \bigr)$$
 in suitable well adapted coordinates, where $v_4^{(r)}$ and $T_r$ absorb the terms of $\vartheta$ of degree at most $r/p$. The closure of the arc is $V(T_r, u_1^{(r)}, u_3^{(r)})$, and it is not permissible at the center $x_r$ for each $r \ge 1$ [CP19, Example 3.18].
 
 Lean: none yet
 
-We checked the first blowup above by hand. We do not check the claim on the locus of multiplicity $p$ or the formula for $h_r$ with $r \ge 2$, and we cite them from [CP19].
+We checked the first blowup above by hand, and its invariants by hand and by computer for $p = 2, 3, 5$. We do not check the claim on the locus of multiplicity $p$ or the formula for $h_r$ with $r \ge 2$, and we cite them from [CP19].
 
 ### Notes and references
 
