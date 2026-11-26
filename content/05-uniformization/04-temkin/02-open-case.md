@@ -8,6 +8,8 @@ reviewed_by: []
 ---
 ## What the theorem does not give
 
+A reader who sees Theorem 4.1.1 for the first time may ask why it does not finish the problem. A purely inseparable extension $L/K$ does not change the Zariski-Riemann space, it does not change the topology of a model, and it does not change the valuations. It seems that a regular center upstairs should give a regular center downstairs. It does not, and the reason is algebraic: the local rings change, and regularity is a property of the local ring and not of the topological space. This section makes the failure explicit and connects it with the defect.
+
 Theorem 4.1.1 gives a regular center after a finite purely inseparable extension $L/K$. In this section we explain why this does not give a regular center for $v$ itself. There are three points. First, $L$ depends on the model, so no single extension serves all finite sets. Second, the map from the normalization in $L$ back to the model is a homeomorphism, but it is not birational, and regularity does not descend along it. Third, the extension of $v$ to $L$ can involve a defect. At the end we connect the remaining problem with the conjectures of Volume 9.
 
 ### The extension depends on the model
@@ -47,13 +49,17 @@ Let $v$ be a valuation of $K/k$ with center $\mathfrak{m}$ on $X$, and let $w$ b
 
 In this example $v$ has local uniformization by Proposition 3.1.2, because $K/k$ has transcendence degree 2. The resolution of $X$ in Volume 4 and Proposition 1.4.5 give a regular center over $X$ itself. In dimension 4 no such resolution is known.
 
+*Example (a defect step in Example 4.2.2).* Let $p$ be odd, keep the notation of Example 4.2.2, and let $w$ be the arc valuation of $L = k(a, b)$ given by $w(g) = \operatorname{ord}_t g(t, \varphi(t))$ with $\varphi = \sum_{i \ge 1} t^{i!}$, as in Example 3.2.1. Let $v$ be its restriction to $K$. Then $w(a) = w(b) = 1$, so the center of $w$ on $\operatorname{Spec} k[a, b]$ is the origin, and the center of $v$ on $X$ is the singular point $\mathfrak{m}$. We compute the invariants of $L/K$ at $w$. The coefficients of $\varphi$ lie in $\mathbb{F}_p$, so $\varphi(t)^p = \varphi(t^p)$, and
+$$z \mapsto t^{p+1} + \varphi(t)^p\varphi(t) = t^{p+1} + (t^p + t^{2p} + \dots)(t + t^2 + t^6 + \dots) = 2t^{p+1} + t^{p+2} + \dots.$$
+Since $p$ is odd, $v(z) = p + 1$. Also $v(x) = p$. So $\Gamma_v$ contains $p$ and $p + 1$, and $\Gamma_v = \mathbb{Z} = \Gamma_w$. The residue fields are both $k$. So $e = f = 1$ for $L/K$. The extension $L/K$ is purely inseparable of degree $p$. As in part 3 of Example 3.2.1, an element of $L \setminus K$ is not in the henselization $K^h$, which is separable over $K$, so $[L^h : K^h] = p$ and the defect of $w$ over $v$ is $p$. Thus the simple smooth center that Theorem 4.1.1 gives on $\operatorname{Spec} k[a, b]$ sits over the singular point $\mathfrak{m}$ through an immediate extension with defect $p$. The value group and the residue field cannot see the difference between $K$ and $L$. We checked the order $p + 1$ for $p = 3, 5, 7$ with sympy, using the truncation $t + t^2 + t^6 + t^{24}$ of $\varphi$. For $p = 2$ the leading term cancels, and we do not treat this case.
+
 ### The reduction to equations of the form $t^p = f$
 
 Example 4.2.2 has a second reading. The Frobenius map $c \mapsto c^p$ is an isomorphism from $L$ onto $L^p = k(x, y)$. It maps $k[a, b]$ onto $k[x, y]$. So $K$ is a purely inseparable extension of degree $p$ of the field $K_0 = k(x, y)$, and $K_0$ has the regular model $k[x, y]$. The model $A$ of $K$ is $k[x, y][t]/(t^p - f)$ with $f = x^{p+1} + y^{p+1}$.
 
-Temkin observes that this is the general situation [Tem13, Remark 1.3.5]. We state his remark in our notation, and we do not prove it. Assume that $[k : k^p]$ is finite. Let $L$ be as in Theorem 4.1.1, and choose $n$ with $L^{p^n} \subseteq K$. The Frobenius map $c \mapsto c^{p^n}$ is an isomorphism from $L$ onto $K_0 = L^{p^n}$, so the restriction of $v$ to $K_0$ is centered on a regular point of a model of $K_0$. The extension $K/K_0$ is finite and purely inseparable, so it is a tower
+Temkin observes that this is the general situation [Tem13, Remark 1.3.5]. We state his remark in our notation, and we do not prove it. Assume that $[k : k^p]$ is finite. The remark gives a subfield $K_0 \subseteq K$ that contains $k$, such that $K/K_0$ is finite and purely inseparable and the restriction of $v$ to $K_0$ is centered on a regular point of a model of $K_0$. The idea is the following. Let $L$ be as in Theorem 4.1.1, and choose $n$ with $L^{p^n} \subseteq K$. The Frobenius map $c \mapsto c^{p^n}$ is an isomorphism of rings from $L$ onto $L^{p^n}$, and it maps a regular local ring to a regular local ring. But $L^{p^n}$ contains only $k^{p^n}$, and in general it does not contain $k$. So one must pass to the compositum $K_0 = k \cdot L^{p^n}$, a finite purely inseparable extension of $L^{p^n}$, and show that a regular center survives this passage. This is where the hypothesis on $[k : k^p]$ enters. We do not prove this step, and we only state the conclusion as Temkin's claim. The extension $K/K_0$ is finite and purely inseparable, so it is a tower
 $$K_0 \subset K_1 \subset \dots \subset K_m = K, \qquad K_i = K_{i-1}(a_i), \quad a_i^p \in K_{i-1},$$
-with each step of degree $p$. If one can uniformize each valuation centered on a hypersurface $t^p = f$ over a regular model, then one can go up the tower one step at a time and uniformize $v$. So Theorem 4.1.1 reduces local uniformization to the case of these hypersurfaces, which is called the inseparable case.
+with each step of degree $p$. Roughly, if one can uniformize each valuation centered on a hypersurface $t^p = f$ over a regular model, then one can go up the tower one step at a time and uniformize $v$. In this sense Theorem 4.1.1 reduces local uniformization to the case of these hypersurfaces, which is called the inseparable case.
 
 The hypersurfaces $z^p + g = 0$ of Volume 9, Conjecture 2.3.7, are of this form, with $f = -g$ and the regular model a polynomial ring.
 
@@ -86,6 +92,8 @@ This is Volume 9, Theorem 2.3.10: each variety over a perfect field of character
 Node: SG0000001N · Lean: `Singularity.exists_regular_p_alteration` (planned, no Lean statement yet)
 
 This is [Tem17], and Volume 8 treats alterations. The alteration is not birational, as the map of Example 4.2.2 is not birational. In both results the variety becomes regular only after an extension of the function field whose degree is a power of $p$. To descend the regularity to $X$ is the open problem.
+
+*Remark (what is open).* We repeat the status, to avoid a misreading of this chapter. For function fields of transcendence degree at least 4 over a field of characteristic $p > 0$, local uniformization of all valuations is open. Theorem 4.1.1 does not settle it, and neither do the reduction to height one [Tem23] and the $p$-alterations [Tem17]. The cases that are known in dimension 4 are those covered by the reductions of this volume: valuations whose residue field is not algebraic over $k$ (the remark on dimension 4 in Section 3.1) and Abhyankar valuations (Chapter 2). The programs of Volume 5, Chapter 5, and of Volume 7 aim at the remaining cases, and none of them is complete.
 
 ### Notes and references
 
