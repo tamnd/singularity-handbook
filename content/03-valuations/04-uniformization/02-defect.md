@@ -28,7 +28,7 @@ The rest of this subsection is a heuristic. It explains the idea of [KK05], and 
 
 Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (the statement only)
 
-This is the main theorem of [Tem13]. The extension of $v$ to $L$ is unique, because $L/K$ is purely inseparable: if $z^{p^n} \in K$, then $w(z) = v(z^{p^n})/p^n$ for each extension $w$. The paper [Tem13] gives the precise form of the statement. Temkin works with relative forms of the Zariski-Riemann space (Section 1.5). In characteristic 0 the theorem is Theorem 4.1.3, because then $L = K$.
+This is the main theorem of [Tem13]. The extension of $v$ to $L$ is unique, because $L/K$ is purely inseparable: if $z^{p^n} \in K$, then $w(z) = v(z^{p^n})/p^n$ for each extension $w$. Volume 6, Lemma 2.1.5 proves this uniqueness for valuation rings, and the Lean library has it as `Singularity.existsUnique_valuationSubring_comap_eq`. The paper [Tem13] gives the precise form of the statement. Temkin works with relative forms of the Zariski-Riemann space (Section 1.5). In characteristic 0 the theorem is Theorem 4.1.3, because then $L = K$.
 
 In [Tem13] the extension $L$ depends on the model. For this reason Theorem 4.2.2 and the Lean statement `Singularity.localUniformization_inseparable` take the finite subset $S$ of $\mathcal{O}_v$ first, and the extension $L$ depends on $S$. With one $L$ for all finite sets, the statement would be stronger than the theorem of Temkin.
 
