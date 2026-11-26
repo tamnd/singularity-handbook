@@ -89,7 +89,7 @@ The theorem of Gabber has a form over a base of dimension 1, which is the analog
 1. outside $\Sigma$, the morphism $\tilde X \to S'$ is smooth and $\tilde T$ is a relative divisor with normal crossings over $S'$;
 2. étale locally around each geometric point of a fibre of $\tilde X$ over a point $s' \in \Sigma$, the pair $(\tilde X, \tilde T)$ is isomorphic to the pair
 $$S'[u_1^{\pm 1}, \dots, u_s^{\pm 1}, t_1, \dots, t_n]/(u_1^{b_1} \cdots u_s^{b_s} t_1^{a_1} \cdots t_r^{a_r} - \pi), \qquad V(t_{r+1} \cdots t_m),$$
-around the point $u_i = 1$, $t_j = 0$, with $1 \le r \le m \le n$, positive integers $a_1, \dots, a_r, b_1, \dots, b_s$ whose greatest common divisor with the characteristic exponent $p$ of $k(s')$ is 1, and $\pi$ a uniformizer at $s'$;
+around the point $u_i = 1$, $t_j = 0$, with $1 \le r \le m \le n$, positive integers $a_1, \dots, a_r, b_1, \dots, b_s$ with $\gcd(p, a_1, \dots, a_r, b_1, \dots, b_s) = 1$, where $p$ is the characteristic exponent of $k(s')$, and $\pi$ a uniformizer at $s'$;
 3. $h^{-1}(Z)$, with its reduced structure, is contained in the union of the reduced fibres of $\tilde X$ over $\Sigma$ and of $\tilde T$.
 
 Lean: none yet
@@ -100,11 +100,11 @@ This is [ILO14, Exposé X, Theorem 2.4]. Compare with the semistable form of de 
 
 Lean: none yet
 
-This is [ILO14, Introduction, Theorem 2]. The *topology of $\ell'$-alterations* is a Grothendieck topology in which both the $\ell'$-alterations of Definition 3.2.1 and the Nisnevich coverings are covering families [ILO14, Exposé II]. So the theorem is local in two senses: one may pass to an $\ell'$-alteration, and one may work locally for the Nisnevich topology. It holds for all quasi-excellent schemes, also in mixed characteristic and without a base field. Gabber uses it in place of resolution in the proof of the finiteness theorem for étale cohomology of quasi-excellent schemes [ILO14, Introduction]. The morphisms $p_i$ are not open immersions and are not of degree 1. So the theorem is a local uniformization only after an $\ell'$-alteration. It is not the local uniformization of Volume 3 for the valuations of the function field, and it does not give a resolution.
+This is [ILO14, Introduction, Theorem 2]. The *topology of $\ell'$-alterations* is a Grothendieck topology in which both the $\ell'$-alterations of Definition 3.2.1 and the Nisnevich coverings are covering families [ILO14, Exposé II]. So the theorem is local in two senses: one may pass to an $\ell'$-alteration, and one may work locally for the Nisnevich topology. It holds for all quasi-excellent schemes, also in mixed characteristic and without a base field. Gabber uses it in place of resolution in the proof of the finiteness theorem for étale cohomology of quasi-excellent schemes [ILO14, Introduction]. The morphisms $p_i$ need not be open immersions, and they need not be of degree 1. So the theorem is a local uniformization only after an $\ell'$-alteration. It is not the local uniformization of Volume 3 for the valuations of the function field, and it does not give a resolution.
 
 ### Why the theorem of Gabber does not give resolution
 
-The theorem of Gabber is the strongest known form of the theorem of de Jong for coefficients prime to $\ell$. It does not give resolution in characteristic $p > 0$, for the following reasons.
+The theorem of Gabber controls the degree at one prime $\ell$. The theorem of Temkin in Section 3.3 controls all primes $\ell \ne p$ at once. The theorem of Gabber does not give resolution in characteristic $p > 0$, for the following reasons.
 
 1. It controls the degree only at one prime $\ell \ne p$ at a time. Different $\ell$ give different alterations (Remark 1 above), and Example 3.2.6 shows that the Sylow method cannot remove two primes at once.
 2. It says nothing about the $p$-part of the degree. The $\ell$-Sylow subgroup $P$ of Proposition 3.2.3 contains no element of order $p$, but the remaining alteration $X'/P \to X$ can have degree divisible by $p$.
