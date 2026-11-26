@@ -34,7 +34,7 @@ Step 3: each valuation ring is maximal. Let $W$ be a valuation ring of $K$ and l
 
 Steps 1 and 2 give the first claim. Steps 2 and 3 give the second claim: a maximal local subring is the ring $V$ of Step 1 for $A = V$, so it is a valuation ring. $\square$
 
-This is [ZS2, Chapter VI, Section 4] and [Stacks, Tag 00IA]. The proof uses the axiom of choice. The valuation ring is not unique in general, and the examples of Section 1.6 give many valuation rings that dominate the same local ring.
+This is [ZS2, Chapter VI, Section 4] and [Stacks, Tag 00IA]. Atiyah and Macdonald prove the same theorem in a form with homomorphisms to an algebraically closed field [AM69, Theorem 5.21]. The proof uses the axiom of choice. The valuation ring is not unique in general, and the examples of Section 1.6 give many valuation rings that dominate the same local ring.
 
 **Corollary 1.3.3.** Let $K$ be a field, let $A \subseteq K$ be a subring and let $\mathfrak{p}$ be a prime ideal of $A$. Then there is a valuation ring $V$ of $K$ with $A \subseteq V$ and $\mathfrak{m}_V \cap A = \mathfrak{p}$.
 
@@ -48,7 +48,7 @@ Lean: `iInf_valuationSubring_superset` (in Mathlib)
 
 *Proof.* Let $V$ be a valuation ring with $A \subseteq V$. By Lemma 1.1.8, $V$ is integrally closed, so it contains the integral closure of $A$. Conversely, let $x \in K$ be not integral over $A$. Then $x \ne 0$. Let $y = x^{-1}$. We claim that $y$ is not a unit of $A[y]$. Otherwise $1 = y(c_0 + c_1y + \dots + c_my^m)$ with $c_i \in A$. We multiply by $x^{m+1}$ and get $x^{m+1} = c_0x^m + c_1x^{m-1} + \dots + c_m$, so $x$ is integral over $A$, which is false. Thus $y$ lies in a maximal ideal $\mathfrak{n}$ of $A[y]$. By Corollary 1.3.3 there is a valuation ring $V$ with $A[y] \subseteq V$ and $\mathfrak{m}_V \cap A[y] = \mathfrak{n}$. Then $y \in \mathfrak{m}_V$, so $x = y^{-1} \notin V$. $\square$
 
-In particular an integrally closed domain is the intersection of the valuation rings of its field of fractions that contain it. In Mathlib this is `Subring.eq_iInf_of_isIntegrallyClosedIn`.
+This is [AM69, Corollary 5.22]. In particular an integrally closed domain is the intersection of the valuation rings of its field of fractions that contain it. In Mathlib this is `Subring.eq_iInf_of_isIntegrallyClosedIn`.
 
 ### Extension to a larger field
 
