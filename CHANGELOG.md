@@ -14,6 +14,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 7, Section 3.13: the formula for the exponents $E_s$ before Lemma 3.13.19 gave the exponents in the total transform. The correct formula has the shift $-p (|c_s|_1 - 1)$, and the map of the exponents is a linear map followed by a translation by a vector in $p \mathbb{Z}^3$. With this formula the line $r = (r_x, E_1(T), E_2(T))$ in the proof of Theorem 3.13.20 is right. The shift is the same for all the monomials, so the differences $E_s(\mu) - E_s(T)$, the series $G_m$ and the results do not change.
 - Volume 7, Section 3.13: the text after Theorem 3.13.20 no longer says that the case $n \ge 4$ is open. Section 3.14 treats the origin runs for $n \ge 4$, and the runs with translations are open.
 
+### Changed
+
+- The line `singularity` of `EDITION` now pins the map commit df4e564 of tamnd/singularity, which has the nodes SG0000005X to SG00000061.
+
 ## [0.4.50] - 2026-11-27
 
 ### Added
