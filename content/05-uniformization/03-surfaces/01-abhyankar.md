@@ -1,7 +1,7 @@
 ---
 title: The theorem of Abhyankar
 nodes: [SG0000001B, SG00000010, SG0000001F]
-sources: [Abh56s, Abh59, Lip78, Kuh-book, Cut04]
+sources: [Abh56s, Abh59, Lip78, Kuh-book, Cut04, Cut20]
 status: drafted
 drafted_by: writer
 reviewed_by: []
