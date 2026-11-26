@@ -51,7 +51,7 @@ In this subsection $v$ has rank 1, and $w_1, \dots, w_g$ are distinct extensions
 1. There is $x \in L$ with $w_i(x) < 0$ and $w_j(x) > 0$ for each $j \ne i$.
 2. For all $\gamma_1 \in \Gamma_{w_1}, \dots, \gamma_g \in \Gamma_{w_g}$ there is $u \in L$ with $w_i(u - 1) > \gamma_i$ and $w_j(u) > \gamma_j$ for each $j \ne i$.
 
-Lean: none yet
+Lean: `Singularity.exists_approx_one_of_valuation` (part 2, from an element $x$ as in part 1)
 
 *Proof.* We renumber so that $i = 1$. We prove part 1 by induction on $g$. Let $g = 2$. By Lemma 3.1.1, $\mathcal{O}_{w_1} \not\subseteq \mathcal{O}_{w_2}$ and $\mathcal{O}_{w_2} \not\subseteq \mathcal{O}_{w_1}$. Choose $a \in \mathcal{O}_{w_1} \setminus \mathcal{O}_{w_2}$ and $b \in \mathcal{O}_{w_2} \setminus \mathcal{O}_{w_1}$, and let $x = b/a$. Then $w_1(x) = w_1(b) - w_1(a) < 0$ and $w_2(x) = w_2(b) - w_2(a) > 0$.
 

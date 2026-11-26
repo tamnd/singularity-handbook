@@ -58,7 +58,7 @@ An ordered group $\Gamma$ is *archimedean* if for all $\alpha, \beta \in \Gamma$
 
 **Lemma 1.2.6.** Let $\Gamma \ne 0$ be an ordered group. Then $\Gamma$ has rank 1 if and only if $\Gamma$ is archimedean.
 
-Lean: none yet
+Lean: `Singularity.rankOne_iff_mulArchimedean`
 
 *Proof.* For $\alpha \in \Gamma$ with $\alpha > 0$, let $\Delta_\alpha$ be the set of $\gamma \in \Gamma$ with $|\gamma| \le n\alpha$ for some integer $n \ge 1$. In an ordered abelian group, $|\gamma + \gamma'| \le |\gamma| + |\gamma'|$. So $\Delta_\alpha$ is a subgroup. It is convex by its definition, and it contains $\alpha$. Assume that $\Gamma$ has rank 1. Then the convex subgroups are $0$ and $\Gamma$, so $\Delta_\alpha = \Gamma$ for each $\alpha > 0$. This is the archimedean property. Conversely, assume that $\Gamma$ is archimedean, and let $\Delta \ne 0$ be a convex subgroup. Choose $\alpha \in \Delta$ with $\alpha > 0$. For $\gamma \in \Gamma$ there is $n$ with $|\gamma| \le n\alpha$, and $n\alpha \in \Delta$. By convexity $|\gamma| \in \Delta$, so $\gamma \in \Delta$. Thus $\Delta = \Gamma$, and the rank is 1. $\square$
 
