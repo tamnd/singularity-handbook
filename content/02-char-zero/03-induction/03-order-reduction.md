@@ -10,6 +10,8 @@ reviewed_by: []
 
 This section assembles the induction. We prove that order reduction for marked ideals in dimension $n - 1$ gives order reduction for ideals of maximal order $m$ in dimension $n$, when there is a global hypersurface of maximal contact. We state the passage to the general case, which needs the uniqueness results of Remark 3.2.12 and a gluing theorem of Kollár. Then we prove that order reduction for ideals gives order reduction for marked ideals, and that the mark 1 gives principalization.
 
+The idea of the induction is simple, and the difficulties are in the bookkeeping. Near a point of maximal order $m$, all points of order $m$ lie on a hypersurface of maximal contact $H$, by Theorem 2.3.3. So the problem in dimension $n$ is a problem on $H$, of dimension $n - 1$, once we know which data on $H$ to resolve. The coefficient ideal of Section 3.2 is this data, and Theorem 3.2.4 lifts its order reduction to $X$. Two things remain. First, $H$ exists only locally, and the exceptional divisors need not be transversal to it. Lemma 3.3.4 and Step A of Theorem 3.3.5 move the cosupport off the old divisors, and Corollary 3.2.11 makes the local choices glue. Second, the induction needs order reduction for marked ideals, in which the mark is less than the maximal order and the ideal has a monomial part. Theorem 3.3.10 reduces this case to ideals with the invariant $s$, and Theorem 3.3.8 treats the monomial part by a combinatorial rule. The last subsection before the notes runs the whole algorithm on one example.
+
 ### The two statements
 
 All varieties are smooth over a field $k$ of characteristic 0, but not necessarily connected. A divisor $E$ always has simple normal crossings and an ordered index set (Definition 2.2.1), and a blowup sequence for $(X, I, E)$ has centers with simple normal crossings with the transforms $E_i$, the new exceptional divisor being put last.
@@ -182,6 +184,46 @@ Kollár explains the role of an invariant as follows [Kol07, Chapter 3]. The ind
 A different approach blows up weighted centers. Abramovich, Temkin and Włodarczyk [ATW24] and McQuillan [McQ20] attach to each point a simpler invariant, and a single weighted blowup at the locus of its maximal value makes it drop. Volume 9, Section 2.2, explains why this invariant does not extend to positive characteristic.
 
 Node: SG0000001Q · Lean: `Singularity.weightedBlowup_invariant_lt` (planned, no Lean statement yet)
+
+### A complete run
+
+We follow the proofs of this section on the ideal $I = (x^2, y^3)$ on $X = \mathbb{A}^2$, with $E = \emptyset$, as in the example of Section 1.3. The aim is principalization, so by Theorem 3.3.11 we run (M$_2$) with the mark 1. At each step we choose the hypersurface of maximal contact by hand. The run therefore follows the existence proofs. We do not check that the functorial rule of [Kol07, Chapter 3] makes the same choices, although the centers that we get are the natural ones.
+
+*Round 1.* We apply Theorem 3.3.10 to $(I, 1)$. Since $E = \emptyset$, Lemma 3.3.7 gives $M(I) = \mathcal{O}$ and $N(I) = I$. The cosupport of $(I, 1)$ is the origin, so $s = \operatorname{ord}_0 I = 2$, and $J = N(I) + I^2 = I$, with the mark 2. This is the maximal order of $I$, so we apply Theorem 3.3.5. By the example for this ideal at the end of Section 2.1, $MC(I) = D(I) = (x, y^2)$, and $H = (x = 0)$ is a global hypersurface of maximal contact. Step A is empty, since $E = \emptyset$. In Step B we apply Lemma 3.3.4 to the divisor $H$. No component of $H$ lies in $\operatorname{cosupp}(I, 2)$, which is the origin, so $Z_{-1} = \emptyset$. With $m = 2$ the coefficient ideal is
+$$C_H(I) = (I|_H) + (D(I)|_H)^2 = (y^3) + (y^4) = (y^3),$$
+with the mark $2! = 2$. Now we apply (M$_1$) to $(H, (y^3), 2)$. On the curve $H$ we have $N = (y^3)$, $s = 3$ and $J' = (y^6) + (y^9) = (y^6)$ with the mark 6. Order reduction in dimension 1 blows up the point $y = 0$ and gives the unit ideal. By Theorem 3.2.4 this point is also the center in $X$. So the first center is the origin $Z_0 = \{0\}$.
+
+Let $E_1$ be the exceptional curve. In the chart $x = x_1 y$ we have $E_1 = (y = 0)$ and
+$$\pi^* I = (x_1^2 y^2, y^3) = y^2 (x_1^2, y).$$
+So the transform of $(I, 2)$ is $(x_1^2, y)$, of maximal order 1, and Theorem 3.3.5 ends after one blowup. In the chart $y = y_1 x$ we get $\pi^* I = x^2 (1, x y_1^3)$, and the transform is the unit ideal. The transform of $(I, 1)$ is $I_1 = \mathcal{O}(-E_1) \cdot (x_1^2, y)$, in agreement with the formula $G_1 = (s - m) E_1 = E_1$ of the proof of Theorem 3.3.10.
+
+*Round 2.* Now $E = (E_1)$, $M(I_1) = \mathcal{O}(-E_1)$ and $N(I_1) = (x_1^2, y)$. The cosupport of $(I_1, 1)$ is all of $E_1$. The ideal $N(I_1)$ is the unit ideal off the point $P$ given by $x_1 = y = 0$, and it has the order 1 at $P$. So $s = 1$ and $J = N(I_1) + I_1 = (x_1^2, y)$, with the mark 1. The curve $E_1 = (y = 0)$ is a global hypersurface of maximal contact, since $y \in J$. In Step A of Theorem 3.3.5 we apply Lemma 3.3.4 to the divisor $E_1 = (y = 0)$. Again $Z_{-1} = \emptyset$, since $\operatorname{cosupp}(J, 1) = \{P\}$. With $m = 1$ the coefficient ideal is $C_{E_1}(J) = J|_{E_1} = (x_1^2)$, with the mark 1, and the restriction of $E$ to $E_1$ is empty. On the curve $E_1$, Theorem 3.3.10 gives $s = 2$ and the marked ideal $(x_1^2)$ with the mark 2. Its order reduction blows up the point $P$ of $E_1$. After it, the transform of $((x_1^2), 1)$ on $E_1$ is $(t)$, where $t$ is a coordinate at the new divisor point, and this is a monomial ideal with the coefficient 1. Theorem 3.3.8 blows up this point once more, and the coefficient becomes 0. Lifted to $X_1$ by Theorem 3.2.4, the two centers are $P$ and then the point $P'$ where the birational transform of $E_1$ meets the new curve $E_2$.
+
+We check this in coordinates. Blow up $P$. In the chart $x_1 = u$, $y = u v$ we have $E_2 = (u = 0)$, the transform of $E_1$ is $(v = 0)$, and
+$$J_2 = u^{-1} (u^2, u v) = (u, v).$$
+In the other chart, $y = w$ and $x_1 = w t$, the transform is $w^{-1} (w^2 t^2, w) = \mathcal{O}$. So $\operatorname{cosupp}(J_2, 1)$ is the point $P' = E_1 \cap E_2$. The blowup of $P'$ gives $J_3 = \mathcal{O}$ in both charts. So Step A already empties the cosupport, and Step B is empty. Since the mark of $N(I_1)$ is $s = m = 1$, the formula $G_{i+1} = \pi_i^* G_i + (s - m) F_i$ adds nothing new, and
+$$I_3 = \mathcal{O}(-G_3), \qquad G_3 = E_1 + E_2 + 2 E_3,$$
+where we write $E_1, E_2$ for the birational transforms. So $N(I_3) = \mathcal{O}$ and the next value of $s$ is 0.
+
+*Round 3.* Now Theorem 3.3.8 applies to $I_3 = \mathcal{O}(-E_1 - E_2 - 2E_3)$ with $m = 1$ and the divisors in the order $E_1, E_2, E_3$. In Step 1 the maximal single coefficient is $\mu = 2$, attained by $E_3$. We blow up the curve $E_3$. This is the identity of the surface, and the curve comes back as the last divisor $E_4$ with the coefficient $\mu - m = 1$. Now $\mu = 1$, attained first by $E_1$, then by $E_2$ and by $E_4$. Three more blowups of curves give the coefficient 0 to each new divisor. All single coefficients are then $0 < 1$, all pairs have the value $0$, and the transform of $(I, 1)$ is the unit ideal.
+
+The following table lists the seven blowups. The column "order" gives the order of the ideal that the current step reduces, at the center.
+
+| Step | Round | Center in the surface | Ideal reduced | Mark | Order |
+|---|---|---|---|---|---|
+| 1 | 1 | origin | $I = (x^2, y^3)$ | 2 | 2 |
+| 2 | 2 | $P = E_1 \cap (x_1 = 0)$ | $J = (x_1^2, y)$ | 1 | 1 |
+| 3 | 2 | $P' = E_1 \cap E_2$ | $J_2 = (u, v)$ | 1 | 1 |
+| 4 | 3 | curve $E_3$ | $\mathcal{O}(-E_1 - E_2 - 2E_3)$ | 1 | 2 |
+| 5 | 3 | curve $E_1$ | $\mathcal{O}(-E_1 - E_2 - E_4)$ | 1 | 1 |
+| 6 | 3 | curve $E_2$ | $\mathcal{O}(-E_2 - E_4)$ | 1 | 1 |
+| 7 | 3 | curve $E_4$ | $\mathcal{O}(-E_4)$ | 1 | 1 |
+
+Only the first three steps change the surface. They are the three point blowups of the example in Section 1.3, and the total transform is
+$$\Pi^* I = \mathcal{O}(-2E_1 - 3E_2 - 6E_3).$$
+We check this directly. The pullback of $I$ under the first blowup is $\mathcal{O}(-2E_1) \cdot (x_1^2, y)$. The point $P$ lies on $E_1$ and $(x_1^2, y)$ has the order 1 there, so after the second blowup we get $\mathcal{O}(-2E_1 - 3E_2) \cdot (u, v)$. The point $P'$ lies on $E_1$ and $E_2$, and $(u, v)$ has the order 1 there, so the coefficient of $E_3$ is $2 + 3 + 1 = 6$. The four blowups of curves do not change the surface or $\Pi^* I$. They only change the transform of the marked ideal, and they record that the problem is solved.
+
+*Remark (positive characteristic).* Two steps of the induction fail in characteristic $p$. Maximal contact fails by Example 2.4.2, and with it Theorem 3.3.5. The restriction theorem, Theorem 3.1.3, fails because it divides by $k!$. The combinatorial parts survive. Lemma 3.3.7, Theorem 3.3.8 and the passage from (O$_n$) to (M$_n$) in Theorem 3.3.10 use only orders of ideals and blowups, with no derivatives and no division. So in positive characteristic the open problem is order reduction for ideals, (O$_n$), and not the reduction of marked ideals to it.
 
 ### Notes and references
 

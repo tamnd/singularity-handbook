@@ -56,6 +56,18 @@ Lean: none yet
 
 **Example 2.2.5.** Let $I = (y^2 - x^3)$ on $\mathbb{A}^2$, the cusp of Example 1.3.2, and blow up the origin. In the chart $y = y_1 x$ the pullback is $x^2 (y_1^2 - x)$. The transform of $(I, 2)$ is $(y_1^2 - x)$, of order 1 at the point $p_1$. The transform of $(I, 1)$ is $x (y_1^2 - x)$, of order 2 at $p_1$. With the mark 1, the exceptional divisor stays in the transform, as it does in the computation of Example 1.3.2.
 
+*Example (a mark that is too large).* The condition $Z \subseteq \operatorname{cosupp}(I, m)$ in Definition 2.2.3 is what makes the transform an ideal. Let $I = (y^2 - x^3)$ on $\mathbb{A}^2$ and let $Z$ be the origin, where $I$ has order 2. For the mark 3 the origin is not in $\operatorname{cosupp}(I, 3)$, and the formula of part 2 would give, in the chart $y = y_1 x$,
+$$x^{-3} \cdot x^2 (y_1^2 - x) = x^{-1} (y_1^2 - x),$$
+which is not a regular function near the point $x = y_1 = 0$. In general $\mathcal{O}(mF) \cdot \pi^* I$ is an ideal sheaf if and only if $\pi^* I \subseteq \mathcal{O}(-mF)$, that is, if $I$ has order at least $m$ at the generic point of each component of $Z$; by Proposition 2.1.7 this is the condition $Z \subseteq \operatorname{cosupp}(I, m)$.
+
+*Example (a center without simple normal crossings).* The condition that $Z$ has simple normal crossings with $E$ keeps the divisor smooth after the blowup. Let $E = (z = 0)$ in $\mathbb{A}^3$ and let $Z = (y = 0, \; z = x^2)$, a smooth curve that meets $E$ only at the origin, where it is tangent to $E$: the intersection $Z \cap E$ is defined by $y = z = x^2 = 0$, a double point. So $Z$ does not have simple normal crossings with $E$. Put $w = z - x^2$, so that $x, y, w$ are coordinates and $Z = (y = w = 0)$. In the chart of the blowup with $w = w_1 y$ and the coordinates $x, y, w_1$, the pullback of $z$ is
+$$z = w + x^2 = x^2 + y w_1.$$
+It is not divisible by $y$, the equation of the exceptional divisor, so the birational transform of $E$ is the surface $(x^2 + y w_1 = 0)$. Its partial derivatives $2x$, $w_1$ and $y$ vanish at the origin of the chart. So the transform of $E$ is a quadric cone, singular at the origin, and $E'$ does not have simple normal crossings. The induction of Chapter 3 restricts the problem to the divisors of $E$, and a singular divisor would stop it.
+
+*Remark (the order of the divisors).* The new divisor $F$ is put last in $E'$. The rule of Theorem 3.3.8 uses this order: among the intersections of divisors with the largest value of the invariant it blows up the one with the lexicographically smallest set of indices. So the old divisors are treated before the new ones. Example 3.3.9 shows that a rule that always blows up the newest intersection does not end. The convention that $F$ is put last is the convention of [Kol07, Chapter 3].
+
+*Remark (characteristic).* Definition 2.2.3 and Lemma 2.2.4 make sense in every characteristic, with the theorem of Zariski-Nagata in place of Proposition 2.1.7. What fails in characteristic $p$ is the control of the order of the transforms through the derivative ideals, Theorem 2.2.7 together with Lemma 2.1.4; see Section 2.4.
+
 ### Derivatives and blowups
 
 **Lemma 2.2.6 (derivatives in a chart).** In the chart $U_c$ of Lemma 2.2.2, let $f \in I_Z^m$ on $U$ with $m \ge 1$, and let $g = y_c^{-m} \pi^* f$. For each $i$ the function $\partial_i f$ lies in $I_Z^{m-1}$, and
@@ -98,6 +110,8 @@ $$J^{(1)}_1 = x^{-1} \cdot (x y_1, \; x^4) = (y_1, \; x^3).$$
 The derivative ideal of $I_1$ on $U_1$ is $D(I_1) = (y_1^2 - x^3, \; 2y_1, \; 3x^2) = (y_1, \; x^2)$. So $J^{(1)}_1 \subseteq D(I_1)$, as Theorem 2.2.7 says, and the inclusion is strict because $x^2 \notin (y_1, x^3)$. Both ideals have the same zero set $p_1$.
 
 Now blow up $p_1$. In the chart with $y_1 = y_2 x$ the pullback of $y_1^2 - x^3$ is $x^2(y_2^2 - x)$, so $I_2 = (y_2^2 - x)$, of order at most 1. In the chart with $x = x_3 y_1$ the pullback is $y_1^2(1 - x_3^3 y_1)$, and $I_2 = (1 - x_3^3 y_1)$ is a unit along the new exceptional curve. So $\operatorname{max\text{-}ord} I_2 \le 1$, and the two blowups are an order reduction for $(I, 2)$. The transform $J^{(1)}_2 = x^{-1} \cdot (x y_2, x^3) = (y_2, x^2)$ lies in $D(I_2) = \mathcal{O}$.
+
+*Example (Theorem 2.2.7 for $(x^2, y^3)$).* Let $I = (x^2, y^3)$ on $\mathbb{A}^2$ with $m = 2$. By the example at the end of Section 2.1, $D(I) = (x, y^2)$ and $D^2(I) = \mathcal{O}$. Blow up the origin. In the chart $x = x_1 y$ the transform of $(I, 2)$ is $I_1 = y^{-2} (x_1^2 y^2, y^3) = (x_1^2, y)$, and the transform of $(D(I), 1)$ is $J^{(1)}_1 = y^{-1} (x_1 y, y^2) = (x_1, y)$. The derivative ideal of $I_1$ contains $\partial_y (y) = 1$, so $D(I_1) = \mathcal{O}$, and $J^{(1)}_1 \subseteq D(I_1)$ holds. The inclusion is strict. The ideal $I_1$ has order 1 at $P = (x_1 = y = 0)$, and so the maximal order dropped from 2 to 1 after one blowup. In the chart $y = y_1 x$ the transform is $x^{-2}(x^2, x^3 y_1^3) = \mathcal{O}$. So the single blowup of the origin is an order reduction for $(I, 2)$. The marked ideal $(I, 1)$ is a different problem, with a different answer: Section 1.3 needs three blowups to principalize $I$.
 
 ### Notes and references
 
