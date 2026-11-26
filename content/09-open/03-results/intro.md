@@ -24,4 +24,6 @@ Section 3.10 is the tenth result. If $\rho$ stays, the old point is in the first
 
 Section 3.11 is the eleventh result. The full codimension $\widetilde\tau$, which uses all of $\widetilde\Theta(G)$ in both cases, does not go down at a step from the second case. An example for $p = 2$ shows that it can go down at a step from the first case.
 
+Section 3.12 is the twelfth result. The case of a point is the type $d - \rho$, where $d$ is the residual order: the first case is the type $0$, and the second case is the type $1$. So the triple $(\rho, d, \tau_\rho)$ does not get worse at a step where $\rho$ stays and no component of the divisor leaves, and $d$ goes down by one at each step from the second case to the first case. The steps where the triple can get worse all have a leaving component.
+
 Each section gives the statement, a complete proof, the place of the result on the map, and the Lean proof. A result of this chapter is new only in the sense that we do not know a published statement of it. An outside expert has not yet read it, and the section says so until this happens.
