@@ -4,9 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.36] - 2026-11-26
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.36.
+
 ### Changed
 
 - Volume 3, Corollary 2.2.4 gives the Lean name for the claim that $Kv$ is finitely generated (tamnd/singularity-lean#153), and the paragraph after the proof describes the Lean proof. Corollary 2.1.3 gives the Lean name for the claim that $f$ is finite. Volume 5, Section 2.2 says that the part of the corollary on $Kv$ is in Lean.
+- `EDITION` pins the map at the release 0.4.44.
 
 ## [0.4.35] - 2026-11-26
 
