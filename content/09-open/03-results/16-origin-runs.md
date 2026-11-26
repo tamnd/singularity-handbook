@@ -52,7 +52,7 @@ For origin runs the corrected question of Section 3.15 is answered in each dimen
 
 ### Status
 
-The map has the node SG0000005X for Lemma 3.16.1, SG0000005Y for Theorem 3.16.2, SG0000005Z for Theorem 3.16.3, SG00000060 for Corollary 3.16.4 and SG00000061 for Example 3.16.5. All of them have proofs in the text of Volume 7, Section 3.14, and none of them has a Lean proof yet. Volume 7, Section 3.13 now has the corrected formula for the exponents before Lemma 3.13.19. The old formula gave the exponents in the total transform and not in the strict transform. The correction does not change Theorem 3.13.20 or its proof, except that the line on the vector $r$ is now right. An outside expert has not yet read the result, and the milestone S7 asks for this.
+The map has the node SG0000005X for Lemma 3.16.1, SG0000005Y for Theorem 3.16.2, SG0000005Z for Theorem 3.16.3, SG00000060 for Corollary 3.16.4 and SG00000061 for Example 3.16.5. All of them have proofs in the text of Volume 7, Section 3.14. Lemma 3.16.1 and Theorem 3.16.2 also have Lean proofs in `Singularity/Invariant/OriginRuns.lean` of tamnd/singularity-lean 0.4.41, the second for polynomials. The other three have no Lean proof yet. Volume 7, Section 3.13 now has the corrected formula for the exponents before Lemma 3.13.19. The old formula gave the exponents in the total transform and not in the strict transform. The correction does not change Theorem 3.13.20 or its proof, except that the line on the vector $r$ is now right. An outside expert has not yet read the result, and the milestone S7 asks for this.
 
 ### Notes and references
 
