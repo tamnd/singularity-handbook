@@ -8,7 +8,9 @@ reviewed_by: []
 ---
 ## The polyhedron of Hironaka
 
-Volume 7, Section 1.2, defines the projected polyhedron and the characteristic polyhedron of an equation $z^q + F(x)$, and it states the theorem of Hironaka on the existence of a minimizing coordinate without proof. In this section we give the general definition for a monic polynomial of degree $m$ in the form that Cossart and Piltant use [CP19, Section 2.1]. We define the initial form at a vertex and the solvable vertices. We prove that a translation removes a solvable vertex, and we state the theorem of Hironaka [Hir67]. We compute three examples by hand.
+Volume 7, Section 1.2, defines the projected polyhedron and the characteristic polyhedron of an equation $z^q + F(x)$, and it states the theorem of Hironaka on the existence of a minimizing coordinate without proof. In this section we give the general definition for a monic polynomial of degree $m$ in the form that Cossart and Piltant use [CP19, Section 2.1]. We define the initial form at a vertex and the solvable vertices. We prove that a translation removes a solvable vertex, and we state the theorem of Hironaka [Hir67]. We compute three examples by hand. At the end we find the solvable vertices of the purely inseparable equations $X^p + f$, and we show that over an imperfect field a vertex in $\mathbb{N}^n$ need not be solvable.
+
+In characteristic 0 the resolution of a hypersurface of multiplicity $m$ uses a hypersurface of maximal contact. After the Tschirnhausen translation $X \mapsto X + f_{1, X}/m$, the hypersurface $X = 0$ has this property, and the next invariant comes from the orders of the coefficients $f_{i, X}$. In characteristic $p$ with $p \mid m$ this translation does not exist, and Example 2.3.5 of Narasimhan shows that no regular hypersurface can take its place in general. Hironaka keeps a coordinate $X$, but he lets it vary over all the translations $X - \varphi$. To each translation he attaches a convex set, which is built from the exponents of the coefficients $f_{i, X}$, and he takes a translation for which this set is smallest. The invariants of Section 3.2 are minima of linear functions on this smallest set. So they do not depend on a choice of a hypersurface.
 
 ### The setting
 
@@ -117,6 +119,37 @@ $$h = (Z + 6)^3 - 54 = Z^3 + 18 Z^2 + 108 Z + 162.$$
 The $3$-adic orders are $v(18) = 2$, $v(108) = 3$ and $v(162) = 4$, so the points are $2/1$, $3/2$ and $4/3$, and $\Delta(h; 3; Z) = [4/3, \infty)$. Its vertex $4/3$ is not an integer, so it is not solvable, and by Theorem 3.1.5(2) this is the characteristic polyhedron. The lift $-3$ of $\lambda u_1$ gives $(Z - 3)^3 - 54 = Z^3 - 9 Z^2 + 27 Z - 81$, with the same polyhedron. This agrees with [CP19, Example 2.9], which gives $[(a + 1)/p, \infty)$ when $2^3 - 2 = 6$ is not divisible by $9$. Here $X$ has a point of multiplicity $3$ over the maximal ideal: in $\mathbb{Z}_{(3)}[Z]_{(3, Z)}$ the four terms of $h$ have orders $3$, $4$, $4$ and $4$.
 
 Lean: none yet
+
+### Purely inseparable equations
+
+The equations of Theorem 1.2.6 in case 1 have the form $X^p + f$ over a ring of characteristic $p$. For these equations the solvable vertices have a simple description. A translation changes only one coefficient, so vertex preparation is a deletion of monomials.
+
+**Lemma 3.1.10.** Let $k$ be a field of characteristic $p$, let $S = k[[u]]$, and let $h = X^p + f$ with $0 \ne f \in S$.
+
+1. $\Delta(h; u; X) = \frac{1}{p} N(f)$.
+2. A vertex $y$ of $\Delta(h; u; X)$ is solvable if and only if $y \in \mathbb{N}^n$ and the coefficient $c$ of $u^{p y}$ in $f$ lies in $k^p$.
+3. Let $y$ be a solvable vertex, let $\lambda \in k$ with $\lambda^p = -c$, and let $Z = X - \lambda u^y$. Then $h = Z^p + (f - c u^{p y})$.
+4. Assume that $k$ is perfect. Then $\Delta(h; u; X)$ is the characteristic polyhedron $\Delta(h; u)$ if and only if no vertex of $\Delta(h; u; X)$ lies in $\mathbb{N}^n$.
+
+Lean: none yet
+
+*Proof.* Part 1. Here $f_{i, X} = 0$ for $i < p$ and $f_{p, X} = f$. The set $\mathcal{S}(f)$ is the set of the minimal elements of $\operatorname{supp} f$, so the union of the sets $a + \mathbb{R}_{\ge 0}^n$ with $a \in \mathcal{S}(f)$ has the convex hull $N(f)$. Definition 3.1.1 gives $\Delta(h; u; X) = \frac1p N(f)$.
+
+Part 2. By the formula after Definition 3.1.3, $\operatorname{in}_y h = X^p + c U^{p y}$, because $f_{i, X} = 0$ for $i < p$. Here $c \ne 0$, since $y$ is a vertex. For $\lambda \in k$ the Frobenius map gives $(X - \lambda U^y)^p = X^p + (-\lambda)^p U^{p y} = X^p - \lambda^p U^{p y}$, since $(-1)^p = -1$ in $k$. So $y$ is solvable if and only if $y \in \mathbb{N}^n$ and $-c = \lambda^p$ for some $\lambda \in k$. Since $-1 = (-1)^p$ is a $p$-th power, this holds if and only if $c \in k^p$.
+
+Part 3. By the Frobenius map, $X^p = (Z + \lambda u^y)^p = Z^p + \lambda^p u^{p y} = Z^p - c u^{p y}$.
+
+Part 4. If $\Delta(h; u; X)$ is minimal, then it has no solvable vertex by Lemma 3.1.4. Since $k$ is perfect, $k^p = k$, and part 2 shows that no vertex lies in $\mathbb{N}^n$. Conversely, assume that no vertex lies in $\mathbb{N}^n$. Let $f^{\mathrm{cl}}$ be the clean part of $f$ (Volume 7, Definition 1.3.1). Its support is $\operatorname{supp} f \setminus p \mathbb{N}^n$. The vertices of $N(f)$ lie in $\operatorname{supp} f$ (Volume 7, Lemma 1.2.2), and a vertex $a$ of $N(f)$ is not in $p \mathbb{N}^n$, since $a/p \notin \mathbb{N}^n$. So all the vertices of $N(f)$ lie in $\operatorname{supp} f^{\mathrm{cl}}$. The polyhedron $N(f)$ is the convex hull of its vertices plus $\mathbb{R}_{\ge 0}^n$, so $N(f) \subseteq N(f^{\mathrm{cl}})$. The other inclusion holds since $\operatorname{supp} f^{\mathrm{cl}} \subseteq \operatorname{supp} f$. Thus $\Delta(h; u; X) = \frac1p N(f^{\mathrm{cl}})$, and this is $\Delta(h; u)$ by Proposition 3.2.4(1). $\square$
+
+Part 4 does not use Theorem 3.1.5. Over a perfect field, part 3 says that one step of vertex preparation deletes one monomial $c u^{p y}$ at a vertex $y \in \mathbb{N}^n$. The cleaning of Section 3.2 deletes all the monomials in $p \mathbb{N}^n$ at once. A deletion can make a new vertex appear, which was hidden behind the deleted one. Section 3.3 computes an example with two steps. Over an imperfect field, part 2 shows that a vertex in $\mathbb{N}^n$ can be minimal for the translations.
+
+**Example 3.1.11 (imperfect residue field).** Let $k = \mathbb{F}_p(t)$, let $S = k[[u_1, u_2]]$, and let
+$$h = X^p + t u_1^p + u_2^{p + 1}.$$
+Here $\mathcal{S}(f) = \{(p, 0), (0, p + 1)\}$, so $\Delta(h; u; X) = \operatorname{Conv}\{(1, 0), (0, \frac{p+1}{p})\} + \mathbb{R}_{\ge 0}^2$. The vertex $(1, 0)$ lies in $\mathbb{N}^2$, and the coefficient of $u_1^p$ is $t$. The element $t$ is not a $p$-th power in $k$, so the vertex is not solvable by Lemma 3.1.10(2). The vertex $(0, \frac{p+1}{p})$ is not in $\mathbb{N}^2$. So the polyhedron is minimal by Theorem 3.1.5(2). We can also see this directly. Let $\varphi \in S$, and let $b$ be the coefficient of $u_1$ in $\varphi$. Then $\varphi^p$ contains only monomials in $p \mathbb{N}^2$, and the coefficient of $u_1^p$ in $f + \varphi^p$ is $t + b^p \ne 0$. The monomial $u_2^{p + 1}$ is not in $p \mathbb{N}^2$, so it keeps its coefficient $1$. Thus $N(f + \varphi^p) \supseteq N(f)$, and $\Delta(h; u; X)$ is contained in $\Delta(h; u; X - \varphi)$.
+
+Lean: none yet
+
+In this example $\delta(x) = 1$, so the point $x$ over $\mathfrak{m}_S$ has multiplicity $p$ by Proposition 3.2.2(3), and the initial form is $\operatorname{in} h = Z^p + t U_1^p$ with $Z = X$. The polynomial $t U_1^p$ is not a $p$-th power in $k[U_1, U_2]$, but all its partial derivatives in $U_1$ and $U_2$ are $0$. The derivation $\partial/\partial t$ of $k$ detects it: $\partial (t U_1^p)/\partial t = U_1^p \ne 0$. For this reason Cossart and Piltant add the derivations of a $p$-basis of the residue field to their module of derivations, and with them a homogeneous form is a $p$-th power if and only if all these derivations kill it [CP19, Definition 2.41 and (2.43)].
 
 ### Notes and references
 
