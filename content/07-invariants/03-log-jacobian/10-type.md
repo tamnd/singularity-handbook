@@ -63,7 +63,9 @@ Now we follow a point blowup. By Corollary 3.10.2, at the old point and at the n
 2. if $g$ and $g'_c$ are in the second case, then $d' = d$, and $\tau_\rho(g'_c) \ge \tau_\rho(g)$;
 3. if $g$ is in the second case and $g'_c$ is in the first case, then $d' = d - 1$.
 
-Node: SG0000005A · Lean: `Singularity.residualOrderAlong_cleanPart_le_of_forall_eq_zero` (the inequality for $d$), `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_residualOrderAlong_eq` (the inequality for $\tau_\rho$), both for polynomials
+Node: SG0000005A · Lean: `Singularity.residualOrderAlong_cleanPart_le_of_forall_eq_zero` (for polynomials)
+
+The Lean form with $\tau_\rho$ is `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_residualOrderAlong_eq`.
 
 *Proof.* By Theorem 3.2.4, $g'_c \ne 0$. So Lemma 3.10.1 and Corollary 3.10.2 apply at the old point and at the new point. The old point is in the first case or in the second case, so the three parts cover all the possibilities.
 
@@ -128,7 +130,7 @@ A leaving component is a component of the old divisor that does not pass through
 
 ### The Lean proof
 
-The Lean library proves Lemma 3.10.1 and Theorem 3.10.3 for polynomials over a field of characteristic $p$, with the standard axioms only. As in Sections 3.7 to 3.9, the Lean statements use the ideal $\Theta_0(g)$ and not $\widetilde\Theta_0(G)$. Lemma 3.10.1 is `Singularity.idealOrd_logJacobianTangent_eq_ord`, in the form $\operatorname{ord} \Theta_0(g) = \operatorname{ord} g$ for a clean $g \ne 0$. Since $\Theta_0(g) = x^r \widetilde\Theta_0(G)$ and $\operatorname{ord} g = |r| + d$, this is the equation $|r| + \sigma = |r| + d$. Theorem 3.10.3 has two forms. `Singularity.residualOrderAlong_cleanPart_le_of_forall_eq_zero` gives $d' \le d$, and `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_residualOrderAlong_eq` gives $\tau_\rho(g'_c) \ge \tau_\rho(g)$ under the additional hypothesis $d' = d$. In both forms the hypothesis that no component leaves is $t_i = 0$ for each $i \in \Delta$ with $i \ne 1$, as in the Lean form of Theorem 3.9.11. The proofs combine Lemma 3.10.1 with the Lean forms of Theorem 3.9.10 and Theorem 3.9.11 in `Singularity/Invariant/LogJacobianNoLeave.lean` and of Proposition 3.8.2 in `Singularity/Invariant/LogJacobianDirectrix.lean`.
+The Lean library proves Lemma 3.10.1 and Theorem 3.10.3 for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianType.lean`. As in Sections 3.7 to 3.9, the Lean statements use the ideal $\Theta_0(g)$ and not $\widetilde\Theta_0(G)$. Lemma 3.10.1 is `Singularity.idealOrd_logJacobianTangent_eq_ord`, in the form $\operatorname{ord} \Theta_0(g) = \operatorname{ord} g$ for a clean $g \ne 0$. Since $\Theta_0(g) = x^r \widetilde\Theta_0(G)$ and $\operatorname{ord} g = |r| + d$, this is the equation $|r| + \sigma = |r| + d$. Theorem 3.10.3 has two forms. `Singularity.residualOrderAlong_cleanPart_le_of_forall_eq_zero` gives $d' \le d$, and `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_residualOrderAlong_eq` gives $\tau_\rho(g'_c) \ge \tau_\rho(g)$ under the additional hypothesis $d' = d$. In both forms the hypothesis that no component leaves is $t_i = 0$ for each $i \in \Delta$ with $i \ne 1$, as in the Lean form of Theorem 3.9.11. The proofs combine Lemma 3.10.1 with the Lean forms of Theorem 3.9.10 and Theorem 3.9.11 in `Singularity/Invariant/LogJacobianNoLeave.lean` and of Proposition 3.8.2 in `Singularity/Invariant/LogJacobianDirectrix.lean`.
 
 ### Notes and references
 

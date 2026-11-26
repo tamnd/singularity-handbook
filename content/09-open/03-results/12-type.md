@@ -24,7 +24,9 @@ Node: SG00000059 · Lean: `Singularity.idealOrd_logJacobianTangent_eq_ord` (for 
 
 **Theorem 3.12.2.** Assume that $\rho' = \rho$ and that no component of $\Delta$ leaves. Then $d' \le d$. If $d' = d$, then $\tau_\rho(g'_c) \ge \tau_\rho(g)$. If $g$ is in the second case and $g'_c$ is in the first case, then $d' = d - 1$.
 
-Node: SG0000005A · Lean: `Singularity.residualOrderAlong_cleanPart_le_of_forall_eq_zero` (the inequality for $d$), `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_residualOrderAlong_eq` (the inequality for $\tau_\rho$), both for polynomials
+Node: SG0000005A · Lean: `Singularity.residualOrderAlong_cleanPart_le_of_forall_eq_zero` (for polynomials)
+
+The Lean form with $\tau_\rho$ is `Singularity.logJacobianDirectrixCodim_le_cleanPart_of_residualOrderAlong_eq`.
 
 **Example 3.12.3.** Let $p = 2$, $\Delta = \emptyset$ and $g = x y z^2 + y^2 z + x z^2$, as in Volume 7, Example 3.8.3. Then $d = 3$, $\rho = 2$ and $\tau_\rho(g) = 2$, so $g$ is in the second case. At the origin of the $x$-chart, $G' = x y z^2 + y^2 z + z^2$, so $d' = 2$, $\rho' = 2$ and $\tau_\rho(g'_c) = 1$, and $g'_c$ is in the first case. The codimension goes down, but the residual order goes down from $3$ to $2$. The triple $(\rho, d, \tau_\rho)$ goes from $(2, 3, 2)$ to $(2, 2, 1)$.
 
@@ -59,7 +61,7 @@ So the drops of $\tau_\rho$ from the second case to the first case, which Sectio
 
 ### Status
 
-The map has the result as SG00000059 and SG0000005A. The Lean library proves Lemma 3.12.1 and Theorem 3.12.2 for polynomials over a field of characteristic $p$, with the standard axioms only. An outside expert has not yet read the result, and the milestone S7 asks for this.
+The map gives SG00000059 and SG0000005A the status "proved". The Lean library proves Lemma 3.12.1 and Theorem 3.12.2 for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianType.lean`. An outside expert has not yet read the result, and the milestone S7 asks for this.
 
 ### Notes and references
 
