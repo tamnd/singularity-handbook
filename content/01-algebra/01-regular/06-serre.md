@@ -36,11 +36,11 @@ Lemma 1.6.1 is in [Mat, Section 19], where it is stated with Tor. Mathlib has th
 
 Lean: `Singularity.Algebra.hasProjectiveDimensionLT_of_quotient`
 
-*Proof.* We use induction on $n = \operatorname{pd}_{\bar{R}} N$. As an $R$-module, $\bar{R}$ has the free resolution $0 \to R \xrightarrow{x} R \to \bar{R} \to 0$, because $x$ is a nonzerodivisor. Thus $\operatorname{pd}_R \bar{R}^m \le 1$ for each $m$.
+*Proof.* If $\operatorname{pd}_{\bar{R}} N = \infty$, there is nothing to prove. Otherwise we use strong induction on $n = \operatorname{pd}_{\bar{R}} N$. As an $R$-module, $\bar{R}$ has the free resolution $0 \to R \xrightarrow{x} R \to \bar{R} \to 0$, because $x$ is a nonzerodivisor. Thus $\operatorname{pd}_R \bar{R}^m \le 1$ for each $m$.
 
 Let $n = 0$. Then $N$ is a projective $\bar{R}$-module, so $N$ is a direct summand of some $\bar{R}^m$. A direct summand of a module of projective dimension at most $1$ has projective dimension at most $1$. Thus $\operatorname{pd}_R N \le 1$.
 
-Let $n \ge 1$. Take an exact sequence $0 \to K \to \bar{R}^m \to N \to 0$ of $\bar{R}$-modules. Then $\operatorname{pd}_{\bar{R}} K = n - 1$, and by the induction hypothesis $\operatorname{pd}_R K \le n$. The same sequence is an exact sequence of $R$-modules, with $\operatorname{pd}_R \bar{R}^m \le 1 \le n + 1$. Thus $\operatorname{pd}_R N \le n + 1$. $\square$
+Let $n \ge 1$. Take an exact sequence $0 \to K \to \bar{R}^m \to N \to 0$ of $\bar{R}$-modules. Then $\operatorname{Ext}^n_{\bar{R}}(K, \kappa) \cong \operatorname{Ext}^{n+1}_{\bar{R}}(N, \kappa) = 0$, as in the proof of Lemma 1.6.1, so $\operatorname{pd}_{\bar{R}} K \le n - 1$ by Lemma 1.6.1. By the induction hypothesis, $\operatorname{pd}_R K \le \operatorname{pd}_{\bar{R}} K + 1 \le n$. The same sequence is an exact sequence of $R$-modules, with $\operatorname{pd}_R \bar{R}^m \le 1 \le n + 1$. Thus $\operatorname{pd}_R N \le n + 1$. $\square$
 
 **Theorem 1.6.3.** Let $R$ be a regular local ring of dimension $d$. Then $\operatorname{pd}_R M \le d$ for each finitely generated $R$-module $M$.
 
@@ -66,7 +66,7 @@ Let $\varphi \colon K \to F$ be an injective map of free modules. In the square
 $$\begin{array}{ccc} \kappa \otimes K & \xrightarrow{\kappa \otimes \varphi} & \kappa \otimes F \\ \downarrow & & \downarrow \\ R \otimes K & \xrightarrow{R \otimes \varphi} & R \otimes F \end{array}$$
 the vertical maps are $j \otimes K$ and $j \otimes F$. They are injective, because free modules are flat. The lower map is $\varphi$, which is injective. The square commutes, so $\kappa \otimes \varphi$ is injective.
 
-Now let $M$ be finitely generated with $\operatorname{pd}_R M = n < \infty$. We use induction on $n$. If $n = 0$, then $M$ is projective, and a finitely generated projective module over a local ring is free. Let $n \ge 1$, and take a presentation $0 \to K \to F \to M \to 0$. Then $\operatorname{pd}_R K = n - 1$, so $K$ is free by the induction hypothesis. By the square, $\kappa \otimes K \to \kappa \otimes F$ is injective, and the criterion before Lemma 1.6.1 shows that $M$ is free.
+Now let $M$ be finitely generated with $\operatorname{pd}_R M = n < \infty$. We use strong induction on $n$. If $n = 0$, then $M$ is projective, and a finitely generated projective module over a local ring is free. Let $n \ge 1$, and take a presentation $0 \to K \to F \to M \to 0$. Then $\operatorname{Ext}^n_R(K, \kappa) \cong \operatorname{Ext}^{n+1}_R(M, \kappa) = 0$, so $\operatorname{pd}_R K \le n - 1$ by Lemma 1.6.1, and $K$ is free by the induction hypothesis. By the square, $\kappa \otimes K \to \kappa \otimes F$ is injective, and the criterion before Lemma 1.6.1 shows that $M$ is free.
 
 If $\operatorname{pd}_R \kappa < \infty$, then $\kappa$ is a free $R$-module. It is not zero, so it has a basis vector $b$. For $a \in \mathfrak{m}$ we have $ab = 0$ in $\kappa$, and the coordinate of $ab$ at $b$ is $a$. Thus $a = 0$, and $\mathfrak{m} = 0$. $\square$
 
@@ -84,9 +84,9 @@ The next lemma is a change of rings in the other direction from Lemma 1.6.2.
 
 Lean: `Singularity.Algebra.hasProjectiveDimensionLT_baseChange_quotient`
 
-*Proof.* Note that $M/xM \cong \bar{R} \otimes M$. We use induction on $n = \operatorname{pd}_R M$. If $n = 0$, then $M$ is projective, and $\bar{R} \otimes M$ is a projective $\bar{R}$-module.
+*Proof.* Note that $M/xM \cong \bar{R} \otimes M$. We use strong induction on $n = \operatorname{pd}_R M$, which we may assume finite. If $n = 0$, then $M$ is projective, and $\bar{R} \otimes M$ is a projective $\bar{R}$-module.
 
-Let $n \ge 1$, and take a presentation $0 \to K \to F \to M \to 0$. The element $x$ is a nonzerodivisor on the free module $F$, so also on $K$, and $\operatorname{pd}_R K = n - 1$. By the induction hypothesis, $\operatorname{pd}_{\bar{R}} \bar{R} \otimes K \le n - 1$. The functor $\bar{R} \otimes -$ is right exact, so the sequence $\bar{R} \otimes K \to \bar{R} \otimes F \to \bar{R} \otimes M \to 0$ is exact. We show that the first map is injective. Let $y \in K$ with $y = xz$ for some $z \in F$. Then $x$ times the image of $z$ in $M$ is $0$. Since $x$ is a nonzerodivisor on $M$, the image of $z$ is $0$, so $z \in K$ and $y \in xK$. Thus $K/xK \to F/xF$ is injective. The sequence $0 \to \bar{R} \otimes K \to \bar{R} \otimes F \to \bar{R} \otimes M \to 0$ is exact, with $\bar{R} \otimes F$ free over $\bar{R}$, and so $\operatorname{pd}_{\bar{R}} \bar{R} \otimes M \le n$. $\square$
+Let $n \ge 1$, and take a presentation $0 \to K \to F \to M \to 0$. The element $x$ is a nonzerodivisor on the free module $F$, so also on $K$, and $\operatorname{pd}_R K \le n - 1$ by the Ext argument of Lemma 1.6.2. By the induction hypothesis, $\operatorname{pd}_{\bar{R}} \bar{R} \otimes K \le \operatorname{pd}_R K \le n - 1$. The functor $\bar{R} \otimes -$ is right exact, so the sequence $\bar{R} \otimes K \to \bar{R} \otimes F \to \bar{R} \otimes M \to 0$ is exact. We show that the first map is injective. Let $y \in K$ with $y = xz$ for some $z \in F$. Then $x$ times the image of $z$ in $M$ is $0$. Since $x$ is a nonzerodivisor on $M$, the image of $z$ is $0$, so $z \in K$ and $y \in xK$. Thus $K/xK \to F/xF$ is injective. The sequence $0 \to \bar{R} \otimes K \to \bar{R} \otimes F \to \bar{R} \otimes M \to 0$ is exact, with $\bar{R} \otimes F$ free over $\bar{R}$, and so $\operatorname{pd}_{\bar{R}} \bar{R} \otimes M \le n$. $\square$
 
 **Lemma 1.6.7.** Let $x \in \mathfrak{m} \setminus \mathfrak{m}^2$ and let $\bar{R} = R/(x)$, with residue field $\kappa$. Then $\kappa$ is a direct summand of the $\bar{R}$-module $\mathfrak{m}/x\mathfrak{m}$.
 

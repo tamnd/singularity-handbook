@@ -86,6 +86,36 @@ We apply Lemma 1.10.5 with $A = B$ and $t = x$. Since $R \subseteq B \subseteq R
 
 The theorem says that the blowup of a regular scheme at a closed point is regular, because the blowup is covered by the spectra of these charts. The blowup along a regular center of higher dimension is also regular [Hir64]. The library does not have this case yet.
 
+### Two examples
+
+In the next two examples we compute charts of global rings. Let $A$ be a domain, let $\mathfrak{m}$ be an ideal of $A$ and let $x \in \mathfrak{m}$ with $x \ne 0$. We define the chart $A[\mathfrak{m}/x]$ as in Definition 1.10.3: it is the subring of $A_x$ that $A$ and the fractions $a/x$ with $a \in \mathfrak{m}$ generate. If $\mathfrak{m}$ is a maximal ideal, then the localization of $A[\mathfrak{m}/x]$ at the multiplicative set $A \setminus \mathfrak{m}$ is the chart $A_\mathfrak{m}[\mathfrak{m}A_\mathfrak{m}/x]$ of the local ring.
+
+**Example 1.10.7 (the blowup of the plane).** Let $k$ be a field, let $A = k[x, y]$ and let $\mathfrak{m} = (x, y)$. Let $u = y/x$. The chart for $x$ is $B = A[\mathfrak{m}/x] = k[x, u]$, with $y = xu$. The elements $x$ and $u$ are algebraically independent over $k$, because they generate the field $k(x, y)$ of transcendence degree $2$. So $B$ is a polynomial ring in $x$ and $u$. Also $\mathfrak{m}B = (x, xu) = xB$, and the exceptional divisor of the chart is $\operatorname{Spec} B/xB = \operatorname{Spec} k[u]$, a line. In the same way, the chart for $y$ is $k[y, w]$ with $w = x/y$ and $x = yw$. On the overlap, $uw = 1$. So the two lines glue to the projective line $\mathbb{P}^1_k$, as Proposition 1.10.4 predicts.
+
+Let $f \in A$ have order $d$ at the origin, that is, $f = f_d + f_{d+1} + \dots$ with $f_j$ homogeneous of degree $j$ and $f_d \ne 0$. Then $f_j(x, xu) = x^j f_j(1, u)$, so
+$$f(x, xu) = x^d f'(x, u), \qquad f'(x, u) = \sum_{j \ge d} x^{j-d} f_j(1, u).$$
+The curve $V(f')$ in the chart is the *strict transform* of $V(f)$, and $f'(0, u) = f_d(1, u)$. So the strict transform meets the exceptional divisor at the roots of the initial form $f_d$, that is, at the tangent directions of the curve at the origin.
+
+*The cusp.* Let $f = y^2 - x^3$. Then $d = 2$ and $f(x, xu) = x^2(u^2 - x)$. The strict transform is the curve $x = u^2$ in the plane with the coordinates $x, u$. It is regular, because it is the graph of a function of $u$. It meets the exceptional divisor $x = 0$ only at $u = 0$, and the intersection is $\operatorname{Spec} k[u]/(u^2)$, a point of length $2$. In the other chart, $f(yw, y) = y^2(1 - yw^3)$, and the strict transform $1 - yw^3 = 0$ does not meet $y = 0$. So one blowup resolves the cusp, but the strict transform is tangent to the exceptional divisor.
+
+*The node.* Let $k$ have characteristic different from $2$ and let $f = y^2 - x^2 - x^3$. Then $f(x, xu) = x^2(u^2 - 1 - x)$. The strict transform $x = u^2 - 1$ is regular, and it meets the exceptional divisor at the two points $u = 1$ and $u = -1$. These are the two tangent directions $y = \pm x$ of the node. The blowup separates the two branches, as the normalization does in Example 1.4.5.
+
+Lean: none yet
+
+**Example 1.10.8 (the blowup of the cone).** Let $k$ be a field, let $A = k[x, y, z]/(xy - z^2)$ and let $\mathfrak{m} = (x, y, z)$. The ring $A$ is a domain of dimension $2$, and its local ring at $\mathfrak{m}$ is not regular (Example 1.4.6). Its field of fractions is $k(x, z)$, because $y = z^2/x$, so $x$ and $z$ are algebraically independent over $k$. We compute the three charts.
+
+*The chart for $x$.* Let $v = z/x$. Then $y/x = xy/x^2 = z^2/x^2 = v^2$. So $A[\mathfrak{m}/x] = A[v]$, and in this ring $y = xv^2$ and $z = xv$. Thus $A[\mathfrak{m}/x] = k[x, v]$. The elements $x$ and $v$ generate the field $k(x, z)$, so they are algebraically independent, and $k[x, v]$ is a polynomial ring. Also $\mathfrak{m}A[\mathfrak{m}/x] = (x, xv^2, xv) = (x)$, and the exceptional divisor of the chart is $\operatorname{Spec} k[v]$.
+
+*The chart for $y$.* By the symmetry of $x$ and $y$, the chart is the polynomial ring $k[y, w]$ with $w = z/y$, $x = yw^2$ and $z = yw$. The exceptional divisor of the chart is $\operatorname{Spec} k[w]$.
+
+*The chart for $z$.* Let $a = x/z$ and $b = y/z$. Then $ab = xy/z^2 = 1$. So $A[\mathfrak{m}/z] = k[z, a, a^{-1}]$, with $x = za$ and $y = z a^{-1}$, and $z, a$ are algebraically independent. The exceptional divisor of this chart is $\operatorname{Spec} k[a, a^{-1}]$. It is contained in the two other charts.
+
+On the overlap of the first two charts, $vw = z^2/(xy) = 1$. So the exceptional divisor is a projective line, glued from $\operatorname{Spec} k[v]$ and $\operatorname{Spec} k[w]$. Each chart is a regular ring, so the blowup of the cone at its vertex is regular.
+
+Compare this with Proposition 1.10.4. The local ring of the cone has embedding dimension $3$. If it were regular, the exceptional divisor would be $\mathbb{P}^2_k$. In fact, the exceptional divisor is the conic $XY = Z^2$ in $\mathbb{P}^2_k$, that is, $\operatorname{Proj}$ of the graded ring $k[X, Y, Z]/(XY - Z^2)$. This conic is isomorphic to $\mathbb{P}^1_k$, but it is not all of $\mathbb{P}^2_k$. In general, the exceptional divisor of the blowup of a Noetherian local ring at its maximal ideal is $\operatorname{Proj}$ of the associated graded ring. The reason is that the blowup is $\operatorname{Proj} \bigoplus_k \mathfrak{m}^k$ [Har, Section II.7], and the ideal of the exceptional divisor is the graded ideal $\bigoplus_k \mathfrak{m}^{k+1}$. With $e$ the embedding dimension, this graded ring is a quotient of a polynomial ring in $e$ variables, so the exceptional divisor is a closed subscheme of $\mathbb{P}^{e-1}$. It is all of $\mathbb{P}^{e-1}$ when the ring is regular, by Proposition 1.10.1.
+
+Lean: none yet
+
 ### The Lean proof
 
 The results of this section are in `Singularity/Algebra/BlowupChart.lean`. The Lean proof follows the proofs of this section. For Proposition 1.10.1 it uses `Singularity.Algebra.length_grPiece_eq_choose`, the dimension count of Theorem 3.3.13. In the proof of Proposition 1.10.4, the Lean proof works with the fractions $b/x^k$ of Definition 1.10.3, which `Singularity.Algebra.mem_blowupChart_iff` describes. The regularity of the polynomial ring over a field comes from Mathlib. The main theorems use only the axioms `propext`, `Classical.choice` and `Quot.sound`.
