@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Examples 3.13.10 and 3.13.11 have the Node lines of the map nodes SG0000005N and SG0000005P and the Lean names `Singularity.SurfaceRuns.surfaceRun_of_charts` and `Singularity.SurfaceRuns.cpRun`. The status text of Volume 9, Section 3.15 gives the Lean proofs. The line `singularity` of `EDITION` now pins the map release 0.4.50.
+
 ## [0.4.42] - 2026-11-27
 
 ### Added

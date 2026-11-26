@@ -1,6 +1,6 @@
 ---
 title: Runs that follow no curve
-nodes: [SG0000005K, SG0000005M]
+nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P]
 sources: [CP19, CJS20, Hir64, Chr79]
 status: drafted
 drafted_by: writer
@@ -110,6 +110,8 @@ A computer test explored the full trees over $\mathbb{F}_p$ for $n = 2$ and $p \
 
 **Example 3.13.10.** Let $n = 3$ with the variables $x, y, z$, let $p$ be a prime, $\Delta = \{y, z\}$ and $g = x^p y z$. Then each sequence of the $y$-chart and the $z$-chart at the origin is an infinite run with $\rho = p$, and the sequence that takes the two charts in turn follows no formal curve. Each point of each such run is on the strict transform of the surface $Z = V(x)$, and $\nu^G_Z = p = \rho$.
 
+Node: SG0000005N · Lean: `Singularity.SurfaceRuns.surfaceRun_of_charts` (the runs, not the claim on curves)
+
 *Proof.* The point $x^p y^a z^b$ with $a, b \ge 1$ and $\gcd(a, b) = 1$ is clean, since $(a, b) \not\equiv (0, 0)$. Here $r = (0, a, b)$ and $G = x^p$. The generators of $\widetilde\Theta(G)$ are $a G + y \partial_y G = a x^p$, $b G + z \partial_z G = b x^p$ and $\partial_x G = p x^{p-1} = 0$. One of $a, b$ is not divisible by $p$, so $\widetilde\Theta(G) = (x^p)$ and $\rho = p = d$. Also $\widetilde\Theta_0(G) = (x^p)$, so the point is in the first case. The $y$-chart at the origin sends $x^p y^a z^b$ to $y^{-p} (y x)^p y^a (y z)^b = x^p y^{a + b} z^b$, and the $z$-chart sends it to $x^p y^a z^{a + b}$. The new divisor is $\{y, z\}$ in both charts. Both maps keep the condition $\gcd(a, b) = 1$, so each sequence of the two charts from $(a, b) = (1, 1)$ is an infinite run with $\rho = p$. In the sequence that takes the two charts in turn, each step from the second step on is a corner step, so by Lemma 3.13.4 and Lemma 3.13.5 it follows no formal curve. Both charts send $V(x)$ to its strict transform $V(x)$, and the origin is on it. The coordinates are adapted to $Z = V(x)$, no component of $\Delta$ contains $Z$, and $\operatorname{ord}_x g = p$. So $\nu^G_Z = p$. $\square$
 
 The exponents along the run that takes the two charts in turn are the Fibonacci numbers, and the run is the sequence of the centers of the monomial valuation on $(y, z)$ with the ratio of the golden section. So the first half of Hypothesis 3.12.5 is false for $n = 3$, for each $p$, also with the correction of Remark 3.13.3. The point is in the first case, with $\tau_\rho = 1$. So the failure does not need a large codimension.
@@ -128,6 +130,8 @@ Let $c_0, c_1, c_2, \dots \in K$ with $c_k = 0$ if $p \nmid k + 1$, let $\varphi
 2. The points of the strict transforms of $\gamma$ form an infinite run with $(\rho, d, \tau_\rho) = (p, p + 1, 1)$ at each point.
 3. $G \in I_W^p \subseteq I_\gamma^p$, and near the origin the locus where the order of $G$ is at least $\rho$ is $V(x_1, x_2) \cup V(x_1, x_3)$.
 4. At the generic point of $W$ the residual order is $p$.
+
+Node: SG0000005P · Lean: `Singularity.SurfaceRuns.cpRun` (part 2 for $p = 2$)
 
 *Proof.* Part 1. Each monomial of $g$ has an exponent $1$, so $g$ is clean. The exponent of $x_1$ is $0$ in the first monomial, and the exponent of $x_2$ is $0$ in the second, so $r = 0$ and $G = g$. The generators of $\widetilde\Theta(G)$ are $x_1 \partial_1 G = 0$, $x_2 \partial_2 G = 0$, $\partial_3 G = x_1^p$ and $\partial_4 G = x_2^p x_3^p$. So $\rho = p$ and $d = p + 1$, and the point is in the second case. The elements of $\widetilde\Theta(G)$ of order $p$ have the initial forms $c x_1^p$ with $c \ne 0$, and $(x_1 + s b_1)^p = x_1^p + s^p b_1^p$. So $T_\rho = \{b_1 = 0\}$ and $\tau_\rho = 1$.
 
