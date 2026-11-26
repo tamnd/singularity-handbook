@@ -22,9 +22,11 @@ This is the definition of [ILO14, Exposé X, Section 2]. For integral $X$ and $X
 
 **Lemma 3.2.2.** Let $L'/M$ be a finite Galois extension with group $G$, let $\ell$ be a prime, and let $P$ be an $\ell$-Sylow subgroup of $G$. Let $K \subseteq M$ be a subfield such that $M/K$ is finite and purely inseparable, of degree a power of a prime $p \ne \ell$. Then $[L'^P : K]$ is prime to $\ell$.
 
-Lean: none yet
+Lean: `Singularity.not_dvd_finrank_fixedField_sylow`
 
 *Proof.* By the Galois correspondence $[L' : L'^P] = |P|$ and $[L' : M] = |G|$, so $[L'^P : M] = [G : P]$ [Lan02, Chapter VI, Theorem 1.1]. The index of a Sylow subgroup is prime to $\ell$. The degree $[M : K]$ is a power of $p$, so it is also prime to $\ell$. Multiply the two degrees. $\square$
+
+The Lean statement does not need the hypothesis that $M/K$ is purely inseparable. It needs only that $[M : K]$ is a power of $p$.
 
 **Proposition 3.2.3.** Let $\varphi \colon X' \to X$ be a Galois alteration of integral varieties over a field of characteristic exponent $p$, with group $G$ (Definition 3.1.3). Assume that $X'$ is quasi-projective over $X$. Let $\ell \ne p$ be a prime and let $P$ be an $\ell$-Sylow subgroup of $G$. Then the quotient $X'/P$ exists, and the induced morphism $X'/P \to X$ is an alteration of degree prime to $\ell$.
 

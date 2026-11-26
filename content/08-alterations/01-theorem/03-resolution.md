@@ -16,9 +16,11 @@ Let $A$ be a domain with fraction field $K$, and let $L$ be a finite extension o
 
 **Lemma 1.3.1.** Let $A$ be a normal Noetherian domain with fraction field $K$, let $L/K$ be a finite extension, and let $b \in L$ be integral over $A$. Then $\operatorname{Tr}_{L/K}(b) \in A$.
 
-Lean: none yet
+Lean: `Singularity.exists_algebraMap_eq_trace`
 
 *Proof.* Let $f \in K[T]$ be the minimal polynomial of $b$ over $K$, of degree $m$. In a splitting field of $f$, each root of $f$ is a conjugate of $b$, so it satisfies the same integral equation as $b$ and is integral over $A$. The coefficients of $f$ are polynomials in the roots, so they are integral over $A$, and they lie in $K$. Since $A$ is normal, the coefficients lie in $A$. The matrix of multiplication by $b$ on $K(b)$ in the basis $1, b, \dots, b^{m-1}$ is the companion matrix of $f$, so $\operatorname{Tr}_{K(b)/K}(b) = -c_{m-1}$, where $c_{m-1}$ is the coefficient of $T^{m-1}$. Choose a basis of $L$ over $K(b)$. In the basis of products, multiplication by $b$ is block diagonal with $[L : K(b)]$ copies of the companion matrix. So $\operatorname{Tr}_{L/K}(b) = -[L : K(b)] \, c_{m-1} \in A$. $\square$
+
+The Lean statement does not need the hypothesis that $A$ is Noetherian. It needs only that $A$ is an integrally closed domain.
 
 **Proposition 1.3.2.** Let $\varphi \colon X' \to X$ be a finite alteration of degree $d$, with $X$ normal and Noetherian, and assume that $d$ is invertible on $X$. Then the map $\mathcal{O}_X \to \varphi_* \mathcal{O}_{X'}$ has an $\mathcal{O}_X$-linear left inverse.
 

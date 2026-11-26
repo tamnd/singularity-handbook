@@ -179,7 +179,7 @@ In the first row $\lambda \notin k^p$ if $(d_1, \omega(x)/p) \in \mathbb{N}^2$, 
 
 **Lemma 3.2.10.** The set $I = \{1, \dots, p\} \times \mathbb{N} \times \{1, 2, 3, 4\}$ with the lexicographic order is well ordered. So there is no infinite strictly decreasing sequence in $I$.
 
-Lean: none yet
+Lean: `Singularity.IotaIndex.exists_least`, `Singularity.IotaIndex.not_strictAnti`
 
 *Proof.* Let $A \subseteq I$ be nonempty. Let $m_0$ be the least first coordinate of an element of $A$, let $\omega_0$ be the least second coordinate of an element of $A$ with first coordinate $m_0$, and let $\kappa_0$ be the least third coordinate of an element of $A$ that begins with $(m_0, \omega_0)$. These exist because $\mathbb{N}$ is well ordered. Then $(m_0, \omega_0, \kappa_0)$ is the least element of $A$. If $(a_i)$ were an infinite strictly decreasing sequence, the set $\{a_i\}$ would have no least element. $\square$
 
