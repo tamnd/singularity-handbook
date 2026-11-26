@@ -4,6 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 6, Lemma 1.2.4 and Lemma 4.3.1, and Volume 4, Lemma 2.3.1 and Lemma 2.3.4 give their Lean names from tamnd/singularity-lean#151. Two new paragraphs in Volume 4, Section 2.3 say which parts are in Lean.
+- Volume 6, Chapters 3 and 4 have corrections of definitions, claims and citations after a review (tamnd/singularity-handbook#219).
+
 ### Added
 
 - Volume 7, Section 3.11 describes the Lean proof that Conjecture 3.11.3 is false, `Singularity.KangarooCounterexample.not_kangarooPathConjecture`, and how it uses Lemma 3.11.4 for the two bounds on $\tau_\rho$.
