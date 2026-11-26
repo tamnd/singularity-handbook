@@ -29,7 +29,7 @@ Node: SG0000005C
 
 **Conjecture 3.13.3.** Let $P_0, P_1, \dots, P_m$ be a kangaroo path. Then $\tau_\rho(P_m) \ge \tau_\rho(P_0)$.
 
-Node: SG0000005D · Lean: `Singularity.KangarooPathConjecture` (the statement only)
+Node: SG0000005D · Lean: `Singularity.KangarooPathConjecture` (the statement; the negation is proved)
 
 **Lemma 3.13.4.** Let $g = x^r G$ be in the first case, and let $F$ be the part of degree $\rho$ of $G$. For $i \in \Delta$ put $E_i F = r_i F + x_i \partial_i F$. Then $T_\rho(g) = \bigcap_{i \in \Delta} T(E_i F)$.
 
@@ -41,7 +41,7 @@ Node: SG0000005F · Lean: `Singularity.kangarooPath_of_codim_le_one`
 
 **Example 3.13.6.** Let $p = 2$, $\Delta = \{y, z\}$ and $g_0 = x^2 y^3 z + x^2 y z^3 + x^4 y z^2$, as in Volume 7, Example 3.11.6. Then $P_0$ is in the first case with $\rho = 4$, and $T_\rho(P_0) = T(x^2 (y + z)^2) = \{a_x = 0, a_y = a_z\}$, so $\tau_\rho(P_0) = 2$. The chart in the direction $y$ with $t_x = 0$ and $t_z = 1$ gives a point $P_1$ of the second case with $g_1 = y^4 (x^2 z^3 + x^4 y + x^4 y z^2)$ and $\tau_\rho(P_1) = 2$, and the component $z = 0$ leaves. The chart in the direction $y$ at the origin gives a point $P_2$ of the first case with $g_2 = y^7 (x^4 + x^2 z^3 + x^4 y^2 z^2)$ and $\tau_\rho(P_2) = 1$. So $\tau_\rho(P_2) < \tau_\rho(P_0)$, and Conjecture 3.13.3 is false.
 
-Node: SG0000005G
+Node: SG0000005G · Lean: `Singularity.KangarooCounterexample.not_kangarooPathConjecture`
 
 ### The proof in short
 
@@ -79,7 +79,7 @@ Lemma 3.13.4 stays useful for each of these directions. At a point of the first 
 
 ### Status
 
-The map gives SG0000005B the status "proved". The map gives SG0000005D the status "open", since the map has no status for a false statement, and the statement and the notes of SG0000005D say that it is false. The map gives SG0000005G the status "planned", since the counterexample is checked by hand and by a test, but not yet by a Lean computation. The map gives SG0000005C the status "planned", since the example is checked by hand and by a test, but not yet by a Lean computation. The Lean library proves Proposition 3.13.1 for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianKangaroo.lean`, and it states Conjecture 3.13.3 as `Singularity.KangarooPathConjecture`, with no proof. A Lean proof of the negation for $p = 2$ and three variables is not done yet. It proves Lemma 3.13.4 in `Singularity/Invariant/LogJacobianCaseAForms.lean`, with no hypothesis on the field, and the map gives SG0000005E the status "proved". It proves Proposition 3.13.5 in `Singularity/Invariant/LogJacobianKangarooSmall.lean`, and the map gives SG0000005F the status "proved". An outside expert has not yet read the result, and the milestone S7 asks for this.
+The map gives SG0000005B the status "proved". The map gives SG0000005D the status "refuted", since the Lean library proves the negation, and SG0000005G the status "proved". The map gives SG0000005C the status "planned", since the example is checked by hand and by a test, but not yet by a Lean computation. The Lean library proves Proposition 3.13.1 for polynomials over a field of characteristic $p$, with the standard axioms only, in `Singularity/Invariant/LogJacobianKangaroo.lean`, and it states Conjecture 3.13.3 as `Singularity.KangarooPathConjecture`. It proves the negation for $p = 2$ and three variables as `Singularity.KangarooCounterexample.not_kangarooPathConjecture`, by the computation of Example 3.13.6 over $\mathbb{F}_2$. It proves Lemma 3.13.4 in `Singularity/Invariant/LogJacobianCaseAForms.lean`, with no hypothesis on the field, and the map gives SG0000005E the status "proved". It proves Proposition 3.13.5 in `Singularity/Invariant/LogJacobianKangarooSmall.lean`, and the map gives SG0000005F the status "proved". An outside expert has not yet read the result, and the milestone S7 asks for this.
 
 ### Notes and references
 
