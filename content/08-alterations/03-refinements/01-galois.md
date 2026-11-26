@@ -16,9 +16,11 @@ Let $L/K$ be a finite field extension. The separable closure $L_s$ of $K$ in $L$
 
 **Proposition 3.1.1 (separable distillation).** Let $L/K$ be a finite field extension. There are a finite extension $L'$ of $L$ and an intermediate field $K \subseteq M \subseteq L'$ such that $M/K$ is purely inseparable and $L'/M$ is a Galois extension. We can take for $L'$ a normal closure of $L/K$, for $G$ the group of the $K$-automorphisms of $L'$, and for $M$ the fixed field of $G$. Then $\operatorname{Gal}(L'/M) = G$.
 
-Lean: none yet
+Lean: `Singularity.separable_distillation`, `Singularity.isPurelyInseparable_isGalois_fixedField_top`, `Singularity.bijective_restrictScalars_fixedField_top`
 
 *Proof.* A normal closure $L'$ of $L$ over $K$ is a finite normal extension of $K$ that contains $L$ [Lan02, Chapter V, Section 3]. By Volume 1, Lemma 2.4.5, the fixed field $M$ of $G$ is purely inseparable over $K$, and $L'/M$ is Galois. Each $K$-automorphism of $L'$ fixes $M$, and each $M$-automorphism of $L'$ fixes $K$, so $\operatorname{Gal}(L'/M) = G$. $\square$
+
+In Lean, $L'$ is the normal closure of $L/K$ in an algebraic closure of $L$, and $M$ is the fixed field of the group of all $K$-automorphisms of $L'$. The claim on the Galois group is the statement that each $M$-automorphism of $L'$ is a $K$-automorphism, and that each $K$-automorphism is an $M$-automorphism.
 
 The Lean library has the main step: Volume 1, Lemma 2.4.5 is `Singularity.Algebra.isPurelyInseparable_fixedField_top`, together with `IsGalois.of_fixed_field` of Mathlib.
 
