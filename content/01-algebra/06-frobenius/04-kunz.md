@@ -16,11 +16,13 @@ In this section, a homomorphism of rings $\varphi : A \to B$ is *flat* if $B$ is
 
 **Proposition 6.4.1.** Let $(A, \mathfrak{m}) \to (B, \mathfrak{n})$ be a flat local homomorphism of local rings. Then $B$ is faithfully flat over $A$, and the map $A \to B$ is injective. As a consequence, a Noetherian ring $R$ of characteristic $p$ with flat Frobenius is reduced.
 
-Lean: none yet
+Lean: `Singularity.Algebra.faithfullyFlat_and_injective_of_flat_of_isLocalHom`, `Singularity.Algebra.isReduced_of_flat_frobenius` (the last claim)
 
 *Proof.* Let $P$ be a nonzero $A$-module and let $x \in P$ be nonzero. Then $Ax \cong A/J$ for an ideal $J \subseteq \mathfrak{m}$. By flatness, $B \otimes_A Ax \cong B/JB$ is a submodule of $B \otimes_A P$, and $B/JB \ne 0$ because $JB \subseteq \mathfrak{m}B \subseteq \mathfrak{n}$. So $B \otimes_A P \ne 0$. As in Proposition 4.3.2, this shows that a sequence of $A$-modules is exact if it is exact after the tensor product with $B$. Now apply $B \otimes_A -$ to the map $\varphi : A \to B$. The result is the map $B \to B \otimes_A B$, $b \mapsto b \otimes 1$, and it has a left inverse, the multiplication $B \otimes_A B \to B$. So it is injective, and $\varphi$ is injective.
 
 For the last statement, let $\mathfrak{p}$ be a prime of $R$. By Lemma 6.4.2 below, the Frobenius of $R_\mathfrak{p}$ is flat. It is a local homomorphism, so it is injective by the first part. By Proposition 6.1.3, $R_\mathfrak{p}$ is reduced. A ring whose local rings are reduced is reduced, because a nilpotent element is $0$ in each local ring. So its annihilator is not in any prime, and it is the unit ideal. $\square$
+
+The Lean proof of the last claim does not use the hypothesis that $R$ is Noetherian. It uses the equational criterion of flatness to show that $F$ is injective.
 
 **Lemma 6.4.2.** Let $R$ be a ring of characteristic $p$. Then the Frobenius of $R$ is flat if and only if the Frobenius of $R_\mathfrak{p}$ is flat for each prime $\mathfrak{p}$ of $R$.
 
@@ -60,7 +62,7 @@ The first inclusion is flat by Corollary 6.4.4, with $L = K^p$. The second inclu
 
 **Lemma 6.4.6.** Let $A \to B \to C$ be homomorphisms of rings. Assume that $C$ is faithfully flat over $B$ and that $C$ is flat over $A$. Then $B$ is flat over $A$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.flat_of_faithfullyFlat_of_flat`
 
 *Proof.* Let $N \to M$ be an injective map of $A$-modules, and let $Q$ be the kernel of $N \otimes_A B \to M \otimes_A B$. Since $C$ is flat over $B$, the module $Q \otimes_B C$ is the kernel of $N \otimes_A C \to M \otimes_A C$. This map is injective because $C$ is flat over $A$. So $Q \otimes_B C = 0$, and $Q = 0$ because $C$ is faithfully flat over $B$. $\square$
 

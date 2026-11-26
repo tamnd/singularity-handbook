@@ -37,7 +37,7 @@ The modules $M_n^*$ form an ascending chain, and their union is $M^*$. If $M^*$ 
 **Theorem 4.1.5 (Artin-Rees).** Let $R$ be a Noetherian ring, let $I$ be an ideal, let $M$ be a finitely generated $R$-module and let $N$ be a submodule of $M$. Then there is an integer $c \ge 0$ such that
 $$I^n M \cap N = I^{n-c} (I^c M \cap N) \quad \text{for each } n \ge c.$$
 
-Lean: none yet
+Lean: `Singularity.Algebra.artinRees`
 
 *Proof.* Let $N_n = I^n M \cap N$. Then $I N_n \subseteq I^{n+1} M \cap N = N_{n+1}$, so $(N_n)$ is an $I$-filtration of $N$. The graded module $N^* = \bigoplus_n N_n$ is an $R^*$-submodule of $M^* = \bigoplus_n I^n M$. By Lemma 4.1.4, $M^*$ is a finitely generated $R^*$-module, because the $I$-adic filtration is stable. By Lemma 4.1.3, $R^*$ is Noetherian, so the submodule $N^*$ is finitely generated. By Lemma 4.1.4 again, the filtration $(N_n)$ is stable: there is $c$ with $I N_n = N_{n+1}$ for $n \ge c$. By induction, $N_{c + k} = I^k N_c$ for each $k \ge 0$. $\square$
 
@@ -45,7 +45,7 @@ Lean: none yet
 $$I^n N \subseteq I^n M \cap N \subseteq I^{n-c} N \quad \text{for each } n \ge c.$$
 Thus the topology on $N$ that the $I$-adic topology of $M$ induces is the $I$-adic topology of $N$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.artinRees_le`
 
 *Proof.* The first inclusion is clear. By Theorem 4.1.5, $I^n M \cap N = I^{n-c}(I^c M \cap N) \subseteq I^{n-c} N$. $\square$
 
@@ -53,7 +53,7 @@ Lean: none yet
 
 **Theorem 4.1.7 (Krull).** Let $R$ be a Noetherian ring, let $I$ be an ideal, let $M$ be a finitely generated $R$-module and let $E = \bigcap_{n \ge 0} I^n M$. Then $IE = E$, and there is $a \in I$ with $(1 + a) E = 0$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.krull_intersection`
 
 *Proof.* Apply Theorem 4.1.5 to the submodule $E$, and take $n = c + 1$. Since $E \subseteq I^n M$ for each $n$, we get
 $$E = I^{c+1} M \cap E = I (I^c M \cap E) = I E.$$
