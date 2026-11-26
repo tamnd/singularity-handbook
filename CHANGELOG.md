@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.13 has a new part on the corner runs with free translations. Lemmas 3.13.24 and 3.13.25 and Proposition 3.13.26 give the valuation of the irrational ray, the form of $g$ along the run and a criterion for the drop of $\rho$. Theorem 3.13.27 proves that for $g = B_1 x^p + B_0$ only a finite number of the translations are not $0$, and Corollary 3.13.28 answers Question 3.13.18 for these runs. The map node is SG0000005W. Volume 9, Section 3.15 reports the result.
+- The line `singularity` of `EDITION` now pins the map release 0.4.55.
+
+### Fixed
+
+- Volume 7, Section 3.13: the text after Theorem 3.13.20 said that a run with a finite number of translations is a run of Theorem 3.13.20 in the coordinates $(x_N - \varphi, y_N, z_N)$ for a polynomial $\varphi$. The series $\varphi$ need not be a polynomial in $y_N, z_N$. The text now uses the coordinates of the point after the last translation.
+
 ## [0.4.47] - 2026-11-27
 
 ### Added
