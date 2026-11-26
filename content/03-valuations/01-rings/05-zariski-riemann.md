@@ -66,7 +66,7 @@ The Zariski topology on $\operatorname{ZR}(K/A)$ is far from Hausdorff. The next
 
 **Proposition 1.5.5.** Let $V \in \operatorname{ZR}(K/A)$. The closure of $\{V\}$ in $\operatorname{ZR}(K/A)$ is the set of $W \in \operatorname{ZR}(K/A)$ with $W \subseteq V$. In particular $\operatorname{ZR}(K/A)$ is a $T_0$ space.
 
-Lean: none yet
+Lean: `Singularity.ZariskiRiemann.mem_closure_singleton_iff`, `Singularity.ZariskiRiemann.closure_singleton`, `Singularity.ZariskiRiemann.instT0Space`
 
 *Proof.* A point $W$ lies in the closure of $\{V\}$ if and only if each basic open set that contains $W$ also contains $V$. Let $W \subseteq V$, and let $U(F)$ contain $W$. Then $F \subseteq W \subseteq V$, so $V \in U(F)$. Thus $W$ lies in the closure. Conversely, let $W \not\subseteq V$, and choose $f \in W \setminus V$. Then $U(\{f\})$ contains $W$ and does not contain $V$. So $W$ does not lie in the closure. For the last claim, let $V \ne W$. Then $V \not\subseteq W$ or $W \not\subseteq V$, and the open set $U(\{f\})$ above separates the two points in one direction. $\square$
 

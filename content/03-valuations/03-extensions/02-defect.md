@@ -53,13 +53,13 @@ $$\eta_m^p - \eta_m = t^{-1/p^m}.$$
 
 **Lemma 3.2.4.** Let $m \ge 0$ and let $w$ be an extension of $v$ from $K_m$ to $K_m(\vartheta)$. Then $w(\eta_m) = -1/p^{m+1}$. The extension $K_m(\vartheta)/K_m$ has degree $p$, with $e = p$ and $f = 1$, and the value group of $w$ is $\frac{1}{p^{m+1}}\mathbb{Z}$.
 
-Lean: none yet
+Lean: `Singularity.valuation_pow_eq_of_one_lt_valuation_pow_sub_self` (the claim on the value of $\eta_m$, in multiplicative notation)
 
 *Proof.* The right side of the Artin-Schreier relation has value $-1/p^m < 0$. If $w(\eta_m) \ge 0$, the left side has value $\ge 0$. So $w(\eta_m) < 0$, and then $w(\eta_m^p) = pw(\eta_m) < w(\eta_m)$. By Lemma 1.1.3 the left side has value $pw(\eta_m)$, so $w(\eta_m) = -1/p^{m+1}$. The value group of $w$ contains $\frac{1}{p^m}\mathbb{Z}$ and $1/p^{m+1}$, so it contains $\frac{1}{p^{m+1}}\mathbb{Z}$, and $e \ge p$. Since $\vartheta$ is a root of a polynomial of degree $p$, Corollary 2.1.3 gives $ef \le [K_m(\vartheta) : K_m] \le p$. So $e = p$, $f = 1$, the degree is $p$, and the value group is $\frac{1}{p^{m+1}}\mathbb{Z}$. $\square$
 
 **Proposition 3.2.5.** The extension $L/K$ has degree $p$. Let $w$ be an extension of $v$ to $L$. Then $\Gamma_w = \mathbb{Z}[1/p]$ and $Lw = \mathbb{F}_p$, so $L/K$ is immediate. The set $w(\vartheta - K)$ has no largest element. Since $K$ is henselian, $d(L/K) = p$.
 
-Lean: none yet
+Lean: `Singularity.artinSchreierPoly_irreducible_or_splits`, `Singularity.artinSchreierPoly_roots_toFinset` (the facts on the Artin-Schreier polynomial that the proof uses)
 
 *Proof.* If $\vartheta \in K$, then $\vartheta \in K_m$ for some $m$, and $K_m(\vartheta) = K_m$, which contradicts Lemma 3.2.4. So $\vartheta \notin K$. The roots of $X^p - X - t^{-1}$ are $\vartheta + i$ with $i \in \mathbb{F}_p$, because $(\vartheta + i)^p - (\vartheta + i) = \vartheta^p - \vartheta$. Let $G \in K[X]$ be a monic factor of degree $j$ with $0 < j < p$. Then $G = \prod_{i \in S}(X - \vartheta - i)$ for a set $S$ of $j$ elements of $\mathbb{F}_p$. Its coefficient of $X^{j-1}$ is $-(j\vartheta + \sum_{i \in S} i)$. This is in $K$, and $j$ is invertible in $\mathbb{F}_p$, so $\vartheta \in K$, which is false. Thus $X^p - X - t^{-1}$ is irreducible over $K$, and $[L : K] = p$.
 
@@ -79,7 +79,7 @@ The proof of the first three claims does not use that $K$ is henselian. Only the
 2. $X^p - X - 1$ over $K_0$. Let $\vartheta$ be a root and $w$ an extension of $v$. If $w(\vartheta) < 0$, then $w(\vartheta^p - \vartheta) = pw(\vartheta) < 0 = v(1)$. If $w(\vartheta) > 0$, then $w(\vartheta^p - \vartheta) > 0$. Both are false, so $w(\vartheta) = 0$, and the residue $\bar{\vartheta}$ is a root of $X^p - X - 1$ over $\mathbb{F}_p$. This polynomial has no root in $\mathbb{F}_p$, since $a^p - a = 0$ for $a \in \mathbb{F}_p$. So $\bar{\vartheta} \notin \mathbb{F}_p$, and $\vartheta \notin K_0$, since the residue field of $K_0$ is $\mathbb{F}_p$. Thus the polynomial is irreducible over $K_0$, and over $\mathbb{F}_p$. The residue field of $w$ contains $\mathbb{F}_p(\bar{\vartheta})$, of degree $p$. So $f = p$, $e = 1$ and $d = 1$. The extension is unramified.
 3. $X^p - X - t^{-1}$ over $K$. By Proposition 3.2.5, $e = f = 1$ and $d = p$.
 
-Lean: none yet
+Lean: `Singularity.artinSchreierPoly_irreducible`, `Singularity.valuation_eq_one_of_valuation_pow_sub_self_eq_one` (the polynomial and the values, not the defect)
 
 So the same polynomial gives a defectless extension of $K_0$ and a defect extension of $K$. Over $K$ the element $t^{-1}$ has all $p$-power roots, and the substitutions $\vartheta \mapsto \vartheta - s_m$ move the ramification of case 1 to smaller and smaller values, until no ramification is left.
 
