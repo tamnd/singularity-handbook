@@ -89,6 +89,16 @@ Lean: none yet
 
 Volume 7, Theorem 2.2.2, proves the case of a single polynomial and a point blowup in every characteristic, with the Lean theorem `Singularity.ord_le_of_pointChart` (node SG0000003A). Corollary 2.2.8 is more general in the centers, but the proof uses characteristic 0 through Lemma 2.1.4. In particular a blowup sequence of order $m$ for an ideal of maximal order $m$ stays of order $m$ as long as the cosupport of order $m$ is not empty, and order reduction for $(I, m)$ means that the maximal order drops below $m$.
 
+The next example follows the running example of Example 2.1.8 through two blowups. It shows that the inclusion of Theorem 2.2.7 can be strict.
+
+**Example 2.2.9.** Let $I = (y^2 - x^5)$ on $X_0 = \mathbb{A}^2$ with $m = 2$. By Example 2.1.8, $D(I) = (y, x^4)$, and $\operatorname{cosupp}(I, 2)$ is the origin. Let $X_1 \to X_0$ be the blowup of the origin. In the chart $U_1$ with coordinates $x, y_1$ and $y = y_1 x$, the pullback of $y^2 - x^5$ is $x^2(y_1^2 - x^3)$, so $I_1 = (y_1^2 - x^3)$ on $U_1$. In the chart $U_2$ with coordinates $x_2, y$ and $x = x_2 y$, the pullback is $y^2(1 - x_2^5 y^3)$, so $I_1 = (1 - x_2^5 y^3)$ on $U_2$, and this function is a unit at each point of the exceptional curve $(y = 0)$. Outside the exceptional curve $I_1$ has order at most 1. So $\operatorname{cosupp}(I_1, 2)$ is the point $p_1 = (x = y_1 = 0)$.
+
+The transform of the marked ideal $(D(I), 1)$ on $U_1$ is
+$$J^{(1)}_1 = x^{-1} \cdot (x y_1, \; x^4) = (y_1, \; x^3).$$
+The derivative ideal of $I_1$ on $U_1$ is $D(I_1) = (y_1^2 - x^3, \; 2y_1, \; 3x^2) = (y_1, \; x^2)$. So $J^{(1)}_1 \subseteq D(I_1)$, as Theorem 2.2.7 says, and the inclusion is strict because $x^2 \notin (y_1, x^3)$. Both ideals have the same zero set $p_1$.
+
+Now blow up $p_1$. In the chart with $y_1 = y_2 x$ the pullback of $y_1^2 - x^3$ is $x^2(y_2^2 - x)$, so $I_2 = (y_2^2 - x)$, of order at most 1. In the chart with $x = x_3 y_1$ the pullback is $y_1^2(1 - x_3^3 y_1)$, and $I_2 = (1 - x_3^3 y_1)$ is a unit along the new exceptional curve. So $\operatorname{max\text{-}ord} I_2 \le 1$, and the two blowups are an order reduction for $(I, 2)$. The transform $J^{(1)}_2 = x^{-1} \cdot (x y_2, x^3) = (y_2, x^2)$ lies in $D(I_2) = \mathcal{O}$.
+
 ### Notes and references
 
 Definition 2.2.3 and Theorem 2.2.7 are from [Kol07, Chapter 3], Sections "Birational transforms and marked ideals" and "Birational transform of derivatives". Marked ideals are called basic objects by Encinas-Villamayor [EV98] and are related to the presentations of Bierstone-Milman [BM97]. The formulas of Lemma 2.2.6 are the computation behind all of them.
