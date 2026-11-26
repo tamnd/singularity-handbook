@@ -29,7 +29,7 @@ The table lists the steps of the proof in order. The column "Here" says whether 
 | 17 | The global blowups that make $X$ regular | Proved locally, cited globally: Proposition 2.4.4, from [dJ96] |
 | 18 | Normal crossings to strict normal crossings | Cited: [dJ96, 2.4 and 4.28] |
 
-*The reductions: Steps 1 to 7.* These steps are in Section 2.3. They change $X$ by modifications and by alterations of a kind that the induction can absorb. Only Steps 1 and 7 can change the degree: the field extension of Step 1 and the Galois cover of Step 7. Steps 3 and 5 contain the arguments of general position that we do not prove in full.
+*The reductions: Steps 1 to 7.* These steps are in Section 2.3. They change $X$ by modifications and by alterations of a kind that the induction can absorb. Only Steps 2 and 7 can change the degree: the field extension of Step 2 and the Galois cover of Step 7. Steps 3 and 5 contain the arguments of general position that we do not prove in full.
 
 *The moduli: Steps 8 and 9.* This is the only input from outside resolution theory. Section 2.2 isolates it as Hypothesis 2.2.4, and Proposition 2.2.6 deduces the form that the proof uses. The degree of this step is the degree of a cover of the base that trivializes the level structure, and Lemma 2.2.9 bounds it by the order of $\mathrm{GL}_{2g}(\mathbb{F}_\ell)$. This factor is the reason why the theorem gives no control of the degree. Example 2.2.10 shows Step 9 for a family of elliptic curves.
 
