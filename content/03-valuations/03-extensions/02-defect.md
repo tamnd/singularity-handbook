@@ -24,6 +24,8 @@ Lean: none yet
 
 *Proof.* By Theorem 3.1.4, $d(L/K) = p^\nu$. If $p = 1$ this is 1. If $p$ is prime and $p \nmid n$, then $p^\nu \mid n$ forces $\nu = 0$. $\square$
 
+If $L/K$ is immediate and $n$ is prime to $p$, then Proposition 3.1.6 gives $L = K$ directly, without the theorem of Ostrowski.
+
 For a valued field $(K, v)$ that is not henselian, one defines the defect of an extension of $v$ to $L$ through the henselization of $K$ [Kuh-book]. We need only the henselian case. A valued field is *defectless* if each of its finite extensions satisfies $\sum_i e_if_i = n$, with the sum over all extensions of $v$. By Corollary 3.2.2, each henselian field with residue characteristic 0 is defectless.
 
 ### A criterion
@@ -70,5 +72,15 @@ So no element of $w(\vartheta - K)$ is the largest.
 The field $K_0$ is complete for a discrete valuation of rank 1, so it is henselian (Section 3.1). The field $K$ is algebraic over $K_0$, so it is henselian. Thus $w$ is the only extension of $v$ to $L$, and $d(L/K) = p/(1 \cdot 1) = p$. $\square$
 
 The proof of the first three claims does not use that $K$ is henselian. Only the value of the defect uses it, through the uniqueness of $w$. The one fact that we cite is that the complete field $K_0$ is henselian [Kuh-book]. Proposition 3.2.3 and the third claim show again that $ef < p$, without a computation of $e$ and $f$.
+
+**Example 3.2.6 (three Artin-Schreier extensions).** Let $K_0 = \mathbb{F}_p((t))$ with $v = \operatorname{ord}_t$, and let $K$ be its perfect hull, as above. Both fields are henselian. We compare three extensions of degree $p$ given by Artin-Schreier polynomials $X^p - X - a$. Over any field $F$ of characteristic $p$, such a polynomial is irreducible if it has no root in $F$: the argument of the first paragraph of the proof of Proposition 3.2.5 uses only that its roots are $\vartheta + i$ with $i \in \mathbb{F}_p$.
+
+1. $X^p - X - t^{-1}$ over $K_0$. By Lemma 3.2.4 with $m = 0$, the extension has $e = p$ and $f = 1$, so $d = 1$. The element $\vartheta$ has the best approximation $0$ in $K_0$, with $w(\vartheta) = -1/p$, as Proposition 3.2.3 predicts.
+2. $X^p - X - 1$ over $K_0$. Let $\vartheta$ be a root and $w$ an extension of $v$. If $w(\vartheta) < 0$, then $w(\vartheta^p - \vartheta) = pw(\vartheta) < 0 = v(1)$. If $w(\vartheta) > 0$, then $w(\vartheta^p - \vartheta) > 0$. Both are false, so $w(\vartheta) = 0$, and the residue $\bar{\vartheta}$ is a root of $X^p - X - 1$ over $\mathbb{F}_p$. This polynomial has no root in $\mathbb{F}_p$, since $a^p - a = 0$ for $a \in \mathbb{F}_p$. So $\bar{\vartheta} \notin \mathbb{F}_p$, and $\vartheta \notin K_0$, since the residue field of $K_0$ is $\mathbb{F}_p$. Thus the polynomial is irreducible over $K_0$, and over $\mathbb{F}_p$. The residue field of $w$ contains $\mathbb{F}_p(\bar{\vartheta})$, of degree $p$. So $f = p$, $e = 1$ and $d = 1$. The extension is unramified.
+3. $X^p - X - t^{-1}$ over $K$. By Proposition 3.2.5, $e = f = 1$ and $d = p$.
+
+Lean: none yet
+
+So the same polynomial gives a defectless extension of $K_0$ and a defect extension of $K$. Over $K$ the element $t^{-1}$ has all $p$-power roots, and the substitutions $\vartheta \mapsto \vartheta - s_m$ move the ramification of case 1 to smaller and smaller values, until no ramification is left.
 
 The sequence $s_m$ approximates $\vartheta$ better and better. The values $w(\vartheta - s_m) = -1/p^{m+1}$ increase to 0, but they never reach a maximum in $K$. A change of coordinates $\vartheta \mapsto \vartheta - a$ with $a \in K$ can never make the value of $\vartheta$ as large as possible. In residue characteristic 0 this cannot happen in a henselian field, by Corollary 3.2.2 and Proposition 3.2.3. In characteristic $p$, local uniformization must deal with such extensions, and Chapter 4 explains how. Volume 9, Section 2.2, uses the same example. Kuhlmann studies defect extensions in [Kuh16] and [Kuh-book]. Kuhlmann divided the Artin-Schreier defect extensions into dependent and independent ones [Kuh10b]. Kuhlmann and Rzepka extend this division to the Galois defect extensions of degree $p$ in mixed characteristic, and they relate it to deeply ramified fields [KR23]. Also Cutkosky, Kuhlmann and Rzepka characterize the independent ones by their module of Kähler differentials [CKR25].

@@ -29,3 +29,13 @@ For $v_\varphi$ the local form at the origin $R = k[x, y]_{(x, y)}$ gives $1 + 0
 3. $r = 1$ and $s = 0$. Then $Kv$ is algebraic over $k$. Choose $\gamma > 0$ in $\Gamma_v$. For each $\gamma' \in \Gamma_v$ there are integers $m, n$ with $n > 0$ and $n\gamma' = m\gamma$, because $r = 1$. The map $\gamma' \mapsto m/n$ is well defined, injective and order preserving, because $\Gamma_v$ is torsion free and ordered. So $\Gamma_v$ is isomorphic to a subgroup of $\mathbb{Q}$ as an ordered group, and $v$ has rank 1. A finitely generated subgroup of $\mathbb{Q}$ is cyclic. So either $\Gamma_v \cong \mathbb{Z}$ and $v$ is discrete, as in Example 1.6.6, or $\Gamma_v$ is not finitely generated, as for the Puiseux series of Section 1.6.
 
 The inequality is strict only in case 3. This is the classification of Zariski [Zar39]. Spivakovsky studies the valuations of the plane through the sequence of their centers on successive blowups [Spi90].
+
+**Example 2.4.5 (the two cases of the local proof).** Let $R = k[x, y]_{(x, y)}$, with $\kappa = k$ and $\dim R = 2$. We follow the proof of Theorem 2.3.3 for two valuations that dominate $R$.
+
+Lean: none yet
+
+First let $v$ be the valuation of Example 1.6.3, with $v(x) = 1$ and $v(y) = \alpha$ for an irrational $\alpha > 0$. The least value of the generators $x, y$ is $\mu = \min(1, \alpha)$. Since $\Gamma_v \subseteq \mathbb{R}$ is archimedean, the smallest convex subgroup that contains $\mu$ is $\Delta = \Gamma_v$, so $\mathfrak{q} = 0$ and we are in Case A. There $r = 2$ and $s = 0$, and Step 3 gives $\ell(R/\mathfrak{m}^N) \ge CN^2$, which matches the degree 2 of the Hilbert-Samuel polynomial of $R$. So $2 + 0 \le 2$, with equality.
+
+Next let $v$ be the valuation of rank 2 of Example 1.6.4, with $v(x) = (0, 1)$ and $v(y) = (1, 0)$. Now $\mu = (0, 1)$, and the smallest convex subgroup that contains $\mu$ is $\Delta = 0 \times \mathbb{Z}$, by Example 1.2.7. An element $f \in R$ has $v(f) > \Delta$ if and only if $\operatorname{ord}_y f > 0$, so $\mathfrak{q} = yR \ne 0$ and we are in Case B. By Example 1.6.8, $W = k[x, y]_{(y)}$, $\Gamma_v/\Delta \cong \mathbb{Z}$, and $L = W/\mathfrak{p} = k(x) = \kappa(\mathfrak{q})$. The ring $R/\mathfrak{q} = k[x]_{(x)}$ has dimension 1, and $\bar{v}$ is $\operatorname{ord}_x$ on $k(x)$. So $\Delta' = \Delta$ and $\kappa' = k$. The three inequalities of Case B are
+$$1 + 0 \le 1, \qquad 1 + 0 \le 1, \qquad 0 + 0 \le 0,$$
+for $R_\mathfrak{q}$, for $R/\mathfrak{q}$ and for the extension $(L/\kappa(\mathfrak{q}), \bar{v})$. Their sum is $2 + 0 \le 2$. Both valuations are Abhyankar valuations, as Example 2.4.1 says. In the second case, the proof splits the computation along the flag of Example 1.6.8: the line $y = 0$ and the origin on it.
