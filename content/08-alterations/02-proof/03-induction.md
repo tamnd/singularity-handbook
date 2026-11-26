@@ -1,7 +1,7 @@
 ---
 title: The reductions and the fibration in curves
 nodes: [SG0000001K]
-sources: [dJ96, Stacks, EGA4]
+sources: [dJ96, Stacks, EGA4, Har, Mat]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -19,6 +19,22 @@ Lean: none yet
 *Proof.* The morphism $\varphi$ is dominant, so it maps the generic point of $X'$ to the generic point of $X$, which is not in $Z$. So $Z' \ne X'$. Let $\varphi_1' \colon X_1 \to X'$ and $j_1 \colon X_1 \to \bar X_1$ solve the problem for $(X', Z')$. Then $\varphi \circ \varphi_1'$ is an alteration (Lemma 1.1.6), and $(\varphi \circ \varphi_1')^{-1}(Z) = \varphi_1'^{-1}(Z')$. So $\varphi \circ \varphi_1'$ and $j_1$ solve the problem for $(X, Z)$. The statement on generically étale alterations is the last part of Lemma 1.1.6. $\square$
 
 We use the lemma in the following way. We name properties (i), (ii), and so on of a pair $(X, Z)$. At each step we construct an alteration $X' \to X$, generically étale if $k$ is perfect, such that the pair $(X', Z')$ has the properties obtained so far and one more. By the lemma it is enough to prove the theorem for $(X', Z')$. In the final form, Theorem 1.2.1 also asks for a generically étale alteration when $k$ is perfect, and we check this at each step.
+
+The table lists the steps of Sections 2.3 and 2.4 and the kind of alteration that each step makes. The degree of the final alteration is the product of the degrees in the last column. Four steps can have a degree greater than 1: the change of field in Step 1, the two alterations of the base in Steps 5 and 6, and the alteration of the base that the induction hypothesis gives in Section 2.4.
+
+| Step | Property obtained | Alteration of $X$ | Degree |
+| --- | --- | --- | --- |
+| 1 | (i) $k$ algebraically closed | a component of $X \times_k k_1$ | $[k_1 : k]$ at most |
+| 2 | (ii), (iii) $X$ projective | Chow's lemma, then a compactification | 1 |
+| 3 | (iv) $Z$ a divisor | blowup of $Z$ | 1 |
+| 4 | (v) $X$ normal | normalization | 1 |
+| Lemma 2.3.3 | (vi)(a) to (d), a fibration in curves | blowup of finitely many points | 1 |
+| Lemma 2.3.4 | (vi)(e), three points on each fibre | none, $Z$ is enlarged | 1 |
+| 5 | (vi)(f), sections | base change by a Galois cover of $Y$ | $[L : k(Y)]$ |
+| 6 | (vi)(g), a stable model | base change by Hypothesis 2.2.5 | $\deg \psi$ |
+| Section 2.4 | the extension of $\beta$ | modification of $Y$, then $\beta$ | 1 |
+| Section 2.4 | $Y$ regular | base change by the induction hypothesis | $\deg(Y_1 \to Y)$ |
+| Section 2.4 | $X$ regular | blowups | 1 |
 
 ### Algebraically closed, projective, and a divisor
 
@@ -60,7 +76,7 @@ Lean: none yet
 
 ### The fibration in curves
 
-The next lemma is the geometric heart of the reduction. It fibres $X$ in curves after a blowup of finitely many points. We state it and sketch the proof of [dJ96, Lemma 4.11].
+The next lemma is the geometric heart of the reduction. It fibres $X$ in curves after a blowup of finitely many points. The idea is classical. A projective variety of dimension $d$ is a finite cover of $\mathbb{P}^d$, and the lines through a point $p$ of $\mathbb{P}^d$ form a family of curves parametrized by $\mathbb{P}^{d-1}$. The inverse images of these lines fibre $X$ in curves, but all of them pass through the finitely many points over $p$. The blowup of these points separates the curves. We prove the lemma of [dJ96, Lemma 4.11] modulo two facts of general position.
 
 **Lemma 2.3.3 (de Jong).** Assume that $(X, Z)$ has the properties (i) to (v), and let $d = \dim X$. There are a modification $\varphi \colon X' \to X$ and a morphism $f \colon X' \to \mathbb{P}^{d-1}_k$ such that:
 
@@ -70,9 +86,31 @@ The next lemma is the geometric heart of the reduction. It fibres $X$ in curves 
 
 Lean: none yet
 
-*Sketch of proof.* Embed $X$ in $\mathbb{P}^N_k$. A composition of general linear projections gives a finite morphism $\pi \colon X \to \mathbb{P}^d_k$ that is étale over a dense open subset and is birational on $Z$ [dJ96, 2.11]. Choose a general point $p \in \mathbb{P}^d_k$, outside the branch locus of $\pi$ and outside $\pi(Z)$. The projection from $p$ is a rational map $\mathbb{P}^d \dashrightarrow \mathbb{P}^{d-1}$, defined outside $p$, whose fibres are the lines through $p$. Let $X'$ be the closure of the graph of the composition $X \dashrightarrow \mathbb{P}^{d-1}$. It is the blowup of $X$ in the finite set $\pi^{-1}(p)$, which lies in $\operatorname{Reg}(X)$ because $\pi$ is étale over $p$, and outside $Z$ because $p \notin \pi(Z)$. The fibre of $f$ over a line $t$ is $\pi^{-1}(t)$, which is finite over $t$, so it has dimension at most 1, and it has dimension at least 1 at each point because $t$ is given by $d - 1$ equations. Near the exceptional curves, $f$ looks in the étale topology like the blowup of $\mathbb{P}^d$ at a point, mapped to $\mathbb{P}^{d-1}$, which is smooth along the exceptional fibre. This gives part 2 except the smooth fibre, which comes from a Bertini argument for general choices, and part 3 holds because the projection of $\pi(Z)$ from a general point is generically étale. $\square$
+*Proof.* We use two facts of general position from [dJ96].
 
-Apply the lemma and replace $X$ by $X'$. The blowup is at regular points outside $Z$, so it keeps (i) to (v). Let $X \to Y \to \mathbb{P}^{d-1}_k$ be the Stein factorization of $f$. The morphism $Y \to \mathbb{P}^{d-1}_k$ is finite étale, because the smooth locus of $f$ is dense in each fibre. De Jong does not prove this fact. He cites it from the literature in [dJ96, 4.12]. Since $\mathbb{P}^{d-1}_k$ over an algebraically closed field has no nontrivial connected finite étale covers, $Y = \mathbb{P}^{d-1}_k$, and all fibres of $f$ are geometrically connected. A morphism with a smooth fibre over a regular base is smooth over a dense open subset [dJ96, 2.8], so the generic fibre of $f$ is smooth. We arrive at the following property, in addition to (i) to (v):
+(A) Embed $X$ in $\mathbb{P}^N_k$. A composition of general linear projections gives a finite surjective morphism $\pi \colon X \to \mathbb{P}^d_k$ that is étale over a dense open subset of $\mathbb{P}^d_k$ [dJ96, 2.11].
+
+(B) For a general closed point $p$ of $\mathbb{P}^d_k$, the morphism $f$ that we construct below has a smooth fibre, and its restriction to $Z'$ is étale over a nonempty open subset of $\mathbb{P}^{d-1}_k$. This is part of the statement of [dJ96, Lemma 4.11], and its proof is a Bertini argument.
+
+We prove the rest. Let $B \subsetneq \mathbb{P}^d_k$ be the closed set over which $\pi$ is not étale, and let $V = \mathbb{P}^d_k \setminus B$. The image $\pi(Z)$ is closed of dimension at most $d - 1$, because $\pi$ is finite. Choose a closed point $p \notin B \cup \pi(Z)$ that is general in the sense of (B).
+
+Let $\beta \colon P' \to \mathbb{P}^d_k$ be the blowup of the point $p$. It is the closed subscheme of $\mathbb{P}^d_k \times \mathbb{P}^{d-1}_k$ of the pairs $(x, t)$ such that $x$ lies on the line $\ell_t$ through $p$ with direction $t$ [Har, Section II.7]. The second projection $q \colon P' \to \mathbb{P}^{d-1}_k$ is a $\mathbb{P}^1$-bundle, so it is smooth and proper of relative dimension 1, and its fibre over a point $t$ is the line $\ell_t$. The exceptional divisor $E = \beta^{-1}(p)$ maps isomorphically to $\mathbb{P}^{d-1}_k$ by $q$, so it meets each fibre $\ell_t$ in exactly one point $e_t$.
+
+Let $X' = X \times_{\mathbb{P}^d_k} P'$, with the projections $\varphi \colon X' \to X$ and $\pi' \colon X' \to P'$, and let $f = q \circ \pi'$. Over $\mathbb{P}^d_k \setminus \{p\}$ the morphism $\beta$ is an isomorphism, so $\varphi$ is an isomorphism over $X \setminus \pi^{-1}(p)$. Over $V$ the morphism $\pi$ is étale, hence flat, and the formation of a blowup commutes with flat base change [Stacks]. So over $\pi^{-1}(V)$ the morphism $\varphi$ is the blowup of the closed subscheme $\pi^{-1}(p)$. This subscheme is reduced and finite, because $\pi$ is étale over $p$. Its points are regular points of $X$, because $\mathbb{P}^d_k$ is regular and $\pi$ is étale there, and they are not in $Z$, because $p \notin \pi(Z)$. The two open sets $\mathbb{P}^d_k \setminus \{p\}$ and $V$ cover $\mathbb{P}^d_k$, so $\varphi$ is the blowup of $X$ in the finite set $\pi^{-1}(p)$. In particular $X'$ is integral of dimension $d$. This proves part 1.
+
+For part 2, let $t$ be a point of $\mathbb{P}^{d-1}_k$, closed or not, and let $X'_t$ be the fibre of $f$. It is $\pi'^{-1}(\ell_t)$, and $\pi'$ is finite as a base change of $\pi$, so $\dim X'_t \le 1$. The morphism $f$ is surjective, so $X'_t$ is not empty. Each irreducible component of $X'_t$ has dimension at least $\dim X' - \dim \mathbb{P}^{d-1}_k = 1$ [Har, Exercise II.3.22]. So $X'_t$ has pure dimension 1. Let $C$ be an irreducible component of $X'_t$. Its image $\pi'(C)$ is closed, irreducible and of dimension 1 in the irreducible curve $\ell_t$, so $\pi'(C) = \ell_t$, and $C$ contains a point $c$ with $\pi'(c) = e_t$. The set $\beta^{-1}(V)$ is an open neighbourhood of $E$, and $\pi'$ is étale over it, as a base change of $\pi$ over $V$. So $f = q \circ \pi'$ is smooth at $c$. The smooth locus of $f$ is open in $X'$, so its intersection with $C$ is a nonempty open subset of the irreducible space $C$, and it is dense in $C$. This holds for each component, so the smooth locus of $f$ is dense in $X'_t$. The smooth fibre is (B).
+
+For part 3, the morphism $\varphi$ is an isomorphism over a neighbourhood of $Z$, so $Z' \cong Z$, and $f|_{Z'}$ is the composite of the finite morphism $\pi|_Z \colon Z \to \pi(Z)$ and the linear projection from $p$, restricted to the closed subset $\pi(Z)$ of $\mathbb{P}^d_k \setminus \{p\}$. Let $W$ be a closed subset of $\mathbb{P}^d_k$ with $p \notin W$. The projection from $p$ restricted to $W$ is proper, because $W$ is projective. Its fibre over $t$ is $W \cap \ell_t$, which is finite, because the line $\ell_t$ contains $p$ and so is not contained in $W$. A proper morphism with finite fibres is finite. So $f|_{Z'}$ is finite. The generic étaleness is (B). $\square$
+
+For $d = 2$ the lemma says the following. A normal projective surface $X$ is a finite cover $\pi$ of $\mathbb{P}^2$. The lines through a general point $p$ form the pencil $\mathbb{P}^1$, and their inverse images are curves on $X$ that all pass through the points of $\pi^{-1}(p)$. After the blowup of these points, the curves become the fibres of a morphism $f \colon X' \to \mathbb{P}^1$. Each exceptional curve of the blowup is a section of $f$, and $f$ is smooth along it.
+
+Apply the lemma and replace $X$ by $X'$. The blowup is at regular points outside $Z$, so it keeps (i) to (v). Let $X \to Y \to \mathbb{P}^{d-1}_k$ be the Stein factorization of $f$. The morphism $Y \to \mathbb{P}^{d-1}_k$ is finite étale, because the smooth locus of $f$ is dense in each fibre. De Jong does not prove this fact. He cites it from the literature in [dJ96, 4.12]. We give a proof from the purity of the branch locus.
+
+*Proof that $Y \to \mathbb{P}^{d-1}_k$ is étale.* Write $P = \mathbb{P}^{d-1}_k$, $Y = \operatorname{Spec}_P f_* \mathcal{O}_X$ and $g \colon Y \to P$. Since $X$ is normal and integral, $Y$ is normal and integral, and $g$ is finite and surjective. The purity theorem of Zariski-Nagata says that for a finite surjective morphism from a normal integral scheme to a regular integral scheme, the set of points where the morphism is not étale is empty or of pure codimension 1 [Stacks]. So it is enough to show that $g$ is étale at each point $y$ of codimension 1 of $Y$. Since $g$ is finite and surjective, $\xi = g(y)$ has codimension 1 in $P$, and $R = \mathcal{O}_{P, \xi}$ is a discrete valuation ring with a uniformizer $\varpi$. Let $X_R = X \times_P \operatorname{Spec} R$. It is integral and normal, and it dominates $\operatorname{Spec} R$, so it is flat over $R$, because a torsion free module over a discrete valuation ring is flat. The formation of $f_* \mathcal{O}_X$ commutes with flat base change, so $Y \times_P \operatorname{Spec} R$ is the Stein factorization of $X_R \to \operatorname{Spec} R$.
+
+We show that the closed fibre $X_\xi$ is geometrically reduced. It is the principal divisor $V(\varpi)$ on the normal scheme $X_R$. A normal Noetherian scheme has the property $S_2$, so $V(\varpi)$ has the property $S_1$: it has no embedded points. Let $\bar\kappa$ be an algebraic closure of $\kappa(\xi)$. The associated points of $X_\xi \otimes_{\kappa(\xi)} \bar\kappa$ lie over the associated points of $X_\xi$ [Mat], so they are the generic points of its irreducible components. At these points $X_\xi \otimes \bar\kappa$ is reduced, because the smooth locus of $X_\xi$ is dense in $X_\xi$. A Noetherian scheme with no embedded points that is reduced at its generic points is reduced. So $X_\xi$ is geometrically reduced. For a proper flat morphism of finite presentation with geometrically reduced fibres, the Stein factorization is finite étale [Stacks]. So $g$ is étale over $\xi$, and in particular at $y$. $\square$
+
+Since $\mathbb{P}^{d-1}_k$ over an algebraically closed field has no nontrivial connected finite étale covers, $Y = \mathbb{P}^{d-1}_k$, and all fibres of $f$ are geometrically connected. A morphism with a smooth fibre over a regular base is smooth over a dense open subset [dJ96, 2.8], so the generic fibre of $f$ is smooth. We arrive at the following property, in addition to (i) to (v):
 
 (vi) There is a morphism $f \colon X \to Y$ of projective varieties such that: (a) all fibres of $f$ are nonempty, geometrically connected, and of pure dimension 1; (b) the smooth locus of $f$ is dense in each fibre; (c) the generic fibre of $f$ is smooth; (d) the restriction $f|_Z \colon Z \to Y$ is finite and generically étale.
 

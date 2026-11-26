@@ -1,7 +1,7 @@
 ---
 title: Stable curves and their moduli
 nodes: [SG0000001K, SG0000004G, SG0000004H, SG0000004J]
-sources: [dJ96, DM69, Knu83]
+sources: [dJ96, DM69, Knu83, Lan02]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -71,6 +71,45 @@ This argument is the one of [dJ96, 4.17], with one change. De Jong takes the clo
 ### Why stability is needed
 
 The proof in Section 2.4 extends the rational map from the stable curve $\mathcal{C}'$ to the given family $X \to Y$. It uses that $\mathcal{C}'$ is stable and not only semistable, in the proof of [dJ96, Lemma 4.20]. There a component of a fibre of $\mathcal{C}'$ that is contracted to a point in $X$ leads to a contradiction: either three components of a fibre of $\mathcal{C}'$ meet at one point, which is not possible on a nodal curve, or two components meet at a marked point, which is not possible because the marked points lie in the smooth locus. The argument needs three distinct marked points on the fibre of $\mathcal{C}'$, and these exist because the sections of a stable curve are disjoint. This is also the reason why the proof needs $n \ge 3$ sections in the smooth locus, and why Section 2.3 adds sections to the divisor $Z$.
+
+### Why the base must be altered
+
+Hypothesis 2.2.5 gives the stable curve only over an alteration of the base, and not over a modification. The next example shows that this cannot be avoided, already over a curve. The obstruction is an automorphism of the special fibre.
+
+**Example 2.2.7 (a cuspidal family).** Let $k$ be an algebraically closed field of characteristic different from 2 and 3. Let $Y = \mathbb{A}^1_k = \operatorname{Spec} k[t]$ and $U = Y \setminus \{0\}$. Let $C \subseteq \mathbb{P}^2_U$ be the curve $y^2 z = x^3 - t z^3$, with the section $\sigma = [0 : 1 : 0]$. On the affine part $z = 1$ the partial derivatives $2y$ and $3x^2$ vanish together only at $x = y = 0$, and this point lies on the curve only when $t = 0$. At infinity the only point is $[0 : 1 : 0]$, and in the chart $y = 1$ the derivative of $z - x^3 + t z^3$ in $z$ is $1$ at this point. So $C \to U$ is a smooth proper curve whose fibres are smooth plane cubics, of genus 1, and $(C, \sigma)$ is a smooth 1-pointed curve of genus 1 over $U$. Its fibre over $t = 0$ would be the cuspidal cubic $y^2 = x^3$.
+
+Let $R = k[t]_{(t)}$ with fraction field $K = k(t)$. We claim:
+
+1. after the base change $t = s^6$ the curve has a smooth model;
+2. there is no stable 1-pointed curve of genus 1 over $R$ whose generic fibre is $(C_K, \sigma)$.
+
+For part 1, let $R' = k[s]_{(s)}$ with $s^6 = t$, and $K' = k(s)$. The linear change of coordinates $x = s^2 x'$, $y = s^3 y'$, $z = z'$ of $\mathbb{P}^2_{K'}$ transforms $y^2 z - x^3 + t z^3$ into $s^6 (y'^2 z' - x'^3 + z'^3)$. So it gives an isomorphism $\theta$ from $C_{K'}$ to the generic fibre of the curve $W \subseteq \mathbb{P}^2_{R'}$ given by $y'^2 z' = x'^3 - z'^3$. It maps $[0 : 1 : 0]$ to $[0 : 1 : 0]$. The curve $W$ is the base change of a smooth plane cubic over $k$, because $x'^3 - 1$ has the discriminant $-27 \neq 0$ and the characteristic is not 2. So $(W, [0 : 1 : 0])$ is a smooth, hence stable, 1-pointed curve of genus 1 over $R'$ that extends $C_{K'}$.
+
+For part 2, assume that $(\mathcal{E}, \tau)$ is a stable 1-pointed curve over $R$ with an isomorphism $\iota \colon \mathcal{E}_K \to C_K$ that maps $\tau$ to $\sigma$. Let $\zeta \in k$ be a primitive sixth root of unity, and let $\gamma$ be the automorphism of $R'$ over $R$ with $\gamma(s) = \zeta s$. The base change $\mathcal{E}_{R'} = \mathcal{E} \times_R R'$ is a stable curve over $R'$, and $\gamma$ gives an automorphism $a = \mathrm{id} \times \operatorname{Spec} \gamma$ of the scheme $\mathcal{E}_{R'}$ that lies over $\operatorname{Spec} \gamma$. On the generic fibre, $a$ fixes the functions $x$ and $y$ that come from $C_K$ and moves $s$ to $\zeta s$. So, through $\theta \circ \iota$, it moves $x' = x/s^2$ to $\zeta^{-2} x'$ and $y' = y/s^3$ to $\zeta^{-3} y'$. The same formulas, with $s \mapsto \zeta s$, define an automorphism $b$ of $W$ over $\operatorname{Spec} \gamma$, because $\zeta^{-6} = 1$.
+
+By the uniqueness of stable models after Theorem 2.2.2, the isomorphism $\theta \circ \iota$ of generic fibres extends to an isomorphism $\Theta \colon \mathcal{E}_{R'} \to W$ over $R'$. The automorphism $c = \Theta \circ a \circ \Theta^{-1} \circ b^{-1}$ of $W$ lies over the identity of $\operatorname{Spec} R'$, and it is the identity on the generic fibre by the computation above. The scheme $W$ is integral and separated over $R'$, and its generic fibre is dense, so $c$ is the identity. So $\Theta \circ a \circ \Theta^{-1} = b$. Now restrict to the closed fibres. The automorphism $\gamma$ induces the identity on the residue field $R'/(s) = k$, so $a$ restricts to the identity of $\mathcal{E}_{R'} \times_{R'} k = \mathcal{E} \times_R k$. But $b$ restricts to the automorphism $x' \mapsto \zeta^{-2} x'$, $y' \mapsto -y'$ of the cubic $y'^2 = x'^3 - 1$ over $k$, which is not the identity. This is a contradiction.
+
+So no stable curve over a modification of $Y$ extends $(C, \sigma)$. Indeed, let $Y' \to Y$ be a modification. Its normalization is a proper birational morphism from a normal curve to the normal curve $Y$, so it is an isomorphism. A stable curve over $Y'$ that extends $C$ over a dense open subset pulls back to a stable curve over $Y$, and its restriction to $\operatorname{Spec} R$ contradicts part 2. So some ramified alteration of the base is necessary in this example, and the alteration $t = s^6$ of degree 6 is enough.
+
+The automorphism $b$ of the special fibre in this example has order 6. Automorphisms of this kind are also the reason why $\overline{\mathcal{M}}_{1,1}$ is a stack and not a scheme, and why Hypothesis 2.2.4 adds the level structures.
+
+**Remark 2.2.8 (genus 0).** Let $g = 0$ and $n \ge 3$. A stable $n$-pointed curve of genus 0 has no nontrivial automorphism that fixes the marked points, and Knudsen proves that $\overline{\mathcal{M}}_{0,n}$ is a smooth projective scheme over $\mathbb{Z}$ that is a fine moduli space [Knu83]. Then the proof of Proposition 2.2.6 works with no level structure: one takes $M = \mathcal{M}_{0,n}$, $\overline{M} = \overline{\mathcal{M}}_{0,n}$, and for $Y'$ the closure of the graph of $U \to \overline{M}_k$ in $Y \times_k \overline{M}_k$. This $Y' \to Y$ is a projective modification. So in genus 0 the alteration of Hypothesis 2.2.5 can be chosen of degree 1. Example 2.2.3 is a case of this, with $\overline{\mathcal{M}}_{0,4} \cong \mathbb{P}^1$.
+
+### The Galois group of the level cover
+
+The alteration of Proposition 2.2.6 has a natural group of symmetries. Let $G = \operatorname{GL}_{2g}(\mathbb{F}_\ell)$, the automorphism group of $(\mathbb{Z}/\ell)^{2g}$. It acts on the level-$\ell$ structures by composition: for $g_0 \in G$ and a level structure $\lambda$, the composite $\lambda \circ g_0$ is again a level structure. This gives an action of $G$ on $L = L(C/U)$ over $U$.
+
+**Lemma 2.2.9.** In the proof of Proposition 2.2.6, let $W$ be a connected component of $L = L(C/U)$, and let $H$ be the subgroup of the elements of $G$ that map $W$ to itself. Then $k(W)$ is a Galois extension of $k(U)$ with group $H$, and $Y'' \to Y$ is a finite separable Galois alteration with group $H$ in the sense of Definition 3.1.3.
+
+Lean: none yet
+
+*Proof.* We first show that the morphism $\Phi \colon G \times L \to L \times_U L$, $(g_0, \lambda) \mapsto (\lambda \circ g_0, \lambda)$, is an isomorphism. Here $G \times L$ is a disjoint union of copies of $L$. Let $T'$ be a $U$-scheme and let $\lambda, \lambda'$ be two level structures on $C \times_U T'$. Then $\lambda^{-1} \circ \lambda'$ is an automorphism of the constant group scheme $(\mathbb{Z}/\ell)^{2g}_{T'}$. Such an automorphism is a locally constant map from $T'$ to $G$, and it is the unique $g_0$ with $\lambda' = \lambda \circ g_0$. So $\Phi$ is bijective on $T'$-points for each $T'$, and it is an isomorphism.
+
+The group $G$ acts on $L$ by automorphisms over $U$, so it permutes the connected components of $L$. For $g_0 \in G$ the image $g_0(W)$ is a connected component, so it is $W$ or it is disjoint from $W$. So $\Phi^{-1}(W \times_U W)$ is the disjoint union of the copies $\{h\} \times W$ for $h \in H$, and $W \times_U W \cong H \times W$ as schemes over $W$ by the second projection. The second projection $W \times_U W \to W$ is the base change of $W \to U$, so it is finite étale of degree $[k(W) : k(U)]$. The scheme $H \times W$ has degree $|H|$ over $W$. So $[k(W) : k(U)] = |H|$.
+
+The group $H$ acts on the integral scheme $W$ over $U$. An element $h \ne 1$ of $H$ moves each point of $L$ over each geometric point of $U$, by the first paragraph, so it is not the identity of $W$, and so it acts nontrivially on $k(W)$, as in Section 3.1. By Artin's theorem [Lan02, Chapter VI, Theorem 1.8], $k(W)$ is Galois over $k(W)^H$ of degree $|H|$. Since $k(U) \subseteq k(W)^H$ and $[k(W) : k(U)] = |H|$, we get $k(W)^H = k(U)$. Finally, $H$ acts on the normalization $Y''$ of $Y$ in $k(W)$, by the argument of Proposition 3.1.4, and $k(Y'')^H = k(U) = k(Y)$. $\square$
+
+The order of $H$ divides $|\operatorname{GL}_{2g}(\mathbb{F}_\ell)| = \prod_{i=0}^{2g-1} (\ell^{2g} - \ell^i)$. For $g = 1$ and $\ell = 3$ this is $8 \cdot 6 = 48$. The construction gives no reason for $|H|$ to be prime to the characteristic $p$ of $k$. This is one source of the factors of the degree that Section 1.3 discusses. The second part $Y' \to Y''$ of the alteration of Proposition 2.2.6 is a modification, so it does not change the degree.
 
 ### Notes and references
 
