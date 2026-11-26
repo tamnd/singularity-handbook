@@ -16,13 +16,13 @@ The Frobenius is a homomorphism because $(ab)^p = a^p b^p$, $(a + b)^p = a^p + b
 
 **Lemma 6.1.2.** Let $R$ be a ring of characteristic $p$ and let $\mathfrak{p}$ be a prime ideal. Then $F^{-1}(\mathfrak{p}) = \mathfrak{p}$. So the map $\operatorname{Spec} R \to \operatorname{Spec} R$ that $F$ gives is the identity.
 
-Lean: none yet
+Lean: `Singularity.Algebra.comap_frobenius_eq`, `Singularity.Algebra.primeSpectrum_comap_frobenius`
 
 *Proof.* For $a \in R$ we have $a^p \in \mathfrak{p}$ if and only if $a \in \mathfrak{p}$, because $\mathfrak{p}$ is prime. $\square$
 
 **Proposition 6.1.3.** Let $R$ be a ring of characteristic $p$. Then $F$ is injective if and only if $R$ is reduced.
 
-Lean: none yet
+Lean: `Singularity.Algebra.injective_frobenius_iff_isReduced`
 
 *Proof.* The kernel of $F$ is the set of the elements $a$ with $a^p = 0$. If $R$ is reduced, this set is $0$. Conversely, assume that $F$ is injective, and let $a$ be nilpotent. Take $e$ with $a^{p^e} = 0$. Then $F^e(a) = 0$. The map $F^e$ is injective, because it is a composite of injective maps. Thus $a = 0$. $\square$
 

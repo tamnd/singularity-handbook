@@ -88,9 +88,11 @@ The most frequent test case in this book is a hypersurface: the quotient of a re
 
 **Proposition 1.2.10.** Let $(S, \mathfrak{m})$ be a regular local ring of dimension $n$, and let $f \in \mathfrak{m}$ with $f \ne 0$. Then $\dim S/(f) = n - 1$. The ring $S/(f)$ is regular if and only if $f \notin \mathfrak{m}^2$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isRegularLocalRing_quotient_iff`
 
 *Proof.* Since $f \ne 0$, the ideal $\mathfrak{m}$ is not zero, so $n \ge 1$. The ring $S$ is a domain by Theorem 1.3.3, so $f$ is a nonzerodivisor. The first part of the proof of Proposition 1.2.8 uses only this fact, and it gives $\dim S/(f) = n - 1$. If $f \notin \mathfrak{m}^2$, then $S/(f)$ is regular by Proposition 1.2.6. If $f \in \mathfrak{m}^2$, then Lemma 1.1.5 gives $\operatorname{edim} S/(f) = n$. This is not equal to $\dim S/(f) = n - 1$, so $S/(f)$ is not regular. $\square$
+
+The Lean statement writes the claim on the dimension as $\dim S/(f) + 1 = \dim S$.
 
 Let $k$ be a field and $S = k[x_1, \dots, x_n]_{(x_1, \dots, x_n)}$. Write $f = f_1 + f_2 + \dots$ as a sum of homogeneous parts, with $f(0) = 0$. Then $f \notin \mathfrak{m}^2$ if and only if the linear part $f_1$ is not zero. In this case, Proposition 1.2.10 is the familiar statement that a hypersurface is regular at a point where one partial derivative does not vanish. Section 1.8 extends this test to all points, and Section 1.9 shows the care that it needs over an imperfect field.
 
