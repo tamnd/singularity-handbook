@@ -72,7 +72,7 @@ From now on we identify equivalent valuations. We write $\mathcal{O}_v$, $\mathf
 4. $V$ is integrally closed.
 5. If $V$ is Noetherian and $V \ne K$, then $V$ is a discrete valuation ring, and $\Gamma_V \cong \mathbb{Z}$.
 
-Lean: none yet
+Lean: `Singularity.valuationSubring_properties` (part 5 without the claim that the value group is $\mathbb{Z}$)
 
 *Proof.* Part 1 is clear from Definition 1.1.4. For part 2, let $I, J$ be ideals with $I \not\subseteq J$, and let $x \in I \setminus J$. Let $y \in J$ with $y \ne 0$. If $x/y \in V$, then $x = (x/y)y \in J$, which is false. So $y/x \in V$ and $y = (y/x)x \in I$. Thus $J \subseteq I$. For part 3, let $I = (x_1, \dots, x_n)$ with $x_i \ne 0$, and choose $i$ with $v_V(x_i)$ minimal. Then $x_j/x_i \in V$ for each $j$, so $I = (x_i)$.
 
