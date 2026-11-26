@@ -14,9 +14,11 @@ In this section we run the process of Theorem 2.2.1 on some surfaces in $\mathbb
 
 **Lemma 2.3.1.** Let $k$ be a field, let $F \in k[x, y, z]$ be nonzero, let $X = V(F)$, and let $P \in X$ be a closed point with maximal ideal $\mathfrak{m}_P \subseteq k[x, y, z]$. Then $\dim \mathcal{O}_{X,P} = 2$, and $\mathcal{O}_{X,P}$ is regular if and only if $F \notin \mathfrak{m}_P^2$. If $P = (a, b, c)$ is a rational point, then $F \notin \mathfrak{m}_P^2$ if and only if one of the partial derivatives of $F$ is nonzero at $P$.
 
-Lean: none yet
+Lean: `Singularity.mem_pointIdeal_sq_iff` (the claim for a rational point)
 
 *Proof.* Let $R = k[x, y, z]_{\mathfrak{m}_P}$. It is a regular local ring of dimension 3 [Har, Theorem I.1.8A], and $\mathcal{O}_{X,P} = R/(F)$. Since $F$ is a nonzerodivisor of $R$, we get $\dim R/(F) = 2$ [AM69, Corollary 11.18]. If $F \notin \mathfrak{m}_P^2$, then $R/(F)$ is regular by Proposition 1.2.6 of Volume 1. If $F \in \mathfrak{m}_P^2$, then the maximal ideal $\mathfrak{n}$ of $R/(F)$ has $\mathfrak{n}/\mathfrak{n}^2 \cong \mathfrak{m}_P/\mathfrak{m}_P^2$, of dimension 3 over $\kappa(P)$, so $R/(F)$ is not regular. For a rational point, the Taylor expansion of $F$ at $P$ has the partial derivatives at $P$ as its linear coefficients, in every characteristic. Since $F(P) = 0$, we get $F \in \mathfrak{m}_P^2$ if and only if these coefficients vanish. $\square$
+
+The Lean proof of the last claim is for a polynomial ring over a commutative ring, in any number of variables. The claim on $\dim \mathcal{O}_{X,P}$ and the claim on regularity are not in Lean.
 
 Let $X = V(F)$ with $F$ nonconstant. By the Jacobian criterion (Corollary 1.8.3 of Volume 1), each point of $X$ outside the common zeros of the three partial derivatives is regular. Thus, if these common zeros on $X$ are finitely many closed points, then $\operatorname{Sing}(X)$ is a finite set of closed points, and $X$ is normal by Lemma 1.2.6.
 
@@ -55,9 +57,11 @@ Lean: none yet
 
 **Lemma 2.3.4.** Let $k$ be a field of characteristic $p > 0$, let $G \in k[s, t]$, and let $X = V(w^p - G(s, t)) \subseteq \mathbb{A}^3_k$. Let $P = (a, b, c)$ be a rational point of $X$. Then $P$ is a singular point of $X$ if and only if $G_s(a, b) = G_t(a, b) = 0$.
 
-Lean: none yet
+Lean: `Singularity.purelyInseparable_mem_pointIdeal_sq_iff_fin_two` (the claim that $F \in \mathfrak{m}_P^2$ if and only if $G_s(a, b) = G_t(a, b) = 0$)
 
 *Proof.* Let $F = w^p - G$. Since $c^p = G(a, b)$, we have $F = (w - c)^p - (G - G(a, b))$. The first term is in $\mathfrak{m}_P^2$, because $p \ge 2$. The ideal $\mathfrak{m}_P^2$ is spanned by the monomials of degree at least 2 in $s - a$, $t - b$ and $w - c$. Thus $F \in \mathfrak{m}_P^2$ if and only if $G - G(a, b)$ has no linear term in $s - a$ and $t - b$, that is, $G_s(a, b) = G_t(a, b) = 0$. Lemma 2.3.1 gives the result. $\square$
+
+The Lean proof of the claim on $\mathfrak{m}_P^2$ holds for each commutative ring $k$ of characteristic $p$. It uses the last claim of Lemma 2.3.1. The step from this claim to the singular point uses the first claims of Lemma 2.3.1, which are not in Lean. In Lean the variables $s, t, w$ are indexed by `Option (Fin 2)`, with `none` for $w$.
 
 **Example 2.3.5.** Let $k$ be an algebraically closed field of characteristic $p > 0$, and let $X = V(z^p - x^{p+1} - y^{p+1}) \subseteq \mathbb{A}^3_k$. Then $X$ is normal with one singular point at the origin. The blowup $X'$ of $X$ at the origin is normal, and it has exactly $p + 1$ singular points $P_1, \dots, P_{p+1}$, all on the exceptional curve. Near each $P_i$, the surface $X'$ is isomorphic to $X_p = V(ab - c^p)$ near the origin. The process of Theorem 2.2.1 stops after $1 + \lfloor p/2 \rfloor$ blowups.
 

@@ -52,7 +52,7 @@ Step 3 works because a singularity of small multiplicity behaves as in character
 
 **Lemma 1.2.4.** Let $B$ be a ring, let $D \colon B \to B$ be an additive map with $D(ab) = a D(b) + b D(a)$ for all $a, b \in B$, and let $I$ be an ideal of $B$. Then $D(I^e) \subseteq I^{e-1}$ for each $e \ge 1$.
 
-Lean: none yet
+Lean: `Singularity.addMonoidHom_mem_pow_pred`, `Singularity.derivation_mem_pow_pred`
 
 *Proof.* The ideal $I^e$ is generated as an additive group by the products $b a_1 \cdots a_e$ with $b \in B$ and $a_1, \dots, a_e \in I$. By the Leibniz rule,
 $$D(b a_1 \cdots a_e) = D(b) a_1 \cdots a_e + \sum_{i=1}^{e} b a_1 \cdots a_{i-1} D(a_i) a_{i+1} \cdots a_e.$$

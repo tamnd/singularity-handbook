@@ -22,7 +22,7 @@ where $r_j$ is the largest integer with $x_j^{r_j} \mid F$. The number $\epsilon
 
 **Lemma 4.3.1.** Let $k$ be a field of characteristic $p$, let $F \in k[U_1, \dots, U_n]$, and let $j \in \{1, \dots, n\}$. Then $\partial F/\partial U_j \ne 0$ if and only if $F$ has a monomial $c U^a$ with $c \ne 0$ and $p \nmid a_j$.
 
-Lean: none yet
+Lean: `Singularity.pderiv_ne_zero_iff`
 
 *Proof.* Write $F = \sum_a c_a U^a$. Then $\partial F/\partial U_j = \sum_{a_j \ge 1} a_j c_a U^{a - e_j}$, where $e_j$ is the $j$-th unit vector. The map $a \mapsto a - e_j$ is injective, so distinct monomials of $F$ give distinct monomials, and no two terms cancel. The coefficient $a_j c_a$ is zero exactly when $p \mid a_j$, since $c_a \ne 0$. So $\partial F/\partial U_j \ne 0$ if and only if some $a$ with $c_a \ne 0$ has $p \nmid a_j$. If $a_j = 0$, then $p \mid a_j$, so the condition $a_j \ge 1$ needs no separate mention. $\square$
 
