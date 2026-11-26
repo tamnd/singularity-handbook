@@ -39,7 +39,7 @@ If $f_1, \dots, f_t$ generate $I$ on a coordinate open set $U$, then $D(I)$ is g
 **Lemma 2.1.4 (the derivative lowers the order by one).** Let $x \in X$ be a closed point. Then
 $$\operatorname{ord}_x D(I) = \max(\operatorname{ord}_x I - 1, \, 0), \qquad \operatorname{ord}_x D^j(I) = \max(\operatorname{ord}_x I - j, \, 0).$$
 
-Lean: none yet
+Lean: `Singularity.exists_ord_pderiv_eq`, `Singularity.idealOrd_derivIdeal`, `Singularity.idealOrd_derivIdeal_iterate` (at the origin of affine space, with the partial derivatives)
 
 *Proof.* Let $r = \operatorname{ord}_x I$. If $r = 0$, then $D(I) \supseteq I$ also has order 0. Let $r \ge 1$. A derivation maps $\mathfrak{m}_x^r$ into $\mathfrak{m}_x^{r-1}$, and $I \subseteq \mathfrak{m}_x^r$, so $\operatorname{ord}_x D(I) \ge r - 1$. Choose $f \in I_x$ of order $r$, and let $f_r \ne 0$ be its homogeneous part of degree $r$ in $K[[x_1, \dots, x_n]]$. By Euler's identity,
 $$\sum_{i=1}^n x_i \frac{\partial f_r}{\partial x_i} = r f_r \ne 0,$$
@@ -51,7 +51,7 @@ because $r$ is not zero in $K$. So some $\partial f_r / \partial x_i$ is not zer
 2. $\operatorname{max\text{-}ord} I \le m$ if and only if $D^m(I) = \mathcal{O}_X$.
 3. The maximal order of $I$ is finite.
 
-Lean: none yet
+Lean: `Singularity.le_idealOrd_iff_one_le_idealOrd_derivIdeal_iterate` (part 1, at the origin of affine space)
 
 *Proof.* (1) By Lemma 2.1.4, $\operatorname{ord}_x D^{m-1}(I) \ge 1$ if and only if $\operatorname{ord}_x I \ge m$. (2) An ideal sheaf is $\mathcal{O}_X$ if and only if it has order 0 at each closed point, and $\operatorname{ord}_x D^m(I) = 0$ if and only if $\operatorname{ord}_x I \le m$. (3) The closed sets $\operatorname{cosupp}(I, m)$ decrease with $m$. Each closed point has finite order, because $I$ is nonzero near it and $\mathcal{O}_{X,x}$ is a regular local ring, so the intersection of all the $\operatorname{cosupp}(I, m)$ is empty. Since $X$ is Noetherian, the chain is stationary, so $\operatorname{cosupp}(I, m) = \emptyset$ for large $m$. $\square$
 

@@ -22,7 +22,7 @@ The argument still works when the maximal order is small with respect to the cha
 
 **Proposition 2.4.1.** Let $k$ be a field of characteristic $p > 0$, and let $I$ be an ideal sheaf on a smooth variety over $k$ with closed point $x$ such that $r = \operatorname{ord}_x I$ satisfies $1 \le r < p$, and $k(x)$ is separable over $k$. Then $\operatorname{ord}_x D(I) = r - 1$.
 
-Lean: none yet
+Lean: `Singularity.idealOrd_derivIdeal_of_ne_zero` (at the origin of affine space, with the hypothesis $r \ne 0$ in $k$)
 
 *Proof.* The proof of Lemma 2.1.4 works, because $r$ is a unit in $k$. $\square$
 
@@ -30,7 +30,7 @@ So, at a point of order $m < p$ with $m = \operatorname{max\text{-}ord} I$, the 
 
 **Example 2.4.2.** Let $k$ have characteristic $p$ and let $f = x^p + y^{p+1}$ on $\mathbb{A}^2$. The maximal order of $f$ is $p$, attained only at the origin. The derivatives are $\partial_x f = 0$ and $\partial_y f = (p+1) y^p = y^p$. So $D(f) = (x^p, y^p)$, and every element of $D^{j}(f)$ has order at least $p$ at the origin for each $j \ge 0$. There is no element of order 1 in any $D^j(f)$, and the derivative ideals give no hypersurface of maximal contact. Here the locus of order $p$ is the origin, so the line $x = 0$ contains it. The failure is a failure of the method. The next example shows that the hypersurface itself can fail to exist.
 
-Lean: none yet
+Lean: `Singularity.DerivativeIdeals.ord_charPExample`, `Singularity.DerivativeIdeals.derivIdeal_charPExample`, `Singularity.DerivativeIdeals.le_idealOrd_derivIdeal_iterate_charPExample`
 
 ### The example of Narasimhan
 
