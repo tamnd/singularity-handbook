@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.48] - 2026-11-27
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.48.
 - Volume 7, Section 3.13 has a new part on the corner runs with free translations. Lemmas 3.13.24 and 3.13.25 and Proposition 3.13.26 give the valuation of the irrational ray, the form of $g$ along the run and a criterion for the drop of $\rho$. Theorem 3.13.27 proves that for $g = B_1 x^p + B_0$ only a finite number of the translations are not $0$, and Corollary 3.13.28 answers Question 3.13.18 for these runs. The map node is SG0000005W. Volume 9, Section 3.15 reports the result.
 - The line `singularity` of `EDITION` now pins the map release 0.4.55.
 
