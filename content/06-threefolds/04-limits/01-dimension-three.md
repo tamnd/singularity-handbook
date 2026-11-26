@@ -21,7 +21,7 @@ Let $S$ be an excellent regular local ring of dimension $n \ge 1$, and let $h \i
 
 [CP19] proves more in each dimension: permissibility is stable under regular base change [CP19, Theorem 3.8], and a Hironaka-permissible center is permissible on a dense open subset [CP19, Theorem 3.22]. Cossart and Piltant describe the results of [CP19, Section 3.3], which contains Theorem 3.22, as a guideline for $n \ge 4$ [CP19, Remark 1.7].
 
-So in each dimension the main invariant does not go up. The missing part is a proof that it goes down. For $n = 3$ this is the Projection Theorem [CP19, Theorem 5.5], which we state as Theorem 3.2.11, and its proof fills Chapters 6 to 9 of [CP19].
+So in each dimension, under condition (E), the main invariant does not go up. In dimension 3, Cossart and Piltant reach condition (E) with theorems on regular schemes of dimension 3 (Section 2.2), so for $n \ge 4$ the hypothesis of Theorem 3.2.6 is itself not known to be reachable. The missing part is a proof that it goes down. For $n = 3$ this is the Projection Theorem [CP19, Theorem 5.5], which we state as Theorem 3.2.11, and its proof fills Chapters 6 to 9 of [CP19].
 
 ### The uses of dimension three
 

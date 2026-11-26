@@ -33,11 +33,11 @@ Node: SG0000001X · Lean: `Singularity.purelyInseparableHypersurfaceResolution_o
 We sort the proof of Theorem 1.1.3 into four parts, close to the plan of Section 1.2. For each part we say what is known when $n = 4$.
 
 1. *The reduction to degree $p$.* The plan of proof of Proposition 2.2.1 has four steps. Step 2, the Noether normalization, does not use the dimension. The ramification theory of valuations in Step 4 does not use it either, but [CP19] also applies the principalization of ideals in dimension 3 [CP19, Proposition 4.4] in Step 4. For varieties, Step 1, the patching, becomes Conjecture 2.3.2 of Volume 9 when $n = 4$. Steps 3 and 4 and condition (E) use principalization and embedded resolution in dimension 3 (Section 4.1). Their analogues in dimension 4 are open.
-2. *The polyhedron and the invariants.* The polyhedron of Hironaka, the invariants $\delta$, $\epsilon$, $\omega$ and $\iota$, and Theorems 3.2.6 and 3.2.7 hold for each $n$ (Section 4.1).
+2. *The polyhedron and the invariants.* The polyhedron of Hironaka, the invariants $\delta$, $\epsilon$, $\omega$ and $\iota$, and Theorems 3.2.6 and 3.2.7 hold for each $n$ (Section 4.1). Both theorems assume condition (E), which for $n = 4$ is not known to be reachable.
 3. *The decrease.* An analogue of the Projection Theorem for $n = 4$ is not known. The projection of [CP19] maps a polyhedron in $\mathbb{R}^3$ to a polygon in $\mathbb{R}^2$, and for $n = 4$ there is no known replacement. The phenomenon of Example 4.1.1 and the open questions of [CP19, Remark 3.19 and Section 9.2.1] enter here.
 4. *Small multiplicity.* The step from multiplicity less than $p$ to a regular point is [CP14] for $n = 3$.
 
-So part 2 is available, and parts 1, 3 and 4 need new theorems. Part 3 is the core of the problem. A proof of an analogue of Theorem 1.2.6 for $n = 4$ would not be enough by itself, because the reduction of part 1 also uses dimension 3. Volume 9, Section 2.3, describes this route, the route of characteristic polyhedra, together with the other routes.
+So part 2 is available, and parts 1, 3 and 4 need new theorems. In our view part 3 is the hardest part, since no analogue of the Projection Theorem is known for $n = 4$. A proof of an analogue of Theorem 1.2.6 for $n = 4$ would not be enough by itself, because the reduction of part 1 also uses dimension 3. Volume 9, Section 2.3, describes this route, the route of characteristic polyhedra, together with the other routes.
 
 Node: SG00000014 · Lean: `Singularity.charPolyhedron` (the definition, invariance under $z \mapsto z + \psi$, and one direction of the vertex criterion) and Volume 7, Proposition 1.2.7, for $z^q + F$ with $F$ clean
 
@@ -51,7 +51,7 @@ Node: SG00000016 · Lean: `Singularity.Examples.kangaroo` (the computation of Ex
 
 Node: SG00000017 · Lean: none yet (one cycle is certified, Example 1.4.5 of Volume 7)
 
-For $q = p$, Moh's bound allows an increase of the residual order by at most $1$ under a point blowup, and Example 3.3.1 shows such an increase. Proposition 3.2.4 shows that, for $X^p + f$ over a perfect field, the residual order is the invariant $\epsilon$ of Cossart and Piltant, and Theorem 3.2.6 shows that $\omega \in \{\epsilon - 1, \epsilon\}$ does not increase under its hypotheses. Both facts hold for each $n$. So for the equations $z^p + g(x_1, \dots, x_4)$ the difficulty is not an increase of $\omega$ but the lack of a proof that it decreases.
+For $q = p$, Moh's bound allows an increase of the residual order by at most $1$ under a point blowup, and Example 3.3.1 shows such an increase. Proposition 3.2.4 shows that, for $X^p + f$ over a perfect field, the residual order is the invariant $\epsilon$ of Cossart and Piltant, and Theorem 3.2.6 shows that $\omega \in \{\epsilon - 1, \epsilon\}$ does not increase under its hypotheses. Both facts hold for each $n$, but Theorem 3.2.6 assumes condition (E), and for $n = 3$ Cossart and Piltant reach condition (E) with theorems on regular schemes of dimension 3 (Section 2.2). So for the equations $z^p + g(x_1, \dots, x_4)$ two things are missing: a way to reach condition (E), and a proof that the invariant decreases. Under condition (E), $\omega$ does not increase.
 
 Node: SG00000015 · Lean: `Singularity.moh_bound_holds` (for point blowups of polynomials)
 
