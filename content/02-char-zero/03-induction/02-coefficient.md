@@ -23,7 +23,7 @@ The exponents make all the summands have the same expected order: if $D^j(I)$ ha
 1. At each closed point $x$, $\operatorname{ord}_x B \ge N$ if and only if $\operatorname{ord}_x B_j \ge c_j$ for all $j$. So $\operatorname{cosupp}(B, N) = \bigcap_j \operatorname{cosupp}(B_j, c_j)$.
 2. Let $\pi$ be the blowup of a smooth $Z \subseteq \operatorname{cosupp}(B, N)$, and let $B_j'$ be the transform of $(B_j, c_j)$. Then the transform of $(B, N)$ is $\sum_j (B_j')^{N / c_j}$.
 
-Lean: none yet
+Lean: `Singularity.le_idealOrd_iSup_pow_iff` (part 1, at the origin of affine space)
 
 *Proof.* (1) The graded ring of $\hat{\mathcal{O}}_{X, x}$ for the maximal ideal is a polynomial ring, so it has no zero divisors. Hence $\operatorname{ord}_x (fg) = \operatorname{ord}_x f + \operatorname{ord}_x g$, and $\operatorname{ord}_x (A^e) = e \operatorname{ord}_x A$ for each ideal $A$. The order of a sum of ideals is the minimum of the orders. So $\operatorname{ord}_x B = \min_j (N / c_j) \operatorname{ord}_x B_j$, and this is at least $N$ if and only if $\operatorname{ord}_x B_j \ge c_j$ for all $j$. (2) By (1), applied at the points of $Z$, $Z \subseteq \operatorname{cosupp}(B_j, c_j)$ for all $j$. Now apply Lemma 2.2.4 (1) and (2). $\square$
 
@@ -109,7 +109,7 @@ because $2n - 2 \ge n$. On $H'$, the restriction of $I$ is $(y^2 - z^n)$ and the
 $$C_{H'}(I) = (y^2 - z^n) + (y, \; z^{n-1})^2 = (y^2, \; y z^{n-1}, \; z^n).$$
 The restrictions of $I$ to $H$ and $H'$ are not isomorphic, since $(z^n)$ has order $n$ along a line and $(y^2 - z^n)$ has an isolated point of order 2. The coefficient ideals are the same.
 
-Lean: none yet
+Lean: `Singularity.DerivativeIdeals.coeffIdeal_H`, `Singularity.DerivativeIdeals.coeffIdeal_H'` (the ideals on $H$ and $H'$)
 
 In general the coefficient ideals on two hypersurfaces of maximal contact need not be identified by an automorphism. Kollár, following Włodarczyk [Wlo05], solves this by replacing $I$ by an ideal with an extra invariance property.
 

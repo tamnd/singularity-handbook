@@ -14,7 +14,7 @@ We first record a remark on local rings of affine models that we use many times.
 
 **Lemma 1.1.1.** Let $v$ be a valuation of $K/k$, let $A \subseteq A'$ be affine models of $K/k$ contained in $\mathcal{O}_v$, with centers $\mathfrak{p}$ and $\mathfrak{p}'$. If $A' \subseteq A_\mathfrak{p}$, then $A'_{\mathfrak{p}'} = A_\mathfrak{p}$.
 
-Lean: none yet
+Lean: `Singularity.centerLocalization_eq_of_le`
 
 *Proof.* The elements of $A \setminus \mathfrak{p}$ are units of $\mathcal{O}_v$, so they lie in $A' \setminus \mathfrak{p}'$. Thus $A_\mathfrak{p} \subseteq A'_{\mathfrak{p}'}$. Conversely, $A' \subseteq A_\mathfrak{p} \subseteq \mathcal{O}_v$, and the maximal ideal of $A_\mathfrak{p}$ is $\mathfrak{m}_v \cap A_\mathfrak{p}$. An element of $A' \setminus \mathfrak{p}'$ lies in $A_\mathfrak{p}$ and is a unit of $\mathcal{O}_v$, so it is a unit of $A_\mathfrak{p}$. Thus $A'_{\mathfrak{p}'} \subseteq A_\mathfrak{p}$. $\square$
 

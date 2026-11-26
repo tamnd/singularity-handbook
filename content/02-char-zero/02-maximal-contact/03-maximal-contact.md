@@ -14,7 +14,7 @@ Let $I$ be an ideal sheaf on $X$ with maximal order $m \ge 1$. By Corollary 2.1.
 
 **Lemma 2.3.2 (local existence).** Let $m = \operatorname{max\text{-}ord} I \ge 1$ and let $x$ be a closed point with $\operatorname{ord}_x I = m$. Then there are an open set $U \ni x$ and a hypersurface of maximal contact $H \subseteq U$ for $I|_U$. Each hypersurface of maximal contact $H$ contains $\operatorname{cosupp}(I, m)$.
 
-Node: SG00000045 · Lean: none yet
+Node: SG00000045 · Lean: `Singularity.exists_mem_derivIdeal_iterate_ord_eq_one` (the claim that $D^{m-1}(I)$ has an element of order 1 at the origin of affine space)
 
 *Proof.* By Lemma 2.1.4, $\operatorname{ord}_x MC(I) = m - (m - 1) = 1$. So $MC(I)_x \subseteq \mathfrak{m}_x$, and there is $h \in MC(I)_x$ with $h \notin \mathfrak{m}_x^2$. The germ $h$ is a section of $MC(I)$ over some open set $U_0 \ni x$.
 
@@ -63,7 +63,7 @@ So $\operatorname{cosupp}(I, 2)$ is the origin, and $H = (x = 0)$ and $H' = (x -
 $$\big( I + D(I)^2 \big)\big|_H = (z^n) + (y, z^{n-1})^2 = (y^2, \; y z^{n-1}, \; z^n),$$
 because $2n - 2 \ge n$. This ideal has order at least 2 only at the origin. It is the coefficient ideal of Section 3.2 for $m = 2$.
 
-Lean: none yet
+Lean: `Singularity.DerivativeIdeals.derivIdeal_xy_sub_z_pow`, `Singularity.DerivativeIdeals.coeffIdeal_H`, `Singularity.DerivativeIdeals.coeffIdeal_H'`
 
 The next example shows the theorem at work in the running example, and it shows that a smooth hypersurface through the points of order $m$ can lose them after one blowup.
 
