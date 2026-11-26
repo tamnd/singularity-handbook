@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.30] - 2026-11-26
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.30.
 - Volume 7, Section 3.10 shows that the case of a point is its type. Lemma 3.10.1 proves that the order $\sigma$ of $\widetilde\Theta_0(G)$ is the residual order $d$ for each clean $g$, and Corollary 3.10.2 gives that the first case is the type $0$ and the second case is the type $1$. Theorem 3.10.3 proves that, at a step where $\rho$ stays and no component of the divisor leaves, $d$ does not go up, and $\tau_\rho$ does not go down if $d$ stays. So $d$ goes down by one at each step from the second case to the first case, and the triple $(\rho, d, \tau_\rho)$ does not get worse. These are the nodes SG00000059 and SG0000005A, for the milestone S7.16 (tamnd/singularity#225). The section also computes $d$ in Example 3.8.3, explains Example 3.2.6, lists the steps where the triple can get worse, and has a paragraph on the Lean proof.
 - Volume 9, Section 3.12 gives the same result as the twelfth research report of the milestone S7, with the table of the combinations of the cases for $d$, $\tau_\rho$ and the triple.
 
