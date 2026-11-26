@@ -1,14 +1,14 @@
 ---
 title: Alterations of degree a power of the characteristic
 nodes: [SG0000001N, SG0000001G]
-sources: [Tem17, CP19, CP09, Lip78, ILO14, Tem13]
+sources: [Tem17, CP19, CP09, Lip78, ILO14, Tem13, AdJ97, Hir64]
 status: drafted
 drafted_by: writer
 reviewed_by: []
 ---
 ## Alterations of degree a power of the characteristic
 
-The theorem of Gabber removes one prime $\ell \ne p$ at a time from the degree. Temkin proved that all primes $\ell \ne p$ can be removed at once [Tem17]. In characteristic $p > 0$ the degree becomes a power of $p$. In characteristic 0 it becomes 1, so the theorem contains a resolution result. In this section we state the theorem, we explain the new idea of its proof, and we explain what it gives for the open problem.
+The theorem of Gabber removes one prime $\ell \ne p$ at a time from the degree. Temkin proved that all primes $\ell \ne p$ can be removed at once [Tem17]. In characteristic $p > 0$ the degree becomes a power of $p$. In characteristic 0 it becomes 1, so the theorem gives a modification with regular source. This is a weak resolution, not a resolution in the sense of Volume 0, because the modification need not be an isomorphism over the regular locus. In this section we state the theorem, we explain the new idea of its proof, and we explain what it gives for the open problem.
 
 ### Definitions
 
@@ -65,6 +65,33 @@ So Temkin's theorem reduces the degree to its $p$-part, and the $p$-part is the 
 Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (the statement only)
 
 In the local theorem the extension is purely inseparable, and in Corollary 3.3.3 it is generically étale over a perfect field. Neither theorem alone gives local uniformization or resolution without an extension of the function field.
+
+### Desingularization of morphisms
+
+The main theorem of [Tem17] is a statement on morphisms. We state it for completeness. A morphism of schemes is *maximally dominating* if it maps each generic point of an irreducible component to a generic point of an irreducible component [Tem17, 1.2.8]. For the notion of a log smooth morphism of pairs we refer to [Tem17, 1.2.7]. If $X$ and $Y$ are regular and $Z \subseteq X$ and $T \subseteq Y$ are divisors with strict normal crossings, a log smooth morphism $(X, Z) \to (Y, T)$ is locally, up to a smooth morphism, a monomial map between the coordinates that define $Z$ and $T$, with a condition on the orders of the kernel and the cokernel of the matrix of exponents.
+
+**Theorem 3.3.5 (Temkin, desingularization of morphisms).** Let $f \colon X \to S$ be a maximally dominating morphism of finite type, let $Z \subseteq X$ be a nowhere dense closed subset, and assume that $X$ is separated and that $S$ admits a morphism of finite type to a Noetherian quasi-excellent scheme of dimension at most 3.
+
+1. There are projective $\operatorname{char}(S)$-alterations $a \colon S' \to S$ and $b \colon X' \to X$ with $S'$ and $X'$ regular, a quasi-projective morphism $f' \colon X' \to S'$ with $f \circ b = a \circ f'$, and divisors $W' \subseteq S'$ and $Z' \subseteq X'$ with strict normal crossings, such that $Z' = b^{-1}(Z) \cup f'^{-1}(W')$ and the morphism $(X', Z') \to (S', W')$ is log smooth.
+2. If $S = \operatorname{Spec} k$ with $k$ a perfect field, then one can choose in addition $a$ to be an isomorphism and $b$ to be separable.
+
+Lean: none yet
+
+This is [Tem17, Theorem 1.2.9]. For $S = \operatorname{Spec} k$ with $k$ perfect, the divisor $W'$ is empty, so $Z' = b^{-1}(Z)$, and part 2 gives Theorem 3.3.2 for separated $X$ over a perfect field. Temkin proves a more general form, without the separatedness of $X$, in [Tem17, Theorem 4.3.1]. The theorem is the analogue for $\operatorname{char}(S)$-alterations of the semistable form of the theorem of de Jong (Theorem 1.2.5 and Theorem 3.2.7): the morphism $f'$ is not semistable, but it is log smooth, and log smooth morphisms are the toroidal morphisms of the theory of Abramovich and de Jong [AdJ97]. For a variety over a field of characteristic 0 and $S = \operatorname{Spec} k$, part 2 gives a modification $b$ with $X'$ regular, because $\operatorname{char}(S) = \emptyset$.
+
+### Why the refinements do not give resolution
+
+We collect the reasons why the theorems of Gabber and Temkin, even together, do not give resolution of singularities in characteristic $p > 0$. Let $X$ be an integral variety of dimension $d$ over an algebraically closed field of characteristic $p$.
+
+1. In characteristic $p$ the degree can only be made a power of $p$, by Corollary 3.3.3, and prime to a given $\ell \ne p$, by Corollary 3.2.5. Neither theorem makes the degree 1. An alteration of degree $p^e$ with $e \ge 1$ is not a resolution, by Lemma 1.1.15, part 2.
+2. The theorem of Temkin does not give a Galois alteration [Tem17, 1.2.1]. So one cannot even write $X$ as a quotient of a regular variety up to a modification.
+3. If a Galois alteration of degree $p^e$ is given, then $X$ is birational to the quotient by a $p$-group, up to a purely inseparable map (Section 3.1). The action of a $p$-group in characteristic $p$ is wild, and the tame methods of Gabber (Section 3.2) do not apply to it. No known method resolves these quotients in dimension at least 4.
+4. In the proofs of Gabber and Temkin the tame quotient singularities are resolved by the modification theorem of Gabber [ILO14, Exposé X, Theorem 1.1]. Its proof uses the theory of log regular schemes and canonical desingularization in characteristic 0 [ILO14, Introduction]. It resolves only singularities that are toroidal with a very tame action. It gives no information on wild quotients.
+5. A regular alteration of degree $p^e$ gives the cohomology with coefficients in which $p$ is invertible, by Proposition 1.3.8. For coherent cohomology and for $p$-adic cohomology it gives much less, because the trace is multiplication by $p^e$, which is 0 in characteristic $p$. A resolution would give both. This is the reason why the theorems of this chapter are not a substitute for resolution in the applications of Section 1.3.
+
+In characteristic 0 the situation is different. There $\operatorname{char}(X) = \emptyset$, so the theorem of Temkin gives a modification $X' \to X$ with $X'$ regular. This is a weak resolution: the theorem does not say that the modification is an isomorphism over the regular locus of $X$, and it does not say that it is a composition of blowups in regular centers. Weak resolution in characteristic 0 was first obtained by the methods of alterations by Abramovich and de Jong [AdJ97], and resolution in characteristic 0 is the theorem of Hironaka [Hir64].
+
+In characteristic $p$ resolution is known in dimension at most 3 (Volume 9, and Cossart-Piltant [CP09, CP19]), and in dimension at least 4 it is open. The theorems of this volume do not prove it, and nothing in this volume should be read as a proof of it.
 
 ### Notes and references
 

@@ -1,7 +1,7 @@
 ---
 title: Alterations
 nodes: [SG0000000V, SG00000004, SG00000002]
-sources: [dJ96, Har, Mat, Stacks]
+sources: [dJ96, Har, Mat, Stacks, Ful93]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -108,6 +108,28 @@ Lean: `Singularity.IsResolution.isIntegral`, `Singularity.IsResolution.isAlterat
 *Proof.* The regular locus $\operatorname{Reg}(X)$ is open, because a finitely generated algebra over a field is excellent [Mat]. It contains $\eta_X$, because the local ring there is a field. So $\operatorname{Reg}(X)$ is a nonempty open subset of $X$, and it is irreducible. (1) The morphism $\pi$ is an isomorphism over $\operatorname{Reg}(X)$, so $\pi^{-1}(\operatorname{Reg}(X))$ is irreducible, and it is dense in $Y$. So $Y$ is irreducible. A regular scheme is reduced, so $Y$ is integral. The morphism $\pi$ is proper and an isomorphism over a dense open subset, so it is a modification. (2) A resolution is an isomorphism over the nonempty open set $\operatorname{Reg}(X)$, so it induces an isomorphism of function fields and has degree 1. $\square$
 
 The converse of (1) is false. The blowup of a closed point of $\mathbb{A}^2_k$ is a modification with a regular source, but it is not an isomorphism over $\operatorname{Reg}(\mathbb{A}^2_k) = \mathbb{A}^2_k$. So a regular alteration of degree 1 is only a *weak resolution*. Volume 0, Proposition 2.5.2 shows that the definition of a resolution in the project excludes the maps of degree 2 that look like resolutions. The present lemma says the same for all alterations.
+
+### A worked alteration of the quadric cone
+
+The next example makes Example 1.1.9 into an alteration with the properties that Theorem 1.2.1 asks for near the singular point, and it compares this alteration with the resolution of the cone.
+
+**Example 1.1.16 (the cone with its vertex).** Let $k$ be a field, let $X = \operatorname{Spec} k[x, y, z]/(xy - z^2)$ be the quadric cone, let $o$ be the vertex $x = y = z = 0$, and let $Z = \{o\}$. Let $\varphi \colon \mathbb{A}^2_k \to X$ be the alteration of degree 2 of Example 1.1.9, given by $x = s^2$, $y = t^2$ and $z = st$.
+
+*Step 1: the inverse image of $Z$ is not a divisor.* The ideal of $\varphi^{-1}(o)$ is $(s^2, st, t^2)$, whose radical is $(s, t)$. So $\varphi^{-1}(Z)$ is the origin of $\mathbb{A}^2_k$, a closed subset of codimension 2. It is not a divisor, so $\varphi$ alone does not have the property (ii) of Theorem 1.2.1 for the pair $(X, Z)$.
+
+*Step 2: a blowup of the source.* Let $\beta \colon X_1 \to \mathbb{A}^2_k$ be the blowup of the origin, and let $\varphi_1 = \varphi \circ \beta$. The scheme $X_1$ is covered by the two charts $V_s = \operatorname{Spec} k[s, t_1]$, with $t = s t_1$, and $V_t = \operatorname{Spec} k[t, s_1]$, with $s = t s_1$ [Har, Section II.7]. It is regular, and the exceptional curve $E = \beta^{-1}(0)$ is given by $s = 0$ on $V_s$ and by $t = 0$ on $V_t$. So $E \cong \mathbb{P}^1_k$ is a regular divisor. The morphism $\beta$ is a projective modification, so by Lemma 1.1.6 the morphism $\varphi_1$ is a projective alteration of degree $2 \cdot 1 = 2$, and $\varphi_1^{-1}(Z) = E$ is a divisor with strict normal crossings. So $\varphi_1$ is a regular alteration of degree 2 that makes the inverse image of the vertex a divisor with strict normal crossings. By Lemma 1.1.15, part 2, it is not a resolution.
+
+*Step 3: the resolution of the cone.* Let $\pi \colon \tilde X \to X$ be the blowup of $o$. In the chart where $x$ generates the ideal $(x, y, z)$ we write $y = x y_1$ and $z = x z_1$. The equation $xy = z^2$ becomes $x^2 y_1 = x^2 z_1^2$, and the strict transform is $y_1 = z_1^2$. So this chart is $U_x = \operatorname{Spec} k[x, z_1]$, with $y = x z_1^2$ and $z = x z_1$. In the same way the chart of $y$ is $U_y = \operatorname{Spec} k[y, z_2]$, with $x = y z_2^2$ and $z = y z_2$. In the chart of $z$ we have $x = z x_3$ and $y = z y_3$ with $x_3 y_3 = 1$. So $x_3$ is a unit there, $z_1 = 1/x_3$, and this chart lies in $U_x$. So $U_x$ and $U_y$ cover $\tilde X$. Both charts are planes, so $\tilde X$ is regular. The exceptional curve $E' = \pi^{-1}(o)$ is $x = 0$ in $U_x$ and $y = 0$ in $U_y$, with the coordinates $z_1$ and $z_2$, and $z_1 z_2 = z^2/(xy) = 1$ on the overlap. So $E' \cong \mathbb{P}^1_k$. The morphism $\pi$ is an isomorphism over $X \setminus \{o\}$, which is the regular locus of $X$, so $\pi$ is a resolution of $X$.
+
+*Step 4: the alteration factors through the resolution.* On $V_s$ the ideal $(s^2, st, t^2)$ of $\varphi_1^{-1}(o)$ is $(s^2, s^2 t_1, s^2 t_1^2) = (s^2)$, and in the same way it is $(t^2)$ on $V_t$. So it is an invertible ideal, and by the universal property of the blowup [Har, Proposition II.7.14] the morphism $\varphi_1$ factors uniquely as $\varphi_1 = \pi \circ \psi$ with $\psi \colon X_1 \to \tilde X$. On $V_s$ we have $x = s^2$ and $z/x = st/s^2 = t_1$, so $\psi$ maps $V_s$ to $U_x$ by
+$$\psi^*(x) = s^2, \qquad \psi^*(z_1) = t_1.$$
+In the same way $\psi$ maps $V_t$ to $U_y$ by $y = t^2$ and $z_2 = s_1$. So $\psi$ is finite and flat of degree 2: over $U_x$ the ring $k[s, t_1]$ is a free $k[x, z_1]$-module with the basis $1, s$. The pullback of the Cartier divisor $E'$, which is $x = 0$ on $U_x$, is $s^2 = 0$. So $\psi^* E' = 2E$, and $\psi$ maps $E$ isomorphically onto $E'$, by $t_1 \mapsto z_1$.
+
+*Step 5: the self-intersections.* The exceptional curve of the blowup of a point on a regular surface has $E^2 = -1$ [Har, Proposition V.3.1]. On $\tilde X$ we compute $E'^2$ from a principal divisor. The function $x$ vanishes to order 1 along $E'$ in $U_x$. In $U_y$ we have $x = y z_2^2$, so $x$ vanishes to order 1 along $E'$ and to order 2 along the curve $L = V(z_2)$, which is the strict transform of the line $x = z = 0$ of the cone. The curves $L$ and $E'$ meet transversally at one point. So $\operatorname{div}(x) = E' + 2L$, and $0 = \operatorname{div}(x) \cdot E' = E'^2 + 2$, so $E'^2 = -2$. The projection formula for the finite flat morphism $\psi$ of degree 2 says that $\psi^* D \cdot \psi^* D' = 2 (D \cdot D')$ [Ful93]. For $D = D' = E'$ it gives $(2E)^2 = 4 E^2 = -4 = 2 E'^2$, and the two computations agree.
+
+*Step 6: the role of the characteristic.* If $\operatorname{char} k \ne 2$, then $\psi$ is étale outside $E$, and it is the quotient of $X_1$ by the involution $s \mapsto -s$ on $V_s$, which is the lift of $(s, t) \mapsto (-s, -t)$. If $\operatorname{char} k = 2$, then $k(s, t_1)$ is purely inseparable over $k(s^2, t_1)$, and $\psi$ is a purely inseparable double cover. In both cases the degree of $\varphi_1$ comes from $\psi$ alone, and the resolution $\pi$ is hidden inside $\varphi_1$.
+
+The same construction works for the cone $X_n = \operatorname{Spec} k[x, y, z]/(xy - z^n)$ with $n \ge 2$, and the map $\mathbb{A}^2_k \to X_n$ given by $x = s^n$, $y = t^n$ and $z = st$. With $w = st$ the function fields are $k(s, w)$ and $k(s^n, w)$, so the degree is $n$. If $n$ is prime to the characteristic, the map is the quotient by the group $\mu_n$ of $n$-th roots of unity, acting by $(s, t) \mapsto (\zeta s, \zeta^{-1} t)$, and it is generically étale. If $n = p = \operatorname{char} k$, the extension is purely inseparable, and the map is an alteration of degree $p$ that is not generically étale. For $X_2$ the regular alteration factors through a resolution. The alterations of Chapter 2 have no reason to do so, and in characteristic $p$ in dimension at least 4 no resolution is known through which one could factor them.
 
 ### Notes and references
 
