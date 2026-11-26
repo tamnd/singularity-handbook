@@ -26,7 +26,7 @@ Lean: `Singularity.IsConvexSubgroup.le_or_le`
 
 **Proposition 1.2.3.** Let $V$ be a valuation ring of $K$ with valuation $v$ and value group $\Gamma$. For a prime ideal $\mathfrak{p}$ of $V$, let $\Delta_\mathfrak{p}$ be the set of $\gamma \in \Gamma$ such that $\gamma = v(x)$ or $\gamma = -v(x)$ for some $x \in V \setminus \mathfrak{p}$. For a convex subgroup $\Delta$ of $\Gamma$, let $\mathfrak{p}_\Delta$ be the set of $x \in V$ such that $v(x) > \delta$ for each $\delta \in \Delta$. Then $\mathfrak{p} \mapsto \Delta_\mathfrak{p}$ and $\Delta \mapsto \mathfrak{p}_\Delta$ are inverse bijections between the prime ideals of $V$ and the convex subgroups of $\Gamma$. They reverse inclusion.
 
-Lean: `ValuationSubring.primeSpectrumOrderEquiv` (in Mathlib, in the form of primes and rings between $V$ and $K$)
+Lean: `ValuationSubring.primeSpectrumOrderEquiv` (in Mathlib, in the form of primes and rings between $V$ and $K$), `Singularity.primeSpectrumEquivConvexSubgroup` (the bijection with the convex subgroups)
 
 *Proof.* Let $\mathfrak{p}$ be a prime ideal and let $S = v(V \setminus \mathfrak{p}) \subseteq \Gamma_{\ge 0}$. If $x \in V \setminus \mathfrak{p}$ and $y \in V$ with $0 \le v(y) \le v(x)$, then $x = (x/y)y$ with $x/y \in V$, so $y \notin \mathfrak{p}$. Thus $S$ is closed downwards in $\Gamma_{\ge 0}$. Since $\mathfrak{p}$ is prime, $S$ is closed under addition. Now $\Delta_\mathfrak{p} = S \cup (-S)$. This set is closed under negation and contains $0$. Let $\alpha, \beta \in S$. Then $\alpha + \beta \in S$, and $|\alpha - \beta| \le \max(\alpha, \beta)$, so $|\alpha - \beta| \in S$. Thus $\Delta_\mathfrak{p}$ is a subgroup. It is convex, because $S$ is closed downwards.
 
@@ -38,7 +38,7 @@ The prime $\mathfrak{m}_V$ corresponds to $\Delta = 0$, and the prime $0$ corres
 
 **Corollary 1.2.4.** Let $v$ be a valuation of finite rank. Then $\dim \mathcal{O}_v$ is the rank of $v$.
 
-Lean: none yet
+Lean: `Singularity.ringKrullDim_eq_natCard_convexSubgroup_sub_one` (for finitely many convex subgroups)
 
 *Proof.* By Lemma 1.2.2 and Proposition 1.2.3, the prime ideals of $\mathcal{O}_v$ form a chain with as many elements as there are convex subgroups. If the rank is $t$, there are $t + 1$ convex subgroups, so there are $t + 1$ primes, and the longest chain of primes has length $t$. $\square$
 
@@ -66,4 +66,4 @@ The argument for subgroups of $\mathbb{R}$ above is the case of this lemma for a
 
 **Example 1.2.7 (the lexicographic group $\mathbb{Z}^n$).** Order $\mathbb{Z}^n$ lexicographically: $(a_1, \dots, a_n) > 0$ if the first nonzero entry is positive. For $0 \le j \le n$ let $\Delta_j = 0^{n-j} \times \mathbb{Z}^j$, the set of vectors whose first $n - j$ entries are 0. Each $\Delta_j$ is convex. Indeed, let $0 \le \gamma \le \delta$ with $\delta \in \Delta_j$, and let $a_i$ be the first nonzero entry of $\gamma$. If $i \le n - j$, then $a_i > 0$ and $\delta - \gamma$ has first nonzero entry $-a_i < 0$ at place $i$, so $\delta < \gamma$, which is false. We show that these are all the convex subgroups. Let $\Delta \ne 0$ be convex, and let $j$ be the largest index such that $\Delta$ contains a vector $\delta > 0$ whose first nonzero entry is at place $n - j + 1$. Then $\Delta \subseteq \Delta_j$, because a vector of $\Delta$ with an earlier nonzero entry would give a larger $j$. Each $\gamma \in \Delta_j$ with $\gamma \ge 0$ satisfies $0 \le \gamma \le N\delta$ for a large integer $N$, since the first entry of $\delta$ in the block $\Delta_j$ is positive. So $\Delta = \Delta_j$. The case $\Delta = 0$ is $\Delta_0$. Thus $\mathbb{Z}^n$ with the lexicographic order has the $n + 1$ convex subgroups $\Delta_0 \subsetneq \dots \subsetneq \Delta_n$. Its rank is $n$, and its rational rank is $n$. This is the case of equality in Proposition 1.2.5.
 
-Lean: none yet
+Lean: `Singularity.LexZn.isConvexSubgroup_iff`, `Singularity.LexZn.natCard_convexSubgroup` (the convex subgroups, not the rational rank)

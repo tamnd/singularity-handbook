@@ -51,7 +51,7 @@ Node: SG0000000Y · Lean: `Singularity.abhyankar_inequality`
 
 **Corollary 2.1.6.** Let $K/k$ be a function field of transcendence degree $d$, and let $v$ be a valuation of $K/k$. Then the rank of $v$, the rational rank of $v$ and the dimension of $v$ are at most $d$. The valuation ring $\mathcal{O}_v$ has dimension at most $d$.
 
-Lean: none yet
+Lean: `Singularity.rank_le_and_ringKrullDim_le_trdeg` (for finite $\operatorname{trdeg}_k K$)
 
 *Proof.* Theorem 2.1.5 bounds the rational rank and the dimension. Proposition 1.2.5 bounds the rank by the rational rank, and Corollary 1.2.4 gives $\dim \mathcal{O}_v$ as the rank. $\square$
 
