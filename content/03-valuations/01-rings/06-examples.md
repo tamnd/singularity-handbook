@@ -48,13 +48,15 @@ This is the *valuation of the arc* $(t, \varphi(t))$. Its value group is a subgr
 
 **Lemma 1.6.5.** The power series $\varphi = \sum_{i \ge 1} t^{i!}$ is transcendental over $k(t)$, for each field $k$.
 
-Lean: none yet
+Lean: `Singularity.transcendental_factorialSeries`, `Singularity.transcendental_factorialSeries_ratFunc`
 
 *Proof.* Assume that $\varphi$ is algebraic over $k(t)$. Let $P \in k[t][Y]$ be a nonzero multiple of its minimal polynomial by an element of $k[t]$. So $P$ is irreducible in $k(t)[Y]$, $P(t, \varphi) = 0$, and $P$ has degree $d \ge 1$ in $Y$. Let $c$ be the largest degree in $t$ of a coefficient of $P$. For $N \ge 1$ let $\varphi_N = \sum_{i=1}^N t^{i!} \in k[t]$, a polynomial of degree $N!$.
 
 First, $P(t, \varphi_N) \ne 0$. If $d \ge 2$, then $P$ has no root in $k(t)$ because it is irreducible. If $d = 1$, the only root of $P$ is $\varphi$, and $\varphi \ne \varphi_N$. Second, $Y - Y'$ divides $P(t, Y) - P(t, Y')$ in $k[t][Y, Y']$. So $\varphi - \varphi_N$ divides $P(t, \varphi) - P(t, \varphi_N) = -P(t, \varphi_N)$ in $k[[t]]$, and
 $$\operatorname{ord}_t P(t, \varphi_N) \ge \operatorname{ord}_t(\varphi - \varphi_N) = (N + 1)!.$$
 But $P(t, \varphi_N)$ is a nonzero polynomial of degree at most $c + d \cdot N!$, and the order of a nonzero polynomial is at most its degree. So $(N + 1) \cdot N! \le c + d \cdot N!$. This is false for $N \ge c + d$. $\square$
+
+The Lean proof uses the same gap argument, but it does not use the minimal polynomial. If a nonzero $P \in k[t][Y]$ has $P(t, \varphi) = 0$, then the gap argument gives $P(t, \varphi_N) = 0$ for each large $N$. The partial sums $\varphi_N$ are distinct, and a nonzero polynomial in $Y$ over $k[t]$ has only finitely many roots. This is a contradiction. The second Lean name states the lemma over $k(t)$, with $\varphi$ in the field $k((t))$ of Laurent series.
 
 **Example 1.6.6 (an arc).** Let $\varphi = \sum_{i \ge 1} t^{i!}$. By Lemma 1.6.5, $v_\varphi$ is a valuation of $K/k$. It is discrete of rank 1, with $\Gamma_{v_\varphi} = \mathbb{Z}$ and residue field $k$. Its center on $\mathbb{A}^2_k$ is the origin. Its dimension is 0. So by the last paragraph of Section 1.4, its center on each model of $K/k$ on which it has a center is a closed point. A proper model always contains a center, by Proposition 1.4.4. A model that is not proper need not contain one. For example, $v_\varphi$ has no center on $\mathbb{A}^2_k \setminus \{0\}$. Indeed, a center on this open set would also be a center on $\mathbb{A}^2_k$, and by Proposition 1.4.3 the only center on $\mathbb{A}^2_k$ is the origin. In particular $v_\varphi$ is not the order of vanishing along a curve on any model. Example 2.4.2 shows that the Abhyankar inequality is strict for $v_\varphi$.
 
