@@ -26,7 +26,7 @@ Now $\sum_{i,j} c_{ij}x_iy_j = \sum_i x_is_i$. For each $i$ with $s_i \ne 0$, th
 
 **Corollary 2.1.3.** Let $L/K$ be finite of degree $n$. Then $ef \le n$. If $L/K$ is algebraic, then $\Gamma_w/\Gamma_v$ is a torsion group and $Lw/Kv$ is algebraic.
 
-Lean: `Singularity.finite_quotient_of_valuation_mem` (the claim that $e$ is finite, for $K$ a subfield of $L$)
+Lean: `Singularity.finite_quotient_of_valuation_mem` (the claim that $e$ is finite, for $K$ a subfield of $L$), `Singularity.finiteDimensional_residueField_of_residue_mem` (the claim that $f$ is finite, for $K$ a subfield of $L$)
 
 *Proof.* If $e \ge m$ and $f \ge n'$, choose $x_1, \dots, x_m$ with values in distinct cosets and $y_1, \dots, y_{n'}$ with independent residues. Lemma 2.1.2 gives $mn'$ elements of $L$ that are independent over $K$, so $mn' \le n$. Thus $e$ and $f$ are finite and $ef \le n$. If $L/K$ is algebraic, each element of $L$ lies in a finite subextension $L'$. The value of the element is then in $\Gamma_{w|L'}$, which has finite index over $\Gamma_v$, and its residue, if it is defined, is algebraic over $Kv$. $\square$
 
