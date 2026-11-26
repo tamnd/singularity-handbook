@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.45] - 2026-11-27
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.45.
 - Volume 7, Section 3.13 now proves Question 3.13.18 for $n = 3$ and the runs that take only two charts, each at the origin. Lemma 3.13.19 compares the monomials of $g$ along the irrational ray of the chart sequence, and Theorem 3.13.20 proves that for $m$ large both corner curves have $\nu^G = d_m \ge \rho$. Example 3.13.21 shows that the blowups of the corner curves alone can keep $\rho$ for ever. Volume 9, Section 3.15 reports the results and the computer tests.
 - Theorem 3.13.20 and Example 3.13.21 have the Node lines of the map nodes SG0000005R and SG0000005S. The line `singularity` of `EDITION` now pins the map release 0.4.52.
 
