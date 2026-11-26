@@ -12,9 +12,11 @@ In this section $v$ is a valuation of a field $K$ and $L/K$ is a finite extensio
 
 **Lemma 3.1.1.** Let $w$ and $w'$ be extensions of $v$ to $L$ with $\mathcal{O}_w \subseteq \mathcal{O}_{w'}$. Then $w = w'$.
 
-Lean: none yet
+Lean: `Singularity.ValuationSubring.eq_of_le_of_comap_eq`
 
 *Proof.* Assume that there is an element $z \in \mathcal{O}_{w'} \setminus \mathcal{O}_w$. Then $w(z^{-1}) > 0$. If $w'(z) > 0$, then $z^{-1} \notin \mathcal{O}_{w'}$, so $z^{-1} \notin \mathcal{O}_w$, and $z \in \mathcal{O}_w$. This is false, so $w'(z) = 0$. By Corollary 2.1.3 the group $\Gamma_w/\Gamma_v$ is finite, say of order $e$. So $w(z^{-e}) = v(c)$ for some $c \in K^\times$, and $v(c) > 0$. The element $u = z^{-e}/c$ has $w(u) = 0$, so it is a unit of $\mathcal{O}_w$ and of $\mathcal{O}_{w'}$, and $w'(u) = 0$. But $w'(u) = -e\,w'(z) - v(c) = -v(c) < 0$. This is a contradiction, so $\mathcal{O}_{w'} = \mathcal{O}_w$, and $w = w'$ by Theorem 1.1.7. $\square$
+
+The Lean statement is for each algebraic extension $L/K$, and for two valuation rings of $L$ with the same intersection with $K$. The proof uses only the fact that a power of each value of $L$ is a value of $K$.
 
 **Theorem 3.1.2 (fundamental inequality).** Let $w_1, \dots, w_g$ be distinct extensions of $v$ to $L$, with ramification indices $e_i$ and residue degrees $f_i$. Then
 $$\sum_{i=1}^g e_if_i \le n.$$
