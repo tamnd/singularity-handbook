@@ -1,6 +1,6 @@
 ---
 title: Runs that follow no curve
-nodes: [SG0000005K]
+nodes: [SG0000005K, SG0000005M]
 sources: [CP19, CJS20, Hir64, Chr79]
 status: drafted
 drafted_by: writer
@@ -179,6 +179,8 @@ Let $P_0$ be the origin, and let $P_0, P_1, \dots$ be a sequence of the $y$-char
 4. For $n \ge 4$, parts 1 and 2 hold for the same $g$ with more variables that are not in $\Delta$.
 
 So Hypothesis 3.13.12 is false, and the answer to Question 3.13.13 is no.
+
+Node: SG0000005M
 
 *Proof.* At each point of the sequence we use coordinates $(x, y, z)$ with $\Delta = \{y, z\}$ and write
 $$g = y^a z^b (x^p + y^m z^l), \qquad M = y^m z^l.$$

@@ -58,7 +58,7 @@ Example 3.15.7 shows that also a subvariety is not sufficient. The run sees only
 
 ### Status
 
-The map has the node SG0000005K for Hypothesis 3.15.5, and the nodes SG0000005H and SG0000005J for the two examples of Section 3.14, with Lean proofs. Theorems 3.15.1 and 3.15.2 and Examples 3.15.3 and 3.15.4 have proofs in the text and no Lean proof yet. Example 3.15.7 shows that the hypothesis is false, and the map will record this with a counterexample node. Lemma 3.15.6 and Example 3.15.7 have proofs in the text and no Lean proof yet. An outside expert has not yet read the result, and the milestone S7 asks for this.
+The map has the node SG0000005K for Hypothesis 3.15.5, and the nodes SG0000005H and SG0000005J for the two examples of Section 3.14, with Lean proofs. Theorems 3.15.1 and 3.15.2 and Examples 3.15.3 and 3.15.4 have proofs in the text and no Lean proof yet. Example 3.15.7 shows that the hypothesis is false, and the map has the node SG0000005M for it. Lemma 3.15.6 and Example 3.15.7 have proofs in the text and no Lean proof yet. An outside expert has not yet read the result, and the milestone S7 asks for this.
 
 ### Notes and references
 
