@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.47] - 2026-11-27
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.47.
 - Volume 7, Corollary 3.13.23 gives the corner curves with $\nu^G \ge \rho$ at the end of each long enough stretch of corner charts with no translation, with the Node line of the map node SG0000005V and the results of the test of note 27 of the research notes. Volume 9, Section 3.15 reports the result.
 - The line `singularity` of `EDITION` now pins the map release 0.4.54.
 
