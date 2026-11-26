@@ -1,6 +1,6 @@
 ---
 title: Runs that follow no curve
-nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P, SG0000005Q]
+nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P, SG0000005Q, SG0000005R, SG0000005S]
 sources: [CP19, CJS20, Hir64, Chr79]
 status: drafted
 drafted_by: writer
@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## Runs that follow no curve
 
-Hypothesis 3.12.5 says that each infinite run follows a formal curve along which the order of $G$ is at least $\rho$. In this section we prove the hypothesis in two variables, and we prove its second half in each dimension: if an infinite run follows a regular formal curve, then the order of $G$ along the curve is $\rho$ or $\rho + 1$. Then we show that the first half is false in three variables. An infinite run can take the corner of two components of the divisor at each step, and such a run follows no formal curve. It lies on a surface. Last, we give the example of Cossart and Piltant in our setting. There the run follows a formal curve, but the curve is transcendental, and its Zariski closure is a plane. So in each form of the hypothesis that can give the centers of a resolution, the curve must be replaced by a subvariety of positive dimension, and the centers of the resolution can be surfaces. We state this form as Hypothesis 3.13.12, and we isolate the open step as Question 3.13.13. Last, we show that the answer to the question is no, also in the first case with $\tau_\rho = 1$. A run can take the corner at each step and stay on no subvariety along which the order of $G$ is at least $\rho$. So Hypothesis 3.13.12 is false, and the centers must also come from subvarieties that the run does not follow. We state the corrected form as Question 3.13.18.
+Hypothesis 3.12.5 says that each infinite run follows a formal curve along which the order of $G$ is at least $\rho$. In this section we prove the hypothesis in two variables, and we prove its second half in each dimension: if an infinite run follows a regular formal curve, then the order of $G$ along the curve is $\rho$ or $\rho + 1$. Then we show that the first half is false in three variables. An infinite run can take the corner of two components of the divisor at each step, and such a run follows no formal curve. It lies on a surface. Last, we give the example of Cossart and Piltant in our setting. There the run follows a formal curve, but the curve is transcendental, and its Zariski closure is a plane. So in each form of the hypothesis that can give the centers of a resolution, the curve must be replaced by a subvariety of positive dimension, and the centers of the resolution can be surfaces. We state this form as Hypothesis 3.13.12, and we isolate the open step as Question 3.13.13. Last, we show that the answer to the question is no, also in the first case with $\tau_\rho = 1$. A run can take the corner at each step and stay on no subvariety along which the order of $G$ is at least $\rho$. So Hypothesis 3.13.12 is false, and the centers must also come from subvarieties that the run does not follow. We state the corrected form as Question 3.13.18. Theorem 3.13.20 gives a positive answer for $n = 3$ when the run takes only two charts, each at the origin, and Example 3.13.21 shows that the corner curves alone do not resolve the singularity.
 
 We use the setting and the notation of Sections 3.8 to 3.12. So $K$ is an algebraically closed field of characteristic $p$, $g = x^r G$ is clean for the divisor $\Delta$, $d = \operatorname{ord} G$, $\rho = \rho(g)$, and $\sigma \in \{\rho, \rho + 1\}$ is the order of $\widetilde\Theta_0(G)$. By Theorem 3.1.4, part 1, $x^r$ is the largest monomial in the variables of $\Delta$ that divides $g$, so no $x_i$ with $i \in \Delta$ divides $G$. We write $J = \widetilde\Theta(G)$ and $J^0 = \widetilde\Theta_0(G)$, and we recall that $\mathfrak{m} J \subseteq J^0 \subseteq J$. In the formal ring $K[[x]]$ the number $\rho$ does not depend on the coordinates, if the components of $\Delta$ are coordinate hyperplanes, because $\Theta(g)$ does not depend on them (Section 3.6). So we can change the coordinates at each point of a run.
 
@@ -216,7 +216,57 @@ The remark suggests the corrected form of the question. It asks for a subvariety
 
 **Question 3.13.18.** Let $n \ge 3$, and let $P_0, P_1, \dots$ be an infinite run with $\rho \ge 1$ and an infinite number of corner steps. Are there an $N$ and a regular formal curve $C$ at $P_N$, in a component of $\Delta$, with $\nu^G_C(P_N) \ge \rho$?
 
-For $n = 3$ and a run where each step is at the origin of a chart and only two charts occur, a sketch in the research notes gives a positive answer with the two corner curves. The chart sequence defines a monomial valuation with an irrational weight, and for $k$ large the terms of $G_k$ that are minimal for this valuation have the $x$-degree $d_k \ge \rho$, and this is also the order of $G_k$ along $V(x_k, y_k)$ and along $V(x_k, z_k)$. The general case and the case $n \ge 4$ are open. A weaker form asks for regular $Z_k$ at $P_k$ with $G_k \in I_{Z_k}^\rho + \mathfrak{m}_{P_k}^{M_k}$ and $M_k \to \infty$. In Example 3.13.15 this holds with $Z_k = V(x_k)$, and this form may be what a proof by the data of the run can give.
+For $n = 3$ the answer is yes for the runs where each step is at the origin of a chart and only two charts occur. We prove this now. In the rest of this part, $n = 3$, and from $P_N$ on each step is at the origin of the $y$-chart or of the $z$-chart, and each chart occurs an infinite number of times. After the first step of each type, $V(y)$ and $V(z)$ are in $\Delta$. The component $V(x)$ can be in $\Delta$ or not, and we write $r_x$ for its exponent, with $r_x = 0$ if $V(x)$ is not in $\Delta$. No step uses the chart of $x$, so $r_x$ does not change.
+
+*The matrices.* At $P_m$ write $y = y_m^{a_1} z_m^{a_2}$ and $z = y_m^{b_1} z_m^{b_2}$, and let $c_1 = (a_1, b_1)$ and $c_2 = (a_2, b_2)$. At $P_N$ these are the unit vectors. A $y$-step replaces $c_1$ by $c_1 + c_2$, and a $z$-step replaces $c_2$ by $c_1 + c_2$. So the determinant stays $\pm 1$, and after one step of each type all entries are at least $1$ and go to infinity. The cones spanned by $c_1$ and $c_2$ are nested, and the sine of the angle between $c_1$ and $c_2$ is $1 / (|c_1| \, |c_2|)$. So the cones shrink to one ray $\mathbb{R}_{\ge 0} (1, \theta)$ with $0 < \theta < \infty$. The number $\theta$ is irrational: a primitive integer vector $q$ on the ray is in each cone, so $q = u c_1 + w c_2$ with integers $u, w \ge 0$, and then $|q| \ge \min(|c_1|, |c_2|)$, which goes to infinity.
+
+*The monomials.* Each step divides $x$ by the chart variable, so $x = M_m x_m$ with $M_m = y z / (y_m z_m)$. The monomial $x^i y^j z^k$ of $g_N$ becomes $x_m^i y_m^{E_1} z_m^{E_2}$ with
+$$E_s = (i + j, \, i + k) \cdot c_s - i, \qquad s = 1, 2.$$
+The map $(i, j, k) \mapsto (i, E_1 + i, E_2 + i)$ is linear with the determinant $\pm 1$. So no two monomials cancel, a monomial is a $p$-th power after a step if and only if it was one before, and no cleaning is needed. Let $\lambda(i, j, k) = (i + j) + \theta (i + k)$. Since $\theta$ is irrational, the least value of $\lambda$ on the support of $g_N$ is taken at one pair $(A, B) = (i + j, i + k)$. Let $F$ be the set of the monomials of $g_N$ with this pair, let $i_0$ be the largest exponent of $x$ on $F$, and let $T$ be the monomial of $F$ with this exponent. For a monomial $\mu = x^i y^j z^k$ put $\delta(\mu) = (i + j - A, \, i + k - B)$. Then $E_s(\mu) - E_s(T) = \delta(\mu) \cdot c_s - (i - i_0)$.
+
+**Lemma 3.13.19.** There is an $m_0$ such that for each $m \ge m_0$, each monomial $\mu$ of $g_N$ that is not in $F$ and $s = 1, 2$, we have $\delta(\mu) \cdot c_s > 0$ and $\delta(\mu) \cdot c_s \ge i - i_0$.
+
+*Proof.* Choose $m_1$ such that for $m \ge m_1$ all the entries of $c_1$ and $c_2$ are at least $A + B + 1$, and each column $c = (c', c'')$ satisfies $c'' \le (\theta + 1) c'$ and $c' \le (1/\theta + 1) c''$. This is possible since $c_s / |c_s|$ goes to the direction of $(1, \theta)$. Write $\delta = (\delta_1, \delta_2)$.
+
+If $i \ge A + B$, then $\delta_1 \ge i - A \ge 0$ and $\delta_2 \ge i - B \ge 0$, so $\delta \cdot c \ge \delta_1 + \delta_2 \ge 2i - A - B \ge i$. This is positive unless $i = A = B = 0$, and then $\mu$ is the constant term, which is in $F$.
+
+If $i < A + B$ and $j \ge A + B(\theta + 1) + 1$, then $\delta_1 \ge j - A$ and $\delta_2 \ge -B$, so $\delta \cdot c \ge (j - A) c' - B c'' \ge c' (j - A - B(\theta + 1)) \ge c' > i$. The case $k \ge B + A(1/\theta + 1) + 1$ is the same with $y$ and $z$ exchanged.
+
+The other monomials with $i < A + B$ are a finite set. For such a $\mu$ not in $F$, $\lambda(\mu) > \lambda(T)$, so $\delta_1 + \theta \delta_2 > 0$. Since $c_s / |c_s|$ goes to the direction of $(1, \theta)$ and $|c_s|$ goes to infinity, $\delta \cdot c_s$ goes to infinity. The number $i - i_0$ is bounded on this finite set, so there is an $m_2$ for these monomials. Take $m_0 = \max(m_1, m_2)$. $\square$
+
+**Theorem 3.13.20.** Let $n = 3$, and let $P_N, P_{N+1}, \dots$ be an infinite run where each step is at the origin of the $y$-chart or of the $z$-chart and each chart occurs an infinite number of times. Then for $m \ge m_0$:
+
+1. The initial form of $G_m$ is $c \, x_m^{d_m}$ with $c \ne 0$ and $d_m = i_0 - r_x$. So $d_m \in \{\rho, \rho + 1\}$.
+2. The corner curves $C = V(x_m, y_m)$ and $C = V(x_m, z_m)$ have $\nu^G_C(P_m) = d_m \ge \rho$.
+3. If $p \nmid d_m$ and $\rho = d_m - 1$, then the forms of degree $\rho$ of $J$ at $P_m$ are the multiples of $x_m^{\rho}$.
+
+So Question 3.13.18 has a positive answer for these runs.
+
+Node: SG0000005R
+
+*Proof.* By Lemma 3.13.19, $E_s(\mu) \ge E_s(T)$ for $\mu$ not in $F$. For $\mu$ in $F$, $\delta(\mu) = 0$ and $E_s(\mu) - E_s(T) = i_0 - i \ge 0$. So $T$ has the least exponent of $y_m$ and the least exponent of $z_m$, and $r = (r_x, E_1(T), E_2(T))$ at $P_m$. Thus $G_m$ is the sum of the terms $x_m^{i - r_x} y_m^{E_1(\mu) - E_1(T)} z_m^{E_2(\mu) - E_2(T)}$, with the coefficients of $g_N$.
+
+Part 1. The term of $\mu$ has the degree $(i - r_x) + \delta \cdot c_1 + \delta \cdot c_2 - 2(i - i_0)$. If $\mu$ is not in $F$ and $i > i_0$, the lemma gives a degree of at least $i - r_x > i_0 - r_x$. If $\mu$ is not in $F$ and $i \le i_0$, the degree is at least $(i - r_x) + 2 + 2(i_0 - i) > i_0 - r_x$. If $\mu$ is in $F$ and $i < i_0$, the degree is $(i - r_x) + 2(i_0 - i) > i_0 - r_x$. So $T$ gives the only term of the least degree, and $d_m = i_0 - r_x$. The run keeps $\rho$, and $d_m \in \{\rho, \rho + 1\}$ by Theorem 3.1.4.
+
+Part 2. Let $C = V(x_m, y_m)$. The term of $\mu$ in $g_m$ has the order $i + E_1(\mu)$ along $C$, and $i + E_1(\mu) - (i_0 + E_1(T))$ is $\delta(\mu) \cdot c_1 > 0$ for $\mu$ not in $F$ and $0$ for $\mu$ in $F$. So the order of $g_m$ along $C$ is $i_0 + E_1(T)$. The point $g_m$ is clean, the coordinates are adapted to $C$, and the components of $\Delta$ that contain $C$ are $V(y_m)$ and, if it is in $\Delta$, $V(x_m)$. By Lemma 3.13.1, $\nu^G_C = i_0 + E_1(T) - E_1(T) - r_x = d_m$. The curve $V(x_m, z_m)$ is the same.
+
+Part 3. The generator $\partial_x G_m$ has the initial form $d_m c \, x_m^{d_m - 1}$, which is not $0$. The other generators of $J$ have the order at least $d_m > \rho$. $\square$
+
+If $p \mid d_m$ or $\rho = d_m$, other terms of $G_m$ can give forms of degree $\rho$, and part 3 can fail. Part 3 gives that the directrix is $V(x_m)$, so by Theorem 3.7.1 no later step with the same $\rho$ has a translation in $x$. Theorem 3.13.20 also holds for Example 3.13.15: there $V(x)$ has $\nu^G = 0$, and both corner curves have $\nu^G = p$.
+
+A run of the general type is more complex. A step at a point that is not a chart origin is a step at the origin after a linear change of the coordinates. If the translations from $P_N$ on are only in the free coordinate $x$ and only a finite number of them are not $0$, then the run is a run of the type of Theorem 3.13.20 in the coordinates $(x_N - \varphi, y_N, z_N)$ for a polynomial $\varphi$. A computer test over $\mathbb{F}_2$ and $\mathbb{F}_3$ found a coordinate curve in a component of $\Delta$ with $\nu^G \ge \rho$ at the last point of $2802$ of $2805$ random branches with many corner steps, of the depth at most $20$, and at an earlier point of the other $3$. All $72$ branches with translations in the tail had such a curve. The runs with an infinite number of nonzero translations in $x$, the runs that leave a component of $\Delta$ an infinite number of times, and the case $n \ge 4$ are open.
+
+The corner curves alone do not resolve the singularity, as the next example shows.
+
+**Example 3.13.21.** Let $n = 3$, $\Delta = \{y, z\}$ and $g = x^a y^b z^c$ with $a \ge 2$, $p \nmid a$ and $a + b \ge p$. Then $\rho = a - 1$ and $d = a$. The corner curve $C = V(x, y)$ has $\nu^G_C = a \ge \rho$, and it satisfies (H1) and (H2) of Section 3.4. After its blowup, the only point over the origin with the same $\rho$ is the origin of the $y$-chart, where $g' = x'^a y^{a + b - p} z^c$. The same holds for $V(x, z)$. So each sequence of blowups of corner curves keeps $\rho = a - 1$ for ever.
+
+*Proof.* Here $G = x^a$, and $J$ has the generators $b x^a$, $c x^a$ and $a x^{a - 1}$, so $\rho = a - 1$. The order of $g$ along $C$ is $a + b \ge p$, and $\nu^G_C = a + b - b = a$. (H1) holds, since $x^{a - 1}$ has the order $a - 1 = \rho$ along $C$. The ideal $\widetilde\Theta_C(G)$ has the generators $b x^a$, $c x^a$ and $a y x^{a - 1}$, of the order $a$ along $C$, so (H2) holds. In the $y$-chart with the translation $t$, $x = y (x' + t)$ and $g' = (x' + t)^a y^{a + b - p} z^c$. If $t \ne 0$, then $\partial_{x'} G' = a (x' + t)^{a - 1}$ is a unit, so $\rho = 0$. In the $x$-chart, $y = x y'$, $\Delta' = \{x, y, z\}$ and $G' = 1$. If $p \nmid b$, then $r_y G'$ is a unit. If $p \mid b$, then $a + b - p \equiv a \not\equiv 0$, and $r_x G'$ is a unit. So $\rho = 0$ there. The curve $V(x, z)$ is the same with $y$ and $z$ exchanged. $\square$
+
+Node: SG0000005S
+
+In this example the surface $V(x)$ has $\nu^G = a \ge \rho$, and its blowup gives $\rho = 0$. In Example 3.13.15 the corner curves work, and no surface works. So a center must be chosen from the whole locus where $\nu^G \ge \rho$, with curves and surfaces in it, and neither type is sufficient alone. A computer test of the corner curves at random points found that $1873$ of $1925$ satisfy (H1) and (H2), and $\rho$ never went up after such a blowup.
+
+A weaker form of Question 3.13.18 asks for regular $Z_k$ at $P_k$ with $G_k \in I_{Z_k}^\rho + \mathfrak{m}_{P_k}^{M_k}$ and $M_k \to \infty$. In Example 3.13.15 this holds with $Z_k = V(x_k)$, and this form may be what a proof by the data of the run can give.
 
 ### What this means for the centers
 
@@ -229,4 +279,4 @@ The results of this section change the plan of Section 3.12 in four ways.
 
 ### Notes and references
 
-Example 3.13.11 is Example 3.18 of [CP19], in the coordinates of this chapter. The transcendence argument uses the theorem of Christol [Chr79]. The use of the history of the divisor is from [CJS20], and maximal contact is from [Hir64]. Lemma 3.13.1, Theorems 3.13.6 and 3.13.8, Example 3.13.10, Hypothesis 3.13.12, Question 3.13.13, Lemma 3.13.14, Example 3.13.15, Remarks 3.13.16 and 3.13.17 and Question 3.13.18 are a result of the milestone S7.18 of this project (tamnd/singularity#245).
+Example 3.13.11 is Example 3.18 of [CP19], in the coordinates of this chapter. The transcendence argument uses the theorem of Christol [Chr79]. The use of the history of the divisor is from [CJS20], and maximal contact is from [Hir64]. Lemma 3.13.1, Theorems 3.13.6 and 3.13.8, Example 3.13.10, Hypothesis 3.13.12, Question 3.13.13, Lemma 3.13.14, Example 3.13.15, Remarks 3.13.16 and 3.13.17, Question 3.13.18, Lemma 3.13.19, Theorem 3.13.20 and Example 3.13.21 are a result of the milestone S7.18 of this project (tamnd/singularity#245).
