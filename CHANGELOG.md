@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.49] - 2026-11-27
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.49.
+
 ### Fixed
 
 - Volume 7, Example 3.13.21: the old text said that the blowups of corner curves keep $\rho$ for ever. This is true only for $a > p$. For $a < p$ the run stops after a finite number of steps at a point where no corner curve is a center of Theorem 3.4.5, and $\rho = a - 1$ there. The conclusion of the example does not change. The proof now has this step, a worked case with $p = 5$, and a Lean paragraph.
