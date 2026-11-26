@@ -85,7 +85,7 @@ The hypothesis of Lemma 1.2.6 is necessary. The next surface is singular along a
 2. Let $\nu : \mathbb{A}^2_k = \operatorname{Spec} k[s, t] \to X$ be the morphism given by $x \mapsto st$, $y \mapsto s$, $z \mapsto t^2$. Then $\nu$ is the normalization of $X$. It is finite, and it is an isomorphism over $X \setminus L$.
 3. Let $k$ be algebraically closed and let $c \in k$. If the characteristic of $k$ is not 2 and $c \ne 0$, then the fibre of $\nu$ over $(0, 0, c)$ has two points. If the characteristic is 2 or $c = 0$, it has one point.
 
-Lean: none yet
+Lean: `Singularity.whitneyNormalization_equation`, `Singularity.whitney_exists_eq_add_mul` (part 2, the map and $k[s, t] = A' + A' t$, not the normality)
 
 *Proof.* 1. The polynomial $F$ is monic of degree 2 in $x$ over the factorial ring $k[y, z]$, and its coefficient of $x$ is 0. If $F = (x - r)(x - r')$, then $r' = -r$ and $r^2 = y^2z$. This is impossible, since $z$ is not a square in $k(y, z)$. Thus $F$ is irreducible and $X$ is integral. On $X \setminus L$ we have $y \ne 0$, because $y = 0$ and $F = 0$ give $x^2 = 0$. There $\partial F/\partial z = -y^2$ does not vanish, and the Jacobian criterion (Corollary 1.8.3 of Volume 1) shows that $X \setminus L$ is regular. Let $\mathfrak{q}$ be a prime of $P = k[x, y, z]$ that contains $(x, y)$. Then $P_\mathfrak{q}$ is a regular local ring of some dimension $d$, and $F \in (x, y)^2 \subseteq \mathfrak{q}^2$. The ring $P_\mathfrak{q}/(F)$ has dimension $d - 1$ [AM69, Corollary 11.18], and its maximal ideal $\mathfrak{n}$ has $\mathfrak{n}/\mathfrak{n}^2 \cong \mathfrak{q}P_\mathfrak{q}/\mathfrak{q}^2P_\mathfrak{q}$, of dimension $d$. Thus $A_\mathfrak{q}$ is not regular, and the regular locus is $X \setminus L$. Part 2 shows that $X$ is not normal.
 

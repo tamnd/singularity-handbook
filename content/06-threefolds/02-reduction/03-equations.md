@@ -56,7 +56,7 @@ Lean: none yet
 
 **Example 2.3.4.** Let $k$ be algebraically closed and $g = x y w$. Then $g \notin R^p$, so $X_g$ is reduced. The partial derivatives are $y w$, $x w$ and $x y$. They vanish together exactly when two of $x, y, w$ are $0$, and then $z^p = -x y w = 0$. So $\operatorname{Sing} X_g$ is the union of the three lines in the hyperplane $z = 0$ over the coordinate axes of $\mathbb{A}^3$. At the origin the multiplicity is $\min(p, 3)$, the order of $z^p + x y w$. At a point $(0, a, 0, 0)$ with $a \ne 0$, Lemma 2.3.2 gives the order of $(x + a) y w = a y w + x y w$, which is 2, so the multiplicity is 2. The same holds on the other two lines. So the locus of multiplicity $p$ is the union of the three lines for $p = 2$, the origin for $p = 3$, and empty for $p \ge 5$. In all cases its image lies in $E = \operatorname{div}(x y w)$, and condition (E) holds for this $E$.
 
-Lean: none yet
+Lean: `Singularity.Examples.eval_pderiv_xyw_eq_zero_iff`, `Singularity.Examples.pow_ne_xyw`, `Singularity.Examples.pow_ne_X_mul_X_mul_X`, `Singularity.Examples.ord_X_pow_add_xyw`, `Singularity.Examples.ord_X_add_C_mul_xyw`
 
 The example is a binomial hypersurface, so it can also be resolved by combinatorial methods (Volume 9, Section 2.4). Section 3.2 shows that its invariant $\omega$ is $0$ at the origin for $p = 3$ and $E = \operatorname{div}(x y w)$.
 

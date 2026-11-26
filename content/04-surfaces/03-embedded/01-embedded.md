@@ -67,7 +67,7 @@ The next example shows that the embedded problem needs centers of dimension 1. B
 2. Let $Z' \to Z$ be the blowup along $L$, with exceptional divisor $E$. The strict transform $X'$ of $X$ is regular, $E$ is a regular irreducible divisor, and $X'$ has normal crossings with $E$. Thus $Z' \to Z$ is an embedded resolution of $X$ in one step. The morphism $X' \to X$ is the normalization $\nu$ of Example 1.2.7.
 3. Let $Z_1 \to Z$ be the blowup at the origin. In the $z$-chart the strict transform of $X$ is $V(x_1^2 - y_1^2z)$, so it is isomorphic to $X$. Each finite sequence of blowups of closed points leaves a strict transform of $X$ that is not regular.
 
-Lean: none yet
+Lean: `Singularity.whitney_lineChart_x`, `Singularity.whitney_lineChart_y`, `Singularity.whitney_pointChart_z` (parts 2 and 3, the chart equations)
 
 *Proof.* 1. Let $P = k[z][x, y]$, let $A = P/(F)$ and let $I = (x, y)A$, the ideal of $L$ in $A$. Let $P_n$ be the free $k[z]$-module spanned by the monomials of degree $n$ in $x$ and $y$, with $P_n = 0$ for $n < 0$. The polynomial $F$ lies in $P_2$, so the ideal $(F) = \bigoplus_n FP_{n-2}$ is homogeneous. We have $(x, y)^n = \bigoplus_{m \ge n} P_m$ and $I^n = ((x, y)^n + (F))/(F)$. Thus $I^n/I^{n+1} \cong P_n/FP_{n-2}$. In this quotient, $x^iy^{n-i} = x^{i-2}y^{n-i+2}z$ for $i \ge 2$. By induction on $i$, the quotient is spanned by $y^n$ and $xy^{n-1}$ for $n \ge 1$. These two elements are independent over $k[z]$. Indeed, $F$ is monic of degree 2 in $x$, so each nonzero element of $FP_{n-2}$ has degree at least 2 in $x$, and $ay^n + bxy^{n-1}$ has degree at most 1 in $x$. Thus each $I^n/I^{n+1}$ is a free module over $A/I = k[z]$, and it is flat. The line $L \cong \mathbb{A}^1_k$ is regular. So $L$ is permissible.
 
@@ -141,7 +141,7 @@ The cusp of Section 1.1 is the simplest case. There $m = 2$ and $\delta = 1$, on
 3. In the end the exceptional curves $E_1, \dots, E_5$ (numbered by the order of the blowups) form the chain $E_1, E_4, E_2, E_5, E_3$, with self-intersections $-3, -1, -4, -1, -2$. The curve $C_1$ meets $E_4$, the curve $C_2$ meets $E_5$, and both transversally.
 4. The orders of $f$ along $E_1, \dots, E_5$ are $4, 7, 8, 12, 16$.
 
-Lean: none yet
+Lean: `Singularity.cuspPair_inter`, `Singularity.cuspPair_order_five` (parts 1, 2 and 4, the intersection and the factorizations)
 
 *Proof.* 1. A common point of $C_1$ and $C_2$ has $x^3 = x^5$, so $x = 0$ or $x^2 = 1$, and in $S$ only $x = 0$, $y = 0$ is left. The curve $C_1$ is singular only at the origin: the derivatives $2y$ and $-3x^2$ vanish together on $C_1$ only there in each characteristic. Indeed, in characteristic 2 the derivative $-3x^2 = x^2$ gives $x = 0$ and then $y^2 = 0$. In characteristic 3 the derivative $2y$ gives $y = 0$ and then $x^3 = 0$. In the other characteristics both derivatives give $x = y = 0$. The same argument works for $C_2$, with $-5x^4$ in place of $-3x^2$. The lowest form of $f$ is $y^4$, so $m = 4$. The value $\delta = 9$ follows from part 2 and Corollary 3.1.9.
 

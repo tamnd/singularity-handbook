@@ -90,7 +90,7 @@ The minimal polyhedron is the *characteristic polyhedron* $\Delta(h; u)$. It is 
 
 **Corollary 3.1.6 (Tschirnhausen).** Let $S = k[[u]]$, assume that $m$ is a unit in $k$, and let $Z = X + f_{1, X}/m$. Then $f_{1, Z} = 0$, the polyhedron $\Delta(h; u; Z)$ has no solvable vertex, and therefore $\Delta(h; u; Z) = \Delta(h; u)$.
 
-Lean: none yet
+Lean: `Singularity.coeff_pred_taylor_tschirnhausen`, `Singularity.tschirnhausen_not_isSolvableVertex` (the first two claims)
 
 *Proof.* By (3.1) with $\varphi = -f_{1, X}/m$, we have $f_{1, Z} = m \varphi + f_{1, X} = 0$. Let $y$ be a solvable vertex of $\Delta(h; u; Z)$, with $\operatorname{in}_y h = (Z - \lambda U^y)^m$. Then $\lambda \ne 0$, and the coefficient of $Z^{m - 1}$ in $(Z - \lambda U^y)^m$ is $-m \lambda U^y \ne 0$. But this coefficient is $[f_{1, Z}]_{\delta} = 0$. This is a contradiction. The last claim is Theorem 3.1.5(2). $\square$
 
@@ -104,7 +104,7 @@ with the two vertices $(1, 0)$ and $(0, 3/2)$. The vertex $(0, 3/2)$ is not in $
 $$\Delta(h; x, y; Z) = (0, 3/2) + \mathbb{R}_{\ge 0}^2.$$
 Its only vertex is not in $\mathbb{N}^2$, so by Theorem 3.1.5(2) this is the characteristic polyhedron. If instead $\operatorname{char} k \ne 2$, the vertex $(1, 0)$ is not solvable: $(X - \lambda U_1)^2 = X^2 + U_1^2$ needs $-2\lambda = 0$ and $\lambda^2 = 1$. Then Corollary 3.1.6 shows that $\Delta(h; x, y; X)$ is already the characteristic polyhedron.
 
-Lean: none yet
+Lean: `Singularity.charPolyhedron_example_3_1_7_eq`
 
 **Example 3.1.8 (infinitely many steps).** Let $k$ be a field of characteristic 2, let $S = k[x, y]_{(x, y)}$, and let
 $$h = X^2 + \frac{x^2}{1 + x^2} + y^3 \in S[X].$$
@@ -112,13 +112,13 @@ In $\hat S = k[[x, y]]$ we have $x^2/(1 + x^2) = \sum_{l \ge 1} x^{2l}$, since $
 $$\theta^2 = \frac{x^2}{1 + 2x + x^2} = \frac{x^2}{1 + x^2},$$
 so $Z = X - \theta$ gives $h = Z^2 + y^3$ in one step, with the polyhedron $(0, 3/2) + \mathbb{R}_{\ge 0}^2$.
 
-Lean: none yet
+Lean: `Singularity.sq_mul_one_add_sq_of_mul_one_add` (the identity in characteristic 2)
 
 **Example 3.1.9 (mixed characteristic).** Let $S = \mathbb{Z}_{(3)}$, with $n = 1$ and $u_1 = 3$, and let $h = X^3 - 54$. This is the case $p = 3$, $a = 3$ and the unit $2$ of [CP19, Example 2.9]. Since $54 = 2 \cdot 3^3$, we have $\mathcal{S}(f_{3, X}) = \{3\}$ and $\Delta(h; 3; X) = [1, \infty)$. The residue field is $\mathbb{F}_3$, and $-54 = 3^3 \cdot (-2)$ with $-2 \equiv 1 \pmod 3$. So the initial form at the vertex $1$, in the sense of [CP19, Definition 2.6], is $X^3 + U^3 = (X + U)^3$ in $\mathbb{F}_3[U][X]$. The vertex is solvable with $\lambda = -1 = 2$. We translate by a lift of $\lambda u_1$, here $6 = 2 \cdot 3$. With $Z = X - 6$,
 $$h = (Z + 6)^3 - 54 = Z^3 + 18 Z^2 + 108 Z + 162.$$
 The $3$-adic orders are $v(18) = 2$, $v(108) = 3$ and $v(162) = 4$, so the points are $2/1$, $3/2$ and $4/3$, and $\Delta(h; 3; Z) = [4/3, \infty)$. Its vertex $4/3$ is not an integer, so it is not solvable, and by Theorem 3.1.5(2) this is the characteristic polyhedron. The lift $-3$ of $\lambda u_1$ gives $(Z - 3)^3 - 54 = Z^3 - 9 Z^2 + 27 Z - 81$, with the same polyhedron. This agrees with [CP19, Example 2.9], which gives $[(a + 1)/p, \infty)$ when $2^3 - 2 = 6$ is not divisible by $9$. Here $X$ has a point of multiplicity $3$ over the maximal ideal: in $\mathbb{Z}_{(3)}[Z]_{(3, Z)}$ the four terms of $h$ have orders $3$, $4$, $4$ and $4$.
 
-Lean: none yet
+Lean: `Singularity.example_3_1_9_expand` (the polynomial identity)
 
 ### Purely inseparable equations
 
@@ -131,7 +131,7 @@ The equations of Theorem 1.2.6 in case 1 have the form $X^p + f$ over a ring of 
 3. Let $y$ be a solvable vertex, let $\lambda \in k$ with $\lambda^p = -c$, and let $Z = X - \lambda u^y$. Then $h = Z^p + (f - c u^{p y})$.
 4. Assume that $k$ is perfect. Then $\Delta(h; u; X)$ is the characteristic polyhedron $\Delta(h; u)$ if and only if no vertex of $\Delta(h; u; X)$ lies in $\mathbb{N}^n$.
 
-Lean: none yet
+Lean: `Singularity.isSolvableVertex_X_pow_add_C_iff` (part 2)
 
 *Proof.* Part 1. Here $f_{i, X} = 0$ for $i < p$ and $f_{p, X} = f$. The set $\mathcal{S}(f)$ is the set of the minimal elements of $\operatorname{supp} f$, so the union of the sets $a + \mathbb{R}_{\ge 0}^n$ with $a \in \mathcal{S}(f)$ has the convex hull $N(f)$. Definition 3.1.1 gives $\Delta(h; u; X) = \frac1p N(f)$.
 
@@ -147,7 +147,7 @@ Part 4 does not use Theorem 3.1.5. Over a perfect field, part 3 says that one st
 $$h = X^p + t u_1^p + u_2^{p + 1}.$$
 Here $\mathcal{S}(f) = \{(p, 0), (0, p + 1)\}$, so $\Delta(h; u; X) = \operatorname{Conv}\{(1, 0), (0, \frac{p+1}{p})\} + \mathbb{R}_{\ge 0}^2$. The vertex $(1, 0)$ lies in $\mathbb{N}^2$, and the coefficient of $u_1^p$ is $t$. The element $t$ is not a $p$-th power in $k$, so the vertex is not solvable by Lemma 3.1.10(2). The vertex $(0, \frac{p+1}{p})$ is not in $\mathbb{N}^2$. So the polyhedron is minimal by Theorem 3.1.5(2). We can also see this directly. Let $\varphi \in S$, and let $b$ be the coefficient of $u_1$ in $\varphi$. Then $\varphi^p$ contains only monomials in $p \mathbb{N}^2$, and the coefficient of $u_1^p$ in $f + \varphi^p$ is $t + b^p \ne 0$. The monomial $u_2^{p + 1}$ is not in $p \mathbb{N}^2$, so it keeps its coefficient $1$. Thus $N(f + \varphi^p) \supseteq N(f)$, and $\Delta(h; u; X)$ is contained in $\Delta(h; u; X - \varphi)$.
 
-Lean: none yet
+Lean: `Singularity.example_3_1_11`, `Singularity.charPolyhedron_X_pow_add_C_of_forall`
 
 In this example $\delta(x) = 1$, so the point $x$ over $\mathfrak{m}_S$ has multiplicity $p$ by Proposition 3.2.2(3), and the initial form is $\operatorname{in} h = Z^p + t U_1^p$ with $Z = X$. The polynomial $t U_1^p$ is not a $p$-th power in $k[U_1, U_2]$, but all its partial derivatives in $U_1$ and $U_2$ are $0$. The derivation $\partial/\partial t$ of $k$ detects it: $\partial (t U_1^p)/\partial t = U_1^p \ne 0$. For this reason Cossart and Piltant add the derivations of a $p$-basis of the residue field to their module of derivations, and with them a homogeneous form is a $p$-th power if and only if all these derivations kill it [CP19, Definition 2.41 and (2.43)].
 
