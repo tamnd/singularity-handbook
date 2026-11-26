@@ -79,7 +79,7 @@ The next example computes the derivative ideals in two cases. It shows how Corol
 
 **Example 2.1.8.** (1) Let $f = y^2 - x^5$ on $\mathbb{A}^2$. The partial derivatives are $\partial_x f = -5x^4$ and $\partial_y f = 2y$. So
 $$D(f) = (y^2 - x^5, \; x^4, \; y) = (y, \; x^4), \qquad D^2(f) \ni \partial_y(y) = 1.$$
-By Corollary 2.1.5, $\operatorname{max\text{-}ord} f = 2$, and $\operatorname{cosupp}(f, 2) = V(y, x^4)$ is the origin. The ideal $D(f)$ has order 1 at the origin, as Lemma 2.1.4 says, and it contains the element $y$ of order 1. We use this ideal as a running example in Sections 2.2, 2.3 and 3.2.
+By Corollary 2.1.5, $\operatorname{max\text{-}ord} f = 2$, and $\operatorname{cosupp}(f, 2) = V(y, x^4)$ is the origin. The ideal $D(f)$ has order 1 at the origin, as Lemma 2.1.4 says, and it contains the element $y$ of order 1. We use this ideal as a running example in Sections 2.2, 2.3, 3.1 and 3.2.
 
 (2) Let $f = z^2 - x^2 y^2$ on $\mathbb{A}^3$. The partial derivatives are $-2xy^2$, $-2x^2y$ and $2z$. Since $f = z \cdot z - x \cdot xy^2$, we get
 $$D(f) = (z, \; xy^2, \; x^2 y), \qquad D^2(f) = \mathcal{O}.$$
