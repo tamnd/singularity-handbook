@@ -31,7 +31,7 @@ Let $X = V(F)$ with $F$ nonconstant. By the Jacobian criterion (Corollary 1.8.3 
 3. For $n \ge 4$, the scheme $X'$ is normal, and its only singular point is the origin $Q$ of the $z$-chart. Near $Q$ it is isomorphic to $X_{n-2}$ near the origin. For $n = 2$ and $n = 3$, the scheme $X'$ is regular.
 4. In the process of Theorem 2.2.1 for $X_n$, each normalization is the identity, and the process stops after $\lfloor n/2 \rfloor$ blowups.
 
-Lean: none yet
+Lean: `Singularity.an_xChart`, `Singularity.an_yChart`, `Singularity.an_zChart`, `Singularity.an_not_X_dvd_xChart` (part 2, the chart equations)
 
 *Proof.* 1. Let $F = xy - z^n$. As a polynomial in $x$ over $k[y, z]$, it has degree 1, and its coefficients $y$ and $-z^n$ have no common factor. Thus $F$ is irreducible, and $X_n$ is integral. The partial derivatives are $F_x = y$, $F_y = x$ and $F_z = -n z^{n-1}$. A point of $X_n$ with $x = y = 0$ has $z^n = 0$, so it is the origin. By the remark after Lemma 2.3.1, $X_n$ is regular outside the origin and $X_n$ is normal. At the origin, $xy \in \mathfrak{m}^2$, and $z^n \in \mathfrak{m}^2$ if and only if $n \ge 2$. Lemma 2.3.1 gives part 1.
 
@@ -65,7 +65,7 @@ The Lean proof of the claim on $\mathfrak{m}_P^2$ holds for each commutative rin
 
 **Example 2.3.5.** Let $k$ be an algebraically closed field of characteristic $p > 0$, and let $X = V(z^p - x^{p+1} - y^{p+1}) \subseteq \mathbb{A}^3_k$. Then $X$ is normal with one singular point at the origin. The blowup $X'$ of $X$ at the origin is normal, and it has exactly $p + 1$ singular points $P_1, \dots, P_{p+1}$, all on the exceptional curve. Near each $P_i$, the surface $X'$ is isomorphic to $X_p = V(ab - c^p)$ near the origin. The process of Theorem 2.2.1 stops after $1 + \lfloor p/2 \rfloor$ blowups.
 
-Lean: none yet
+Lean: `Singularity.separable_one_add_X_pow_succ`, `Singularity.card_roots_one_add_X_pow_succ` (the chart equations and the $p + 1$ roots, not the claim on the singular points)
 
 *Proof.* *The surface.* Let $g = x^{p+1} + y^{p+1}$ and $f = z^p - g$. Then $g_x = (p+1) x^p = x^p$ and $g_y = y^p$. By Lemma 2.3.4, a singular point has $x = y = 0$, and then $z^p = 0$, so $z = 0$. The origin is singular, since $f \in \mathfrak{m}^2$. Next, $f$ is irreducible. The derivative $g_x$ is not zero, so $g$ is not a $p$-th power in $k(x, y)$. Over an algebraic closure of $k(x, y)$ we have $z^p - g = (z - \gamma)^p$ with $\gamma^p = g$. A monic factor of degree $m$ with $0 < m < p$ is $(z - \gamma)^m$, and its coefficient of $z^{m-1}$ is $-m \gamma$. This is not in $k(x, y)$, since $\gamma \notin k(x, y)$. Thus $f$ is irreducible over $k(x, y)$, and since $f$ is monic in $z$, it is irreducible in $k[x, y, z]$. By Lemma 1.2.6, $X$ is normal.
 
@@ -173,7 +173,7 @@ As rational functions, $s_i = z^{i+1}/y$ and $t_i = y/z^i$. For $1 \le i \le m -
 
 Parts 2 to 5 are empty for $m = 1$.
 
-Lean: none yet
+Lean: `Singularity.aChain_chart_mul`, `Singularity.aChain_glue_x`, `Singularity.aChainChart_equation` (part 1, the chart equations and the gluing)
 
 *Proof.* 1. We use induction on $m$ with the recursion of Proposition 2.3.2. For $m = 1$, the surface $X_1$ is regular and $\tilde X = X_1 \cong \operatorname{Spec} k[x, y]$, with $z = xy$. This is $U_0$ with $s_0 = x$ and $t_0 = y$. For $m = 2$, Example 2.3.7 gives the two charts. The chart $\operatorname{Spec} k[y, z_2]$ with $x = y z_2^2$ and $z = y z_2$ is $U_0$ with $s_0 = z_2$ and $t_0 = y$. The chart $\operatorname{Spec} k[x, z_1]$ with $y = x z_1^2$ and $z = x z_1$ is $U_1$ with $s_1 = x$ and $t_1 = z_1$. The gluing $z_2 = z_1^{-1}$, $y = x z_1^2$ of Example 2.3.7 is the gluing of part 1.
 
