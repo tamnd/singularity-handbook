@@ -66,6 +66,18 @@ In the usual convention, a strict normal crossings divisor also has the property
 2. In characteristic 0, Corollary 3.2.5 holds for each prime $\ell$. Resolution of singularities in characteristic 0 is a much stronger result, with degree 1.
 3. Kelly uses the theorem of Gabber to prove results on Voevodsky motives over fields of characteristic $p$, with coefficients in which $p$ is invertible [Kel17].
 
+### An example of the group theory
+
+The next example shows Proposition 3.2.3 for the smallest nonabelian group. It also shows why one Sylow subgroup removes only one prime.
+
+**Example 3.2.6 (the symmetric group $S_3$).** Let $k$ be a field of characteristic different from 2 and 3. Let $S_3$ act on $X' = \mathbb{A}^3_k = \operatorname{Spec} k[x_1, x_2, x_3]$ by permutation of the coordinates. The ring of invariants is $k[e_1, e_2, e_3]$, with $e_1 = x_1 + x_2 + x_3$, $e_2 = x_1 x_2 + x_1 x_3 + x_2 x_3$ and $e_3 = x_1 x_2 x_3$, and the $e_i$ are algebraically independent. This is the fundamental theorem on symmetric polynomials [Lan02]. So $X = X'/S_3$ is again an affine space $\mathbb{A}^3_k$. Each $x_i$ is a root of the monic polynomial $T^3 - e_1 T^2 + e_2 T - e_3$, so $X' \to X$ is finite. It is a separable Galois alteration with group $S_3$ and of degree 6.
+
+Let $\ell = 2$. A 2-Sylow subgroup is $P_2 = \{1, (12)\}$. Its ring of invariants is $k[x_1 + x_2, x_1 x_2, x_3]$, by the same theorem in the two variables $x_1, x_2$. So $X'/P_2 \cong \mathbb{A}^3_k$, and $X'/P_2 \to X$ has degree $[S_3 : P_2] = 3$, which is prime to 2.
+
+Let $\ell = 3$. The 3-Sylow subgroup is the alternating group $A_3$, of index 2. Let $\Delta = (x_1 - x_2)(x_1 - x_3)(x_2 - x_3)$. A transposition $\tau$ maps $\Delta$ to $-\Delta$, and $-\Delta \ne \Delta$ since the characteristic is not 2. Let $f$ be invariant under $A_3$. Then $f + \tau f$ is symmetric and $f - \tau f$ changes sign under each transposition. A polynomial that changes sign under the transposition of $x_i$ and $x_j$ vanishes on $x_i = x_j$, so it is divisible by $x_i - x_j$, and $f - \tau f$ is $\Delta$ times a symmetric polynomial. So the ring of invariants of $A_3$ is $k[e_1, e_2, e_3, \Delta]$, and $\Delta^2$ is the discriminant, a polynomial in $e_1, e_2, e_3$. The morphism $X'/A_3 \to X$ has degree 2, which is prime to 3. It is the double cover of $\mathbb{A}^3_k$ given by a square root of the discriminant, and it is branched over the discriminant surface.
+
+The subgroups of $S_3$ have the orders 1, 2, 3 and 6, so their indices are 6, 3, 2 and 1. No subgroup has an index prime to 6 except $S_3$ itself, and its quotient is $X$. So the method of Proposition 3.2.3 gives one alteration for each prime $\ell$, and no alteration whose degree is prime to 2 and to 3 at the same time. In characteristic $p$ we want a degree prime to each $\ell \ne p$, and Section 3.3 explains how Temkin obtains it.
+
 ### Notes and references
 
 The theorem of Gabber is written in [ILO14], in particular in Exposé X by Illusie-Temkin. The earlier result of de Jong on Galois alterations [dJ97] gives the Galois alteration of Step 2 over a field. The map has node SG0000001M for Corollary 3.2.5 in the form of the statement for a variety. Nothing in this section is in the Lean library.
