@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.39] - 2026-11-26
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.39.
+
+### Changed
+
+- Volume 3 gives the Lean names of Lemmas 1.1.3, 1.2.2, 1.4.2 and 3.1.1, Proposition 1.2.5, Corollaries 1.3.3 and 1.3.5, and the last claim of Corollary 2.2.4. With this edition, all claims of Corollary 2.2.4 are in Lean (tamnd/singularity-handbook#236).
+
 ## [0.4.38] - 2026-11-26
 
 ### Added
