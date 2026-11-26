@@ -1,14 +1,14 @@
 ---
 title: Examples computed by hand
 nodes: [SG00000013, SG00000015]
-sources: [CP19, Moh87, HP19a]
+sources: [CP19, Moh87, HP19a, Mat]
 status: drafted
 drafted_by: writer
 reviewed_by: []
 ---
 ## Examples computed by hand
 
-This section computes the invariants of Section 3.2 in two examples. The first example is a point blowup at which $\epsilon$ increases and $\omega$ does not. The second example is [CP19, Remark 2.70]: two equations with the same polyhedron and different values of $\omega$. We checked each computation with a short computer program, but each step below can be done by hand.
+This section computes the invariants of Section 3.2 in four examples. The first example is a point blowup at which $\epsilon$ increases and $\omega$ does not. The second example is [CP19, Remark 2.70]: two equations with the same polyhedron and different values of $\omega$. The third example computes a characteristic polyhedron over $\mathbb{F}_3$ by vertex preparation, in two steps. The fourth example is a point blowup at which $\iota$ drops, followed by the blowup of a curve that resolves the singularity. We checked each computation with a short computer program, but each step below can be done by hand.
 
 We use these conventions. Let $k$ be a perfect field of characteristic $p$, let $S = k[[u_1, u_2, u_3]]$, and let $h = Z^p + f$ with $f$ clean (Volume 7, Definition 1.3.1). By Proposition 3.2.4, $(u; Z)$ is well adapted, and the invariants are read off from $f$. Let $\operatorname{ord} f \ge p$, so that $m(x) = p$ at the origin $x$. The blowup of the origin in the $u_j$-chart at the point with coordinates $t = (t_i)_{i \ne j}$ is
 $$u_i = u_j (u'_i + t_i) \text{ for } i \ne j, \qquad Z = u_j Z', \qquad h' = Z'^p + u_j^{-p} f.$$
@@ -68,6 +68,58 @@ Lean: none yet
 
 The term $c \, u_1^3 u_2 u_3$ does not change the polyhedron, because $w$ is not a vertex. It changes $\omega$, because the derivative in the direction $u_3$, which is not in $E$, sees each monomial of the initial form. Thus $\omega$ uses more information than the polyhedron. We compute only the invariants at the origin, and we do not check condition (E) for this example.
 
+### Vertex preparation over the prime field
+
+**Example 3.3.3.** Let $p = 3$, $k = \mathbb{F}_3$, $S = k[[u_1, u_2, u_3]]$ and
+$$h = X^3 + f, \qquad f = u_1^3 + u_1^3 u_2^3 + u_2^4 + u_3^5.$$
+The series $f$ is not clean. We compute the characteristic polyhedron by vertex preparation (Lemma 3.1.10), and then we compare with cleaning.
+
+*The first polyhedron.* By Lemma 3.1.10(1), $\Delta(h; u; X) = \frac13 N(f)$. The points $a/3$ for $a \in \operatorname{supp} f$ are $(1, 0, 0)$, $(1, 1, 0)$, $(0, \frac43, 0)$ and $(0, 0, \frac53)$. The point $(1, 1, 0)$ lies in $(1, 0, 0) + \mathbb{R}_{\ge 0}^3$, so it is not a vertex. The vertices are $(1, 0, 0)$, $(0, \frac43, 0)$ and $(0, 0, \frac53)$, and $\delta_{\mathbf 1}(h; u; X) = 1$. The vertex $(1, 0, 0)$ lies in $\mathbb{N}^3$, and the coefficient of $u_1^3$ is $1 \in k^3$. So it is solvable by Lemma 3.1.10(2). Indeed $\operatorname{in}_{(1, 0, 0)} h = X^3 + U_1^3 = (X + U_1)^3$.
+
+*The first step.* Let $Z_1 = X + u_1$. By Lemma 3.1.10(3), with $\lambda = -1$,
+$$h = Z_1^3 + f_1, \qquad f_1 = u_1^3 u_2^3 + u_2^4 + u_3^5.$$
+Now $(1, 1, 0)$ is a vertex of $\frac13 N(f_1)$. For the weight $\alpha = (\frac1{10}, 1, 1)$ its value is $\frac{11}{10}$, while $(0, \frac43, 0)$ and $(0, 0, \frac53)$ have the values $\frac43$ and $\frac53$. So $(1, 1, 0)$ is the only point where $|\cdot|_\alpha$ is minimal. The vertex was hidden behind $(1, 0, 0)$ before the first step. It lies in $\mathbb{N}^3$, and its coefficient is $1$, so it is solvable.
+
+*The second step.* Let $Z = Z_1 + u_1 u_2 = X + u_1 + u_1 u_2$. Then
+$$h = Z^3 + f^{\mathrm{cl}}, \qquad f^{\mathrm{cl}} = u_2^4 + u_3^5.$$
+The vertices $(0, \frac43, 0)$ and $(0, 0, \frac53)$ are not in $\mathbb{N}^3$. Since $\mathbb{F}_3$ is perfect, Lemma 3.1.10(4) shows that
+$$\Delta(h; u) = \operatorname{Conv}\{(0, \tfrac43, 0), (0, 0, \tfrac53)\} + \mathbb{R}_{\ge 0}^3.$$
+So $\delta(x) = \frac43$ and $m(x) = 3$ by Proposition 3.2.2(3). The value $\delta_{\mathbf 1}(h; u; X) = 1$ of the first polyhedron is only a lower bound.
+
+*Cleaning.* The monomials of $f$ in $3 \mathbb{N}^3$ are $u_1^3$ and $u_1^3 u_2^3$. Let $g = -u_1 - u_1 u_2$. Then $g^3 = -u_1^3 - u_1^3 u_2^3$, and $g^3 + f = f^{\mathrm{cl}}$. So $X - g = Z$, and cleaning gives the two steps at once, as Proposition 3.2.4 says.
+
+*The invariants.* Let $E = \operatorname{div}(u_1 u_2)$. The monomial $u_2^4$ is not divisible by $u_1$, and $u_3^5$ is not divisible by $u_2$. So $r_1 = r_2 = 0$, $d_1 = d_2 = 0$, and $\epsilon(x) = \operatorname{ord} f^{\mathrm{cl}} = 4$ by Proposition 3.2.4. The initial form is $F = U_2^4$, and $\partial F / \partial U_3 = 0$. So $\omega(x) = \epsilon(x) = 4$, and $\kappa(x) \ge 2$. For $E = \operatorname{div}(u_1)$ instead, $\epsilon(x) = 4$ again, but now $U_2$ is not a variable of $E$, and $\partial F / \partial U_2 = 4 U_2^3 = U_2^3 \ne 0$. So $\omega(x) = 3$. In the coordinates $(u; X)$ one would read off the wrong values $\operatorname{ord} f / 3 = 1$ and $\operatorname{ord} f = 3$ for $\delta(x)$ and $\epsilon(x)$.
+
+Lean: none yet
+
+### A point blowup at which the invariant drops
+
+**Example 3.3.4.** Let $p = 2$, let $k$ be algebraically closed of characteristic 2, let
+$$f = u_1^3 + u_2^3 + u_3^3,$$
+and let $E = \operatorname{div}(u_1 u_2 u_3)$. Each monomial of $f$ has an odd exponent, so $f$ is clean, and $h = Z^2 + f$ is reduced.
+
+*The point $x$.* We have $\operatorname{ord} f = 3$, so $\delta(x) = \frac32$ and $m(x) = 2$. No $u_j$ divides $f$, so $r = (0, 0, 0)$ and $\epsilon(x) = 3$. All three variables belong to $E$, so $\omega(x) = \epsilon(x) = 3$. Since $e = n = 3$, the vector space $\operatorname{Vdir}(x)$ lies in $\langle U_1, U_2, U_3 \rangle$, and $\kappa(x) = 4$ by [CP19, Definition 5.1]. So $\iota(x) = (2, 3, 4)$.
+
+*Condition (E).* We have $\partial f / \partial u_i = 3 u_i^2 = u_i^2$. So $V(\partial f/\partial u_1, \partial f/\partial u_2, \partial f/\partial u_3)$ is the closed point, which lies in $E$, and $(S, h, E)$ satisfies condition (E) by Lemma 2.3.3. The blowup of $x$ is permissible of the first kind, so Theorem 3.2.6 applies.
+
+*The blowup of $x$.* In the $u_1$-chart at the point $t = (t_2, t_3)$, the identity $(u + t)^3 = u^3 + t u^2 + t^2 u + t^3$ in characteristic 2 gives
+$$u_1^{-2} f = u_1 g, \qquad g = (1 + t_2^3 + t_3^3) + t_2^2 u_2 + t_2 u_2^2 + u_2^3 + t_3^2 u_3 + t_3 u_3^2 + u_3^3.$$
+Each monomial of $u_1 g$ has the exponent $1$ in $u_1$, so $f' = u_1 g$ is clean. If $1 + t_2^3 + t_3^3 \ne 0$, then $\operatorname{ord} f' = 1$, and $x'$ is a regular point. So the points of multiplicity 2 in this chart are the points of the curve
+$$C = \{ U_1^3 + U_2^3 + U_3^3 = 0 \} \subset \mathbb{P}^2_k$$
+of the exceptional plane. The curve $C$ is smooth in characteristic 2, since the partial derivatives $U_i^2$ have no common zero in $\mathbb{P}^2_k$. The equation $f$ is symmetric, so the other charts give the same result for the points of $C$ with $U_1 = 0$.
+
+*The invariant at the points of $C$.* Let $x'$ lie over a point of $C$ in the $u_1$-chart. Then $t_2$ and $t_3$ are not both $0$, so the linear part $t_2^2 u_2 + t_3^2 u_3$ of $g$ is not $0$. So $\operatorname{ord} f' = 2$, $\delta(x') = 1$ and $m(x') = 2$. The initial form is $F' = U_1 (t_2^2 U_2 + t_3^2 U_3)$. The exponent of $u_1$ is $r_1 = 1$, and $g$ is not divisible by $u_2$ or $u_3$. So $\epsilon(x') = 2 - 1 = 1$. If $t_2 t_3 \ne 0$, then $E' = \operatorname{div}(u_1)$ and $\partial F' / \partial U_2 = t_2^2 U_1 \ne 0$. If $t_2 = 0$, then $E' = \operatorname{div}(u_1 u_2)$, $t_3 \ne 0$ and $\partial F' / \partial U_3 = t_3^2 U_1 \ne 0$. The case $t_3 = 0$ is the same. In each case $\omega(x') = \epsilon(x') - 1 = 0$, so $\kappa(x') = 1$ and
+$$\iota(x') = (2, 0, 1) < (2, 3, 4) = \iota(x).$$
+So one point blowup makes $\omega$ drop from $3$ to $0$. Condition (E) holds at $x'$ by [CP19, Proposition 2.34]. One can also see it directly: $\partial f' / \partial u_2 = u_1 (u_2 + t_2)^2$ and $\partial f' / \partial u_3 = u_1 (u_3 + t_3)^2$, and $\partial f' / \partial u_1 = g$ is a unit where $u_2 + t_2 = u_3 + t_3 = 0$. So the common zeros of the derivatives lie in $V(u_1) \subseteq E'$.
+
+*The second blowup.* Theorem 3.2.7 applies at $x'$, and here one more blowup suffices. The series $g$ has a nonzero linear part, so we can take $v = g$ as a coordinate. If $t_2 = 0$, then $(u_1, u_2, v)$ is a regular system of parameters, since the linear part of $g$ contains $t_3^2 u_3$. If $t_2 t_3 \ne 0$, then $(u_1, u_2, v)$ is one as well. In these coordinates $f' = u_1 v$ is clean, and $E'$ is $\operatorname{div}(u_1)$ or $\operatorname{div}(u_1 u_2)$. The center $Y' = V(Z', u_1, v)$ is Hironaka-permissible with respect to $E'$, because $f' \in (u_1, v)^2$ and $V(u_1, v)$ has normal crossings with $E'$. This is the center of Case 2 of the proof of [CP19, Theorem 2.81], with $\delta(x') = 1$: the coordinate $u_1$ is the one with $d_1 > 0$, and $v$ plays the role of $u_{e + 1}$ there. In the $u_1$-chart at the point $v = u_1 (v'' + a)$, with $Z' = u_1 Z''$, the strict transform is $Z''^2 + v'' + a$. Let $b \in k$ with $b^2 = a$. Then $Z''^2 + v'' + a = (Z'' + b)^2 + v''$, which has order 1 at the point $Z'' = b$. In the $v$-chart at the origin, $u_1 = v u''_1$ and the strict transform is $Z''^2 + u''_1$, of order 1. So all the points over $x'$ are regular.
+
+*The resolution.* Let $X_1$ be the blowup of $X$ at $x$. The ring $S[Z]/(h)$ is finite over $S$, so $X$ has only the closed point $x$, and each closed point of $X_1$ lies over $x$. Let $\Gamma \subset X_1$ be the reduced curve over $C$. In the $u_1$-chart it is $V(Z', u_1, 1 + s_2^3 + s_3^3)$ with $s_j = u_j/u_1$, and at each of its closed points it is the center $Y'$ above. So $\Gamma$ is a regular curve, and it is Hironaka-permissible with respect to $E_1$. Let $X_2$ be the blowup of $X_1$ along $\Gamma$. The closed points of $X_2$ over $\Gamma$ are regular by the chart computation, and the other closed points of $X_2$ map isomorphically to closed points of $X_1$ of multiplicity 1. So each closed point of $X_2$ is regular. The morphism $X_2 \to X$ is proper, so each point of $X_2$ specializes to a closed point, and a localization of a regular local ring is regular [Mat]. Thus $X_2$ is regular, and two Hironaka-permissible blowups resolve $X$.
+
+Lean: none yet
+
+For the first blowup, Theorem 3.2.6 gives only $\iota(x') \le \iota(x)$. The invariant drops because $C$ is smooth. At each point of $C$ the linear part $t_2^2 u_2 + t_3^2 u_3$ of $g$ is an equation of the tangent line of $C$, and it contains a variable that is not in $E'$. In Example 3.3.1, by contrast, one point has $\iota(x') = \iota(x)$.
+
 ### Notes and references
 
-The table of Example 3.3.1 also shows the pattern of Volume 7, Section 1.4: the increase of $\epsilon$ happens at a point where a translation $u_2 \mapsto u_2 + 1$ produces a square that cleaning removes. Example 3.3.1 is our own example. Example 3.3.2 is from [CP19]. For the increase of the residual order see [Moh87] and [HP19a].
+The table of Example 3.3.1 also shows the pattern of Volume 7, Section 1.4: the increase of $\epsilon$ happens at a point where a translation $u_2 \mapsto u_2 + 1$ produces a square that cleaning removes. Examples 3.3.1, 3.3.3 and 3.3.4 are our own examples. Example 3.3.2 is from [CP19]. For the increase of the residual order see [Moh87] and [HP19a].
