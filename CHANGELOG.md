@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.14 treats the origin runs, where each step is at the origin of a chart, in each dimension. Lemma 3.14.2 gives a potential for the difference of two exponent vectors that does not go up and goes down at each window with all the letters. Theorem 3.14.5 proves that an origin run that uses all the charts an infinite number of times reaches $\rho = 0$ after a bounded number of windows. Theorem 3.14.7 proves that an origin run that uses $k$ charts an infinite number of times, with $2 \le k \le n - 1$, has $k$ corner curves with $\nu^G = d_m \ge \rho$, and it gives the order of $G$ along the other coordinate strata. Corollary 3.14.8 answers Question 3.13.18 for each origin run in each dimension $n \ge 3$, and Example 3.14.9 is an origin run in four variables that uses three charts for ever and has no surface with $\nu^G \ge \rho$. The map nodes are SG0000005X, SG0000005Y, SG0000005Z, SG00000060 and SG00000061. The results come from notes 31 and 32 of the research notes, and they have no Lean proof yet.
+- Volume 9, Section 3.16 reports the result, and the introductions of Volume 7, Chapter 3 and of Volume 9, Chapter 3 name the new sections.
+
+### Fixed
+
+- Volume 7, Section 3.13: the formula for the exponents $E_s$ before Lemma 3.13.19 gave the exponents in the total transform. The correct formula has the shift $-p (|c_s|_1 - 1)$, and the map of the exponents is a linear map followed by a translation by a vector in $p \mathbb{Z}^3$. With this formula the line $r = (r_x, E_1(T), E_2(T))$ in the proof of Theorem 3.13.20 is right. The shift is the same for all the monomials, so the differences $E_s(\mu) - E_s(T)$, the series $G_m$ and the results do not change.
+- Volume 7, Section 3.13: the text after Theorem 3.13.20 no longer says that the case $n \ge 4$ is open. Section 3.14 treats the origin runs for $n \ge 4$, and the runs with translations are open.
+
 ## [0.4.50] - 2026-11-27
 
 ### Added
