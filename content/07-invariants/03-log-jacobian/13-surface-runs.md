@@ -1,6 +1,6 @@
 ---
 title: Runs that follow no curve
-nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P, SG0000005Q, SG0000005R, SG0000005S]
+nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P, SG0000005Q, SG0000005R, SG0000005S, SG0000005T]
 sources: [CP19, CJS20, Hir64, Chr79]
 status: drafted
 drafted_by: writer
@@ -173,6 +173,10 @@ The next lemma bounds the order of $G$ along $Z$ by the order of the whole ideal
 
 *Proof.* Let $\nu = \nu^G_Z(P)$ and let $s$ be the sum of the $r_i$ for the components $D_i$ of $\Delta$ that contain $Z$. By Definition 3.13.2 there is an $h$ with $g + h^p \in I_Z^{\nu + s}$. A derivation or a logarithmic derivation lowers the order along $Z$ by at most $1$, and it kills $h^p$. The logarithmic derivations of $\Delta$ and the derivations in the other variables generate $\Theta(g + h^p) = \Theta(g) = x^r J$. So $x^r J \subseteq I_Z^{\nu + s - 1}$. Since $Z$ is regular, $\operatorname{ord}_Z$ is a valuation. If $D_i$ contains $Z$, then $x_i$ is a regular parameter of $Z$ and $\operatorname{ord}_Z(x_i) = 1$. If not, $x_i \notin I_Z$, and $\operatorname{ord}_Z(x_i) = 0$. So $\operatorname{ord}_Z(x^r) = s$ and $\operatorname{ord}_Z(J) \ge \nu - 1$. $\square$
 
+The Lean library proves the lemma for a coordinate subvariety $Z$, the zero set of the $x_i$ with $i$ in a set $S$, over a field of characteristic $p$, with $h$ a polynomial. There the order of $f$ along $Z$ is the least value of $\sum_{i \in S} e_i$ on the monomials $x^e$ of $f$, and the library proves that it is the largest $m$ with $f \in I_Z^m$. The lemma for formal subvarieties and formal series $h$ is not in Lean.
+
+Node: SG0000005T · Lean: `Singularity.orderGAlong_le_idealOrdAlong_add_one` (coordinate $Z$, polynomial $h$)
+
 **Example 3.13.15.** Let $n = 3$ with the variables $x, y, z$, let $p$ be a prime, $\Delta = \{y, z\}$ and
 $$g = x^p y z + y^{p + 2} z^{p + 1}.$$
 Let $P_0$ be the origin, and let $P_0, P_1, \dots$ be a sequence of the $y$-chart and the $z$-chart at the origin that uses each chart an infinite number of times, for example the sequence that takes the two charts in turn. Then:
@@ -202,7 +206,7 @@ Part 4. A new variable $w$ not in $\Delta$ gives $\partial_w G = 0$, so $J$ does
 
 A computer test checked the data of part 1 for $p = 2, 3, 5, 7$: along the sequence that takes the charts in turn and along the Fibonacci sequence for $40$ steps, along $200$ random sequences of length $30$, and for $n = 4$ with a free variable.
 
-The Lean library proves part 1, the congruence $a l - b m \equiv -1$, the claim that $g$ is clean, the equality $J = (x^p, M)$ and the claim that $x$ does not divide $g + h^p$ for each $h$, over $\mathbb{Z}/p$ for each prime $p$. The library has no order along a formal subvariety, so Lemma 3.13.14 and part 2 are not in Lean.
+The Lean library proves part 1, the congruence $a l - b m \equiv -1$, the claim that $g$ is clean, the equality $J = (x^p, M)$ and the claim that $x$ does not divide $g + h^p$ for each $h$, over $\mathbb{Z}/p$ for each prime $p$. The library also proves part 2 for the coordinate subvarieties, with $h$ a polynomial: the order of $G$ along such a $Z$ is at most $1$ unless $I_Z$ contains $x$ and $y$ or $z$ (`Singularity.CornerRuns.cornerRun_orderGAlong_lt`). Part 2 for the other formal subvarieties and the first claim of part 3 are not in Lean.
 
 Node: SG0000005Q · Lean: `Singularity.CornerRuns.cornerRun_of_charts` (part 1)
 
@@ -265,6 +269,8 @@ The corner curves alone do not resolve the singularity, as the next example show
 Node: SG0000005S
 
 In this example the surface $V(x)$ has $\nu^G = a \ge \rho$, and its blowup gives $\rho = 0$. In Example 3.13.15 the corner curves work, and no surface works. So a center must be chosen from the whole locus where $\nu^G \ge \rho$, with curves and surfaces in it, and neither type is sufficient alone. A computer test of the corner curves at random points found that $1873$ of $1925$ satisfy (H1) and (H2), and $\rho$ never went up after such a blowup.
+
+**Remark 3.13.22.** A run can have no surface with $\nu^G \ge \rho$ at many of its points and still meet a curve in a component of $\Delta$ with $\nu^G \ge \rho$. Let $p = 2$, $\Delta = \{x, y\}$ and $g = y^2 z^3 + x^3 y^2 z$. Then $r = (0, 2, 0)$ and $G = z^3 + x^3 z$. The generators of $J$ are $x^3 z$ from $x$, $0$ from $y$, since $r_y = 2 = 0$ in $K$, and $\partial_z G = z^2 + x^3$. So $\rho = 2$. If a regular surface $V(h)$ has $\nu^G \ge 2$, then $J \subseteq (h)$ by Lemma 3.13.14. Then $h$ divides the monomial $x^3 z$, so $h$ is $x$ or $z$ up to a unit, and neither divides $z^2 + x^3$. So no regular surface has $\nu^G \ge \rho$ at $P_0$. The curve $V(x, z)$ lies in the component $V(x)$ of $\Delta$, the order of $g$ along it is $\min(3, 4) = 3$, and $r_x = 0$, so $\nu^G \ge 3 > \rho$ for this curve. A computer test follows a branch of nine chart steps and then the two corner charts of $x$ and $y$ in turn. It finds $\rho = 2$ at $P_0, \dots, P_{29}$ and the same obstruction to surfaces at $P_0, \dots, P_{49}$, but it does not prove that the run is infinite. In a larger test over $\mathbb{F}_2$ and $\mathbb{F}_3$ with $n = 3$ and $n = 4$, on branches of the depth $9$ with at least $2$ corner steps in their last $6$ or $8$ steps, each branch that the test could decide had a surface or a curve in a component of $\Delta$ with $\nu^G \ge \rho$ at some point, and $1735$ branches for $n = 3$ had no regular surface with $\nu^G \ge \rho$ at any point.
 
 A weaker form of Question 3.13.18 asks for regular $Z_k$ at $P_k$ with $G_k \in I_{Z_k}^\rho + \mathfrak{m}_{P_k}^{M_k}$ and $M_k \to \infty$. In Example 3.13.15 this holds with $Z_k = V(x_k)$, and this form may be what a proof by the data of the run can give.
 
