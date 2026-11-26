@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 7, Section 3.11 and Volume 9, Section 3.13 describe the Lean check of Example 3.11.2 (Example 3.13.2 of Volume 9), `Singularity.KangarooExample.kangarooExample` (tamnd/singularity-lean#158, release v0.4.33). It checks the two steps where $\rho = 2$ stays, the cases of $P_0$, $P_1$ and $P_2$, and the values $1, 2, 1$ of $\tau_\rho$. The Node line of SG0000005C gives the Lean name, and the map gives it the status "proved" (tamnd/singularity#245).
+
 ## [0.4.37] - 2026-11-26
 
 ### Added
