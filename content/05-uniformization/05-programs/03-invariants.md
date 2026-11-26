@@ -1,7 +1,7 @@
 ---
 title: Programs with invariants that drop
 nodes: [SG00000018, SG00000015, SG00000016, SG00000017, SG00000019, SG0000001R, SG00000009]
-sources: [Hau03, Hau08, Hau10, Hau14, HSch12, Vil89, EV98, EH02, BM97, Wlo05, Kol07, Nar83, Gir75, Moh87, Moh96, HP19a, HP19b, HP24, HW14, Vil07, Vil08, BV10, BenV13, BBE24, BBE25, BEP, Kaw07, KM10, KM16, ATW24, ATW20, McQ20, Quek22, AQ24, ABQTW25, Wlo-cob, TemD1, TemD2, AQS24, AQS25, AT26, Abr25]
+sources: [Hau03, Hau08, Hau10, Hau14, HSch12, Vil89, EV98, EH02, BM97, Wlo05, Kol07, Nar83, Gir75, Moh87, Moh96, HP19a, HP19b, HP24, HW14, Vil07, Vil08, BV10, BenV13, BBE24, BBE25, BEP, Kaw07, KM10, KM16, ATW24, ATW20, McQ20, Quek22, AQ24, ABQTW25, Wlo-cob, TemD1, TemD2, AQS24, AQS25, AT26, Abr25, Hir77, Hir03, Hir05, Hir17]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -48,7 +48,7 @@ In dimension 3 Kawanoue and Matsuki give a local algorithm with an invariant tha
 
 ### The announced program of Hironaka
 
-Hironaka introduced idealistic exponents in a paper of 1977. In papers of 2003 and 2005 he developed a theory of infinitely near singular points, with differential operators, aimed at characteristic $p$. The paper of 2005 is titled "Three key theorems on infinitely near singularities". In 2017 Hironaka posted on his web page a manuscript titled "Resolution of singularities in positive characteristics", which claims embedded resolution of singularities of algebraic schemes in characteristic $p$ in each dimension.
+Hironaka introduced idealistic exponents [Hir77]. Later he developed a theory of infinitely near singular points, with differential operators, aimed at characteristic $p$ [Hir03, Hir05]. In 2017 Hironaka posted on his web page a manuscript, "Resolution of singularities in positive characteristics" [Hir17], which claims embedded resolution of singularities of algebraic schemes in characteristic $p$ in each dimension.
 
 This is an announcement. As far as we know, the manuscript has not been published in a refereed journal, and no independent account confirms the proof. The literature after 2017, for example the surveys and the papers of the other programs in this section, treats resolution in dimension at least 4 in characteristic $p$ as open. This handbook does the same. Volume 9, Conjecture 2.1.1, states the open problem.
 
@@ -70,8 +70,8 @@ The weighted method still uses maximal contact in a weak form: the invariant is 
 
 ### Status
 
-These are theorems: the failure of maximal contact [Nar83], Moh's bound [Moh87], the unbounded increase of the residual order [HP19a], the stratification of Bravo and Villamayor [BV10], the strong monomial case [BenV13], the characterization of regularity by the Samuel slope [BBE25], the algorithm of Kawanoue and Matsuki in dimension 3 [KM16], the weighted resolution in characteristic 0 [ATW24, McQ20], and the negative results on weighted blowups in characteristic $p$ [AQS24, AT26]. The manuscript of Hironaka of 2017 is an announcement. An invariant that drops in dimension 4 in characteristic $p$ is not known, and resolution of fourfolds by any of these programs is open.
+These are theorems: the failure of maximal contact [Nar83], Moh's bound [Moh87], the unbounded increase of the residual order [HP19a], the stratification of Bravo and Villamayor [BV10], the strong monomial case [BenV13], the characterization of regularity by the Samuel slope [BBE25], the algorithm of Kawanoue and Matsuki in dimension 3 [KM16], the weighted resolution in characteristic 0 [ATW24, McQ20], and the negative results on weighted blowups in characteristic $p$ [AQS24, AT26]. The manuscript of Hironaka [Hir17] is an announcement. An invariant that drops in dimension 4 in characteristic $p$ is not known, and resolution of fourfolds by any of these programs is open.
 
 ### Notes and references
 
-Volume 7 studies the residual order and its increase, and Volume 9, Section 2.3, lists these programs as routes. The papers of Hironaka of 1977, 2003, 2005 and 2017 have no key in the map, and we name them in words.
+Volume 7 studies the residual order and its increase, and Volume 9, Section 2.3, lists these programs as routes. For the program of Hironaka see [Hir77, Hir03, Hir05, Hir17].
