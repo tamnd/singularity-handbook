@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 5, Section 2.2 explains the choice of the monomial subfield of an Abhyankar valuation and its Lean names (tamnd/singularity-lean#138), and corrects the Lean status of Lemma 1.3.3 and Theorem 1.3.4.
 - Volume 4, Section 1.1 gives the Stacks tag 00NR for the regular quotients of a regular local ring.
 - Volume 3, Section 4.2 cites Volume 6, Lemma 2.1.5 and its Lean name for the unique extension of a valuation to a purely inseparable extension.
 
