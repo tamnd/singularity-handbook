@@ -102,6 +102,54 @@ Thus all stalks of $R^1 f_* \mathcal{O}_Y$ are 0, and $R^1 f_* \mathcal{O}_Y = 0
 
 The converse is also true, but its proof needs more. A normal modification of $\operatorname{Spec} \mathcal{O}_{X,x}$ must be extended to a normal modification of an open neighbourhood of $x$. We do not use the converse.
 
+### The exceptional curves of a rational singularity
+
+The definition of a rational singularity uses the cohomology of the whole modification. The next proposition passes from the modification to its closed subschemes. It gives a bound on the cohomology of the curves over a singular point, and for a rational singularity it gives the vanishing of their $H^1$. This is the main tool that turns rationality into a statement about curves.
+
+**Proposition 2.1.9.** Assume that $X = \operatorname{Spec} A$ is affine, and let $f : Y \to X$ be a normal modification. Let $D \subseteq Y$ be a closed subscheme.
+
+1. The restriction map $H^1(Y, \mathcal{O}_Y) \to H^1(D, \mathcal{O}_D)$ is onto.
+2. If $A$ is local, then $\ell_A(H^1(D, \mathcal{O}_D)) \le \ell_A(H^1(Y, \mathcal{O}_Y)) \le N$, where $N$ is the integer of Theorem 2.1.6.
+3. If $X$ has rational singularities, then $H^1(D, \mathcal{O}_D) = 0$.
+
+Lean: none yet
+
+*Proof.* 1. Let $\mathcal{I}_D$ be the ideal sheaf of $D$. The exact sequence $0 \to \mathcal{I}_D \to \mathcal{O}_Y \to \mathcal{O}_D \to 0$ gives the exact sequence
+
+$$H^1(Y, \mathcal{O}_Y) \to H^1(D, \mathcal{O}_D) \to H^2(Y, \mathcal{I}_D).$$
+
+The sheaf $\mathcal{I}_D$ is coherent and $X$ is affine, so $H^2(Y, \mathcal{I}_D) = 0$ by Lemma 2.1.2, part 5.
+
+2. The map of part 1 is $A$-linear. The length of $H^1(Y, \mathcal{O}_Y)$ is finite by Lemma 2.1.2, part 4, and it is at most $N$ by Theorem 2.1.6. A quotient module has at most the length of the module.
+
+3. By [Har, Proposition III.8.5], $H^1(Y, \mathcal{O}_Y)$ is the module of global sections of $R^1 f_* \mathcal{O}_Y$, and this sheaf is 0. Part 1 gives the claim. $\square$
+
+Part 2 is the form in which the bound of Lipman controls the curves. Let $A$ be local with residue field $\kappa$, and let $C \subseteq Y$ be an integral curve that maps to the closed point. Then $C$ is proper over $\kappa$, and $\ell_A(H^1(C, \mathcal{O}_C)) = \dim_\kappa H^1(C, \mathcal{O}_C)$, because $\mathfrak{m}$ kills $\mathcal{O}_C$. If $C$ is regular and $H^0(C, \mathcal{O}_C) = \kappa$, this number is the genus of $C$. Thus the genus of each curve over the singular point, in each normal modification, is at most $N$. Example 2.3.6 and Example 2.3.14 show curves of genus 1.
+
+**Corollary 2.1.10.** Let $A$ be an excellent normal local domain of dimension 2 with residue field $\kappa$, and assume that $A$ has a rational singularity. Let $f : Y \to \operatorname{Spec} A$ be a normal modification, and let $C, C' \subseteq Y$ be distinct integral closed curves that map to the closed point.
+
+1. $H^1(C, \mathcal{O}_C) = 0$.
+2. Assume that $H^0(C, \mathcal{O}_C) = H^0(C', \mathcal{O}_{C'}) = \kappa$. Let $T = C \cap C'$ be the closed subscheme with ideal sheaf $\mathcal{I}_C + \mathcal{I}_{C'}$. Then $T$ is empty, or it is one point $t$ with $\mathcal{O}_{T,t} = \kappa$.
+3. If $\kappa$ is algebraically closed and $C$ is regular, then $C \cong \mathbb{P}^1_\kappa$.
+
+Lean: none yet
+
+*Proof.* 1. This is Proposition 2.1.9, part 3, with $D = C$.
+
+2. The curves are distinct and integral, so $C \not\subseteq C'$, and $T$ is a proper closed subset of the curve $C$. Thus $T$ is a finite set of closed points. Let $D$ be the closed subscheme with ideal sheaf $\mathcal{I}_C \cap \mathcal{I}_{C'}$. For ideals $I, J$ of a ring $R$, the sequence $0 \to R/(I \cap J) \to R/I \oplus R/J \to R/(I + J) \to 0$ is exact, with the maps $r \mapsto (r, r)$ and $(a, b) \mapsto a - b$. This gives an exact sequence of sheaves on $Y$:
+
+$$0 \to \mathcal{O}_D \to \mathcal{O}_C \oplus \mathcal{O}_{C'} \to \mathcal{O}_T \to 0.$$
+
+By Proposition 2.1.9, part 3, we have $H^1(D, \mathcal{O}_D) = 0$. Thus the sequence of global sections
+
+$$0 \to H^0(D, \mathcal{O}_D) \to \kappa \oplus \kappa \to H^0(T, \mathcal{O}_T) \to 0$$
+
+is exact. The ring $H^0(D, \mathcal{O}_D)$ is not 0, because $D$ is not empty, so its length over $A$ is at least 1. Thus $\ell_A(H^0(T, \mathcal{O}_T)) \le 2 - 1 = 1$. Since $T$ is finite, $H^0(T, \mathcal{O}_T) = \bigoplus_{t \in T} \mathcal{O}_{T,t}$, and each summand has length at least 1. Thus $T$ has at most one point $t$, and then $\mathcal{O}_{T,t}$ has length 1. An $A$-algebra of length 1 is isomorphic to $\kappa$ as an $A$-module. Thus it is spanned by 1, and it is the field $\kappa$.
+
+3. The curve $C$ is proper over $\kappa$ and regular, and $H^1(C, \mathcal{O}_C) = 0$ by part 1. Since $\kappa$ is algebraically closed and $C$ is integral and proper, $H^0(C, \mathcal{O}_C) = \kappa$. Thus $C$ has genus 0. A regular proper curve of genus 0 over an algebraically closed field is isomorphic to $\mathbb{P}^1_\kappa$ [Har, Section IV.1]. $\square$
+
+Assume also that $Y$ is regular at the point $t$ of part 2. Then the local equations $a$ and $b$ of $C$ and $C'$ at $t$ satisfy $\ell(\mathcal{O}_{Y,t}/(a, b)) = 1$. Thus $(a, b)$ is the maximal ideal, and $a, b$ is a regular system of parameters. So two exceptional curves of a resolution of a rational singularity meet in at most one point, and they meet transversally there. The resolutions of Section 2.3 show this: their exceptional curves form chains and trees of projective lines. Lipman proves more in his theory of rational singularities, for example that the dual graph is a tree. We do not use these facts.
+
 ### Notes and references
 
-Rational singularities of surfaces go back to Artin, for surfaces over a field. Lipman developed the theory for two-dimensional normal local rings, and [Lip78] uses it for the resolution. The definition we use, with all normal modifications, avoids the need for a resolution in the definition. Theorem 2.1.6 and Proposition 2.1.7 together give a normal modification of $\operatorname{Spec} A$ with only rational singularities. Section 2.2 explains how Lipman connects this with the process of Theorem 2.2.1.
+Rational singularities of surfaces go back to Artin, for surfaces over a field. Lipman developed the theory for two-dimensional normal local rings, and [Lip78] uses it for the resolution. The definition we use, with all normal modifications, avoids the need for a resolution in the definition. Theorem 2.1.6 and Proposition 2.1.7 together give a normal modification of $\operatorname{Spec} A$ with only rational singularities. Section 2.2 explains how Lipman connects this with the process of Theorem 2.2.1. Proposition 2.1.9 and Corollary 2.1.10 are short consequences of the vanishing of $H^2$ in Lemma 2.1.2. They are the first steps of the study of the exceptional curves of a rational singularity. For the full theory see [Lip78], [Art86] and the chapter "Resolution of Surfaces" of [Stacks].
