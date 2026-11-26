@@ -1,7 +1,7 @@
 ---
 title: Weak forms and the status of the programs
 nodes: [SG0000001K, SG0000001M, SG0000001N, SG0000001G, SG0000001H, SG0000001J, SG00000007]
-sources: [dJ96, dJ97, AdJ97, ILO14, Tem17, Tem13, Tem23, KK05, KK09, Cut15, Cut20, CM17, Kuh10b, KR23, CKR25, Nov24, NS14, HOST26, Zar44, Abh66, CP08, CP09, CP19, CJS20, BV10, BenV13, BBE25, KM16, ATW24, McQ20, AQS24, AT26, HP24, HW14, Hau10, Cut99, Hir17]
+sources: [dJ96, dJ97, AdJ97, ILO14, Tem17, Tem13, Tem23, KK05, KK09, Cut15, Cut20, CM17, Kuh10b, KR23, CKR25, Nov24, NS14, HOST26, Zar44, Abh66, CP08, CP09, CP19, CJS20, BV10, BenV13, BBE25, KM16, ATW24, McQ20, AQS24, AQS25, AT26, HP24, HW14, Hau10, Cut99, Hir17]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -15,7 +15,7 @@ Some theorems give a weak form of resolution or of local uniformization in each 
 An *alteration* of a variety $X$ is a proper, surjective and generically finite morphism $X' \to X$ from a variety of the same dimension. Its degree is the degree of the extension of the function fields. A resolution is an alteration of degree 1. These are theorems.
 
 1. *de Jong.* Each variety over a field has a regular alteration, and one can ask that the inverse image of a given proper closed subset is a divisor with strict normal crossings [dJ96]. Volume 8, Theorem 1.2.1, and Volume 9, Theorem 2.3.8, state the theorem. de Jong also proves a form for families of curves and a Galois form [dJ97], and Abramovich and de Jong treat smoothness, semistability and toroidal geometry [AdJ97].
-2. *Gabber.* Let $\ell$ be a prime different from the characteristic. Each variety has a regular alteration of degree prime to $\ell$, and each quasi-excellent scheme has local uniformization for the topology of $\ell'$-alterations [ILO14]. Volume 8, Theorems 3.2.4 and 3.2.8, and Volume 9, Theorem 2.3.9, state these results.
+2. *Gabber.* Let $\ell$ be a prime different from the characteristic. Each variety has a regular alteration of degree prime to $\ell$, and each Noetherian quasi-excellent scheme on which $\ell$ is invertible has local uniformization for the topology of $\ell'$-alterations [ILO14]. Volume 8, Theorems 3.2.4 and 3.2.8, and Volume 9, Theorem 2.3.9, state these results.
 3. *Temkin.* Each variety over a perfect field of characteristic $p$ has a regular alteration whose degree is a power of $p$ [Tem17]. Volume 8, Theorem 3.3.2, states the general form for schemes of finite type over a quasi-excellent base of dimension at most 3, and Volume 9, Theorem 2.3.10, states the case of varieties.
 
 So the degree of a regular alteration can avoid each prime $\ell \ne p$, and it can be a power of $p$. The two results together suggest that only the prime $p$ is a problem. They do not give degree 1.
@@ -45,7 +45,7 @@ The table lists the programs of this chapter. The column "proved" gives the stro
 | Rees algebras, elimination | stratification [BV10], strong monomial case [BenV13], Samuel slope [BBE25] | a decreasing invariant outside the monomial case |
 | Idealistic filtrations | an algorithm in dimension 3 [KM16] | the program in dimension at least 4 |
 | Hironaka, infinitely near points | announcement [Hir17] | not checked by the community |
-| Weighted blowups | resolution in characteristic 0 [ATW24, McQ20] | the invariant fails in characteristic $p$ [AQS24, AT26] |
+| Weighted blowups | resolution in characteristic 0 [ATW24, McQ20], plane curves in characteristic $p$ [AQS24, AQS25] | the tangent space can grow [AQS24], pinch points in characteristic 2 [AT26], an invariant that drops in dimension 4 (Volume 9, Conjecture 2.3.6) |
 | Purely inseparable equations | embedded surfaces in dimension 3 [HP24], $z^p + g(x, y)$ [HW14] | $z^p + g(x_1, \dots, x_4)$ (Volume 9, Conjecture 2.3.7) |
 | Alterations | regular alterations of degree prime to $\ell$ or a power of $p$ [dJ96, ILO14, Tem17] | degree 1, the descent along wild or inseparable extensions |
 
