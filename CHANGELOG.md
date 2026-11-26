@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, Corollary 2.2.4, Corollary 2.1.3 and Lemma 2.1.2 give their Lean names. A new paragraph after the proof of Corollary 2.2.4 describes the Lean proof that the value group of an Abhyankar valuation is free. Volume 5, Section 2.2 now says that this part of the corollary is in Lean.
+
 ## [0.4.32] - 2026-11-26
 
 ### Added
