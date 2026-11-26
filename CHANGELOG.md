@@ -4,13 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
-### Changed
-
-- Volume 6, Lemma 1.2.4 and Lemma 4.3.1, and Volume 4, Lemma 2.3.1 and Lemma 2.3.4 give their Lean names from tamnd/singularity-lean#151. Two new paragraphs in Volume 4, Section 2.3 say which parts are in Lean.
-- Volume 6, Chapters 3 and 4 have corrections of definitions, claims and citations after a review (tamnd/singularity-handbook#219).
+## [0.4.35] - 2026-11-26
 
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.35.
 - Volume 7, Section 3.11 describes the Lean proof that Conjecture 3.11.3 is false, `Singularity.KangarooCounterexample.not_kangarooPathConjecture`, and how it uses Lemma 3.11.4 for the two bounds on $\tau_\rho$.
 
 ### Changed
@@ -18,6 +16,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 9, Section 3.13 gives the new map statuses: SG0000005D is refuted and SG0000005G is proved. The edition 0.4.34 said that the map has no status for a false statement. That was not correct.
 - The Node line of SG0000005G gives the Lean negation, and the Node line of SG0000005D says that the negation is proved.
 - `EDITION` pins the map at the release 0.4.43, which has the new statuses.
+- Volume 6, Lemma 1.2.4 and Lemma 4.3.1, and Volume 4, Lemma 2.3.1 and Lemma 2.3.4 give their Lean names from tamnd/singularity-lean#151. Two new paragraphs in Volume 4, Section 2.3 say which parts are in Lean.
+- Volume 6, Chapters 3 and 4 have corrections of definitions, claims and citations after a review (tamnd/singularity-handbook#219).
 
 ## [0.4.34] - 2026-11-26
 
