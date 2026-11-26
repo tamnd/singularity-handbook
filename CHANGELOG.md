@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 7, Example 3.13.21 is proved in Lean. The Lean paragraph names the proofs of the conditions (H1) and (H2) and of the end of the run for $a < p$, and Volume 9, Section 3.15 reports this.
+
 ## [0.4.49] - 2026-11-27
 
 ### Added
