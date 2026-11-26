@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.46] - 2026-11-27
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.46.
 - Volume 7, Lemma 3.13.14 says that Lean proves it for the coordinate subvarieties with $h$ a polynomial, with the Node line of the map node SG0000005T and the Lean name `Singularity.orderGAlong_le_idealOrdAlong_add_one`. The Lean paragraph of Example 3.13.15 says that part 2 is proved in Lean for the coordinate subvarieties.
 - Volume 7, Remark 3.13.22 gives a run with no regular surface with $\nu^G \ge \rho$ at its first points and a curve in the divisor with $\nu^G > \rho$, and the results of the tree test of note 25 of the research notes. Volume 9, Section 3.15 reports the Lean proofs and the test.
 - The line `singularity` of `EDITION` now pins the map release 0.4.53.
