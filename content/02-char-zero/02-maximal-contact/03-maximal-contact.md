@@ -75,7 +75,7 @@ The name comes from the order of contact. The restriction of $y^2 - x^5$ to $H$ 
 
 Lean: none yet
 
-**Remark 2.3.5.** Theorem 2.3.3 needs the blowup sequence to be of order $m$, with $m$ the maximal order. For a marked ideal $(I, m)$ with $m$ less than the maximal order, the locus $\operatorname{cosupp}(I, m)$ need not lie in a smooth hypersurface. For example, $I = (xy)$ on $\mathbb{A}^2$ has maximal order 2, and $\operatorname{cosupp}(I, 1)$ is the union of the two lines $x = 0$ and $y = 0$, which is not contained in a smooth curve near the origin. This is why the induction of Chapter 3 treats ideals of maximal order $m$ and marked ideals in different steps.
+**Remark 2.3.6.** Theorem 2.3.3 needs the blowup sequence to be of order $m$, with $m$ the maximal order. For a marked ideal $(I, m)$ with $m$ less than the maximal order, the locus $\operatorname{cosupp}(I, m)$ need not lie in a smooth hypersurface. For example, $I = (xy)$ on $\mathbb{A}^2$ has maximal order 2, and $\operatorname{cosupp}(I, 1)$ is the union of the two lines $x = 0$ and $y = 0$, which is not contained in a smooth curve near the origin. This is why the induction of Chapter 3 treats ideals of maximal order $m$ and marked ideals in different steps.
 
 ### Notes and references
 
