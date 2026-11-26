@@ -4,6 +4,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.40] - 2026-11-26
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.40.
+- Volume 5, Chapter 5 is new. It describes the programs toward local uniformization and resolution in dimension at least 4 in characteristic $p$, and it tells for each claim if it is a theorem, an announcement or open (tamnd/singularity-handbook#242). It cites the new paper keys Hir77, Hir03, Hir05, Hir17, Kuh00, Cut99, CP04, Cut24 and San17 of the map (tamnd/singularity-handbook#243).
+
+### Changed
+
+- Volume 1 gives the Lean names of eight statements (tamnd/singularity-handbook#238).
+- Volume 2 gives the Lean names of the algebraic parts of Lemma 2.1.4, Corollary 2.1.5, Lemma 2.3.2, Proposition 2.4.1, Lemma 3.2.2 and Examples 2.3.4, 2.4.2, 3.2.8 and 3.3.9, at the origin of affine space. Volume 5 gives the Lean name of Lemma 1.1.1 (tamnd/singularity-handbook#241).
+- Volume 8 has a second textbook pass with worked examples, and a referee pass that corrects ten groups of overclaims and wrong citations (tamnd/singularity-handbook#239, tamnd/singularity-handbook#240).
+
 ## [0.4.39] - 2026-11-26
 
 ### Added
