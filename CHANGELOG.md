@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, Corollary 2.2.4 gives the Lean name for the claim that $Kv$ is finitely generated (tamnd/singularity-lean#153), and the paragraph after the proof describes the Lean proof. Corollary 2.1.3 gives the Lean name for the claim that $f$ is finite. Volume 5, Section 2.2 says that the part of the corollary on $Kv$ is in Lean.
+
 ## [0.4.35] - 2026-11-26
 
 ### Added
