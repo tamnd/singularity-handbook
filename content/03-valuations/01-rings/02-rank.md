@@ -18,7 +18,7 @@ Since $\Gamma$ is torsion free, $\operatorname{rr} \Gamma$ is the largest number
 
 **Lemma 1.2.2.** The convex subgroups of an ordered group $\Gamma$ are totally ordered by inclusion.
 
-Lean: none yet
+Lean: `Singularity.IsConvexSubgroup.le_or_le`
 
 *Proof.* Let $\Delta, \Delta'$ be convex subgroups with $\Delta \not\subseteq \Delta'$. Choose $\delta \in \Delta \setminus \Delta'$. We may assume $\delta > 0$, because we can replace $\delta$ by $-\delta$. Let $\delta' \in \Delta'$ with $\delta' \ge 0$. If $\delta \le \delta'$, then $\delta \in \Delta'$ by convexity, which is false. So $0 \le \delta' < \delta$, and $\delta' \in \Delta$ by convexity. Each element of $\Delta'$ is $\pm\delta'$ with $\delta' \ge 0$, so $\Delta' \subseteq \Delta$. $\square$
 
@@ -46,7 +46,7 @@ Lean: none yet
 
 **Proposition 1.2.5.** Let $\Gamma$ be an ordered group with $\operatorname{rr} \Gamma = r < \infty$. Then $\Gamma$ has at most $r + 1$ convex subgroups. In particular, the rank of $\Gamma$ is at most $r$.
 
-Lean: none yet
+Lean: `Singularity.IsConvexSubgroup.finite_and_card_le`
 
 *Proof.* Let $\Delta_0 \subsetneq \Delta_1 \subsetneq \dots \subsetneq \Delta_t$ be convex subgroups. For $1 \le i \le t$ choose $\delta_i \in \Delta_i \setminus \Delta_{i-1}$ with $\delta_i > 0$. We show that $\delta_1, \dots, \delta_t$ are linearly independent over $\mathbb{Z}$. Assume that $\sum n_i\delta_i = 0$ with integers $n_i$ that are not all 0, and let $j$ be the largest index with $n_j \ne 0$. Then $n_j\delta_j = -\sum_{i < j} n_i\delta_i \in \Delta_{j-1}$, so $|n_j|\delta_j \in \Delta_{j-1}$. Since $0 < \delta_j \le |n_j|\delta_j$, convexity gives $\delta_j \in \Delta_{j-1}$, which is false. Thus $t \le r$, and a chain of convex subgroups has at most $r + 1$ members. By Lemma 1.2.2 all convex subgroups form one chain. $\square$
 

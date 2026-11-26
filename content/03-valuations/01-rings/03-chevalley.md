@@ -38,7 +38,7 @@ This is [ZS2, Chapter VI, Section 4] and [Stacks, Tag 00IA]. Atiyah and Macdonal
 
 **Corollary 1.3.3.** Let $K$ be a field, let $A \subseteq K$ be a subring and let $\mathfrak{p}$ be a prime ideal of $A$. Then there is a valuation ring $V$ of $K$ with $A \subseteq V$ and $\mathfrak{m}_V \cap A = \mathfrak{p}$.
 
-Lean: none yet
+Lean: `Singularity.exists_valuationSubring_of_isPrime`
 
 *Proof.* The ring $A$ is a domain, and $A_\mathfrak{p}$ is a local subring of $K$. By Theorem 1.3.2 there is a valuation ring $V$ that dominates $A_\mathfrak{p}$. Then $\mathfrak{m}_V \cap A = \mathfrak{m}_V \cap A_\mathfrak{p} \cap A = \mathfrak{p}A_\mathfrak{p} \cap A = \mathfrak{p}$. $\square$
 
@@ -54,7 +54,7 @@ This is [AM69, Corollary 5.22]. In particular an integrally closed domain is the
 
 **Corollary 1.3.5.** Let $L/K$ be a field extension and let $v$ be a valuation of $K$. Then there is a valuation $w$ of $L$ whose restriction to $K$ is equivalent to $v$.
 
-Lean: none yet
+Lean: `Singularity.Valuation.exists_hasExtension`, `Singularity.ValuationSubring.exists_comap_eq` (the form with valuation rings)
 
 *Proof.* The ring $\mathcal{O}_v$ is a local subring of $L$. By Theorem 1.3.2 there is a valuation ring $W$ of $L$ that dominates $\mathcal{O}_v$. The ring $W \cap K$ is a valuation ring of $K$, it contains $\mathcal{O}_v$, and its maximal ideal $\mathfrak{m}_W \cap K$ meets $\mathcal{O}_v$ in $\mathfrak{m}_v$. So $W \cap K$ dominates $\mathcal{O}_v$, and $W \cap K = \mathcal{O}_v$ by Step 3 of the proof of Theorem 1.3.2. The valuation $w = v_W$ restricts to a valuation of $K$ with ring $W \cap K = \mathcal{O}_v$. By Theorem 1.1.7 this restriction is equivalent to $v$. $\square$
 

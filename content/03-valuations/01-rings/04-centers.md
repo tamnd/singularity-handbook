@@ -14,9 +14,11 @@ A valuation of a function field is a birational object. A model of the function 
 
 **Lemma 1.4.2.** Let $A \subseteq K$ be a subring with $\operatorname{Frac} A = K$, and let $V$ be a valuation ring of $K$. Then $V$ has a center on $\operatorname{Spec} A$ if and only if $A \subseteq V$. In this case the center is unique, and it is the prime $\mathfrak{m}_V \cap A$.
 
-Lean: none yet
+Lean: `Singularity.exists_center_iff`, `Singularity.eq_of_ofPrime_le`, `Singularity.eq_centerIdeal_of_ofPrime_le`
 
 *Proof.* Let $\mathfrak{p}$ be a center. Then $A \subseteq A_\mathfrak{p} \subseteq V$, and $\mathfrak{m}_V \cap A = \mathfrak{m}_V \cap A_\mathfrak{p} \cap A = \mathfrak{p}A_\mathfrak{p} \cap A = \mathfrak{p}$. This proves uniqueness. Conversely, let $A \subseteq V$ and $\mathfrak{p} = \mathfrak{m}_V \cap A$, a prime ideal of $A$. The elements of $A \setminus \mathfrak{p}$ are units of $V$, so $A_\mathfrak{p} \subseteq V$. An element $a/s$ of $A_\mathfrak{p}$ with $a \in \mathfrak{p}$ lies in $\mathfrak{m}_V$, so $\mathfrak{p}A_\mathfrak{p} \subseteq \mathfrak{m}_V$. Thus $V$ dominates $A_\mathfrak{p}$. $\square$
+
+The Lean statement does not use the hypothesis $\operatorname{Frac} A = K$.
 
 **Proposition 1.4.3.** Let $X$ be an integral separated scheme with function field $K$. Then each valuation ring of $K$ has at most one center on $X$.
 
