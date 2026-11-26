@@ -51,7 +51,7 @@ If Hypothesis 3.14.3 holds, then a run that starts at an isolated point of the l
 
 ### Status
 
-The map has no node for this result yet, and the Lean library has no statement of it. The examples are checked by hand, and the start $49$ of the test is Example 3.14.2. The hypothesis is open. An outside expert has not yet read the result, and the milestone S7 asks for this.
+The map has the nodes SG0000005H and SG0000005J for Examples 3.14.1 and 3.14.2. The Lean library proves the two runs for each $k$ in the file `Singularity/Invariant/LogJacobianCurveRuns.lean`, as `Singularity.CurveRuns.curveRun` and `Singularity.CurveRuns.isolatedRun`. The Lean proof does not give the claim that the origin is an isolated point of the locus, since this claim is over an algebraically closed field. The start $49$ of the test is Example 3.14.2. Section 3.15 proves the second half of the hypothesis and shows that the first half is false for $n = 3$. An outside expert has not yet read the result, and the milestone S7 asks for this.
 
 ### Notes and references
 
