@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.11 follows a kangaroo path, a sequence of steps where $\rho$ stays that leaves the first case at a kangaroo point, goes through points of the second case, and comes back to the first case. Proposition 3.11.1 proves that $\tau_\rho$ does not go down along the points of the second case, and that the full codimension $\widetilde\tau$ at the end is at least $\tau_\rho$ at the start. Example 3.11.2 for $p = 2$ shows that $\tau_\rho$ can go down at the last step, and that the directrices at the start and at the end can be different. Conjecture 3.11.3 states that $\tau_\rho$ at the end is at least $\tau_\rho$ at the start. These are the nodes SG0000005B, SG0000005C and SG0000005D, for the milestone S7.17 (tamnd/singularity#231). The section also gives the random tests and a paragraph on the Lean proof.
+- Volume 9, Section 3.13 gives the same result as the thirteenth research report of the milestone S7.
+
+### Changed
+
+- The introduction of Volume 7, Chapter 3, the introduction of Volume 9, Chapter 3, and Volume 7, Section 3.10 refer to the new results.
+
 ## [0.4.31] - 2026-11-26
 
 ### Added
