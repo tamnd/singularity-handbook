@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.41] - 2026-11-26
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.41.
 - Volume 7, Section 3.13 is new. It defines the order of $G$ along a subvariety without a choice of coordinates, proves the second half of the hypothesis H4 in each dimension and the whole hypothesis for $n = 2$, and shows that the first half is false for $n = 3$. It gives Example 3.18 of Cossart and Piltant in the setting of the chapter, and it states the hypothesis H4' for subvarieties of positive dimension. Volume 9, Section 3.15 reports the result. Both cite the new paper key Chr79 of the map.
 
 ### Changed
