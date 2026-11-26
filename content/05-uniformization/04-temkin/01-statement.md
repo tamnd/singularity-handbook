@@ -1,7 +1,7 @@
 ---
 title: The theorem of Temkin
 nodes: [SG0000001G, SG0000000X, SG00000010, SG0000001E]
-sources: [Tem13, Eis95, Stacks, KK05]
+sources: [Tem13, Tem23, Eis95, Stacks, KK05]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -16,7 +16,7 @@ Temkin writes $K^\circ$ for a valuation ring of $K$. Let $k$ be a field and $K/k
 
 Node: SG0000001G · Lean: `Singularity.localUniformization_inseparable` (the statement only)
 
-This is [Tem13, Theorem 1.3.2], quoted with the notation of that paper. Here $l$-smooth means smooth over $l$, and a smooth point is *simple* if its residue field is separable over $l$ [Tem13]. The extension of $K^\circ$ to $L$ is unique because $L/K$ is purely inseparable (Volume 3, Section 4.2). Volume 3, Theorem 4.2.2, and Volume 9, Theorem 2.3.4, state the theorem in a short form. Temkin also deduces a global form, with a finite covering of the Zariski-Riemann space, from the quasi-compactness of that space [Tem13]. Quasi-compactness is node SG0000000X, with the Lean proof `Singularity.ZariskiRiemann.compactSpace`.
+This is [Tem13, Theorem 1.3.2], quoted with the notation of that paper. Here $l$-smooth means smooth over $l$, and a smooth point is *simple* if its residue field is separable over $l$ [Tem13]. The extension of $K^\circ$ to $L$ is unique because $L/K$ is purely inseparable (Volume 3, Section 4.2). Volume 3, Theorem 4.2.2, and Volume 9, Theorem 2.3.4, state the theorem in a short form. Temkin also deduces a global form from the quasi-compactness of the Zariski-Riemann space [Tem13, Corollary 1.3.3]. It says that each integral variety $X$ has a covering by finitely many integral regular schemes $Y_i$, such that each extension $k(Y_i)/k(X)$ is finite and purely inseparable. Quasi-compactness is node SG0000000X, with the Lean proof `Singularity.ZariskiRiemann.compactSpace`.
 
 ### The Lean form
 
@@ -44,10 +44,10 @@ The same argument shows that Theorem 4.1.1 gives local uniformization of $v$ whe
 
 We describe the structure of the proof of [Tem13], following the overview in [Tem13, Section 1.5]. We give no details.
 
-1. Height reduction. The rank of a valuation is also called its height. Temkin reduces the theorem to valuations of height one.
+1. Height reduction. The rank of a valuation is also called its height. Temkin first proves the theorem for valuations of height one, and then he proves the general case by induction on the height [Tem13, Section 4.2]. As in the work of Zariski, the main difficulty already appears in height one. In a later paper Temkin proves that local uniformization of schemes follows from the case of height one [Tem23].
 2. Induction on the dimension by curves. Temkin writes the function field as a function field of one variable over a subfield of smaller transcendence degree, and he studies the valuation on this field of one variable over a valued field. The tools are the geometry of curves over valued fields, in the form of Berkovich analytic curves, and a study of special points of such curves.
-3. The case of height one. Here Temkin uses an induction on the transcendence defect, that is, on the difference between the two sides of the Abhyankar inequality. The base of the induction is the Abhyankar case. For it Temkin gives a proof of local uniformization in the separable case, which recovers the theorem of Knaf-Kuhlmann [KK05] (Theorem 2.2.1).
-4. Henselization. Temkin names as the main difficulty that the valued fields in the induction are not henselian. The defect (node SG00000010) is defined through the henselization, so this is where the defect of Chapter 3 enters.
+3. The case of height one. Here Temkin uses an induction on the transcendence defect, that is, on the difference between the two sides of the Abhyankar inequality [Tem13, Remark 1.5.3]. The base of the induction is the Abhyankar case. Temkin treats it from the beginning with log geometry [Tem13, Section 5]. His main result there is a simultaneous form of local uniformization of Abhyankar valuations [Tem13, Theorem 5.5.2]. It needs a finite purely inseparable extension $l/k$ in general, and it holds with $l = k$ when the residue field is separable over $k$. So it reproves and generalizes the theorem of Knaf-Kuhlmann [KK05] (Theorem 2.2.1), as [Tem13, Section 1.5] says. Temkin also says that it is not clear whether [KK05] itself can be used as a step of his proof.
+4. Henselization. Temkin names as the main difficulty that the valued fields in the induction are not henselian [Tem13, Section 1.5 and Remark 4.1.3]. To deal with it, he strengthens the induction hypothesis in height one to a simultaneous form for several finite extensions. The defect (node SG00000010) is defined through the henselization, so this is where the defect of Chapter 3 enters.
 
 The method is local. It produces one model for each valuation and each finite set, and it does not give a resolution. In Section 4.2 we explain what is missing.
 
