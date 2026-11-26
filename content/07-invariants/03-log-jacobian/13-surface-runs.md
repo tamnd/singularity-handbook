@@ -1,6 +1,6 @@
 ---
 title: Runs that follow no curve
-nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P, SG0000005Q, SG0000005R, SG0000005S, SG0000005T]
+nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P, SG0000005Q, SG0000005R, SG0000005S, SG0000005T, SG0000005V]
 sources: [CP19, CJS20, Hir64, Chr79]
 status: drafted
 drafted_by: writer
@@ -271,6 +271,16 @@ Node: SG0000005S
 In this example the surface $V(x)$ has $\nu^G = a \ge \rho$, and its blowup gives $\rho = 0$. In Example 3.13.15 the corner curves work, and no surface works. So a center must be chosen from the whole locus where $\nu^G \ge \rho$, with curves and surfaces in it, and neither type is sufficient alone. A computer test of the corner curves at random points found that $1873$ of $1925$ satisfy (H1) and (H2), and $\rho$ never went up after such a blowup.
 
 **Remark 3.13.22.** A run can have no surface with $\nu^G \ge \rho$ at many of its points and still meet a curve in a component of $\Delta$ with $\nu^G \ge \rho$. Let $p = 2$, $\Delta = \{x, y\}$ and $g = y^2 z^3 + x^3 y^2 z$. Then $r = (0, 2, 0)$ and $G = z^3 + x^3 z$. The generators of $J$ are $x^3 z$ from $x$, $0$ from $y$, since $r_y = 2 = 0$ in $K$, and $\partial_z G = z^2 + x^3$. So $\rho = 2$. If a regular surface $V(h)$ has $\nu^G \ge 2$, then $J \subseteq (h)$ by Lemma 3.13.14. Then $h$ divides the monomial $x^3 z$, so $h$ is $x$ or $z$ up to a unit, and neither divides $z^2 + x^3$. So no regular surface has $\nu^G \ge \rho$ at $P_0$. The curve $V(x, z)$ lies in the component $V(x)$ of $\Delta$, the order of $g$ along it is $\min(3, 4) = 3$, and $r_x = 0$, so $\nu^G \ge 3 > \rho$ for this curve. A computer test follows a branch of nine chart steps and then the two corner charts of $x$ and $y$ in turn. It finds $\rho = 2$ at $P_0, \dots, P_{29}$ and the same obstruction to surfaces at $P_0, \dots, P_{49}$, but it does not prove that the run is infinite. In a larger test over $\mathbb{F}_2$ and $\mathbb{F}_3$ with $n = 3$ and $n = 4$, on branches of the depth $9$ with at least $2$ corner steps in their last $6$ or $8$ steps, each branch that the test could decide had a surface or a curve in a component of $\Delta$ with $\nu^G \ge \rho$ at some point, and $1735$ branches for $n = 3$ had no regular surface with $\nu^G \ge \rho$ at any point.
+
+The proof of Theorem 3.13.20 uses Lemma 3.13.19 only through its two inequalities at $P_m$, and parts 1 and 2 do not need the run to be infinite. So the proof gives a result for a finite stretch of a run.
+
+**Corollary 3.13.23.** Let $n = 3$, and let $P_N, \dots, P_m$ be a stretch of a run where each step is at the origin of the $y$-chart or of the $z$-chart, with $V(y)$ and $V(z)$ in $\Delta$ at $P_N$. Let $c_1$ and $c_2$ be the columns of the exponents from $P_N$ to $P_m$. Choose a $\theta'$ in the cone of $c_1$ and $c_2$ such that the least value of $(i + j) + \theta' (i + k)$ on the support of $g_N$ is taken at one pair, and define $F$, $i_0$ and $\delta$ as before Lemma 3.13.19 with $\theta'$ in place of $\theta$. Assume that each monomial $\mu$ of $g_N$ that is not in $F$ satisfies $\delta(\mu) \cdot c_s > 0$ and $\delta(\mu) \cdot c_s \ge i - i_0$ for $s = 1, 2$. Then at $P_m$ the initial form of $G_m$ is $c \, x_m^{d_m}$ with $c \ne 0$ and $d_m = i_0 - r_x$, and the corner curves $V(x_m, y_m)$ and $V(x_m, z_m)$ have $\nu^G = d_m \ge \rho$.
+
+*Proof.* The proof of parts 1 and 2 of Theorem 3.13.20 uses only the two inequalities, the formula for the exponents $E_s$, and the fact that the steps need no cleaning. These hold for each stretch at the origin. The bound $d_m \ge \rho$ is Theorem 3.1.4. $\square$
+
+Node: SG0000005V
+
+By Lemma 3.13.19, the inequalities hold for each long enough stretch where both charts occur often enough, and the needed length depends on $g_N$. So the corollary answers Question 3.13.18 at the end of each such stretch, also if the run has translations before the stretch. A run where the stretches between the translations stay too short for the points at their starts is not covered. A computer test over $\mathbb{F}_2$ and $\mathbb{F}_3$ from $2430$ random starts found no branch that kept $\rho$ along more than $3$ nonzero translations with a change of chart between them. Of the $759$ branches with such translations, $754$ have a curve $V(y, z)$, $V(y, x - \varphi(z))$ or $V(z, x - \varphi(y))$ with $\nu^G \ge \rho$ at some point, and the other $5$ have no continuation that keeps $\rho$ for more than one step.
 
 A weaker form of Question 3.13.18 asks for regular $Z_k$ at $P_k$ with $G_k \in I_{Z_k}^\rho + \mathfrak{m}_{P_k}^{M_k}$ and $M_k \to \infty$. In Example 3.13.15 this holds with $Z_k = V(x_k)$, and this form may be what a proof by the data of the run can give.
 
