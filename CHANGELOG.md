@@ -4,15 +4,25 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.37] - 2026-11-26
+
 ### Added
 
 - Volume 7, Section 3.12 asks whether each run of point blowups where $\rho$ stays is finite. Example 3.12.2 proves by hand that the run of $g_k = x^4 y^{2k+1} + x^2 y^{3k+1} z^3$ with $p = 2$ and the divisor $\{y\}$ does not end, since it follows the $y$-axis, along which the order is $\rho = 4$. Remark 3.12.3 gives the point $x^p y$ that repeats for each $p$. The first form of the hypothesis H4 asked that each infinite run follows a formal curve along which the order of $\widetilde\Theta(G)$ is $\rho$. The section reports the tree tests `inv38` and `inv38b` (tamnd/singularity#245).
 - Volume 7, Example 3.12.4 proves by hand that the run of $g_k = x^{5+3k} y^2 z^3 + x^{10+3k} y^3 z^2$ with $p = 2$ and the divisor $\{x, z\}$ does not end, although it starts at an isolated point of the locus where $\rho \ge 3$. It follows the $x$-axis, along which the order of $G$ is $3$ and the order of $\widetilde\Theta(G)$ is $2$. Remark 3.12.6 shows that no formal curve has the order $3$ of $\widetilde\Theta(G)$. The section reports the test `inv39` and the tree tests with isolated centers, with their limits (tamnd/singularity#245).
 - Volume 9, Section 3.14 reports the result of the milestone S7.18 so far.
+- Volume 1 has worked examples and new proofs: Propositions 1.2.10, 3.3.15 and 5.3.8, and Examples 1.2.11, 1.8.19, 1.10.7, 1.10.8, 2.5.9, 2.5.10, 3.3.16 and 5.3.9 (tamnd/singularity-handbook#226).
+- Volume 3 has new statements and examples on rank, centers, the Zariski-Riemann space and extensions: Lemmas 1.2.6 and 3.1.5, Propositions 1.5.5 and 3.1.6, and Examples 1.2.7, 1.4.5, 1.4.6, 1.5.6, 1.6.7 to 1.6.9, 2.4.5, 3.1.7 and 3.2.6. The fundamental inequality has a full proof in rank at most 1 (tamnd/singularity-handbook#225).
+- Volume 4 has new results on rational singularities and Lipman's process (Proposition 2.1.9, Corollary 2.1.10, Lemma 2.2.5, Proposition 2.2.6), a table of the steps of Lipman's proof, the resolution of A_n, D_4 and E_6 with examples in small characteristic, and a full proof of embedded resolution of curves on a smooth surface (Theorem 3.1.8) with Example 3.1.10 (tamnd/singularity-handbook#229).
+- Volume 0, Section 5.1 describes edition 0.4.37.
 
 ### Changed
 
 - Volume 7, Hypothesis 3.12.4 (H4) is now Hypothesis 3.12.5, and it asks for $G \in I_\gamma^\rho$ along the formal curve $\gamma$ of an infinite run. The first form asked for $\widetilde\Theta(G) \subseteq I_\gamma^\rho$, and Example 3.12.4 shows that it is false. The paragraph "What H4 gives" now takes the centers in the locus of the order of $G$, with $\rho$ as a second entry. The statement that a run from an isolated point of the locus of $\widetilde\Theta(G)$ is finite was not correct, and it is removed.
+- Volumes 3, 5, 6 and 8 give the Lean names of Volume 3, Lemmas 1.6.5 and 2.3.1, Volume 5, Lemma 2.1.3, Volume 6, Lemma 3.2.10, and Volume 8, Lemma 1.3.1, Proposition 3.1.1 and Lemma 3.2.2 (tamnd/singularity-handbook#227, #231).
+- Volume 1 corrects Lemma 1.5.5 (the module must be nonzero), and proves the bounds on projective dimension in Lemmas 1.6.2, 1.6.4 and 1.6.6 (tamnd/singularity-handbook#226).
+- Volume 3 corrects the claim of Example 1.6.6 on the centers of the arc valuation (tamnd/singularity-handbook#225).
+- Volume 4 corrects Proposition 2.1.9, the remark on transversal intersections, and Example 2.3.13, and it names the forms of D_4, E_6 and E_8 in characteristics 2 and 3 that it does not treat (tamnd/singularity-handbook#230).
 
 ## [0.4.36] - 2026-11-26
 
