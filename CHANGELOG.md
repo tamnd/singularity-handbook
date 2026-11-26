@@ -4,6 +4,20 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.15 treats the corner runs with free translations in three variables for a general $g \in K[[y, z]][x]$. Lemma 3.15.2 proves that $\rho$ does not depend on the free coordinate and that a run moves to each new free coordinate. Proposition 3.15.5 is the criterion (★) for the drop of $\rho$. Proposition 3.15.7 proves that the translations form a pseudo Cauchy sequence of transcendental type in the sense of Kaplansky. Proposition 3.15.10 and Corollary 3.15.11 prove that with an infinite number of nonzero translations the derivative in $x$ becomes a monomial times a unit, and they give the normal form $\mu_m x'' + Q(x''^p, y_m, z_m)$. Theorem 3.15.12 is the finiteness for the dominant index $1$. Theorem 3.15.16 proves that no such run of $\mu x + B_0$ keeps $\rho \ge 1$. Theorem 3.15.17 proves that for $\deg_x g < p$ a run has only a finite number of nonzero translations, so Question 3.13.18 has a positive answer for it. Example 3.15.18 is the point $x^2 y^{p-2} z^{p-2}$, where $\rho$ stays $1$. The map nodes are SG00000062 to SG00000068. The results come from note 30 of the research notes, with the corrections of the referee report in note 33, and they have no Lean proof yet.
+- Volume 9, Section 3.17 reports the result, and the introductions of Volume 7, Chapter 3 and of Volume 9, Chapter 3 name the new sections.
+
+### Changed
+
+- The line `singularity` of `EDITION` now pins the map commit 31f3438 of tamnd/singularity, which has the nodes SG00000062 to SG00000068.
+- Volume 7, Section 3.13 has a pointer to Section 3.15 after Corollary 3.13.28.
+
+### Fixed
+
+- Volume 7, Sections 3.13 and 3.14 no longer say that the runs with translations for $n = 3$ are treated only by Theorem 3.13.27. They now name Section 3.15, and Section 3.14 says that the case of a general $g$ is still open.
+
 ## [0.4.51] - 2026-11-27
 
 ### Added
