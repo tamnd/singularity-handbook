@@ -4,6 +4,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.11 proves Lemma 3.11.4: in the first case, $T_\rho$ is the intersection of the directrices of the forms $E_i F = r_i F + x_i \partial_i F$ for $i \in \Delta$. It proves Proposition 3.11.5: Conjecture 3.11.3 is true if $\tau_\rho$ at the start is at most $1$.
+- Volume 7, Section 3.11 gives Example 3.11.6, a kangaroo path for $p = 2$ in three variables where $\tau_\rho$ goes down from $2$ to $1$. Thus Conjecture 3.11.3 is false. The section explains the mechanism, why the earlier tests did not find the example, and a longer path with three points of the second case.
+- Volume 9, Section 3.13 gives the same results, and a new subsection explains what the counterexample means for the invariant of route R1.
+
+### Changed
+
+- The introductions of Volume 7, Chapter 3 and Volume 9, Chapter 3 say that the conjecture is false.
+- `EDITION` pins the map at the release 0.4.42, which has the new nodes.
+
 ## [0.4.33] - 2026-11-26
 
 ### Added
