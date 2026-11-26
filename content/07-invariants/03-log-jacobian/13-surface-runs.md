@@ -1,6 +1,6 @@
 ---
 title: Runs that follow no curve
-nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P]
+nodes: [SG0000005K, SG0000005M, SG0000005N, SG0000005P, SG0000005Q]
 sources: [CP19, CJS20, Hir64, Chr79]
 status: drafted
 drafted_by: writer
@@ -201,6 +201,10 @@ Part 3. Let $Z = V(h)$ be a regular surface. If $\nu^G_Z \ge 2$, then $h$ divide
 Part 4. A new variable $w$ not in $\Delta$ gives $\partial_w G = 0$, so $J$ does not change. The proof of part 2 uses only that $I_Z$ is prime. $\square$
 
 A computer test checked the data of part 1 for $p = 2, 3, 5, 7$: along the sequence that takes the charts in turn and along the Fibonacci sequence for $40$ steps, along $200$ random sequences of length $30$, and for $n = 4$ with a free variable.
+
+The Lean library proves part 1, the congruence $a l - b m \equiv -1$, the claim that $g$ is clean, the equality $J = (x^p, M)$ and the claim that $x$ does not divide $g + h^p$ for each $h$, over $\mathbb{Z}/p$ for each prime $p$. The library has no order along a formal subvariety, so Lemma 3.13.14 and part 2 are not in Lean.
+
+Node: SG0000005Q · Lean: `Singularity.CornerRuns.cornerRun_of_charts` (part 1)
 
 The example is a small change of Example 3.13.10, and the change shows where a proof by the data of the run must stop. At each $P_k$ the initial form of $G$ is $x^p$, and the initial form of $J$ is $(x^p)$, the same as in Example 3.13.10. The run does not see the term $M$, because its order goes to infinity. But Lemma 3.13.14 needs a divisibility of the whole ideal $J$, and $M$ is never divisible by $x$. In particular, the hypersurface with the tangent space $T_\rho$ that the strong form above asks for is $V(x)$, and its order is $0$.
 
