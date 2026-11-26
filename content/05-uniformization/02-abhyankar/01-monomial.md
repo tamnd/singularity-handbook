@@ -157,6 +157,22 @@ Node: SG0000004D · Lean: `Singularity.hasLocalUniformization_of_isMonomialValua
 
 In Lean the valuation is multiplicative, and $\varphi$ maps the value group to $\mathbb{R}_{\ge 0}$. The weights are $\gamma_i = -\log\varphi(v(x_i))$. The Lean statement does not say that $v$ is an Abhyankar valuation. This is part 3 of Lemma 2.1.2, which is `Singularity.IsMonomialValuation.isAbhyankarValuation`. The Lean proof of Theorem 2.1.5 for each rank, `Singularity.hasLocalUniformization_of_isMonomialValuation`, is Proposition 2.1.9 together with Lemma 2.1.4 in the form with matrices. It applies the lemma to the map $\varepsilon \mapsto v(x^\varepsilon)$ from $\mathbb{Z}^r$ to $\Gamma_v$, which is injective.
 
+In Example 2.1.7 the elements of $S$ are themselves Laurent monomials, and their exponent vectors form a basis. In general the chart must be adapted to all the monomials in the proof of Theorem 2.1.5, and a chart that is good for one finite set can fail for a larger set. The next example carries out the proof for a quotient of two polynomials.
+
+**Example 2.1.11.** Keep $v(x) = 1$ and $v(y) = \sqrt{2}$ on $K = k(x, y)$, and let
+$$s = \frac{y^3 + x^5}{x^4 + y^4}.$$
+The terms of the numerator have values $3\sqrt{2} \approx 4.243$ and $5$, and the terms of the denominator have values $4$ and $4\sqrt{2} \approx 5.657$. So the terms of least value are $y^3$ and $x^4$, and
+$$s = \frac{y^3}{x^4} \cdot \frac{1 + x^5/y^3}{1 + y^4/x^4}.$$
+The Laurent monomials $y^3/x^4$, $x^5/y^3$ and $y^4/x^4$ have the exponent vectors $(-4, 3)$, $(5, -3)$ and $(-4, 4)$, with the values $3\sqrt{2} - 4 \approx 0.243$, $5 - 3\sqrt{2} \approx 0.757$ and $4\sqrt{2} - 4 \approx 1.657$. So $v(s) = 3\sqrt{2} - 4 > 0$.
+
+1. The chart of Example 2.1.7 fails. With $u_1 = y/x$ and $u_2 = x^3/y^2$ we get $y^3/x^4 = u_1/u_2$, $x^5/y^3 = u_1u_2^2$ and $y^4/x^4 = u_1^4$. So $s\,u_2(1 + u_1^4) = u_1(1 + u_1u_2^2)$. Let $A = k[u_1, u_2]$. If $s = a/b$ with $a, b \in A$ and $b \notin (u_1, u_2)$, then $u_2$ divides $u_1(1 + u_1u_2^2)\,b$ in the factorial ring $A$. It does not divide $u_1$ or $1 + u_1u_2^2$, so it divides $b$, a contradiction. Thus $s \notin A_{(u_1, u_2)}$, although $v(s) > 0$.
+2. A good chart. Let $w_1 = y^3/x^4$ and $w_2 = x^3/y^2$, with exponent vectors $(-4, 3)$ and $(3, -2)$. The determinant is $8 - 9 = -1$, so $w_1, w_2$ is a basis of $M$. Both values are positive. We have
+$$\frac{x^5}{y^3} = w_1w_2^3, \qquad \frac{y^4}{x^4} = w_1^4w_2^4, \qquad x = w_1^2w_2^3, \qquad y = w_1^3w_2^4.$$
+Let $A = k[w_1, w_2]$. Then $k[x, y] \subseteq A$, the center of $v$ on $A$ is $\mathfrak{p} = (w_1, w_2)$, and
+$$s = w_1\, \frac{1 + w_1w_2^3}{1 + w_1^4w_2^4} \in A_\mathfrak{p}.$$
+Let $A' = A[s]$. By Lemma 1.1.1 the local ring of $A'$ at the center of $v$ is $A_\mathfrak{p}$, which is regular. This is local uniformization for $S = \{s\}$.
+3. The good chart is one more quadratic transform. In Example 1.2.9 we have $x_3 = u_2$ and $y_3 = u_1$, with $v(x_3) = 3 - 2\sqrt{2} < \sqrt{2} - 1 = v(y_3)$. So the next transform has $x_4 = x_3 = w_2$ and $y_4 = y_3/x_3 = w_1$, and $A_\mathfrak{p} = R_4$. Theorem 1.2.6 says that $s$ lies in some $R_n$. The lattice lemma finds the right $n$ in one step: it asks for a basis of positive Laurent monomials whose exponent vectors span, over $\mathbb{N}$, the vectors $(-4, 3)$, $(5, -3)$ and $(-4, 4)$.
+
 ### Notes and references
 
 The ring $A = k[u_1, \dots, u_r]$ is the coordinate ring of a smooth affine toric chart, and the lattice lemma says that the toric charts with a positive basis exhaust the valuation ring of a monomial valuation. Toric varieties and their resolution by regular subdivisions are in [Ful93], and in Volume 9, Section 2.4. Another combinatorial problem of resolution, the polyhedra game of Hironaka, is solved in [Spi83]. The Lean library has the one-variable step of a monomial valuation, `Singularity.monomialValuation`, which extends a valuation of $K$ to $K[X]$ with a given value of $X$. It proves Lemma 2.1.8, Proposition 2.1.9, Corollary 2.1.10, the lattice lemma (Lemma 2.1.4) by the second proof, and Theorem 2.1.5 for value groups of each rank. It proves Lemma 2.1.2 and Corollary 2.1.6. It does not have Lemma 2.1.3.
