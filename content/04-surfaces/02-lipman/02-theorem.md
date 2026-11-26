@@ -57,7 +57,7 @@ Lean: none yet
 
 *Proof.* By Example 1.2.7, the normalization of $X$ is $\nu : \mathbb{A}^2_k \to X$, and $\mathbb{A}^2_k$ is regular. By the second part of the proof of Theorem 2.2.1, with $n = 0$, the morphism $\nu$ is a resolution. A finite morphism has finite fibres, so no curve maps to a point. $\square$
 
-The resolution of Example 2.2.4 is not an isomorphism over the whole singular locus. It is an isomorphism over $\operatorname{Reg}(X) = X \setminus L$, as condition 3 of the definition asks. For a normal surface $X_0 = X$, and the blowups do the work.
+The resolution of Example 2.2.4 is not an isomorphism over any point of the singular locus $L$. The fibre of $\nu$ over a point of $L$ with residue field $\kappa$ and coordinate $z = c$ is $\operatorname{Spec} \kappa[t]/(t^2 - c)$, which has degree 2 over $\kappa$, by the proof of Example 1.2.7. It is an isomorphism over $\operatorname{Reg}(X) = X \setminus L$, as condition 3 of the definition asks. For a normal surface $X_0 = X$, and the blowups do the work.
 
 ### The structure of the proof
 
