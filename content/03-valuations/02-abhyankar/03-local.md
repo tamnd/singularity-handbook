@@ -16,9 +16,11 @@ These are ideals of $R$, and $P_\gamma^+ \subseteq P_\gamma$.
 
 **Lemma 2.3.1.** Let $\gamma \in \Gamma_v$ and let $z_1, \dots, z_n \in R$ with $v(z_k) = \gamma$ for each $k$. Assume that the residues of $z_1/z_1, z_2/z_1, \dots, z_n/z_1$ in $Kv$ are linearly independent over $\kappa$. Then the classes of $z_1, \dots, z_n$ in $P_\gamma/P_\gamma^+$ are linearly independent over $\kappa$. Here $P_\gamma/P_\gamma^+$ is a $\kappa$-vector space, because $\mathfrak{m}P_\gamma \subseteq P_\gamma^+$.
 
-Lean: none yet
+Lean: `Singularity.mem_maximalIdeal_of_valuation_sum_lt`
 
 *Proof.* Each element of $\mathfrak{m}$ has positive value, so $\mathfrak{m}P_\gamma \subseteq P_\gamma^+$. Let $c_1, \dots, c_n \in R$, not all in $\mathfrak{m}$, and assume that $\sum c_kz_k \in P_\gamma^+$. We divide by $z_1$. Then $\sum c_k(z_k/z_1)$ has positive value, so $\sum \bar{c}_k\overline{z_k/z_1} = 0$ in $Kv$, with $\bar{c}_k \in \kappa$ not all 0. This contradicts the assumption. $\square$
+
+The Lean statement is the elementary form of the lemma. It does not construct the $\kappa$-vector space $P_\gamma/P_\gamma^+$. It states that if $v(\sum c_kz_k) > v(z_j)$, then each $c_k$ is in $\mathfrak{m}$. This is the linear independence of the classes. The hypotheses are weaker than above. The ring $R$ is a local ring that need not be Noetherian, the map $R \to K$ need not be injective, any index $j$ can replace $1$, and the condition $v(z_k) = \gamma$ is replaced by $z_k/z_j \in \mathcal{O}_v$.
 
 ### Composite valuations
 

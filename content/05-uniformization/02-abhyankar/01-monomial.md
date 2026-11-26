@@ -36,7 +36,7 @@ Let $\Gamma$ be an ordered abelian group of finite rational rank, and let $V = \
 
 **Lemma 2.1.3 (cone lemma).** Let $V$ be an ordered $\mathbb{Q}$-vector space of finite dimension $r$, and let $E \subseteq V$ be a finite set of elements $\ge 0$. Then there is a positive basis $m_1, \dots, m_r$ of $V$ such that $E$ lies in its rational cone.
 
-Lean: none yet
+Lean: `Singularity.coneLemma`
 
 *Proof.* We use induction on $r$. For $r = 0$ there is nothing to prove. Let $r \ge 1$.
 
@@ -49,6 +49,8 @@ $$e - \sum_i \lambda_i(e)\tilde{q}_i = \sum_j c_j(e)m_j \in H$$
 with $c_j(e) \in \mathbb{Q}$. For an integer $N \ge 0$ let $q_i^N = \tilde{q}_i - N\sum_j m_j$. Its image in $W$ is $q_i$, so $q_i^N > 0$. Then
 $$e = \sum_i \lambda_i(e)q_i^N + \sum_j \Big(c_j(e) + N\sum_i \lambda_i(e)\Big)m_j.$$
 For $N$ large all coefficients are $\ge 0$, for each of the finitely many $e \in E \setminus H$. So $m_1, \dots, m_h, q_1^N, \dots, q_s^N$ is the required basis. $\square$
+
+The Lean proof goes the other way. It does not use the induction above. It multiplies a basis of $V$ by a common denominator, so that the lattice the basis generates contains $E$. Then it applies the lattice lemma (Lemma 2.1.4) to this lattice. The Lean statement also gives a little more: each $e \in E$ has coordinates in $\mathbb{N}$.
 
 **Lemma 2.1.4 (lattice lemma).** Let $\Gamma \cong \mathbb{Z}^r$ be an ordered group, and let $D \subseteq \Gamma$ be a finite set of elements $\ge 0$. Then there is a basis $m_1, \dots, m_r$ of $\Gamma$ over $\mathbb{Z}$ such that each $m_i$ is positive and each $d \in D$ is a combination $\sum n_im_i$ with $n_i \in \mathbb{N}$.
 
