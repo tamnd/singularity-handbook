@@ -37,9 +37,11 @@ An Abhyankar valuation with $\operatorname{rr} \Gamma_v = 1$ is a *divisorial va
 
 **Corollary 2.2.4.** Let $v$ be an Abhyankar valuation of a function field $K/k$, with rational rank $r$. Then $\Gamma_v \cong \mathbb{Z}^r$ as a group, and $Kv$ is a finitely generated extension of $k$. A divisorial valuation is discrete of rank 1.
 
-Lean: none yet
+Lean: `Singularity.IsAbhyankarValuation.free_valueGroup`, `Singularity.IsAbhyankarValuation.exists_basis_valueGroup` (the claim $\Gamma_v \cong \mathbb{Z}^r$)
 
 *Proof.* Apply Theorem 2.2.2 to $(K/k, v)$. The group $\Gamma_v$ is finitely generated, and it is torsion free because it is ordered (Section 1.1), so $\Gamma_v \cong \mathbb{Z}^r$. If $r = 1$, then $\Gamma_v \cong \mathbb{Z}$ as a group. An ordered group isomorphic to $\mathbb{Z}$ is isomorphic to $\mathbb{Z}$ as an ordered group: map a generator that is positive to 1. $\square$
+
+The Lean proof of the claim on $\Gamma_v$ does not use Theorem 2.2.2 in full. It uses the subfield $K_0 = k(x_1, \dots, x_r, y_1, \dots, y_s)$ of Volume 5, Section 2.2. The values of the nonzero elements of $K_0$ are in the group $\Gamma_0$ that $v(x_1), \dots, v(x_r)$ generate, because the restriction of $v$ to $K_0$ is monomial. The degree $[K : K_0]$ is finite. Nonzero elements of $K$ with values in different cosets of $\Gamma_0$ are linearly independent over $K_0$, by the argument of Lemma 2.1.2, so $\Gamma_v/\Gamma_0$ is finite (`Singularity.finite_quotient_of_valuation_mem`). The generators of $\Gamma_0$ and one element of each coset generate $\Gamma_v$. The claim that $Kv$ is finitely generated over $k$ is not in Lean.
 
 The order on $\mathbb{Z}^r$ is not determined by $r$. Examples 1.6.3 and 1.6.4 give two Abhyankar valuations of $k(x, y)$ with $\Gamma_v \cong \mathbb{Z}^2$. In the first the order comes from an embedding in $\mathbb{R}$, and the rank is 1. In the second the order is lexicographic, and the rank is 2.
 

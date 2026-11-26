@@ -18,7 +18,7 @@ In this section $(L/K, w)$ is an extension of valued fields, as at the end of Se
 $$w\Big(\sum_{i,j} c_{ij}x_iy_j\Big) = \min_{i,j}\big(v(c_{ij}) + w(x_i)\big).$$
 In particular the $mn$ elements $x_iy_j$ are linearly independent over $K$.
 
-Lean: none yet
+Lean: `Singularity.linearIndependent_of_valuation_mul_eq` (the case $n = 1$ and $y_1 = 1$)
 
 *Proof.* Fix $i$ and let $s_i = \sum_j c_{ij}y_j$. We first show that $w(s_i) = \min_j v(c_{ij})$. If all $c_{ij}$ are 0 this is clear. Otherwise choose $j_0$ with $v(c_{ij_0})$ minimal, and let $c = c_{ij_0}$. Then $s_i/c = \sum_j (c_{ij}/c)y_j$, and each $c_{ij}/c$ is in $\mathcal{O}_v$. Its residue is $\sum_j \overline{c_{ij}/c}\,\bar{y}_j$. This is not 0, because the $\bar{y}_j$ are independent and the coefficient of $\bar{y}_{j_0}$ is 1. So $w(s_i/c) = 0$ and $w(s_i) = v(c)$.
 
@@ -26,7 +26,7 @@ Now $\sum_{i,j} c_{ij}x_iy_j = \sum_i x_is_i$. For each $i$ with $s_i \ne 0$, th
 
 **Corollary 2.1.3.** Let $L/K$ be finite of degree $n$. Then $ef \le n$. If $L/K$ is algebraic, then $\Gamma_w/\Gamma_v$ is a torsion group and $Lw/Kv$ is algebraic.
 
-Lean: none yet
+Lean: `Singularity.finite_quotient_of_valuation_mem` (the claim that $e$ is finite, for $K$ a subfield of $L$)
 
 *Proof.* If $e \ge m$ and $f \ge n'$, choose $x_1, \dots, x_m$ with values in distinct cosets and $y_1, \dots, y_{n'}$ with independent residues. Lemma 2.1.2 gives $mn'$ elements of $L$ that are independent over $K$, so $mn' \le n$. Thus $e$ and $f$ are finite and $ef \le n$. If $L/K$ is algebraic, each element of $L$ lies in a finite subextension $L'$. The value of the element is then in $\Gamma_{w|L'}$, which has finite index over $\Gamma_v$, and its residue, if it is defined, is algebraic over $Kv$. $\square$
 
