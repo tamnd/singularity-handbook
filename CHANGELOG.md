@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.12 asks whether each run of point blowups where $\rho$ stays is finite. Example 3.12.2 proves by hand that the run of $g_k = x^4 y^{2k+1} + x^2 y^{3k+1} z^3$ with $p = 2$ and the divisor $\{y\}$ does not end, since it follows the $y$-axis, along which the order is $\rho = 4$. Remark 3.12.3 gives the point $x^p y$ that repeats for each $p$. Hypothesis 3.12.4 (H4) states as an open question that each infinite run follows a formal curve along which the order is $\rho$. The section reports the tree tests `inv38` and `inv38b` (tamnd/singularity#245).
+
 ## [0.4.36] - 2026-11-26
 
 ### Added
