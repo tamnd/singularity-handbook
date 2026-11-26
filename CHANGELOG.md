@@ -4,6 +4,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.44] - 2026-11-27
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.44.
+- Volume 7, Example 3.13.15 says which parts are proved in Lean, with the Node line of the map node SG0000005Q and the Lean name `Singularity.CornerRuns.cornerRun_of_charts`. The status text of Volume 9, Section 3.15 gives the Lean proof. The line `singularity` of `EDITION` now pins the map release 0.4.51.
+
 ## [0.4.43] - 2026-11-27
 
 ### Added
