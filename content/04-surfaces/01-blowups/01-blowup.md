@@ -96,7 +96,7 @@ We show that this ring map is an isomorphism. The map $R_f \to \bar{R}_{\bar{f}}
 
 Thus $h$ is an isomorphism over each chart $\operatorname{Spec} \bar{R}[\bar{I}/\bar{f}_i]$, and these charts cover $\operatorname{Bl}_{Z \cap Y} Y$ by Lemma 1.1.3. So $h$ is an isomorphism. $\square$
 
-This is [Har, Corollary II.7.15]. Thus we can compute the blowup of a hypersurface as a strict transform in the blowup of the affine space. The next lemma does this computation.
+Compare [Har, Corollary II.7.15], where the blowup of $Y$ is shown to be a closed subscheme of $X'$. By Proposition 1.1.5 we can compute the blowup of a hypersurface as a strict transform in the blowup of the affine space. The next lemma does this computation.
 
 **Lemma 1.1.6.** Let $k$ be a field and let $F \in k[x, y, z]$ be nonzero with $F(0) = 0$. Let $m \ge 1$ be the least degree of a monomial of $F$, and let $F_m$ be the homogeneous part of degree $m$ of $F$. Let $\pi$ be the blowup of $\mathbb{A}^3_k$ at the origin. The chart $R[I/x]$, with $R = k[x, y, z]$ and $I = (x, y, z)$, is the polynomial ring $k[x, y_1, z_1]$ with $y = x y_1$ and $z = x z_1$. In this chart
 
