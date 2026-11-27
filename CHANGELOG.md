@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.56] - 2026-11-27
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.56.
+
 ### Changed
 
 - Volume 6, Lemma 3.2.14 and Proposition 4.3.4 name their Lean proofs from tamnd/singularity-lean#187. Lean proves Lemma 3.2.14 for polynomials over any field. For Proposition 4.3.4, Lean proves parts 1 and 3, the new divisor of part 2, and the bound on $\omega$ of part 4. The bound on $\iota$ has no Lean proof.
