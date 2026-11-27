@@ -44,7 +44,7 @@ Then $y^p = \sum_{i \ge 1} t^{p - 1/p^{i-1}} = t^{p-1} + \sum_{i \ge 1} t^{p - 1
 
 **Corollary 1.4.3.** Let $k$ be a field of characteristic 0, let $K/k$ be a function field of transcendence degree 3, and let $v$ be a valuation of $K/k$ such that $\Gamma_v$ is finitely generated and $\kappa_v$ is not algebraic over $k$. Then $v$ has local uniformization.
 
-Lean: none yet
+Lean: `Singularity.algebraicIndependent_of_residue`, `Singularity.mem_of_mem_adjoin_residue`, `Singularity.HasLocalUniformization.of_intermediateField`, `Singularity.trdeg_adjoin_add_trdeg_residueField` (part, without the claim that $V$ has dimension $0$ over $k'$)
 
 *Proof.* If $\operatorname{trdeg}_k \kappa_v \ge 2$, this is Volume 3, Proposition 4.1.8. If $\operatorname{trdeg}_k \kappa_v = 1$, choose $y \in \mathcal{O}_v$ whose residue is transcendental over $k$, and let $k' = k(y)$. By Lemma 1.4.2, $K/k'$ is a function field of transcendence degree 2, and $v$ is a valuation of $K/k'$ with the same value group. The field $k'$ has characteristic 0. By Corollary 1.3.6 over $k'$, $v$ has local uniformization over $k'$, and by Lemma 1.4.2 also over $k$. $\square$
 

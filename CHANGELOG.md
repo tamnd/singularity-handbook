@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 5, Lemmas 1.1.6, 1.2.2 and 1.4.2 name their Lean proofs from tamnd/singularity-lean#191. Lean proves part 2 of Lemma 1.2.2 for each unique factorization domain. For the other parts, the Lean line says which part Lean proves.
+
 ## [0.4.57] - 2026-11-27
 
 ### Added
