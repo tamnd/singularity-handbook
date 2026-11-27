@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.61] - 2026-11-27
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.61.
 - Volume 9, Section 3.21 reports the research result of the track TT on Jung's method for 4-folds in characteristic $p > 24$. Under embedded resolution of divisors in $\mathbb{P}^4$, the proof of Theorem 14.4 of Cutkosky gives local uniformization of 4-folds, and a resolution needs patching in the form of Zariski. The section gives the Hermitian 4-fold with its tame and wild projections, Jung's method for one variety with a projection of local degree less than $p$, the folklore resolution of hypersurfaces of bounded degree, and the corrected example of a disguised $z^2 - x^p$. The nodes are SG0000007W to SG00000088.
 
 ### Changed
