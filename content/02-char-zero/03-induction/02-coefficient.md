@@ -82,7 +82,7 @@ Assume that $\operatorname{ord}_0 a_j \ge j$ for all $j$. Let $I = (f)$, let $H 
 $$f_1 = z_1^m + \sum_{j=2}^m b_j \, z_1^{m-j}, \qquad b_j = x_l^{-j} \, \pi^* a_j.$$
 Here $b_j$ is a polynomial in the coordinates other than $z_1$, and on $H_1 \cap U_l = (z_1 = 0)$ it generates the transform of the marked ideal $(a_j, j)$ under the blowup of $H$ along $Z$.
 
-Lean: none yet
+Lean: `Singularity.ord_classicalF_eq`, `Singularity.le_ord_classicalF_iff`, `Singularity.exists_classicalChart_classicalF` (the order in part 1, the condition on the orders at the origin in part 2, and the formula for $f_1$ on $U_l$ in part 3). Lean does not prove the statements on maximal contact, on $C_H(I)$ and on the chart $U_z$.
 
 *Proof.* Write $f = \sum_{i=0}^m a_{m-i} z^i$ with $a_0 = 1$ and $a_1 = 0$. Then
 $$\partial_z^k f = \sum_{i \ge k} \frac{i!}{(i-k)!} \, a_{m-i} \, z^{i-k}, \qquad \big( \partial_z^k f \big)\big|_H = k! \, a_{m-k}.$$

@@ -23,7 +23,7 @@ For each subset $B$, the ring $L[B]$ is spanned over $L$ by the $p$-monomials, b
 1. $B$ is $p$-independent over $k$ if and only if $b \notin L(B \setminus \{b\})$ for each $b \in B$.
 2. Each $p$-independent set is contained in a $p$-basis. In particular, $K$ has a $p$-basis over $k$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isPIndependent_iff`, `Singularity.Algebra.IsPIndependent.exists_isPBasis_superset`, `Singularity.Algebra.exists_isPBasis` (for finite sets, and for the existence with $K$ finite over $k K^p$)
 
 *Proof.* For each subfield $M$ with $L \subseteq M \subseteq K$ and each $c \in K$, the element $c$ is a root of $T^p - c^p \in M[T]$. Over $K$ this polynomial is $(T - c)^p$, so the minimal polynomial of $c$ over $M$ is $(T - c)^j$ for some $j \le p$. Its constant term is $\pm c^j$, so $c^j \in M$. If $1 \le j < p$, then $j$ is prime to $p$, and $c^j, c^p \in M$ give $c \in M$. So if $c \notin M$, then $j = p$. Thus $[M(c) : M]$ is $1$ or $p$, and in the second case $1, c, \dots, c^{p-1}$ is a basis of $M(c)$ over $M$.
 

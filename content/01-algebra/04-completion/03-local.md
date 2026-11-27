@@ -42,7 +42,7 @@ The ring $R$ is regular if and only if $\operatorname{edim} R = \dim R$, and the
 
 **Corollary 4.3.4.** Let $k$ be a field and let $A = k[x_1, \dots, x_n]_{(x_1, \dots, x_n)}$. Then the completion of $A$ is the ring of formal power series $k[[x_1, \dots, x_n]]$. It is a regular local ring of dimension $n$, and in particular it is a domain.
 
-Lean: none yet
+Lean: `Singularity.Algebra.adicCompletionLocalPolynomialRingEquiv`, `Singularity.Algebra.isDomain_adicCompletion_localPolynomialRing` (the completion is the power series ring, and it is a domain). Lean does not prove that the completion is regular of dimension $n$.
 
 *Proof.* Let $\mathfrak{n} = (x_1, \dots, x_n)$ in $S = k[x_1, \dots, x_n]$. Let $\mathfrak{m} = \mathfrak{n}A$. Localization is exact, so $A/\mathfrak{m}^j$ is the localization of $S/\mathfrak{n}^j$ at $\mathfrak{n}$. The ring $S/\mathfrak{n}^j$ is already local, because each prime ideal contains the nilpotent ideal $\mathfrak{n}/\mathfrak{n}^j$, and $\mathfrak{n}/\mathfrak{n}^j$ is maximal. So the elements outside $\mathfrak{n}$ are units in $S/\mathfrak{n}^j$, and $A/\mathfrak{m}^j \cong S/\mathfrak{n}^j$. These isomorphisms are compatible for different $j$. So $\hat{A} = \varprojlim S/\mathfrak{n}^j$, and this is $k[[x_1, \dots, x_n]]$ by Example 4.2.2. The ring $A$ is regular of dimension $n$ by Example 1.2.3. By Theorem 4.3.3 the same holds for $\hat{A}$. A regular local ring is a domain, by Theorem 1.3.3. $\square$
 

@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Six results in Volumes 1, 2, 3 and 5 have Lean lines: the quadratic transform, the completion of the local polynomial ring, $p$-independence, the rank 2 valuation and the classical coefficient ideal.
 - Volume 3, Lemma 1.6.1, Volume 4, Lemma 1.2.6 and Volume 6, Proposition 1.2.5 have Lean lines.
 
 ## [0.4.75] - 2026-11-28
