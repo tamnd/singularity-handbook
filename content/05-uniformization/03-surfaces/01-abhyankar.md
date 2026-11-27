@@ -28,7 +28,7 @@ The theorem of Lipman is node SG0000001B of the map, with the Lean statement `Si
 
 **Corollary 3.1.3.** Let $k$ be a field of any characteristic, let $K/k$ be a function field of transcendence degree $n$, and let $v$ be a valuation of $K/k$ with $\operatorname{trdeg}_k \kappa_v \ge n - 2$. Then $v$ has local uniformization.
 
-Lean: none yet
+Lean: `Singularity.hasLocalUniformization_of_trdeg_le_trdeg_residueField_add_two` (with Proposition 3.1.2 as a hypothesis)
 
 *Proof.* If $\operatorname{trdeg}_k \kappa_v \ge n - 1$, this is Volume 3, Proposition 4.1.8. Let $\operatorname{trdeg}_k \kappa_v = n - 2$. Choose $y_1, \dots, y_{n-2} \in \mathcal{O}_v$ whose residues form a transcendence basis of $\kappa_v$ over $k$, and let $k' = k(y_1, \dots, y_{n-2})$. By Lemma 1.4.2, $v$ is a valuation of the function field $K/k'$ of transcendence degree 2. By Proposition 3.1.2 over $k'$ it has local uniformization, and by Lemma 1.4.2 so has $v$ over $k$. $\square$
 

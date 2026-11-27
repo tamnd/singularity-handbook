@@ -34,7 +34,7 @@ Lean: `Singularity.Example.perfectRing_of_finite`, `Singularity.Example.perfectR
 
 **Proposition 6.1.5.** Let $K$ be a field of characteristic $p$, let $q = p^e$, let $S = K[[x_1, \dots, x_n]]$ and let $S_e = K[[x_1^q, \dots, x_n^q]]$ be the subring of the power series in $x_1^q, \dots, x_n^q$. Then $S$ is a free $S_e$-module, with basis the monomials $x^\alpha$ with $0 \le \alpha_i < q$ for each $i$. The same holds for the polynomial ring $K[x_1, \dots, x_n]$ over its subring $K[x_1^q, \dots, x_n^q]$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.boxBasis`, `Singularity.Algebra.finrank_powSubalgebra` (for power series, with $S_e$ taken as the power series supported on $q\mathbb{N}^n$; the polynomial case is not in Lean)
 
 *Proof.* Each exponent $\beta \in \mathbb{N}^n$ can be written in exactly one way as $\beta = q\gamma + \alpha$ with $\gamma \in \mathbb{N}^n$ and $0 \le \alpha_i < q$. Let $f = \sum_\beta c_\beta x^\beta$ be in $S$. For each $\alpha$ in the box $0 \le \alpha_i < q$, let $f_\alpha = \sum_\gamma c_{q\gamma + \alpha} x^{q\gamma}$. This is an element of $S_e$, and $f = \sum_\alpha x^\alpha f_\alpha$. The coefficients of $f$ determine the series $f_\alpha$, and conversely. So the expression is unique. For polynomials the same proof works with finite sums. $\square$
 

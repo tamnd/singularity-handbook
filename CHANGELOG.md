@@ -13,6 +13,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 7, Sections 3.17 and 3.18 and the chapter introduction say that Section 3.19 proves Conjecture P and Conjecture L for each clean $g$, and that L° and H1 stay open for degree at least $p$ outside $K[[y, z]][x^p, w^p]$.
 - Volume 9, Section 3.19 and the introduction of Part 3 give the new status, with the nodes SG0000009F to SG0000009J.
 - The singularity line of `EDITION` is at the map commit 744f261.
+- Volume 1, Proposition 6.1.5, Theorem 6.2.3 and Corollary 6.2.4, and Volume 5, Corollary 3.1.3 have new or longer Lean lines.
 - Volume 3, Lemma 2.1.2 and Proposition 3.2.3 and Volume 2, Corollary 2.2.8 have Lean lines. The Lean forms of Proposition 3.2.3 and Corollary 2.2.8 are special forms, and the Lean lines say what is missing.
 
 ## [0.4.71] - 2026-11-27
