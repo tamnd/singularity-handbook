@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.70] - 2026-11-27
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.70.
+
 ### Changed
 
 - Volume 1, Corollary 1.2.7 has the Lean line `Singularity.Algebra.isRegularLocalRing_quotient_span_range`, and the section on the Lean proofs describes its proof.
