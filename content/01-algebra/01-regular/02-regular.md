@@ -106,7 +106,7 @@ Let $k$ be a field and $S = k[x_1, \dots, x_n]_{(x_1, \dots, x_n)}$. Write $f = 
 
 *An arithmetic cusp.* Let $f = x^2 - p^3$ in the same ring $S$. Then $f \in \mathfrak{m}^2$ and $f \ne 0$, so $R = S/(f)$ has dimension 1 and is not regular. The polynomial $x^2 - p^3$ is primitive and irreducible in $\mathbb{Q}[x]$, so it is irreducible in $\mathbb{Z}[x]$ by the lemma of Gauss, and $R$ is a domain. The element $u = x/p$ of the field of fractions of $R$ satisfies $u^2 = p$, so it is integral over $R$. It is not in $R$. If $u \in R$, then $x = pu \in pR$, so the class of $x$ in $R/(p)$ is $0$. But $R/(p) = \mathbb{F}_p[x]_{(x)}/(x^2)$, and the class of $x$ in this ring is not $0$. So $R$ is not integrally closed. This is the arithmetic analog of the cusp of Example 1.2.4.
 
-Lean: none yet
+Lean: `Singularity.Algebra.SurfaceA.not_isRegularLocalRing_quotient`, `Singularity.Algebra.SurfaceA.isRegularLocalRing_quotient_zero` (the surfaces $A_m$), `Singularity.Algebra.RamifiedDVR.isDiscreteValuationRing_quotient` (the ramified discrete valuation ring). Lean does not prove the dimensions, the isomorphism $S/(f) \cong k[x, y]_{(x, y)}$ for $m = 0$, or the statement that $R/(p)$ is not regular.
 
 ### The Lean proof
 

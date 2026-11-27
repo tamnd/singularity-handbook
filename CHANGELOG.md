@@ -10,6 +10,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 1, Example 1.2.11 has a Lean line.
 - Volume 6, Lemmas 2.3.2 and 2.3.3 and Examples 4.3.3 and 4.3.5, and Volume 8, Lemma 1.1.5 have Lean lines.
 - Volume 7, Lemma 4.5.2, Theorem 4.5.9 and Corollary 4.5.10 need only $a_p = 0$ or $a_{2p} = 0$. Exercise 4 of Section 4.5 is now Lemma 4.5.16. Section 4.5 has the corrected computer counts of note 86, a warning on truncated searches (germ 52) and a new list of open questions. The introduction of Chapter 4 and Volume 9, Section 2.5 cite the new results.
 - The singularity line of `EDITION` is at the map commit e7d7c98.
