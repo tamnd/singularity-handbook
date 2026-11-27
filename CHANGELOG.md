@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.66] - 2026-11-27
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.66.
+
 ### Changed
 
 - Volume 4, Lemmas 1.1.3 and 1.2.3, Proposition 1.1.5 and Theorem 1.2.4 name their Lean proofs (singularity-lean #215). All four proofs are partial, and each Lean line says which part Lean proves.
