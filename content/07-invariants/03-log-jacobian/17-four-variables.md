@@ -40,7 +40,7 @@ The first lemma is Lemma 3.15.1 with two free coordinates. Both coordinates are 
 3. $g(\varphi_m + M_m X, \psi_m + M_m W) = \sum_{k, l} A_{kl} X^k W^l$ with $A_{kl} = M_m^{k + l} g^{[k, l]}(\varphi_m, \psi_m) \in K[[y_m, z_m]]$, and $g_m$ is the sum of the terms $A_{kl} x_m^k w_m^l$ over the $(k, l)$ with $k$ or $l$ not divisible by $p$, plus the sum of the terms $\operatorname{cl}(A_{kl}) x_m^k w_m^l$ over the $(k, l)$ with $p \mid k$ and $p \mid l$.
 4. $\partial_{x_m} g_m = M_m g_x(\varphi_m + M_m x_m, \psi_m + M_m w_m)$, and the same holds for $w$.
 
-Node: SG0000006J
+Node: SG0000006J · Lean: `Singularity.PlanarRuns.eq_cornerSum_add_cornerMono_mul`, `Singularity.PlanarRuns.coeff_clean_chart`, `Singularity.PlanarRuns.hasse_single_clean_chart` (parts 1, 3 and 4, for polynomials over a field, with the cleaning given by an additive map $\operatorname{cl}$; in part 1 the fact that $\varphi_m, \psi_m$ have no constant term and part 2 are not in Lean)
 
 *Proof.* Part 1 is the induction of Lemma 3.13.24, part 3, for each of the two free coordinates: from $x_N = \varphi_m + M_m x_m$ and $x_m = L_m (x_{m+1} + a_m)$ we get $x_N = \varphi_m + a_m M_m L_m + M_m L_m x_{m+1} = \varphi_{m+1} + M_{m+1} x_{m+1}$, and the same for $w$. The other parts are the proof of Lemma 3.15.1. It uses only two facts. First, the cleaning commutes with the substitution, since $\pi(h^p) = \pi(h)^p$ and the monomial maps have the determinant $\pm 1$. Second, a monomial $c\, Y x^k w^l$ with $k$ or $l$ not divisible by $p$ is not a $p$-th power. Both hold with two free coordinates. Part 4 is the chain rule. $\square$
 
@@ -424,7 +424,7 @@ The translations of the tests are in finite fields, the words are random or peri
 
 The results of this section are a result of the milestone S7.18 of this project (tamnd/singularity#245). They come from notes 38 and 40 of the research notes, with the corrected statements of the referee reports in notes 39 and 42. Note 38 gave the closed form, the family of Proposition 3.17.8, the reduction to three variables and the class of one linear form, and proposed Conjecture L. Note 39 added the converse of Proposition 3.17.8, Lemma 3.17.6, the fixes of Theorems 3.17.13 and 3.17.15, Corollary 3.17.14 and Conjecture L+. It also separated the finiteness question from Question 3.13.18. Note 40 gave the counterexample of Theorem 3.17.21, Conjecture L°, the results on the points of type $0$ and on the binary initial forms, and Theorem 3.17.33. Note 42 added Example 3.17.22, the wording of Corollary 3.17.28, the multiples $y^{pA} z^{pB}$ in Theorem 3.17.29, and the remark that Hypothesis 3.17.32 holds for the origin runs. Note 38 had Corollary 3.17.14 and Theorem 3.17.15, part 3, for a general $\Phi$ under a result of note 36. Theorem 3.16.14 is this result, so they are now proved.
 
-The outside results are the following. The pseudo Cauchy sequences and their types are from the paper of Kaplansky cited in Remark 3.17.34, the generalized stability theorem is [Kuh10, Theorem 1.1], and the facts on the henselization are in [Kuh-book]. The use of the history of the divisor is from [CJS20]. None of the results has a Lean proof yet.
+The outside results are the following. The pseudo Cauchy sequences and their types are from the paper of Kaplansky cited in Remark 3.17.34, the generalized stability theorem is [Kuh10, Theorem 1.1], and the facts on the henselization are in [Kuh-book]. The use of the history of the divisor is from [CJS20]. Only Lemma 3.17.1, parts 1, 3 and 4, has a Lean proof.
 
 Several questions are open.
 

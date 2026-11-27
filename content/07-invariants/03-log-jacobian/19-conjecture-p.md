@@ -53,7 +53,7 @@ For a pair $(C, D)$ of elements of $\mathbb{K}$ we write $v(C, D) = \min(v(C), v
 3. $\deg_{x_m, w_m} g^{(m)} = D$.
 4. Theorems 3.18.26 and 3.18.32 and Corollary 3.18.33 hold for the run from $P_m$ and the function $g^{(m)}$, with the Hasse derivatives in $(x_m, w_m)$, the limit $\Phi^{(m)}_\infty$, the valuation $v$, and $\delta_m$ in place of $1 + \theta$.
 
-Node: SG0000009F
+Node: SG0000009F · Lean: `Singularity.PlanarRuns.totalDegree_restart`, `Singularity.PlanarRuns.coeff_restart` (part 3, for a clean polynomial over a field and with $g^{(m)}$ given by the formula of Lemma 3.17.1; parts 1, 2 and 4 are not in Lean)
 
 *Proof.* Part 1. The function of a point is defined step by step from the function of the point before it. So the functions of the points $P_n$, $n \ge m$, are the same for the two runs, and so are $\rho$ and the orders. Each chart occurs an infinite number of times after $m$. The function of $P_m$ is a clean power series, and by Lemma 3.17.1, part 3, it is a polynomial in $x_m, w_m$. The recursion $M'_m = 1$, $M'_{n+1} = M'_n L_n$ gives $M'_n = M_n / M_m$, and the sums of the run from $P_m$ are $\sum_{m \le j < n} a_j M_{j+1} / M_m = (\varphi_n - \varphi_m) / M_m$, and the same for $\psi$. The limit is $\Delta_m / M_m$. Planarity depends only on the translations $(a_j, b_j)$ for $j$ large, so it is the same for the two runs.
 
@@ -80,7 +80,7 @@ and the same holds for $H^{(m)}_{e, 2}$ and $S^e_2$. Each $(k, l) \in S^e_1 \cup
 $$(p^e - p)\, v(M_m) + \min_{(k, l) \in S^e_1 \cup S^e_2} \Bigl(v\bigl(g^{[k, l]}(\Phi_m)\bigr) + (k + l - p^e)\, v(M_{m+1})\Bigr),$$
 with $\min \emptyset = \infty$.
 
-Node: SG0000009G
+Node: SG0000009G · Lean: `Singularity.PlanarRuns.eval_hasse_single_restart`, `Singularity.PlanarRuns.cl_eval_restart`, `Singularity.PlanarRuns.eval_hasse_pow_restart_eq_sum`, `Singularity.PlanarRuns.cl0_eval_hasse_pow_restart`, `Singularity.PlanarRuns.exists_le_map_cl0_restart` (for polynomials over a field, with the classes given only by a subring of class $0$ and the map $\operatorname{cl}$; in part 4 the bound is for the value of $\operatorname{cl}_0 H^{(m)}_{e, i}$ and not for each of its terms)
 
 *Proof.* Write $x, w$ for $x_m, w_m$. The substitutions below are possible in $\mathbb{K}$: $g^{(m)}$ and its derivatives are polynomials in $x, w$, and the entries of $\Delta_m / M$ have positive values, since $v(M_{m+1}) > v(M)$.
 
@@ -103,6 +103,8 @@ The two powers $M^{1 - p}$ and $M^{p^e - p}$ are the whole content of the lemma.
 1. $\hat\Lambda^{(m)}_0 = \Lambda_0$.
 2. For $e \ge 1$, $\hat\Lambda^{(m)}_e = v\bigl(\mathbf H^{(m)}_{e, 1}, \mathbf H^{(m)}_{e, 2}\bigr) + p^e (1 + \theta)$, where $\mathbf H^{(m)}_{e, i} = M_m^{p - p^e} H^{(m)}_{e, i}$ is the sum in (19.1). The difference $\mathbf H^{(m)}_{e, 1} - g^{[p^e, 0]}(\Phi_\infty)$ has only terms of class $0$, and the same holds for $\mathbf H^{(m)}_{e, 2} - g^{[0, p^e]}(\Phi_\infty)$.
 3. $v(\operatorname{cl} g^{(m)}(\Phi^{(m)}_\infty)) + p\, v(M_m) = v(\operatorname{cl} g(\Phi_\infty))$.
+
+Lean: `Singularity.PlanarRuns.map_hasse_single_restart_add`, `Singularity.PlanarRuns.restart_sub_mem`, `Singularity.PlanarRuns.map_cl_eval_restart_add` (part 1 for the value of each first derivative, and part 3; for part 2 only the fact on the classes of the difference is in Lean, with the elements of class $0$ given by a subring, and the formula for $\hat\Lambda^{(m)}_e$ is not in Lean)
 
 *Proof.* Part 1. By Lemma 3.19.2, part 1, $\Lambda^{(m)}_0 = \beta_1 + (1 - p) v(M_m) + \delta_m$, and $v(M_m) + \delta_m = 1 + \theta$. Part 2. We have $\Lambda^{(m)}_e + p\, v(M_m) = v(\mathbf H^{(m)}_e) + (p^e - p) v(M_m) + p^e \delta_m + p\, v(M_m) = v(\mathbf H^{(m)}_e) + p^e (1 + \theta)$, with $v(\mathbf H^{(m)}_e)$ the least value of the pair. Taylor's formula at $\Phi_m$ for $g^{[p^e, 0]}$ and the identity (18.5) give
 $$g^{[p^e, 0]}(\Phi_\infty) = \sum_{k, l} \binom{k}{p^e} g^{[k, l]}(\Phi_m)\, \Delta\varphi_m^{k - p^e} \Delta\psi_m^l.$$
@@ -140,7 +142,7 @@ The general proof has the same three ingredients: the inequality of order $1$ at
 
 **Theorem 3.19.6 (Conjecture P).** Let $p$ be a prime, and let $g \in K[[y, z]][x, w]$ be clean with $\deg_{x, w} g \ge 1$. Then $g$ has no planar corner run in four variables. So Conjecture 3.18.39 holds.
 
-Node: SG00000096
+Node: SG00000096 · Lean: `Singularity.PlanarRuns.conjectureP_of_restart`, `Singularity.PlanarRuns.conjectureP_of_restart_model` (the contradiction of the proof, for polynomials over a field; Theorem 3.18.26 for $\deg_{x, w} g \ge p$, Theorem 3.18.32, part 1, and Corollary 3.18.33 for the run from $P_m$, Lemma 3.19.1, parts 1, 2 and 4, the facts on the classes, the bound $v(\Delta_m) \ge v(M_{m+1})$ and the planar tail of Lemmas 3.18.8 and 3.18.10 are hypotheses in Lean)
 
 *Proof.* Assume that $P_N, P_{N+1}, \dots$ is a planar corner run of $g$, and let $D = \deg_{x, w} g \ge 1$.
 
@@ -412,7 +414,7 @@ The results of this section are a result of the track C4 of this project (tamnd/
 
 The part on linear runs of degree at least $p$ comes from notes 79 and 84. Note 79 gave Theorem 3.19.14, which refutes the conjecture on the initial form of note 69 (Conjecture 3.19.14 of the earlier editions), Theorem 3.19.17, Corollary 3.19.18, Proposition 3.19.19, Corollary 3.19.20 and Conjectures 3.19.21 and 3.19.22. Note 84 is the referee report on note 79. It found the main results correct. It found that a remark of note 79, which said that $\rho$ drops at a step outside the rule of Theorem 3.19.14, is false: the step keeps $\rho$ and loses the form $x^p w$ (Example 3.19.15). It gave the explicit family of Corollary 3.19.16, the precise reading of Proposition 3.19.19 (the change to $(\ell, m)$ without a new cleaning, and $d \ge 2$), the run of Corollary 3.19.18 from $P_N$ on, and part 2 of Corollary 3.19.20. Proposition 3.17.30 is correct as stated, for $d < p$. It does not extend to $d = p + 1$. The tests are in the directories `/tmp/bf/69`, `/tmp/bf/71`, `/tmp/bf/74`, `/tmp/bf/79` and `/tmp/bf/84` of these notes.
 
-The outside results are those of Sections 3.17 and 3.18: the pseudo Cauchy sequences of Kaplansky, the generalized stability theorem [Kuh10, Theorem 1.1] and the facts on the henselization in [Kuh-book]. The use of the history of the divisor is from [CJS20]. None of the results has a Lean proof yet.
+The outside results are those of Sections 3.17 and 3.18: the pseudo Cauchy sequences of Kaplansky, the generalized stability theorem [Kuh10, Theorem 1.1] and the facts on the henselization in [Kuh-book]. The use of the history of the divisor is from [CJS20]. Lemma 3.19.1, part 3, Lemma 3.19.2, Corollary 3.19.3, parts 1 and 3, and the final step of Theorem 3.19.6 have Lean proofs. The Lean lines say what is not in Lean.
 
 Several questions are open.
 
