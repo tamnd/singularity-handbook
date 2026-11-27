@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Added
 
+- Volume 9, Section 3.25 treats principalization in dimension 4 and relative strong factorization: the weak and the strong form of principalization, the known cases, the local input $\mathrm{RSF}_3$ of patching along curves with the toric case for $\sigma_0$ in 14 blowups, the repair of Construction 3.24.19 near its bad curve, local strong factorization for valuations of rank 1 and rational rank 3, and the dead chart that settles 36 more toric cones.
 - Volume 7, Section 4.5 has the results of research note 86, the referee report on research note 81. Lemma 4.5.16 shows that $z$ stays prepared at each point when $a_p = 0$ or $a_{2p} = 0$, and Corollary 4.5.18 shows that $\omega$ then never goes up. Theorem 4.5.21 extends the toric model to each boundary, Lemma 4.5.23 and Corollary 4.5.24 describe the generic steps at points that are not chart origins, and Theorem 4.5.28 shows that the extended model terminates. Corollary 4.5.29 proves Conjecture 4.4.6 for rigid germs on branches without cancellation. Proposition 4.5.30 and Corollary 4.5.31 show that a rise of $\omega$ needs a new preparation. Examples 4.5.19, 4.5.25 and 4.5.32 give a new preparation at a chart origin and the steps of germs 57 and 63.
 
 ### Changed
@@ -13,6 +14,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 1, Example 1.2.11 has a Lean line.
 - Volume 2, Lemma 2.1.1 and Volume 8, Lemma 1.1.4 have Lean lines.
 - Volume 1, Proposition 3.3.15, Volume 2, Lemma 2.2.6, Volume 3, Example 1.6.9, Volume 6, Example 4.3.6 and Volume 8, Lemma 1.1.7 have Lean lines.
+- Volume 9, Section 3.24 has the 12 fixes of the referee report in research note 87, and the marks of the results that note 87 confirms are removed.
+- Volume 9, Section 2.5 and the introduction of Part 3 cite Section 3.25.
 - Volume 6, Lemmas 2.3.2 and 2.3.3 and Examples 4.3.3 and 4.3.5, and Volume 8, Lemma 1.1.5 have Lean lines.
 - Volume 7, Lemma 4.5.2, Theorem 4.5.9 and Corollary 4.5.10 need only $a_p = 0$ or $a_{2p} = 0$. Exercise 4 of Section 4.5 is now Lemma 4.5.16. Section 4.5 has the corrected computer counts of note 86, a warning on truncated searches (germ 52) and a new list of open questions. The introduction of Chapter 4 and Volume 9, Section 2.5 cite the new results.
 - Volume 7, Lemmas 3.17.1, 3.19.1 and 3.19.2, Corollary 3.19.3 and Theorem 3.19.6 (Conjecture P) have Lean lines. Each line says what part is not in Lean.
