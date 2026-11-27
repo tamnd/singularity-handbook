@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Fixed
+
+- Volume 7, Section 3.16 has six small fixes from a check of the section (research note 41). Lemma 3.16.3 allows a constant term in $K[[y_N, z_N]]$. The proof of Lemma 3.16.3 takes $\ell > \ell_0 + 1$. The limit data treat a nonzero constant $F^{[i]}$. Step 2 of the proof of Theorem 3.16.8 uses $V_m = C + B_0$ when $\tilde F$ is constant. The remark after Theorem 3.16.9 says that it uses Lemma 3.15.4 through Proposition 3.15.5. The notes after Theorem 3.16.14 call $\varphi_{J+1}$ a Laurent polynomial. None of the fixes changes a result.
+
 ## [0.4.55] - 2026-11-27
 
 ### Added
