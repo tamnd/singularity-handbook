@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## Examples computed by hand
 
-The theorems of Cossart and Piltant that Section 3.2 cites are long, and we do not prove them. Examples are the best way to see what they say. An example shows which invariant moves under a blowup, and why. It also tests the statements: each computation below checks a conclusion of Theorem 3.2.6 or Theorem 3.2.7 in one case. The polyhedron itself is due to Hironaka [Hir67], and Cossart and Piltant give examples of their invariants in [CP19, Section 1, Remark 2.70 and Example 3.6].
+The theorems of Cossart and Piltant that Section 3.2 cites are long, and we do not prove them. Examples are the best way to see what they say. An example shows which invariant moves under a blowup, and why. It also tests the statements: Examples 3.3.1, 3.3.4, 3.3.5 and 3.3.6 check a conclusion of Theorem 3.2.6 or Theorem 3.2.7 in one case. The polyhedron itself is due to Hironaka [Hir67], and Cossart and Piltant give examples of their invariants in [CP19, Section 1, Remark 2.70 and Example 3.6].
 
 This section computes the invariants of Section 3.2 in six examples. The first example is a point blowup at which $\epsilon$ increases and $\omega$ does not. The second example is [CP19, Remark 2.70]: two equations with the same polyhedron and different values of $\omega$. The third example computes a characteristic polyhedron over $\mathbb{F}_3$ by vertex preparation, in two steps. The fourth example is a point blowup at which $\iota$ drops, followed by the blowup of a curve that resolves the singularity. The fifth example is the analogue of the first one for $p = 3$, with a table of all the points of the exceptional plane over $\mathbb{F}_3$. The sixth example carries out the step of Theorem 3.2.7 in the case $\epsilon = 1$, with a center that is not a coordinate curve in the given coordinates. We checked each computation with a short computer program in SymPy, but each step below can be done by hand.
 
@@ -168,7 +168,7 @@ Lean: none yet
 
 ### A curve center when epsilon is one
 
-The step of Theorem 3.2.7 in the case $\epsilon(x) = 1$ and $\delta(x) = 1$ blows up a curve that one finds only after a change of coordinates [CP19, proof of Theorem 2.81, Case 2]. The next example shows this step, and it shows that the point blowup does not help.
+The step of Theorem 3.2.7 in the case $\epsilon(x) = 1$ and $\delta(x) = 1$ blows up a curve that one may have to find after a change of coordinates [CP19, proof of Theorem 2.81, Case 2]. The next example shows this step, and it shows that the point blowup does not help.
 
 **Example 3.3.6.** Let $p = 3$, let $k$ be algebraically closed of characteristic 3, let
 $$f = u_1^2 u_2 + u_1^2 u_3^2 = u_1^2 (u_2 + u_3^2),$$
