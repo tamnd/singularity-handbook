@@ -42,7 +42,7 @@ Lean: none yet
 
 **Proposition 4.2.5.** Let $R$ be a Noetherian ring, let $I$ be an ideal and let $0 \to N \to M \to P \to 0$ be an exact sequence of finitely generated $R$-modules. Then the sequence of $I$-adic completions $0 \to \hat{N} \to \hat{M} \to \hat{P} \to 0$ is exact.
 
-Lean: none yet
+Lean: `Singularity.Algebra.adicCompletion_shortExact`
 
 *Proof.* We view $N$ as a submodule of $M$, so that $P = M/N$. For each $n$ the sequence
 $$0 \to N/(I^n M \cap N) \to M/I^n M \to P/I^n P \to 0$$
@@ -52,13 +52,13 @@ The proof uses the Artin-Rees lemma in an essential way. In general the filtrati
 
 **Theorem 4.2.6.** Let $R$ be a Noetherian ring, let $I$ be an ideal and let $M$ be a finitely generated $R$-module. Then the natural map $\hat{R} \otimes_R M \to \hat{M}$ is an isomorphism of $\hat{R}$-modules.
 
-Lean: none yet
+Lean: `Singularity.Algebra.exists_tensorProduct_equiv_adicCompletion`
 
 *Proof.* For each $R$-module $M$, the map $\hat{R} \otimes_R M \to \hat{M}$ sends $a \otimes x$ to $a \cdot \hat{x}$, where $\hat{x}$ is the image of $x$ in $\hat{M}$. It is natural in $M$. For $M = R^n$ it is an isomorphism, because the completion of a finite direct sum is the direct sum of the completions. Now let $M$ be finitely generated, and take an exact sequence $0 \to K \to R^n \to M \to 0$. The module $K$ is finitely generated, because $R$ is Noetherian. Take a surjection $R^m \to K$. By Proposition 4.2.5, applied to the two short exact sequences, the sequence $\hat{R}^m \to \hat{R}^n \to \hat{M} \to 0$ is exact. The tensor product is right exact, so the sequence $\hat{R}^m \to \hat{R}^n \to \hat{R} \otimes_R M \to 0$ is exact. The natural maps give a map between the two sequences, and it is an isomorphism on the first two terms. Thus it is an isomorphism on the cokernels. $\square$
 
 **Theorem 4.2.7.** Let $R$ be a Noetherian ring and let $I$ be an ideal. Then $\hat{R}$ is a flat $R$-module.
 
-Lean: none yet
+Lean: `Singularity.Algebra.flat_adicCompletion`
 
 *Proof.* By [AM69, Proposition 2.19], it is sufficient to show that for each injective map $N \to M$ of finitely generated $R$-modules, the map $\hat{R} \otimes_R N \to \hat{R} \otimes_R M$ is injective. By Theorem 4.2.6 this map is the map $\hat{N} \to \hat{M}$, and it is injective by Proposition 4.2.5. $\square$
 
