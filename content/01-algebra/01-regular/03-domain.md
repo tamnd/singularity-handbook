@@ -65,7 +65,7 @@ The proof uses the choice of $x$ twice. Proposition 1.2.6 needs $x \notin \mathf
 
 **Corollary 1.3.4.** Let $X$ be a locally Noetherian scheme and let $x \in X$ be a point such that $\mathcal{O}_{X,x}$ is a regular local ring. Then $x$ lies on exactly one irreducible component of $X$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.existsUnique_minimalPrimes_le_of_isRegularLocalRing` (affine form)
 
 *Proof.* Let $U = \operatorname{Spec} A$ be an affine open neighbourhood of $x$, and let $\mathfrak{q} \subseteq A$ be the prime ideal of $x$. The irreducible components of $U$ are the closed sets $V(\mathfrak{p})$ for the minimal prime ideals $\mathfrak{p}$ of $A$, and $x$ lies on $V(\mathfrak{p})$ if and only if $\mathfrak{p} \subseteq \mathfrak{q}$. The minimal prime ideals of $A$ that are contained in $\mathfrak{q}$ correspond to the minimal prime ideals of $A_\mathfrak{q} = \mathcal{O}_{X,x}$ [AM69, Proposition 3.11]. By Theorem 1.3.3, $\mathcal{O}_{X,x}$ is a domain, so it has exactly one minimal prime ideal, the zero ideal. Thus $x$ lies on exactly one irreducible component of $U$. The irreducible components of $X$ that contain $x$ meet $U$ in the irreducible components of $U$ that contain $x$, so the claim follows. $\square$
 
@@ -85,6 +85,8 @@ The second property is important for geometry. It says that the set of regular p
 The Lean proof of Theorem 1.3.3 is `Singularity.Algebra.isDomain_of_isRegularLocalRing`. It applies the theorem `Singularity.Algebra.isDomain_of_isRegularLocalRing_of_ringKrullDim_eq`, which proves the statement for each dimension $n \in \mathbb{N}$ by induction on $n$. The statement in this lemma quantifies over all rings $R$, so that the induction hypothesis applies to the quotient ring $R/(x)$, which is a different type.
 
 Prime avoidance is the Mathlib lemma `Ideal.subset_union_prime`. The step $\mathfrak{p} = x\mathfrak{p}$ is written as the inclusion `P ≤ span {x} • P`, and the Nakayama step is the Mathlib lemma `Submodule.eq_bot_of_le_smul_of_le_jacobson_bot`. The Lean proof is adapted from the file `Hironaka/Algebra/Local/Regular.lean` of [HirLean].
+
+The Lean form of Corollary 1.3.4 is affine. Let $A$ be a commutative ring and let $\mathfrak{q}$ be a prime ideal such that $A_\mathfrak{q}$ is a regular local ring. The theorem `Singularity.Algebra.existsUnique_minimalPrimes_le_of_isRegularLocalRing` in the file `Singularity/Algebra/RegularComponent.lean` states that exactly one minimal prime of $A$ is contained in $\mathfrak{q}$. The minimal primes of $A$ in $\mathfrak{q}$ correspond to the minimal primes of $A_\mathfrak{q}$, and Theorem 1.3.3 gives that $A_\mathfrak{q}$ is a domain, so its only minimal prime is $(0)$. The irreducible components of $\operatorname{Spec} A$ through $\mathfrak{q}$ are the closed sets $V(\mathfrak{p})$ for these minimal primes $\mathfrak{p}$. The scheme form is not yet in Lean.
 
 ### Notes and references
 
