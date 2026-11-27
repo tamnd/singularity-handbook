@@ -139,7 +139,7 @@ The residual order can increase by $1$ (Section 3.3). Since $\omega \in \{\epsil
 $$h' = Z'^3 + (u'_2 + t_2)(u'_3 + t_3).$$
 For $k$ algebraically closed, let $c \in k$ with $c^3 = t_2 t_3$, and translate $Z'$ by $-c$. This gives $Z'^3 + u'_2 u'_3 + t_3 u'_2 + t_2 u'_3$, of order at most $2$. By symmetry the same holds in the other charts. So each point over the origin has multiplicity at most $2 < p$, and $\delta < 1$ there by Proposition 3.2.2(3).
 
-Lean: none yet
+Lean: `Singularity.Examples.example_3_2_8_cpIota`, `Singularity.Examples.example_3_2_8_chart`, `Singularity.Examples.example_3_2_8_translate` (for $f = u_1 u_2 u_3$ as a polynomial: the invariants at the origin, the chart and the translation; not the polyhedron, $\delta$ or the multiplicity bound)
 
 ### The first step of Theorem 3.2.7
 
@@ -296,7 +296,7 @@ With $Z = X + g$ we get $h = Z^2 + f^{\mathrm{cl}}$. By Proposition 3.2.4(1), $\
 
 So the component $\operatorname{div}(u_2)$ of $E$ explains one factor $u_2$ of $f^{\mathrm{cl}}$ and lowers $\epsilon$ by $1$. The invariant $\omega$ is $3$ in each case. In the second and third case the derivative in the direction $u_2$ makes the same correction that the divisor makes in the first case.
 
-Lean: none yet
+Lean: `Singularity.Examples.example_3_2_15_clean`, `Singularity.Examples.example_3_2_15_initialForm`, `Singularity.Examples.example_3_2_15_cpOmega_01`, `Singularity.Examples.example_3_2_15_cpOmega_0`, `Singularity.Examples.example_3_2_15_cpOmega_empty` (for polynomials: the cleaning, the initial form, and $\epsilon$ and $\omega$ for the three divisors; not the vertices or $\delta$)
 
 **Example 3.2.16.** Let $p = 3$, let $k$ be a perfect field of characteristic 3, let $S = k[[u_1, u_2, u_3]]$, and let
 $$h = Z^3 + f, \qquad f = u_1^2 u_2 + u_1^3 u_3.$$
@@ -307,7 +307,7 @@ The exponents $(2, 1, 0)$ and $(3, 0, 1)$ are not in $3 \mathbb{N}^3$, so $f$ is
 
 So a larger divisor can make $\omega$ larger, while in Example 3.2.15 a larger divisor makes $\epsilon$ smaller. The divisor is part of the data, and this is why Cossart and Piltant fix the rule $E' = \sigma^{-1}(E \cup W)_{\mathrm{red}}$ for the divisor after each blowup [CP19, Proposition 2.22]. Condition (E) holds for both divisors. Modulo 3 the derivatives of $f$ are $-u_1 u_2$, $u_1^2$ and $u_1^3$, so their common zero set is $V(u_1)$, which lies in $E$ in both cases, and Lemma 2.3.3 applies.
 
-Lean: none yet
+Lean: `Singularity.Examples.example_3_2_16_cpIota_0`, `Singularity.Examples.example_3_2_16_cpIota_01`, `Singularity.Examples.example_3_2_16_cpOmega_01` (for polynomials: the invariants for both divisors; not condition (E))
 
 ### Notes and references
 

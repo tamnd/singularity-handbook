@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 6, Examples 3.2.8, 3.2.15, 3.2.16, 3.3.5 and 3.3.6 name their Lean proofs (singularity-lean #213).
+
 ## [0.4.63] - 2026-11-27
 
 ### Added

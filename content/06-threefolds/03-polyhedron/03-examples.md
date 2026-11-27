@@ -164,7 +164,7 @@ Thus $\epsilon$ goes up from $3$ to $4$, by $1 = p^0$, the largest increase that
 
 At each of the 13 points $m(x') = 3$, and $\omega(x') \le 3$, as Theorem 3.2.6 says. Only one point has $\epsilon(x') > \epsilon(x)$. Lemma 3.2.14(2) explains the two values of $\omega$ in the rows with $\epsilon(x') = 1$. At $t = (1, 1)$ the initial form is $U_1^4$, so $\operatorname{in}(G') = U_1$ lies in the span of the variables of $E'$, and $\omega(x') = 1$. At $t = (2, 0)$ we have $(u_2 - 1)^4 - (u_2 - 1) = u_2^4 + 2 u_2^3 + u_2 + 2$ modulo 3. The constant $2 = (-1)^3$ and the monomial $2 u_2^3$ give cubes, and after cleaning the initial form is $U_1^3 U_2$. So $\operatorname{in}(G') = U_2$ is transverse to $E'$, and $\omega(x') = 0$.
 
-Lean: none yet
+Lean: `Singularity.Examples.example_3_3_5_cpIota`, `Singularity.Examples.example_3_3_5_chart`, `Singularity.Examples.example_3_3_5_cpIota'`, `Singularity.Examples.example_3_3_5_chart_identity` (for polynomials: the invariants at $x$ and at $x'$, the chart and the identities in characteristic 3; not the other points of the table or condition (E))
 
 ### A curve center when epsilon is one
 
@@ -188,7 +188,7 @@ This series is clean, of order 3, and the new divisor is $\operatorname{div}(u_1
 $$h' = Z'^3 + u_1^{-3} u_1^2 \cdot u_1 (v' + a) = Z'^3 + v' + a.$$
 Let $b \in k$ with $b^3 = a$. Then $h' = (Z' + b)^3 + v'$, which has order 1 at the point $Z' = -b$. So this point is regular. In the $v$-chart at the origin, $u_1 = v u_1'$ and $Z = v Z'$, and the strict transform is $Z'^3 + u_1'^2$, of order 2. So each point $x'$ over $x$ has $m(x') \le 2 < p$, as [CP19, Proposition 2.79] says for this center.
 
-Lean: none yet
+Lean: `Singularity.Examples.example_3_3_6_cpIota`, `Singularity.Examples.example_3_3_6_chart`, `Singularity.Examples.example_3_3_6_cpIota'`, `Singularity.Examples.example_3_3_6_curve_chart`, `Singularity.Examples.example_3_3_6_v_chart` (for polynomials: the invariants at $x$ and at $x'$ and the chart identities; not the change of coordinates, the permissibility of $Y$ or condition (E))
 
 The two blowups of this example have the same invariant at the start, and they behave in a different way. The point blowup keeps $\iota$ at the origin of one chart, while the blowup of $Y$ ends the case $m = p$ at once. The center $Y$ is visible only in the coordinates $(u_1, v, u_3)$, in which $f$ is a monomial times the transverse coordinate. This is the reason why Cossart and Piltant choose the coordinates with $H^{-1} f = (u_{e + 1})$ before they choose the center.
 
