@@ -7,6 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Added
 
 - Volume 0, Section 1.4 tells how to rerun a computation of the lab. It tells what the lab simulator `lab/sim` of tamnd/singularity computes (the cleaning, the residual order, the point and coordinate charts with translations, $\rho$, $\tau$ and $\nu^G$, and the random walks), how its checker accepts a certificate of a chart sequence, and how to run the scripts of a research note in `lab/notes/NN/`. The section has no new node.
+- Volume 7, Sections 3.4 and 3.7 name the new Lean proofs of tamnd/singularity-lean#216 and #217. Lean proves Theorem 3.4.5 for centres that are coordinate centres after a polynomial change of coordinates that is adapted to the divisor, and the two parts of Theorem 3.7.1 as one theorem, with the case of the kangaroo points.
 
 ## [0.4.70] - 2026-11-27
 
