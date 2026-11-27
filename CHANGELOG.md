@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 6, Lemma 3.2.14 and Proposition 4.3.4 name their Lean proofs from tamnd/singularity-lean#187. Lean proves Lemma 3.2.14 for polynomials over any field. For Proposition 4.3.4, Lean proves parts 1 and 3, the new divisor of part 2, and the bound on $\omega$ of part 4. The bound on $\iota$ has no Lean proof.
+
 ### Fixed
 
 - Volume 7, Section 3.16 has six small fixes from a check of the section (research note 41). Lemma 3.16.3 allows a constant term in $K[[y_N, z_N]]$. The proof of Lemma 3.16.3 takes $\ell > \ell_0 + 1$. The limit data treat a nonzero constant $F^{[i]}$. Step 2 of the proof of Theorem 3.16.8 uses $V_m = C + B_0$ when $\tilde F$ is constant. The remark after Theorem 3.16.9 says that it uses Lemma 3.15.4 through Proposition 3.15.5. The notes after Theorem 3.16.14 call $\varphi_{J+1}$ a Laurent polynomial. None of the fixes changes a result.
