@@ -26,7 +26,7 @@ The Lean proof of the last claim does not use the hypothesis that $R$ is Noether
 
 **Lemma 6.4.2.** Let $R$ be a ring of characteristic $p$. Then the Frobenius of $R$ is flat if and only if the Frobenius of $R_\mathfrak{p}$ is flat for each prime $\mathfrak{p}$ of $R$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.flat_frobenius_iff_forall_localization`
 
 *Proof.* Let $\mathfrak{p}$ be a prime and $S = R \setminus \mathfrak{p}$. The localization $(F_* R)_\mathfrak{p} = S^{-1}(F_* R)$ inverts the action of each $s \in S$ on $F_* R$, which is the multiplication by $s^p$. To invert $s^p$ is the same as to invert $s$. So $(F_* R)_\mathfrak{p}$ is the ring $R_\mathfrak{p}$, with the $R_\mathfrak{p}$-module structure that the Frobenius of $R_\mathfrak{p}$ gives. That is, $(F_* R)_\mathfrak{p} = F_*(R_\mathfrak{p})$. A module $M$ over $R$ is flat if and only if $M_\mathfrak{p}$ is flat over $R_\mathfrak{p}$ for each prime $\mathfrak{p}$ [AM69, Proposition 3.10]. $\square$
 

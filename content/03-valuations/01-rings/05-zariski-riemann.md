@@ -24,7 +24,7 @@ The next proposition relates the space to the spectrum of a ring. For a subring 
 
 **Proposition 1.5.2.** Let $B \subseteq K$ be a subring. The center map $c_B$ is continuous and surjective.
 
-Lean: none yet
+Lean: `Singularity.ZariskiRiemann.continuous_and_surjective_centerMap`
 
 *Proof.* Let $f \in B$ with $f \ne 0$. For $V \in \operatorname{ZR}(K/B)$ we have $f \in V$, so $f \notin \mathfrak{m}_V$ if and only if $f$ is a unit of $V$, that is, if and only if $f^{-1} \in V$. Thus $c_B^{-1}(D(f)) = U(\{f^{-1}\})$, which is open. Also $c_B^{-1}(D(0)) = \emptyset$. The sets $D(f)$ form a basis of $\operatorname{Spec} B$, so $c_B$ is continuous. Surjectivity is Corollary 1.3.3. $\square$
 
@@ -54,7 +54,7 @@ The Lean proof of Theorem 1.5.3 uses ultrafilters in place of the theorem of Tyc
 
 **Corollary 1.5.4.** Let $K/k$ be a function field. For each $v \in \operatorname{ZR}(K/k)$ let $B_v \subseteq \mathcal{O}_v$ be a finitely generated $k$-algebra with $\operatorname{Frac} B_v = K$, and let $G_v \subseteq \operatorname{Spec} B_v$ be an open set that contains the center of $v$. Then there are finitely many $v_1, \dots, v_m$ with this property: for each $w \in \operatorname{ZR}(K/k)$ there is an $i$ such that $w$ has a center on $\operatorname{Spec} B_{v_i}$ and this center lies in $G_{v_i}$.
 
-Lean: none yet
+Lean: `Singularity.ZariskiRiemann.exists_finset_forall_exists_centerMap_mem` (without the hypothesis $\operatorname{Frac} B_v = K$)
 
 *Proof.* Let $B_v = k[f_1, \dots, f_n]$. The set $\operatorname{ZR}(K/B_v) = U(\{f_1, \dots, f_n\})$ is open in $\operatorname{ZR}(K/k)$. By Proposition 1.5.2 the set $W_v = c_{B_v}^{-1}(G_v)$ is open in $\operatorname{ZR}(K/B_v)$, so it is open in $\operatorname{ZR}(K/k)$. It contains $v$. By Lemma 1.4.2, $W_v$ is the set of $w$ that have a center on $\operatorname{Spec} B_v$ and whose center lies in $G_v$. The sets $W_v$ cover $\operatorname{ZR}(K/k)$, and by Theorem 1.5.3 finitely many of them cover it. $\square$
 

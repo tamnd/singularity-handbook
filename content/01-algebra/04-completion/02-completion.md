@@ -28,13 +28,13 @@ In topological terms, the sets $x + I^n M$ are a basis of a topology on $M$, the
 
 **Lemma 4.2.3.** Let $0 \to (A_n) \to (B_n) \to (C_n) \to 0$ be maps of inverse systems such that each sequence $0 \to A_n \to B_n \to C_n \to 0$ is exact. Assume that each map $A_{n+1} \to A_n$ is surjective. Then the sequence $0 \to \varprojlim A_n \to \varprojlim B_n \to \varprojlim C_n \to 0$ is exact.
 
-Lean: none yet
+Lean: `Singularity.Algebra.injOn_invLimMap`, `Singularity.Algebra.exists_invLim_of_invLimMap_eq_zero`, `Singularity.Algebra.surjOn_invLimMap` (the limit is the set of the compatible families)
 
 *Proof.* Exactness at the first two places follows from the definition of the limit as a subgroup of a product. We prove that $\varprojlim B_n \to \varprojlim C_n$ is surjective. Let $(c_n)$ be in $\varprojlim C_n$. We choose $b_n \in B_n$ with image $c_n$ and $\theta_n(b_{n+1}) = b_n$, by induction on $n$. Choose any $b_1$ over $c_1$. Assume that $b_n$ is chosen, and choose any $b' \in B_{n+1}$ over $c_{n+1}$. Then $\theta_n(b') - b_n$ maps to $\theta_n(c_{n+1}) - c_n = 0$ in $C_n$, so it is the image of some $a \in A_n$. Since $A_{n+1} \to A_n$ is surjective, $a$ is the image of some $a' \in A_{n+1}$. Let $b_{n+1} = b' - a'$, where we view $a'$ in $B_{n+1}$. Then $b_{n+1}$ maps to $c_{n+1}$, and $\theta_n(b_{n+1}) = \theta_n(b') - a = b_n$. $\square$
 
 **Lemma 4.2.4.** Let $M$ be an $R$-module, and let $(M_n)$ and $(M'_n)$ be descending chains of submodules of $M$. Assume that $M'_n \subseteq M_n$ for each $n$, and that there is $c$ with $M_{n+c} \subseteq M'_n$ for each $n$. Then the natural map $\varprojlim M/M'_n \to \varprojlim M/M_n$ is bijective.
 
-Lean: none yet
+Lean: `Singularity.Algebra.bijOn_chainLimitMap` (the limit is the set of the compatible families)
 
 *Proof.* Let $(x_n)$ be in $\varprojlim M/M'_n$ with image $0$. Fix $n$. The element $x_{n+c}$ has a representative $y \in M$, and the image of $x_{n+c}$ in $M/M_{n+c}$ is $0$, so $y \in M_{n+c} \subseteq M'_n$. Since $x_n$ is the class of $y$ in $M/M'_n$, we get $x_n = 0$. Thus the map is injective. Let $(y_n)$ be in $\varprojlim M/M_n$. Since $M_{n+c} \subseteq M'_n$, there is a natural map $M/M_{n+c} \to M/M'_n$. Let $x_n$ be the image of $y_{n+c}$. The elements $x_n$ are compatible, because the elements $y_n$ are. The composite map $M/M_{n+c} \to M/M'_n \to M/M_n$ is the natural map, so $x_n$ maps to $y_n$. Thus the map is surjective. $\square$
 
