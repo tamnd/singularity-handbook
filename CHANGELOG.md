@@ -4,8 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.19 proves Conjecture P (Theorem 3.19.6): for each prime $p$, a clean $g \in K[[y, z]][x, w]$ of degree at least $1$ has no planar corner run in four variables. So Conjecture L holds for each clean $g$ (Corollary 3.19.7). The section also proves H1 and Conjecture L° for a class of linear runs of cubics in characteristic $2$ (Theorem 3.19.11), states the rest of that case as Conjecture 3.19.14, and gives the numerical evidence of notes 69, 71 and 74.
+
 ### Changed
 
+- Volume 7, Sections 3.17 and 3.18 and the chapter introduction say that Section 3.19 proves Conjecture P and Conjecture L for each clean $g$, and that L° and H1 stay open for degree at least $p$ outside $K[[y, z]][x^p, w^p]$.
+- Volume 9, Section 3.19 and the introduction of Part 3 give the new status, with the nodes SG0000009F to SG0000009J.
+- The singularity line of `EDITION` is at the map commit 744f261.
 - Volume 3, Lemma 2.1.2 and Proposition 3.2.3 and Volume 2, Corollary 2.2.8 have Lean lines. The Lean forms of Proposition 3.2.3 and Corollary 2.2.8 are special forms, and the Lean lines say what is missing.
 
 ## [0.4.71] - 2026-11-27

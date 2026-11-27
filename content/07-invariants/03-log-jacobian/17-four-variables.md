@@ -16,7 +16,7 @@ This leads to three forms of the statement that could replace the finiteness. Co
 
 1. Proved without a hypothesis: the tools of Sections 3.15 and 3.16 for two free coordinates (Lemmas 3.17.1 and 3.17.2, Propositions 3.17.3 and 3.17.4), the family with an infinite number of translations (Proposition 3.17.8 and Corollary 3.17.12), the reduction to three variables (Theorem 3.17.13 and Corollary 3.17.14), the class of one linear form (Theorem 3.17.15 and Corollary 3.17.17), the counterexamples to L+ (Theorem 3.17.21 and Example 3.17.22), the results on the points of type $0$ (Theorems 3.17.27 and 3.17.29), and the result on the binary initial forms (Proposition 3.17.30).
 2. If $\deg_{x, w} g < p$, then each corner run is linear and Conjecture L holds for it (Theorem 3.17.33). The proof here uses the hypothesis H1 (Hypothesis 3.17.32), and Section 3.18 proves H1 for $\deg_{x, w} g < p$ (Corollary 3.18.18).
-3. Conjectures: L (Conjecture 3.17.18) and L° (Conjecture 3.17.24). They hold in all the examples and tests. Section 3.18 proves both of them for $\deg_{x, w} g < p$, so they are open only for $\deg_{x, w} g \ge p$.
+3. Conjectures: L (Conjecture 3.17.18) and L° (Conjecture 3.17.24). They hold in all the examples and tests. Section 3.18 proves both of them for $\deg_{x, w} g < p$, and Section 3.19 proves Conjecture L for each clean $g$ (Corollary 3.19.7). So Conjecture L° is open only for $\deg_{x, w} g \ge p$ outside $K[[y, z]][x^p, w^p]$.
 
 In each example that we know, Question 3.13.18 has a positive answer.
 
@@ -426,7 +426,7 @@ The outside results are the following. The pseudo Cauchy sequences and their typ
 
 Several questions are open.
 
-1. Conjecture L, Conjecture L° and Hypothesis H1 are open for $\deg_{x, w} g > p$ in general. Section 3.18 proves them for $\deg_{x, w} g < p$ (Corollary 3.18.18), proves Conjecture L for $\deg_{x, w} g \le p$ and under the condition (C) (Corollary 3.18.36), and proves L and L° for $g \in K[[y, z]][x^p, w^p]$ (Theorem 3.18.37). By Theorem 3.18.19 the rest of Conjecture L is Conjecture P (Conjecture 3.18.39).
+1. Conjecture L, Conjecture L° and Hypothesis H1 were open for $\deg_{x, w} g > p$ in general. Section 3.18 proves them for $\deg_{x, w} g < p$ (Corollary 3.18.18), proves Conjecture L for $\deg_{x, w} g \le p$ and under the condition (C) (Corollary 3.18.36), and proves L and L° for $g \in K[[y, z]][x^p, w^p]$ (Theorem 3.18.37). By Theorem 3.18.19 the rest of Conjecture L is Conjecture P (Conjecture 3.18.39), and Section 3.19 proves it (Theorem 3.19.6). So Conjecture L holds for each clean $g$ (Corollary 3.19.7), and Conjecture L° and Hypothesis H1 are open for $\deg_{x, w} g \ge p$ outside $K[[y, z]][x^p, w^p]$.
 2. Conjecture L° for the linear runs with $\deg_{x, w} g \ge p$ outside $K[[y, z]][x^p, w^p]$. The class $B_1 x^p + B_2 w^p + B_0$ of rank $2$ is no longer open (Corollary 3.18.38).
 3. Conjecture T of Remark 3.17.34 is proved for the planar runs in each degree (Theorem 3.18.26). A form of it for the runs in more than two directions is open.
 4. For $k \ge 3$ letters the value group has the rational rank $k$, and Lemma 3.15.6 and Proposition 3.15.7 must be proved again. A form of Conjecture L° for $k \ge 3$ is open.
