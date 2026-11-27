@@ -35,13 +35,13 @@ For a Noetherian ring that is not excellent, the normalization can fail to be fi
 
 **Lemma 1.2.3.** Let $X$ be a Noetherian scheme with $\dim X \le 2$, and let $Z \subseteq X$ be a closed subset such that $\dim \mathcal{O}_{X,z} = 2$ for each $z \in Z$. Then $Z$ is a finite set of closed points.
 
-Lean: none yet
+Lean: `Singularity.finite_isMaximal_of_height_eq_two` (for $X = \operatorname{Spec} R$, without the bound $\dim X \le 2$)
 
 *Proof.* The space $Z$ is Noetherian, so it has finitely many irreducible components. Let $z_1, \dots, z_s$ be their generic points. Let $z \in Z$. Then $z$ lies in the closure of some $z_i$. Assume that $z \ne z_i$. Then $z_i$ corresponds to a prime $\mathfrak{p}$ of $\mathcal{O}_{X,z}$ that is not maximal, and $\mathcal{O}_{X,z_i} = (\mathcal{O}_{X,z})_\mathfrak{p}$. A chain of primes of length 2 in $(\mathcal{O}_{X,z})_\mathfrak{p}$ ends at $\mathfrak{p}$. If we add the maximal ideal, we get a chain of length 3 in $\mathcal{O}_{X,z}$. Thus $\dim \mathcal{O}_{X,z} \ge 3$. This is false, since $\dim \mathcal{O}_{X,z} \le \dim X \le 2$. Thus $z = z_i$, and $Z = \{z_1, \dots, z_s\}$. The closure of $z_i$ is in $Z$, and by the argument each of its points is $z_i$. Thus $z_i$ is a closed point. $\square$
 
 **Theorem 1.2.4.** Let $X$ be a normal Noetherian scheme with $\dim X \le 2$, and assume that $\operatorname{Reg}(X)$ is open. Then $\operatorname{Sing}(X) = X \setminus \operatorname{Reg}(X)$ is a finite set of closed points, and $\dim \mathcal{O}_{X,x} = 2$ for each $x \in \operatorname{Sing}(X)$. This holds in particular for each normal excellent surface.
 
-Lean: none yet
+Lean: `Singularity.finite_isMaximal_compl_regularLocus` (for $X = \operatorname{Spec} R$; not the claim on excellent surfaces)
 
 *Proof.* Let $x \in X$ with $\dim \mathcal{O}_{X,x} \le 1$. If the dimension is 0, then $\mathcal{O}_{X,x}$ is a local domain of dimension 0, that is, a field, and it is regular. If the dimension is 1, then $\mathcal{O}_{X,x}$ is an integrally closed Noetherian local domain of dimension 1, and it is regular by Theorem 1.4.2 of Volume 1. Thus each $x \in \operatorname{Sing}(X)$ has $\dim \mathcal{O}_{X,x} = 2$. The set $\operatorname{Sing}(X)$ is closed by assumption. Lemma 1.2.3 gives the result. For an excellent $X$, the set $\operatorname{Reg}(X)$ is open by Proposition 5.3.2 of Volume 1. $\square$
 
