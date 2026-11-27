@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.58] - 2026-11-27
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.58.
 - Volume 7, Section 4.3 treats the base blowups of the algorithm of Cossart for $z^p + g$. Proposition 4.3.1 and Corollary 4.3.2 give the order of $z^q + g$ along the lifted center and the chart. Definition 4.3.3 and Lemmas 4.3.4 and 4.3.5 compute the generic multiplicity. Theorem 4.3.6 proves that the lifting test holds for a regular center if and only if the hypersurface has multiplicity $p$ at the generic point of the center, and then the blowup is permissible. Corollary 4.3.8 shows that no regular center in the multiplicity $p$ locus fails. Proposition 4.3.9 reads the test from the clean part in adapted coordinates, and Example 4.3.10 shows that the coordinates must be adapted. Proposition 4.3.11 and Corollary 4.3.12 bound the invariant $\nu$ of Cossart along a failing center. Examples 4.3.14 to 4.3.16 give failing centers of the algorithm, and Example 4.3.16 is a failing curve through a point of multiplicity $p$. The map nodes are SG0000007H to SG0000007V. Proposition 4.3.1 and Corollary 4.3.2 have Lean proofs. The results come from notes 10, 43 and 47 of the research notes.
 - Volume 9, Section 3.20 reports the result, and the introductions of Volume 7, of Volume 7, Chapter 4 and of Volume 9, Chapter 3 name the new sections.
 - Volume 7, Theorem 4.1.3 and Proposition 4.1.4 name the nodes SG0000007G and SG0000007F of the Lean proofs with the theorem of Lucas.
