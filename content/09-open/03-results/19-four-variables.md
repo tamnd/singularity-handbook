@@ -1,0 +1,66 @@
+---
+title: Corner runs in four variables
+nodes: []
+sources: [CJS20, Kuh10, Kuh-book]
+status: drafted
+drafted_by: writer
+reviewed_by: []
+---
+## Corner runs in four variables
+
+This section reports the nineteenth research result of the milestone S7, from the milestone S7.18. It continues Section 3.18, which says that the runs in four or more variables are not treated. Here we treat the corner runs in four variables with two letters, that is, $n = 4$ and $k = 2$, with a translation vector in the two free coordinates at each step. The finiteness of the translations is false in this case. But in each example that we know, the run lies on a regular hypersurface, the corner curves have $\nu^G \ge \rho$, and Volume 7, Question 3.13.18 has a positive answer. Volume 7, Section 3.17, gives the same results with all the details.
+
+### The problem
+
+At $P_m$ the coordinates are $(x_m, w_m, y_m, z_m)$, with $V(y_m)$ and $V(z_m)$ in $\Delta$. Each step is the $y$-chart or the $z$-chart, followed by a translation $(a_m, b_m) \in K^2$ of the two free coordinates, and each chart occurs an infinite number of times with $\rho \ge 1$ constant. The Notes of Volume 7, Section 3.14, ask whether only a finite number of the translations can be nonzero, as in Section 3.18 for three variables. The second question is what can replace the finiteness, if it fails, to give a positive answer to Volume 7, Question 3.13.18.
+
+### The result
+
+We use the setting of Volume 7, Section 3.17. The results fall into three groups.
+
+Proved without a hypothesis:
+
+1. The closed form, the independence of the free coordinates and the criterion (★★) extend to two free coordinates (Volume 7, Lemmas 3.17.1 and 3.17.2 and Proposition 3.17.3). Each direction $\lambda$ of the translations with an infinite number of nonzero $t^\lambda_j$ gives a pseudo Cauchy sequence of transcendental type (Volume 7, Proposition 3.17.4). The property that only a finite number of the translations are nonzero does not depend on the free coordinates (Volume 7, Lemma 3.17.6).
+2. For $p \ge 3$ the points $x^2 y^{p-2} z^{p-2} + F$ with each monomial of $F$ divisible by $y^p z^p$ keep $\rho = 1$ exactly for the translations $(0, b_m)$, with each $b_m \in K$ (Volume 7, Proposition 3.17.8). For $F = w y^p z^p$ and $F = x w y^p z^p$ no point of the run is a product of a point in three variables with a line (Volume 7, Lemma 3.17.11). So the answer to the question of Section 3.14 is negative (Volume 7, Corollary 3.17.12).
+3. At a cylindrical point the run is a run in three variables, and if the function is a polynomial in the free coordinate, Section 3.18 gives the corner curves (Volume 7, Theorem 3.17.13 and Corollary 3.17.14). Each point $\operatorname{cl} \Phi(\gamma_1 x + \gamma_2 w, y, z)$ becomes cylindrical after a finite number of steps, and for $\Phi$ of degree $1$ no run keeps $\rho \ge 1$ (Volume 7, Theorem 3.17.15 and Corollary 3.17.17).
+4. The order of $G$ along a corner surface $V(X, z)$ is at most $\max(1, \operatorname{mult}_\ell h)$, where $h$ is a binary initial form of degree less than $p$ and $\ell$ is the linear part of $X$ (Volume 7, Lemma 3.17.19). For $p \ge 5$ the point $x w (x + w) y^{p-3} z^{p-3}$ has $\rho = 2$, the run with all translations $0$ keeps it, and each corner surface has $\nu^G \le 1$ (Volume 7, Theorem 3.17.21). The point $y^{p-4} z^{p-4} (x^4 + y z w^3)$ is a second example (Volume 7, Example 3.17.22). So Conjecture L+, which asks for corner surfaces with $\nu^G \ge \rho$, is false. In both examples the corner curves have $\nu^G \ge \rho$.
+5. A point of type $0$ with $1 \le \rho < p$ cannot be the point before a change of the letter (Volume 7, Theorem 3.17.27 and Corollary 3.17.28). So there is no corner run from the points of $K[[y, z]][x^p, w^p]$ with $1 \le \rho < p$, and none from the points $y^{pA} z^{pB} (y x^p + z w^p + B_0)$ (Volume 7, Theorem 3.17.29).
+6. If the initial form of $G$ is a binary form $h$ of degree $d$ with $2 \le d < p$ and a nonzero translation $u$ keeps $\rho$, then $h = c \ell^d$ with $\ell(u) = 0$, and this form stays in the initial form after the steps along $\ell$ (Volume 7, Proposition 3.17.30 and Lemma 3.17.31).
+
+Proved under the hypothesis H1 (Volume 7, Hypothesis 3.17.32), which asks that the initial form of $G_m$ is binary for $m$ large when $\deg_{x, w} g < p$: each corner run with $\deg_{x, w} g < p$ is linear, that is, the translations of one free coordinate are $0$ from some point on, and the run lies on the strict transforms of a regular hypersurface (Volume 7, Theorem 3.17.33). So Conjecture L holds for these runs.
+
+Conjectures: Conjecture L (Volume 7, Conjecture 3.17.18) asks that each corner run in four variables lies eventually on the strict transforms of a regular hypersurface $V(x')$. Conjecture L° (Volume 7, Conjecture 3.17.24) asks in addition that the corner curves $V(x'_m, w'_m, y_m)$ and $V(x'_m, w'_m, z_m)$ have $\nu^G \ge \rho$ for $m$ large. Conjecture L° implies a positive answer to Volume 7, Question 3.13.18 for these runs. The hypothesis H1 is also open.
+
+In each known example, Volume 7, Question 3.13.18 has a positive answer: for the origin runs by Volume 7, Theorem 3.14.7, at the cylindrical points by Corollary 3.17.14, for the class of one linear form by Theorem 3.17.15, for the family of Proposition 3.17.8, and for the two counterexamples to Conjecture L+.
+
+### The proof in short
+
+The closed form is the one of Section 3.17, with one sum for each free coordinate. Both coordinates are multiplied by the same monomial at each step, so the proofs of Volume 7, Section 3.15, apply. The value group depends only on the letters, so for two letters it has the rational rank $2$ for each $n$, and the transcendental type holds one direction at a time.
+
+For the family $x^2 Y + F$ with $Y = y^{p-2} z^{p-2}$, each term of $F$ gives terms whose exponents, after the division by $M_m^2 Y$, are at least $E_m(A', B') + (i + s - 2) e_m$, so they are divisible by $y_m z_m$. Thus $G_m = x^2 + R$ with $R \in (y_m z_m)$ and $\rho = 1$. A nonzero translation in $x$ makes $\partial_x g$ a monomial times a unit, so $\rho = 0$. To show that no point is cylindrical, take the derivation $\partial / \partial w''$ of a hypothetical coordinate system. It kills $x^2 + R$, and a divisibility argument shows that its coefficients vanish at the point. For the independence of the coordinates, a regular surface $x = \alpha$, $w = \beta$ that contains the run forces $\alpha$ to contain each term $a_i M_{i+1}$, so $\alpha$ would have an infinite number of terms below a fixed value.
+
+For the counterexamples to Conjecture L+, a derivation $D$ with $D(y) = D(z) = 0$ lowers the order along $V(X, z)$ by at most $1$, and the order of a series with a binary initial form $q$ along $V(X, z)$ is at most $\operatorname{mult}_\ell q$. For the points of type $0$, the directrix condition of Volume 7, Theorem 3.7.1, part 1, forces the initial form to be $c z^d$ before a $y$-step and $c y^d$ before a $z$-step, and this form survives the $y$-step. For the binary forms, part 2 of the same theorem gives $D_u h = 0$ for the translation $u$, and since $d < p$ this means that $h$ is a power of the line that vanishes on $u$. Under H1, the unique factorization of the binary forms makes the line the same for all late translations.
+
+### The test data
+
+Two independent sets of scripts tested the results over $\mathbb{F}_p$ and $\mathbb{F}_{p^2}$ for $p = 2, 3, 5, 7$, with no shared code.
+
+1. The closed form agreed with the charts in $180$ of $180$ checks in the first set, and with $0$ mismatches in $120$, $180$, $100$ and $100$ checks in the second set. A version without the cleaning gave $71$ mismatches of $150$, so the test can see errors.
+2. Volume 7, Proposition 3.17.8, had no failure at $9000$ points in the first set and at $15200$ points in the second set. With $F = w y^{p-1} z^{p-1}$, which is outside the hypothesis, $\rho$ changed in many runs.
+3. Random walks that keep $\rho$ in several classes of low degree found no planar run. Each deep walk with late translations had them in the kernel of one line.
+4. The bound of Volume 7, Lemma 3.17.19, had no failure on $45000$ random pairs over $\mathbb{F}_9$, $\mathbb{F}_{25}$ and $\mathbb{F}_{49}$, and Volume 7, Theorem 3.17.21, was checked over five fields with free coordinates that are not linear.
+5. In $42$ origin runs of the class $x^2 + c w^2$, no line over $\mathbb{F}_p$ gave corner surfaces with $\nu^G \ge \rho$. All $42$ runs pass with the lines over $\mathbb{F}_{25}$, since $x^2 + c w^2$ has a linear factor there. Walks with translations over $\mathbb{F}_{p^2}$ found no failure of Conjecture L°.
+
+The translations of the tests are in finite fields, the words are random or periodic, and the walks have a finite depth. So the tests are not a proof.
+
+### What the result means
+
+The method of Sections 3.17 and 3.18, which shows that only a finite number of the translations are nonzero, does not extend to four variables: the translations in a direction that $g$ does not see can be arbitrary. What can replace the finiteness is Conjecture L, a regular hypersurface that contains the run. Conjecture L alone does not give the order of $G$ along a subvariety, and the corner surfaces in the hypersurface can have a small order, by the counterexamples to Conjecture L+. The corner curves are the right objects, as for the origin runs of Section 3.16, and Conjecture L° asks for them. The result does not say that $\rho$ drops. The runs with $k \ge 3$ letters and the runs in five or more variables are not treated.
+
+### Status
+
+The map has the nodes SG0000006J, SG0000006K and SG0000006M for the setting, SG0000006N and SG0000006P for the directions of the translations, SG0000006Q for the question of Section 3.14, SG0000006R, SG0000006S and SG0000006T for the runs with an infinite number of nonzero translations, SG0000006V and SG0000006W for the reduction to three variables, SG0000006X and SG0000006Y for the class of one linear form, SG0000006Z for Conjecture L, SG00000070 for the bound along the corner surfaces, SG00000071 for Conjecture L+, SG00000072 and SG00000073 for the counterexamples, SG00000074 for the necessary condition, SG00000075 for Conjecture L°, SG00000076 to SG0000007A for the points of type $0$, SG0000007B and SG0000007C for the binary initial forms, SG0000007D for the hypothesis H1 and SG0000007E for the result under H1. The proved results have proofs in the text of Volume 7, Section 3.17, and none has a Lean proof yet. An outside expert has not yet read the result, and the milestone S7 asks for this.
+
+### Notes and references
+
+The results of this section are from notes 38 and 40 of the research notes, with the corrected statements of the referee reports in notes 39 and 42, and they are a result of the milestone S7.18 of this project (tamnd/singularity#245). Note 39 found that the finiteness question and Volume 7, Question 3.13.18 are different questions in four variables, and it proposed Conjecture L+. Note 40 found the counterexample to Conjecture L+ and proposed Conjecture L°. Note 42 found the second counterexample and corrected several statements. The pseudo Cauchy sequences are from the paper of Kaplansky, Maximal fields with valuations, Duke Math. J. 9 (1942). The generalized stability theorem is [Kuh10, Theorem 1.1], and the facts on the henselization are in [Kuh-book]. The use of the history of the divisor is from [CJS20].
