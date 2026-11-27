@@ -7,6 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Added
 
 - Volume 7, Section 3.19 proves Conjecture P (Theorem 3.19.6): for each prime $p$, a clean $g \in K[[y, z]][x, w]$ of degree at least $1$ has no planar corner run in four variables. So Conjecture L holds for each clean $g$ (Corollary 3.19.7). The section also proves H1 and Conjecture L° for a class of linear runs of cubics in characteristic $2$ (Theorem 3.19.11), states the rest of that case as Conjecture 3.19.14, and gives the numerical evidence of notes 69, 71 and 74.
+- Volume 7, Section 3.3 has the results of research note 68 with the corrections of note 70: the arc lemma, the reduction to the leading form, Theorem 3.3.26 for $n = 2$ and $D = p$ with the bound $|C| \le p - 2$, Corollary 3.3.29 for binary forms, Theorem 3.3.31 for $D = p$ when $Q$ contains no line, Example 3.3.32, Theorem 3.3.35 and Proposition 3.3.36 for changes that do not keep the weight, Theorem 3.3.38 for weighted forms in three variables, Lemma 3.3.39 for the edges, Theorem 3.3.44 on the residual order after one weighted blowup, and Conjecture 3.3.46. The new node lines are SG00000097 to SG0000009E.
 
 ### Changed
 
@@ -14,6 +15,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 9, Section 3.19 and the introduction of Part 3 give the new status, with the nodes SG0000009F to SG0000009J.
 - The singularity line of `EDITION` is at the map commit 744f261.
 - Volume 3, Lemma 2.1.2 and Proposition 3.2.3 and Volume 2, Corollary 2.2.8 have Lean lines. The Lean forms of Proposition 3.2.3 and Corollary 2.2.8 are special forms, and the Lean lines say what is missing.
+- Volume 7, Section 3.3: Example 3.3.28 replaces the old Example 3.3.25 and shows that $z^5 + x^4 y + x y^4$ and $z^5 + 2 x^2 y^2 (x + y)$ resist each change of all coordinates. Conjecture 3.3.33 states the proved cases, and the list of open problems and the notes are new. The items after Example 3.3.23 have new numbers.
 
 ## [0.4.71] - 2026-11-27
 
