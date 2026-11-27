@@ -69,7 +69,7 @@ Part 3. The ring $R_1/xR_1 = \kappa[Y]_{(h)}$ is a discrete valuation ring with 
 
 **Lemma 1.1.6.** Assume case 2 of Proposition 1.1.3. If $f, g \in R$ are nonzero and have no common prime factor in $R$, then $f'$ and $g'$ have no common prime factor in $R_1$.
 
-Lean: none yet
+Lean: `Singularity.not_prime_dvd_transform_blowupChart`, `Singularity.not_prime_dvd_transform`, `Singularity.exists_prime_forall_dvd_of_prime` (part, with the primality of $x$ in $R_1$ and $x \nmid f'$ as hypotheses)
 
 *Proof.* A regular local ring is a unique factorization domain [Mat, Theorem 20.3]. This is node SG00000023 of the map. So $R$ and $R_1$ are unique factorization domains, and their height 1 primes are principal. Assume that a height 1 prime $\mathfrak{q}$ of $R_1$ contains $f'$ and $g'$. By Lemma 1.1.5, $f' \notin xR_1$. The ideal $xR_1$ is a prime of height 1, so $x \notin \mathfrak{q}$. Let $Q = \mathfrak{q} \cap B$. Then $x \notin Q$, and $Q$ has height 1, because $R_1$ is a localization of $B$. Now $B_x = R_x$, because $y/x \in R_x$. So $QB_x$ is a height 1 prime of $R_x$, and $P = Q \cap R$ is a height 1 prime of $R$. It contains $f = x^af'$ and $g = x^bg'$. So the generator of $P$ is a common prime factor of $f$ and $g$, a contradiction. $\square$
 
