@@ -7,6 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Fixed
 
 - Volume 7, Section 3.16 has six small fixes from a check of the section (research note 41). Lemma 3.16.3 allows a constant term in $K[[y_N, z_N]]$. The proof of Lemma 3.16.3 takes $\ell > \ell_0 + 1$. The limit data treat a nonzero constant $F^{[i]}$. Step 2 of the proof of Theorem 3.16.8 uses $V_m = C + B_0$ when $\tilde F$ is constant. The remark after Theorem 3.16.9 says that it uses Lemma 3.15.4 through Proposition 3.15.5. The notes after Theorem 3.16.14 call $\varphi_{J+1}$ a Laurent polynomial. None of the fixes changes a result.
+- Volume 6, Sections 3.2, 3.3 and 4.3 have referee fixes for the new material of edition 0.4.55. Proposition 4.3.4 now states $S$, $h$ and the point $x$ in its hypotheses. Example 3.2.16 checks condition (E), so Theorem 3.2.7 applies to it. The notes cite [CP19, Lemma 2.78] for Lemma 3.2.14(2). Five sentences are made more exact: the bound $p > 5$ of Abhyankar, the hypotheses of Theorem 3.2.6, the transverse factor after Lemma 3.2.14, the examples that test the theorems in Section 3.3, and the claims after Example 4.3.6. All the computations were checked again with SymPy and are correct.
 
 ## [0.4.55] - 2026-11-27
 

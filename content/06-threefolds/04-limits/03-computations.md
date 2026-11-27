@@ -98,7 +98,7 @@ Example 4.3.3 is the dimension 4 analogue of Example 3.3.1. The mechanism is the
 
 In Examples 3.3.1, 3.3.5 and 4.3.3 the increase of $\epsilon$ happens at a point of the exceptional divisor with a coordinate $t_i \ne 0$. The translation $x_i \mapsto x_i + t_i$ makes a $p$-th power appear, and cleaning removes it. At the origin of a chart there is no translation, and the next proposition shows that then $\epsilon$ and $\omega$ do not go up. It holds in each dimension $n$, and it needs neither condition (E) nor Theorem 3.2.6.
 
-**Proposition 4.3.4.** Let $k$ be a perfect field of characteristic $p$, let $n \ge 1$, let $F \in k[x_1, \dots, x_n]$ be clean with $d = \operatorname{ord} F \ge p$, and let $E = \operatorname{div}(\prod_{i \in D} x_i)$ for a set $D \subseteq \{1, \dots, n\}$. Let $j \in \{1, \dots, n\}$, let $x'$ be the origin of the $x_j$-chart of the blowup of the closed point, and let
+**Proposition 4.3.4.** Let $k$ be a perfect field of characteristic $p$, let $n \ge 1$, let $S = k[[x_1, \dots, x_n]]$, let $F \in k[x_1, \dots, x_n]$ be clean with $d = \operatorname{ord} F \ge p$, let $h = Z^p + F$, and let $E = \operatorname{div}(\prod_{i \in D} x_i)$ for a set $D \subseteq \{1, \dots, n\}$. Let $x$ be the point of $X = \operatorname{Spec} S[Z]/(h)$ over the closed point of $S$. Let $j \in \{1, \dots, n\}$, let $x'$ be the point over the origin of the $x_j$-chart of the blowup of $x$, and let
 $$F' = x_j^{-p} F(x_1 x_j, \dots, x_{j-1} x_j, x_j, x_{j+1} x_j, \dots, x_n x_j).$$
 
 1. $F'$ is a clean polynomial, and the map $a \mapsto a'$ with $a'_i = a_i$ for $i \ne j$ and $a'_j = |a| - p$ is a bijection from the support of $F$ to the support of $F'$ that keeps the coefficients.
@@ -141,11 +141,11 @@ In the $x_1$-chart at the point $t = (1, 0, 0)$ the computation of Example 3.3.5
 $$F' = x_1^3 x_2^4 + x_1^4 x_2 x_3^4 + x_1^4 x_2 x_4^4 + x_1^4 x_3^4 + x_1^4 x_4^4,$$
 of order 7, with $E' = \operatorname{div}(x_1 x_3 x_4)$, $r' = (3, 0, 0)$, $\epsilon(x') = 4$ and $\omega(x') = 3$. So $\epsilon$ goes up by 1, $\omega$ stays the same, and $\epsilon(x) = \omega(x) = 3$ and $\delta(x) = 2 \in \mathbb{N}$, as Corollary 4.3.2 says.
 
-The exceptional divisor has 40 points with coordinates in $\mathbb{F}_3$. We computed all of them with SymPy. Each one has $m(x') = 3$. The pairs $(\epsilon(x'), \omega(x'))$ are $(0, 0)$ at 18 points, $(1, 0)$ at 9 points, $(1, 1)$ at 12 points, and $(4, 3)$ at the one point above. So $\omega(x') \le 3$ at each of them, and the only increase of $\epsilon$ is at a point with $t_2 \ne 0$, as Proposition 4.3.4 predicts.
+The exceptional divisor has 40 points with coordinates in $\mathbb{F}_3$. We computed all of them with SymPy. Each one has $m(x') = 3$. The pairs $(\epsilon(x'), \omega(x'))$ are $(0, 0)$ at 18 points, $(1, 0)$ at 9 points, $(1, 1)$ at 12 points, and $(4, 3)$ at the one point above. So $\omega(x') \le 3$ at each of them, and the only increase of $\epsilon$ is at a point that is not the origin of a chart, as Proposition 4.3.4 predicts.
 
 Lean: none yet
 
-The two examples 3.3.5 and 4.3.6 show that the mechanism of the increase does not see the dimension. An extra variable adds terms, but the cube that cleaning removes comes from the same factor $(x_2 - x_1)^3$ of the initial form of $G$.
+In the two examples 3.3.5 and 4.3.6 the mechanism of the increase is the same in dimension 3 and in dimension 4. An extra variable adds terms, but the cube that cleaning removes comes from the same factor $(x_2 - x_1)^3$ of the initial form of $G$.
 
 ### What the data does not show
 

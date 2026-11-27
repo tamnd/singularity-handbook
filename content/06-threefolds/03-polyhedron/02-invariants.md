@@ -16,7 +16,7 @@ We keep the notation of Section 3.1, with $S = k[[u_1, \dots, u_n]]$ in the proo
 
 In characteristic 0 the proof of Hironaka uses two tools: the order of an ideal and a hypersurface of maximal contact [Hir64]. One restricts the problem to the hypersurface, and an induction on the dimension does the rest. Section 1.2 shows that a hypersurface of maximal contact exists at a point of multiplicity $m$ when $m!$ is a unit in the residue field. For $m = p$ this argument fails, and the example of Narasimhan in Section 2.3 shows that such a hypersurface need not exist.
 
-Abhyankar avoids the points of multiplicity $p$. For $p > 5$ the first two steps of his proof give a model whose points have multiplicity at most $3! = 6$, and $6 < p$, so maximal contact is available at each point [Abh66, Cut09]. Section 1.2 gives this plan in the form of Cutkosky. For $p \le 5$ this way is closed, and one must work at the points of multiplicity $p$ themselves.
+Abhyankar works with $p > 5$, and he avoids the points of multiplicity $p$. The first two steps of his proof give a model whose points have multiplicity at most $3! = 6$. Since $6 < p$, maximal contact is available at each point [Abh66, Cut09]. Section 1.2 gives this plan in the form of Cutkosky. For $p \le 5$ this way is closed, and one must work at the points of multiplicity $p$ themselves.
 
 Cossart and Piltant work at these points with the characteristic polyhedron of Hironaka [Hir67]. The polyhedron does not need a hypersurface of maximal contact. It needs only a projection to a regular scheme and one variable $Z$, and it is minimal over all choices of $Z$. So a number that we read off from the minimal polyhedron does not depend on a choice that may not exist. Cossart made the polyhedron a practical tool for threefolds in his early work [Cos87], and the invariants of this section are those of [CP19, Section 2]. The introduction of [CP19] explains how they relate to the invariants of the first two papers [CP08, CP09].
 
@@ -27,7 +27,7 @@ There are four invariants, and each one has a simple role.
 3. The number $\epsilon$ measures the part of $h$ that $E$ does not explain. For the equations $X^p + f$ it is the residual order of Volume 7 (Proposition 3.2.4).
 4. The number $\omega$ corrects $\epsilon$ by $1$ when a derivative in a direction transverse to $E$ is not zero.
 
-The correction in item 4 looks small, but it is the reason for the definition. The residual order $\epsilon$ can go up under a point blowup (Section 3.3), and Theorem 3.2.6 says that $\omega$ does not. A reader who wants the main line can read Definition 3.2.1, Proposition 3.2.4, Definition 3.2.5, Theorem 3.2.6 and Proposition 3.2.12, and then come back to the proofs. Lemma 3.2.14 at the end of the section lists the possible values of $\omega$, and Examples 3.2.15 and 3.2.16 compute all the invariants in two small cases.
+The correction in item 4 looks small, but it is the reason for the definition. The residual order $\epsilon$ can go up under a point blowup (Section 3.3), and Theorem 3.2.6 says that, under its hypotheses, $\omega$ does not. A reader who wants the main line can read Definition 3.2.1, Proposition 3.2.4, Definition 3.2.5, Theorem 3.2.6 and Proposition 3.2.12, and then come back to the proofs. Lemma 3.2.14 at the end of the section lists the possible values of $\omega$, and Examples 3.2.15 and 3.2.16 compute all the invariants in two small cases.
 
 ### The invariant delta
 
@@ -271,7 +271,7 @@ Part 2. If $\epsilon(x) \ge 2$, then $\omega(x) \ge \epsilon(x) - 1 \ge 1$ by pa
 
 Part 3. If $e = n$, there is no index $j$ with $e < j \le n$, and so $\omega(x) = \epsilon(x)$. $\square$
 
-Part 3 explains Examples 3.3.1 and 3.3.4, where all the coordinates belong to $E$ and $\omega(x) = \epsilon(x)$. Part 2 shows that $\omega(x) = 0$ is a strong condition. Either the divisor explains all of $f^{\mathrm{cl}}$ up to a unit, or it explains all of it up to one transverse linear factor. In the second case one can take this factor as the coordinate $u_{e + 1}$, and this is the coordinate of Case 2 of [CP19, proof of Theorem 2.81].
+Part 3 explains Examples 3.3.1 and 3.3.4, where all the coordinates belong to $E$ and $\omega(x) = \epsilon(x)$. Part 2 shows that $\omega(x) = 0$ is a strong condition. Either the divisor explains all of $f^{\mathrm{cl}}$ up to a unit, or it explains all of it up to one factor $G$ of order $1$ whose linear part is not in the span of $U_1, \dots, U_e$. In the second case $(u_1, \dots, u_e, G)$ is part of a regular system of parameters, so one can take $G$ as the coordinate $u_{e + 1}$, and this is the coordinate of Case 2 of [CP19, proof of Theorem 2.81].
 
 ### Two worked examples
 
@@ -305,7 +305,7 @@ The exponents $(2, 1, 0)$ and $(3, 0, 1)$ are not in $3 \mathbb{N}^3$, so $f$ is
 1. Let $E = \operatorname{div}(u_1)$. Then $r_1 = 2$ and $G = u_2 + u_1 u_3$, so $\epsilon(x) = 1$ and $\operatorname{in}(G) = U_2$. This form is not in the span of $U_1$. By Lemma 3.2.14(2), $\omega(x) = 0$, and $\iota(x) = (3, 0, 1)$. Theorem 3.2.7 applies, in the case $\epsilon(x) = 1$ and $\delta(x) = 1$. Example 3.3.6 carries out its step for a similar equation.
 2. Let $E = \operatorname{div}(u_1 u_2)$. The monomial $u_1^3 u_3$ is not divisible by $u_2$, so $r = (2, 0)$, $G = u_2 + u_1 u_3$ and $\epsilon(x) = 1$ again. Now $U_2$ is in the span of $U_1, U_2$, and $\partial F/\partial U_3 = 0$. So $\omega(x) = 1$, and $\iota(x) = (3, 1, \kappa(x))$ with $\kappa(x) \ge 2$.
 
-So a larger divisor can make $\omega$ larger, while in Example 3.2.15 a larger divisor makes $\epsilon$ smaller. The divisor is part of the data, and this is why Cossart and Piltant fix the rule $E' = \sigma^{-1}(E \cup W)_{\mathrm{red}}$ for the divisor after each blowup [CP19, Proposition 2.22]. We do not check condition (E) in this example.
+So a larger divisor can make $\omega$ larger, while in Example 3.2.15 a larger divisor makes $\epsilon$ smaller. The divisor is part of the data, and this is why Cossart and Piltant fix the rule $E' = \sigma^{-1}(E \cup W)_{\mathrm{red}}$ for the divisor after each blowup [CP19, Proposition 2.22]. Condition (E) holds for both divisors. Modulo 3 the derivatives of $f$ are $-u_1 u_2$, $u_1^2$ and $u_1^3$, so their common zero set is $V(u_1)$, which lies in $E$ in both cases, and Lemma 2.3.3 applies.
 
 Lean: none yet
 
@@ -313,4 +313,4 @@ Lean: none yet
 
 The definitions follow [CP19, Sections 2.1, 2.2, 2.5 and 2.7]. Proposition 3.2.4 is not stated in this form in [CP19]. It is the special case of [CP19, Propositions 2.10 and 2.26] for $X^p + f$ over a perfect field, with a direct proof. The residual order and its increase are studied by Moh [Moh87] and by Hauser and Perlega [HP19a]. Volume 7, Section 1.4, gives the examples of the increase.
 
-The characteristic polyhedron and the vertex preparation are due to Hironaka [Hir67], and the role of maximal contact in characteristic 0 is in [Hir64]. The proofs of Abhyankar [Abh66] and of Cutkosky [Cut09] for $p > 5$ do not need the invariants of this section, because the main local step of their proofs is done on a model on which each point has multiplicity less than $p$. Cossart studied the polyhedron of threefolds in his early work [Cos87], and Cossart and Piltant study in [CP15] when the minimal polyhedron is reached without passing to the completion. Lemma 3.2.14 writes out the case split of [CP19, proof of Theorem 2.81] for the purely inseparable equations. Examples 3.2.15 and 3.2.16 are ours.
+The characteristic polyhedron and the vertex preparation are due to Hironaka [Hir67], and the role of maximal contact in characteristic 0 is in [Hir64]. The proofs of Abhyankar [Abh66] and of Cutkosky [Cut09] for $p > 5$ do not need the invariants of this section, because the main local step of their proofs is done on a model on which each point has multiplicity less than $p$. Cossart studied the polyhedron of threefolds in his early work [Cos87], and Cossart and Piltant study in [CP15] when the minimal polyhedron is reached without passing to the completion. Lemma 3.2.14 writes out the case split of [CP19, proofs of Proposition 2.79 and Theorem 2.81] for the purely inseparable equations, and the implication "if" of its part 2 is [CP19, Lemma 2.78]. Examples 3.2.15 and 3.2.16 are ours.
