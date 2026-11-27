@@ -88,7 +88,7 @@ Indeed, $D(I)$ is generated near $Z$ by the generators $f$ of $I$ and their deri
 **Theorem 2.2.7 (derivatives and transforms).** Let $(X_r, I_r, E_r) \to \dots \to (X_0, I_0, E_0)$ be a blowup sequence of order at least $m$ for $(I, m)$. For $0 \le j \le m$ let $J^{(j)}_0 = D^j(I)$, with the mark $m - j$, and let $J^{(j)}_{i+1}$ be the transform of $(J^{(j)}_i, m - j)$ under $\pi_i$. Then for all $i$ and $j$ the transform is defined, that is $Z_i \subseteq \operatorname{cosupp}(J^{(j)}_i, m - j)$, and
 $$J^{(j)}_i \subseteq D^j(I_i).$$
 
-Lean: none yet
+Lean: `Singularity.chartTransformIdeal_derivIdeal_iterate_le` (for the blowup of a point of affine space, in each chart; centers of positive dimension and sequences of blowups are not in Lean)
 
 *Proof.* Induction on $i$; for $i = 0$ the inclusion is an equality. Assume $J^{(j)}_i \subseteq D^j(I_i)$ for all $j$. The center $Z_i$ lies in $\operatorname{cosupp}(I_i, m)$, so by Lemma 2.1.4 it lies in $\operatorname{cosupp}(D^j(I_i), m - j)$, and since $J^{(j)}_i \subseteq D^j(I_i)$, also in $\operatorname{cosupp}(J^{(j)}_i, m - j)$. By Lemma 2.2.4, the transform of $(J^{(j)}_i, m - j)$ is contained in the transform of $(D^j(I_i), m - j)$. Apply (2.2.1) $j$ times, to the ideals $D^{j-1}(I_i), D^{j-2}(I_i), \dots, I_i$ with the marks $m - j + 1, \dots, m$; each step is allowed because $Z_i \subseteq \operatorname{cosupp}(D^{l}(I_i), m - l)$. Since $D$ preserves inclusions, we get
 $$\pi_i^{-1}{}_*(D^j(I_i), m - j) \subseteq D\big(\pi_i^{-1}{}_*(D^{j-1}(I_i), m - j + 1)\big) \subseteq \dots \subseteq D^j\big(\pi_i^{-1}{}_*(I_i, m)\big) = D^j(I_{i+1}). \qquad \square$$

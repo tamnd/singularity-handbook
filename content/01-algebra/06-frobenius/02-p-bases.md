@@ -35,7 +35,7 @@ For 2, the union of a chain of $p$-independent sets is $p$-independent, because 
 
 **Theorem 6.2.3.** Let $B$ be a $p$-basis of $K$ over $k$. Then $\Omega_{K/k}$ is a $K$-vector space with basis $(db)_{b \in B}$.
 
-Lean: `Singularity.Algebra.derivation_ext_pBasis`, `Singularity.Algebra.span_D_pBasis` (for a finite $p$-basis, the elements $db$ span $\Omega_{K/k}$; their linear independence is not in Lean)
+Lean: `Singularity.Algebra.existsUnique_derivation_pBasis`, `Singularity.Algebra.span_D_pBasis`, `Singularity.Algebra.linearIndependent_D_pBasis` (for a finite $p$-basis)
 
 *Proof.* By the universal property of $\Omega_{K/k}$, it is sufficient to show the following. For each $K$-vector space $V$ and each family $(v_b)_{b \in B}$ in $V$, there is exactly one $k$-derivation $D : K \to V$ with $D(b) = v_b$ for each $b \in B$.
 
@@ -47,7 +47,7 @@ This sum is finite, and $D_0$ is an $L$-linear derivation along $\varepsilon$: $
 
 **Corollary 6.2.4.** If $K$ has a finite $p$-basis $B$ over $k$, then $[K : kK^p] = p^{|B|}$ and $\dim_K \Omega_{K/k} = |B|$. In particular, any two $p$-bases of $K$ over $k$ have the same number of elements.
 
-Lean: `Singularity.Algebra.finrank_pSubring_eq`, `Singularity.Algebra.IsPBasis.card_eq`, `Singularity.Algebra.finrank_kaehler_le_card` (only the inequality $\dim_K \Omega_{K/k} \le |B|$ is in Lean)
+Lean: `Singularity.Algebra.finrank_pSubring_eq`, `Singularity.Algebra.IsPBasis.card_eq`, `Singularity.Algebra.finrank_kaehler_eq_card`
 
 *Proof.* The $p$-monomials in $B$ are a basis of $K$ over $kK^p$, and there are $p^{|B|}$ of them. The second statement is Theorem 6.2.3. $\square$
 

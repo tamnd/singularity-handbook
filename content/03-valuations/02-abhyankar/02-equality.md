@@ -13,7 +13,7 @@ When the Abhyankar inequality is an equality, the value group and the residue fi
 **Lemma 2.2.1.** Let $(L/K, w)$ be an extension of valued fields, and let $x_1, \dots, x_r$ and $y_1, \dots, y_s$ be as in Theorem 2.1.4, with $\gamma_i = w(x_i)$. Let $K_0 = K(x_1, \dots, x_r, y_1, \dots, y_s) \subseteq L$ and let $w_0$ be the restriction of $w$ to $K_0$. Then
 $$\Gamma_{w_0} = \Gamma_v \oplus \mathbb{Z}\gamma_1 \oplus \dots \oplus \mathbb{Z}\gamma_r, \qquad K_0w_0 = Kv(\bar{y}_1, \dots, \bar{y}_s).$$
 
-Lean: none yet
+Lean: `Singularity.exists_valuation_eq_of_mem_adjoin` (the inclusion of $\Gamma_{w_0}$ in $\Gamma_v + \sum \mathbb{Z}\gamma_i$ only)
 
 *Proof.* The sum $\Gamma_v + \sum \mathbb{Z}\gamma_i$ is direct, because the $\gamma_i$ are independent modulo $\Gamma_v$. Each nonzero element of $K[x, y]$ has the form $F = \sum_a x^ap_a$, where $a$ runs over a finite subset of $\mathbb{N}^r$ and each $p_a$ is a nonzero polynomial in $y$ with coefficients in $K$. By Lemma 2.1.2, $w(p_a) = \min v(\text{coefficients of } p_a) \in \Gamma_v$, and $w(F) = \min_a (a \cdot \gamma + w(p_a))$. So $w(F) \in \Gamma_v + \sum \mathbb{Z}\gamma_i$. Since $K_0$ is the field of fractions of $K[x, y]$, the value group $\Gamma_{w_0}$ is in this sum. The other inclusion is clear.
 
