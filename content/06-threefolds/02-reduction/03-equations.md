@@ -36,7 +36,7 @@ The Lean theorem `Singularity.purelyInseparableHypersurfaceResolution_of_resolut
 
 **Lemma 2.3.2.** Let $k$ be perfect, and let $X_g$ be reduced. Then a point of $X_g$ is singular if and only if it lies in $V(\partial g/\partial x, \partial g/\partial y, \partial g/\partial w)$. Let $a = (c, a_1, a_2, a_3)$ be a rational point of $X_g$. Then the multiplicity of $X_g$ at $a$ is at most $p$, and it equals $p$ if and only if $g(x + a_1, y + a_2, w + a_3) + c^p$ has order at least $p$.
 
-Lean: none yet
+Lean: `Singularity.PurelyInseparableEquation.pderiv_X_pow_add_self`, `Singularity.PurelyInseparableEquation.shift_X_pow_add`, `Singularity.PurelyInseparableEquation.ord_shift_X_pow_add`, `Singularity.PurelyInseparableEquation.ord_shift_X_pow_add_eq_iff` (the derivatives, the translation and the order at a point). Lean does not prove that the order is the multiplicity, and it does not prove the first claim, which needs the Jacobian criterion.
 
 *Proof.* We have $\partial h/\partial z = p z^{p-1} = 0$, and the other partial derivatives of $h$ are those of $g$. Over a perfect field a variety is regular at a point if and only if it is smooth there, and the Jacobian criterion [Jac] says that the hypersurface $V(h)$ is smooth at a point if and only if some partial derivative of $h$ does not vanish at it. This gives the first claim. For the second, translate $a$ to the origin. Since $(z + c)^p = z^p + c^p$, the equation becomes
 $$h(z + c, x + a_1, y + a_2, w + a_3) = z^p + \bigl(g(x + a_1, y + a_2, w + a_3) + c^p\bigr).$$
@@ -52,7 +52,7 @@ In the setting of Section 2.2, let $S = k[[u_1, \dots, u_n]]$ with $k$ perfect, 
 
 **Lemma 2.3.3.** Let $y \in X$ be a point of multiplicity $p$, and let $s = \eta(y)$. Then $\partial f/\partial u_i \in s$ for each $i$. In particular, if $V(\partial f/\partial u_1, \dots, \partial f/\partial u_n) \subseteq E$, then $(S, h, E)$ satisfies condition (E).
 
-Lean: none yet
+Lean: `Singularity.derivation_mem_of_algebraMap_mem_pow`, `Singularity.mem_comap_of_derivation_eq_neg` (the algebraic part, for a derivation of a ring $T$ and a prime $M$). Lean does not prove the step from a point of multiplicity $p$ to the prime $M$, or the second claim on the condition (E).
 
 *Proof.* Let $M \subset S[X]$ be the prime ideal of $y$. Multiplicity $p$ means $h \in M^p S[X]_M$, by the definition of Section 1.2. Lemma 1.2.4, applied to the local ring $S[X]_M$ and the derivation $\partial/\partial u_i$, gives $\partial h/\partial u_i \in M^{p-1} S[X]_M \subseteq M S[X]_M$, because $p \ge 2$. Here $\partial h/\partial u_i = -\partial f/\partial u_i$ lies in $S$. So $\partial f/\partial u_i \in M S[X]_M \cap S = M \cap S = s$. The second claim follows, since $\eta(\operatorname{Sing}_p X)$ is then contained in $V(\partial f/\partial u_1, \dots, \partial f/\partial u_n)$. $\square$
 

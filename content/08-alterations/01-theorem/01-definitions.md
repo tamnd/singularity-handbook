@@ -40,7 +40,7 @@ This is the remark in [dJ96, 2.20] that the finiteness condition is equivalent t
 
 **Lemma 1.1.5.** Let $\varphi \colon X' \to X$ be an alteration. Then $\varphi$ is generically étale if and only if $k(X')$ is a separable extension of $k(X)$.
 
-Lean: none yet
+Lean: `Singularity.discr_ne_zero_of_isSeparable`, `Singularity.isEtaleAt_bot_iff_isSeparable`, `Singularity.exists_etale_away_algebraMap_iff_isSeparable` (the affine form, for $B$ finite and finitely presented over $A$). The proof in Lean uses that the étale locus is open, and not the discriminant. Lean does not prove the step from schemes to rings.
 
 *Proof.* Keep the notation of the proof of Lemma 1.1.2, with $K = k(X)$ and $L = k(X') = B \otimes_A K$. If $\varphi$ is étale over a nonempty open subset, then the generic fibre $\operatorname{Spec} L \to \operatorname{Spec} K$ is étale, and so $L$ is separable over $K$. Conversely, assume that $L/K$ is separable. Choose $e_1, \dots, e_n \in B$ that form a basis of $L$ over $K$. Each element of a finite set of generators of the $A$-module $B$ is a $K$-linear combination of the $e_j$, so after we invert one nonzero element of $A$, the module $B$ is free with basis $e_1, \dots, e_n$. Let $\delta = \det(\operatorname{Tr}_{L/K}(e_i e_j))$ be the discriminant. Since $L/K$ is separable, the trace form is nondegenerate and $\delta \neq 0$. Over $A_\delta$, the algebra $B_\delta$ is finite free with a unit discriminant, so it is étale over $A_\delta$ [Stacks]. $\square$
 
