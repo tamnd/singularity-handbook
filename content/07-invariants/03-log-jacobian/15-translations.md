@@ -274,13 +274,15 @@ The theorem says nothing about the drop of $\rho$. The next example shows that $
 $$g = x^2 y^{p-2} z^{p-2},$$
 so $g = x^2 y z$ for $p = 3$. The origin of the $y$-chart and the origin of the $z$-chart send $g$ to $g$, and $\rho = 1$ at each point. So each sequence of the two charts at the origin in which both charts occur an infinite number of times is a corner run with free translations, with all translations $0$, $\rho = 1$ and $\deg_x g = 2 < p$.
 
-Node: SG00000068
+Node: SG00000068 · Lean: `Singularity.Translations.exRun_of_charts`
 
 *Proof.* The exponents of $g$ are $(2, p - 2, p - 2)$, and $2$ is not divisible by $p$, so $g$ is clean. Also $\operatorname{ord} g = 2p - 2 \ge p$. Here $r = (0, p - 2, p - 2)$ and $G = x^2$. The generators of $\widetilde\Theta(G)$ are $\partial_x G = 2x$ and $(p - 2) G + y \partial_y G = (p - 2) G + z \partial_z G = (p - 2) x^2$. Since $2 \ne 0$ in $K$, $\rho = 1$, and $d = 2$. The $y$-chart at the origin sends $g$ to
 $$y^{-p} (y x)^2 y^{p-2} (y z)^{p-2} = x^2 y^{p-2} z^{p-2},$$
 and the $z$-chart is the same with $y$ and $z$ exchanged. The new divisor is $\{y, z\}$ in both charts, and $V(x)$ is not in it. $\square$
 
 The example is close to Example 3.13.10, with $x^2$ in place of $x^p$. In the run that takes the two charts in turn, Theorem 3.13.20 gives $d_m = 2 \ge \rho$ and the corner curves $V(x, y)$ and $V(x, z)$ with $\nu^G = 2$. So in the class of Theorem 3.15.17 runs with $\rho \ge 1$ exist, and the theorem gives the finiteness of the translations and not the end of the run.
+
+*Lean.* The file `Singularity/Invariant/Translations.lean` proves the example for each prime $p \ge 3$ over $\mathbb{Z}/p$. The theorem `Singularity.Translations.example_3_15_18` gives that $g$ is clean, $\operatorname{ord} g = 2p - 2 \ge p$, $G = x^2$, $d = 2$, $\rho = 1$ and $\deg_x g = 2 < p$. The theorems `pointChart_exPoly_y` and `pointChart_exPoly_z` show that the origins of the two charts send $g$ to $y^p g$ and $z^p g$ and keep the divisor $\{y, z\}$, and `rhoStep_exPoint_y` and `rhoStep_exPoint_z` show that each step keeps $\rho = 1$. So each sequence of the two charts is an infinite run with all translations $0$ and $\rho = 1$ at each point (`exRun_of_charts`). Lean has no definition of a corner run with free translations, so the last sentence of the example is in Lean only in this form.
 
 ### Remarks
 
