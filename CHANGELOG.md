@@ -4,11 +4,20 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 4.3 treats the base blowups of the algorithm of Cossart for $z^p + g$. Proposition 4.3.1 and Corollary 4.3.2 give the order of $z^q + g$ along the lifted center and the chart. Definition 4.3.3 and Lemmas 4.3.4 and 4.3.5 compute the generic multiplicity. Theorem 4.3.6 proves that the lifting test holds for a regular center if and only if the hypersurface has multiplicity $p$ at the generic point of the center, and then the blowup is permissible. Corollary 4.3.8 shows that no regular center in the multiplicity $p$ locus fails. Proposition 4.3.9 reads the test from the clean part in adapted coordinates, and Example 4.3.10 shows that the coordinates must be adapted. Proposition 4.3.11 and Corollary 4.3.12 bound the invariant $\nu$ of Cossart along a failing center. Examples 4.3.14 to 4.3.16 give failing centers of the algorithm, and Example 4.3.16 is a failing curve through a point of multiplicity $p$. The map nodes are SG0000007H to SG0000007V. Proposition 4.3.1 and Corollary 4.3.2 have Lean proofs. The results come from notes 10, 43 and 47 of the research notes.
+- Volume 9, Section 3.20 reports the result, and the introductions of Volume 7, of Volume 7, Chapter 4 and of Volume 9, Chapter 3 name the new sections.
+- Volume 7, Theorem 4.1.3 and Proposition 4.1.4 name the nodes SG0000007G and SG0000007F of the Lean proofs with the theorem of Lucas.
+
 ### Changed
 
 - Volume 6, Proposition 4.3.4 names the Lean proofs of the bound on $\iota$ in part 4 and of the claim of part 2 that $(x; Z')$ is well adapted, from tamnd/singularity-lean#190. With them, Lean proves all four parts of the proposition for polynomials over a field of characteristic $p$. In Lean, $m(x) = \min(p, \operatorname{ord} F)$ is a definition, and $\kappa$ takes the values $1$ and $2$, where $2$ stands for $\kappa \ge 2$.
 
 - Volume 5, Lemmas 1.1.6, 1.2.2 and 1.4.2 name their Lean proofs from tamnd/singularity-lean#191. Lean proves part 2 of Lemma 1.2.2 for each unique factorization domain. For the other parts, the Lean line says which part Lean proves.
+
+- Volume 7, Section 4.2: the paragraph "When the test fails" no longer says that the test can fail when the order is $q$ at each closed point of the center. It refers to Theorem 4.3.6 and Example 4.3.16.
+- The line `singularity` of `EDITION` pins the map release 0.4.63.
 
 ## [0.4.57] - 2026-11-27
 
