@@ -100,7 +100,7 @@ The curve $V(f')$ in the chart is the *strict transform* of $V(f)$, and $f'(0, u
 
 *The node.* Let $k$ have characteristic different from $2$ and let $f = y^2 - x^2 - x^3$. Then $f(x, xu) = x^2(u^2 - 1 - x)$. The strict transform $x = u^2 - 1$ is regular, and it meets the exceptional divisor at the two points $u = 1$ and $u = -1$. These are the two tangent directions $y = \pm x$ of the node. The blowup separates the two branches, as the normalization does in Example 1.4.5.
 
-Lean: none yet
+Lean: `Singularity.Example.cusp_chart_x`, `Singularity.Example.cusp_chart_y`, `Singularity.Example.cusp_strict_inter`, `Singularity.Example.cusp_strict_inter_y`, `Singularity.Example.node_chart_x`, `Singularity.Example.node_strict_inter` (the chart equations only)
 
 **Example 1.10.8 (the blowup of the cone).** Let $k$ be a field, let $A = k[x, y, z]/(xy - z^2)$ and let $\mathfrak{m} = (x, y, z)$. The ring $A$ is a domain of dimension $2$, and its local ring at $\mathfrak{m}$ is not regular (Example 1.4.6). Its field of fractions is $k(x, z)$, because $y = z^2/x$, so $x$ and $z$ are algebraically independent over $k$. We compute the three charts.
 
@@ -114,7 +114,7 @@ On the overlap of the first two charts, $vw = z^2/(xy) = 1$. So the exceptional 
 
 Compare this with Proposition 1.10.4. The local ring of the cone has embedding dimension $3$. If it were regular, the exceptional divisor would be $\mathbb{P}^2_k$. In fact, the exceptional divisor is the conic $XY = Z^2$ in $\mathbb{P}^2_k$, that is, $\operatorname{Proj}$ of the graded ring $k[X, Y, Z]/(XY - Z^2)$. This conic is isomorphic to $\mathbb{P}^1_k$, but it is not all of $\mathbb{P}^2_k$. In general, the exceptional divisor of the blowup of a Noetherian local ring at its maximal ideal is $\operatorname{Proj}$ of the associated graded ring. The reason is that the blowup is $\operatorname{Proj} \bigoplus_k \mathfrak{m}^k$ [Har, Section II.7], and the ideal of the exceptional divisor is the graded ideal $\bigoplus_k \mathfrak{m}^{k+1}$. With $e$ the embedding dimension, this graded ring is a quotient of a polynomial ring in $e$ variables, so the exceptional divisor is a closed subscheme of $\mathbb{P}^{e-1}$. It is all of $\mathbb{P}^{e-1}$ when the ring is regular, by Proposition 1.10.1.
 
-Lean: none yet
+Lean: `Singularity.Example.cone_chart_x`, `Singularity.Example.cone_chart_z`, `Singularity.Example.cone_overlap` (the chart equations only)
 
 ### The Lean proof
 

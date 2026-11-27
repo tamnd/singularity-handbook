@@ -28,6 +28,8 @@ Lean: `Singularity.Algebra.injective_frobenius_iff_isReduced`
 
 **Example 6.1.4.** A finite field is perfect, because its Frobenius is an injective map from a finite set to itself. An algebraically closed field is perfect. The field $\mathbb{F}_p(t)$ is not perfect: if $t = (a/b)^p$ with polynomials $a, b$, then $t b^p = a^p$. The degree of the left side is $1$ modulo $p$, and the degree of the right side is $0$ modulo $p$. This is not possible.
 
+Lean: `Singularity.Example.perfectRing_of_finite`, `Singularity.Example.perfectRing_of_isAlgClosed`, `Singularity.Example.not_perfectRing_ratFunc`
+
 ### The Frobenius of a ring of power series
 
 **Proposition 6.1.5.** Let $K$ be a field of characteristic $p$, let $q = p^e$, let $S = K[[x_1, \dots, x_n]]$ and let $S_e = K[[x_1^q, \dots, x_n^q]]$ be the subring of the power series in $x_1^q, \dots, x_n^q$. Then $S$ is a free $S_e$-module, with basis the monomials $x^\alpha$ with $0 \le \alpha_i < q$ for each $i$. The same holds for the polynomial ring $K[x_1, \dots, x_n]$ over its subring $K[x_1^q, \dots, x_n^q]$.

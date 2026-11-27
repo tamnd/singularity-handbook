@@ -67,11 +67,13 @@ Lean: `Ideal.iInf_pow_eq_bot_of_isLocalRing` (in Mathlib, for a local ring and $
 
 **Corollary 4.1.9.** Let $R$ be a Noetherian domain and let $I \ne R$ be an ideal. Then $\bigcap_n I^n = 0$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.iInf_pow_eq_bot_of_isDomain`
 
 *Proof.* Take $M = R$ and $a$ as in Theorem 4.1.7. If $1 + a = 0$, then $1 = -a \in I$, and this is not the case. Since $R$ is a domain and $(1 + a) E = 0$, we get $E = 0$. $\square$
 
 **Example 4.1.10.** The hypotheses of the two corollaries are necessary. Let $k$ be a field, let $R = k \times k$ and let $I = k \times 0$. Then $R$ is Noetherian, but it is not a domain, and $I$ is not in the Jacobson radical, which is $0$. Here $I^n = I$ for each $n \ge 1$, so $\bigcap_n I^n = I \ne 0$. The element $a = (-1, 0)$ of $I$ gives $1 + a = (0, 1)$, and $(0, 1) \cdot I = 0$, as Theorem 4.1.7 says. Section 3.2 gave an example of a local ring that is not Noetherian where $\bigcap_n \mathfrak{m}^n \ne 0$: the ring of germs of smooth functions.
+
+Lean: `Singularity.Algebra.iInf_pow_prod_eq`, `Singularity.Algebra.prod_mul_mem_eq_zero`
 
 ### The Lean proof
 
