@@ -67,4 +67,4 @@ Lean: `Singularity.Algebra.order_eq_zero_iff`
 
 The same argument shows the general rule. For a polynomial $f \in A$ with $f(0) = 0$, the order $\operatorname{ord}_\mathfrak{m}(f)$ is the smallest degree of a monomial of $f$. A point of the hypersurface $f = 0$ is regular if and only if the order of $f$ there is $1$ (Proposition 1.2.10). The order is the multiplicity of the hypersurface at the point (Proposition 3.3.15), and the proofs of resolution in characteristic 0 make it smaller by blowups. In characteristic $p$ the order alone does not give a proof. Let $f = z^p + g$ with $g \in k[x_1, \dots, x_4]$. Then $\operatorname{ord}_\mathfrak{m}(f) = \min(p, \operatorname{ord}_\mathfrak{m}(g)) \le p$ for each $g$, and the methods for this case use the residual order of $g$ after the coordinate changes that remove $p$-th powers (node SG00000013).
 
-Lean: none yet
+Lean: `Singularity.Example.order_cusp`
