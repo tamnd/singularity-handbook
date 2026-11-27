@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 8, Propositions 1.3.2 and 3.1.4, Lemma 3.1.8 and Example 3.1.9 name their Lean proofs from tamnd/singularity-lean#205. Lean proves Lemma 3.1.8 in full. For the other results, Lean proves the algebra, and the Lean line says which part. Example 3.1.9 had no Lean line, so it now has one.
+
 ## [0.4.60] - 2026-11-27
 
 ### Added
