@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.69] - 2026-11-27
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.69.
+
 ### Changed
 
 - Volume 1, Lemmas 6.3.4 and 6.3.5 name the Lean theorems of release 0.4.57 of singularity-lean on differential operators.
