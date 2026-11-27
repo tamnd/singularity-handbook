@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 1, Lemma 4.1.4 and Lemma 4.4.3 (Hensel) name their Lean proofs (singularity-lean #219 and #220). Both proofs are full. The Lean proof of Lemma 4.4.3 does not need that $R$ is Noetherian.
+
 ## [0.4.66] - 2026-11-27
 
 ### Added

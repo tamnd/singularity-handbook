@@ -24,7 +24,7 @@ Lean: `Singularity.Algebra.isNoetherianRing_reesAlgebra`
 
 **Lemma 4.1.4.** Let $R$ be a Noetherian ring, let $M$ be a finitely generated $R$-module and let $(M_n)$ be an $I$-filtration of $M$. Then $M^*$ is a finitely generated $R^*$-module if and only if the filtration is stable.
 
-Lean: none yet
+Lean: `Singularity.Algebra.fg_filtration_submodule_iff_stable`
 
 *Proof.* The module $M$ is Noetherian [AM69, Proposition 6.5], so each $M_n$ is a finitely generated $R$-module. For each $n$, let
 $$M_n^* = M_0 \oplus M_1 \oplus \dots \oplus M_n \oplus I M_n \oplus I^2 M_n \oplus \dots,$$
