@@ -18,7 +18,7 @@ Let $x \in X$ be a closed point. The residue field $k(x)$ is a finite extension 
 
 **Lemma 2.1.1 (completion).** Let $x_1, \dots, x_n$ be local coordinates at a closed point $x$, and let $K = k(x)$. Then there is a unique subfield of $\hat{\mathcal{O}}_{X,x}$ that contains $k$ and maps isomorphically to $K$, and with it $\hat{\mathcal{O}}_{X,x} = K[[x_1, \dots, x_n]]$. Each $\partial_i$ extends to a continuous derivation of $\hat{\mathcal{O}}_{X,x}$, and this extension is the partial derivative $\partial / \partial x_i$.
 
-Lean: none yet
+Lean: `Singularity.derivation_eq_zero_of_isSeparable`, `Singularity.continuous_derivation_adic`, `Singularity.MvPowerSeries.derivation_eq_pderiv` (the derivation steps: a derivation kills separable elements, it is continuous, and on $K[[x_1, \dots, x_n]]$ it is the partial derivative when $D(x_j) = \delta_{ij}$). The coefficient field and the isomorphism with $K[[x_1, \dots, x_n]]$ are not in Lean yet.
 
 *Proof.* Let $K = k(a)$ with $a$ a root of a separable irreducible polynomial $P \in k[t]$. The ring $\hat{\mathcal{O}}_{X,x}$ is complete, and $P$ has the simple root $a$ in its residue field, so by Hensel's lemma $P$ has a unique root $\tilde a$ in $\hat{\mathcal{O}}_{X,x}$ that lifts $a$. The subfield $k(\tilde a)$ maps isomorphically to $K$, and each subfield with this property contains a root of $P$ that lifts $a$, so it is $k(\tilde a)$. The elements $x_1, \dots, x_n$ form a regular system of parameters, so $\hat{\mathcal{O}}_{X,x} = K[[x_1, \dots, x_n]]$.
 

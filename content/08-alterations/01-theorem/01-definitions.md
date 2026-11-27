@@ -30,7 +30,7 @@ A modification has degree 1. Conversely, an alteration of degree 1 is a modifica
 
 **Lemma 1.1.4.** Let $X$ and $X'$ be integral varieties over a field $k$, and let $\varphi \colon X' \to X$ be a proper dominant morphism over $k$. Then $\varphi$ is an alteration if and only if $\dim X' = \dim X$.
 
-Lean: none yet
+Lean: `Singularity.finiteDimensional_iff_trdeg_eq`, `Singularity.exists_ne_zero_moduleFinite_localization`, `Singularity.isAlgebraic_of_isFractionRing` (the algebraic steps: a finitely generated field extension is finite if and only if the transcendence degree does not change, and the generic finiteness). The step from dimension to transcendence degree and the scheme argument are not in Lean yet.
 
 *Proof.* For an integral variety, the dimension is the transcendence degree of the function field over $k$ [Har, Exercise II.3.20]. If $\varphi$ is an alteration, then $k(X')$ is finite over $k(X)$ by Lemma 1.1.2, so the two transcendence degrees agree.
 
