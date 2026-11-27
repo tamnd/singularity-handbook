@@ -60,6 +60,8 @@ Steps 1 to 4 are in the proof of Abhyankar. Steps 1 and 4 are also in the proof 
 
 The structure shows where the condition $p > 5$ is used and where dimension 3 is used. The condition $p > 5$ enters only in the passage from Step 2 to Step 3. Dimension 3 enters in Steps 1, 3 and 4, because they use theorems on surfaces and ideals in regular threefolds. Without the condition on $p$, Step 2 still gives a model with multiplicity at most 6, but Step 3 has no proof at the points of multiplicity $m \ge p$. This is the gap that the work of Cossart and Piltant fills by a different method.
 
+In dimension 4 the same plan needs $p > 4! = 24$. Volume 9, Section 3.21, shows that Steps 2 and 3 then go through if one assumes embedded resolution of divisors in $\mathbb{P}^4$ in place of Step 1, and give local uniformization of 4-folds. Step 4 has no proof in dimension 4, also in characteristic 0.
+
 ### Maximal contact in small multiplicity
 
 Step 3 works because a singularity of small multiplicity behaves as in characteristic 0. Abhyankar proved Step 3 with the method of Jung: he projects to a nonsingular threefold and resolves the branch locus with Theorem 1.2.2. Cutkosky describes a second proof of Step 3, with ideas of Hironaka, Giraud and Cossart: in small multiplicity, a hypersurface of maximal contact exists [Cut09, Section 3]. We prove the first part of this fact. It needs only a derivation.

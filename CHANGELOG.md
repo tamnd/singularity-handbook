@@ -4,9 +4,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 9, Section 3.21 reports the research result of the track TT on Jung's method for 4-folds in characteristic $p > 24$. Under embedded resolution of divisors in $\mathbb{P}^4$, the proof of Theorem 14.4 of Cutkosky gives local uniformization of 4-folds, and a resolution needs patching in the form of Zariski. The section gives the Hermitian 4-fold with its tame and wild projections, Jung's method for one variety with a projection of local degree less than $p$, the folklore resolution of hypersurfaces of bounded degree, and the corrected example of a disguised $z^2 - x^p$. The nodes are SG0000007W to SG00000088.
+
 ### Changed
 
 - Volume 8, Propositions 1.3.2 and 3.1.4, Lemma 3.1.8 and Example 3.1.9 name their Lean proofs from tamnd/singularity-lean#205. Lean proves Lemma 3.1.8 in full. For the other results, Lean proves the algebra, and the Lean line says which part. Example 3.1.9 had no Lean line, so it now has one.
+- Volume 6, Section 1.2, and Volume 9, Section 2.3, point to Volume 9, Section 3.21, for the method in dimension 4.
 
 ## [0.4.60] - 2026-11-27
 
