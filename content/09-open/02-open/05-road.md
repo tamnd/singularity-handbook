@@ -139,15 +139,15 @@ and Definition 4.4.5 gives Rule 61.9', which chooses the center at each point. T
 *What is proved in the handbook.*
 
 1. Volume 7, Theorem 4.4.13 (node SG0000009T): the rule terminates at $\omega = 0$. Then $\omega$ stays 0, and $\delta$ drops by a fixed amount at each step.
-2. Volume 7, Theorem 4.5.9 (node SG000000BE): in the toric model, $\omega$ never goes up and each run on which $\omega$ is constant is finite. So each toric branch of Rule 61.9' is finite. Corollary 4.5.10 gives a lexicographic invariant $(\omega, \ell)$ on the toric branches, and Proposition 4.5.11 computes a hidden quantity of the toric model.
+2. Volume 7, Theorem 4.5.9 (node SG000000BE): in the toric model, $\omega$ never goes up and each run on which $\omega$ is constant is finite. So each toric branch of Rule 61.9' is finite. Corollary 4.5.10 gives a lexicographic invariant $(\omega, \ell)$ on the toric branches, and Proposition 4.5.11 computes a hidden quantity of the toric model. Theorem 4.5.21 (node SG000000CR) extends the theorem to chart origins with any boundary, and Theorem 4.5.28 (node SG000000CV) to the generic steps at points that are not chart origins. For germs with $a_p = 0$ or $a_{2p} = 0$, $\omega$ never goes up (Corollary 4.5.18, node SG000000CQ), and each branch through rational points on which no vertex cancels is finite (Corollary 4.5.29, node SG000000CW).
 
 *What is false.*
 
 1. $\omega$ does not decrease under the rule: Volume 7, Theorems 4.4.7 and 4.4.8, show that it can go up, by $1/p$ in the second one.
 2. No correction by the low flag is monotone (Volume 7, Proposition 4.4.12, with Lemma 4.4.10 and Example 4.4.11).
-3. No lexicographic pair that starts with $\omega$ decreases at each step of the rule outside the toric model (Volume 7, Proposition 4.5.14). Example 4.5.15 is a step on germ 57 that keeps $\omega = 2/15$ and is not toric.
+3. No lexicographic pair that starts with $\omega$ decreases at each step of the rule outside the toric model (Volume 7, Proposition 4.5.14). Example 4.5.15 is a step on germ 57 that keeps $\omega = 2/15$ at a point that is not a chart origin. It is a generic step, and the extended model covers it (Example 4.5.25).
 
-*What is open.* Conjecture 4.4.6 for $\omega > 0$ outside the toric model. Proposition 4.4.14 and Example 4.4.15 describe a mechanism of period 5 that any proof must control. The computations of note 81 found that all 81 subtrees of the search of note 72 end, so no cycle is known (cited).
+*What is open.* Conjecture 4.4.6 for $\omega > 0$ outside the extended model of Volume 7, Definition 4.5.26, that is, at steps where a vertex cancels or where $z$ must be prepared again. By Proposition 4.5.30 a rise of $\omega$ needs a new preparation, and Example 4.5.32 is a step on germ 63 where no quantity of Section 4.5 drops. Proposition 4.4.14 and Example 4.4.15 describe a mechanism of period 5 that any proof must control. The computations of notes 81 and 86 found that all 81 subtrees of the search of note 72 end, also exactly at the germ level, so no cycle is known (cited).
 
 #### Track NW: Newton polyhedra and Frobenius
 
@@ -244,7 +244,7 @@ The table lists the tracks, the statement each one aims at, the place of that st
 | Track | Aim | Feeds | Proved | False | First open case |
 |---|---|---|---|---|---|
 | C4 | Conjectures L°, H1 for linear runs | Conjecture 2.5.3, route V | P and L (Vol. 7, Theorem 3.19.6, Corollary 3.19.7) | strong H1 in degree $\ge p + 1$ (Vol. 7, Theorem 3.19.14); L+ (Vol. 7, Theorems 3.17.21, 3.19.17) | Vol. 7, Conjecture 3.19.21 |
-| M2 | Vol. 7, Conjecture 4.4.6 | $\mathrm{MD}_3$, mixed case | $\omega = 0$ (Vol. 7, Theorem 4.4.13); toric branches (Vol. 7, Theorem 4.5.9) | $\omega$ monotone (Vol. 7, Theorem 4.4.7); pairs $(\omega, s)$ (Vol. 7, Proposition 4.5.14) | $\omega > 0$, not toric |
+| M2 | Vol. 7, Conjecture 4.4.6 | $\mathrm{MD}_3$, mixed case | $\omega = 0$ (Vol. 7, Theorem 4.4.13); toric branches (Vol. 7, Theorem 4.5.9); any boundary and generic steps (Vol. 7, Theorems 4.5.21, 4.5.28); rigid germs without cancellation (Vol. 7, Corollary 4.5.29) | $\omega$ monotone (Vol. 7, Theorem 4.4.7); pairs $(\omega, s)$ (Vol. 7, Proposition 4.5.14) | $\omega > 0$ with cancellation or a new preparation (Vol. 7, Example 4.5.32) |
 | NW | Conjecture 2.5.5 | Conjecture 2.5.3 | one step for $p \mid \nu$ (SG0000009D, cited) | nondegeneracy by a change of coordinates for the test cases of note 55 (note 68) | $p \nmid \nu$; exceptional points |
 | TT | Corollary 3.21.9 | route J | $\mathrm{Emb}(\mathbb{P}^4) \Rightarrow \mathrm{LU}_4^-$ for $p > 24$ (Theorem 3.21.7) | one global projection (Example 3.21.10) | $\mathrm{Emb}(\mathbb{P}^4)$, Lemma 3.21.2 |
 | HS | an invariant for $\mathrm{Core}_3(e)$, $e \ge 2$ | $\mathrm{MD}_3$ | graded law (Vol. 7, Theorem 3.20.8) | point-blowup invariants for $e = 3$, $n \ge 4$ (Vol. 7, Theorem 3.20.18) | $e = 2$; $e = 3$ with $n = 3$ |
