@@ -258,7 +258,7 @@ Part 3. The generator $\partial_x G_m$ has the initial form $d_m c \, x_m^{d_m -
 
 If $p \mid d_m$ or $\rho = d_m$, other terms of $G_m$ can give forms of degree $\rho$, and part 3 can fail. Part 3 gives that the directrix is $V(x_m)$, so by Theorem 3.7.1 no later step with the same $\rho$ has a translation in $x$. Theorem 3.13.20 also holds for Example 3.13.15: there $V(x)$ has $\nu^G = 0$, and both corner curves have $\nu^G = p$.
 
-A run of the general type is more complex. A step at a point that is not a chart origin is a step at the origin after a linear change of the coordinates. If the translations from $P_N$ on are only in the free coordinate $x$ and only a finite number of them are not $0$, let $J$ be the last index with a nonzero translation. Then $P_{J+1}, P_{J+2}, \dots$ is a run of the type of Theorem 3.13.20 in the coordinates of $P_{J+1}$. A computer test over $\mathbb{F}_2$ and $\mathbb{F}_3$ found a coordinate curve in a component of $\Delta$ with $\nu^G \ge \rho$ at the last point of $2802$ of $2805$ random branches with many corner steps, of the depth at most $20$, and at an earlier point of the other $3$. All $72$ branches with translations in the tail had such a curve. The runs with an infinite number of nonzero translations in $x$ are the subject of Theorem 3.13.27 below and of Section 3.15. The runs that leave a component of $\Delta$ an infinite number of times are open. For $n \ge 4$, Section 3.14 treats the runs where each step is at the origin of a chart, and the runs with translations are open.
+A run of the general type is more complex. A step at a point that is not a chart origin is a step at the origin after a linear change of the coordinates. If the translations from $P_N$ on are only in the free coordinate $x$ and only a finite number of them are not $0$, let $J$ be the last index with a nonzero translation. Then $P_{J+1}, P_{J+2}, \dots$ is a run of the type of Theorem 3.13.20 in the coordinates of $P_{J+1}$. A computer test over $\mathbb{F}_2$ and $\mathbb{F}_3$ found a coordinate curve in a component of $\Delta$ with $\nu^G \ge \rho$ at the last point of $2802$ of $2805$ random branches with many corner steps, of the depth at most $20$, and at an earlier point of the other $3$. All $72$ branches with translations in the tail had such a curve. The runs with an infinite number of nonzero translations in $x$ are the subject of Theorem 3.13.27 below and of Sections 3.15 and 3.16. By Theorem 3.16.14 they do not occur. The runs that leave a component of $\Delta$ an infinite number of times are open. For $n \ge 4$, Section 3.14 treats the runs where each step is at the origin of a chart, and the runs with translations are open.
 
 The corner curves alone do not resolve the singularity, as the next example shows.
 
@@ -335,7 +335,7 @@ The polynomial $\varphi_{J+1}$ is a polynomial in $y_{J+1}, z_{J+1}$, but it nee
 
 Node: SG0000005W
 
-Section 3.15 treats a general $g \in K[[y, z]][x]$. It proves the same finiteness when $\deg_x g < p$ and for $g = \mu x + B_0$ with $\mu$ a monomial.
+Section 3.15 treats a general $g \in K[[y, z]][x]$. It proves the same finiteness when $\deg_x g < p$ and for $g = \mu x + B_0$ with $\mu$ a monomial. Section 3.16 proves it for each clean $g \in K[[y, z]][x]$ (Theorem 3.16.14).
 
 A weaker form of Question 3.13.18 asks for regular $Z_k$ at $P_k$ with $G_k \in I_{Z_k}^\rho + \mathfrak{m}_{P_k}^{M_k}$ and $M_k \to \infty$. In Example 3.13.15 this holds with $Z_k = V(x_k)$, and this form may be what a proof by the data of the run can give.
 
