@@ -46,6 +46,6 @@ Lean: none yet
 
 **Example 1.4.6 (no center).** Proposition 1.4.4 needs the hypothesis that $X$ is proper. Let $K = k(x)$, and let $v(f/g) = \deg g - \deg f$ for nonzero polynomials $f, g \in k[x]$. This is a valuation of $K/k$, with $\Gamma_v = \mathbb{Z}$, $v(x) = -1$ and $\mathcal{O}_v = k[1/x]_{(1/x)}$. Since $x \notin \mathcal{O}_v$, Lemma 1.4.2 shows that $v$ has no center on $\mathbb{A}^1_k = \operatorname{Spec} k[x]$. On $\mathbb{P}^1_k$, the open set $\operatorname{Spec} k[1/x]$ is the complement of the origin. Its ring is in $\mathcal{O}_v$, and $\mathfrak{m}_v \cap k[1/x] = (1/x)$. So the center of $v$ on $\mathbb{P}^1_k$ is the point $\infty$. The residue field is $Kv = k$, and the dimension of $v$ is 0.
 
-Lean: none yet
+Lean: `Singularity.not_exists_center_inftyValuation_polynomial`, `Singularity.inftyChart_le`, `Singularity.mem_centerIdeal_inftyChart_iff` (no center on $\mathbb{A}^1$, and the center $(1/x)$ on $k[1/x]$)
 
 The converses of Propositions 1.4.3 and 1.4.4 are also true. Let $X$ be an integral scheme of finite type over $k$. If each valuation ring $V$ of $K$ with $k \subseteq V$ has at most one center on $X$, then $X$ is separated. If each such $V$ has exactly one center on $X$, then $X$ is proper over $k$. These are [Har, Chapter II, Exercise 4.5]. We do not use the converses.

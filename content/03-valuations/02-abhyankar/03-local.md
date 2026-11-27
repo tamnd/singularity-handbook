@@ -31,7 +31,7 @@ The proof of the local form uses an induction that splits a valuation into two. 
 1. $W$ is a valuation ring of $K$ with $\mathcal{O}_v \subseteq W$ and maximal ideal $\mathfrak{p}$. Its group of units is $\{x : v(x) \in \Delta\}$, so $\Gamma_{v_W} \cong \Gamma_v/\Delta$ as groups.
 2. The ring $\mathcal{O}_v/\mathfrak{p}$ is a valuation ring of the field $W/\mathfrak{p}$. Its valuation $\bar{v}$ has value group $\Delta$ and residue field $Kv$.
 
-Lean: none yet
+Lean: `Singularity.le_coarsening`, `Singularity.mem_coarsening_and_inv_mem_iff`, `Singularity.mem_nonunits_coarsening_iff` (part 1, the ring $W$, its units and its maximal ideal, not $\Gamma_W \cong \Gamma_v/\Delta$)
 
 *Proof.* Since $\Delta$ is convex, an element $x$ is in $W$ if and only if $v(x) \in \Delta$ or $v(x) > \Delta$. This set is closed under sums and products, it contains $\mathcal{O}_v$, and for $x \ne 0$ it contains $x$ or $x^{-1}$. So $W$ is a valuation ring. The element $x \in W$ is a unit of $W$ if and only if $x^{-1} \in W$, that is, if and only if $v(x) \in \Delta$. So the maximal ideal of $W$ is $\{x : v(x) > \Delta\} = \mathfrak{p}$, and $v$ induces an isomorphism $K^\times/W^\times \cong \Gamma_v/\Delta$.
 

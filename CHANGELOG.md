@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, Lemma 2.3.2 and Examples 1.4.6 and 3.1.7 name their Lean proofs from tamnd/singularity-lean#206. Lean proves the coarsening ring of part 1 of the lemma, the absence of a center of the valuation at infinity on the affine line, and the key steps of cases 2 and 3 of Example 3.1.7. Each Lean line says which part Lean proves.
+
 ## [0.4.61] - 2026-11-27
 
 ### Added
