@@ -44,7 +44,7 @@ is injective. The image of $z$ in $M/I^nM \otimes_A B$ is $0$, so the image of $
 
 **Corollary 6.4.4.** Let $L \subseteq K$ be fields. Then $K[[y_1, \dots, y_n]]$ is a flat $L[[y_1, \dots, y_n]]$-module.
 
-Lean: `Singularity.Algebra.flat_mvPowerSeries_of_finiteDimensional` (when $[K : L]$ is finite)
+Lean: `Singularity.Algebra.flat_mvPowerSeries_of_field`, `Singularity.Algebra.flat_mvPowerSeries_of_finiteDimensional` (the second is the case of a finite extension, where the module is free)
 
 *Proof.* Let $A = L[[y_1, \dots, y_n]]$, $B = K[[y_1, \dots, y_n]]$ and $I = (y_1, \dots, y_n)A$. Both rings are Noetherian (Theorem 4.2.9 and Example 4.2.2), and $IB$ is the maximal ideal of the local ring $B$. By Example 4.2.2, $A/I^n$ is the free $L$-module on the monomials of degree less than $n$, and $B/I^nB$ is the free $K$-module on the same monomials. Thus $B/I^nB = K \otimes_L A/I^n$. The field $K$ is a free $L$-module, so $K \otimes_L A/I^n$ is a free $A/I^n$-module. By Lemma 6.4.3, $B$ is flat over $A$. $\square$
 
@@ -52,7 +52,7 @@ When $[K : L]$ is infinite, $K[[y]]$ is not $K \otimes_L L[[y]]$: the coefficien
 
 **Proposition 6.4.5.** Let $K$ be a field of characteristic $p$ and let $S = K[[x_1, \dots, x_n]]$. Then the Frobenius of $S$ is flat.
 
-Lean: `Singularity.Algebra.frobenius_mvPowerSeries_finite_and_flat` (when $[K : K^p]$ is finite)
+Lean: `Singularity.Algebra.frobenius_mvPowerSeries_flat`, `Singularity.Algebra.frobenius_mvPowerSeries_finite_and_flat` (the second adds that the Frobenius is finite when $[K : K^p]$ is finite)
 
 *Proof.* The Frobenius maps $\sum_\alpha c_\alpha x^\alpha$ to $\sum_\alpha c_\alpha^p x^{p\alpha}$. So it is an isomorphism of $S$ onto the subring $S' = K^p[[x_1^p, \dots, x_n^p]]$. Under this isomorphism, the $S$-module $F_* S$ is the ring $S$ as an $S'$-module. So we must show that $S$ is flat over $S'$. Let $y_i = x_i^p$, and consider the rings
 $$S' = K^p[[y_1, \dots, y_n]] \subseteq K[[y_1, \dots, y_n]] \subseteq K[[x_1, \dots, x_n]] = S.$$
