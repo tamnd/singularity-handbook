@@ -1,7 +1,7 @@
 ---
 title: The invariants of Cossart and Piltant
 nodes: [SG00000014, SG00000013, SG00000015]
-sources: [CP19, CP14, Hir67, Mat, Moh87, Moh14, HP19a]
+sources: [CP19, CP14, CP08, CP09, CP15, Hir67, Hir64, Abh66, Cut09, Cos87, Mat, Moh87, Moh14, HP19a]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -11,6 +11,23 @@ reviewed_by: []
 In this section we define the invariants $\delta$, $d_j$, $\epsilon$ and $\omega$ of [CP19, Sections 2.1, 2.2, 2.5 and 2.7], and we prove their first properties. For the purely inseparable equations $X^p + f$ over a perfect field we prove that the cleaning of Volume 7, Section 1.3, gives the minimal polyhedron, without the theorem of Hironaka. Then $\epsilon$ is the residual order of Volume 7. We state the theorem of Cossart and Piltant that the invariant $\iota = (m, \omega, \kappa)$ does not increase under permissible blowups. We prove the step of their algorithm for $\omega = 0$ in the case $\epsilon = 0$, and we state their Projection Theorem. At the end we show how these theorems give Theorem 1.2.6 by an induction on $\iota$.
 
 We keep the notation of Section 3.1, with $S = k[[u_1, \dots, u_n]]$ in the proofs. Let $X = \operatorname{Spec} S[X]/(h)$ and let $\eta \colon X \to \operatorname{Spec} S$ be the projection. For a point $y \in X$ with prime ideal $M_y \subset S[X]$, the *multiplicity* $m(y)$ is the order of $h$ in the regular local ring $S[X]_{M_y}$, as in Section 1.2. By Theorem 3.1.5(1) there are translations $Z = X - \theta$ such that $\Delta(h; u; Z)$ is minimal.
+
+### Why new invariants are needed
+
+In characteristic 0 the proof of Hironaka uses two tools: the order of an ideal and a hypersurface of maximal contact [Hir64]. One restricts the problem to the hypersurface, and an induction on the dimension does the rest. Section 1.2 shows that a hypersurface of maximal contact exists at a point of multiplicity $m$ when $m!$ is a unit in the residue field. For $m = p$ this argument fails, and the example of Narasimhan in Section 2.3 shows that such a hypersurface need not exist.
+
+Abhyankar avoids the points of multiplicity $p$. For $p > 5$ the first two steps of his proof give a model whose points have multiplicity at most $3! = 6$, and $6 < p$, so maximal contact is available at each point [Abh66, Cut09]. Section 1.2 gives this plan in the form of Cutkosky. For $p \le 5$ this way is closed, and one must work at the points of multiplicity $p$ themselves.
+
+Cossart and Piltant work at these points with the characteristic polyhedron of Hironaka [Hir67]. The polyhedron does not need a hypersurface of maximal contact. It needs only a projection to a regular scheme and one variable $Z$, and it is minimal over all choices of $Z$. So a number that we read off from the minimal polyhedron does not depend on a choice that may not exist. Cossart made the polyhedron a practical tool for threefolds in his early work [Cos87], and the invariants of this section are those of [CP19, Section 2]. The introduction of [CP19] explains how they relate to the invariants of the first two papers [CP08, CP09].
+
+There are four invariants, and each one has a simple role.
+
+1. The number $\delta$ is the smallest value of $x_1 + \dots + x_n$ on the polyhedron. It plays the role of the order in characteristic 0, and $\delta \ge 1$ exactly when the fiber over the closed point has a point of multiplicity $m$ (Proposition 3.2.2).
+2. The numbers $d_j$ measure the part of $h$ that the components of the divisor $E$ explain. The divisor $E$ is the trace of the earlier blowups.
+3. The number $\epsilon$ measures the part of $h$ that $E$ does not explain. For the equations $X^p + f$ it is the residual order of Volume 7 (Proposition 3.2.4).
+4. The number $\omega$ corrects $\epsilon$ by $1$ when a derivative in a direction transverse to $E$ is not zero.
+
+The correction in item 4 looks small, but it is the reason for the definition. The residual order $\epsilon$ can go up under a point blowup (Section 3.3), and Theorem 3.2.6 says that $\omega$ does not. A reader who wants the main line can read Definition 3.2.1, Proposition 3.2.4, Definition 3.2.5, Theorem 3.2.6 and Proposition 3.2.12, and then come back to the proofs. Lemma 3.2.14 at the end of the section lists the possible values of $\omega$, and Examples 3.2.15 and 3.2.16 compute all the invariants in two small cases.
 
 ### The invariant delta
 
@@ -232,6 +249,68 @@ Lean: none yet
 
 We computed each chart of Example 3.2.13 by computer, with the coordinates $t \in \mathbb{F}_3$, and by hand for each $t \in k$. The example $f = u_1 u_2 u_3^2$ with $p = 2$ after Proposition 3.2.9 shows the same effect, but there the order only stays the same.
 
+### The values of omega
+
+Definition 3.2.5 allows two values of $\omega(x)$ for a given $\epsilon(x)$. The next lemma says which value occurs in the small cases. It is the case split behind the proof of Theorem 3.2.7: the case $\epsilon(x) = 0$ is Proposition 3.2.9, and the case $\epsilon(x) = 1$ is Case 2 of [CP19, proof of Theorem 2.81].
+
+**Lemma 3.2.14.** Let $k$ be a perfect field of characteristic $p$, let $S = k[[u_1, \dots, u_n]]$, let $h = Z^p + f^{\mathrm{cl}}$ with $(u; Z)$ well adapted, and let $E = \operatorname{div}(u_1 \cdots u_e)$. Assume that $m(x) = p$, and write $f^{\mathrm{cl}} = u_1^{r_1} \cdots u_e^{r_e} G$ as in Proposition 3.2.4.
+
+1. $\epsilon(x) - 1 \le \omega(x) \le \epsilon(x)$, and $\omega(x) \ge 0$.
+2. $\omega(x) = 0$ if and only if either $\epsilon(x) = 0$, or $\epsilon(x) = 1$ and the linear form $\operatorname{in}(G)$ is not in the span of $U_1, \dots, U_e$.
+3. If $e = n$, then $\omega(x) = \epsilon(x)$.
+
+Lean: none yet
+
+*Proof.* We have $\epsilon(x) = \operatorname{ord} G$ by Proposition 3.2.4(4), and $G \ne 0$ since $f^{\mathrm{cl}} \ne 0$. So $\operatorname{in}(G)$ is a nonzero form of degree $\epsilon(x)$. The initial form is multiplicative, because the graded ring $k[U_1, \dots, U_n]$ is a domain. So $F = U_1^{r_1} \cdots U_e^{r_e} \operatorname{in}(G)$. For $j > e$ the monomial $U_1^{r_1} \cdots U_e^{r_e}$ does not contain $U_j$, and so
+$$\frac{\partial F}{\partial U_j} = U_1^{r_1} \cdots U_e^{r_e} \, \frac{\partial \operatorname{in}(G)}{\partial U_j} \qquad (e < j \le n).$$
+This product is $0$ if and only if $\partial \operatorname{in}(G)/\partial U_j = 0$.
+
+Part 1. The two inequalities hold by Definition 3.2.5. If $\omega(x) = \epsilon(x) \ge 0$, there is nothing more to prove. If $\omega(x) = \epsilon(x) - 1$, then $\partial \operatorname{in}(G)/\partial U_j \ne 0$ for some $j > e$. So $\operatorname{in}(G)$ is not a constant, its degree $\epsilon(x)$ is at least $1$, and $\omega(x) \ge 0$.
+
+Part 2. If $\epsilon(x) \ge 2$, then $\omega(x) \ge \epsilon(x) - 1 \ge 1$ by part 1. If $\epsilon(x) = 0$, then $0 \le \omega(x) \le 0$. Let $\epsilon(x) = 1$. Then $\operatorname{in}(G) = \sum_{j = 1}^{n} c_j U_j$ with $c \ne 0$, and $\partial \operatorname{in}(G)/\partial U_j = c_j$. So $\omega(x) = 0$ if and only if $c_j \ne 0$ for some $j > e$, that is, $\operatorname{in}(G)$ is not in the span of $U_1, \dots, U_e$.
+
+Part 3. If $e = n$, there is no index $j$ with $e < j \le n$, and so $\omega(x) = \epsilon(x)$. $\square$
+
+Part 3 explains Examples 3.3.1 and 3.3.4, where all the coordinates belong to $E$ and $\omega(x) = \epsilon(x)$. Part 2 shows that $\omega(x) = 0$ is a strong condition. Either the divisor explains all of $f^{\mathrm{cl}}$ up to a unit, or it explains all of it up to one transverse linear factor. In the second case one can take this factor as the coordinate $u_{e + 1}$, and this is the coordinate of Case 2 of [CP19, proof of Theorem 2.81].
+
+### Two worked examples
+
+The next two examples compute all the invariants from the definitions. We checked each step with the computer algebra system SymPy, over $\mathbb{F}_2$ and $\mathbb{F}_3$.
+
+**Example 3.2.15.** Let $p = 2$, let $k$ be a perfect field of characteristic 2, let $S = k[[u_1, u_2, u_3]]$, and let
+$$h = X^2 + f, \qquad f = u_1^2 + u_1^2 u_2^2 + u_1^3 u_2 + u_2^5 + u_2^3 u_3^2.$$
+
+*The wrong coordinate.* In the coordinates $(u; X)$ the polyhedron is $\frac12 N(f)$. The point $(1, 0, 0)$ of the monomial $u_1^2$ is a vertex, it lies in $\mathbb{N}^3$, and its coefficient $1$ is a square. So it is solvable, and $\delta_{\mathbf 1}(h; u; X) = \operatorname{ord} f / 2 = 1$ is only a lower bound for $\delta(x)$.
+
+*Cleaning.* The monomials of $f$ with exponent in $2 \mathbb{N}^3$ are $u_1^2$ and $u_1^2 u_2^2$. Let $g = u_1 + u_1 u_2$. In characteristic 2, $g^2 = u_1^2 + u_1^2 u_2^2$, and
+$$f^{\mathrm{cl}} = g^2 + f = u_1^3 u_2 + u_2^5 + u_2^3 u_3^2.$$
+With $Z = X + g$ we get $h = Z^2 + f^{\mathrm{cl}}$. By Proposition 3.2.4(1), $\Delta(h; u) = \frac12 N(f^{\mathrm{cl}})$. Its vertices are $(\frac32, \frac12, 0)$, $(0, \frac52, 0)$ and $(0, \frac32, 1)$, and none of them is in $\mathbb{N}^3$. We check that each of the three points is a vertex, that is, that it does not lie in the convex hull of the other two points plus $\mathbb{R}_{\ge 0}^3$. Each point of $\operatorname{Conv}\{(0, \frac52, 0), (0, \frac32, 1)\} + \mathbb{R}_{\ge 0}^3$ has the second coordinate at least $\frac32$, and the first point has the second coordinate $\frac12$. A point of $\operatorname{Conv}\{(\frac32, \frac12, 0), (0, \frac32, 1)\} + \mathbb{R}_{\ge 0}^3$ with the first coordinate $0$ gives the weight $0$ to the first point, so it lies in $(0, \frac32, 1) + \mathbb{R}_{\ge 0}^3$ and has the third coordinate at least $1$. The second point has the third coordinate $0$. In the same way a point of $\operatorname{Conv}\{(\frac32, \frac12, 0), (0, \frac52, 0)\} + \mathbb{R}_{\ge 0}^3$ with the first coordinate $0$ has the second coordinate at least $\frac52$, and the third point has the second coordinate $\frac32$.
+
+*The invariant delta.* We have $\operatorname{ord} f^{\mathrm{cl}} = 4$, so $\delta(x) = 2$ by Proposition 3.2.4(2), and $m(x) = 2$ by Proposition 3.2.2(3). The maximum in Proposition 3.2.2(1) is attained at $\varphi = g$. The initial form is $F = U_1^3 U_2$.
+
+*Three divisors.* The invariants $\delta$ and $\operatorname{in} h$ do not depend on $E$, but $\epsilon$ and $\omega$ do.
+
+1. Let $E = \operatorname{div}(u_1 u_2)$. Each monomial of $f^{\mathrm{cl}}$ is divisible by $u_2$, and $u_2^5$ is not divisible by $u_1$. So $r = (0, 1)$, $d_1 = 0$, $d_2 = \frac12$ and $\epsilon(x) = 2(2 - \frac12) = 3$. The only coordinate outside $E$ is $u_3$, and $\partial F/\partial U_3 = 0$. So $\omega(x) = 3$.
+2. Let $E = \operatorname{div}(u_1)$. Then $r_1 = 0$ and $\epsilon(x) = 4$. Now $U_2$ is outside $E$, and $\partial F/\partial U_2 = U_1^3 \ne 0$. So $\omega(x) = 3$.
+3. Let $E = \emptyset$, that is, $e = 0$. Then $\epsilon(x) = 4$ and again $\omega(x) = 3$.
+
+So the component $\operatorname{div}(u_2)$ of $E$ explains one factor $u_2$ of $f^{\mathrm{cl}}$ and lowers $\epsilon$ by $1$. The invariant $\omega$ is $3$ in each case. In the second and third case the derivative in the direction $u_2$ makes the same correction that the divisor makes in the first case.
+
+Lean: none yet
+
+**Example 3.2.16.** Let $p = 3$, let $k$ be a perfect field of characteristic 3, let $S = k[[u_1, u_2, u_3]]$, and let
+$$h = Z^3 + f, \qquad f = u_1^2 u_2 + u_1^3 u_3.$$
+The exponents $(2, 1, 0)$ and $(3, 0, 1)$ are not in $3 \mathbb{N}^3$, so $f$ is clean, and $(u; Z)$ is well adapted. We have $\operatorname{ord} f = 3$, so $\delta(x) = 1$ and $m(x) = 3$. The initial form is $F = U_1^2 U_2$.
+
+1. Let $E = \operatorname{div}(u_1)$. Then $r_1 = 2$ and $G = u_2 + u_1 u_3$, so $\epsilon(x) = 1$ and $\operatorname{in}(G) = U_2$. This form is not in the span of $U_1$. By Lemma 3.2.14(2), $\omega(x) = 0$, and $\iota(x) = (3, 0, 1)$. Theorem 3.2.7 applies, in the case $\epsilon(x) = 1$ and $\delta(x) = 1$. Example 3.3.6 carries out its step for a similar equation.
+2. Let $E = \operatorname{div}(u_1 u_2)$. The monomial $u_1^3 u_3$ is not divisible by $u_2$, so $r = (2, 0)$, $G = u_2 + u_1 u_3$ and $\epsilon(x) = 1$ again. Now $U_2$ is in the span of $U_1, U_2$, and $\partial F/\partial U_3 = 0$. So $\omega(x) = 1$, and $\iota(x) = (3, 1, \kappa(x))$ with $\kappa(x) \ge 2$.
+
+So a larger divisor can make $\omega$ larger, while in Example 3.2.15 a larger divisor makes $\epsilon$ smaller. The divisor is part of the data, and this is why Cossart and Piltant fix the rule $E' = \sigma^{-1}(E \cup W)_{\mathrm{red}}$ for the divisor after each blowup [CP19, Proposition 2.22]. We do not check condition (E) in this example.
+
+Lean: none yet
+
 ### Notes and references
 
 The definitions follow [CP19, Sections 2.1, 2.2, 2.5 and 2.7]. Proposition 3.2.4 is not stated in this form in [CP19]. It is the special case of [CP19, Propositions 2.10 and 2.26] for $X^p + f$ over a perfect field, with a direct proof. The residual order and its increase are studied by Moh [Moh87] and by Hauser and Perlega [HP19a]. Volume 7, Section 1.4, gives the examples of the increase.
+
+The characteristic polyhedron and the vertex preparation are due to Hironaka [Hir67], and the role of maximal contact in characteristic 0 is in [Hir64]. The proofs of Abhyankar [Abh66] and of Cutkosky [Cut09] for $p > 5$ do not need the invariants of this section, because the main local step of their proofs is done on a model on which each point has multiplicity less than $p$. Cossart studied the polyhedron of threefolds in his early work [Cos87], and Cossart and Piltant study in [CP15] when the minimal polyhedron is reached without passing to the completion. Lemma 3.2.14 writes out the case split of [CP19, proof of Theorem 2.81] for the purely inseparable equations. Examples 3.2.15 and 3.2.16 are ours.
