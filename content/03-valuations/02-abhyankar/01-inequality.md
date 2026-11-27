@@ -18,7 +18,7 @@ In this section $(L/K, w)$ is an extension of valued fields, as at the end of Se
 $$w\Big(\sum_{i,j} c_{ij}x_iy_j\Big) = \min_{i,j}\big(v(c_{ij}) + w(x_i)\big).$$
 In particular the $mn$ elements $x_iy_j$ are linearly independent over $K$.
 
-Lean: `Singularity.linearIndependent_of_valuation_mul_eq` (the case $n = 1$ and $y_1 = 1$)
+Lean: `Singularity.exists_valuation_sum_eq_max`, and `Singularity.linearIndependent_of_valuation_mul_eq` for the case $n = 1$ and $y_1 = 1$
 
 *Proof.* Fix $i$ and let $s_i = \sum_j c_{ij}y_j$. We first show that $w(s_i) = \min_j v(c_{ij})$. If all $c_{ij}$ are 0 this is clear. Otherwise choose $j_0$ with $v(c_{ij_0})$ minimal, and let $c = c_{ij_0}$. Then $s_i/c = \sum_j (c_{ij}/c)y_j$, and each $c_{ij}/c$ is in $\mathcal{O}_v$. Its residue is $\sum_j \overline{c_{ij}/c}\,\bar{y}_j$. This is not 0, because the $\bar{y}_j$ are independent and the coefficient of $\bar{y}_{j_0}$ is 1. So $w(s_i/c) = 0$ and $w(s_i) = v(c)$.
 
