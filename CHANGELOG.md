@@ -4,17 +4,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
-### Changed
-
-- Volume 1, Lemma 4.1.3, Propositions 4.2.5, 4.3.1 and 4.3.2, and Theorems 4.2.6 and 4.2.7 name their Lean proofs from tamnd/singularity-lean#211. Most of them come from Mathlib. Lean proves Lemma 4.1.3, Proposition 4.2.5 and Theorems 4.2.6 and 4.2.7 in full. For Propositions 4.3.1 and 4.3.2, the Lean line says which part Lean proves.
+## [0.4.63] - 2026-11-27
 
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.63.
 - Volume 7, Section 3.3 reports the results of the track NW on the Newton and Frobenius preparation of $z^p + g$, from research note 55 with the corrections of research note 60. The section gives the Newton criterion in the weight form over a perfect field, with its Lean proof, and the example $z^p + t x^p$ over $\mathbb{F}_p(t)$, which shows that the field must be perfect. It gives the obstruction from the critical set for the changes of $x$ and for all changes of coordinates when $D > p$, with the example $z^3 + x^5 y + x y^5$, the case of two variables with the corrected Proposition 3.3.20, the Fano obstruction in characteristic 2 and the open case $D = p$ as Conjecture 3.3.24. It also gives the toric resolution without convenience, the corrected localization by a weighted blowup and the resolution of $z^p + h$ by one weighted blowup for a binary form $h$. The nodes are SG0000008P to SG0000008Z.
 - Volume 7, Section 3.18 treats the planar runs and the hypothesis H1 for the corner runs in four variables. For $\deg_{x, w} g < p$ it proves that each corner run is linear, that the hypothesis H1 and Conjectures L and L° hold, and that $d = \rho + 1$ for $m$ large. It also proves the conjecture T for the planar runs and the polynomials of degree less than $p$, and it proves that planarity does not depend on the free coordinates. The nodes are SG00000089 to SG0000008N.
 
 ### Changed
 
+- Volume 1, Lemma 4.1.3, Propositions 4.2.5, 4.3.1 and 4.3.2, and Theorems 4.2.6 and 4.2.7 name their Lean proofs from tamnd/singularity-lean#211. Most of them come from Mathlib. Lean proves Lemma 4.1.3, Proposition 4.2.5 and Theorems 4.2.6 and 4.2.7 in full. For Propositions 4.3.1 and 4.3.2, the Lean line says which part Lean proves.
 - Volume 7, Section 3.1 names the Lean proofs of Lemma 3.6(3) and Corollary 3.8 of research note 03 for the changes of coordinates of $K[x]$ that keep the divisor, from tamnd/singularity-lean#204. The bound on $d^{\max}$ is still not in Lean.
 - Volume 7, Section 3.2 names the Lean proof of Theorem 3.2.3 at a $K$-rational point of the chart that is not its origin, from tamnd/singularity-lean#202.
 - Volume 7, Section 3.3 has a new paragraph in the notes and references on the results of note 55.
