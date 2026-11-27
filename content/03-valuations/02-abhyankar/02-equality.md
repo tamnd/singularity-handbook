@@ -13,7 +13,7 @@ When the Abhyankar inequality is an equality, the value group and the residue fi
 **Lemma 2.2.1.** Let $(L/K, w)$ be an extension of valued fields, and let $x_1, \dots, x_r$ and $y_1, \dots, y_s$ be as in Theorem 2.1.4, with $\gamma_i = w(x_i)$. Let $K_0 = K(x_1, \dots, x_r, y_1, \dots, y_s) \subseteq L$ and let $w_0$ be the restriction of $w$ to $K_0$. Then
 $$\Gamma_{w_0} = \Gamma_v \oplus \mathbb{Z}\gamma_1 \oplus \dots \oplus \mathbb{Z}\gamma_r, \qquad K_0w_0 = Kv(\bar{y}_1, \dots, \bar{y}_s).$$
 
-Lean: `Singularity.exists_valuation_eq_of_mem_adjoin` (the inclusion of $\Gamma_{w_0}$ in $\Gamma_v + \sum \mathbb{Z}\gamma_i$ only)
+Lean: `Singularity.valueGroup_adjoin_eq`, `Singularity.linearIndependent_and_disjoint_valueGroup`, `Singularity.residueIntermediateField_adjoin_eq`
 
 *Proof.* The sum $\Gamma_v + \sum \mathbb{Z}\gamma_i$ is direct, because the $\gamma_i$ are independent modulo $\Gamma_v$. Each nonzero element of $K[x, y]$ has the form $F = \sum_a x^ap_a$, where $a$ runs over a finite subset of $\mathbb{N}^r$ and each $p_a$ is a nonzero polynomial in $y$ with coefficients in $K$. By Lemma 2.1.2, $w(p_a) = \min v(\text{coefficients of } p_a) \in \Gamma_v$, and $w(F) = \min_a (a \cdot \gamma + w(p_a))$. So $w(F) \in \Gamma_v + \sum \mathbb{Z}\gamma_i$. Since $K_0$ is the field of fractions of $K[x, y]$, the value group $\Gamma_{w_0}$ is in this sum. The other inclusion is clear.
 
@@ -25,7 +25,7 @@ and each term of the sum has positive value. So $F/(cx^{a_0})$ has value 0, and 
 $$\operatorname{rr}(\Gamma_w/\Gamma_v) + \operatorname{trdeg}(Lw/Kv) = \operatorname{trdeg}(L/K).$$
 Then $\Gamma_w/\Gamma_v$ is a finitely generated abelian group, and $Lw$ is a finitely generated field extension of $Kv$.
 
-Lean: none yet
+Lean: `Singularity.valueGroup_fg_and_residueField_fg_of_rank_rat_add_trdeg_eq` (the form of the theorem), `Singularity.valueGroup_fg_and_residueField_fg_of_trdeg_le` (with the elements $x_i$ and $y_j$ given)
 
 *Proof.* Let $r = \operatorname{rr}(\Gamma_w/\Gamma_v)$ and $s = \operatorname{trdeg}(Lw/Kv)$. Choose $x_1, \dots, x_r$ and $y_1, \dots, y_s$ as in Theorem 2.1.4, with $r$ values independent modulo $\Gamma_v$ and $s$ residues that form a transcendence basis of $Lw/Kv$. Let $K_0$ be as in Lemma 2.2.1. By Theorem 2.1.4 the $r + s$ elements are algebraically independent over $K$. Since $r + s = \operatorname{trdeg}(L/K)$, the extension $L/K_0$ is algebraic, and it is finite because $L/K$ is finitely generated. By Corollary 2.1.3, $\Gamma_w/\Gamma_{w_0}$ is finite and $Lw$ is a finite extension of $K_0w_0$. By Lemma 2.2.1, $\Gamma_{w_0}/\Gamma_v \cong \mathbb{Z}^r$, so $\Gamma_w/\Gamma_v$ is an extension of a finite group by $\mathbb{Z}^r$, which is finitely generated. Also by Lemma 2.2.1, $K_0w_0 = Kv(\bar{y})$ is finitely generated over $Kv$, so $Lw$ is finitely generated over $Kv$. $\square$
 

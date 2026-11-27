@@ -60,7 +60,7 @@ The element $\tau(\bar{x})$ is the *Teichmüller lift* of $\bar{x}$. A coefficie
 
 **Theorem 4.4.6.** Let $(R, \mathfrak{m}, \kappa)$ be a complete Noetherian local ring with a coefficient field $K$, and let $x_1, \dots, x_n \in \mathfrak{m}$. Then there is a homomorphism of $K$-algebras $\varphi : K[[X_1, \dots, X_n]] \to R$ with $\varphi(X_i) = x_i$ and $\varphi((X_1, \dots, X_n)^j) \subseteq \mathfrak{m}^j$ for each $j$. If $x_1, \dots, x_n$ generate $\mathfrak{m}$, then $\varphi$ is surjective.
 
-Lean: none yet
+Lean: `Singularity.Algebra.exists_cohenMap` (for an $\mathfrak{m}$-adically complete local ring; the proof does not use that $R$ is Noetherian)
 
 *Proof.* Let $S = K[X_1, \dots, X_n]$ and $J = (X_1, \dots, X_n)$. The map of $K$-algebras $S \to R$ with $X_i \mapsto x_i$ maps $J^j$ into $\mathfrak{m}^j$. So it gives compatible maps $S/J^j \to R/\mathfrak{m}^j$, and a map of the inverse limits. By Example 4.2.2 the first limit is $K[[X_1, \dots, X_n]]$, and the second is $\hat{R} = R$. This is $\varphi$.
 
@@ -78,7 +78,7 @@ The proof is complete when $\operatorname{char} \kappa = 0$ or $\kappa$ is perfe
 
 **Corollary 4.4.8.** Let $(R, \mathfrak{m}, \kappa)$ be a complete Noetherian local ring that contains a field, and let $e = \operatorname{edim} R$. Then $R$ is a quotient of $\kappa[[X_1, \dots, X_e]]$. In particular, $R$ is a quotient of a complete regular local ring.
 
-Lean: none yet
+Lean: `Singularity.Algebra.exists_surjective_mvPowerSeries_residueField` (with a coefficient field as a hypothesis, and with $e$ the minimal number of generators of $\mathfrak{m}$)
 
 *Proof.* Take a coefficient field by Theorem 4.4.4 and $e$ generators of $\mathfrak{m}$ by Lemma 1.1.1, and apply Theorem 4.4.6. The ring $\kappa[[X_1, \dots, X_e]]$ is complete and regular by Example 4.2.2 and Corollary 4.3.4. $\square$
 

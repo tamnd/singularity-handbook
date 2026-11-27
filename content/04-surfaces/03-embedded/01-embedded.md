@@ -53,7 +53,7 @@ The Lean library proves two facts of this section. A closed point of $X$ is a pe
 
 **Example 3.1.5.** Let $k$ be a field of any characteristic, let $Z = \mathbb{A}^3_k$ and let $X = V(xy - z^2)$. The blowup $Z' \to Z$ at the origin is an embedded resolution of $X$. The exceptional divisor $E \cong \mathbb{P}^2_k$ has one component, and it is regular.
 
-Lean: none yet
+Lean: `Singularity.pointChart_quadricCone_x`, `Singularity.quadricConeShift_strictTransform`, `Singularity.jacobian_quadricCone_zChart` (the chart computation only)
 
 *Proof.* A closed point is a permissible center. By Proposition 2.3.2, the strict transform $X'$ is regular. In the $x$-chart $\operatorname{Spec} k[x, y_1, z_1]$ we have $E = V(x)$ and $X' = V(y_1 - z_1^2)$. With $y_2 = y_1 - z_1^2$ we get $k[x, y_1, z_1] = k[x, y_2, z_1]$, so $x$ and $y_2$ are coordinates. Let $R$ be the local ring of $Z'$ at a point of $V(x, y_2)$. Then $R/(x)$ and $R/(x, y_2)$ are local rings of $k[y_2, z_1]$ and of $k[z_1]$, so they are regular. By Proposition 1.2.8 of Volume 1, applied twice, $\dim R/(x, y_2) = \dim R - 2$. Thus $x$ and $y_2$, together with a regular system of parameters of $R/(x, y_2)$, give a regular system of parameters of $R$. The $y$-chart is the same. In the $z$-chart $\operatorname{Spec} k[x_1, y_1, z]$ we have $E = V(z)$ and $X' = V(x_1 y_1 - 1)$. On the open set $D(x_1)$, which contains $X'$, put $u = x_1 y_1 - 1$. Then $k[x_1, x_1^{-1}, y_1, z] = k[x_1, x_1^{-1}, u, z]$, and $u$ and $z$ are coordinates in the same way. Thus $X'$ has normal crossings with $E$. $\square$
 
