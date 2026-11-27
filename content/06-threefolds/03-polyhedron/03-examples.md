@@ -1,14 +1,16 @@
 ---
 title: Examples computed by hand
 nodes: [SG00000013, SG00000015]
-sources: [CP19, Moh87, HP19a, Mat]
+sources: [CP19, Hir67, Moh87, HP19a, Mat]
 status: drafted
 drafted_by: writer
 reviewed_by: []
 ---
 ## Examples computed by hand
 
-This section computes the invariants of Section 3.2 in four examples. The first example is a point blowup at which $\epsilon$ increases and $\omega$ does not. The second example is [CP19, Remark 2.70]: two equations with the same polyhedron and different values of $\omega$. The third example computes a characteristic polyhedron over $\mathbb{F}_3$ by vertex preparation, in two steps. The fourth example is a point blowup at which $\iota$ drops, followed by the blowup of a curve that resolves the singularity. We checked each computation with a short computer program, but each step below can be done by hand.
+The theorems of Cossart and Piltant that Section 3.2 cites are long, and we do not prove them. Examples are the best way to see what they say. An example shows which invariant moves under a blowup, and why. It also tests the statements: each computation below checks a conclusion of Theorem 3.2.6 or Theorem 3.2.7 in one case. The polyhedron itself is due to Hironaka [Hir67], and Cossart and Piltant give examples of their invariants in [CP19, Section 1, Remark 2.70 and Example 3.6].
+
+This section computes the invariants of Section 3.2 in six examples. The first example is a point blowup at which $\epsilon$ increases and $\omega$ does not. The second example is [CP19, Remark 2.70]: two equations with the same polyhedron and different values of $\omega$. The third example computes a characteristic polyhedron over $\mathbb{F}_3$ by vertex preparation, in two steps. The fourth example is a point blowup at which $\iota$ drops, followed by the blowup of a curve that resolves the singularity. The fifth example is the analogue of the first one for $p = 3$, with a table of all the points of the exceptional plane over $\mathbb{F}_3$. The sixth example carries out the step of Theorem 3.2.7 in the case $\epsilon = 1$, with a center that is not a coordinate curve in the given coordinates. We checked each computation with a short computer program in SymPy, but each step below can be done by hand.
 
 We use these conventions. Let $k$ be a perfect field of characteristic $p$, let $S = k[[u_1, u_2, u_3]]$, and let $h = Z^p + f$ with $f$ clean (Volume 7, Definition 1.3.1). By Proposition 3.2.4, $(u; Z)$ is well adapted, and the invariants are read off from $f$. Let $\operatorname{ord} f \ge p$, so that $m(x) = p$ at the origin $x$. The blowup of the origin in the $u_j$-chart at the point with coordinates $t = (t_i)_{i \ne j}$ is
 $$u_i = u_j (u'_i + t_i) \text{ for } i \ne j, \qquad Z = u_j Z', \qquad h' = Z'^p + u_j^{-p} f.$$
@@ -120,6 +122,76 @@ Lean: `Singularity.Examples.example_3_3_4_chart` (the chart substitution)
 
 For the first blowup, Theorem 3.2.6 gives only $\iota(x') \le \iota(x)$. The invariant drops because $C$ is smooth. At each point of $C$ the linear part $t_2^2 u_2 + t_3^2 u_3$ of $g$ is an equation of the tangent line of $C$, and it contains a variable that is not in $E'$. In Example 3.3.1, by contrast, one point has $\iota(x') = \iota(x)$.
 
+### An increase of epsilon for p = 3
+
+Example 3.3.1 has $p = 2$. The next example shows the same effect for $p = 3$, and it shows where the cube that cleaning removes comes from.
+
+**Example 3.3.5.** Let $p = 3$, let $k$ be a perfect field of characteristic 3, let
+$$f = u_1^2 u_2^4 - u_1^5 u_2 + u_1^2 u_2 u_3^4,$$
+and let $E = \operatorname{div}(u_1 u_2 u_3)$. The exponents $(2, 4, 0)$, $(5, 1, 0)$ and $(2, 1, 4)$ are not in $3 \mathbb{N}^3$, so $f$ is clean, and $h = Z^3 + f$ is reduced.
+
+*The point $x$.* The first two monomials have degree 6 and the third has degree 7, so $\operatorname{ord} f = 6$, $\delta(x) = 2$ and $m(x) = 3$. We have $f = u_1^2 u_2 G$ with
+$$G = u_2^3 - u_1^3 + u_3^4, \qquad \operatorname{in}(G) = U_2^3 - U_1^3 = (U_2 - U_1)^3,$$
+where the last equality holds in characteristic 3. So $r = (2, 1, 0)$ and $\epsilon(x) = \operatorname{ord} G = 3$. All three coordinates belong to $E$, so $\omega(x) = \epsilon(x) = 3$ by Lemma 3.2.14(3), and $\iota(x) = (3, 3, \ge 2)$.
+
+*Condition (E).* Modulo 3 we have $\partial f/\partial u_3 = 4 u_1^2 u_2 u_3^3 = u_1^2 u_2 u_3^3$. So the common zero set of the three derivatives lies in $V(u_1 u_2 u_3) = E$, and $(S, h, E)$ satisfies condition (E) by Lemma 2.3.3. The blowup of the point $x$ is permissible of the first kind, and Theorem 3.2.6 applies, since $\omega(x) > 0$.
+
+*The point $t_2 = 1$, $t_3 = 0$ of the $u_1$-chart.* Here $u_2 = u_1 (u_2 + 1)$ and $u_3 = u_1 u_3$. After division by $u_1^3$ the three monomials of $f$ become $u_1^3 (u_2 + 1)^4$, $-u_1^3 (u_2 + 1)$ and $u_1^4 (u_2 + 1) u_3^4$. In characteristic 3,
+$$(u_2 + 1)^4 - (u_2 + 1) = (u_2 + 1) \bigl( (u_2 + 1)^3 - 1 \bigr) = (u_2 + 1) u_2^3 = u_2^4 + u_2^3.$$
+So
+$$u_1^{-3} f = u_1^3 u_2^4 + u_1^3 u_2^3 + u_1^4 u_2 u_3^4 + u_1^4 u_3^4.$$
+The monomial $u_1^3 u_2^3 = (u_1 u_2)^3$ is a cube, and the translation $Z' \mapsto Z' - u_1 u_2$ removes it, since $(Z' + u_1 u_2)^3 = Z'^3 + u_1^3 u_2^3$. The clean part is
+$$f' = u_1^3 u_2^4 + u_1^4 u_2 u_3^4 + u_1^4 u_3^4.$$
+Its order is $7 \ge 3$, so $m(x') = 3$ and $\delta(x') = \frac73$. The new divisor is $E' = \operatorname{div}(u_1 u_3)$, since $t_2 \ne 0$ and $t_3 = 0$. The smallest exponents of $u_1$ and $u_3$ are $3$ and $0$, so $\epsilon(x') = 7 - 3 = 4$. The initial form is $F' = U_1^3 U_2^4$. The variable $U_2$ is not in $E'$, and its exponent $4$ is prime to 3. So $\omega(x') = \epsilon(x') - 1 = 3$.
+
+Thus $\epsilon$ goes up from $3$ to $4$, by $1 = p^0$, the largest increase that Moh's bound allows (Volume 7, Theorem 1.4.1). The invariant $\omega$ stays $3$. The conclusions of Theorem 3.2.6 hold: $\epsilon(x) = \omega(x) = 3$ and $\delta(x) = 2 \in \mathbb{N}$.
+
+*Where the cube comes from.* The point $(1 : 1 : 0)$ of the exceptional plane lies on the line $U_2 = U_1$, and $\operatorname{in}(G)$ is the cube of $U_2 - U_1$. After the translation $u_2 \mapsto u_2 + 1$ of the chart, this cube becomes the cube $u_1^3 u_2^3$, and cleaning removes it. So the part of $f$ of degree 6 loses a term, and the order goes up. The third monomial of $f$ does not spoil this, because $t_3 = 0$ keeps its image $u_1^4 (u_2 + 1) u_3^4$ of order at least 8. At the points $t = (1, 1)$ and $t = (1, 2)$ the same monomial contains $u_1^4$, and the order is only 4.
+
+*All the points over $\mathbb{F}_3$.* The table lists the 13 points of the exceptional plane with coordinates in $\mathbb{F}_3$, each in the first chart that contains it, with the conventions of the table of Example 3.3.1.
+
+| Chart | $t$ | $E'$ | ord | smallest exponents | $\epsilon(x')$ | $\omega(x')$ |
+|---|---|---|---|---|---|---|
+| $u_1$ | $(0, 0)$ | $u_1, u_2, u_3$ | 4 | $(3, 1, 0)$ | 0 | 0 |
+| $u_1$ | $(0, 1)$, $(0, 2)$ | $u_1, u_2$ | 4 | $(3, 1)$ | 0 | 0 |
+| $u_1$ | $(1, 0)$ | $u_1, u_3$ | 7 | $(3, 0)$ | 4 | 3 |
+| $u_1$ | $(1, 1)$, $(1, 2)$ | $u_1$ | 4 | $(3)$ | 1 | 1 |
+| $u_1$ | $(2, 0)$ | $u_1, u_3$ | 4 | $(3, 0)$ | 1 | 0 |
+| $u_1$ | $(2, 1)$, $(2, 2)$ | $u_1$ | 4 | $(3)$ | 1 | 0 |
+| $u_2$ | $(0, 0)$ | $u_1, u_2, u_3$ | 5 | $(2, 3, 0)$ | 0 | 0 |
+| $u_2$ | $(0, 1)$, $(0, 2)$ | $u_1, u_2$ | 5 | $(2, 3)$ | 0 | 0 |
+| $u_3$ | $(0, 0)$ | $u_1, u_2, u_3$ | 7 | $(2, 1, 3)$ | 1 | 1 |
+
+At each of the 13 points $m(x') = 3$, and $\omega(x') \le 3$, as Theorem 3.2.6 says. Only one point has $\epsilon(x') > \epsilon(x)$. Lemma 3.2.14(2) explains the two values of $\omega$ in the rows with $\epsilon(x') = 1$. At $t = (1, 1)$ the initial form is $U_1^4$, so $\operatorname{in}(G') = U_1$ lies in the span of the variables of $E'$, and $\omega(x') = 1$. At $t = (2, 0)$ we have $(u_2 - 1)^4 - (u_2 - 1) = u_2^4 + 2 u_2^3 + u_2 + 2$ modulo 3. The constant $2 = (-1)^3$ and the monomial $2 u_2^3$ give cubes, and after cleaning the initial form is $U_1^3 U_2$. So $\operatorname{in}(G') = U_2$ is transverse to $E'$, and $\omega(x') = 0$.
+
+Lean: none yet
+
+### A curve center when epsilon is one
+
+The step of Theorem 3.2.7 in the case $\epsilon(x) = 1$ and $\delta(x) = 1$ blows up a curve that one finds only after a change of coordinates [CP19, proof of Theorem 2.81, Case 2]. The next example shows this step, and it shows that the point blowup does not help.
+
+**Example 3.3.6.** Let $p = 3$, let $k$ be algebraically closed of characteristic 3, let
+$$f = u_1^2 u_2 + u_1^2 u_3^2 = u_1^2 (u_2 + u_3^2),$$
+and let $E = \operatorname{div}(u_1)$. The exponents $(2, 1, 0)$ and $(2, 0, 2)$ are not in $3 \mathbb{N}^3$, so $f$ is clean.
+
+*The point $x$.* We have $\operatorname{ord} f = 3$, so $\delta(x) = 1$ and $m(x) = 3$. Further $r_1 = 2$ and $G = u_2 + u_3^2$, so $\epsilon(x) = 1$ and $\operatorname{in}(G) = U_2$. This form is not in the span of $U_1$, so $\omega(x) = 0$ by Lemma 3.2.14(2), and $\iota(x) = (3, 0, 1)$. The derivatives of $f$ modulo 3 are $-u_1 (u_2 + u_3^2)$, $u_1^2$ and $-u_1^2 u_3$, and their common zero set is $V(u_1) = E$. So condition (E) holds by Lemma 2.3.3.
+
+*The point blowup.* At the origin of the $u_3$-chart, $u_1 = u_3 u_1'$ and $u_2 = u_3 u_2'$, and
+$$u_3^{-3} f = u_1'^2 u_2' + u_1'^2 u_3 = u_1'^2 (u_2' + u_3).$$
+This series is clean, of order 3, and the new divisor is $\operatorname{div}(u_1' u_3)$. So $\delta(x') = 1$, $r = (2, 0)$, $\epsilon(x') = 1$ and $\operatorname{in}(G') = U_2 + U_3$. Since $U_2$ is not in $E'$, $\omega(x') = 0$. So $\iota(x') = \iota(x)$, and $\delta$ does not drop at this point.
+
+*The coordinate $u_{e + 1}$.* Let $v = u_2 + u_3^2$. Since $v \equiv u_2$ modulo $\mathfrak{m}_S^2$, the family $(u_1, v, u_3)$ is a regular system of parameters of $S$, and $E = \operatorname{div}(u_1)$ is still a coordinate hyperplane. In these coordinates $f = u_1^2 v$. This is the form $H^{-1} f = (u_{e + 1})$ of Section 3.2, with $H = u_1^2$ and $u_{e + 1} = v$.
+
+*The center.* Let $Y = V(Z, u_1, v)$. In the given coordinates $Y = V(Z, u_1, u_2 + u_3^2)$, a curve that is not a coordinate curve. We have $f \in (u_1, v)^3$, so $h \in (Z, u_1, v)^3$, and the image of $h$ modulo $(u_1, v)$ is $Z^3$. So $m(y) = 3$. The curve $W = V(u_1, v)$ is regular and has normal crossings with $E$. So $Y$ is Hironaka-permissible with respect to $E$. The coordinate curve $V(Z, u_1, u_2)$ is not permissible: $f$ has the term $u_1^2 u_3^2$, which is not in $(u_1, u_2)^3$, so the multiplicity at its generic point is less than 3.
+
+*The blowup of $Y$.* In the $u_1$-chart at the point $v = u_1 (v' + a)$, with $a \in k$ and $Z = u_1 Z'$, the strict transform is
+$$h' = Z'^3 + u_1^{-3} u_1^2 \cdot u_1 (v' + a) = Z'^3 + v' + a.$$
+Let $b \in k$ with $b^3 = a$. Then $h' = (Z' + b)^3 + v'$, which has order 1 at the point $Z' = -b$. So this point is regular. In the $v$-chart at the origin, $u_1 = v u_1'$ and $Z = v Z'$, and the strict transform is $Z'^3 + u_1'^2$, of order 2. So each point $x'$ over $x$ has $m(x') \le 2 < p$, as [CP19, Proposition 2.79] says for this center.
+
+Lean: none yet
+
+The two blowups of this example have the same invariant at the start, and they behave in a different way. The point blowup keeps $\iota$ at the origin of one chart, while the blowup of $Y$ ends the case $m = p$ at once. The center $Y$ is visible only in the coordinates $(u_1, v, u_3)$, in which $f$ is a monomial times the transverse coordinate. This is the reason why Cossart and Piltant choose the coordinates with $H^{-1} f = (u_{e + 1})$ before they choose the center.
+
 ### Notes and references
 
-The table of Example 3.3.1 also shows the pattern of Volume 7, Section 1.4: the increase of $\epsilon$ happens at a point where a translation $u_2 \mapsto u_2 + 1$ produces a square that cleaning removes. Examples 3.3.1, 3.3.3 and 3.3.4 are our own examples. Example 3.3.2 is from [CP19]. For the increase of the residual order see [Moh87] and [HP19a].
+The table of Example 3.3.1 also shows the pattern of Volume 7, Section 1.4: the increase of $\epsilon$ happens at a point where a translation $u_2 \mapsto u_2 + 1$ produces a square that cleaning removes. Examples 3.3.1, 3.3.3, 3.3.4, 3.3.5 and 3.3.6 are our own examples. Example 3.3.2 is from [CP19]. Example 3.3.6 follows Case 2 of [CP19, proof of Theorem 2.81], and Example 3.3.5 is the pattern of Example 3.3.1 for $p = 3$. We computed the table of Example 3.3.5 with SymPy, and we checked the rows with an increase or with $\omega(x') = 0$ by hand. For the increase of the residual order see [Moh87] and [HP19a].

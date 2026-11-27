@@ -18,6 +18,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 - The line `singularity` of `EDITION` now pins the map commit df4e564 of tamnd/singularity, which has the nodes SG0000005X to SG00000061.
 - Volume 7, Lemma 3.14.2 and Theorem 3.14.5 name their Lean proofs in `Singularity/Invariant/OriginRuns.lean`, and Volume 9, Section 3.16 reports this.
+- Volume 6, Sections 3.2, 3.3 and 4.3 are expanded. Section 3.2 explains why the invariants are needed in characteristic $p$, and it adds Lemma 3.2.14 on the values of $\omega$ with a proof and the worked Examples 3.2.15 and 3.2.16. Section 3.3 adds Example 3.3.5, an increase of $\epsilon$ for $p = 3$ with a table of all the points over $\mathbb{F}_3$, and Example 3.3.6, the curve center of Theorem 3.2.7 in the case $\epsilon = 1$. Section 4.3 explains the aim of the experiment E4, and it adds Proposition 4.3.4, which proves in each dimension that $\epsilon$ and $\omega$ do not go up at the origin of a chart of a point blowup, with Examples 4.3.5 and 4.3.6 in dimension 4. The examples were checked with SymPy. The new statements have no Lean proof.
 
 ## [0.4.50] - 2026-11-27
 
