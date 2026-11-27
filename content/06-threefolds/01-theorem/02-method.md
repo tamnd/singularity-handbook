@@ -80,7 +80,7 @@ A derivation of a domain extends to each localization by the quotient rule $D(b/
 $$h = z^m + a_1 z^{m-1} + \dots + a_m \in A[z], \qquad A = k[x_1, \dots, x_n].$$
 Let $z' = z + a_1/m$. Then $\operatorname{ord}_q h \le m$ for each point $q$ of $\mathbb{A}^{n+1}_k = \operatorname{Spec} A[z]$, and each point $q$ with $\operatorname{ord}_q h = m$ lies on the regular hypersurface $V(z')$.
 
-Lean: none yet
+Lean: `Singularity.maximalContact_small_multiplicity` (at the points with coordinates in $k$)
 
 *Proof.* Let $D = \partial/\partial z$, a $k$-derivation of $A[z]$, and extend it to the local ring $\mathcal{O}_q$. If $h \in \mathfrak{m}_q^e$, then Lemma 1.2.4, applied $j$ times, gives $D^j h \in \mathfrak{m}_q^{e - j}$ for $j \le e$. We have $D^m h = m!$, a unit. So $h \notin \mathfrak{m}_q^{m+1}$, since otherwise $m! \in \mathfrak{m}_q$. This proves $\operatorname{ord}_q h \le m$. Now let $h \in \mathfrak{m}_q^m$. Then $D^{m-1} h \in \mathfrak{m}_q$. The terms $a_i z^{m-i}$ with $i \ge 2$ have degree less than $m - 1$ in $z$, so $D^{m-1}$ kills them, and
 $$D^{m-1} h = m! \, z + (m-1)! \, a_1 = m! \, z'.$$

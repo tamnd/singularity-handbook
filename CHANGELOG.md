@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, Lemma 1.6.1, Volume 4, Lemma 1.2.6 and Volume 6, Proposition 1.2.5 have Lean lines.
+
 ## [0.4.75] - 2026-11-28
 
 ### Added
