@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.76] - 2026-11-28
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.76.
+
 ### Changed
 
 - Six results in Volumes 1, 2, 3 and 5 have Lean lines: the quadratic transform, the completion of the local polynomial ring, $p$-independence, the rank 2 valuation and the classical coefficient ideal.
