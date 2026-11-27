@@ -9,6 +9,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 7, Section 3.17 treats the corner runs in four variables with two letters, with a translation vector in the two free coordinates. Lemmas 3.17.1 and 3.17.2 and Propositions 3.17.3 and 3.17.4 extend the closed form, the change of the free coordinates, the criterion (★★) and the transcendental type to two free coordinates. Lemma 3.17.6 proves that the finiteness of the translations does not depend on the free coordinates. Proposition 3.17.8, Lemma 3.17.11 and Corollary 3.17.12 give points with $\rho = 1$ and an infinite number of nonzero translations that are not products with a line, so the finiteness is false for $n = 4$ (Question 3.17.7). Theorem 3.17.13 and Corollary 3.17.14 reduce the cylindrical points to three variables, and Theorem 3.17.15 and Corollary 3.17.17 treat the functions of one linear form. Lemma 3.17.19 bounds the order of $G$ along the corner surfaces, and Theorem 3.17.21 and Example 3.17.22 show that Conjecture L+ (Conjecture 3.17.20) is false. Corollary 3.17.23 is a necessary condition for it. Theorems 3.17.27 and 3.17.29 show that a point of type $0$ with $\rho < p$ cannot be the point before a change of the letter. Proposition 3.17.30 and Lemma 3.17.31 treat the binary initial forms, and Theorem 3.17.33 proves Conjecture L (Conjecture 3.17.18) under Hypothesis 3.17.32 (H1) for $\deg_{x, w} g < p$. Conjecture L° (Conjecture 3.17.24) and H1 are open. In each known example Question 3.13.18 has a positive answer. The map nodes are SG0000006J to SG0000007E. The results come from notes 38 to 42 of the research notes, and they have no Lean proof yet.
 - Volume 9, Section 3.19 reports the result, and the introductions of Volume 7, Chapter 3 and of Volume 9, Chapter 3 name the new sections. The notes of Volume 7, Sections 3.14 and 3.16 now refer to Section 3.17 for $n = 4$.
 
+### Changed
+
+- The line `singularity` of `EDITION` pins the map release 0.4.62.
+
 ## [0.4.56] - 2026-11-27
 
 ### Added
