@@ -11,6 +11,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- The line `singularity` of `EDITION` pins the map release 0.4.61.
+- Volume 7, Section 3.14 and Volume 9, Section 3.16 name the Lean proof of Lemma 3.14.6 from singularity-lean 0.4.44. With it, parts 1 to 3 of Theorem 3.14.7 hold in Lean with no hypothesis.
 - Volume 7, Sections 3.13, 3.14 and 3.15 point to Section 3.16 where they say that the finiteness for a general $g$ is open.
 
 ## [0.4.53] - 2026-11-27
