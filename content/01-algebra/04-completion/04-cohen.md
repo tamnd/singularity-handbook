@@ -26,7 +26,7 @@ A coefficient field is a field in $R$, so a local ring with a coefficient field 
 
 **Lemma 4.4.3 (Hensel).** Let $(R, \mathfrak{m})$ be a complete Noetherian local ring, let $g \in R[T]$ and let $a_0 \in R$. Assume that $g(a_0) \in \mathfrak{m}$ and that $g'(a_0)$ is a unit. Then there is exactly one $a \in R$ with $g(a) = 0$ and $a - a_0 \in \mathfrak{m}$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.existsUnique_root_of_isAdicComplete`
 
 *Proof.* For $b, h \in R$ the Taylor formula gives $g(b + h) = g(b) + g'(b) h + h^2 c$ for some $c \in R$. We define $a_{k+1} = a_k - g(a_k)/g'(a_k)$, and we prove by induction that $a_k - a_0 \in \mathfrak{m}$ and $g(a_k) \in \mathfrak{m}^{2^k}$. This is true for $k = 0$. Assume it for $k$. Then $g'(a_k) \equiv g'(a_0)$ modulo $\mathfrak{m}$, so $g'(a_k)$ is a unit and $a_{k+1}$ is defined. Let $h = -g(a_k)/g'(a_k)$. Then $h \in \mathfrak{m}^{2^k}$, so $a_{k+1} - a_0 \in \mathfrak{m}$, and the Taylor formula gives $g(a_{k+1}) = h^2 c \in \mathfrak{m}^{2^{k+1}}$.
 
