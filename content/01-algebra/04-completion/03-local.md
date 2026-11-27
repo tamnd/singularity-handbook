@@ -16,13 +16,13 @@ Let $(R, \mathfrak{m}, \kappa)$ be a Noetherian local ring, and let $\hat{R}$ be
 2. The map $R \to \hat{R}$ is injective.
 3. For each ideal $J$ of $R$, $J\hat{R} \cap R = J$, and $\hat{R}/J\hat{R}$ is the completion of $R/J$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.adicCompletion_isLocalRing` (parts 1 and 2, without the claim that $\hat{R}$ is Noetherian)
 
 *Proof.* For 1, $\hat{R}$ is Noetherian by Theorem 4.2.9. By Proposition 4.2.8, $\hat{R}/\mathfrak{m}\hat{R} \cong R/\mathfrak{m} = \kappa$, so $\mathfrak{m}\hat{R}$ is a maximal ideal. It is in the Jacobson radical of $\hat{R}$, by Proposition 4.2.8. So it is the only maximal ideal. For 2, the kernel of $R \to \hat{R}$ is $\bigcap_n \mathfrak{m}^n$, and this is $0$ by Corollary 4.1.8. For 3, apply Proposition 4.2.5 and Theorem 4.2.6 to the sequence $0 \to J \to R \to R/J \to 0$. They give that the completion of $R/J$ is $\hat{R}/J\hat{R}$. The completion of $R/J$ as an $R$-module is its completion as a local ring, because $\mathfrak{m}^n (R/J)$ is the $n$-th power of the maximal ideal of $R/J$. By 2, applied to the Noetherian local ring $R/J$, the map $R/J \to \hat{R}/J\hat{R}$ is injective. This says that $J\hat{R} \cap R = J$. $\square$
 
 **Proposition 4.3.2.** Let $(R, \mathfrak{m})$ be a Noetherian local ring. Then $\hat{R}$ is a faithfully flat $R$-module: for each $R$-module $P$, $\hat{R} \otimes_R P = 0$ implies $P = 0$. Thus a sequence of $R$-modules is exact if it is exact after the tensor product with $\hat{R}$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.faithfullyFlat_adicCompletion` (faithful flatness, without the last sentence on exact sequences)
 
 *Proof.* The module $\hat{R}$ is flat by Theorem 4.2.7. Let $P \ne 0$, and let $x \in P$ be a nonzero element. The submodule $Rx$ is isomorphic to $R/J$ for an ideal $J \ne R$. By flatness, $\hat{R} \otimes_R Rx \cong \hat{R}/J\hat{R}$ is a submodule of $\hat{R} \otimes_R P$. Since $J \subseteq \mathfrak{m}$, the ring $\hat{R}/J\hat{R}$ maps onto $\hat{R}/\mathfrak{m}\hat{R} = \kappa \ne 0$. Thus $\hat{R} \otimes_R P \ne 0$. For the last statement, let $N \to M \to P$ be a sequence with composite $0$, and let $H$ be its homology at $M$. By flatness, $\hat{R} \otimes_R H$ is the homology of the sequence after the tensor product with $\hat{R}$. If this homology is $0$, then $H = 0$. $\square$
 

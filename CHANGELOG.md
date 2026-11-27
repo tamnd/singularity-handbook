@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 1, Lemma 4.1.3, Propositions 4.2.5, 4.3.1 and 4.3.2, and Theorems 4.2.6 and 4.2.7 name their Lean proofs from tamnd/singularity-lean#211. Most of them come from Mathlib. Lean proves Lemma 4.1.3, Proposition 4.2.5 and Theorems 4.2.6 and 4.2.7 in full. For Propositions 4.3.1 and 4.3.2, the Lean line says which part Lean proves.
+
 ### Added
 
 - Volume 7, Section 3.3 reports the results of the track NW on the Newton and Frobenius preparation of $z^p + g$, from research note 55 with the corrections of research note 60. The section gives the Newton criterion in the weight form over a perfect field, with its Lean proof, and the example $z^p + t x^p$ over $\mathbb{F}_p(t)$, which shows that the field must be perfect. It gives the obstruction from the critical set for the changes of $x$ and for all changes of coordinates when $D > p$, with the example $z^3 + x^5 y + x y^5$, the case of two variables with the corrected Proposition 3.3.20, the Fano obstruction in characteristic 2 and the open case $D = p$ as Conjecture 3.3.24. It also gives the toric resolution without convenience, the corrected localization by a weighted blowup and the resolution of $z^p + h$ by one weighted blowup for a binary form $h$. The nodes are SG0000008P to SG0000008Z.
