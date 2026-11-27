@@ -18,7 +18,7 @@ The map $K \to \kappa$ is injective because a field has no ideals other than $0$
 
 **Lemma 4.4.2.** A local ring $(R, \mathfrak{m}, \kappa)$ contains a field if and only if it is equicharacteristic.
 
-Lean: none yet
+Lean: `Singularity.Algebra.exists_isField_subring_iff_ringChar_eq`
 
 *Proof.* If $R$ contains a field $k$, then $k \to \kappa$ is injective, so $\operatorname{char} R = \operatorname{char} k = \operatorname{char} \kappa$. Conversely, assume that $\operatorname{char} R = \operatorname{char} \kappa$. If this characteristic is a prime $p$, then $R$ contains the field $\mathbb{F}_p$. If it is $0$, then each nonzero integer $n$ has a nonzero image in $\kappa$. So $n \notin \mathfrak{m}$, and $n$ is a unit of $R$. Thus $R$ contains $\mathbb{Q}$. $\square$
 
