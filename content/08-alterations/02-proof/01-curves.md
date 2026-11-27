@@ -38,7 +38,7 @@ Lean: none yet
 
 **Corollary 2.1.4.** In Lemma 2.1.3, let $t_1, \dots, t_r$ be a regular system of parameters of $A$ and $h = \varepsilon \, t_1^{n_1} \cdots t_r^{n_r}$ with $\varepsilon$ a unit and $n_i \ge 0$, not all 0. Then $B$ is regular if and only if $n_1 + \dots + n_r = 1$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.mul_prod_pow_notMem_sq_iff`, `Singularity.Algebra.iff_sum_eq_one_of_iff_notMem_sq` (with Lemma 2.1.3 as a hypothesis)
 
 *Proof.* If $\sum n_i \ge 2$, then $h \in \mathfrak{m}_A^2$. If $\sum n_i = 1$, then $h = \varepsilon t_i$ for one $i$, and $t_i \notin \mathfrak{m}_A^2$. Apply Lemma 2.1.3. $\square$
 

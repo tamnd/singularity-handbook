@@ -36,7 +36,7 @@ To prove that the Frobenius of $K[[x_1, \dots, x_n]]$ is flat for an imperfect f
 
 **Lemma 6.4.3.** Let $A \to B$ be a homomorphism of Noetherian rings, and let $I$ be an ideal of $A$ such that $IB$ is in the Jacobson radical of $B$. Assume that $B/I^nB$ is a flat $A/I^n$-module for each $n \ge 1$. Then $B$ is a flat $A$-module.
 
-Lean: none yet
+Lean: `Singularity.Algebra.flat_of_flat_quotient_pow` (with $(A/I^n) \otimes_A B$ in place of $B/I^nB$)
 
 *Proof.* By [AM69, Proposition 2.19], it is sufficient to show that $N \otimes_A B \to M \otimes_A B$ is injective for each inclusion $N \subseteq M$ of finitely generated $A$-modules. Let $z$ be in the kernel. Fix $n$. The map $N/(I^n M \cap N) \to M/I^n M$ is injective, and both are $A/I^n$-modules. For an $A/I^n$-module $Q$ we have $Q \otimes_A B = Q \otimes_{A/I^n} B/I^nB$. Since $B/I^nB$ is flat over $A/I^n$, the map
 $$N/(I^n M \cap N) \otimes_A B \to M/I^n M \otimes_A B$$
@@ -44,7 +44,7 @@ is injective. The image of $z$ in $M/I^nM \otimes_A B$ is $0$, so the image of $
 
 **Corollary 6.4.4.** Let $L \subseteq K$ be fields. Then $K[[y_1, \dots, y_n]]$ is a flat $L[[y_1, \dots, y_n]]$-module.
 
-Lean: none yet
+Lean: `Singularity.Algebra.flat_mvPowerSeries_of_finiteDimensional` (when $[K : L]$ is finite)
 
 *Proof.* Let $A = L[[y_1, \dots, y_n]]$, $B = K[[y_1, \dots, y_n]]$ and $I = (y_1, \dots, y_n)A$. Both rings are Noetherian (Theorem 4.2.9 and Example 4.2.2), and $IB$ is the maximal ideal of the local ring $B$. By Example 4.2.2, $A/I^n$ is the free $L$-module on the monomials of degree less than $n$, and $B/I^nB$ is the free $K$-module on the same monomials. Thus $B/I^nB = K \otimes_L A/I^n$. The field $K$ is a free $L$-module, so $K \otimes_L A/I^n$ is a free $A/I^n$-module. By Lemma 6.4.3, $B$ is flat over $A$. $\square$
 
@@ -52,7 +52,7 @@ When $[K : L]$ is infinite, $K[[y]]$ is not $K \otimes_L L[[y]]$: the coefficien
 
 **Proposition 6.4.5.** Let $K$ be a field of characteristic $p$ and let $S = K[[x_1, \dots, x_n]]$. Then the Frobenius of $S$ is flat.
 
-Lean: none yet
+Lean: `Singularity.Algebra.frobenius_mvPowerSeries_finite_and_flat` (when $[K : K^p]$ is finite)
 
 *Proof.* The Frobenius maps $\sum_\alpha c_\alpha x^\alpha$ to $\sum_\alpha c_\alpha^p x^{p\alpha}$. So it is an isomorphism of $S$ onto the subring $S' = K^p[[x_1^p, \dots, x_n^p]]$. Under this isomorphism, the $S$-module $F_* S$ is the ring $S$ as an $S'$-module. So we must show that $S$ is flat over $S'$. Let $y_i = x_i^p$, and consider the rings
 $$S' = K^p[[y_1, \dots, y_n]] \subseteq K[[y_1, \dots, y_n]] \subseteq K[[x_1, \dots, x_n]] = S.$$
