@@ -4,6 +4,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.16 proves that each corner run with free translations in three variables has only a finite number of nonzero translations, for each clean $g \in K[[y, z]][x]$ (Theorem 3.16.14). So Question 3.13.18 has a positive answer for each such run. Lemma 3.16.1 extends the closed form and the criterion (★) to power series in $x$. Lemmas 3.16.2 and 3.16.3 give the inequality of Kaplansky for power series along the translations, with the Weierstrass preparation theorem in the Tate algebra. Lemma 3.16.4 proves that the tie set of the class $\mu x + F(x^p)$ contains only $1$ and powers of $p$. Proposition 3.16.7 is an identity in the Hahn field, and Theorems 3.16.8, 3.16.9 and 3.16.10 treat the three cases of the tie set. The proof of Theorem 3.16.10 uses that the exponent vectors of the run are primitive, and it replaces the chain argument of the research notes. Example 3.16.11 shows the cross terms that Lemma 3.16.4 excludes. Lemma 3.16.12 proves that a change of the free coordinate keeps an infinite number of nonzero translations, and Theorem 3.16.13 is the finiteness for $\mu x + F(x^p, y, z)$. Remarks 3.16.15 to 3.16.17 give a second proof by transcendence and the computer tests. The map nodes are SG00000069 to SG0000006H. The results come from notes 34 to 37 of the research notes, and they have no Lean proof yet.
+- Volume 9, Section 3.18 reports the result, and the introductions of Volume 7, Chapter 3 and of Volume 9, Chapter 3 name the new sections.
+
+### Changed
+
+- Volume 7, Sections 3.13, 3.14 and 3.15 point to Section 3.16 where they say that the finiteness for a general $g$ is open.
+
 ## [0.4.53] - 2026-11-27
 
 ### Added
