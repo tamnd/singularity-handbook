@@ -95,7 +95,7 @@ $$\pi_i^{-1}{}_*(D^j(I_i), m - j) \subseteq D\big(\pi_i^{-1}{}_*(D^{j-1}(I_i), m
 
 **Corollary 2.2.8 (the maximal order does not go up).** If $\operatorname{max\text{-}ord} I \le m$, then $\operatorname{max\text{-}ord} I_i \le m$ for each blowup sequence of order at least $m$ for $(I, m)$.
 
-Lean: none yet
+Lean: `Singularity.idealOrd_chartTransformIdeal_le` (only one blowup of the origin of affine space, at the origin of a chart)
 
 *Proof.* By Corollary 2.1.5, $D^m(I) = \mathcal{O}_X$. The transform of $(\mathcal{O}, 0)$ is $\mathcal{O}$, so $J^{(m)}_i = \mathcal{O}_{X_i}$, and Theorem 2.2.7 gives $D^m(I_i) = \mathcal{O}_{X_i}$. By Corollary 2.1.5 again, $\operatorname{max\text{-}ord} I_i \le m$. $\square$
 

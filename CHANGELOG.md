@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 3, Lemma 2.1.2 and Proposition 3.2.3 and Volume 2, Corollary 2.2.8 have Lean lines. The Lean forms of Proposition 3.2.3 and Corollary 2.2.8 are special forms, and the Lean lines say what is missing.
+
 ## [0.4.71] - 2026-11-27
 
 ### Added

@@ -34,7 +34,7 @@ The next proposition shows what an extension without defect looks like. Each ele
 
 **Proposition 3.2.3.** Let $(L/K, w)$ be a finite extension of valued fields of degree $n$ with $ef = n$. Then for each $z \in L \setminus K$ the set $w(z - K) = \{w(z - a) : a \in K\}$ has a largest element.
 
-Lean: none yet
+Lean: `Singularity.exists_forall_valuation_sub_le` (the families $x_i$ and $y_j$ of the proof are hypotheses; their choice from $e$ and $f$ is not in Lean)
 
 *Proof.* Choose $x_1 = 1, x_2, \dots, x_e \in L^\times$ whose values represent the cosets of $\Gamma_v$ in $\Gamma_w$. Choose $y_1 = 1, y_2, \dots, y_f \in \mathcal{O}_w$ whose residues form a basis of $Lw/Kv$. By Lemma 2.1.2 the $n = ef$ elements $x_iy_j$ are linearly independent, so they form a basis of $L/K$. Write $z = \sum_{i,j} c_{ij}x_iy_j$ with $c_{ij} \in K$. Since $z \notin K$, some $c_{ij}$ with $(i, j) \ne (1, 1)$ is not 0. Let $M = \min_{(i,j) \ne (1,1)}(v(c_{ij}) + w(x_i))$, which is finite. For $a \in K$, Lemma 2.1.2 gives
 $$w(z - a) = \min\big(v(c_{11} - a), M\big) \le M,$$
