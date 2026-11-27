@@ -46,7 +46,7 @@ The next proposition shows that each finite alteration of a normal variety is do
 2. over each affine open $\operatorname{Spec} A$ of $X$, with inverse image $\operatorname{Spec} B$ in $Y$, the ring of invariants $B^G$ is the integral closure of $A$ in $M$; so the quotient $Y/G$ exists and is $X_M$;
 3. $X_M \to X$ is a finite universal homeomorphism, and it is an isomorphism if $L/K$ is separable.
 
-Lean: none yet
+Lean: `Singularity.isIntegral_algEquiv_apply`, `Singularity.mem_integralClosure_and_fixed_iff`, `Singularity.exists_algebraMap_eq_pow_of_isPurelyInseparable`, `Singularity.eq_of_comap_eq_integralClosure` (the algebra of parts 1 to 3, with the injectivity of $\operatorname{Spec} A_M \to \operatorname{Spec} A$ but not the surjectivity or the claim on residue fields)
 
 *Proof.* The normalization is finite (Volume 1, Theorem 2.4.7). Over $\operatorname{Spec} A$, the ring $B$ is the integral closure of $A$ in $L'$. Each $\sigma \in G$ fixes $A$ and maps elements integral over $A$ to elements integral over $A$, so $\sigma(B) = B$, and $G$ acts on $B$ over $A$. These actions glue, so $G$ acts on $Y$ over $X$. Since $k(Y)^G = L'^G = M$ is purely inseparable over $K$, part 1 follows.
 
@@ -101,7 +101,7 @@ The group matters because the quotients by its subgroups are alterations of smal
 $$\rho \colon B \to A, \quad \rho(b) = \frac{1}{|G|} \sum_{g \in G} g(b),$$
 is $A$-linear and $\rho(a) = a$ for $a \in A$. So $A$ is a direct summand of $B$ as an $A$-module, and $IB \cap A = I$ for each ideal $I$ of $A$.
 
-Lean: none yet
+Lean: `Singularity.reynolds_mem`, `Singularity.reynolds_add`, `Singularity.reynolds_mul_of_mem`, `Singularity.reynolds_of_mem`, `Singularity.comap_map_invariantSubring`
 
 *Proof.* The element $|G|$ lies in $A$, and its inverse in $B$ is fixed by $G$, so $1/|G| \in A$. For $h \in G$ the map $g \mapsto hg$ is a bijection of $G$, so $h(\rho(b)) = \rho(b)$, and $\rho(b) \in A$. For $a \in A$ and $b \in B$ we have $g(ab) = a \, g(b)$, so $\rho(ab) = a \rho(b)$, and $\rho(a) = |G| a / |G| = a$. So $\rho$ is an $A$-linear left inverse of the inclusion $A \to B$, and $B = A \oplus \ker \rho$. Let $x \in IB \cap A$, and write $x = \sum_k i_k b_k$ with $i_k \in I$ and $b_k \in B$. Then $x = \rho(x) = \sum_k i_k \rho(b_k) \in I$. The other inclusion is clear. $\square$
 
@@ -112,6 +112,8 @@ Let $G$ act faithfully on a domain $B$ with fraction field $L$, and let $K = L^G
 We claim that $B = A_0 \oplus A_0 t$. The relation $t^2 = n + st$ lets us write each polynomial in $s$ and $t$ as $a + bt$ with $a, b \in A_0$. If $a + bt = 0$, then also $\sigma(a + bt) = a + bt + bs = 0$, so $bs = 0$ and $b = 0$, and then $a = 0$. This proves the claim. An element $a + bt$ is fixed by $\sigma$ if and only if $bs = 0$, that is, $b = 0$. So $B^G = A_0 = k[s, n]$, a polynomial ring, and the quotient $\mathbb{A}^2_k / G$ is the regular surface $\mathbb{A}^2_k$.
 
 The trace of $a + bt$ is $(a + bt) + (a + bt + bs) = bs$, so $\operatorname{Tr}(B) = sA_0$, a proper ideal. So the trace gives no splitting. The ring $A_0$ is still a direct summand of $B$, by the projection $a + bt \mapsto a$, but this projection does not come from the group. The quotient map is ramified along the line $s = 0$, where $\sigma$ acts trivially, because $\sigma(t) - t = s$. The prime $sB$ lies over the prime $sA_0$, since $B/sB = k[t]$ and the image of $A_0$ in it is $k[t^2]$. The residue field of $B$ at $sB$ is $k(t)$, and the residue field of $A_0$ at $sA_0$ is $k(n) = k(t^2)$. So the extension of residue fields is purely inseparable of degree 2, although the extension of function fields is separable. This is a form of wild ramification. Over the open set $s \ne 0$, put $w = t/s$. Then $w^2 + w = n/s^2$, so the cover is an Artin-Schreier cover there, as in Example 3.3.4.
+
+Lean: `Singularity.wildSigma_wildSigma`, `Singularity.wildSigma_eq_self_iff`, `Singularity.exists_eq_add_mul_X_one`, `Singularity.eq_zero_of_add_mul_X_one_eq_zero`, `Singularity.exists_add_wildSigma_eq_iff` (the decomposition $B = A_0 \oplus A_0 t$ and the trace, not the claims on ramification)
 
 ### Notes and references
 

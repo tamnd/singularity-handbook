@@ -24,7 +24,7 @@ The Lean statement does not need the hypothesis that $A$ is Noetherian. It needs
 
 **Proposition 1.3.2.** Let $\varphi \colon X' \to X$ be a finite alteration of degree $d$, with $X$ normal and Noetherian, and assume that $d$ is invertible on $X$. Then the map $\mathcal{O}_X \to \varphi_* \mathcal{O}_{X'}$ has an $\mathcal{O}_X$-linear left inverse.
 
-Lean: none yet
+Lean: `Singularity.exists_leftInverse_algebraMap_of_isUnit_finrank`, `Singularity.traceToBase_algebraMap` (the affine case)
 
 *Proof.* Let $K = k(X)$ and $L = k(X')$, so $[L : K] = d$. For an affine open subset $\operatorname{Spec} A \subseteq X$, the ring $B = \Gamma(\varphi^{-1}(\operatorname{Spec} A), \mathcal{O}_{X'})$ is a domain finite over $A$ with fraction field $L$. Each element of $B$ is integral over $A$, so by Lemma 1.3.1 the map $s_A = \frac{1}{d} \operatorname{Tr}_{L/K}$ sends $B$ to $A$. It is $A$-linear, and $s_A(a) = a$ for $a \in A$. The maps $s_A$ are restrictions of the one map $\frac{1}{d} \operatorname{Tr}_{L/K} \colon L \to K$, so they agree on the overlaps and glue to a map $\varphi_* \mathcal{O}_{X'} \to \mathcal{O}_X$. $\square$
 
