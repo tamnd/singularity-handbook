@@ -26,7 +26,7 @@ The section proves the following.
 5. There is no planar corner run if $\deg_{x, w} g \le p$, if $g$ satisfies the condition (C) on its derivatives of order $p^e$, or if $g \in K[[y, z]][x^p, w^p]$. So Conjecture L holds in these classes (Theorems 3.18.34 and 3.18.35 and Corollary 3.18.36).
 6. For $g \in K[[y, z]][x^p, w^p]$, Conjecture L° holds, and for the runs with an infinite number of nonzero translations Conjecture L+ and the form $\operatorname{in} G_m \in K[x'_m]$ of H1 hold as well. This covers the class $B_1 x^p + B_2 w^p + B_0$ of each rank (Theorem 3.18.37 and Corollary 3.18.38).
 
-Remark 3.18.22 says where the proofs for degree less than $p$ break in degree at least $p$. The rest of the section repairs them. Conjecture P (Conjecture 3.18.39), that there is no planar corner run at all, stays open for $\deg_{x, w} g > p$ outside these classes, and Remark 3.18.40 gives the numerical evidence for it.
+Remark 3.18.22 says where the proofs for degree less than $p$ break in degree at least $p$. The rest of the section repairs them. Conjecture P (Conjecture 3.18.39), that there is no planar corner run at all, is open at the end of this section for $\deg_{x, w} g > p$ outside these classes, and Remark 3.18.40 gives the numerical evidence for it. Section 3.19 proves it for each clean $g$ (Theorem 3.19.6).
 
 ### The setting
 
@@ -556,9 +556,9 @@ The results above leave the corner runs with $\deg_{x, w} g > p$ for which (C) f
 
 Node: SG00000096
 
-By Theorem 3.18.19, Conjecture P for all clean $g$ is equivalent to Conjecture L for all clean $g$. It holds for $\deg_{x, w} g < p$ (Theorem 3.18.17), under (C) and so for $\deg_{x, w} g = p$ (Theorem 3.18.34), and for $g \in K[[y, z]][x^p, w^p]$ (Theorem 3.18.35). By Theorem 3.18.32 and Corollary 3.18.33, a planar run of a $g$ outside these classes must satisfy three conditions: $\Lambda_0 \ge \Lambda_+$, the monomial $\nu_e$ has the class $0$ for each $e \ge 1$ with $\Lambda_e = \Lambda$, and $v(\operatorname{cl} g(\Phi_\infty)) \ge \Lambda$. When (C) fails, $\nu_e$ is the monomial of least value of the pair $g^{[p^e, 0]}(\Phi_\infty)$, $g^{[0, p^e]}(\Phi_\infty)$, which depends on $\Phi_\infty$, and the cleanness of $g$ does not control its class. Then (★★) can fail at each point, and a proof needs a form of Lemma 3.18.31 for a function whose derivative in $x$ is not dominant, that is, the four-variable form of the passage from Theorem 3.15.17 to Section 3.16. The first open case is $p = 2$, $\deg_{x, w} g = 3$ and
+By Theorem 3.18.19, Conjecture P for all clean $g$ is equivalent to Conjecture L for all clean $g$. It holds for $\deg_{x, w} g < p$ (Theorem 3.18.17), under (C) and so for $\deg_{x, w} g = p$ (Theorem 3.18.34), and for $g \in K[[y, z]][x^p, w^p]$ (Theorem 3.18.35). By Theorem 3.18.32 and Corollary 3.18.33, a planar run of a $g$ outside these classes must satisfy three conditions: $\Lambda_0 \ge \Lambda_+$, the monomial $\nu_e$ has the class $0$ for each $e \ge 1$ with $\Lambda_e = \Lambda$, and $v(\operatorname{cl} g(\Phi_\infty)) \ge \Lambda$. When (C) fails, $\nu_e$ is the monomial of least value of the pair $g^{[p^e, 0]}(\Phi_\infty)$, $g^{[0, p^e]}(\Phi_\infty)$, which depends on $\Phi_\infty$, and the cleanness of $g$ does not control its class. Then (★★) can fail at each point, and a proof needs a form of Lemma 3.18.31 for a function whose derivative in $x$ is not dominant, that is, the four-variable form of the passage from Theorem 3.15.17 to Section 3.16. With the tools of this section alone, the first open case was $p = 2$, $\deg_{x, w} g = 3$ and
 $$g = Y x^2 w + Y' x w^2 + B_1 x^2 + B_2 w^2 + \alpha x + \beta w + B_0.$$
-We do not know if the conjecture is true.
+Section 3.19 proves the conjecture for each prime $p$ and each clean $g$ with $\deg_{x, w} g \ge 1$ (Theorem 3.19.6). The proof applies Theorem 3.18.32 and Corollary 3.18.33 again at each later point of the run, and it does not need a form of Lemma 3.18.31. So Conjecture L holds for each clean $g$ (Corollary 3.19.7).
 
 **Remark 3.18.40 (the numerical evidence).** The following tests are evidence for Conjecture P. They are not a proof, and they do not count as one.
 
@@ -579,6 +579,6 @@ The outside results are those of Section 3.17: the pseudo Cauchy sequences of Ka
 
 Several questions are open.
 
-1. Conjecture P (Conjecture 3.18.39) for $\deg_{x, w} g > p$, outside (C) and outside $K[[y, z]][x^p, w^p]$. The first case is $p = 2$ and $\deg_{x, w} g = 3$.
+1. Conjecture P (Conjecture 3.18.39) for $\deg_{x, w} g > p$, outside (C) and outside $K[[y, z]][x^p, w^p]$. This is no longer open: Section 3.19 proves it for each clean $g$ (Theorem 3.19.6).
 2. Conjecture L° and the form $\operatorname{in} G_m \in K[x'_m]$ of H1 for the linear runs with $\deg_{x, w} g \ge p$ outside $K[[y, z]][x^p, w^p]$. The expected form is $\operatorname{in} G_m = c\, x_m'^{\,d}$ with $d \in \{\rho, \rho + 1\}$ and $\nu^G \ge \rho$ along both corner curves. Here the cleaning can remove terms of the coefficients, and the comparison with a run in three variables of Theorem 3.18.37 is not available.
 3. Conjecture L+ for the linear runs with an infinite number of nonzero translations outside $K[[y, z]][x^p, w^p]$, and Conjecture L° for the linear runs with a dominant index $h > 1$.
