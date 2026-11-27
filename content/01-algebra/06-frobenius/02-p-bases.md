@@ -47,7 +47,7 @@ This sum is finite, and $D_0$ is an $L$-linear derivation along $\varepsilon$: $
 
 **Corollary 6.2.4.** If $K$ has a finite $p$-basis $B$ over $k$, then $[K : kK^p] = p^{|B|}$ and $\dim_K \Omega_{K/k} = |B|$. In particular, any two $p$-bases of $K$ over $k$ have the same number of elements.
 
-Lean: none yet
+Lean: `Singularity.Algebra.finrank_pSubring_eq`, `Singularity.Algebra.IsPBasis.card_eq` (the claim on $\Omega_{K/k}$ is not in Lean)
 
 *Proof.* The $p$-monomials in $B$ are a basis of $K$ over $kK^p$, and there are $p^{|B|}$ of them. The second statement is Theorem 6.2.3. $\square$
 
