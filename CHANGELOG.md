@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 1, Corollary 1.2.7 has the Lean line `Singularity.Algebra.isRegularLocalRing_quotient_span_range`, and the section on the Lean proofs describes its proof.
+- Volume 1, Corollary 1.3.4 has the Lean line `Singularity.Algebra.existsUnique_minimalPrimes_le_of_isRegularLocalRing`. The Lean form is affine, and a new paragraph describes it.
+- Volume 8, Lemma 1.1.11 has the Lean line `Singularity.Algebra.exists_span_union_iff_isRegularLocalRing_quotient`.
+
 ## [0.4.69] - 2026-11-27
 
 ### Added
