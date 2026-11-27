@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 0, Section 1.4 tells how to rerun a computation of the lab. It tells what the lab simulator `lab/sim` of tamnd/singularity computes (the cleaning, the residual order, the point and coordinate charts with translations, $\rho$, $\tau$ and $\nu^G$, and the random walks), how its checker accepts a certificate of a chart sequence, and how to run the scripts of a research note in `lab/notes/NN/`. The section has no new node.
+
 ## [0.4.70] - 2026-11-27
 
 ### Added
