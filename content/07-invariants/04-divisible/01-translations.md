@@ -1,6 +1,6 @@
 ---
 title: Translations and the rigid layer
-nodes: [SG0000003J]
+nodes: [SG0000003J, SG0000007F, SG0000007G]
 sources: [Hir64, Hir67, Cos87, CP08]
 status: drafted
 drafted_by: writer
@@ -35,6 +35,8 @@ Node: SG0000003J · Lean: `Singularity.coeff_taylor_natDegree_sub`
 
 In Lean the statements of this section have weaker hypotheses than in the text. No statement needs $p \nmid m_0$ or $e \ge 1$, and Lemma 4.1.2 and Theorem 4.1.3 do not need $f$ to be monic. The ring $R$ can be any commutative semiring of exponential characteristic $p$.
 
+The file `Singularity/Portfolio/Mixed.lean` gives a second proof of Theorem 4.1.3 and Proposition 4.1.4, for a commutative ring of characteristic $p$ and with the hypotheses of the text. It computes the binomial coefficients modulo $p$ with the theorem of Lucas: $\binom{p^e m_0}{p^e} \equiv m_0$, and $\binom{p^e m_0}{i} \equiv 0$ for $0 < i < p^e$. These are the statements `Singularity.Portfolio.lucas_tschirnhausen` and `Singularity.Portfolio.inseparable_layer_rigid`, which are Lemmas 10.3 and 10.4 of the research notes.
+
 ### The rigid layer
 
 **Theorem 4.1.3.** Let $0 < i < p^e$. Then
@@ -42,6 +44,8 @@ $$a_i' = a_i + \sum_{0 < j < i} \binom{m-j}{i-j} a_j c^{i-j}.$$
 In particular $a_1' = a_1$ for each $c \in R$. If $a_1 = \dots = a_{i-1} = 0$, then $a_i' = a_i$ for each $c \in R$.
 
 Node: SG0000003J · Lean: `Singularity.coeff_taylor_sub_of_lt_pow`, `Singularity.coeff_taylor_natDegree_sub_one`, `Singularity.coeff_taylor_sub_of_lt_pow_of_eq_zero`
+
+Node: SG0000007G · Lean: `Singularity.Portfolio.inseparable_layer_rigid`
 
 *Proof.* In Lemma 4.1.2, the term with $j = i$ is $a_i$. The term with $j = 0$ is $\binom{m}{i} c^i$, the coefficient of $z^{m-i}$ in $(z + c)^m$. Since $p^e \mid m$ and $0 < i < p^e$, the number $p^e$ does not divide $m - i$. By Lemma 4.1.1 this term is $0$. For $i = 1$ no other term is left. If $a_1 = \dots = a_{i-1} = 0$, then every term of the sum is $0$. $\square$
 
@@ -52,6 +56,8 @@ $$a_{p^e}' = a_{p^e} + m_0\, c^{p^e} + \sum_{0 < j < p^e} \binom{m-j}{p^e-j} a_j
 In particular, if $a_1 = \dots = a_{p^e - 1} = 0$, then $a_{p^e}' = a_{p^e} + m_0 c^{p^e}$.
 
 Node: SG0000003J · Lean: `Singularity.coeff_taylor_sub_pow`, `Singularity.coeff_taylor_sub_pow_of_eq_zero`
+
+Node: SG0000007F · Lean: `Singularity.Portfolio.lucas_tschirnhausen`
 
 *Proof.* In Lemma 4.1.2 with $i = p^e$, the term with $j = 0$ is the coefficient of $z^{m - p^e}$ in $(z + c)^m$. By Lemma 4.1.1 it is the coefficient of $z^{p^e (m_0 - 1)}$ in $(z^{p^e} + c^{p^e})^{m_0}$, which is $\binom{m_0}{1} c^{p^e} = m_0 c^{p^e}$. The term with $j = p^e$ is $a_{p^e}$. $\square$
 
