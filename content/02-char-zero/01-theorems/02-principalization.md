@@ -38,7 +38,7 @@ The morphism $g$ is a composite of blowups of $X$, but their centers are the int
 $$x^3 - y^2 = x_1^2 (x_1 - y_1^2), \qquad x^4 + x z^2 - w^3 = x_1^3 (x_1 + z_1^2 - w_1^3).$$
 The strict transform of $X$ in this chart is $X_1 = (x_1 = y_1^2, \; x_1 + z_1^2 = w_1^3)$. Its intersection with the plane $x_1 = y_1 = 0$ is the cuspidal curve $z_1^2 = w_1^3$ in that plane.
 
-Lean: none yet
+Lean: `Singularity.CharZeroExamples.bm_chart_first`, `Singularity.CharZeroExamples.bm_chart_second`, `Singularity.CharZeroExamples.bm_strict_inter` (the chart equations only)
 
 According to [Kol07, Chapter 3], the principalization algorithm blows up the origin first and then the plane $(x_1 = y_1 = 0)$, which lies in the exceptional divisor. So the induced resolution of $X$ blows up first a point and then the cuspidal curve, a singular center. We do not verify here which centers the algorithm chooses; the computation above only shows that the second center meets $X_1$ in a singular curve.
 

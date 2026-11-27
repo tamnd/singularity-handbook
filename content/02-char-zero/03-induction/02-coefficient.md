@@ -68,7 +68,7 @@ At a point of $H$ with $y \ne 0$ this ideal is the unit ideal. At a point of $L$
 $$\mathcal{O}_H(2L) \cdot C_H(I) = (z, \; y^2),$$
 which has order at most 1 everywhere. So its cosupport for the mark 2 is empty, and by Corollary 3.2.5 the blowup of $L$ is a blowup sequence of order 2 with $\operatorname{cosupp}(I_1, 2) = \emptyset$. We check this on $X$: in the chart $x = x_1 y$ the transform of $(I, 2)$ is $(x_1^2 - z)$, and in the chart $y = y_1 x$ it is $(1 - y_1^2 z)$. Both have order at most 1. This is the computation of Example 1.3.3.
 
-Lean: none yet
+Lean: `Singularity.CharZeroExamples.derivIdeal_whitneyEq`, `Singularity.CharZeroExamples.derivIdeal_derivIdeal_whitneyEq`, `Singularity.CharZeroExamples.coeffIdeal_whitney`, `Singularity.CharZeroExamples.coeffIdeal_whitney_eq_mul`, `Singularity.CharZeroExamples.idealOrd_coeffIdeal_whitney`, `Singularity.CharZeroExamples.idealOrd_coeffIdeal_whitney_translate`, `Singularity.CharZeroExamples.idealOrd_transform_whitney` (the computations at the origin and at the points $(0, c)$)
 
 The name of the coefficient ideal comes from the following special case. There the ideal on $H$ is built from the coefficients of $f$ as a polynomial in the normal coordinate, and its transforms are again built from the transformed coefficients.
 
