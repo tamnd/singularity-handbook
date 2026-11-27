@@ -4,6 +4,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 4.5 treats the toric branches of Rule 61.9' at multiplicity $2p$ (nodes SG000000BE to SG000000BH). It defines the toric model, proves that $\omega$ never goes up in it and that each run with $\omega$ constant is finite (Theorem 4.5.9), and gives the lexicographic pair $(\omega, \ell)$ (Corollary 4.5.10). It identifies the hidden quantity of Proposition 4.4.14 as $h - 1 = \frac{3(e-2)}{22}$ (Proposition 4.5.11), proves that no lexicographic pair that starts with $\omega$ works for all steps of the rule (Proposition 4.5.14), and gives the germ 57 branch, a germ with $a_p = a_{2p} = 0$, a step that keeps $\omega$ and is not toric, the computations of research note 81, the open problems and exercises.
+
+### Changed
+
+- The introduction of Volume 7, Chapter 4 has a sentence on Section 4.5.
+
 ## [0.4.73] - 2026-11-27
 
 ### Added
