@@ -6,6 +6,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 7, Sections 3.1 and 3.2 name the Lean proofs of the log-Jacobian results of research note 03 from tamnd/singularity-lean#195, #196, #199 and #200. Definition 3.1.5 has the Lean proofs of $d = \rho + \tau$ and $\tau \in \{0, 1\}$ in fixed coordinates. Section 3.1 names the Lean proof that a factor $u^p$ with $u(0) \ne 0$ does not change the ideal in the local ring of the origin. Theorem 3.2.3 names the Lean equality in the local ring of the origin of the chart, and not in the power series ring. The switch of type after Corollary 3.2.5 names `Singularity.kangaroo_type_switch`.
+- Volume 7, Example 3.15.18 names its Lean proof, and Lemma 3.16.4, Theorem 3.16.10 and Remark 3.16.15 name the Lean proofs of the facts on Lucas's theorem and on the primitive vectors that their proofs use, from tamnd/singularity-lean#193. Lemma 3.16.4, Theorem 3.16.10 and Remark 3.16.15 themselves are not in Lean.
 - Volume 2, Examples 1.2.2, 1.3.2, 1.3.3, 2.3.5 and 3.2.6 name their Lean proofs from tamnd/singularity-lean#197. Lean proves the explicit computations of each example: the chart equations, the orders and the derivative and coefficient ideals. It does not prove the normal crossings conclusions, and it has no definition of maximal contact. Each Lean line says which part Lean proves.
 
 ## [0.4.58] - 2026-11-27

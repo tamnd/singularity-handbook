@@ -31,6 +31,8 @@ Node: SG0000003E · Lean: `Singularity.logJacobian_add_pow`
 
 So $\Theta(F)$ depends only on the hypersurface $f = 0$, the divisor $E$ and the coordinates $x$, not on the choice of $z$. A change of the coordinates $x$ that keeps $E$ maps the module of logarithmic derivations to itself, so it maps $\Theta(F)$ to the log-Jacobian ideal of the new $F$. Cossart used this ideal for a base of dimension $3$ in his thesis [Cos87]. Posva gives a modern account of its transformation law [Pos24, Appendix A].
 
+*Lean.* The file `Singularity/Invariant/LogJacobianUnitLocal.lean` proves that a unit factor $u^p$ does not change the ideal, for a polynomial $u$ with $u(0) \ne 0$. In $K[x]$ the library has $\Theta(u^p F) = (u^p) \, \Theta(F)$ (`Singularity.logJacobian_pow_mul`). Such a $u$ is a unit in the local ring of $K[x]$ at the origin (`Singularity.isUnit_algebraMap_of_constantCoeff_ne_zero`), so $\Theta(u^p F)$ and $\Theta(F)$ have the same image in this ring (`Singularity.map_logJacobian_pow_mul_of_constantCoeff_ne_zero`). The units of $K[[x]]$ that are not polynomials are not in Lean, and the claim that a change of the coordinates that keeps $E$ maps $\Theta(F)$ to the ideal of the new $F$ is not in Lean.
+
 ### The operators on monomials
 
 The operators $x_i \partial_i$ and $\partial_j$ act on monomials one at a time:
@@ -70,6 +72,8 @@ The proof never uses the number of variables. The same argument works for each $
 **Definition 3.1.5.** The *type* of $F$ is $\tau = d - \rho \in \{0, 1\}$.
 
 Type $1$ means that the initial form of $G$ depends on a variable $x_j$ with $j \notin \Delta$, in a way that is not a $p$-th power in $x_j$. Type $0$ means that it does not.
+
+*Lean.* The file `Singularity/Invariant/LogJacobianTau.lean` proves the definition and its properties for polynomials in fixed coordinates. The type is `Singularity.logJacobianType`, with $d$ the residual order `Singularity.residualOrderAlong`. For a clean $F$, $d = \rho + \tau$ (`Singularity.residualOrderAlong_eq_logJacobianOrder_add_logJacobianType`), and $\tau$ is $0$ or $1$ (`Singularity.logJacobianType_le_one`, `Singularity.logJacobianType_eq_zero_or_eq_one`). The type is $0$ if and only if $\rho = d$ (`Singularity.logJacobianType_eq_zero_iff`), and for $F \ne 0$ it is $1$ if and only if $\rho + 1 = d$ (`Singularity.logJacobianType_eq_one_iff`). The type is $1$ if and only if $\partial_j \operatorname{in}(G) \ne 0$ for some $j \notin \Delta$ (`Singularity.logJacobianType_eq_one_iff_pderiv`), and $0$ if and only if $\partial_j \operatorname{in}(G) = 0$ for each $j \notin \Delta$ (`Singularity.logJacobianType_eq_zero_iff_pderiv`). These are the two sentences above. Lean does not prove that $d$ and $\tau$ do not depend on the coordinates, and it does not prove the bound $\rho \le d^{\max} \le \rho + 1$ for the largest residual order over all coordinates adapted to $E$.
 
 **Example 3.1.6.** Let $p = 2$, $n = 2$, $\Delta = \emptyset$ and $F = x^2 y + x y^2$. This $F$ is clean. Here $r = 0$, $G = F$ and $d = 3$. The derivatives are $\partial_x F = y^2$ and $\partial_y F = x^2$, since $2 = 0$. So $\Theta(F) = (x^2, y^2)$, and $\rho = 2 = d - 1$. The type is $1$. Now let $\Delta = \{1, 2\}$. Then $r = (1, 1)$, $G = x + y$, $d = 1$, and
 $$\widetilde\Theta(G) = \bigl( 1 \cdot G + x, \ 1 \cdot G + y \bigr) = (y, x),$$
