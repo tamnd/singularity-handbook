@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 1, Lemma 4.4.2 names the Lean theorem `Singularity.Algebra.exists_isField_subring_iff_ringChar_eq` of release 0.4.56 of singularity-lean.
+
 ## [0.4.67] - 2026-11-27
 
 ### Added
