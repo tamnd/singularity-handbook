@@ -26,7 +26,7 @@ This is Volume 1, Theorem 2.5.6, with a complete proof there. The normalization 
 $$C_3 + 2 E_1 + 3 E_2 + 6 E_3$$
 with simple normal crossings, where $C_3$ is the strict transform of $C$ and $E_i$ is the strict transform of the $i$th exceptional curve.
 
-Lean: none yet
+Lean: `Singularity.Example.cusp_chart_x`, `Singularity.Example.cusp_chart_y`, `Singularity.CharZeroExamples.cusp_step_two`, `Singularity.CharZeroExamples.cusp_step_three`, `Singularity.CharZeroExamples.cusp_total_u`, `Singularity.CharZeroExamples.cusp_total_v`, `Singularity.CharZeroExamples.cusp_step_three_disjoint` (the chart equations and the multiplicities, not the normal crossings)
 
 *Step 1.* Blow up the origin. In the chart $y = x y_1$ the pullback of $f = y^2 - x^3$ is $x^2 (y_1^2 - x)$. The exceptional curve is $E_1 = (x = 0)$, with multiplicity 2, and the strict transform is $C_1 = (x = y_1^2)$, a smooth curve. In the other chart $x = x_1 y$ the pullback is $y^2 (1 - x_1^3 y)$, and the strict transform $1 = x_1^3 y$ does not meet $E_1 = (y = 0)$. So $C_1$ is smooth, and $C_1 \to C$ is the normalization. But $C_1$ meets $E_1$ only at the point $p_1 = (x, y_1) = (0, 0)$, and there it is tangent to $E_1$: the restriction of $x - y_1^2$ to $E_1 = (x = 0)$ is $-y_1^2$, which vanishes to order 2. So $C_1 + 2E_1$ does not have normal crossings at $p_1$.
 
@@ -49,7 +49,7 @@ The example shows the difference between the resolution of $C$, which is reached
 3. The blowup of $\mathbb{A}^3$ along $L$ resolves $X$: the strict transform $X_1$ is smooth, and $X_1$ and the exceptional divisor $F$ have simple normal crossings.
 4. The blowup of $\mathbb{A}^3$ at the origin does not improve the singularity: in one chart the strict transform is again a Whitney umbrella.
 
-Lean: none yet
+Lean: `Singularity.CharZeroExamples.whitneyEq_singular_iff`, `Singularity.CharZeroExamples.ord_whitneyEq`, `Singularity.CharZeroExamples.ord_whitneyEq_translate`, `Singularity.whitney_lineChart_x`, `Singularity.whitney_lineChart_y`, `Singularity.whitney_pointChart_z` (the singular locus, the order and the chart equations)
 
 *Proof.* (1) The partial derivatives are $\partial_x f = 2x$, $\partial_y f = -2yz$ and $\partial_z f = -y^2$. They vanish together exactly when $x = 0$ and $y = 0$, and then $f = 0$. A point of $X$ is singular if and only if all partials vanish there, so $\operatorname{Sing}(X) = L$. At a point of $L$ all partials vanish, so the order is at least 2, and the second derivative $\partial_x^2 f = 2$ is a unit, so it is exactly 2.
 

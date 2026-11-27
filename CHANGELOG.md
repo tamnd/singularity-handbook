@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 2, Examples 1.2.2, 1.3.2, 1.3.3, 2.3.5 and 3.2.6 name their Lean proofs from tamnd/singularity-lean#197. Lean proves the explicit computations of each example: the chart equations, the orders and the derivative and coefficient ideals. It does not prove the normal crossings conclusions, and it has no definition of maximal contact. Each Lean line says which part Lean proves.
+
 ## [0.4.58] - 2026-11-27
 
 ### Added

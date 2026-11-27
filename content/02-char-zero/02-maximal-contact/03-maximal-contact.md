@@ -75,7 +75,7 @@ Blow up the origin, with the charts of Example 2.2.9. In the chart with $y = y_1
 
 The name comes from the order of contact. The restriction of $y^2 - x^5$ to $H$ is $x^5$, of order 5, and its restriction to $H'$ is $x^2 - x^5$, of order 2. A smooth curve germ through the origin is $(y = \varphi(x))$ or $(x = \psi(y))$ with $\varphi, \psi$ of order at least 1. The restriction of $y^2 - x^5$ is $\varphi^2 - x^5$, of order at most 5, or $y^2 - \psi^5$, of order 2. So $H$ has the highest order of contact with the curve $(y^2 = x^5)$ among all smooth curves through the origin.
 
-Lean: none yet
+Lean: `Singularity.CharZeroExamples.sub_not_mem_mc`, `Singularity.CharZeroExamples.ord_restrict_H`, `Singularity.CharZeroExamples.ord_restrict_H'`, `Singularity.CharZeroExamples.derivIdeal_transform`, `Singularity.CharZeroExamples.mc_chain_transform` (the computations, with no definition of maximal contact)
 
 **Remark 2.3.6.** Theorem 2.3.3 needs the blowup sequence to be of order $m$, with $m$ the maximal order. For a marked ideal $(I, m)$ with $m$ less than the maximal order, the locus $\operatorname{cosupp}(I, m)$ need not lie in a smooth hypersurface. For example, $I = (xy)$ on $\mathbb{A}^2$ has maximal order 2, and $\operatorname{cosupp}(I, 1)$ is the union of the two lines $x = 0$ and $y = 0$, which is not contained in a smooth curve near the origin. This is why the induction of Chapter 3 treats ideals of maximal order $m$ and marked ideals in different steps.
 
