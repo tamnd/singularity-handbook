@@ -1,7 +1,7 @@
 ---
 title: The routes to dimension 4
 nodes: [SG0000001H, SG0000001J, SG0000001E, SG0000001G, SG00000014, SG00000019, SG0000001R, SG00000009, SG0000001K, SG0000001M, SG0000001N]
-sources: [Zar40, Zar44, Pil, KK05, Cut20, Tem13, Tem23, HOST26, Hir67, CJS20, CP08, CJSch19, CSch21, BV10, BenV13, BBE24, BBE25, Kaw07, KM16, ATW24, McQ20, Abr25, TemD1, TemD2, Hau10, HW14, HP19a, HP24, AT26, dJ96, ILO14, Tem17]
+sources: [Zar40, Zar44, Pil, Cut09, Cut09, KK05, Cut20, Tem13, Tem23, HOST26, Hir67, CJS20, CP08, CJSch19, CSch21, BV10, BenV13, BBE24, BBE25, Kaw07, KM16, ATW24, McQ20, Abr25, TemD1, TemD2, Hau10, HW14, HP19a, HP24, AT26, dJ96, ILO14, Tem17]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -27,6 +27,8 @@ Node: SG0000001J · Lean: `Singularity.resolution_of_localUniformization_four` (
 The Lean statements use the affine form of local uniformization (Volume 3, Proposition 4.1.6). The Lean statement of Conjecture 2.3.2 is for characteristic $p$. Its hypothesis is local uniformization in each transcendence degree at most 4, because a variety of dimension 4 can have components of smaller dimension. Local uniformization in transcendence degree at most 3 is known (Section 2.1), so this hypothesis is the same as Conjecture 2.3.1.
 
 Conjecture 2.3.2 is open for each prime $p$. In characteristic 0 the same statement is true, because the global algorithm of Hironaka gives the resolution. But no proof of the patching step in dimension 4 by the method of Zariski is known in characteristic 0 either. Piltant gives an axiomatic form of Zariski's patching theorem in [Pil]. Thus the route of valuations needs two new theorems in dimension 4, not one.
+
+The method of Jung shows how the two theorems divide. By Section 3.21, embedded resolution of divisors in $\mathbb{P}^4$ and $p > 24$ give local uniformization of 4-folds without a finite set, by the proof of [Cut09, Theorem 14.4]. A resolution then needs patching in the form of Zariski, which is a priori stronger than Conjecture 2.3.2.
 
 The results that hold in all dimensions are these. A valuation is an *Abhyankar valuation* if the Abhyankar inequality is an equality for it. Volume 3, Chapter 2, proves the inequality and studies the case of equality.
 
