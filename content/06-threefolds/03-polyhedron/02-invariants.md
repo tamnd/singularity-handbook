@@ -259,7 +259,7 @@ Definition 3.2.5 allows two values of $\omega(x)$ for a given $\epsilon(x)$. The
 2. $\omega(x) = 0$ if and only if either $\epsilon(x) = 0$, or $\epsilon(x) = 1$ and the linear form $\operatorname{in}(G)$ is not in the span of $U_1, \dots, U_e$.
 3. If $e = n$, then $\omega(x) = \epsilon(x)$.
 
-Lean: none yet
+Lean: `Singularity.cpOmega_le_ord_residualFactor`, `Singularity.ord_residualFactor_sub_one_le_cpOmega`, `Singularity.cpOmega_add_one_of_exists` (part 1), `Singularity.cpOmega_eq_zero_iff` (part 2), `Singularity.cpOmega_eq_of_forall_mem` (part 3), for a polynomial over any field
 
 *Proof.* We have $\epsilon(x) = \operatorname{ord} G$ by Proposition 3.2.4(4), and $G \ne 0$ since $f^{\mathrm{cl}} \ne 0$. So $\operatorname{in}(G)$ is a nonzero form of degree $\epsilon(x)$. The initial form is multiplicative, because the graded ring $k[U_1, \dots, U_n]$ is a domain. So $F = U_1^{r_1} \cdots U_e^{r_e} \operatorname{in}(G)$. For $j > e$ the monomial $U_1^{r_1} \cdots U_e^{r_e}$ does not contain $U_j$, and so
 $$\frac{\partial F}{\partial U_j} = U_1^{r_1} \cdots U_e^{r_e} \, \frac{\partial \operatorname{in}(G)}{\partial U_j} \qquad (e < j \le n).$$
