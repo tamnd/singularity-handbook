@@ -6,6 +6,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 6, Proposition 4.3.4 names the Lean proofs of the bound on $\iota$ in part 4 and of the claim of part 2 that $(x; Z')$ is well adapted, from tamnd/singularity-lean#190. With them, Lean proves all four parts of the proposition for polynomials over a field of characteristic $p$. In Lean, $m(x) = \min(p, \operatorname{ord} F)$ is a definition, and $\kappa$ takes the values $1$ and $2$, where $2$ stands for $\kappa \ge 2$.
+
 - Volume 5, Lemmas 1.1.6, 1.2.2 and 1.4.2 name their Lean proofs from tamnd/singularity-lean#191. Lean proves part 2 of Lemma 1.2.2 for each unique factorization domain. For the other parts, the Lean line says which part Lean proves.
 
 ## [0.4.57] - 2026-11-27
