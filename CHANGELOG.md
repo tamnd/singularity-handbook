@@ -4,6 +4,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.59] - 2026-11-27
+
+### Added
+
+- Volume 0, Section 5.1 describes edition 0.4.59.
+
 ### Changed
 
 - Volume 7, Sections 3.1 and 3.2 name the Lean proofs of the log-Jacobian results of research note 03 from tamnd/singularity-lean#195, #196, #199 and #200. Definition 3.1.5 has the Lean proofs of $d = \rho + \tau$ and $\tau \in \{0, 1\}$ in fixed coordinates. Section 3.1 names the Lean proof that a factor $u^p$ with $u(0) \ne 0$ does not change the ideal in the local ring of the origin. Theorem 3.2.3 names the Lean equality in the local ring of the origin of the chart, and not in the power series ring. The switch of type after Corollary 3.2.5 names `Singularity.kangaroo_type_switch`.
