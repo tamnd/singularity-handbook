@@ -1,6 +1,6 @@
 ---
 title: Planar runs and the hypothesis H1
-nodes: [SG00000089, SG0000008A, SG0000008B, SG0000008C, SG0000008D, SG0000008E, SG0000008F, SG0000008G, SG0000008H, SG0000008J, SG0000008K, SG0000008M, SG0000008N]
+nodes: [SG00000089, SG0000008A, SG0000008B, SG0000008C, SG0000008D, SG0000008E, SG0000008F, SG0000008G, SG0000008H, SG0000008J, SG0000008K, SG0000008M, SG0000008N, SG00000090, SG00000091, SG00000092, SG00000093, SG00000094, SG00000095, SG00000096]
 sources: [CJS20, Kuh10, Kuh-book]
 status: drafted
 drafted_by: writer
@@ -8,7 +8,7 @@ reviewed_by: []
 ---
 ## Planar runs and the hypothesis H1
 
-Section 3.17 leaves three statements open for the corner runs in four variables: Conjecture L (Conjecture 3.17.18), Conjecture L° (Conjecture 3.17.24) and Hypothesis H1 (Hypothesis 3.17.32). Theorem 3.17.33 proves Conjecture L under H1 for $\deg_{x, w} g < p$, but it does not give the corner curves of Conjecture L° in its case 2. This section removes the hypothesis and proves all three statements for $\deg_{x, w} g < p$.
+Section 3.17 leaves three statements open for the corner runs in four variables: Conjecture L (Conjecture 3.17.18), Conjecture L° (Conjecture 3.17.24) and Hypothesis H1 (Hypothesis 3.17.32). Theorem 3.17.33 proves Conjecture L under H1 for $\deg_{x, w} g < p$, but it does not give the corner curves of Conjecture L° in its case 2. This section removes the hypothesis and proves all three statements for $\deg_{x, w} g < p$. For $\deg_{x, w} g \ge p$ it proves Conjecture T for the planar runs, it proves Conjecture L in some classes, and it reduces the rest of Conjecture L to Conjecture P.
 
 The corner runs are of three kinds. In the first kind all the translations are $0$ from some point on, and Theorem 3.14.7 applies. In the second kind the run is linear (Definition 3.17.5) with an infinite number of nonzero translations, so the late translations lie on one line of $K^2$. In the third kind the run is planar. The proof has two halves, one for each of the last two kinds.
 
@@ -22,7 +22,11 @@ The section proves the following.
 2. Conjecture T holds for the planar runs and the polynomials of degree less than $p$ (Theorem 3.18.11).
 3. Planarity does not depend on the free coordinates, linear or not. A corner run satisfies Conjecture L if and only if it is not planar (Theorem 3.18.19). This holds for each degree.
 
-For $\deg_{x, w} g \ge p$ the statements stay open, and Remark 3.18.22 says where the proofs break.
+4. Conjecture T holds for the planar runs in each degree, and the dominant part of $f$ at $\Phi_\infty$ is additive (Theorem 3.18.26 and Corollary 3.18.27).
+5. There is no planar corner run if $\deg_{x, w} g \le p$, if $g$ satisfies the condition (C) on its derivatives of order $p^e$, or if $g \in K[[y, z]][x^p, w^p]$. So Conjecture L holds in these classes (Theorems 3.18.34 and 3.18.35 and Corollary 3.18.36).
+6. For $g \in K[[y, z]][x^p, w^p]$, Conjecture L° holds, and for the runs with an infinite number of nonzero translations Conjecture L+ and the form $\operatorname{in} G_m \in K[x'_m]$ of H1 hold as well. This covers the class $B_1 x^p + B_2 w^p + B_0$ of each rank (Theorem 3.18.37 and Corollary 3.18.38).
+
+Remark 3.18.22 says where the proofs for degree less than $p$ break in degree at least $p$. The rest of the section repairs them. Conjecture P (Conjecture 3.18.39), that there is no planar corner run at all, stays open for $\deg_{x, w} g > p$ outside these classes, and Remark 3.18.40 gives the numerical evidence for it.
 
 ### The setting
 
@@ -214,7 +218,7 @@ Step 3: the higher terms. Since $v(\Delta\varphi), v(\Delta\psi) \ge v(M_{m+1})$
 
 Step 4: parts 2 and 3. The difference $f(\Phi_\infty) - f(\Phi_m) = f_X(\Phi_m) \Delta\varphi + f_W(\Phi_m) \Delta\psi + H_m$ has a value at least $\min(\lambda_1 + v(M_{m+1}), v(H_m))$ for $m \ge m_0$. For $m$ large, $\lambda_1 + v(M_{m+1})$ is larger than $v(f(\Phi_\infty))$ by part 1, and $v(H_m) > \lambda_1 + 1 + \theta$ by Step 3. This gives part 2. Part 3 is part 1 for $s = 1$, Step 1 for $s \ge 2$, and Step 0 for the values $\infty$. The displayed inequality is the sum of the inequalities of the chain from $1$ to $k + l$. $\square$
 
-**Remark 3.18.12.** Theorem 3.18.11 proves Conjecture T of Remark 3.17.34 for the planar runs and the polynomials $f$ with $\deg f < p$. No factorization into linear factors and no theory of Kaplansky type in two variables is used. The induction replaces the factorization of Proposition 3.15.7: the Taylor expansion at $\Phi_m$ reduces the claim to Lemma 3.18.10, applied to the tail $\Delta_m$ with the coefficients $f_X(\Phi_m)$ and $f_W(\Phi_m)$, and the chain (18.2), which is part 1 for the derivatives, makes the higher terms small. This works because Lemma 3.18.10 holds for coefficients in the field $\mathbb{F}$, which contains $f_X(\Phi_m)$ but not $\Phi_\infty$. The hypothesis $\deg f < p$ is used only through (18.1), in Steps 0 and 1. For $f = X^p - \gamma$ the derivatives $f_X$ and $f_W$ are $0$, so $\lambda_1 = \infty$, part 1 says nothing, and the chain breaks. In one variable this is the case of a dominant index $h > 1$ (Lemma 3.15.8 and Remark 3.15.13), where Section 3.15 uses the transcendental type of Proposition 3.15.7. For a pair of sequences we have no substitute, and Conjecture T stays open for $\deg f \ge p$. For a linear run the theorem is false: if $a_j = 0$ for $j \ge J$, then $f = X - \varphi_J$ has $f(\Phi_\infty) = 0$. In the proof, Lemma 3.18.10 fails for $(\alpha, \beta) = (1, 0)$.
+**Remark 3.18.12.** Theorem 3.18.11 proves Conjecture T of Remark 3.17.34 for the planar runs and the polynomials $f$ with $\deg f < p$. No factorization into linear factors and no theory of Kaplansky type in two variables is used. The induction replaces the factorization of Proposition 3.15.7: the Taylor expansion at $\Phi_m$ reduces the claim to Lemma 3.18.10, applied to the tail $\Delta_m$ with the coefficients $f_X(\Phi_m)$ and $f_W(\Phi_m)$, and the chain (18.2), which is part 1 for the derivatives, makes the higher terms small. This works because Lemma 3.18.10 holds for coefficients in the field $\mathbb{F}$, which contains $f_X(\Phi_m)$ but not $\Phi_\infty$. The hypothesis $\deg f < p$ is used only through (18.1), in Steps 0 and 1. For $f = X^p - \gamma$ the derivatives $f_X$ and $f_W$ are $0$, so $\lambda_1 = \infty$, part 1 says nothing, and the chain breaks. In one variable this is the case of a dominant index $h > 1$ (Lemma 3.15.8 and Remark 3.15.13), where Section 3.15 uses the transcendental type of Proposition 3.15.7. For a pair of sequences Theorem 3.18.26 replaces the chain by a comparison with the terms of $p$-power order, and it proves Conjecture T for the planar runs in each degree. For a linear run the theorem is false: if $a_j = 0$ for $j \ge J$, then $f = X - \varphi_J$ has $f(\Phi_\infty) = 0$. In the proof, Lemma 3.18.10 fails for $(\alpha, \beta) = (1, 0)$.
 
 ### Dominance and the planar runs
 
@@ -331,23 +335,250 @@ The new term $b\, y'^{p-1} z'^{p-1}$ is not a $p$-th power. At this point $G = x
 
 ### What stays open for degree at least p
 
-**Remark 3.18.22.** For $\deg_{x, w} g \ge p$ the proofs of this section break in two places.
+**Remark 3.18.22.** For $\deg_{x, w} g \ge p$ the proofs above break in two places.
 
-1. Statement D. The relation (18.1) does not give a nonzero derivative when $p \mid k + 1$, so the chain of Step 1 and the linear part of Step 2 in the proof of Theorem 3.18.11 need not exist. For $f = X^p + \gamma$ we have $f_X = f_W = 0$. In one variable Section 3.15 treats this case with the dominant index of Lemma 3.15.8 and the transcendental type of Proposition 3.15.7. For a pair of sequences a substitute would be a statement on $f(\Phi_\infty)$ for $f \in \hat H[X^p, W^p]$ plus terms of lower degree. We have no proof of it.
-2. Lemma 3.18.15. The coefficients $A_{kl}$ with $p \mid k$, $p \mid l$ and $(k, l) \ne (0, 0)$ are cleaned, so $g_m$ is not $\mu x'' + \operatorname{cl} A_{00}$, and the reduction to Theorem 3.15.16 is not available. This is the four-variable form of the passage from Theorem 3.15.17, where $\deg_x g < p$, to the general case in Section 3.16.
+1. Statement D. The relation (18.1) does not give a nonzero derivative when $p \mid k + 1$, so the chain of Step 1 and the linear part of Step 2 in the proof of Theorem 3.18.11 need not exist. For $f = X^p + \gamma$ we have $f_X = f_W = 0$. In one variable Section 3.15 treats this case with the dominant index of Lemma 3.15.8 and the transcendental type of Proposition 3.15.7.
+2. Lemma 3.18.15. The coefficients $A_{kl}$ with $p \mid k$, $p \mid l$ and $(k, l) \ne (0, 0)$ are cleaned, so $g_m$ is not $\mu x'' + \operatorname{cl} A_{00}$, and the size of these coefficients is not controlled by $\partial_x g_m$ and $\partial_w g_m$. This is the four-variable form of the passage from Theorem 3.15.17, where $\deg_x g < p$, to the general case in Section 3.16.
 
-Also the proof of Theorem 3.18.6 uses $\deg_{x, w} g < p$ in Proposition 3.18.4, where the divisibility of $e_l$ by $\mu$ and the form $\mu w''$ need $l < p$. So the open cases of H1, L and L° are the corner runs with $\deg_{x, w} g \ge p$, linear with a dominant index $h > 1$ or planar. The class $B_1 x^p + B_2 w^p + B_0$ of rank $2$ of Corollary 3.17.17 is the first of them. Theorem 3.18.19 holds for each degree, so in this range Conjecture L is again the statement that there is no planar run.
+Also the proof of Theorem 3.18.6 uses $\deg_{x, w} g < p$ in Proposition 3.18.4, where the divisibility of $e_l$ by $\mu$ and the form $\mu w''$ need $l < p$. The rest of the section repairs the first break in each degree, and the second break under a condition on the derivatives of order $p^e$. For the first break we compare each Taylor term with the term of $p$-power order below it, and not with the term of order $1$ (Theorem 3.18.26). For the second break we compare the part of order $1$ with the parts of order $p^e$, $e \ge 1$, and we use the cylindrical reduction when the order $1$ wins and the criterion (★★) when a germ of order $p^e$ of nonzero class wins (Theorem 3.18.32). Theorem 3.18.19 holds for each degree, so Conjecture L is again the statement that there is no planar run.
+
+### Statement D in every degree
+
+In this part the run is planar, and $\deg f$ is arbitrary. We use the identity
+$$\bigl(f^{[a, b]}\bigr)^{[c, d]} = \binom{a + c}{a} \binom{b + d}{b} f^{[a + c, b + d]}, \tag{18.5}$$
+which holds in each characteristic, since both sides send $X^i W^j$ to $\binom{i}{a + c} \binom{a + c}{a} \binom{j}{b + d} \binom{b + d}{b} X^{i - a - c} W^{j - b - d}$, and $\binom{i}{a} \binom{i - a}{c} = \binom{i}{a + c} \binom{a + c}{a}$. The relation (18.1) is the case $(c, d) = (1, 0)$ or $(0, 1)$. We also use the theorem of Lucas: if $p^e$ is the largest power of $p$ that divides $k \ge 1$, then $\binom{k}{p^e} \not\equiv 0 \pmod p$. Indeed, the lowest nonzero digit of $k$ in base $p$ is the digit $k_e \ne 0$ at the place $e$, and $\binom{k}{p^e} \equiv k_e \pmod p$.
+
+For $f \in \hat H[X, W]$ with $f \ne 0$ put $\beta_{kl}(f) = v(f^{[k, l]}(\Phi_\infty))$, with $v(0) = \infty$, and
+$$\Lambda(f) = \min_{(k, l) \ne (0, 0)} \bigl(\beta_{kl}(f) + (k + l)(1 + \theta)\bigr), \qquad \Lambda_e(f) = \min\bigl(\beta_{p^e 0}(f), \beta_{0 p^e}(f)\bigr) + p^e (1 + \theta) \quad (e \ge 0).$$
+So $\Lambda(f) = \infty$ if and only if $\deg f = 0$, since a monomial $X^i W^j$ of $f$ with $i + j \ge 1$ gives $f^{[i, j]} \ne 0$.
+
+The *class* of a Laurent monomial in $y_N, z_N$ is its vector of exponents modulo $p$, in $(\mathbb{Z}/p)^2$. For $A \in \mathbb{K}$ let $\operatorname{cl} A$ be the sum of the terms of $A$ of nonzero class.
+
+**Lemma 3.18.23.** For each $m$, the vector of exponents of a Laurent monomial in $y_m, z_m$ is $U_m$ times its vector of exponents in $y_N, z_N$, with $U_m \in GL_2(\mathbb{Z})$. So a monomial has the class $0$ if and only if its two exponents in $y_m, z_m$ are divisible by $p$, and for $A \in K[[y_m, z_m]]$ the element $\operatorname{cl} A$ is the cleaning of $A$ at $P_m$. Let $u_m \in \mathbb{Z}^2$ be the vector of exponents of $y_m z_m$ at $P_N$. Then $u_m$ is not $p$ times a vector of $\mathbb{Z}^2$.
+
+*Proof.* A $y$-chart is $y_m = y_{m+1}$, $z_m = y_{m+1} z_{m+1}$, and a $z$-chart is the same with $y$ and $z$ exchanged. Each is given by an integer matrix of determinant $1$. A matrix in $GL_2(\mathbb{Z})$ is invertible modulo $p$, so it sends the vectors divisible by $p$ onto the vectors divisible by $p$. For the last claim, the vectors $e(y_m)$ and $e(z_m)$ of exponents of $y_m$ and $z_m$ at $P_N$ are the columns of $U_m^{-1}$, so they are a basis of $\mathbb{Z}^2$, and $u_m = e(y_m) + e(z_m)$ has the coordinates $(1, 1)$ in this basis. So $u_m$ is not divisible by $p$. $\square$
+
+Since $M_m = y_N z_N / (y_m z_m)$, the vector of exponents of $M_m$ at $P_N$ is $u_N - u_m$, and $v(y_m z_m) = 1 + \theta - v(M_m)$ decreases to $0$.
+
+**Lemma 3.18.24.** Let $\nu, \nu'$ be Laurent monomials and $0 \le e < e'$. Then only a finite number of pairs $(i, j)$ satisfy $\nu\, M_{j+1}^{p^e} = \nu'\, M_{i+1}^{p^{e'}}$.
+
+*Proof.* The equation says that $p^{e'} u_{i+1} - p^e u_{j+1} = c$ for a fixed vector $c \in \mathbb{Z}^2$. The values $v(M_{j+1})$ increase strictly, so for each $i$ there is at most one $j$, and for each $j$ at most one $i$. Assume that there are an infinite number of solutions. Then $i, j \to \infty$ along them, and since $v(u_m) = v(y_m z_m) \to 0$, the value of the vector $c$, that is, $c_1 + \theta c_2$, is $0$. Since $\theta$ is irrational, $c = 0$. Then $u_{j+1} = p^{e' - e} u_{i+1}$ is divisible by $p$, which contradicts Lemma 3.18.23. $\square$
+
+**Lemma 3.18.25.** Let $m \ge N$ and $e \ge 0$, and let $C, D \in \mathbb{F}$, not both $0$. Let $\nu$ be the monomial of least value of the pair, that is, $C = a \nu + C'$ and $D = b \nu + D'$ with $a, b \in K$ not both $0$ and with all the terms of $C'$ and $D'$ of value larger than $v(\nu)$. Put $W = v(\nu) + p^e (1 + \theta)$. Then
+$$C\, \Delta\varphi^{p^e} + D\, \Delta\psi^{p^e} = \nu \sum_{j \ge m} t_j M_{j+1}^{p^e} + R, \qquad t_j = \bigl(a^{1/p^e} a_j + b^{1/p^e} b_j\bigr)^{p^e},$$
+where an infinite number of the $t_j$ are not $0$, the terms $\nu t_j M_{j+1}^{p^e}$ have distinct monomials of value less than $W$, and $R$ has only a finite number of terms of value less than $W$.
+
+We call $\nu \sum_j t_j M_{j+1}^{p^e}$ the *germ of order $p^e$* of the pair $(C, D)$.
+
+*Proof.* In characteristic $p$ we have $\Delta\varphi^{p^e} = \sum_{j \ge m} a_j^{p^e} M_{j+1}^{p^e}$, and the same for $\Delta\psi$. So the part with $a \nu$ and $b \nu$ is $\nu \sum_j (a a_j^{p^e} + b b_j^{p^e}) M_{j+1}^{p^e}$, and $a a_j^{p^e} + b b_j^{p^e} = t_j$, since $K$ is perfect. Since the run is planar, the direction $(a^{1/p^e}, b^{1/p^e}) \ne (0, 0)$ has an infinite number of nonzero $a^{1/p^e} a_j + b^{1/p^e} b_j$, so an infinite number of the $t_j$ are not $0$. The values $v(\nu) + p^e v(M_{j+1})$ are distinct and less than $W$. The rest is $R = C' \Delta\varphi^{p^e} + D' \Delta\psi^{p^e}$. The element $C'$ is in $\mathbb{F}$, so its terms have values at least $v(\nu) + \eta$ for some $\eta > 0$. A term of $C' \Delta\varphi^{p^e}$ of value less than $W$ comes from a term $s$ of $C'$ of value less than $W$, and there are a finite number of them, and from a $j$ with $p^e v(M_{j+1}) < W - v(s) \le p^e (1 + \theta) - \eta$, and there are a finite number of these $j$. The same holds for $D'$. $\square$
+
+For $e = 0$ this is the core of Lemma 3.18.10.
+
+**Theorem 3.18.26.** Let the run be planar, and let $f \in \hat H[X, W]$ be nonzero, of any degree. Then:
+
+1. $f(\Phi_\infty) \ne 0$ and $v(f(\Phi_\infty)) < \Lambda(f)$. That is, $v(f(\Phi_\infty)) < v(f^{[k, l]}(\Phi_\infty)) + (k + l)(1 + \theta)$ for each $(k, l) \ne (0, 0)$ with $f^{[k, l]} \ne 0$.
+2. $v(f(\Phi_\infty) - f(\Phi_m)) > v(f(\Phi_\infty))$ for $m$ large. So $f(\Phi_m)$ and $f(\Phi_\infty)$ have the same term of least value for $m$ large.
+3. $\Lambda(f) = \min_{e \ge 0} \Lambda_e(f)$, and $\beta_{kl}(f) + (k + l)(1 + \theta) > \Lambda(f)$ for each $(k, l) \ne (0, 0)$ that is not of the form $(p^e, 0)$ or $(0, p^e)$.
+
+In particular Conjecture T of Remark 3.17.34 holds for the planar runs.
+
+Node: SG00000090
+
+*Proof.* Induction on $D = \deg f$. If $D = 0$, then $f$ is a nonzero element of $\hat H$, $\Lambda(f) = \infty$ and $f(\Phi_m) = f$, so the claims are clear. Let $D \ge 1$, and assume the theorem for each nonzero polynomial of degree less than $D$. Write $\Lambda = \Lambda(f)$ and $\Lambda_e = \Lambda_e(f)$.
+
+Step 1: part 3. Let $(k, l) \ne (0, 0)$ with $f^{[k, l]} \ne 0$, not of the form $(p^e, 0)$ or $(0, p^e)$. Let $p^e$ be the largest power of $p$ that divides both $k$ and $l$, where $0$ is divisible by each power. Then $p^e$ is the exact power of $p$ in $k \ge 1$ or in $l \ge 1$. Say in $k$, else exchange $X$ and $W$. Put $h = f^{[p^e, 0]}$. By (18.5), $h^{[k - p^e, l]} = \binom{k}{p^e} f^{[k, l]}$, and $\binom{k}{p^e}$ is a unit by the theorem of Lucas. So $h \ne 0$ and $\deg h \le D - p^e < D$. Also $(k - p^e, l) \ne (0, 0)$, since $(k, l) \ne (p^e, 0)$. Part 1 for $h$ gives
+$$\beta_{p^e 0}(f) = v(h(\Phi_\infty)) < v\bigl(h^{[k - p^e, l]}(\Phi_\infty)\bigr) + (k + l - p^e)(1 + \theta) = \beta_{kl}(f) + (k + l - p^e)(1 + \theta).$$
+We add $p^e (1 + \theta)$ and get $\Lambda_e < \beta_{kl}(f) + (k + l)(1 + \theta)$. Since $D \ge 1$, some $f^{[k, l]}$ with $(k, l) \ne (0, 0)$ is not $0$, so $\Lambda$ is finite, and the minimum is attained only at indices of the form $(p^e, 0)$ or $(0, p^e)$. This is part 3.
+
+Step 2: the derivatives. Each nonzero $f^{[k, l]}$ with $(k, l) \ne (0, 0)$ has a degree less than $D$. Part 2 for these polynomials, of which there are a finite number, gives an $m_0$ such that for $m \ge m_0$ each $f^{[k, l]}(\Phi_m)$ has the value $\beta_{kl}(f)$ and the same term of least value as $f^{[k, l]}(\Phi_\infty)$.
+
+Step 3: the Taylor sum. Let $m \ge m_0$. Taylor's formula at $\Phi_m$ gives
+$$f(\Phi_\infty) = f(\Phi_m) + \sum_{e \ge 0,\ p^e \le D} \Bigl(f^{[p^e, 0]}(\Phi_m)\, \Delta\varphi^{p^e} + f^{[0, p^e]}(\Phi_m)\, \Delta\psi^{p^e}\Bigr) + H_m,$$
+where $H_m$ is the sum of the terms $f^{[k, l]}(\Phi_m) \Delta\varphi^k \Delta\psi^l$ over the $(k, l) \ne (0, 0)$ that are not of the form $(p^e, 0)$ or $(0, p^e)$. Each of these terms has a value at least $\beta_{kl}(f) + (k + l) v(M_{m+1})$, and by part 3 these bounds tend to limits larger than $\Lambda$. So $v(H_m) > \Lambda$ for $m$ large. We fix such an $m$.
+
+Step 4: the terms below $\Lambda$. Let $E^*$ be the set of the $e$ with $\Lambda_e = \Lambda$. It is not empty by part 3. For each $e$ with $f^{[p^e, 0]} \ne 0$ or $f^{[0, p^e]} \ne 0$, apply Lemma 3.18.25 with $C = f^{[p^e, 0]}(\Phi_m)$ and $D = f^{[0, p^e]}(\Phi_m)$. These are in $\mathbb{F}$ by Lemma 3.18.8, and by Step 2 the bound of the lemma is $W = \Lambda_e$. If $e \notin E^*$, then $\Lambda < \Lambda_e$, and the germ of order $p^e$ has only a finite number of terms below $\Lambda$, since $v(M_{j+1}) \to 1 + \theta$. Its rest $R$ has only a finite number of terms below $\Lambda_e$, so below $\Lambda$. If $e \in E^*$, the rest $R$ has a finite number of terms below $\Lambda$. So below $\Lambda$, the element $f(\Phi_\infty) - f(\Phi_m) - H_m$ is the sum of the germs of order $p^e$ for $e \in E^*$ and of a finite number of other terms. Fix $e_0 \in E^*$. Its germ has an infinite number of nonzero terms below $\Lambda$, with distinct monomials. By Lemma 3.18.24, applied to the finite number of pairs $(e_0, e)$ with $e \in E^*$ and $e \ne e_0$, only a finite number of these monomials are monomials of the germ of another $e \in E^*$. So an infinite number of the terms of the germ of $e_0$ are terms of $f(\Phi_\infty) - f(\Phi_m)$. The element $f(\Phi_m)$ is in $\mathbb{F}$, so it has only a finite number of terms below $\Lambda$. So $f(\Phi_\infty)$ has an infinite number of terms below $\Lambda$. Thus $f(\Phi_\infty) \ne 0$ and $v(f(\Phi_\infty)) < \Lambda$. This is part 1.
+
+Step 5: part 2. For $m \ge m_0$ the difference $f(\Phi_\infty) - f(\Phi_m) = \sum_{(k, l) \ne (0, 0)} f^{[k, l]}(\Phi_m) \Delta\varphi^k \Delta\psi^l$ has a value at least $\min_{(k, l) \ne (0, 0)} (\beta_{kl}(f) + (k + l) v(M_{m+1}))$. This bound tends to $\Lambda$, and $\Lambda > v(f(\Phi_\infty))$ by part 1. $\square$
+
+The proof uses no factorization and no theory of Kaplansky type in two variables. Each Taylor term that is not of $p$-power order is smaller than the term of $p$-power order below it, by part 1 for a derivative of lower degree. The terms of order $p^e$ are additive in the tail, and Lemmas 3.18.24 and 3.18.25 count their germs. For $\deg f < p$ only $e = 0$ occurs, and the proof is that of Theorem 3.18.11 without the chain.
+
+**Corollary 3.18.27.** Let the run be planar, and let $f \in \hat H[X, W]$ with $\deg f \ge 1$. Let $S$ be the set of the $(k, l) \ne (0, 0)$ at which $\beta_{kl}(f) + (k + l)(1 + \theta)$ takes its least value. Then $S \subseteq \{(p^e, 0), (0, p^e) \mid e \ge 0\}$. So the dominant part of $f$ at $\Phi_\infty$ is an additive polynomial $\sum_{e \in E^*} (c_e X^{p^e} + d_e W^{p^e})$.
+
+Node: SG00000091
+
+*Proof.* This is part 3 of Theorem 3.18.26. $\square$
+
+This is the two-variable form of the statement of Kaplansky that the dominant index of Lemma 3.15.8, part 2, is a power of $p$. The proof does not use the theory of Kaplansky, only the induction of Theorem 3.18.26.
+
+**Example 3.18.28.** Part 3 of Theorem 3.18.11 is false for $\deg f \ge p$. Let $f = X^p$. Then $f^{[k, 0]} = \binom{p}{k} X^{p - k} = 0$ for $0 < k < p$, and $f^{[k, l]} = 0$ for $l \ge 1$. So $\lambda_1(f) = \dots = \lambda_{p-1}(f) = \infty$, while $\lambda_p(f) = 0$, and the chain $\lambda_{s - 1} < \lambda_s + 1 + \theta$ fails for $s = p$. Theorem 3.18.11 claims the chain only for $\deg f < p$, so this is not a gap in it, but the chain does not extend. Only the form of part 1 of Theorem 3.18.26 holds in each degree, and part 3 of that theorem replaces the chain. Here $\Lambda(f) = \Lambda_1(f) = p(1 + \theta)$ and $v(f(\Phi_\infty)) = p\, v(\varphi_\infty) < p(1 + \theta)$.
+
+### Planar runs in degree at least p
+
+For $g \in K[[y, z]][x, w]$ we write $\Lambda_e = \Lambda_e(g)$, $\Lambda = \Lambda(g)$ and $\Lambda_+ = \min_{e \ge 1} \Lambda_e$, with $g$ seen as an element of $\hat H[X, W]$. On a planar run, Theorem 3.18.26, part 3, gives $\Lambda = \min(\Lambda_0, \Lambda_+)$. As in Section 3.17 put
+$$\tilde g_m = g(\varphi_m + M_m x_m, \psi_m + M_m w_m) = \sum_{k, l} A_{kl}\, x_m^k w_m^l, \qquad A_{kl} = M_m^{k + l} g^{[k, l]}(\Phi_m) \in K[[y_m, z_m]].$$
+By Lemma 3.17.1, the function of $P_m$ is $M_m^{-p} \operatorname{cl}(\tilde g_m)$, and $\partial_{x_m} \tilde g_m = M_m\, g_X(\varphi_m + M_m x_m, \psi_m + M_m w_m)$.
+
+**Proposition 3.18.29.** Let the run be planar, and let $f \in K[[y_N, z_N]][X, W]$ be nonzero, of any degree. Let $c \nu$ be the term of least value of $f(\Phi_\infty)$. Then there is an $m_2$ such that for each $m \ge m_2$, $\nu$ is a monomial in $y_m, z_m$ with nonnegative exponents and
+$$f(\varphi_m + M_m x_m, \psi_m + M_m w_m) = c\, \nu\, (1 + h_m), \qquad h_m \in (x_m, w_m, y_m, z_m)\, K[[y_m, z_m]][x_m, w_m].$$
+
+*Proof.* This is the proof of Proposition 3.18.14 with Theorem 3.18.26 in place of Theorem 3.18.11. That proof uses three facts. First, the values of the $f^{[k, l]}(\Phi_{m_1})$ are the values at $\Phi_\infty$ for $m_1$ large, which is part 2 of Theorem 3.18.26 for the derivatives. Second, the term of least value of $f(\Phi_{m_1})$ is $c \nu$ for $m_1$ large, which is part 2 for $f$. Third, $\beta_{kl}(f) + (k + l) v(M_{m_1 + 1}) > v(f(\Phi_\infty))$ for each $(k, l) \ne (0, 0)$ with $f^{[k, l]} \ne 0$ and $m_1$ large. This follows from part 1, since there are a finite number of $(k, l)$. In property 3 of that proof we use this inequality in place of the bound with $\lambda_s(f)$. The degree is not used anywhere else. $\square$
+
+**Lemma 3.18.30.** Let the run of $g$ be planar, and assume that $\Lambda_0 < \Lambda_+$. Exchange $x$ and $w$ if needed, so that $v(g_X(\Phi_\infty)) \le v(g_W(\Phi_\infty))$. Let $c_X \nu_X$ be the term of least value of $g_X(\Phi_\infty)$, and put $\mu_m = c_X M_m \nu_X$. Then for $m$ large, $\partial_{x_m} \tilde g_m = \mu_m \varepsilon_m$ with a unit $\varepsilon_m$, and $\mu_m$ divides $A_{kl}$ in $K[[y_m, z_m]]$ for each $(k, l) \ne (0, 0)$.
+
+*Proof.* Since $\Lambda_0 < \infty$, we have $g_X \ne 0$. The first claim is Proposition 3.18.29 for $f = g_X$, with $\partial_{x_m} \tilde g_m = M_m g_X(\varphi_m + M_m x_m, \psi_m + M_m w_m)$.
+
+For the second claim, let $m_1$ be large and put $U_{kl} = g^{[k, l]}(\Phi_{m_1}) M_{m_1 + 1}^{k + l}$. These are power series in $y_{m_1 + 1}, z_{m_1 + 1}$, as in the proof of Proposition 3.18.14. Let $S$ be the union of the supports of the $U_{kl}$ with $(k, l) \ne (0, 0)$, in the exponents at $P_{m_1 + 1}$, and let $q_*$ be the exponent of $M_{m_1 + 1} \nu_X$. For $m_1$ large the following hold.
+
+1. $U_{10}$ has the term of least value $c_X M_{m_1 + 1} \nu_X$, and its other terms have larger values. This is Theorem 3.18.26, part 2, for $g_X$.
+2. Each term of $U_{01}$ has a value at least $\beta_{01} + v(M_{m_1 + 1}) \ge \beta_{10} + v(M_{m_1 + 1})$, with equality only for the monomial of exponent $q_*$, since distinct monomials have distinct values.
+3. For each other $(k, l) \ne (0, 0)$, each term of $U_{kl}$ has a value at least $\beta_{kl} + (k + l) v(M_{m_1 + 1})$. Here $\beta_{kl} + (k + l)(1 + \theta) > \Lambda_0 = \beta_{10} + 1 + \theta$: for $(k, l)$ not of $p$-power form by Theorem 3.18.26, part 3, and for $(p^e, 0)$ and $(0, p^e)$ with $e \ge 1$ by the hypothesis $\Lambda_0 < \Lambda_+$. Since $k + l - 1 \ge 1$ and there are a finite number of $(k, l)$, we get $\beta_{kl} + (k + l - 1) v(M_{m_1 + 1}) > \beta_{10}$ for $m_1$ large.
+
+So $q_*$ is the only point of least value of $S$. Lemma 3.15.4 at the base point $P_{m_1 + 1}$ gives an $m_2$ such that at each level $m \ge m_2$ each $q \in S$ has both exponents at least those of $q_*$. So $M_{m_1 + 1} \nu_X$ divides each $U_{kl}$ with $(k, l) \ne (0, 0)$ at the level $m$.
+
+Now let $m > \max(m_1, m_2)$ and $(k, l) \ne (0, 0)$. Taylor's formula at $\Phi_{m_1}$ gives
+$$A_{kl} = M_m^{k + l} \sum_{k' \ge k,\ l' \ge l} \binom{k'}{k} \binom{l'}{l} g^{[k', l']}(\Phi_{m_1})\, (\varphi_m - \varphi_{m_1})^{k' - k} (\psi_m - \psi_{m_1})^{l' - l}.$$
+Expand $(\varphi_m - \varphi_{m_1})^{k' - k} (\psi_m - \psi_{m_1})^{l' - l}$ into products of $k' + l' - k - l$ factors $M_{j+1}$ with $m_1 \le j < m$ and constant coefficients. Each product, times $M_m^{k + l}$, is
+$$M_{m_1 + 1}^{k' + l'} \cdot \Bigl(\frac{M_m}{M_{m_1 + 1}}\Bigr)^{k + l} \cdot \prod \frac{M_{j+1}}{M_{m_1 + 1}},$$
+and the quotients $M_m / M_{m_1 + 1}$ and $M_{j+1} / M_{m_1 + 1}$ are products of chart variables, so they have nonnegative exponents at the level $m$. So $A_{kl}$ is a sum of terms $U_{k' l'} \cdot (M_m / M_{m_1 + 1})^{k + l} \cdot \eta$ with $(k', l') \ne (0, 0)$ and $\eta$ with nonnegative exponents. Since $k + l \ge 1$, each of them is divisible by $M_{m_1 + 1} \nu_X \cdot M_m / M_{m_1 + 1} = M_m \nu_X$. $\square$
+
+**Lemma 3.18.31.** Let $P_m$ be a point of a corner run in four variables. Assume that there are a nonzero constant times a monomial $\mu$ in $y_m, z_m$ and a unit $\varepsilon$ of $K[[x_m, w_m, y_m, z_m]]$ such that $\partial_{x_m} \tilde g_m = \mu \varepsilon$ and $\mu$ divides $A_{kl}$ for each $(k, l) \ne (0, 0)$. Then the run does not keep $\rho \ge 1$. So there is no such point on a corner run in four variables.
+
+*Proof.* A monomial $x^k w^l y^a z^b$ is removed by the cleaning only if $p \mid k$ and $p \mid l$. So
+$$\operatorname{cl}(\tilde g_m) = \sum_{(k, l) \ne (0, 0)} A'_{kl}\, x_m^k w_m^l + \operatorname{cl} A_{00},$$
+with $A'_{kl} = \operatorname{cl} A_{kl}$ if $p \mid k$ and $p \mid l$, and $A'_{kl} = A_{kl}$ otherwise. The cleaning removes monomials, so $\mu$ divides each $A'_{kl}$. Put $x'' = \mu^{-1} \sum_{(k, l) \ne (0, 0)} A'_{kl} x_m^k w_m^l \in K[[y_m, z_m]][x_m, w_m]$. The removed monomials have an exponent of $x_m$ divisible by $p$, so $\partial_{x_m}(\mu x'') = \partial_{x_m} \tilde g_m = \mu \varepsilon$, and $\partial x'' / \partial x_m = \varepsilon$ is a unit. Also $x''(0, 0, y_m, z_m) = 0$. So $(x'', w_m)$ is a free coordinate system at $P_m$, and the function of $P_m$ is $M_m^{-p} (\mu x'' + \operatorname{cl} A_{00})$. It does not contain $w_m$, so $P_m$ is cylindrical (Definition 3.17.10). From here the proof is the end of the proof of Lemma 3.18.15: Theorem 3.17.13, part 3, gives a corner run with free translations in three variables of the point $\mu' x'' + B'_0$, with $\mu' = M_m^{-p} \mu$ and $B'_0 = M_m^{-p} \operatorname{cl} A_{00}$, and with the same $\rho \ge 1$, and Theorem 3.15.16 says that there is no such run. $\square$
+
+**Theorem 3.18.32.** Let $g \in K[[y, z]][x, w]$ be clean with $\deg_{x, w} g \ge 1$, and assume that $g$ has a planar corner run in four variables. Then:
+
+1. $\Lambda_0 \ge \Lambda_+$, so $\Lambda = \Lambda_+$.
+2. $v(\operatorname{cl} g(\Phi_\infty)) \ge \Lambda$, with $v(0) = \infty$.
+
+*Proof.* Part 1. If $g_X = g_W = 0$, then $\Lambda_0 = \infty$ and part 1 holds. If $\Lambda_0 < \Lambda_+$, then Lemma 3.18.30 gives the hypotheses of Lemma 3.18.31 at $P_m$ for $m$ large, and this is a contradiction.
+
+Part 2. Assume that $V_K := v(\operatorname{cl} g(\Phi_\infty)) < \Lambda$. The cleaning is additive and removes terms, so
+$$v\bigl(\operatorname{cl} g(\Phi_\infty) - \operatorname{cl} g(\Phi_m)\bigr) \ge v\bigl(g(\Phi_\infty) - g(\Phi_m)\bigr) \ge \min_{(k, l) \ne (0, 0)} \bigl(v(g^{[k, l]}(\Phi_m)) + (k + l) v(M_{m+1})\bigr),$$
+and by Steps 2 and 5 of the proof of Theorem 3.18.26 the right side tends to $\Lambda$. So for $m$ large, $\operatorname{cl} g(\Phi_m)$ is not $0$ and has the value $V_K$. By Lemma 3.18.23, $\operatorname{cl} A_{00} = \operatorname{cl} g(\Phi_m)$. For $(k, l) \ne (0, 0)$, in the notation of (★★) we have $w_{kl} \ge v(A_{kl}) = (k + l) v(M_m) + v(g^{[k, l]}(\Phi_m))$, and this tends to $\beta_{kl} + (k + l)(1 + \theta) \ge \Lambda > V_K$. There are a finite number of $(k, l)$, so (★★) holds at $P_m$ for $m$ large. This contradicts Proposition 3.17.3. $\square$
+
+**Corollary 3.18.33.** Let $g$ be clean with a planar corner run. Assume that for some $e \ge 1$ with $\Lambda_e = \Lambda$, the monomial $\nu_e$ of least value of the pair $g^{[p^e, 0]}(\Phi_\infty)$, $g^{[0, p^e]}(\Phi_\infty)$ has a nonzero class. Then we have a contradiction.
+
+*Proof.* Take $m$ large as in the proof of Theorem 3.18.26 for $f = g$, so that $\nu_e$ is also the monomial of least value of the pair at $\Phi_m$, by Step 2. In Step 4 of that proof with $e_0 = e$, an infinite number of the terms $\nu_e t_j M_{j+1}^{p^e}$ of the germ of order $p^e$ are terms of $g(\Phi_\infty)$ of value less than $\Lambda$. The monomial $M_{j+1}^{p^e}$ has the class $0$, so these terms have the class of $\nu_e$, which is not $0$. So $\operatorname{cl} g(\Phi_\infty)$ has terms of value less than $\Lambda$. This contradicts Theorem 3.18.32, part 2. $\square$
+
+Consider the following condition on $g$.
+
+(C) For each $e \ge 1$, the Hasse derivatives $g^{[p^e, 0]}$ and $g^{[0, p^e]}$ in $(x, w)$ are in $K[[y, z]]$, that is, they do not depend on $x$ and $w$.
+
+Let $c_{ij} \in K[[y, z]]$ be the coefficient of $x^i w^j$ in $g$. Then $g^{[p^e, 0]} = \sum_{i, j} \binom{i}{p^e} c_{ij}\, x^{i - p^e} w^j$. So (C) says that $c_{ij} \ne 0$ and $\binom{i}{p^e} \not\equiv 0 \pmod p$ give $(i, j) = (p^e, 0)$, and the same with $x$ and $w$ exchanged. Then $g^{[p^e, 0]} = c_{p^e 0}$ and $g^{[0, p^e]} = c_{0 p^e}$. Examples:
+
+1. Each $g$ with $\deg_{x, w} g \le p$. Indeed, $\binom{i}{p^e} \ne 0$ needs $i \ge p^e \ge p$, and with $i + j \le p$ this gives $(i, j) = (p, 0)$ and $e = 1$.
+2. Each $g = \sum_{e \ge 1} (\alpha_e x^{p^e} + \beta_e w^{p^e}) + h$ with $\alpha_e, \beta_e \in K[[y, z]]$ and $\deg_{x, w} h < p$, since $\binom{p^{e'}}{p^e} \equiv 0$ for $e' \ne e$ by the theorem of Lucas. In particular each $g = B_1 x^p + B_2 w^p + \alpha x + \beta w + B_0$.
+3. Terms such as $x^{p-1} w^{p-1}$ can be added, since $\binom{p - 1}{p^e} = 0$.
+
+**Theorem 3.18.34.** Let $g \in K[[y, z]][x, w]$ be clean with $\deg_{x, w} g \ge 1$, and assume (C). Then $g$ has no planar corner run in four variables. In particular there is none with $\deg_{x, w} g = p$, and none for $g = B_1 x^p + B_2 w^p + \alpha x + \beta w + B_0$.
+
+Node: SG00000092
+
+*Proof.* Assume that the run is planar. By Theorem 3.18.32, part 1, $\Lambda = \Lambda_+$, so $\Lambda = \Lambda_e$ for some $e \ge 1$, and $\Lambda$ is finite. By (C), $g^{[p^e, 0]} = c_{p^e 0}$ and $g^{[0, p^e]} = c_{0 p^e}$, the coefficients of $x^{p^e}$ and $w^{p^e}$ in $g$, so their values at $\Phi_\infty$ are these series themselves. Since $g$ is clean and $p$ divides the exponent $p^e$ of $x$, each monomial of $c_{p^e 0}$ has a nonzero class, and the same holds for $c_{0 p^e}$. So the monomial $\nu_e$ of least value of the pair has a nonzero class, and Corollary 3.18.33 gives a contradiction. $\square$
+
+For $\deg_{x, w} g = p$ the proof says the following. Put $\Lambda_0 = \min(v(g_X(\Phi_\infty)), v(g_W(\Phi_\infty))) + 1 + \theta$ and $\Lambda_1 = \min(v(B_1), v(B_2)) + p(1 + \theta)$, with $B_1$ and $B_2$ the coefficients of $x^p$ and $w^p$. If $\Lambda_0 < \Lambda_1$, the cleaned coefficients $A_{p0} = M_m^p B_1$ and $A_{0p} = M_m^p B_2$ are divisible by $\mu_m$, and the cylindrical reduction works. If $\Lambda_1 \le \Lambda_0$, the germ of order $p$ of the monomial of least value of $B_1, B_2$ is not removed by the cleaning, and (★★) holds at a later point.
+
+**Theorem 3.18.35.** Let $g \in K[[y, z]][x^p, w^p]$ be clean, of any degree. Then $g$ has no planar corner run in four variables.
+
+*Proof.* Since $K$ is perfect, each series in $K[[y, z]]$ is in a unique way a sum $\sum_c y^{c_1} z^{c_2} G_c^p$ over $c \in \{0, \dots, p - 1\}^2$ with $G_c \in K[[y, z]]$. We write $y^c = y^{c_1} z^{c_2}$. Applying this to the coefficients of $g$ gives $g = \sum_c y^c F_c(x, w)^p$ with $F_c \in K[[y, z]][x, w]$. Since $g$ is clean, $F_0 = 0$. Taylor's formula for each $F_c$ and the Frobenius give
+$$g(\varphi_m + M_m X, \psi_m + M_m W) = \sum_c y^c \Bigl(\sum_{k, l} F_c^{[k, l]}(\Phi_m)\, M_m^{k + l} X^k W^l\Bigr)^p = \sum_c y^c \sum_{k, l} \bigl(M_m^{k + l} F_c^{[k, l]}(\Phi_m)\bigr)^p X^{pk} W^{pl}.$$
+So $A_{kl} = 0$ unless $p \mid k$ and $p \mid l$, and
+$$A_{pk, pl} = \sum_{c \ne 0} y^c \bigl(M_m^{k + l} F_c^{[k, l]}(\Phi_m)\bigr)^p.$$
+The terms of the summand of $c$ have the class $c$, since a $p$-th power has the class $0$. So the summands do not cancel, the cleaning removes nothing (Lemma 3.18.23), and
+$$w_{pk, pl} = v(A_{pk, pl}) = \min_{c \ne 0,\ F_c^{[k, l]} \ne 0} \bigl(v(y^c) + p(k + l) v(M_m) + p\, v(F_c^{[k, l]}(\Phi_m))\bigr).$$
+Assume that the run is planar. Theorem 3.18.26, applied to the finite number of nonzero $F_c$ and their derivatives, gives for $m$ large $v(F_c^{[k, l]}(\Phi_m)) = v(F_c^{[k, l]}(\Phi_\infty))$ and $v(F_c(\Phi_\infty)) < v(F_c^{[k, l]}(\Phi_\infty)) + (k + l)(1 + \theta)$ for $(k, l) \ne (0, 0)$ with $F_c^{[k, l]} \ne 0$. Since $v(M_m) \to 1 + \theta$, for $m$ large and for all these $c$ and $(k, l)$,
+$$v(y^c) + p\, v(F_c(\Phi_m)) < v(y^c) + p(k + l) v(M_m) + p\, v(F_c^{[k, l]}(\Phi_m)).$$
+The minimum over $c$ gives $v(\operatorname{cl} A_{00}) = v(A_{00}) < w_{kl}$ for each $(k, l) \ne (0, 0)$, and $A_{00} \ne 0$, since some $F_c$ is not $0$ and then $F_c(\Phi_m) \ne 0$. So (★★) holds at $P_m$. This contradicts Proposition 3.17.3. $\square$
+
+The proof does not use Lemmas 3.18.30 and 3.18.31.
+
+**Corollary 3.18.36.** Let $g \in K[[y, z]][x, w]$ be clean, and assume that $\deg_{x, w} g \le p$, or that $g$ satisfies (C), or that $g \in K[[y, z]][x^p, w^p]$. Then each corner run in four variables of $g$ is linear, and Conjecture L holds for it. By Theorem 3.18.19 the same holds in each free coordinate system.
+
+Node: SG00000093
+
+*Proof.* If $\deg_{x, w} g = 0$, then $g \in K[[y, z]]$ is not $0$ and (★★) holds at $P_N$, so there is no run. Otherwise the run is not planar by Theorem 3.18.34, which covers $\deg_{x, w} g \le p$ since these $g$ satisfy (C), or by Theorem 3.18.35. So it is linear, and Theorem 3.18.19 gives Conjecture L. $\square$
+
+This gives Conjecture L for $\deg_{x, w} g = p$, but not Conjecture L° or the form of H1. For these we need the initial form and the orders along the corner curves. For the class $K[[y, z]][x^p, w^p]$ we compute them now.
+
+### Linear runs in the p-th powers
+
+**Theorem 3.18.37.** Let $g \in K[[y, z]][x^p, w^p]$ be clean with $\deg_{x, w} g \ge 1$, and let $P_N, P_{N+1}, \dots$ be a corner run in four variables of $g$. Then:
+
+1. $\rho(P_m) = d(P_m)$ at each point $P_m$ of the run.
+2. The run is linear, so there are a $J$ and a linear free coordinate $x' = \alpha x_J + \beta w_J$ at $P_J$ whose translations are $0$ after $J$.
+3. If the run has an infinite number of nonzero translations, then for $m$ large $\operatorname{in} G_m = c\, x_m'^{\,d}$ with $c \in K^*$ and $d = \rho$ a multiple of $p$, and the corner curves $V(x'_m, w'_m, y_m)$ and $V(x'_m, w'_m, z_m)$ and the corner surfaces $V(x'_m, y_m)$ and $V(x'_m, z_m)$ have $\nu^G = d = \rho$. So Conjectures L, L° and L+ hold for the run, and $\operatorname{in} G_m \in K[x'_m]$ for $m$ large.
+4. If the run has only a finite number of nonzero translations, it is an origin run from some point on, and Conjectures L and L° hold for it by Theorem 3.14.7.
+
+Node: SG00000094
+
+*Proof.* Part 1. Let $h \in K[[y, z]][[x^p, w^p]]$ be clean in coordinates $(x, w, y, z)$ at a point. Each monomial of $h$ is $x^{pi} w^{pj} y^a z^b$ with $p \nmid a$ or $p \nmid b$. Write $h = y^{r_y} z^{r_z} G$. A monomial $x^{pi} w^{pj} y^{a - r_y} z^{b - r_z}$ of $G$ has the exponents of $x$ and $w$ divisible by $p$, and $r_y + (a - r_y) = a$ or $r_z + (b - r_z) = b$ is not divisible by $p$. By the description of $\rho$ in the setting, this monomial gives the value of its degree. So $\rho$ is the least degree of a monomial of $G$, that is, $\rho = \operatorname{ord} G = d$. At $P_m$ the function is $M_m^{-p} \operatorname{cl}(\tilde g_m)$, and by the computation in the proof of Theorem 3.18.35, $\tilde g_m = \sum_{c \ne 0} y^c F_c(\varphi_m + M_m x_m, \psi_m + M_m w_m)^p$ has only monomials $x_m^{pk} w_m^{pl}$ times monomials of a nonzero class. So nothing is cleaned, and by Lemma 3.18.23 the function of $P_m$ is again in $K[[y_m, z_m]][x_m^p, w_m^p]$ and clean. So part 1 holds at each $P_m$.
+
+Part 2. By Theorem 3.18.35 the run is not planar, so it is linear (Definition 3.17.5). Take $(\alpha, \beta) \ne (0, 0)$ with $\alpha a_j + \beta b_j = 0$ for $j \ge J$, and complete $x' = \alpha x_J + \beta w_J$ to a linear free coordinate system $(x', w')$ at $P_J$. By Lemma 3.17.2, part 3, the translations of $x'$ are the $\alpha a_j + \beta b_j$. A linear change of $(x, w)$ with constant coefficients keeps the class $K[[y, z]][x^p, w^p]$, since $(\gamma x' + \delta w')^p = \gamma^p x'^p + \delta^p w'^p$, and it keeps the cleanness, since the new coefficient of $x'^{pi} w'^{pj}$ is a $K$-linear combination of the old coefficients of the $x^{pi'} w^{pj'}$, which have only monomials of a nonzero class. So after this change and a new start at $P_J$, which is possible by part 1, we may assume that $a_j = 0$ for each $j \ge N$. Then $\varphi_m = 0$ for each $m$.
+
+Part 4. If also $b_j = 0$ for $j$ large, then each step is at the origin of a chart from some point on. Theorem 3.14.7, parts 2 and 3, gives the corner curves with $\nu^G = d_m \ge \rho$, which is Conjecture L°, and Conjecture L holds with $x' = x$.
+
+Part 3. Write $g = \sum_k x^{pk} E_k(w)$ with $E_k \in K[[y, z]][w]$. Since $\varphi_m = 0$,
+$$\tilde g_m = \sum_k M_m^{pk} x_m^{pk} E_k(\psi_m + M_m w_m).$$
+Each $E_k$ is in $K[[y, z]][w^p]$, so $E_k = \sum_{c \ne 0} y^c G_{k, c}(w)^p$ with $G_{k, c} \in K[[y, z]][w]$, by the decomposition of the proof of Theorem 3.18.35. So each term of $E_k(\psi_\infty) = \sum_{c \ne 0} y^c G_{k, c}(\psi_\infty)^p$ has a nonzero class. An infinite number of the $b_j$ are not $0$. Lemma 3.18.2, applied to each nonzero $E_k$, gives the term of least value $c_k \mu_k$ of $E_k(\psi_\infty)$, with $\mu_k$ of nonzero class, and an $m_1$ such that for $m \ge m_1$
+$$E_k(\psi_m + M_m w_m) = c_k \mu_k (1 + h_{k, m}), \qquad h_{k, m} \in y_m z_m K[[w_m, y_m, z_m]].$$
+By part 1 nothing is cleaned, so for $m \ge m_1$ the function of $P_m$ is
+$$g_m = M_m^{-p} \tilde g_m = \sum_k x_m^{pk}\, \omega_{k, m} (1 + h_{k, m}), \qquad \omega_{k, m} = c_k M_m^{p(k - 1)} \mu_k.$$
+The element $\omega_{k, m}$ is the term without $w_m$ of least value of the coefficient of $x_m^{pk}$ in the power series $g_m$, so it is a constant times a monomial in $y_m, z_m$ with nonnegative exponents. Also $\omega_{k, m+1} = L_m^{p(k - 1)} \omega_{k, m}$.
+
+Compare $g_m$ with the series $\tilde f_m = \sum_k \omega_{k, m} x_m^{pk} \in K[[x_m, y_m, z_m]]$ in three variables. Under the chart of step $m$ at the origin, with $x_m = L_m x_{m+1}$, the point $\tilde f_m$ goes to $L_m^{-p} \sum_k \omega_{k, m} L_m^{pk} x_{m+1}^{pk} = \tilde f_{m+1}$. So the $\tilde f_m$ with $m \ge m_1$ are the successive points of $\tilde f_{m_1}$ under the charts of the run, each at the origin. The monomials $\omega_{k, m} x_m^{pk}$ occur in $g_m$. Indeed, $h_{k, m}$ does not contain $x_m$, so the products from different $k$ have different exponents of $x_m$, and for one $k$ each product other than $\omega_{k, m} x_m^{pk}$ has a factor of $h_{k, m}$, so its exponents of $y_m$ and of $z_m$ are larger. Each other monomial of $g_m$ is $\omega_{k, m} x_m^{pk}$ times a monomial in $w_m, y_m, z_m$ with positive exponents of $y_m$ and $z_m$. So it does not lower the exponent of $y_m$ or of $z_m$, the degree, or the order along a coordinate subvariety. So $g_m$ and $\tilde f_m$ have the same $r_y$ and $r_z$, the same $d$, and the same orders along $V(x_m, w_m, z_m)$, $V(x_m, w_m, y_m)$, $V(x_m, z_m)$ and $V(x_m, y_m)$, where for $\tilde f_m$ we take the orders along $V(x_m, z_m)$ and $V(x_m, y_m)$ in three variables. Each of these minima is attained at a monomial $\omega_{k, m} x_m^{pk}$.
+
+The monomials $\omega_{k, m} x_m^{pk}$ of $\tilde f_m$ have the class of $\mu_k$, which is not $0$, so $\tilde f_m$ is clean and nothing is cleaned in its steps. The argument of part 1 in three variables gives $\rho(\tilde f_m) = d(\tilde f_m)$, and $d(\tilde f_m) = d(g_m) = \rho(g_m) = \rho$ by part 1. So $\rho(\tilde f_m)$ is constant and at least $1$. So the hypotheses of Theorem 3.13.20 hold for the points $\tilde f_m$, $m \ge m_1$:
+
+1. $n = 3$, since $\tilde f_m \in K[[x_m, y_m, z_m]]$.
+2. The run is infinite and each step is at the origin of the $y$-chart or of the $z$-chart, by the computation above.
+3. Each chart occurs an infinite number of times, since the charts are those of the corner run in four variables.
+4. The points are clean, and nothing is cleaned, as we saw.
+5. $V(x_m)$ is not a component of the divisor, since $x$ is a free coordinate of the run in four variables and stays free after the charts.
+6. $\rho(\tilde f_m)$ is constant, as we saw.
+
+Theorem 3.13.20 gives, for $m$ large, $\operatorname{in} \tilde G_m = c\, x_m^d$ and $\nu^{\tilde G} = d$ along the corner curves $V(x_m, y_m)$ and $V(x_m, z_m)$. The part of degree $d$ of $G_m$ consists of the monomials of degree $d$ of $\tilde G_m$, since each other monomial of $G_m$ has a larger degree. So $\operatorname{in} G_m = c\, x_m^d$, and $d$ is a multiple of $p$, since all the exponents of $x_m$ are. The coordinates $(x_m, w_m, y_m, z_m)$ are adapted to the curves and the surfaces of the theorem, and $g_m$ is clean in them. So by Lemma 3.13.1 and Definition 3.13.2, as in Step 6 of the proof of Theorem 3.18.6, $\nu^G$ along $V(x_m, w_m, z_m)$ is the least value of $i + l + k$ over the monomials $x^i w^l y^j z^k$ of $G_m$, and this is the same number as for $\tilde G_m$ along $V(x_m, z_m)$, that is, $d$. The same holds for $V(x_m, w_m, y_m)$. For the surfaces $V(x_m, z_m)$ and $V(x_m, y_m)$, the least values of $i + k$ and of $i + j$ over the monomials of $G_m$ are attained at the monomials of $\tilde G_m$, so they are the numbers of $\tilde G_m$ along the two corner curves, that is, $d$. Since $d = \rho$, all these orders are at least $\rho$. In the coordinates of the run from $P_N$, $x_m$ is the transform $x'_m$ of the linear form $x'$ of part 2. $\square$
+
+**Corollary 3.18.38.** Let $g = B_1 x^p + B_2 w^p + B_0$ be clean, with $B_i \in K[[y, z]]$ and of any rank in the sense of Corollary 3.17.17. Then each corner run in four variables of $g$ is linear, there is a linear free coordinate $x'$ whose translations are $0$ from some point on, and Conjecture L° holds for the run. If the run has an infinite number of nonzero translations, then for $m$ large $\operatorname{in} G_m = c\, x_m'^{\,p}$ with $d = \rho = p$, Conjecture L+ holds, and $\operatorname{in} G_m \in K[x'_m]$.
+
+Node: SG00000095
+
+*Proof.* If $B_1 = B_2 = 0$, there is no run by Proposition 3.17.3. Otherwise $g \in K[[y, z]][x^p, w^p]$ with $\deg_{x, w} g = p$, and Theorem 3.18.37 applies. In part 3 of its proof $\operatorname{in} G_m = c\, x_m^{pk}$ for some $k$ with $E_k \ne 0$, so $k \le 1$, and $d = \rho \ge 1$ gives $k = 1$ and $d = p$. The rank is not used. $\square$
+
+So open question 2 of Section 3.17 has a positive answer. The case of rank at most $1$ was Corollary 3.17.17. Example 3.17.22 and Theorem 3.17.21 show that Conjecture L+ can fail for the origin runs, so in part 4 of Theorem 3.18.37 only Conjectures L and L° are claimed.
+
+### Conjecture P
+
+The results above leave the corner runs with $\deg_{x, w} g > p$ for which (C) fails and $g \notin K[[y, z]][x^p, w^p]$. By Theorem 3.18.19, Conjecture L for these runs is the following statement.
+
+**Conjecture 3.18.39 (P).** Let $g \in K[[y, z]][x, w]$ be clean. Then $g$ has no planar corner run in four variables.
+
+Node: SG00000096
+
+By Theorem 3.18.19, Conjecture P for all clean $g$ is equivalent to Conjecture L for all clean $g$. It holds for $\deg_{x, w} g < p$ (Theorem 3.18.17), under (C) and so for $\deg_{x, w} g = p$ (Theorem 3.18.34), and for $g \in K[[y, z]][x^p, w^p]$ (Theorem 3.18.35). By Theorem 3.18.32 and Corollary 3.18.33, a planar run of a $g$ outside these classes must satisfy three conditions: $\Lambda_0 \ge \Lambda_+$, the monomial $\nu_e$ has the class $0$ for each $e \ge 1$ with $\Lambda_e = \Lambda$, and $v(\operatorname{cl} g(\Phi_\infty)) \ge \Lambda$. When (C) fails, $\nu_e$ is the monomial of least value of the pair $g^{[p^e, 0]}(\Phi_\infty)$, $g^{[0, p^e]}(\Phi_\infty)$, which depends on $\Phi_\infty$, and the cleanness of $g$ does not control its class. Then (★★) can fail at each point, and a proof needs a form of Lemma 3.18.31 for a function whose derivative in $x$ is not dominant, that is, the four-variable form of the passage from Theorem 3.15.17 to Section 3.16. The first open case is $p = 2$, $\deg_{x, w} g = 3$ and
+$$g = Y x^2 w + Y' x w^2 + B_1 x^2 + B_2 w^2 + \alpha x + \beta w + B_0.$$
+We do not know if the conjecture is true.
+
+**Remark 3.18.40 (the numerical evidence).** The following tests are evidence for Conjecture P. They are not a proof, and they do not count as one.
+
+1. Depth first searches over all the translations, for the classes $B_1 x^p + B_2 w^p + B_0$ of rank $2$, this class with $\alpha x + \beta w$ added, a class of degree $p$ with a term that is not additive, and a control with $\rho < p$, over $\mathbb{F}_2$, $\mathbb{F}_4$, $\mathbb{F}_3$, $\mathbb{F}_9$, $\mathbb{F}_5$ and $\mathbb{F}_{25}$. At depth $15$, with the condition that the late translations span $K^2$ in each of two windows, $78$ of $300$ starts reached the full depth, and no branch was planar. The same search without the condition on $\rho$ found planar branches in $19$ of $20$ starts over $\mathbb{F}_2$ and in $16$ of $20$ over $\mathbb{F}_3$. The runs over $\mathbb{F}_9$ and $\mathbb{F}_{25}$ used the same starts and chart words as those over $\mathbb{F}_3$ and $\mathbb{F}_5$, so they test more translations but are not independent samples. Each start that reached the full depth used up its budget of nodes, so the search below it was partial and depended on the order in which the translations were tried.
+2. Random dives, which at each step choose one of all the children that keep $\operatorname{ord} \ge p$ and $\rho$ with the same probability, remove this dependence. At depth $18$, $620$ starts and $19200$ dives gave $4488$ dives of full depth and no planar one, also in classes outside (C) and outside $K[[y, z]][x^p, w^p]$. The control, which keeps only $\operatorname{ord} \ge p$, gave $759$ planar dives among $1234$ of full depth. At depth $30$ over $\mathbb{F}_2$, $339$ dives of full depth kept $\rho$ and none was planar, while the control gave $87$ planar dives of $99$.
+3. Leaf checks of Theorem 3.18.37 for the class $B_1 x^p + B_2 w^p + B_0$, on branches whose late part used both charts, found $\rho = p$, an initial form that is a power of $x'$ and $\nu^G \ge \rho$ on both corner curves, with no failure in $1170$ checks.
+4. Computations in a model of the Hahn field with $\theta = \sqrt 2 - 1$, which accept a value only below a certified bound, found no failure of part 1 of Theorem 3.18.26 and no failure of $v(\operatorname{cl} g(\Phi_\infty)) < \Lambda$ in the case $\Lambda_+ \le \Lambda_0$, which the proof of Corollary 3.18.33 gives. This holds for families of degree $p$ over the six fields and for $500$ trials of degree between $p + 1$ and $2p$. A negative control on a linear run, where $g(\Phi_\infty)$ is a $p$-th power, was not certified, as it must be.
+
+The fields are finite, the chart words and the depths are finite, and the searches have budgets. So the tests show only that a planar run of these classes, if one exists, is rare or deep.
 
 ### Notes and references
 
-The results of this section are a result of the track C4 of this project (tamnd/singularity#286). They come from notes 50, 52, 54 and 63 of the research notes. Note 50 gave the three lemmas, the normal form, Theorem 3.18.6 and Corollary 3.18.7, and Example 3.18.20. Note 52 is the referee report on note 50. It added the proof that the largest monomial factor of $g_m$ is $y^{r_y} z^{r_z}$ in Step 5 and the proof that the translations of $x$ stay $0$ in Proposition 3.18.4, and it proved Lemma 3.18.9, Lemma 3.18.15, Proposition 3.18.13 and Theorem 3.18.16. Note 54 checked note 52 again and gave the field $\mathbb{F}$, Lemma 3.18.10, Theorem 3.18.11, Proposition 3.18.14, Theorem 3.18.17, Corollary 3.18.18 and Theorem 3.18.19. Note 63 is the referee report on note 54. It made the identity (18.1) hold in each characteristic, limited the claims on Conjecture T and on Theorem 3.17.33 to $\deg < p$, and added the argument with $J_1$ in the proof of Theorem 3.18.19.
+The results of this section are a result of the track C4 of this project (tamnd/singularity#286). They come from notes 50, 52, 54, 63, 64 and 67 of the research notes. Note 50 gave the three lemmas, the normal form, Theorem 3.18.6 and Corollary 3.18.7, and Example 3.18.20. Note 52 is the referee report on note 50. It added the proof that the largest monomial factor of $g_m$ is $y^{r_y} z^{r_z}$ in Step 5 and the proof that the translations of $x$ stay $0$ in Proposition 3.18.4, and it proved Lemma 3.18.9, Lemma 3.18.15, Proposition 3.18.13 and Theorem 3.18.16. Note 54 checked note 52 again and gave the field $\mathbb{F}$, Lemma 3.18.10, Theorem 3.18.11, Proposition 3.18.14, Theorem 3.18.17, Corollary 3.18.18 and Theorem 3.18.19. Note 63 is the referee report on note 54. It made the identity (18.1) hold in each characteristic, limited the claims on Conjecture T and on Theorem 3.17.33 to $\deg < p$, and added the argument with $J_1$ in the proof of Theorem 3.18.19. Note 64 gave the results for degree at least $p$, from Lemma 3.18.23 to Conjecture 3.18.39. Note 67 is the referee report on note 64. It found no gap in the proofs. It listed the hypotheses of Theorem 3.13.20 in the proof of Theorem 3.18.37, fixed the meaning of H1 in that theorem as $\operatorname{in} G_m \in K[x'_m]$, removed the hypothesis of rank $2$ from Corollary 3.18.38, wrote Example 3.18.28 as a failure of the extension of the chain and not as an error of note 54, and added the random dives of Remark 3.18.40.
 
-Computer tests with exact arithmetic over $\mathbb{F}_3$, $\mathbb{F}_9$, $\mathbb{F}_5$, $\mathbb{F}_{25}$, $\mathbb{F}_7$, $\mathbb{F}_{49}$ and $\mathbb{F}_{11}$ agree with each result. Depth first searches over all the translations along random words, for starting points with $\deg_{x, w} g = 2$ and $3$, found no planar run. Only one branch, over $\mathbb{F}_5$ with $\deg_{x, w} g = 2$, had late translations that span $K^2$, and it ends at a point with $d = \rho = 1$ from which no step keeps $\rho$. Linear walks checked the conclusions of Theorem 3.18.6, and computations in a model of the Hahn field checked Theorem 3.18.11 and Proposition 3.18.14. A control with linear translations made the dominance fail, as Remark 3.18.12 predicts, so the tests can see failures. The translations of the tests are in finite fields, the words are finite and the searches have budgets, so the tests are not a proof.
+Computer tests with exact arithmetic over $\mathbb{F}_3$, $\mathbb{F}_9$, $\mathbb{F}_5$, $\mathbb{F}_{25}$, $\mathbb{F}_7$, $\mathbb{F}_{49}$ and $\mathbb{F}_{11}$ agree with each result for $\deg_{x, w} g < p$. Depth first searches over all the translations along random words, for starting points with $\deg_{x, w} g = 2$ and $3$, found no planar run. Only one branch, over $\mathbb{F}_5$ with $\deg_{x, w} g = 2$, had late translations that span $K^2$, and it ends at a point with $d = \rho = 1$ from which no step keeps $\rho$. Linear walks checked the conclusions of Theorem 3.18.6, and computations in a model of the Hahn field checked Theorem 3.18.11 and Proposition 3.18.14. A control with linear translations made the dominance fail, as Remark 3.18.12 predicts, so the tests can see failures. The tests for degree at least $p$ are in Remark 3.18.40. The translations of the tests are in finite fields, the words are finite and the searches have budgets, so the tests are not a proof.
 
 The outside results are those of Section 3.17: the pseudo Cauchy sequences of Kaplansky, the generalized stability theorem [Kuh10, Theorem 1.1] and the facts on the henselization in [Kuh-book], through Proposition 3.15.7. The use of the history of the divisor is from [CJS20]. None of the results has a Lean proof yet.
 
 Several questions are open.
 
-1. Hypothesis H1 and Conjectures L and L° for $\deg_{x, w} g \ge p$ (Remark 3.18.22).
-2. Statement D and Conjecture T for the planar runs and $\deg f \ge p$.
-3. Conjecture L° for the linear runs with a dominant index $h > 1$.
+1. Conjecture P (Conjecture 3.18.39) for $\deg_{x, w} g > p$, outside (C) and outside $K[[y, z]][x^p, w^p]$. The first case is $p = 2$ and $\deg_{x, w} g = 3$.
+2. Conjecture L° and the form $\operatorname{in} G_m \in K[x'_m]$ of H1 for the linear runs with $\deg_{x, w} g \ge p$ outside $K[[y, z]][x^p, w^p]$. The expected form is $\operatorname{in} G_m = c\, x_m'^{\,d}$ with $d \in \{\rho, \rho + 1\}$ and $\nu^G \ge \rho$ along both corner curves. Here the cleaning can remove terms of the coefficients, and the comparison with a run in three variables of Theorem 3.18.37 is not available.
+3. Conjecture L+ for the linear runs with an infinite number of nonzero translations outside $K[[y, z]][x^p, w^p]$, and Conjecture L° for the linear runs with a dominant index $h > 1$.

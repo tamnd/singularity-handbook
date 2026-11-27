@@ -4,6 +4,16 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 3.18 treats the corner runs in four variables with $\deg_{x, w} g \ge p$. It proves the conjecture T for the planar runs in each degree, with an additive dominant part, and Example 3.18.28 shows that the chain of Theorem 3.18.11 does not extend. It proves that there is no planar run when $\deg_{x, w} g \le p$, under the condition (C) and for $g \in K[[y, z]][x^p, w^p]$, so Conjecture L holds there. For $g \in K[[y, z]][x^p, w^p]$, and so for $B_1 x^p + B_2 w^p + B_0$ of each rank, it proves Conjecture L°, and Conjecture L+ for the runs with an infinite number of nonzero translations. It states Conjecture P as open, with the numerical evidence of research notes 64 and 67. The results come from research note 64 with the corrections of research note 67. The nodes are SG00000090 to SG00000096.
+
+### Changed
+
+- Volume 7, the intro of Section 3.18, Remarks 3.18.12 and 3.18.22, the notes and the open questions of Section 3.18 give the results for degree at least $p$.
+- Volume 7, Remark 3.17.34, the text after Theorem 3.17.29 and the open questions of Section 3.17 point to the new results. The class $B_1 x^p + B_2 w^p + B_0$ of rank $2$ is no longer open.
+- Volume 7, the intro of Chapter 3, and Volume 9, Section 3.19 and the intro of Chapter 3 give the results for degree at least $p$ and the status of the nodes SG00000090 to SG00000096.
+
 ## [0.4.64] - 2026-11-27
 
 ### Added
