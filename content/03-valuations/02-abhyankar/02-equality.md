@@ -25,7 +25,7 @@ and each term of the sum has positive value. So $F/(cx^{a_0})$ has value 0, and 
 $$\operatorname{rr}(\Gamma_w/\Gamma_v) + \operatorname{trdeg}(Lw/Kv) = \operatorname{trdeg}(L/K).$$
 Then $\Gamma_w/\Gamma_v$ is a finitely generated abelian group, and $Lw$ is a finitely generated field extension of $Kv$.
 
-Lean: `Singularity.valueGroup_fg_and_residueField_fg_of_trdeg_le` (with the elements $x_i$ and $y_j$ of Theorem 2.1.4 as hypotheses; their choice from the rational rank and the residue transcendence degree is not in Lean)
+Lean: `Singularity.valueGroup_fg_and_residueField_fg_of_rank_rat_add_trdeg_eq` (the form of the theorem), `Singularity.valueGroup_fg_and_residueField_fg_of_trdeg_le` (with the elements $x_i$ and $y_j$ given)
 
 *Proof.* Let $r = \operatorname{rr}(\Gamma_w/\Gamma_v)$ and $s = \operatorname{trdeg}(Lw/Kv)$. Choose $x_1, \dots, x_r$ and $y_1, \dots, y_s$ as in Theorem 2.1.4, with $r$ values independent modulo $\Gamma_v$ and $s$ residues that form a transcendence basis of $Lw/Kv$. Let $K_0$ be as in Lemma 2.2.1. By Theorem 2.1.4 the $r + s$ elements are algebraically independent over $K$. Since $r + s = \operatorname{trdeg}(L/K)$, the extension $L/K_0$ is algebraic, and it is finite because $L/K$ is finitely generated. By Corollary 2.1.3, $\Gamma_w/\Gamma_{w_0}$ is finite and $Lw$ is a finite extension of $K_0w_0$. By Lemma 2.2.1, $\Gamma_{w_0}/\Gamma_v \cong \mathbb{Z}^r$, so $\Gamma_w/\Gamma_v$ is an extension of a finite group by $\mathbb{Z}^r$, which is finitely generated. Also by Lemma 2.2.1, $K_0w_0 = Kv(\bar{y})$ is finitely generated over $Kv$, so $Lw$ is finitely generated over $Kv$. $\square$
 

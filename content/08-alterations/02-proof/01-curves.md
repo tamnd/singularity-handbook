@@ -61,7 +61,7 @@ Then $P$ is a domain of dimension $m + 1$. Let $X' \to X = \operatorname{Spec} P
 
 The blowup is an isomorphism over the complement of the closed subset $V(u, v, t_1, g)$ of $X$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.nodeChartEquiv` (chart 1 as the quotient by $(t_1 - us, v - sg)$), `Singularity.Algebra.nodeChartTwoEquiv` (chart 2 as the quotient by $(u - t_1 s, sv - g)$). Lean does not prove that these quotients are the blowup charts, that $P$ is a domain of dimension $m + 1$ or the statement over the complement of $V(u, v, t_1, g)$.
 
 *Proof.* The polynomial $uv - t_1 g$ has degree 1 in $u$, and its coefficient $v$ does not divide $t_1 g$, so it is irreducible, and $P$ is a domain of dimension $(m + 2) - 1 = m + 1$. In $P$ the element $u$ is not zero, so $P$ is a subring of its fraction field $F$, and $t_1/u, u/t_1 \in F$.
 

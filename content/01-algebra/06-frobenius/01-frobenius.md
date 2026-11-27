@@ -40,7 +40,7 @@ Lean: `Singularity.Algebra.boxBasis`, `Singularity.Algebra.finrank_powSubalgebra
 
 **Corollary 6.1.6.** Let $K$ be a perfect field of characteristic $p$ and let $S = K[[x_1, \dots, x_n]]$. Then $F^e_* S$ is a free $S$-module of rank $q^n$, where $q = p^e$. In particular, the Frobenius of $S$ is flat.
 
-Lean: `Singularity.Algebra.iterateFrobenius_finite_and_flat` (the map $F^e$ is finite and flat; the rank $q^n$ is not stated in Lean)
+Lean: `Singularity.Algebra.iterateFrobenius_finite_and_flat` (the map $F^e$ is finite and flat), `Singularity.Algebra.free_and_finrank_frobeniusPush` (the module $F^e_* S$ is free of rank $q^n$)
 
 *Proof.* The image of $F^e$ is the ring $K^q[[x_1^q, \dots, x_n^q]]$, and $K^q = K$ because $K$ is perfect. So $F^e$ is an isomorphism from $S$ onto $S_e$. Under this isomorphism, the $S$-module $F^e_* S$ is the ring $S$ as an $S_e$-module. By Proposition 6.1.5 it is free of rank $q^n$. A free module is flat. $\square$
 
