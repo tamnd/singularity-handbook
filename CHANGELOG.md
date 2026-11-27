@@ -6,11 +6,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Added
 
+- Volume 9, Section 3.24 treats the global step of resolution of 4-folds, for the track FP (tamnd/singularity#320, nodes SG000000BQ to SG000000C9). It proves that resolution of 4-folds by projective morphisms is equivalent to $\mathrm{PILU}_4$ and $\mathrm{Fund}_4$ (Theorems 3.24.4 and 3.24.5), and it writes the proof of Cutkosky in dimension 4: $\mathrm{Princ}_4$ and $\mathrm{Fac}_3^L$ give $\mathrm{Fund}_4$ (Theorem 3.24.13). It proves that $\mathrm{Fac}_3$ is false (Theorem 3.24.17 and Corollary 3.24.18), gives a toric pair of 4-folds where $\mathrm{Fac}_3^L$ and the weak condition (A$^{\rm w}$) fail (Construction 3.24.19, Theorem 3.24.20, Proposition 3.24.21), and explains why the step of Abhyankar breaks in dimension 4 (Proposition 3.24.22). It states $\mathrm{Fund}_4$, $\mathrm{Princ}_4$, Conjectures 3.24.24 and 3.24.25 as open, and it has ten exercises. The introduction of Part 3 has a new paragraph.
 - Volume 7, Section 4.5 treats the toric branches of Rule 61.9' at multiplicity $2p$ (nodes SG000000BE to SG000000BH). It defines the toric model, proves that $\omega$ never goes up in it and that each run with $\omega$ constant is finite (Theorem 4.5.9), and gives the lexicographic pair $(\omega, \ell)$ (Corollary 4.5.10). It identifies the hidden quantity of Proposition 4.4.14 as $h - 1 = \frac{3(e-2)}{22}$ (Proposition 4.5.11), proves that no lexicographic pair that starts with $\omega$ works for all steps of the rule (Proposition 4.5.14), and gives the germ 57 branch, a germ with $a_p = a_{2p} = 0$, a step that keeps $\omega$ and is not toric, the computations of research note 81, the open problems and exercises.
 
 ### Changed
 
 - The introduction of Volume 7, Chapter 4 has a sentence on Section 4.5.
+- The singularity line of `EDITION` is at the map commit bcda26f.
 
 ## [0.4.73] - 2026-11-27
 
