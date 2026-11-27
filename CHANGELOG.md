@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 4, Lemma 1.1.6 and Examples 2.3.6, 2.3.11, 2.3.12 and 2.3.13 name their Lean proofs from tamnd/singularity-lean#198. Lean proves the chart equations, the regularity tests by the Jacobian criterion and the singular points. It does not prove normality, the integral closure or the cohomology claims. Each Lean line says which part Lean proves.
+
 ## [0.4.59] - 2026-11-27
 
 ### Added

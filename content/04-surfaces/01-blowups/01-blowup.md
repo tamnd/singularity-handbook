@@ -104,7 +104,7 @@ $$F(x, x y_1, x z_1) = x^m F'(x, y_1, z_1),$$
 
 where $x$ does not divide $F'$ and $F'(0, y_1, z_1) = F_m(1, y_1, z_1)$. The strict transform of $V(F)$ in this chart is $V(F')$, and the exceptional divisor in this chart is $V(x)$.
 
-Lean: none yet
+Lean: `Singularity.exists_originXChart_eq_pow_mul`, `Singularity.originXChart_injective`, `Singularity.originXChart_of_isHomogeneous` (the chart algebra, not the claims on schemes)
 
 *Proof.* The ring $R[I/x] = k[x, y/x, z/x]$ is generated over $k$ by three elements, and its field of fractions $k(x, y, z)$ has transcendence degree 3. Thus the three generators are algebraically independent, and $R[I/x]$ is a polynomial ring in $x$, $y_1 = y/x$ and $z_1 = z/x$.
 

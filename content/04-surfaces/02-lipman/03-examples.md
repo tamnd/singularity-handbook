@@ -87,7 +87,7 @@ The exceptional curve of the first blowup is $V(x, z_1^p)$ in the $x$-chart. As 
 
 **Example 2.3.6.** Let $k$ be an algebraically closed field of characteristic $\ne 2$, and let $X = V(z^2 - x^4 - y^4) \subseteq \mathbb{A}^3_k$. Then $X$ is normal with one singular point at the origin. The blowup of $X$ at the origin is not normal. Its normalization $\tilde X$ is regular, so the process stops after one round. The exceptional curve $\tilde E$ of $\tilde X \to X$ is a regular projective curve with $\dim_k H^1(\tilde E, \mathcal{O}_{\tilde E}) = 1$, and the local ring $\mathcal{O}_{X,0}$ does not have a rational singularity.
 
-Lean: none yet
+Lean: `Singularity.quartic_xChart`, `Singularity.quartic_yChart`, `Singularity.quartic_zChart`, `Singularity.quarticNormHom_equation`, `Singularity.quartic_normalization_regular`, `Singularity.card_roots_one_add_X_pow_four`, `Singularity.quartic_charTwo` (the charts and the regularity of $C$, not the integral closure or $H^1$)
 
 *Proof.* *The surface.* Let $g = x^4 + y^4$ and $f = z^2 - g$. The partial derivatives are $-4x^3$, $-4y^3$ and $2z$. Since $2 \ne 0$ in $k$, their only common zero is the origin, and $f \in \mathfrak{m}^2$ there. The polynomial $g$ is the product of the four distinct factors $x - \zeta y$ with $\zeta^4 = -1$. They are distinct, since the derivative $4t^3$ of $t^4 + 1$ has no common root with it. Thus $g$ is not a square in $k(x, y)$, and $f$ is irreducible. By Lemma 1.2.6, $X$ is normal.
 
@@ -207,7 +207,7 @@ The usual equation $z^2 + x^2 y + y^3$ of $D_4$ has a bad reduction in character
 2. The blowup $X'$ of $X$ at the origin is normal. It has exactly three singular points $P_1, P_2, P_3$, all on the exceptional curve $E_0$, and $E_0 \cong \mathbb{P}^1_k$ with its reduced structure. Near each $P_j$, the surface $X'$ is isomorphic to $X_2 = V(ab - c^2)$ near the origin.
 3. The process stops after two blowups. The exceptional curves of the resolution $\tilde X \to X$ are $E_0$ and the curves $E_1, E_2, E_3$ over $P_1, P_2, P_3$. All four are projective lines with self-intersection $-2$. The curve $E_0$ meets each $E_j$ transversally in one point, and the $E_j$ with $j \ge 1$ are disjoint.
 
-Lean: none yet
+Lean: `Singularity.dFour_singular_origin`, `Singularity.dFour_xChart`, `Singularity.dFour_yChart`, `Singularity.dFour_zChart`, `Singularity.dFour_xChart_singular_iff`, `Singularity.dFour_order_z` (the charts and the singular points, not normality or part 3)
 
 *Proof.* 1. The partial derivatives are $F_x = y(2x + y)$, $F_y = x(x + 2y)$ and $F_z = 2z$. In characteristic 2 they are $y^2$, $x^2$ and $0$. A common zero on $X$ has $x = y = 0$, and then $z^2 = 0$. In characteristic $\ne 2$, a common zero has $z = 0$, so $xy(x + y) = 0$. If $x = 0$, then $F_x = y^2$ gives $y = 0$. If $y = 0$, then $F_y = x^2$ gives $x = 0$. If $y = -x$, then $F_x = -x^2$ gives $x = 0$. In each case the point is the origin, and $F \in \mathfrak{m}^2$ there. By Lemma 1.2.6, $X$ is normal.
 
@@ -237,7 +237,7 @@ The other equation behaves differently. Let $k$ have characteristic 2 and let $F
 2. The blowup $X'$ of $X$ at the origin is normal, with one singular point $Q$ on the exceptional curve $E_0 \cong \mathbb{P}^1_k$. Near $Q$ the surface $X'$ is isomorphic to $X_6 = V(ab - c^6)$ near the origin, and the curve $E_0$ corresponds to the curve $a = b = c^3$.
 3. The process stops after four blowups. The exceptional curves are $E_0$ and the chain $E_1, \dots, E_5$ of Proposition 2.3.10 for $m = 6$. All are projective lines with self-intersection $-2$, and $E_0$ meets $E_3$ transversally in one point and no other $E_i$. The dual graph is $E_6$.
 
-Lean: none yet
+Lean: `Singularity.eSix_xChart`, `Singularity.eSix_yChart`, `Singularity.eSix_zChart`, `Singularity.eSix_xChart_regular`, `Singularity.eSix_yChart_exceptional`, `Singularity.eSix_complete_square`, `Singularity.eSix_exceptional_curve` (the charts and the change of coordinates, not normality or part 3)
 
 *Proof.* 1. The partial derivatives are $3x^2$, $4y^3$ and $2z$. If the characteristic is not 3, a common zero has $x = y = z = 0$. In characteristic 3, write $x^3 = -z^2 - y^4$ and apply Lemma 2.3.4 with $w = x$ and $G = -z^2 - y^4$. Then $G_z = -2z$ and $G_y = -4y^3$, so a singular point has $y = z = 0$, and then $x^3 = 0$. In both cases the origin is the only singular point, and $X$ is normal by Lemma 1.2.6.
 
@@ -274,7 +274,7 @@ The equation $z^2 + x^3 + y^5$ is the equation of $E_8$ in characteristic 0. In 
 1. The scheme $X$ is normal with one singular point at the origin.
 2. The blowup of $X$ at the origin is normal. It has one singular point $Q$, the origin of the $y$-chart, and near $Q$ it is $V(z_1^2 + y^3 + y x_1^3)$.
 
-Lean: none yet
+Lean: `Singularity.eEight_xChart`, `Singularity.eEight_yChart`, `Singularity.eEight_zChart`, `Singularity.eEight_xChart_regular`, `Singularity.eEight_yChart_exceptional` (the charts, not part 1 or normality)
 
 *Proof.* 1. We apply Lemma 2.3.4 with a different variable in each case. For $p = 2$, take $w = z$ and $G = x^3 + y^5$, since $-1 = 1$. Then $G_x = x^2$ and $G_y = y^4$. For $p = 3$, take $w = x$ and $G = -z^2 - y^5$. Then $G_z = -2z = z$ and $G_y = -5y^4 = y^4$. For $p = 5$, take $w = y$ and $G = -z^2 - x^3$. Then $G_z = -2z = 3z$ and $G_x = -3x^2 = 2x^2$. In each case the two derivatives vanish only where both variables of $G$ are 0, and then $w^p = 0$. Thus the origin is the only singular point, and $X$ is normal by Lemma 1.2.6.
 
