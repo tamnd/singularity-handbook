@@ -48,7 +48,7 @@ An operator of order at most $0$ is the multiplication by $D(1)$. A $k$-derivati
 
 **Lemma 6.3.4.** Let $D \in \mathcal{D}^m_{A/k}$ and $E \in \mathcal{D}^n_{A/k}$, and let $c \in A$. Then $D + E \in \mathcal{D}^{\max(m, n)}_{A/k}$, $cD \in \mathcal{D}^m_{A/k}$ and $D \circ E \in \mathcal{D}^{m+n}_{A/k}$. If $(D_n)$ is a Hasse-Schmidt derivation of $A$ over $k$, then $D_n \in \mathcal{D}^n_{A/k}$ for each $n$. In particular, $\partial^{(\beta)} \in \mathcal{D}^{|\beta|}_{A/k}$ for $A = k[x_1, \dots, x_n]$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.IsDiffOp.add_max`, `Singularity.Algebra.IsDiffOp.mulLeft_mul`, `Singularity.Algebra.IsDiffOp.mul` and `Singularity.Algebra.IsDiffOp.of_hasseSchmidt` (the last claim on $\partial^{(\beta)}$ is not in Lean)
 
 *Proof.* The first two statements follow by induction on the order from $[D + E, a] = [D, a] + [E, a]$ and $[cD, a] = c[D, a]$. The third follows by induction on $m + n$ from $[D \circ E, a] = D \circ [E, a] + [D, a] \circ E$. For a Hasse-Schmidt derivation and $a, b \in A$,
 $$[D_n, a](b) = D_n(ab) - a D_n(b) = \sum_{i=1}^{n} D_i(a) D_{n-i}(b).$$
@@ -56,7 +56,7 @@ So $[D_n, a] = \sum_{i=1}^n D_i(a) \, D_{n-i}$. By induction on $n$ and the firs
 
 **Lemma 6.3.5.** Let $A$ have characteristic $p$, let $q = p^e$ and let $D \in \mathcal{D}^n_{A/k}$ with $n < q$. Then $D$ is linear over the subring $k[A^q]$ of $A$ that $k$ and the $q$-th powers generate.
 
-Lean: none yet
+Lean: `Singularity.Algebra.IsDiffOp.map_mul_of_mem_adjoin`
 
 *Proof.* For $a \in A$, let $\lambda_a$ and $\rho_a$ be the maps $E \mapsto a \circ E$ and $E \mapsto E \circ a$ on the group $\operatorname{End}_k(A)$. They commute, and $[E, a] = (\rho_a - \lambda_a)(E)$. The group $\operatorname{End}_k(A)$ has characteristic $p$, so $(\rho_a - \lambda_a)^q = \rho_a^q - \lambda_a^q = \rho_{a^q} - \lambda_{a^q}$. By induction on the order, applying $\rho_a - \lambda_a$ to $D$ a total of $n + 1$ times gives $0$. Since $q \ge n + 1$, we get $[D, a^q] = (\rho_a - \lambda_a)^q(D) = 0$. So $D$ commutes with the multiplication by each $q$-th power. It is $k$-linear, so it is $k[A^q]$-linear. $\square$
 
