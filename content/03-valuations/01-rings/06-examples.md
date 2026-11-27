@@ -18,7 +18,7 @@ For $a = (a_1, \dots, a_n) \in \mathbb{N}^n$ we write $x^a = x_1^{a_1} \cdots x_
 $$v(f) = \min\{a \cdot \gamma : c_a \ne 0\}.$$
 Then $v(f/g) = v(f) - v(g)$ defines a valuation of $k(x_1, \dots, x_n)/k$.
 
-Lean: none yet
+Lean: `Singularity.monomialAddValuationFrac`, `Singularity.monomialAddValuationFrac_mk'`, `Singularity.monomialAddValuationFrac_X`
 
 *Proof.* For $\delta \in \Gamma$ let $R_\delta$ be the $k$-span of the monomials $x^a$ with $a \cdot \gamma = \delta$. Then $k[x_1, \dots, x_n] = \bigoplus_\delta R_\delta$, and $R_\delta R_\varepsilon \subseteq R_{\delta + \varepsilon}$. For $f \ne 0$ write $f = \sum_\delta f_\delta$ with $f_\delta \in R_\delta$. Then $v(f)$ is the least $\delta$ with $f_\delta \ne 0$. Let $\operatorname{in}(f) = f_{v(f)}$ be the *initial form* of $f$.
 

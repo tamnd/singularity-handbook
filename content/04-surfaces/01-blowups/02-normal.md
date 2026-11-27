@@ -65,7 +65,7 @@ The examples of this volume are surfaces in $\mathbb{A}^3_k$. The next lemma sho
 
 **Lemma 1.2.6.** Let $k$ be a field, let $F \in k[x, y, z]$ be a nonconstant polynomial, and let $X = V(F) \subseteq \mathbb{A}^3_k$. Assume that $\operatorname{Sing}(X)$ is a finite set of closed points. Then $X$ is normal.
 
-Lean: none yet
+Lean: `Singularity.height_isMaximal_quotient_span_singleton_three`, `Singularity.isRegularLocalRing_of_height_le_one` (the dimension of the local rings and the condition $R_1$; the condition $S_2$ and the normality are not in Lean)
 
 *Proof.* Let $P = k[x, y, z]$ and $A = P/(F)$. We use the criterion of Serre: a Noetherian ring is normal if and only if it satisfies $R_1$ and $S_2$ [Mat, Theorem 23.8].
 
