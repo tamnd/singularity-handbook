@@ -78,7 +78,7 @@ The proof is complete when $\operatorname{char} \kappa = 0$ or $\kappa$ is perfe
 
 **Corollary 4.4.8.** Let $(R, \mathfrak{m}, \kappa)$ be a complete Noetherian local ring that contains a field, and let $e = \operatorname{edim} R$. Then $R$ is a quotient of $\kappa[[X_1, \dots, X_e]]$. In particular, $R$ is a quotient of a complete regular local ring.
 
-Lean: none yet
+Lean: `Singularity.Algebra.exists_surjective_mvPowerSeries_residueField` (with a coefficient field as a hypothesis, and with $e$ the minimal number of generators of $\mathfrak{m}$)
 
 *Proof.* Take a coefficient field by Theorem 4.4.4 and $e$ generators of $\mathfrak{m}$ by Lemma 1.1.1, and apply Theorem 4.4.6. The ring $\kappa[[X_1, \dots, X_e]]$ is complete and regular by Example 4.2.2 and Corollary 4.3.4. $\square$
 

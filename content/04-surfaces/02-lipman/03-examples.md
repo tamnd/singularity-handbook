@@ -113,7 +113,7 @@ We compare Example 2.3.6 with the simplest singularity of Proposition 2.3.2. Her
 2. The divisor $E$ is isomorphic to $\mathbb{P}^1_k$, and its conormal sheaf is $\mathcal{O}_{\mathbb{P}^1}(2)$. Thus $E \cdot E = -2$, with $E \cdot E$ defined as in Definition 1.1.8.
 3. $H^0(\tilde{X}, \mathcal{O}_{\tilde{X}}) = k[x, y, z]/(xy - z^2)$ and $H^1(\tilde{X}, \mathcal{O}_{\tilde{X}}) = 0$.
 
-Lean: none yet
+Lean: `Singularity.map_chartU_span_X`, `Singularity.map_chartV_span_X`, `Singularity.quadricConeGlue_exceptional_generator` (parts 1 and 2 for the rings of the charts; the scheme, the sheaf $\mathcal{O}(2)$ and part 3 are not in Lean)
 
 *Proof.* 1. By Proposition 2.3.2 with $n = 2$, the $x$-chart of $\tilde{X}$ is $V(y_1 - z_1^2) \subseteq \operatorname{Spec} k[x, y_1, z_1]$, with $y = xy_1$ and $z = xz_1$. It is the graph of $y_1 = z_1^2$, so it is $U = \operatorname{Spec} k[x, z_1]$, with $y = xz_1^2$. In the same way the $y$-chart is $V = \operatorname{Spec} k[y, z_2]$ with $z = yz_2$ and $x = yz_2^2$. The $z$-chart is $V(x_1y_1 - 1)$ with $x = zx_1$. On it $x_1 = x/z$ is a unit, so $x$ generates $\mathfrak{m}\mathcal{O}_{\tilde{X}}$ there. By the remark after the proof of Theorem 1.1.2, the $z$-chart lies in the $x$-chart. Thus $U$ and $V$ cover $\tilde{X}$. By $(\ast)$ in Section 1.1, $U \cap V$ is the open set of $U$ where $y/x = z_1^2$ is a unit, that is, $\operatorname{Spec} k[x, z_1, z_1^{-1}]$. On it $z_2 = z/y = xz_1/(xz_1^2) = z_1^{-1}$. Both charts are planes, so $\tilde{X}$ is regular.
 

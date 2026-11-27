@@ -41,7 +41,7 @@ $$\delta_\alpha(h; u; X) = \min \{ |x|_\alpha : x \in \Delta(h; u; X) \}.$$
 3. $\delta_\alpha(h; u; X) = \min_{1 \le i \le m} \mu_\alpha(f_{i, X})/i$ for each $\alpha \in \mathbb{R}_{> 0}^n$.
 4. Let $\Delta$ and $\Delta'$ be two such polyhedra. Then $\Delta' \subseteq \Delta$ if and only if $\min_{\Delta'} |\cdot|_\alpha \ge \min_{\Delta} |\cdot|_\alpha$ for each $\alpha \in \mathbb{R}_{> 0}^n$.
 
-Lean: none yet
+Lean: `Singularity.exists_eq_inv_factorial_smul_of_mem_extremePoints_projPolyhedron` (part 1), `Singularity.projPolyhedron_eq_empty_iff_of_monic` (part 2), `Singularity.sInf_linWeight_projPolyhedron` (part 3, with an infimum), `Singularity.le_linWeight_of_subset` (one direction of part 4)
 
 *Proof.* The polyhedron is the convex hull of finitely many points $a/i$ plus the orthant, so its vertices are among the points $a/i$ with $a \in \mathbb{N}^n$ and $1 \le i \le m$. Since $i$ divides $m!$, $a/i \in \frac{1}{m!} \mathbb{N}^n$. This is part 1. The polyhedron is empty if and only if each $\mathcal{S}(f_{i, X})$ is empty, that is, each $f_{i, X} = 0$. This is part 2. A linear function with positive coefficients has the same minimum on a set and on its convex hull, and it does not decrease in the directions of the orthant. So its minimum on $\Delta(h; u; X)$ is the minimum of $|a|_\alpha / i$ over $a \in \mathcal{S}(f_{i, X})$ and $i$. Each element of the support of $f_{i, X}$ is above an element of $\mathcal{S}(f_{i, X})$, so this minimum is $\min_i \mu_\alpha(f_{i, X})/i$. This is part 3. In part 4, the implication from left to right is clear. Conversely, let $x \in \Delta' \setminus \Delta$. Then $\Delta \ne \emptyset$. The set $\Delta$ is closed and convex, so there is a linear function $\ell$ with $\ell(x) < \min_\Delta \ell$. Since $\Delta + \mathbb{R}_{\ge 0}^n = \Delta$, the coefficients of $\ell$ are nonnegative. Let $\ell_t = \ell + t \sum_j x_j$ for $t > 0$. Since $\Delta \subseteq \mathbb{R}_{\ge 0}^n$, we have $\min_\Delta \ell_t \ge \min_\Delta \ell$, and $\ell_t(x) < \min_\Delta \ell$ for small $t$. Then $\ell_t = |\cdot|_\alpha$ with $\alpha \in \mathbb{R}_{> 0}^n$, and $\min_{\Delta'} |\cdot|_\alpha \le |x|_\alpha < \min_\Delta |\cdot|_\alpha$. $\square$
 
@@ -64,7 +64,7 @@ where $c_i$ is the coefficient of $u^{iy}$ in $f_{i, X}$, and $c_i = 0$ if $iy \
 
 **Lemma 3.1.4 (vertex preparation).** Let $S = k[[u]]$, let $y$ be a solvable vertex of $\Delta(h; u; X)$ with $\operatorname{in}_y h = (X - \lambda U^y)^m$, and let $Z = X - \lambda u^y$. Then $\Delta(h; u; Z) \subseteq \Delta(h; u; X)$ and $y \notin \Delta(h; u; Z)$.
 
-Lean: none yet
+Lean: `Singularity.projPolyhedron_taylor_monomial_subset_self`, `Singularity.notMem_projPolyhedron_taylor_of_isSolvable`, `Singularity.projPolyhedron_taylor_ssubset_of_isSolvable`
 
 *Proof.* Let $\varphi = \lambda u^y$, so $\mu_\alpha(\varphi) = |y|_\alpha$ for each $\alpha$. Let $\alpha \in \mathbb{R}_{> 0}^n$ and $\delta = \delta_\alpha(h; u; X)$. By Lemma 3.1.2(3), $\mu_\alpha(f_{j, X}) \ge j \delta$ for each $j$, and $|y|_\alpha \ge \delta$ since $y \in \Delta(h; u; X)$. By (3.1),
 $$\mu_\alpha(f_{i, Z}) \ge \min_{0 \le j \le i} \bigl( \mu_\alpha(f_{j, X}) + (i - j) \mu_\alpha(\varphi) \bigr) \ge \min_j \bigl( j \delta + (i - j) \delta \bigr) = i \delta.$$

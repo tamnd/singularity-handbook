@@ -16,7 +16,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - The introduction of Volume 7, Chapter 4 has a sentence on Section 4.5.
-- Volume 1, Theorem 4.4.6, Corollary 6.1.6, Lemma 6.4.3, Corollary 6.4.4, Proposition 6.4.5 and Example 6.4.9, Volume 2, Lemma 3.2.2, Volume 3, Example 1.6.7, Lemma 2.2.1 and Theorem 2.2.2, Volume 4, Example 3.1.5 and Volume 8, Lemma 2.1.3, Corollary 2.1.4 and Proposition 2.1.5 have new or longer Lean lines.
+- Volume 1, Theorem 4.4.6, Corollary 4.4.8, Corollary 6.1.6, Lemma 6.4.3, Corollary 6.4.4, Proposition 6.4.5 and Example 6.4.9, Volume 2, Lemma 3.2.2, Proposition 3.2.10 and Corollary 3.2.11, Volume 3, Example 1.6.7, Lemma 2.2.1 and Theorem 2.2.2, Volume 4, Example 2.3.7 and Example 3.1.5, Volume 6, Lemma 3.1.2 and Lemma 3.1.4 and Volume 8, Lemma 2.1.3, Corollary 2.1.4 and Proposition 2.1.5 have new or longer Lean lines.
 - The singularity line of `EDITION` is at the map commit bcda26f.
 
 ## [0.4.73] - 2026-11-27
