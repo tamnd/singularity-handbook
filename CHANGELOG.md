@@ -6,7 +6,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Added
 
+- Volume 9, Section 3.22 treats the $p$-closed foliations on $\mathbb{A}^4$ that a torus fixes, for the track FO (nodes SG000000A7 to SG000000AR). For the diagonal maximal torus it classifies them by the subspaces of $\mathbb{F}_p^4$ (Theorem 3.22.6) and resolves them by weighted blowups with weights less than $p$ (Theorem 3.22.10). It gives invariant foliations for tori of rank 1, 2 and 3 with no toric resolution (Examples 3.22.14 and 3.22.17), and states that Example 3.22.14 is not known to be resolved. For a linear action of $\mathbb{G}_m$ with positive weights prime to $p$ it reduces the problem to threefolds with a twist (Proposition 3.22.18) and proves the results of note 73 for the additive case (Theorem 3.22.23 to Proposition 3.22.27). The section has open problems and exercises. The introduction of Part 3 has a new paragraph.
 - Volume 7, Section 4.4 studies the residual slope $\omega$ at multiplicity $2p$ (nodes SG0000009K to SG0000009T). It proves that $\omega$ goes up under Rule 61.9' (Theorem 4.4.7, with the corrected value of $\sigma^*$, and Theorem 4.4.8, with the jump to $\frac{p+1}{p}$), that the low flag is intrinsic in R1 and that no flag correction is monotone (Lemma 4.4.10, Example 4.4.11, Proposition 4.4.12), that the rule terminates when $\omega = 0$ (Theorem 4.4.13), and the period-5 mechanism of the long runs (Proposition 4.4.14). It gives the computations of research note 72 on the 81 cut nodes with $\omega > 0$ as [C], names the one open subtree, and states that the termination for $\omega > 0$ is open (Conjecture 4.4.6).
+
+### Changed
+
+- The singularity line of `EDITION` is at the map commit 5edc8e3.
 
 ## [0.4.72] - 2026-11-27
 
