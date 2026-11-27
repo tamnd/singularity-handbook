@@ -32,13 +32,13 @@ For the second half, de Jong finds new coordinates $U', V'$ of $A[[U, V]]$ and a
 
 **Lemma 2.1.3.** Let $(A, \mathfrak{m}_A)$ be a regular local ring of dimension $r$, let $h \in \mathfrak{m}_A$, and let $B = A[[u, v]]/(uv - h)$. Then $B$ is regular if and only if $h \notin \mathfrak{m}_A^2$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isRegularLocalRing_quotient_span_singleton_iff` (the general step), `Singularity.Algebra.isRegularLocalRing_quotient_X_mul_X_sub_C_iff` (with the regularity of $A[[u, v]]$ as a hypothesis)
 
 *Proof.* The ring $P = A[[u, v]]$ is a regular local ring of dimension $r + 2$, with maximal ideal $\mathfrak{n} = \mathfrak{m}_A P + (u, v)$, and $\mathfrak{n}/\mathfrak{n}^2 = \mathfrak{m}_A/\mathfrak{m}_A^2 \oplus \kappa u \oplus \kappa v$ with $\kappa = A/\mathfrak{m}_A$ [Mat]. A regular local ring is a domain (Volume 1, Theorem 1.3.3), and $uv - h$ is a nonzero element of $\mathfrak{n}$. In a Noetherian local domain, the quotient by a nonzero element of the maximal ideal has dimension one less, since a chain of primes that contain the element extends by the prime 0, and the inequality in the other direction is the principal ideal theorem. So $\dim B = r + 1$. The maximal ideal of $B$ has the cotangent space $\mathfrak{n}/(\mathfrak{n}^2 + (uv - h))$. Since $uv \in \mathfrak{n}^2$, the image of $uv - h$ in $\mathfrak{n}/\mathfrak{n}^2$ is the image of $-h$, which lies in the summand $\mathfrak{m}_A/\mathfrak{m}_A^2$. If $h \notin \mathfrak{m}_A^2$, this image is not zero, the cotangent space has dimension $r + 1 = \dim B$, and $B$ is regular. If $h \in \mathfrak{m}_A^2$, the image is zero, the cotangent space has dimension $r + 2 > \dim B$, and $B$ is not regular. $\square$
 
 **Corollary 2.1.4.** In Lemma 2.1.3, let $t_1, \dots, t_r$ be a regular system of parameters of $A$ and $h = \varepsilon \, t_1^{n_1} \cdots t_r^{n_r}$ with $\varepsilon$ a unit and $n_i \ge 0$, not all 0. Then $B$ is regular if and only if $n_1 + \dots + n_r = 1$.
 
-Lean: `Singularity.Algebra.mul_prod_pow_notMem_sq_iff`, `Singularity.Algebra.iff_sum_eq_one_of_iff_notMem_sq` (with Lemma 2.1.3 as a hypothesis)
+Lean: `Singularity.Algebra.mul_prod_pow_notMem_sq_iff`, `Singularity.Algebra.iff_sum_eq_one_of_iff_notMem_sq` (with Lemma 2.1.3 as a hypothesis), `Singularity.Algebra.isRegularLocalRing_quotient_X_mul_X_sub_C_monomial_iff` (with the regularity of $A[[u, v]]$ as a hypothesis)
 
 *Proof.* If $\sum n_i \ge 2$, then $h \in \mathfrak{m}_A^2$. If $\sum n_i = 1$, then $h = \varepsilon t_i$ for one $i$, and $t_i \notin \mathfrak{m}_A^2$. Apply Lemma 2.1.3. $\square$
 
