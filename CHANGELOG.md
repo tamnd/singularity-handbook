@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 7, Section 4.4 studies the residual slope $\omega$ at multiplicity $2p$ (nodes SG0000009K to SG0000009T). It proves that $\omega$ goes up under Rule 61.9' (Theorem 4.4.7, with the corrected value of $\sigma^*$, and Theorem 4.4.8, with the jump to $\frac{p+1}{p}$), that the low flag is intrinsic in R1 and that no flag correction is monotone (Lemma 4.4.10, Example 4.4.11, Proposition 4.4.12), that the rule terminates when $\omega = 0$ (Theorem 4.4.13), and the period-5 mechanism of the long runs (Proposition 4.4.14). It gives the computations of research note 72 on the 81 cut nodes with $\omega > 0$ as [C], names the one open subtree, and states that the termination for $\omega > 0$ is open (Conjecture 4.4.6).
+
 ## [0.4.72] - 2026-11-27
 
 ### Added
