@@ -90,7 +90,7 @@ The first product contains the square $x_2^2 x_4^2$, and the translation $Z' \ma
 $$F' = x_1 x_2^2 x_3 x_4^2 + x_1 x_2^2 x_4^2 + x_2^2 x_3 x_4^2 + x_1^2 x_3^3 x_4^3 + x_1^2 x_3^2 x_4^3 + x_3^3 x_4^3 + x_3^2 x_4^3.$$
 Its order is $5 \ge 2$, so the point $x'$ has $m(x') = 2$, and $\delta(x') = 5/2$. The new divisor is $E' = \operatorname{div}(x_2 x_4)$, since $t_2 = 0$ and $t_1, t_3 \ne 0$. The smallest exponents of $x_2$ and $x_4$ are $0$ and $2$, so $\epsilon(x') = 5 - 2 = 3 = \epsilon(x) + 1$. The initial form is $x_1 x_2^2 x_4^2 + x_2^2 x_3 x_4^2 + x_3^2 x_4^3$. The variable $x_1$ is not in $E'$, and it has the exponent 1 in the first monomial. By Lemma 4.3.1, $\omega(x') = \epsilon(x') - 1 = 2$. So $\iota(x') = \iota(x)$, while $\epsilon$ goes up. The point $x$ satisfies $\epsilon(x) = \omega(x) = 2$ and $\delta(x) = 2 \in \mathbb{N}$, as Corollary 4.3.2 says it must.
 
-Lean: none yet
+Lean: `Singularity.Examples.example_4_3_3_ord`, `Singularity.Examples.example_4_3_3_pderiv`, `Singularity.Examples.example_4_3_3_strictTransform`, `Singularity.Examples.example_4_3_3_ord'` (the polynomial computations, with polynomials in place of power series). Lean does not prove the values of $\omega$ and $\iota$, or the condition (E).
 
 Example 4.3.3 is the dimension 4 analogue of Example 3.3.1. The mechanism is the same: a translation makes a square appear in the term of smallest order, and cleaning removes it. The example is walk 207, step 1, of the case $n = 4$ in the run `2026-11-25-e4-p2-b049ce95` of the lab. The engine gives the same values.
 
@@ -131,7 +131,7 @@ Proposition 4.3.4 proves that $\omega$ does not go up at each step of a walk to 
 
 In each chart the bound of Proposition 4.3.4(3) is attained. All four coordinates are in $E'$, so $\omega(x') = \epsilon(x') \le 2 = \omega(x)$. In the $x_2$-chart the monomial $x_1 x_2^2 x_3$ is the image of itself, since $|a| - p = 2 = a_2$. Its exponent in $x_2$ is now equal to $r'_2$, and so $\epsilon$ drops by $a_2 - r_2 = 2$. We computed the table with SymPy and checked it by hand with the formula $a'_j = |a| - p$.
 
-Lean: none yet
+Lean: `Singularity.Examples.example_4_3_5_chart_0`, `Singularity.Examples.example_4_3_5_ord_0`, `Singularity.Examples.example_4_3_5_ord_3`, `Singularity.Examples.example_4_3_5_blowupDivisor` (the four charts and the values of the order and of $\epsilon$). Lean does not prove the values of $\omega$ and $\iota$.
 
 **Example 4.3.6.** Let $p = 3$, $n = 4$, $E = \operatorname{div}(x_1 x_2 x_3 x_4)$ and
 $$F = x_1^2 x_2^4 - x_1^5 x_2 + x_1^2 x_2 x_3^4 + x_1^2 x_2 x_4^4.$$
