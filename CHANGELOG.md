@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 7, Section 3.14 names the Lean proofs of Lemma 3.14.3, of parts 1 to 3 of Theorem 3.14.7 with the inequalities of Lemma 3.14.6 as a hypothesis, and of parts 1 and 2 of Example 3.14.9. They are in `Singularity/Invariant/OriginRunsCorner.lean` of singularity-lean 0.4.43. Volume 9, Section 3.16 reports the same Lean coverage.
 - Volume 1 names the Lean proofs of Examples 1.10.7, 1.10.8, 2.5.8, 2.5.9, 2.5.10, 3.2.6, 4.1.10 and 6.1.4 and of Corollary 4.1.9. They come from pull request 181 of singularity-lean. For the blowup charts and the umbrella, the Lean proof covers only a part of the statement, and the Lean line says which part.
 
 ## [0.4.52] - 2026-11-27
