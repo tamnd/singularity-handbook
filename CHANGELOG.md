@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 7, Lemma 3.18.30 has a Lean line: `IsCornerWord.dominantDerivative` proves the dominant derivative along a planar corner run in the Hahn model.
 - Volume 7, Proposition 3.18.29 has a Lean line: `IsCornerWord.leastTerm` proves the least term along a planar corner run in the Hahn model.
 - Volume 7, Theorem 3.18.26 has a new Lean line for part 3: `lambda_le_of_frob` and `lambda_le_corner` show that the minimum $\Lambda(f)$ is attained only at the indices $p^e e_i$.
 
