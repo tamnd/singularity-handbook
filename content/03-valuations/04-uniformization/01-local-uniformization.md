@@ -24,7 +24,7 @@ Zariski proved resolution in characteristic 0 up to dimension 3 in two steps [Za
 
 **Proposition 4.1.2.** Let $X$ be a model of $K/k$ that is proper over $k$, and assume that each valuation of $K/k$ has local uniformization. Then there are finitely many models $X_1, \dots, X_m$ and proper birational morphisms $X_i \to X$ with this property: each valuation of $K/k$ has a regular center on at least one $X_i$.
 
-Lean: none yet
+Lean: `Singularity.isOpen_setOf_regularCenter`, `Singularity.exists_finset_affineModel_regularCenter` (for affine models, with the openness of the regular locus as a hypothesis). The proper birational models are not in Lean yet.
 
 *Proof.* Let $v$ be a valuation of $K/k$. By Proposition 1.4.4, $v$ has a center on $X$. By local uniformization there is a proper birational morphism $X_v \to X$ from a model $X_v$ such that the center $x_v$ of $v$ on $X_v$ is regular. Let $\operatorname{Spec} B_v$ be an affine open subset of $X_v$ that contains $x_v$. Then $B_v$ is a finitely generated $k$-algebra and a domain with $\operatorname{Frac} B_v = K$. Also $B_v \subseteq \mathcal{O}_{X_v, x_v} \subseteq \mathcal{O}_v$. Let $G_v$ be the regular locus of $\operatorname{Spec} B_v$. It is open by Theorem 5.3.3 of Volume 1, and it contains $x_v$.
 

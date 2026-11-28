@@ -51,7 +51,7 @@ The exceptional curve of the first blowup is the fibre over the origin. For $n \
 
 **Remark 2.3.3.** Let $k$ have characteristic $p$ and let $p$ divide $n$. Then $F_z = -n z^{n-1} = 0$, but the computation above does not change. For $n = p$, the projection $(x, y, z) \mapsto (x, y)$ makes the function field $k(x, y)(z)$ of $X_p$ a purely inseparable extension of $k(x, y)$ of degree $p$, since $z^p = xy$ and $xy$ is not a $p$-th power in $k(x, y)$. Thus a purely inseparable cover of the plane can have a singularity that the process resolves as in characteristic 0.
 
-Lean: none yet
+Lean: `Singularity.irreducible_X_pow_sub_xy`, `Singularity.X_pow_sub_C_eq_sub_pow`, `Singularity.derivative_C_sub_X_pow_eq_zero` (the field extension of degree $p$ and its inseparability). The statement on the surface is not in Lean yet.
 
 ### Purely inseparable equations
 
@@ -131,7 +131,7 @@ Let $Y$ be a regular integral separated Noetherian scheme. Each local ring of $Y
 
 **Definition 2.3.8.** Let $Y$ be as above, let $\kappa$ be a field, and let $C \subseteq Y$ be an integral closed subscheme with $C \cong \mathbb{P}^1_\kappa$. For a Cartier divisor $D$ on an open set $V \supseteq C$, the *intersection number* of $D$ and $C$ is $D \cdot C = \deg \mathcal{O}_V(D)|_C$.
 
-Lean: none yet
+Lean: `Singularity.IsPrincipalRelation`, `Singularity.diag_eq_of_isPrincipalRelation`, `Singularity.eEightMatrix_mulVec_fundamentalCycle`, `Singularity.aFourMatrix_isPrincipalRelation_z` (the numerical relations for explicit chains and for $E_8$). Intersection numbers as degrees are not in Lean yet.
 
 For $D = E$ in the situation of Theorem 1.1.7, this is Definition 1.1.8. The number only depends on $D$ near $C$.
 

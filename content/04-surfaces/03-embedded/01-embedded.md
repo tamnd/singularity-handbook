@@ -112,7 +112,7 @@ Part 3 also says that $C' \cdot E = m$ in the sense of Lemma 2.3.9, part 2. For 
 1. After at most $\delta(C)$ blowups the strict transform of $C$ is regular.
 2. In $S_n$, the reduced total transform $D_n$, which is the union of the strict transform $C_n$ of $C$ and the strict transforms of all exceptional curves, is a divisor with simple normal crossings in the sense of Definition 3.1.2.
 
-Lean: none yet
+Lean: `Singularity.blowups_le_delta`, `Singularity.exists_iterate_eq_zero_le` (part 1, the count, with Lemma 3.1.7 (5) as a hypothesis). Part 2 is not in Lean yet.
 
 *Proof.* *Step 1: the strict transform.* If $C$ is not regular, blow up a singular point $P$ of $C$, with multiplicity $m \ge 2$. By Lemma 3.1.7, part 5, the number $\delta$ of the strict transform is $\delta(C) - m(m-1)/2 \le \delta(C) - 1$. The blowup is an isomorphism away from $P$, so the other points do not change. Repeat. After at most $\delta(C)$ steps, $\delta = 0$, and the strict transform is regular.
 
@@ -128,7 +128,7 @@ The first part of the theorem is in [Har, Section V.3], where the invariant is t
 
 **Corollary 3.1.9.** Let $C \subseteq S$ and $P$ be as above. Run Step 1 of the proof only at $P$ and at the points over $P$. Then $\delta_P(C) = \sum_Q m_Q(m_Q - 1)/2$, where $Q$ runs over the centers of the blowups, and $m_Q$ is the multiplicity of the strict transform of $C$ at $Q$.
 
-Lean: none yet
+Lean: `Singularity.delta_eq_sum_add`, `Singularity.delta_eq_sum_of_blowups`, `Singularity.cuspPair_delta` (with Lemma 3.1.7 (5) as a hypothesis).
 
 *Proof.* Use induction on the number of blowups and Lemma 3.1.7, part 5. At the end the strict transform is regular over $P$, so the remaining $\delta$ is 0. $\square$
 

@@ -38,7 +38,7 @@ When $(K, v)$ is henselian, Theorem 3.1.2 says $ef \le n$ for the unique extensi
 $$n = p^\nu \cdot e \cdot f$$
 for an integer $\nu \ge 0$.
 
-Lean: none yet
+Lean: `Singularity.ramificationIdx_mul_inertiaDeg_eq_finrank_of_primesOver_eq`, `Singularity.ramificationIdx_mul_inertiaDeg_eq_finrank_of_isLocalRing`, `Singularity.ramificationIdx_mul_inertiaDeg_eq_finrank_fractionRing` (the case with one prime above, where the defect is 1). The theorem for a general henselian field is not in Lean yet.
 
 We cite this from [Kuh-book]. The proof reduces to a tower of extensions of degree prime to $p$, where the defect is 1, and extensions of degree a power of $p$. In residue characteristic 0 the theorem gives $n = ef$.
 

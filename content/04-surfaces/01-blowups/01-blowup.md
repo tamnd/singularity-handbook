@@ -154,17 +154,17 @@ For an invertible sheaf $\mathcal{L}$ on $\mathbb{P}^1_\kappa$ there is a unique
 
 **Definition 1.1.8.** In the situation of Theorem 1.1.7, the *self-intersection* of $E$ is $E \cdot E = \deg \mathcal{O}_{X'}(E)|_E$, where $\mathcal{O}_{X'}(E) = \mathcal{I}_E^{-1}$.
 
-Lean: none yet
+Lean: `Singularity.IsPOneTransition`, `Singularity.IsPOneTransition.unique`, `Singularity.IsPOneTransition.unit_change` (the degree of a line bundle on $\mathbb{P}^1$ given by one transition function). The correspondence with line bundles on $\mathbb{P}^1$ is not in Lean yet.
 
 **Corollary 1.1.9.** In the situation of Theorem 1.1.7, $E \cdot E = -1$.
 
-Lean: none yet
+Lean: `Singularity.conormal_dual_degree`, `Singularity.exceptional_selfIntersection_eq_neg_one` (the computation of the degree, in the model by transition functions). The conormal sheaf on schemes is not in Lean yet.
 
 *Proof.* The restriction $\mathcal{I}_E|_E = \mathcal{I}_E \otimes \mathcal{O}_E$ is $\mathcal{I}_E/\mathcal{I}_E^2$. Thus $\mathcal{O}_{X'}(E)|_E$ is the dual of $\mathcal{I}_E/\mathcal{I}_E^2$. By Theorem 1.1.7 this dual is $\mathcal{O}(-1)$, which has degree $-1$. $\square$
 
 **Remark 1.1.10.** For a regular projective surface over an algebraically closed field, $E \cdot E$ is the intersection number of [Har, Section V.3], and the corollary is the formula $E^2 = -1$ there. On such a surface, a curve $C \cong \mathbb{P}^1$ with $C \cdot C = -1$ is an *exceptional curve of the first kind*. The theorem of Castelnuovo says that each such curve comes from the blowup of a point on another regular projective surface [Har, Section V.5]. We use neither fact.
 
-Lean: none yet
+Lean: `Singularity.strictTransform_selfIntersection` (the numerical part). The projection formula is not in Lean yet.
 
 ### The blowup along a regular curve
 

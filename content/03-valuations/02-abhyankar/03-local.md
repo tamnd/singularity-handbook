@@ -42,7 +42,7 @@ For part 2, note that $\mathfrak{p} \subseteq \mathcal{O}_v \subseteq W$. Let $z
 **Theorem 2.3.3 (Abhyankar).** Let $(R, \mathfrak{m}, \kappa)$ be a Noetherian local domain with field of fractions $K$, and let $v$ be a valuation of $K$ that dominates $R$. Then
 $$\operatorname{rr} \Gamma_v + \operatorname{trdeg}(Kv/\kappa) \le \dim R.$$
 
-Lean: none yet
+Lean: `Singularity.abhyankar_local_of_isDiscreteValuationRing` (the case of a discrete valuation ring), `Singularity.add_le_of_choose_mul_choose_le` (the numerical step of the proof). The length bounds for a general ring are not in Lean yet.
 
 *Proof.* We use induction on $d = \dim R$. If $d = 0$, then $R = K$ is a field. Then $\mathfrak{m}_v \cap K = 0$, so $v$ is trivial and $Kv = K = \kappa$. Let $d \ge 1$. Choose generators of $\mathfrak{m}$, and let $\mu > 0$ be the least value of one of them. Then $v(x) \ge \mu$ for each $x \in \mathfrak{m}$. Let $\Delta$ be the set of $\gamma \in \Gamma_v$ with $|\gamma| \le k\mu$ for some integer $k$. It is the smallest convex subgroup that contains $\mu$. Let $\mathfrak{q} = \{x \in R : v(x) > \Delta\}$. This is $\mathfrak{p}_\Delta \cap R$, a prime ideal of $R$. It is not $\mathfrak{m}$, since $\mathfrak{m}$ has an element of value $\mu \in \Delta$.
 
