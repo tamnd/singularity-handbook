@@ -4,10 +4,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 9, Section 3.29 treats embedded resolution of 3-folds as the central open problem. Theorem 3.29.11 proves that embedded resolution of 3-folds with an isomorphism clause over the snc locus gives the weak principalization $\mathrm{Princ}_4^{\rm w}$, in four steps, and Theorem 3.29.12 proves that the form without the clause gives a very weak principalization over each field. Example 3.29.8 shows that one hypersurface does not suffice, and the gaps (G1) to (G4) are listed. Theorem 3.29.19 proves that embedded local uniformization of 3-folds gives $\mathrm{PILU}_4$ for each valuation without defect, in each multiplicity, with the toric chart Lemma 3.29.15 and the unit absorption Lemma 3.29.16. Problem 3.29.23 states the open case (D) for valuations with defect, Examples 3.29.24, 3.29.25 and 3.29.27 treat a defect example, the cusp $x^2 + y^3$ for $p \ge 5$ and $x^2 + y^{2p+1}$, Lemma 3.29.28 gives embedded local uniformization from embedded resolution, and the section explains why the counterexample of Cutkosky does not refute (D).
+
 ### Changed
 
 - Volume 4, Remark 2.1.4, Volume 5, Lemma 4.3.12 and Corollary 4.4.17, and Volume 8, Example 2.2.3 and Lemmas 2.3.3 and 2.3.4, have Lean lines.
 - Volume 7, Lemma 3.18.30 has a Lean line: `IsCornerWord.dominantDerivative` proves the dominant derivative along a planar corner run in the Hahn model.
+- Volume 9, Section 2.5 has a new critical path with embedded resolution of 3-folds as the central node, a new row of the route table, new lines in the diagram, and an updated list of open problems, in which $\mathrm{Princ}_4^{\rm w}$ is no longer a separate node. The tracks NW and FO cite [AT26] and [MN26], both checked at the level of the abstract only.
+- Volume 9, Sections 3.24 and 3.25 and the introduction of Part 3 cite Section 3.29.
+- Volume 9, Sections 2.5, 3.23 and 3.25 give the full data of [CJS20], arXiv 0905.2191 with its book version LNM 2270, and of [Kuh10b], Illinois J. Math. 54 (2010), arXiv 1003.5639, which is not the survey arXiv 1004.2135.
 - Volume 7, Proposition 3.18.29 has a Lean line: `IsCornerWord.leastTerm` proves the least term along a planar corner run in the Hahn model.
 - Volume 7, Theorem 3.18.26 has a new Lean line for part 3: `lambda_le_of_frob` and `lambda_le_corner` show that the minimum $\Lambda(f)$ is attained only at the indices $p^e e_i$.
 - Volume 5, Proposition 4.4.15 has the Lean names for part 1, the ramified type. Part 2, the residual type, has no Lean proof yet.
