@@ -279,7 +279,7 @@ Lean: none yet
 
 *Proof.* An exhaustive test over the subsets of the rays of $\Lambda$ for each certificate, from research note 91. $\square$
 
-The least $m$ grows with the depth, roughly as the depth divided by 2.5. This gives no new certificates, but it shows that Theorem 3.27.17 describes the shape of the certificates that the search finds, and that the obstruction of Theorem 3.27.22 is an obstruction only to $m = 1$. The certificate of $F_4$ is not of multi-pivot type, but $F_4$ may have other certificates that are.
+The least $m$ grows with the depth, roughly as the depth divided by 2.5. This gives no new certificates, but it shows that Theorem 3.27.17 describes the shape of the certificates that the search finds, and that the obstruction of Theorem 3.27.22 is an obstruction only to $m = 1$. The certificate of $F_4$ is not of multi-pivot type, but $F_4$ has other certificates that are: Example 3.28.11 gives one of depth 19 with $m = 7$, and Lemma 3.28.12 shows that every cone with a certificate has one of multi-pivot type.
 
 ### The route with the strategy "best"
 
@@ -335,7 +335,7 @@ The status of the literature is as follows. Research note 91 checked the sources
 
 1. Toric $\mathrm{RSF}_3$ for all regular cones in the octant. By Proposition 3.27.26 it is a case of the conjecture of Oda in dimension 3. The first test case is $\sigma_7 = \langle (0,1,6), (1,1,5), (7,1,0) \rangle$, with entries at most 7, for which no certificate is known.
 2. The least depths of $O_1$ and $O_2$ (between 7 and 12) and of $D_{10}$ (between 7 and 10), and a bound on the depth in terms of the entries.
-3. A complete finite search for the multi-pivot condition of Proposition 3.27.18 with $m \ge 2$, or a class with no certificate of multi-pivot type. For $m = 1$ the state search of Proposition 3.27.16 is complete but need not end, and for $m \ge 2$ the fan $\Lambda_0$ is not determined by the pivots.
+3. A complete finite search for the multi-pivot condition of Proposition 3.27.18 with a fixed $m \ge 2$. For $m = 1$ the state search of Proposition 3.27.16 is complete but need not end, and for $m \ge 2$ the fan $\Lambda_0$ is not determined by the pivots. By Lemma 3.28.12 every cone with a certificate has a certificate of multi-pivot type, so the question is the least number of pivots. By Proposition 3.28.15 the conjecture $\mathrm{C}(k)$ of Definition 3.28.14 is the same as a bound $m \le k$ for all cones, $\mathrm{C}(1)$ is false, and $\mathrm{C}(k)$ is open for each $k \ge 2$ (Section 3.28).
 4. Is every cone of depth 2 a pivot cone (Remark 3.27.19)?
 5. The pivot condition for the 127 classes with entries at most 5 that the state search does not decide (Theorem 3.27.22).
 6. A uniform certificate for the classes $A$, $B$, $C$ or for the families $\sigma_n$ and $F_k$. By Theorem 3.27.22 it cannot be of pivot type.
@@ -367,7 +367,7 @@ The results are in research note 90, which continues notes 88 and 89, and in res
 - [Cut97] S. D. Cutkosky, Local factorization of birational maps, Adv. Math. 132 (1997), 167-315.
 - [Dan83] V. I. Danilov, Math. USSR-Izv. 21 (1983), 269-280, the translation of a Russian paper. The year of the Russian original is not confirmed.
 - [DSK11] S. Da Silva and K. Karu, On Oda's strong factorization conjecture, Tohoku Math. J. 63 (2011), 163-182, arXiv 0911.4693.
-- [Ewa87] G. Ewald, Abh. Math. Sem. Univ. Hamburg 57 (1987), 193-201.
+- [Ewa87] G. Ewald, Abh. Math. Sem. Univ. Hamburg 57 (1987), 193-201. Research note 93 could not check the volume, the year and the pages against the journal, so they are not confirmed.
 - [Gow05] R. Goward, A simple algorithm for principalization of monomial ideals, Trans. Amer. Math. Soc. 357 (2005), 4805-4812.
 - [Kar03] K. Karu, Local strong factorization of toric birational maps, J. Algebraic Geom. 14 (2005), 165-175, arXiv math/0303148.
 - [Mac21] J. Machacek, Strong factorization and the braid arrangement fan, Tohoku Math. J. (2) 73 (2021), 99-104, arXiv 1807.05475.
