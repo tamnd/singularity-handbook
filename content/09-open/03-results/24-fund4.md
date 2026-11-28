@@ -24,19 +24,19 @@ In dimension 4 the local step is open. Temkin proved a weaker form for each dime
 
 **Definition 3.24.1 (local uniformization in dimension 4).** $\mathrm{LU}_4^-$ is the statement: for each function field $K$ of dimension 4 and each valuation $v$ of $K/k$, there is a regular local ring $A \subset K$, essentially of finite type over $k$, with fraction field $K$, dominated by $\mathcal{O}_v$. $\mathrm{LU}_4$ is the stronger statement in which, in addition, $A$ contains a given finite subset $S \subset \mathcal{O}_v$.
 
-Node: SG000000BS · Lean: none yet
+Node: SG000000BS · Lean: `Singularity.WeakLocalUniformizationInDim` and `Singularity.AffineLocalUniformizationInDim` (the statements only, over algebraically closed fields). `Singularity.Fidelity.weakLocalUniformization_of_affine` proves that $\mathrm{LU}_n$ implies $\mathrm{LU}_n^-$
 
 $\mathrm{LU}_4$ is the affine form of local uniformization of Volume 3, Proposition 4.1.6, and $\mathrm{LU}_4^-$ is the premise of Conjecture 3.21.8. Clearly $\mathrm{LU}_4$ implies $\mathrm{LU}_4^-$.
 
 **Conjecture 3.24.2 ($\mathrm{PILU}_4$).** Let $A$ be a regular local ring, essentially of finite type over $k$, whose fraction field $L$ has dimension 4. Let $a \in A$ with $b = a^{1/p} \notin L$, and let $v$ be a valuation of $L(b)/k$ that dominates $A$. Then there is a regular local ring $A' \subset L(b)$, essentially of finite type over $k$, with fraction field $L(b)$, dominated by $\mathcal{O}_v$, such that $A[b] \subseteq A'$.
 
-Node: SG000000BR · Lean: none yet
+Node: SG000000BR · Lean: `Singularity.PurelyInseparableLocalUniformizationFour` (the statement only, with $a \in B$). `Singularity.Fidelity.pilu_of_affineLocalUniformization` proves that $\mathrm{LU}_n$ implies $\mathrm{PILU}_n$
 
 This is the degree $p$ step of local uniformization: it uniformizes one purely inseparable cover of degree $p$ along a valuation. Temkin reduces local uniformization to equations $t^p = f$ [Tem13, Remark 1.3.5], and $\mathrm{PILU}_4$ is this reduction in dimension 4.
 
 **Conjecture 3.24.3 ($\mathrm{Fund}_4$, Zariski's fundamental theorem in dimension 4).** Let $K$ be a function field of dimension 4, let $V_0$ and $V_1$ be normal projective models of $K$, and let $N$ be the set of valuations of $K/k$ whose center on $V_0$ or on $V_1$ is a regular point. Then there is a normal projective model $W$ of $K$, with birational morphisms $W \to V_0$ and $W \to V_1$, such that each $v \in N$ has a regular center on $W$.
 
-Node: SG000000BQ · Lean: none yet
+Node: SG000000BQ · Lean: `Singularity.FundamentalTheoremFour` (the statement only, with complete models in place of projective models)
 
 In dimension 3 this is [Cut09, Theorem 15.1], where $N$ is restricted to valuations with residue field $k$, and the patching step of [CP19, Section 4.1, Step 3]. The restriction on the residue field does not matter for the applications below. If $\mathcal{O}_v$ is a localization of a valuation ring $\mathcal{O}_{v^*}$ of dimension 0, then the center of $v$ on a model is a generization of the center of $v^*$, and a localization of a regular local ring is regular. Cutkosky uses this argument in his proof of Theorem 16.1.
 
@@ -46,7 +46,7 @@ Let $\mathrm{Res}_4^{\rm pr}$ be the statement: each variety $X$ of dimension 4 
 
 **Theorem 3.24.4.** $\mathrm{LU}_4^-$ and $\mathrm{Fund}_4$ imply $\mathrm{Res}_4^{\rm pr}$. Conversely, $\mathrm{Res}_4^{\rm pr}$ implies $\mathrm{LU}_4$ and $\mathrm{Fund}_4$.
 
-Node: SG000000BS · Lean: none yet
+Node: SG000000BS · Lean: `Singularity.resolution_iff_weakLocalUniformization_fundamental_four` (the statement only, with proper morphisms in place of projective morphisms)
 
 *Proof.* Assume $\mathrm{LU}_4^-$ and $\mathrm{Fund}_4$, and let $K$ be a function field of dimension 4.
 
@@ -64,7 +64,7 @@ Steps 1 to 3 are Cutkosky's proof of [Cut09, Theorem 16.1], and Step 4 is his Th
 
 **Theorem 3.24.5.** $\mathrm{Res}_4^{\rm pr}$ holds if and only if $\mathrm{PILU}_4$ and $\mathrm{Fund}_4$ hold.
 
-Node: SG000000BT · Lean: none yet
+Node: SG000000BT · Lean: `Singularity.resolution_iff_pilu_fundamental_four` (the statement only). `Singularity.Fidelity.pilu_fundamental_of_resolution` proves that Theorem 3.24.4 gives the direction from $\mathrm{Res}_4^{\rm pr}$
 
 *Proof.* Suppose that $\mathrm{PILU}_4$ and $\mathrm{Fund}_4$ hold. By the theorem of Temkin [Tem13, Theorem 1.3.2] local uniformization with a finite set holds after a finite purely inseparable extension $K'/K$. This extension is a tower of extensions of degree $p$, each obtained by adjoining a $p$-th root. Research note 02, Theorem 2.6, descends one degree $p$ step at a time with $\mathrm{PILU}_4$, and controls the finite set through its $p^m$-th powers and normality. This gives $\mathrm{LU}_4$, hence $\mathrm{LU}_4^-$, and Theorem 3.24.4 gives $\mathrm{Res}_4^{\rm pr}$.
 
