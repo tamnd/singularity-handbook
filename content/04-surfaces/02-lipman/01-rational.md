@@ -16,7 +16,7 @@ Throughout this section, $X$ is a normal integral excellent scheme with $\dim X 
 
 **Definition 2.1.1.** A *normal modification* of $X$ is a proper morphism $f : Y \to X$ such that $Y$ is a normal integral scheme and $f$ is birational, that is, there is a dense open $U \subseteq X$ such that $f^{-1}(U)$ is dense in $Y$ and $f^{-1}(U) \to U$ is an isomorphism.
 
-Lean: none yet
+Lean: `Singularity.IsNormalModification`, `Singularity.isNormalModification_id` (with normal read as integrally closed stalks).
 
 By Corollary 1.2.5, the normalization of the blowup of $X$ at its singular points is a normal modification of $X$. A composite of two normal modifications is a normal modification. A normal modification $f : Y \to X$ is of finite type, so $Y$ is excellent by Theorem 5.2.8 of Volume 1, and the function field of $Y$ is $K$.
 

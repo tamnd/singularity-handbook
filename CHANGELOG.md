@@ -10,6 +10,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 1, Propositions 5.1.2, 5.1.6, 5.2.6 and 5.3.8, Theorems 5.1.7, 5.2.5 and 5.2.8, Definition 5.2.7, Corollary 5.2.9 and Example 5.3.9, Volume 3, Theorems 2.3.3 and 3.1.4 and Proposition 4.1.2, and Volume 4, Definitions 1.1.8, 2.1.1 and 2.3.8, Corollaries 1.1.9 and 3.1.9, Remarks 1.1.10 and 2.3.3 and Theorem 3.1.8 have Lean lines.
 - Volume 9, Section 3.26, the list of open questions cites Section 3.27. Volume 9, Section 2.5 and the introduction of Part 3 cite Section 3.27.
 
 ## [0.4.79] - 2026-11-28

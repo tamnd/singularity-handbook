@@ -84,7 +84,7 @@ We now show that the field $K'$ of Example 5.3.7 gives such a ring. We keep the 
 
 **Proposition 5.3.8.** Let $R'$ be the integral closure of $R$ in $K'$. Then $R'$ is not a finite $R$-module.
 
-Lean: none yet
+Lean: `Singularity.Algebra.tmul_sub_tmul_pow_eq_zero`, `Singularity.Algebra.tmul_eq_tmul_of_isReduced` (step 3 of the proof). Steps 1 and 2 are not in Lean yet.
 
 *Proof.* Assume that $R'$ is a finite $R$-module. We derive a contradiction in three steps.
 
@@ -100,7 +100,7 @@ The image of $z$ is the class of $T - f$. This class is not $0$, because the cla
 
 Thus $D$ is a Noetherian local domain of dimension $1$ whose normalization is not finite. It is finite over the discrete valuation ring $R$. For $X = \operatorname{Spec} D$, the proof of Theorem 2.5.6 fails at Proposition 2.5.4: the normalization of $X$ is not a finite morphism. This does not show that $X$ has no resolution, and we do not claim it. The example shows that the theorem of Noether (Theorem 2.4.7) needs a hypothesis such as finite type over a field.
 
-Lean: none yet
+Lean: `Singularity.Algebra.not_finite_of_not_finite_of_finite` (the last step). The ring of Nagata is not in Lean yet.
 
 ### Notes and references
 

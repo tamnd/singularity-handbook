@@ -20,7 +20,7 @@ The ring $B \otimes_k k'$ is a finite $B$-algebra, so it is Noetherian. In the d
 
 **Proposition 5.1.2.** Let $k$ be a field of characteristic $0$ and let $B$ be a Noetherian $k$-algebra. Then $B$ is geometrically regular over $k$ if and only if $B$ is regular.
 
-Lean: none yet
+Lean: `Singularity.Algebra.IsGeometricallyRegular.isRegularRing` (one direction), `Singularity.Algebra.isGeometricallyRegular_of_charZero` (the converse for a field over a field of characteristic 0). The converse in general is not in Lean yet.
 
 *Proof.* Take $k' = k$ to see that a geometrically regular ring is regular. Conversely, let $B$ be regular and let $k'$ be a finite extension of $k$. By the theorem of the primitive element, $k' = k[T]/(g)$ for an irreducible polynomial $g$. Since $\operatorname{char} k = 0$, the polynomial $g$ is separable: $g$ and $g'$ generate the unit ideal of $k[T]$. Let $B' = B \otimes_k k' = B[T]/(g)$. It is a free $B$-module of finite rank, so it is flat over $B$.
 
@@ -38,7 +38,7 @@ The formal fibre at $\mathfrak{m}$ is $\hat{A}/\mathfrak{m}\hat{A} = \kappa$, a 
 
 **Proposition 5.1.6.** Let $A$ be a Dedekind domain whose field of fractions $K$ has characteristic $0$. Then $A$ is a G-ring. In particular, $\mathbb{Z}$ is a G-ring, and $k[x]$ is a G-ring for each field $k$ of characteristic $0$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isRegularAlgebra_adicCompletion_bot`, `Singularity.Algebra.isGRing_of_field` (the step at the prime 0, and the case of a field). The generic formal fibre of a discrete valuation ring is not in Lean yet.
 
 *Proof.* The localization of $A$ at the prime $0$ is the field $K$, which is a G-ring. Let $\mathfrak{p} \ne 0$ be a prime. Then $R = A_\mathfrak{p}$ is a discrete valuation ring, so it is a regular local ring of dimension $1$ (Example 1.2.2). By Theorem 4.3.3, $\hat{R}$ is a regular local ring of dimension $1$. So $\hat{R}$ is a domain (Theorem 1.3.3), and it is a discrete valuation ring (Section 1.4). Let $t$ generate the maximal ideal of $R$. Then $t$ also generates the maximal ideal of $\hat{R}$, by Proposition 4.3.1. The ring $R$ has two primes, $0$ and $\mathfrak{p}R$. The formal fibre at $\mathfrak{p}R$ is the field $R/\mathfrak{p}R$, which is geometrically regular. The formal fibre at $0$ is $\hat{R} \otimes_R K = \hat{R}[1/t]$. Each nonzero element of $\hat{R}$ is a unit times a power of $t$, so $\hat{R}[1/t]$ is the field of fractions of $\hat{R}$. It is a field that contains $K$, so it has characteristic $0$. By Proposition 5.1.2, it is geometrically regular over $K$. $\square$
 
@@ -55,7 +55,7 @@ The G-ring property passes to the rings that occur in geometry. The proof of the
 3. If $A$ is local, then $A$ is reduced if and only if $\hat{A}$ is reduced, and $A$ is normal if and only if $\hat{A}$ is normal.
 4. A complete Noetherian local ring is a G-ring.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isRegularAlgebra_adicCompletion` (part 4 for the map to the completion of a complete ring). Parts 1 to 3 are not in Lean yet.
 
 For the proofs see [EGA4-7] and [Mat, Section 32]. Part 1 follows from the definitions, because the local rings of $S^{-1}A$ and $A/I$ are localizations and quotients of local rings of $A$, and the formal fibres of a quotient are formal fibres of $A$. Part 2 is the hard part. Part 4 is also hard: the ring $\hat{A} = A$ has trivial formal fibres, but its localizations $A_\mathfrak{p}$ are not complete. By Proposition 5.1.6 and part 2, each algebra of finite type over $\mathbb{Z}$, or over any field, is a G-ring. Part 3 fails for the property of being a domain. The local ring of the node is a G-ring by parts 1 and 2, but its completion is not a domain (Example 4.3.5).
 
