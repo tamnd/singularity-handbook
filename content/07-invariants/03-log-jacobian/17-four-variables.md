@@ -82,6 +82,8 @@ For $k = 2$ letters the value group has the rational rank $2$ for each $n$, so P
 
 **Definition 3.17.5.** A corner run in four variables is *linear* if there is a $\lambda \ne 0$ with $t^\lambda_j = 0$ for $j$ large, and *planar* if not.
 
+Lean: `Singularity.PlanarRuns.IsLinearRun`, `Singularity.PlanarRuns.IsPlanarRun` (for the translations $t_j$ of a run, with a finite set of free coordinates; the run itself is the Hahn model `Singularity.PlanarRuns.cornerPoint` with the word of the charts)
+
 In a planar run each $\lambda \ne 0$ has an infinite number of $t^\lambda_j \ne 0$, so by Proposition 3.17.4 no nonzero combination $\alpha \varphi_\infty + \beta \psi_\infty$ with $\alpha, \beta \in K$ is in $\hat H$. We do not have the transcendental type for the pair $(\varphi_\infty, \psi_\infty)$. Remark 3.17.34 says more about this.
 
 Can a change of the free coordinates remove an infinite number of translations? The next lemma says no. It is the reason why the examples of the next part are real counterexamples, and not an effect of a bad choice of coordinates.
@@ -424,7 +426,7 @@ The translations of the tests are in finite fields, the words are random or peri
 
 The results of this section are a result of the milestone S7.18 of this project (tamnd/singularity#245). They come from notes 38 and 40 of the research notes, with the corrected statements of the referee reports in notes 39 and 42. Note 38 gave the closed form, the family of Proposition 3.17.8, the reduction to three variables and the class of one linear form, and proposed Conjecture L. Note 39 added the converse of Proposition 3.17.8, Lemma 3.17.6, the fixes of Theorems 3.17.13 and 3.17.15, Corollary 3.17.14 and Conjecture L+. It also separated the finiteness question from Question 3.13.18. Note 40 gave the counterexample of Theorem 3.17.21, Conjecture L°, the results on the points of type $0$ and on the binary initial forms, and Theorem 3.17.33. Note 42 added Example 3.17.22, the wording of Corollary 3.17.28, the multiples $y^{pA} z^{pB}$ in Theorem 3.17.29, and the remark that Hypothesis 3.17.32 holds for the origin runs. Note 38 had Corollary 3.17.14 and Theorem 3.17.15, part 3, for a general $\Phi$ under a result of note 36. Theorem 3.16.14 is this result, so they are now proved.
 
-The outside results are the following. The pseudo Cauchy sequences and their types are from the paper of Kaplansky cited in Remark 3.17.34, the generalized stability theorem is [Kuh10, Theorem 1.1], and the facts on the henselization are in [Kuh-book]. The use of the history of the divisor is from [CJS20]. Only Lemma 3.17.1, parts 1, 3 and 4, has a Lean proof.
+The outside results are the following. The pseudo Cauchy sequences and their types are from the paper of Kaplansky cited in Remark 3.17.34, the generalized stability theorem is [Kuh10, Theorem 1.1], and the facts on the henselization are in [Kuh-book]. The use of the history of the divisor is from [CJS20]. Only Lemma 3.17.1, parts 1, 3 and 4, has a Lean proof, and Definition 3.17.5 has a Lean form.
 
 Several questions are open.
 

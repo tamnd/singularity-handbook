@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 7, Definition 3.17.5, Lemmas 3.18.8 and 3.18.10, Theorem 3.18.11 and Theorem 3.19.6 have new Lean lines for the Hahn model of a planar corner run, and Volume 9, Section 3.19 says which results have Lean proofs.
+
 ## [0.4.78] - 2026-11-28
 
 ### Added
