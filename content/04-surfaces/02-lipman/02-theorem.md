@@ -45,7 +45,7 @@ Let $\operatorname{Spec} R \subseteq X$ be an affine open and let $B = \Gamma(\p
 
 **Remark 2.2.3.** Nagata gives Noetherian local domains whose normalization is not finite [Nag62, Appendix]. By Proposition 2.2.2, such a ring has no resolution. Thus some condition such as excellence is necessary in Theorem 2.2.1. The theorem of [Lip78] is more general than Theorem 2.2.1. It gives a condition for the existence of a resolution of a reduced Noetherian scheme of dimension 2 that is not assumed excellent. We do not state that condition here.
 
-Lean: none yet
+Lean: `Singularity.not_moduleFinite_of_not_moduleFinite_integralClosure` (the affine step). The example of Nagata is not in Lean yet.
 
 ### Two runs of the process
 

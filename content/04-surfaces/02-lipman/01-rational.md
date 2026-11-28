@@ -46,7 +46,7 @@ Lemma 2.1.2 says that for an affine $X$ and a normal modification $Y \to X$, the
 
 **Definition 2.1.3.** The scheme $X$ has *rational singularities* if $R^1 f_* \mathcal{O}_Y = 0$ for each normal modification $f : Y \to X$. Let $A$ be an excellent normal local domain of dimension 2. Then $A$ has a *rational singularity* if $\operatorname{Spec} A$ has rational singularities.
 
-Lean: none yet
+Lean: `Singularity.HasRationalSingularities`, `Singularity.IsRationalSingularity` (with the sheaf cohomology of Mathlib, without the hypotheses of excellence).
 
 **Remark 2.1.4.** Many texts define a rational singularity with one resolution: $A$ is rational if $H^1(Y, \mathcal{O}_Y) = 0$ for a resolution $Y \to \operatorname{Spec} A$. Once resolutions exist (Theorem 2.2.1), this agrees with Definition 2.1.3 for excellent $A$. We do not use this fact, and we do not prove it. Definition 2.1.3 has the advantage that it does not need the existence of a resolution.
 

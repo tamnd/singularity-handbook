@@ -9,6 +9,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 7, Lemma 3.15.4 has a Lean line: `IsCornerWord.dominance` proves the dominance lemma in the Hahn model of a corner run.
 - Volume 1, Remark 3.3.14, Volume 6, Theorems 3.2.6 and 3.2.7 and Corollary 4.3.2, and Volume 8, Example 1.2.4, Proposition 2.1.2 and Examples 2.1.6 and 2.1.7, have Lean lines.
 - Volume 1, Remark 3.3.14, Volume 6, Theorems 3.2.6 and 3.2.7 and Corollary 4.3.2, and Volume 8, Proposition 2.1.2, have Lean lines.
+- Volume 1, Remark 3.3.14, Volume 4, Corollary 1.2.5, Definition 2.1.3 and Remark 2.2.3, Volume 5, Lemmas 4.4.1, 4.4.3 to 4.4.5 and 4.4.18, Definition 4.4.2, Proposition 4.4.15, Theorem 4.4.16 and Corollary 4.4.19, Volume 6, Theorems 3.2.6 and 3.2.7 and Corollary 4.3.2, and Volume 8, Proposition 2.1.2, have Lean lines.
 
 ## [0.4.81] - 2026-11-28
 
