@@ -101,7 +101,7 @@ In the ramified type, a change of the variable $\theta$ and of one parameter bri
 2. If $f$ is of the ramified type, then $d \ge 1$, and there are a regular system of parameters $y_1, \dots, y_d$ of $R$, integers $0 \le r_i < p$ for $2 \le i \le d$ and an element $z \in E'$ with
 $$z^p = y_1\, y_2^{r_2} \cdots y_d^{r_d}, \qquad z \notin E, \qquad E' = E(z).$$
 
-Lean: `Singularity.exists_pow_eq_of_eq_add` (the element $z = (\theta - h)/g$ of part 1 and of the first lines of part 2); the normal form of part 2 has no Lean proof yet
+Lean: `Singularity.exists_pow_eq_of_eq_add` (the element $z = (\theta - h)/g$ of part 1 and of the first lines of part 2); `Singularity.exists_normalForm_adjoin_eq` (part 2, the step that removes the unit: a new family of parameters $x'$ and an element $z$ with $z^p = (x')^a$ and the same extension), `Singularity.IsRegularSystemOfParameters.image_changeParam` (the family $x'$ is a regular system of parameters) and `Singularity.IsMonomialModPow.exists_eq_add_prod_or` (the two types, with the unit $1$ in the ramified type); the reduction of the exponents to the form $y_1\, y_2^{r_2} \cdots y_d^{r_d}$ has no Lean proof yet
 
 *Proof.* Part 1. In characteristic $p$ we have $(\theta - h)^p = \theta^p - h^p = g^pu$, so $z^p = u$. If $z \in E$, then $\theta = h + gz \in E$, which is false. Since $[E' : E] = p$ is prime and $E \subsetneq E(z) \subseteq E'$, we get $E(z) = E'$.
 
