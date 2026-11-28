@@ -85,7 +85,7 @@ The groups of Galois alterations are not an extra structure that we add by hand.
 1. this fibre is the single point $\operatorname{Spec}(F \otimes_K L)$, and $F \otimes_K L$ is a field;
 2. $\Gamma$ acts on $X'$ over $X$, and the projection $X' \to X$ is a separable Galois alteration with group $\Gamma$ and of degree $|\Gamma|$.
 
-Lean: none yet
+Lean: `Singularity.exists_eq_tmul_one_of_forall_fixed`, `Singularity.galTensorAction_tmul_one`, `Singularity.finrank_tensorProduct_eq_card_gal` (the invariants of the Galois action on $F \otimes_K L$). The action on schemes is not in Lean yet.
 
 *Proof.* The generic fibre of $\psi$ is the single point $\operatorname{Spec} L$ (Lemma 1.1.2). So the fibre of $Y' \times_Y X$ over the generic point $\operatorname{Spec} F$ of $X$ is $\operatorname{Spec} F \times_{\operatorname{Spec} K} \operatorname{Spec} L = \operatorname{Spec}(F \otimes_K L)$. The ring $F \otimes_K L$ is a localization of the coordinate rings of the affine opens of $X_\eta \times_K L$, and this scheme is integral by hypothesis. So $F \otimes_K L$ is a domain. It is finite over the field $F$, and a domain that is finite over a field is a field. This proves part 1.
 

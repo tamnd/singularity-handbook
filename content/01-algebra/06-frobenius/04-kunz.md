@@ -80,7 +80,7 @@ is flat. Here $\hat{R}$ is faithfully flat over the second copy of $R$, by Propo
 
 **Remark 6.4.8.** Let $(R, \mathfrak{m}, \kappa)$ be a regular local ring of dimension $d$ and characteristic $p$. If $[\kappa : \kappa^p] = p^r$ is finite, then the proof of Proposition 6.4.5 shows that $F_* \hat{R}$ is a free $\hat{R}$-module of rank $p^{d + r}$: the ring $\kappa[[y]]$ is free of rank $p^r$ over $\kappa^p[[y]]$, because $\kappa$ is free of rank $p^r$ over $\kappa^p$, and $\kappa[[x]]$ is free of rank $p^d$ over $\kappa[[y]]$. For $\kappa$ perfect this is Corollary 6.1.6.
 
-Lean: none yet
+Lean: `Singularity.Algebra.mvPowerSeriesBasis`, `Singularity.Algebra.free_mvPowerSeries_and_finrank` (the step on the coefficients). The rank of $F_* \hat{R}$ is not in Lean yet.
 
 The theorem of Kunz is the start of the use of the Frobenius to measure singularities. If $R$ is not regular, then $F_* R$ is not flat, and the failure of flatness measures how far $R$ is from regular. Lemma 6.1.2 and Theorem 6.4.7 together say that, for a regular ring, the Frobenius is a flat map that does not change the points of the spectrum.
 

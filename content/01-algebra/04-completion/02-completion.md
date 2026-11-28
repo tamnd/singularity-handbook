@@ -80,7 +80,7 @@ For 3, let $x \in I\hat{R}$. We show that $1 - x$ is a unit. Let $s_n$ be the cl
 
 **Theorem 4.2.9.** Let $R$ be a Noetherian ring and let $I$ be an ideal. Then the $I$-adic completion $\hat{R}$ is Noetherian. More exactly, if $a_1, \dots, a_r$ generate $I$, then $\hat{R}$ is a quotient of the ring of power series $R[[X_1, \dots, X_r]]$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.exists_surjective_mvPowerSeries_adicCompletion`, `Singularity.Algebra.isNoetherianRing_adicCompletion`
 
 *Proof.* Let $S = R[X_1, \dots, X_r]$, let $J = (X_1, \dots, X_r)$, and let $\psi : S \to R$ be the map of $R$-algebras with $\psi(X_i) = a_i$. Then $\psi(J^n) = I^n$. So $\psi$ gives surjective maps $S/J^n \to R/I^n$, and the kernel of $S/J^n \to R/I^n$ is $\psi^{-1}(I^n)/J^n$. Since $\psi(J^n) = I^n$, we have $\psi^{-1}(I^n) = \ker \psi + J^n$. Thus the kernel is $K_n = (\ker \psi + J^n)/J^n$, and the map $K_{n+1} \to K_n$ is surjective, because the image of $\ker \psi$ in $K_n$ is all of $K_n$. By Lemma 4.2.3, the map $\hat{S} \to \hat{R}$ is surjective. By Example 4.2.2, $\hat{S} = R[[X_1, \dots, X_r]]$. This ring is Noetherian by the basis theorem of Hilbert for power series [Mat, Section 3]. Thus $\hat{R}$ is Noetherian. $\square$
 
