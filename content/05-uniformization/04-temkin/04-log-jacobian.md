@@ -220,7 +220,7 @@ From now on, $k$ is perfect and $R$ is as at the start of the section.
 
 In both cases the ideal is principal and not zero.
 
-Lean: `Singularity.logJacobian_eq_span_of_monomial` (part 1 in the polynomial model $k[x]$ with the unit 1). Part 2 is not in Lean yet.
+Lean: `Singularity.exists_derivLogJacobian_eq_span_singleton` (part 1, for a local domain of characteristic $p$ with parameters $x_i$ and derivations $D_i$ such that $D_i(x_j)$ is 1 if $i = j$ and 0 if not; the hypothesis on $f$ is the equation $d^p f = \sum_i c_i^p t^i$ with $d \ne 0$ and $c_i \in R$, and the generator $g_0$ of the ideal satisfies $d^p g_0 = c't$ with $c' = \sum_i i c_i^p t^{i-1}$), `Singularity.derivLogJacobian_eq_bot_iff` (the ideal is zero if and only if $c'$ is zero), `Singularity.exists_originDerivLogJacobian_eq_span_singleton` (part 1 for the local ring of affine space at the origin), `Singularity.derivLogJacobian_unit_mul_monomial` (the equation $J_D(t) = tR$ of the proof) and `Singularity.logJacobian_eq_span_of_monomial` (the same equation in the polynomial model $k[x]$ with the unit 1). Part 2 is not in Lean yet.
 
 *Proof.* We have $df = c\,dt$ by the proof of Lemma 4.4.5, and $df \ne 0$ by (F1), since $f \notin E^p$.
 
@@ -368,7 +368,8 @@ This existence statement is open for $n \ge 4$. We do not prove it. This section
 We state the status of the parts of this section in plain words.
 
 - Lemmas 4.4.13 and 4.4.14 are proved in full here and in Lean.
-- Proposition 4.4.15, Theorem 4.4.16, Corollary 4.4.17, Lemma 4.4.18 and Corollary 4.4.19 are proved here in full. They are not in Lean.
+- Proposition 4.4.15 is proved here in full. Part 1 is in Lean for a local domain with a system of coordinates and derivations, and for the local ring of affine space at the origin. Part 2 is not in Lean.
+- Theorem 4.4.16, Corollary 4.4.17, Lemma 4.4.18 and Corollary 4.4.19 are proved here in full. They are not in Lean.
 - Propositions 4.4.7, 4.4.8 and 4.4.10, Theorem 4.4.11 and Corollary 4.4.12 are proved here and in Lean. In Lean, Theorem 4.4.11 takes the monomial step, Theorem 4.3.14, as a hypothesis, and Corollary 4.4.12 takes also the theorem of Temkin as a hypothesis.
 - $\mathrm{FLM}(n, k)$ is a hypothesis. It is open for $n \ge 4$.
 
