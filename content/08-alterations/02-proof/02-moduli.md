@@ -48,7 +48,7 @@ The proof of de Jong only uses the following consequence.
 
 **Hypothesis 2.2.5 (extension after an alteration).** Let $k$ be an algebraically closed field, let $Y$ be a variety over $k$, let $U \subseteq Y$ be a nonempty open subscheme, let $n \ge 3$, and let $(C \to U, \sigma_1, \dots, \sigma_n)$ be a smooth proper $n$-pointed curve of genus $g$ over $U$ with geometrically connected fibres. Then there are a variety $Y'$ over $k$, a projective generically étale alteration $\psi \colon Y' \to Y$, a nonempty open subscheme $U' \subseteq \psi^{-1}(U)$, a stable $n$-pointed curve $(\mathcal{C}', \tau_1, \dots, \tau_n)$ of genus $g$ over $Y'$, and an isomorphism $\mathcal{C}'|_{U'} \cong C \times_U U'$ that maps $\tau_i$ to the pullback of $\sigma_i$ for each $i$. If $Y$ is projective, then $Y'$ is projective.
 
-Node: SG0000004J · Lean: none yet
+Node: SG0000004J · Lean: `Singularity.crossRatio_mulVec`, `Singularity.crossRatio_ne_zero`, `Singularity.crossRatio_ne_one`, `Singularity.exists_mulVec_of_crossRatio_eq`, `Singularity.crossRatio_comp_perm_mem` (the cross-ratio). The surface $X$ and the family $X \to \mathbb{P}^1$ are not in Lean yet.
 
 **Proposition 2.2.6.** Hypothesis 2.2.4 implies Hypothesis 2.2.5.
 
