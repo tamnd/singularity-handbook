@@ -28,7 +28,7 @@ Lean: `Singularity.Algebra.faithfullyFlat_adicCompletion` (faithful flatness, wi
 
 **Theorem 4.3.3.** Let $(R, \mathfrak{m}, \kappa)$ be a Noetherian local ring with completion $(\hat{R}, \hat{\mathfrak{m}})$. Then $\operatorname{edim} \hat{R} = \operatorname{edim} R$ and $\dim \hat{R} = \dim R$. In particular, $R$ is regular if and only if $\hat{R}$ is regular.
 
-Node: SG0000002Z · Lean: none yet
+Node: SG0000002Z · Lean: `Singularity.Algebra.ringKrullDim_adicCompletion`, `Singularity.Algebra.spanFinrank_maximalIdeal_adicCompletion`, `Singularity.Algebra.isRegularLocalRing_adicCompletion_iff`
 
 *Proof.* By Proposition 4.2.8, $\hat{R}/\hat{\mathfrak{m}}^2 = \hat{R}/\mathfrak{m}^2\hat{R} \cong R/\mathfrak{m}^2$, and this isomorphism maps $\hat{\mathfrak{m}}/\hat{\mathfrak{m}}^2$ onto $\mathfrak{m}/\mathfrak{m}^2$. Thus the two ideals have the same dimension over $\kappa$, so the embedding dimensions are equal.
 

@@ -34,7 +34,7 @@ Since $a_{k+1} - a_k \in \mathfrak{m}^{2^k}$, the class of $a_k$ in $R/\mathfrak
 
 **Theorem 4.4.4 (Cohen).** Let $(R, \mathfrak{m}, \kappa)$ be a complete Noetherian local ring that contains a field. Then $R$ has a coefficient field. If $\operatorname{char} \kappa = p > 0$ and $\kappa$ is perfect, then the coefficient field is unique.
 
-Lean: none yet
+Lean: `Singularity.Algebra.IsCoefficientField`, `Singularity.Algebra.IsCoefficientField.eq` (the uniqueness in characteristic $p$ with a perfect residue field). The existence is not in Lean yet.
 
 *Proof.* We give the proof in two cases: when $\operatorname{char} \kappa = 0$, and when $\kappa$ is perfect. For the general case we refer to [Coh46] and [Mat, Section 28].
 
@@ -92,7 +92,7 @@ In mixed characteristic a field in $R$ does not exist, by Lemma 4.4.2. The role 
 2. Let $(R, \mathfrak{m}, \kappa)$ be a complete Noetherian local ring with residue field $\kappa$. Then there is a local homomorphism $C \to R$ that induces the identity of $\kappa$. Thus $R$ is a quotient of $C[[X_1, \dots, X_n]]$ for some $n$.
 3. Let $R$ be as in 2, and assume that $R$ is regular of dimension $d$ and has mixed characteristic. If $p \notin \mathfrak{m}^2$, then $R \cong C[[X_1, \dots, X_{d-1}]]$. If $p \in \mathfrak{m}^2$, then $R \cong C[[X_1, \dots, X_d]]/(p - g)$ for some $g$ in the square of the maximal ideal of $C[[X_1, \dots, X_d]]$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.padicInt_isCohenRing`, `Singularity.Algebra.exists_isLocalHom_padicInt` (parts 1 and 2 for the residue field $\mathbb{F}_p$). The other residue fields and part 3 are not in Lean yet.
 
 We do not prove Theorem 4.4.9. Part 3 follows from part 2 by the arguments of Theorem 4.4.6 and Theorem 4.4.7. For example, let $p \in \mathfrak{m}^2$, and let $x_1, \dots, x_d$ generate $\mathfrak{m}$. Then the map $\varphi : S = C[[X_1, \dots, X_d]] \to R$ with $X_i \mapsto x_i$ is surjective. The ring $S$ is regular of dimension $d + 1$, and $p, X_1, \dots, X_d$ generate its maximal ideal $\mathfrak{m}_S$. Since $p \in \mathfrak{m}^2$ and $\varphi(\mathfrak{m}_S^2) = \mathfrak{m}^2$, there is $g \in \mathfrak{m}_S^2$ with $\varphi(g) = p$. Then $p - g \in \ker \varphi$ and $p - g \notin \mathfrak{m}_S^2$. By Proposition 1.2.6, $S/(p - g)$ is regular of dimension $d$, so it is a domain by Theorem 1.3.3. It maps onto $R$, which also has dimension $d$. The argument of Theorem 4.4.7 shows that this map is injective. A ring of the form in part 3 with $p \in \mathfrak{m}^2$ is *ramified*, and the other case is *unramified*.
 

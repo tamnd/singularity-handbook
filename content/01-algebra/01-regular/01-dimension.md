@@ -28,7 +28,7 @@ The main theorem of the dimension theory of Noetherian local rings compares $\di
 
 **Theorem 1.1.2 (dimension theorem).** Let $(R, \mathfrak{m})$ be a Noetherian local ring. Then $\dim R$ is finite, and it is equal to the least number $\delta(R)$ of generators of an $\mathfrak{m}$-primary ideal of $R$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.dimension_theorem`
 
 We do not prove this theorem here. The proof compares $\dim R$ and $\delta(R)$ with the degree of the Hilbert-Samuel polynomial of $R$. See [AM69, Theorem 11.14] or [Mat, Theorem 13.4]. Chapter 3 of this volume treats the Hilbert-Samuel polynomial. Mathlib has the two inequalities that we use below, and we give their Lean names.
 

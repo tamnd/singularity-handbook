@@ -39,7 +39,7 @@ Fix $s \in S$. Write $X_s = X_1 \cup \dots \cup X_r$, $\mathcal{C}_s = C_1 \cup 
 1. for each $i$ there is exactly one $j$ with $\mathrm{pr}_2(T_j) = X_i$, and $\mathrm{pr}_1$ is not constant on this $T_j$;
 2. for each $i$ there is exactly one $j$ with $\mathrm{pr}_1(T_j) = C_i$.
 
-Lean: none yet
+Lean: `Singularity.not_three_disjoint_of_card_le_two` (the counting step). The geometry is not in Lean yet.
 
 This is [dJ96, Lemma 4.20]. *Sketch of proof.* The first statement of each part comes from normality. At a point $x$ of $\operatorname{sm}(X/S) \cap X_s$, the scheme $X$ is normal, since $S$ is normal and $X \to S$ is smooth at $x$. There are only finitely many closed points of $X_s$ over which $\mathrm{pr}_2$ has a fibre of dimension 1, so near a general point $x$ of $X_i$ in the smooth locus, $\mathrm{pr}_2$ is finite and birational over a normal scheme, hence an isomorphism. This gives exactly one component $T_j$ over $X_i$. The same argument for $\mathrm{pr}_1$ and the smooth locus of $\mathcal{C} \to S$ gives the first statement of part 2. By Zariski's main theorem in the form of the Stein factorization, $\mathrm{pr}_2^{-1}(x)$ is connected for each normal point $x$ of $X$.
 

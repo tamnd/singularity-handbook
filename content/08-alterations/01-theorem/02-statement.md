@@ -41,7 +41,7 @@ For curves the theorem is classical, and an alteration of degree 1 suffices. We 
 
 **Proposition 1.2.3.** Let $X$ be a variety of dimension 1 over a field $k$ and let $Z \subsetneq X$ be a proper closed subset. Then Theorem 1.2.1 holds for $(X, Z)$ with $\varphi_1$ a modification. In particular it is generically étale for each field $k$.
 
-Lean: none yet
+Lean: `Singularity.isSeparable_of_finrank_eq_one`, `Singularity.finrank_eq_one_comp_of_finrank_eq_one` (the field theory of degree 1). Chow's lemma and the normalization are not in Lean yet.
 
 *Proof.* By Chow's lemma for varieties [Stacks] there is a modification $X' \to X$ with $X'$ quasi-projective over $k$. Let $X' \subseteq P$ be an open immersion into a projective variety $P$, for example the closure of $X'$ in a projective space. Let $\nu \colon \bar X_1 \to P$ be the normalization. By Volume 1, Theorem 2.4.7 the morphism $\nu$ is finite, so $\bar X_1$ is projective over $k$. By Volume 1, Theorem 2.5.6, $\bar X_1$ is regular, because it is a normal variety of dimension 1. Let $X_1 = \nu^{-1}(X')$, an open subset of $\bar X_1$, and let $\varphi_1$ be the composition $X_1 \to X' \to X$. It is a composition of two modifications, so it is a modification. The closed subset $\varphi_1^{-1}(Z) \cup (\bar X_1 \setminus X_1)$ is a proper closed subset of the irreducible curve $\bar X_1$, so it is a finite set of closed points. A finite set of closed points on a regular curve is a divisor with strict normal crossings, as we saw after Lemma 1.1.11. A modification has degree 1, and an extension of degree 1 is separable, so $\varphi_1$ is generically étale by Lemma 1.1.5. $\square$
 

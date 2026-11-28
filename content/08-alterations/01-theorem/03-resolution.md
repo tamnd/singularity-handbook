@@ -36,7 +36,7 @@ Theorem 1.2.1 gives no control of the degree. The proof of Chapter 2 makes alter
 
 **Proposition 1.3.4.** Let $\varphi \colon X_1 \to X$ be an alteration of degree $d$ of an integral variety $X$ over a field $k$, with $X_1$ regular. If $d = 1$ and $\varphi$ is an isomorphism over $\operatorname{Reg}(X)$, then $\varphi$ is a resolution of $X$. If $d > 1$, then no nonempty open subset of $X_1$ maps isomorphically onto an open subset of $X$.
 
-Lean: none yet
+Lean: `Singularity.bijective_algebraMap_of_finrank_eq_one`, `Singularity.finrank_eq_one_of_algHom`, `Singularity.finrank_comp_alteration` (the degree facts). The conditions on schemes are not in Lean yet.
 
 *Proof.* If $d = 1$ and $\varphi$ is an isomorphism over $\operatorname{Reg}(X)$, then $\varphi$ is proper, $X_1$ is regular, and $\varphi^{-1}(\operatorname{Reg}(X))$ is a nonempty open subset of the irreducible space $X_1$, so it is dense. These are the conditions of Volume 0, Definition 2.1.5. If an open subset of $X_1$ maps isomorphically onto an open subset of $X$, then the two function fields are isomorphic over $k(X)$, so $d = 1$. $\square$
 
@@ -50,7 +50,7 @@ A resolution $\tilde X \to X$ is an isomorphism over a dense open subset. An alt
 
 **Proposition 1.3.6.** Let $\varphi \colon X' \to X$ be a finite alteration of degree $d$, with $X$ normal and Noetherian, and assume that $d$ is invertible on $X$. Let $\mathcal{F}$ be a quasi-coherent $\mathcal{O}_X$-module. Then for each $i \ge 0$ the pullback map $H^i(X, \mathcal{F}) \to H^i(X', \varphi^* \mathcal{F})$ is injective, and it has a left inverse.
 
-Lean: none yet
+Lean: `Singularity.exists_leftInverse_tensorOneMap`, `Singularity.exists_leftInverse_tensorOneMap_of_isUnit_finrank`, `Singularity.isSplitMono_map_of_leftInverse` (the affine splitting). The statement on cohomology is not in Lean yet.
 
 *Proof.* The morphism $\varphi$ is affine. So $H^i(X', \varphi^* \mathcal{F}) = H^i(X, \varphi_* \varphi^* \mathcal{F})$ [Stacks], and for separated $X$ this is [Har, Exercise III.4.1]. Also $\varphi_* \varphi^* \mathcal{F} \cong \mathcal{F} \otimes_{\mathcal{O}_X} \varphi_* \mathcal{O}_{X'}$, because over an affine open $\operatorname{Spec} A$ with inverse image $\operatorname{Spec} B$ both sides correspond to the $A$-module $M \otimes_A B$. Under these isomorphisms the pullback map is induced by the map $\mathcal{F} \to \mathcal{F} \otimes \varphi_* \mathcal{O}_{X'}$, $m \mapsto m \otimes 1$. Let $s \colon \varphi_* \mathcal{O}_{X'} \to \mathcal{O}_X$ be the left inverse of Proposition 1.3.2. Then $\operatorname{id} \otimes s$ is a left inverse of $m \mapsto m \otimes 1$. Cohomology is an additive functor, so it maps a split injection to a split injection. $\square$
 
@@ -64,7 +64,7 @@ For étale cohomology there is the same mechanism. Let $\Lambda$ be a ring and l
 
 **Proposition 1.3.8.** Let $\varphi \colon X' \to X$ be a finite locally free morphism of constant degree $d$, and let $\Lambda$ be a ring in which $d$ is invertible. Then for each $i \ge 0$ the pullback map $H^i(X_{\mathrm{et}}, \Lambda) \to H^i(X'_{\mathrm{et}}, \Lambda)$ is injective, and it has a left inverse.
 
-Lean: none yet
+Lean: `Singularity.trace_leftInverse_of_isUnit`, `Singularity.exists_leftInverse_algebraMap_of_free` (the trace splitting of a free algebra). Étale cohomology is not in Lean yet.
 
 *Proof.* Under the identification $H^i(X'_{\mathrm{et}}, \Lambda) = H^i(X_{\mathrm{et}}, \varphi_* \Lambda)$, the pullback map is induced by the map of sheaves $\Lambda \to \varphi_* \Lambda$. The map $d^{-1} \operatorname{Tr}$ is a left inverse of this map of sheaves, and cohomology maps it to a left inverse of the pullback. $\square$
 

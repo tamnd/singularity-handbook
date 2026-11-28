@@ -30,7 +30,7 @@ The Lean statement does not need the hypothesis that $M/K$ is purely inseparable
 
 **Proposition 3.2.3.** Let $\varphi \colon X' \to X$ be a Galois alteration of integral varieties over a field of characteristic exponent $p$, with group $G$ (Definition 3.1.3). Assume that $X'$ is quasi-projective over $X$. Let $\ell \ne p$ be a prime and let $P$ be an $\ell$-Sylow subgroup of $G$. Then the quotient $X'/P$ exists, and the induced morphism $X'/P \to X$ is an alteration of degree prime to $\ell$.
 
-Lean: none yet
+Lean: `Singularity.not_dvd_finrank_fixedField_sylow_of_isPurelyInseparable`, `Singularity.finrank_eq_card_mul_finrank_fixedField` (the degree). The quotient $X'/P$ is not in Lean yet.
 
 *Proof.* Since $X'$ is quasi-projective over $X$, each orbit of the finite group $P$ lies in an affine open subset, and the quotient $X'/P$ exists as a scheme, with a finite surjective morphism $X' \to X'/P$ and function field $k(X')^P$ [Stacks]. The morphism $X'/P \to X$ is proper, because $X' \to X$ is proper and $X' \to X'/P$ is surjective, and it is surjective and generically finite. By Artin's theorem $k(X')/k(X')^G$ is Galois with group $G$, as in Section 3.1. Lemma 3.2.2 with $L' = k(X')$, $M = k(X')^G$ and $K = k(X)$ gives that $[k(X')^P : k(X)]$ is prime to $\ell$. $\square$
 
@@ -56,7 +56,7 @@ Illusie-Temkin also give a second proof, by induction on the dimension, in which
 
 **Corollary 3.2.5.** Let $X$ be an integral variety over a field $k$, let $\ell$ be a prime different from the characteristic of $k$, and let $Z \subsetneq X$ be a proper closed subset. There is an alteration $\varphi \colon X_1 \to X$ of degree prime to $\ell$, with $X_1$ regular and projective over $X$, and a finite extension $k'$ of $k$ of degree prime to $\ell$, such that $X_1$ is smooth over $k'$ and $\varphi^{-1}(Z)$ is the support of a relative strict normal crossings divisor in $X_1$ over $k'$.
 
-Lean: none yet
+Lean: `Singularity.not_dvd_finrank_tower_iff` (the degree in a tower). Theorem 3.2.4 is not in Lean yet.
 
 *Proof.* Since $Z$ is a proper closed subset of the integral scheme $X$, it is nowhere dense. Apply Theorem 3.2.4, and let $X_1$ be an irreducible component of $\tilde X$. Then $X_1$ is open and closed in $\tilde X$, because $\tilde X$ is smooth over $k'$ and so its connected components are irreducible. So $X_1$ is regular and integral, and $X_1 \to X$ is projective. Its generic point is a maximal point of $\tilde X$, it maps to the generic point of $X$ because $h$ is maximally dominating, and the degree is prime to $\ell$ by Definition 3.2.1. The morphism $X_1 \to X$ is proper, and its image is closed and contains the generic point, so it is surjective. The restriction of a relative strict normal crossings divisor to the open and closed subscheme $X_1$ is again one. $\square$
 

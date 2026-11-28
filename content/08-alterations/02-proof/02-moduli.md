@@ -40,7 +40,7 @@ De Jong uses the following facts [dJ96, 2.24]. Fix $g \ge 0$, $n \ge 3$ and a pr
 2. There are a scheme $M$ over $\mathbb{Z}[1/\ell]$ and a smooth proper $n$-pointed curve of genus $g$ over $M$ with a level-$\ell$ structure that is a universal object: for each $T$ as in part 1, each smooth proper $n$-pointed curve of genus $g$ over $T$ with a level-$\ell$ structure is the pullback of the universal object by a unique morphism $T \to M$, and the isomorphism of the pullback with the curve is unique.
 3. There are a projective scheme $\overline{M}$ over $\mathbb{Z}[1/\ell]$, an open immersion $M \to \overline{M}$, and a stable $n$-pointed curve of genus $g$ over $\overline{M}$ whose restriction to $M$ is the universal curve of part 2.
 
-Node: SG0000004H · Lean: none yet
+Node: SG0000004H · Lean: `Singularity.fourPoints_counts`, `Singularity.fourPoints_chart` (the counts and the chart computation). The blowup is not in Lean yet.
 
 By [dJ96, 2.24] these statements follow from Theorem 2.2.2 and the theory of the Jacobian. We use them as a hypothesis because the proofs are outside this handbook. Part 1 holds because $\operatorname{Pic}^0_{C/T}[\ell]$ is finite étale of rank $\ell^{2g}$ over $T$ when $\ell$ is invertible on $T$, and its geometric fibres are isomorphic to $(\mathbb{Z}/\ell)^{2g}$.
 
@@ -52,7 +52,7 @@ Node: SG0000004J · Lean: none yet
 
 **Proposition 2.2.6.** Hypothesis 2.2.4 implies Hypothesis 2.2.5.
 
-Lean: none yet
+Lean: `Singularity.exists_prime_three_le_ne_zero` (the first step, the choice of $\ell$). The rest is not in Lean yet.
 
 *Proof.* Let $p \ge 0$ be the characteristic of $k$, and choose a prime $\ell \ge 3$ with $\ell \ne p$. Then $k$ is a $\mathbb{Z}[1/\ell]$-algebra. We may shrink $U$, because a smaller $U$ gives the same conclusion. Since $k$ is algebraically closed, hence perfect, the regular locus of $Y$ is a dense open subset, and we may assume that $U$ is regular, and in particular normal.
 
@@ -101,7 +101,7 @@ The alteration of Proposition 2.2.6 has a natural group of symmetries. Let $G = 
 
 **Lemma 2.2.9.** In the proof of Proposition 2.2.6, let $W$ be a connected component of $L = L(C/U)$, and let $H$ be the subgroup of the elements of $G$ that map $W$ to itself. Then $k(W)$ is a Galois extension of $k(U)$ with group $H$, and $Y'' \to Y$ is a finite separable Galois alteration with group $H$ in the sense of Definition 3.1.3.
 
-Lean: none yet
+Lean: `Singularity.isGalois_and_finrank_fixedPoints`, `Singularity.card_group_eq_card_components_mul` (the theorem of Artin and the count for a transitive action). The level structures are not in Lean yet.
 
 *Proof.* We first show that the morphism $\Phi \colon G \times L \to L \times_U L$, $(g_0, \lambda) \mapsto (\lambda \circ g_0, \lambda)$, is an isomorphism. Here $G \times L$ is a disjoint union of copies of $L$. Let $T'$ be a $U$-scheme and let $\lambda, \lambda'$ be two level structures on $C \times_U T'$. Then $\lambda^{-1} \circ \lambda'$ is an automorphism of the constant group scheme $(\mathbb{Z}/\ell)^{2g}_{T'}$. Such an automorphism is a locally constant map from $T'$ to $G$, and it is the unique $g_0$ with $\lambda' = \lambda \circ g_0$. So $\Phi$ is bijective on $T'$-points for each $T'$, and it is an isomorphism.
 
