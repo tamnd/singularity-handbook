@@ -56,7 +56,7 @@ Lean: `Singularity.IsAlteration.comp` (the composite is an alteration; the degre
 
 **Lemma 1.1.7.** Let $X$ be an integral variety over a field $k$ with function field $K$, and let $L$ be a finite extension of $K$. Let $X_L \to X$ be the normalization of $X$ in $L$. Then $X_L \to X$ is a finite alteration of degree $[L : K]$, and $X_L$ is normal. It is generically étale if and only if $L/K$ is separable.
 
-Lean: none yet
+Lean: `Singularity.isIntegrallyClosed_and_isFractionRing_integralClosure`, `Singularity.moduleFinite_integralClosure_of_charZero`, `Singularity.exists_etale_away_integralClosure_iff_isSeparable` (the affine form). The finiteness in characteristic $p$ for an inseparable extension and the gluing to schemes are not in Lean yet.
 
 *Proof.* Let $\operatorname{Spec} A \subseteq X$ be an affine open subset. Choose a basis of $L$ over $K$ and multiply it by an element of $A$, so that the basis elements $l_1, \dots, l_n$ are integral over $A$. Then $A' = A[l_1, \dots, l_n]$ is a domain that is a finitely generated $k$-algebra and a finite $A$-module, with fraction field $L$. The integral closure $B$ of $A$ in $L$ is the integral closure of $A'$ in its fraction field. By the theorem of E. Noether (Volume 1, Theorem 2.4.7), $B$ is a finite $A'$-module, so it is a finite $A$-module. The rings $B$ glue to the normalization $X_L$ of $X$ in $L$, which is integral, normal, and finite over $X$. A finite morphism is proper, and $X_L \to X$ is surjective because $B$ is integral over $A$. Its function field is $L$. The last claim is Lemma 1.1.5. $\square$
 

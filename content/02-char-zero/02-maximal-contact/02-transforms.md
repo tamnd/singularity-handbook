@@ -74,7 +74,7 @@ It is not divisible by $y$, the equation of the exceptional divisor, so the bira
 $$y_c^{-(m-1)} \pi^*(\partial_i f) = \begin{cases} \partial_{y_i} g & \text{if } i < c, \\ m g + y_c \partial_{y_c} g - \sum_{l < c} y_l \partial_{y_l} g & \text{if } i = c, \\ y_c \partial_{y_i} g & \text{if } i > c. \end{cases}$$
 Also $y_c^{-(m-1)} \pi^* f = y_c g$. Here $\partial_{y_i}$ are the derivations dual to the coordinates $y_i$.
 
-Lean: none yet
+Lean: `Singularity.pderiv_mem_centerIdeal_pow`, `Singularity.chartSubst_pderiv_of_mem_erase`, `Singularity.chartSubst_pderiv_center`, `Singularity.chartSubst_pderiv_of_not_mem` (the chart of affine space, with the chain rule `Singularity.pderiv_aeval_eq_sum`). The local coordinates on a smooth variety are not in Lean yet.
 
 *Proof.* The function $\partial_i f$ lies in $I_Z^{m-1}$ because a derivation maps $I_Z^m$ into $I_Z^{m-1}$. Write $h = \pi^* f = y_c^m g$. On $U_c$ we have $x_i = y_i y_c$ for $i < c$, $x_c = y_c$ and $x_i = y_i$ for $i > c$. By the chain rule,
 $$\partial_{y_i} h = y_c \, \pi^*(\partial_i f) \ (i < c), \qquad \partial_{y_i} h = \pi^*(\partial_i f) \ (i > c), \qquad \partial_{y_c} h = \pi^*(\partial_c f) + \sum_{l < c} y_l \, \pi^*(\partial_l f).$$
