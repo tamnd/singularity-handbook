@@ -24,7 +24,7 @@ The algebra $\mathcal{S}$ is generated in degree 1 by the coherent sheaf $\mathc
 2. The morphism $\pi^{-1}(U) \to U$ is an isomorphism.
 3. Let $g : T \to X$ be a morphism such that $\mathcal{I}\mathcal{O}_T$ is an invertible ideal sheaf. Then there is a unique morphism $h : T \to X'$ with $g = \pi \circ h$.
 
-Lean: none yet
+Lean: `Singularity.idealChart_eq_top_of_one_mem`, `Singularity.bijective_algebraMap_idealChart_of_isUnit`, `Singularity.existsUnique_algHom_idealChart` (parts 2 and 3 on one affine chart). The gluing of the charts is not in Lean yet.
 
 Part 3 is the *universal property* of the blowup. It characterizes $\pi$ up to a unique isomorphism. Parts 1 and 2 are [Har, Proposition II.7.13], and part 3 is [Har, Proposition II.7.14]. The proof uses the charts of the blowup, so we give it after Lemma 1.1.3.
 

@@ -100,7 +100,7 @@ Noether proved the equality $i_R(f, g) = ab + \sum i_{R'}(f', g')$, where the su
 **Theorem 1.2.6 (Abhyankar).** Let $R$ be a regular local ring of dimension 2, essentially of finite type over a field, and let $v$ be a valuation of $K = \operatorname{Frac} R$ that dominates $R$. Let $(R_n)$ be the quadratic sequence along $v$. Then
 $$\mathcal{O}_v = \bigcup_n R_n.$$
 
-Node: SG0000004A · Lean: none yet
+Node: SG0000004A · Lean: `Singularity.exists_mem_of_descent`, `Singularity.mem_iff_exists_mem_of_descent` (the induction of the proof, with the descent step of Lemmas 1.2.3 and 1.2.4 and Proposition 1.2.5 as a hypothesis). The descent step is not in Lean yet.
 
 *Proof.* If the sequence stops at $R_n$, then $R_n = \mathcal{O}_v$ by Proposition 1.1.3, and there is nothing to prove. So assume that each $R_n$ has dimension 2. Let $z \in \mathcal{O}_v$ with $z \ne 0$. For each $n$ we write $z = F_n/G_n$ with $F_n, G_n \in R_n$ without common prime factor. Such a quotient exists for $n = 0$, because $R$ is a unique factorization domain with fraction field $K$.
 
@@ -120,7 +120,7 @@ Abhyankar proved the theorem for each regular local ring of dimension 2 [Abh56].
 
 **Corollary 1.2.7.** Let $k$ be a field of any characteristic, let $K/k$ be a function field of transcendence degree 2, and let $v$ be a valuation of $K/k$. Assume that there is an affine model $A \subseteq \mathcal{O}_v$ of $K/k$ whose local ring at the center of $v$ is regular. Then $v$ has local uniformization.
 
-Node: SG0000004B · Lean: none yet
+Node: SG0000004B · Lean: `Singularity.exists_forall_mem_of_descent` (the step that uses Theorem 1.2.6, with the same hypothesis). The affine models are not in Lean yet.
 
 *Proof.* We use Proposition 4.1.6 of Volume 3. Let $S \subseteq \mathcal{O}_v$ be finite. Let $\mathfrak{p} = \mathfrak{m}_v \cap A$ and $R = A_\mathfrak{p}$. Then $\dim R \le \dim A = 2$. If $\dim R \le 1$, then $R$ is a field or a discrete valuation ring, so $R$ is a valuation ring that $\mathcal{O}_v$ dominates, and $R = \mathcal{O}_v$. Then $A' = A[S]$ satisfies $A \subseteq A' \subseteq A_\mathfrak{p}$, and Lemma 1.1.1 shows that the local ring of $A'$ at the center of $v$ is $R$, which is regular.
 
@@ -130,7 +130,7 @@ By Theorem 1.2.6, each $s \in S$ lies in some $R_n$. Since the sequence increase
 
 **Corollary 1.2.8.** Let $k$ be a field of any characteristic. Then each valuation of the field $k(x, y)$ of rational functions over $k$ has local uniformization.
 
-Node: SG0000004B · Lean: none yet
+Node: SG0000004B · Lean: `Singularity.exists_adjoin_le_valuationSubring` (the choice of $u$ and $w$ in $V$ with $k(u, w) = k(x, y)$). The rest of the proof is not in Lean yet.
 
 *Proof.* Let $v$ be a valuation of $k(x, y)/k$. Let $u = x$ if $v(x) \ge 0$ and $u = x^{-1}$ otherwise, and choose $w \in \{y, y^{-1}\}$ in the same way. Then $u$ and $w$ are algebraically independent over $k$, and $k(u, w) = k(x, y)$. The polynomial ring $A = k[u, w]$ is an affine model contained in $\mathcal{O}_v$, and it is regular. So its local ring at the center of $v$ is regular, and Corollary 1.2.7 applies. $\square$
 
