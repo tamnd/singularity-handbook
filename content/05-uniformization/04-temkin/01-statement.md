@@ -32,7 +32,7 @@ The Lean statement takes a finite subset first. It says: for each valuation $v$ 
 
 **Proposition 4.1.2.** Theorem 4.1.1 implies the Lean form.
 
-Lean: none yet
+Lean: `Singularity.exists_isAffineModel_subset_valuationSubring`, `Singularity.mem_valuationSubring_of_isIntegral` (two steps of the proof). The statement is not in Lean yet.
 
 *Proof.* Let $v$ and $S$ be given. Write $K = k(a_1, \dots, a_m)$. After we replace $a_i$ by $a_i^{-1}$ when $a_i \notin \mathcal{O}_v$, all $a_i$ lie in $\mathcal{O}_v$. Let $A = k[S, a_1, \dots, a_m]$. Then $A \subseteq \mathcal{O}_v$, and $X = \operatorname{Spec} A$ is an affine $k$-model of $\mathcal{O}_v$.
 
@@ -42,7 +42,7 @@ By Theorem 4.1.1, the center $\mathfrak{q} = \mathfrak{m}_w \cap B$ is a point o
 
 **Corollary 4.1.3.** Theorem 4.1.1 implies Theorem 1.4.1, the theorem of Zariski.
 
-Lean: none yet
+Lean: `Singularity.hasLocalUniformization_of_localUniformization_inseparable`, `Singularity.hasRegularCenter_of_bijective` (in characteristic 0, with the theorem of Temkin as a hypothesis).
 
 *Proof.* Let $k$ have characteristic 0. Each finite purely inseparable extension of a field of characteristic 0 is trivial. So in the proof of Proposition 4.1.2 we have $L = K$ and $w = v$, and $B$ is an affine model of $K/k$ with $S \subseteq B \subseteq \mathcal{O}_v$ and a regular center. By Volume 3, Proposition 4.1.6, $v$ has local uniformization. $\square$
 

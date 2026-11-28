@@ -16,7 +16,7 @@ In this section we explain how Cossart and Piltant deduce Theorem 1.1.3 from the
 
 **Proposition 2.2.1 (Cossart-Piltant).** Theorem 1.2.6 implies Theorem 1.1.3.
 
-Lean: none yet
+Lean: `Singularity.minpoly_eq_X_pow_sub_C`, `Singularity.coeff_X_pow_sub_C_eq_zero`, `Singularity.finrank_adjoin_eq_of_pow`, `Singularity.taylor_X_pow_sub_C_char` (the algebra of Step 3, and the stability of case 1 under a shift). The patching and Theorem 1.2.6 are not in Lean yet.
 
 This is [CP19, Proposition 4.10]. Together with Theorem 1.2.6, it proves Theorem 1.1.3 and therefore Theorem 1.1.2 and Theorem 1.1.6. We give the steps of the proof. Each step is a theorem of [CP19] or of [CP08], and we do not reproduce the proofs.
 

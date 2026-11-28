@@ -64,7 +64,7 @@ The proposition is trivial, but it shows how the two problems relate. Resolution
 
 **Corollary 1.4.6.** Theorem 1.4.1 follows from the theorem of Hironaka [Hir64].
 
-Node: SG0000004E · Lean: none yet
+Node: SG0000004E · Lean: `Singularity.AffineResolution`, `Singularity.hasLocalUniformization_of_affineResolution` (with resolution of affine models as a hypothesis). The theorem of Hironaka is not in Lean.
 
 *Proof.* Let $X$ be a model of $K/k$. It is an integral variety over a field of characteristic 0. By the theorem of Hironaka, in the form of Volume 9, Theorem 1.2.6, it has a resolution. Proposition 1.4.5 gives the claim. $\square$
 
