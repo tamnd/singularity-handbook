@@ -15,6 +15,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 1, Examples 1.8.19, 3.1.6 and 3.3.16 and Propositions 4.2.8 and 6.2.5 have Lean lines.
 - Volume 2, Lemma 2.2.4 and Proposition 3.2.3 and Volume 8, Lemmas 2.3.1, 2.3.2 and 2.3.5 and Propositions 2.4.2 and 2.4.4 have Lean lines. Volume 2, Lemma 3.2.2 has a second Lean name for part 2.
 - Volume 6, Definitions 3.1.3, 3.2.1 and 3.2.3, Proposition 3.2.2 and Examples 1.2.7 and 4.1.1 have Lean lines.
 - Volume 3, Theorem 3.1.2 and Proposition 3.1.6 and Volume 5, Proposition 1.4.5, Proposition 3.1.4 and Theorem 3.1.5 have Lean lines.

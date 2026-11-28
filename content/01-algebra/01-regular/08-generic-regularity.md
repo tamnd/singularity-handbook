@@ -151,7 +151,7 @@ Now let $\partial_t$ be the derivation of $P$ that differentiates the coefficien
 
 The derivation $\partial_t$ does not survive a base change. Let $k' = k(a)$ with $a^p = t$. Each derivation $\partial$ of $k'[x, y]$ satisfies $\partial t = \partial(a^p) = p a^{p-1} \, \partial a = 0$. Over $k'$ we have $f = y^2 - (x - a)^p$, and $f$ is in the square of the maximal ideal $(x - a, y)$, because $p \ge 3$. So $A \otimes_k k'$ is not regular at this point, by Proposition 1.2.10. The derivation $\partial_t$ exists over $k$ because $t$ is not a $p$-th power in $k$, and this is the reason why the regularity of $A$ is not stable under the extension of the base field. Section 6.2 describes all the derivations of $k$ with the $p$-bases of $k$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isRegularRing_example_1_8_19`, `Singularity.Algebra.derivation_example_1_8_19_mem`, `Singularity.Algebra.pderiv_zero_example_1_8_19`, `Singularity.Algebra.example_1_8_19_baseChange_mem` (the derivation steps). The maximality of $\mathfrak{n}$ and the failure of regularity after base change are not in Lean yet.
 
 ### The Lean proof
 

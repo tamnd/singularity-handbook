@@ -176,7 +176,7 @@ With Proposition 1.2.10, this gives a special case of the theorem of Nagata in R
 
 The multiplicity is a coarse invariant. The surfaces $A_m$ all have the same Hilbert-Samuel function, but they behave differently under blowup. One blowup of the vertex resolves $A_1$ (Example 1.10.8). For $m \ge 3$, let $a = x/z$ and $b = y/z$. Then $ab = z^{m-1}$ in the chart for $z$ of the blowup of $A_m$ at the vertex. The ring $k[z, a, b]/(ab - z^{m-1})$ is a domain of dimension $2$ that maps onto this chart, and the chart is a domain of dimension $2$, so the map is an isomorphism. By Proposition 1.2.10 this chart has a singular point at the origin, of type $A_{m-2}$. The resolution algorithms use the order with finer invariants, which Volume 3 and Volume 4 develop.
 
-Lean: none yet
+Lean: `Singularity.Algebra.samuelMultiplicity_germ`, `Singularity.Algebra.hilbertSamuel_planeCurve`, `Singularity.Algebra.hilbertSamuel_cusp`, `Singularity.Algebra.samuelMultiplicity_xa_add_yb`, `Singularity.Algebra.hilbertSamuel_surface_two`, `Singularity.Algebra.hilbertSamuel_surface_three`, `Singularity.Algebra.hilbertSamuel_cubicCone_values`. The paragraph on the blowup charts of $A_m$ is not in Lean yet.
 
 ### The Lean proof
 
