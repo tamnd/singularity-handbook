@@ -24,7 +24,7 @@ A valuation $v$ of $K/k$ is *zero-dimensional* if its residue field $\kappa_v$ i
 
 **Lemma 1.4.2.** Let $v$ be a valuation of $K/k$, and let $y_1, \dots, y_m \in \mathcal{O}_v$ be elements whose residues are algebraically independent over $k$. Then $y_1, \dots, y_m$ are algebraically independent over $k$, the field $k' = k(y_1, \dots, y_m)$ is contained in $\mathcal{O}_v$, and $v$ is a valuation of the function field $K/k'$. If $v$ has local uniformization as a valuation of $K/k'$, then $v$ has local uniformization as a valuation of $K/k$. If the residues form a transcendence basis of $\kappa_v$ over $k$, then $v$ is zero-dimensional as a valuation of $K/k'$, and $\operatorname{trdeg}_{k'} K = \operatorname{trdeg}_k K - \operatorname{trdeg}_k \kappa_v$.
 
-Node: SG0000004F · Lean: `Singularity.algebraicIndependent_of_residue`, `Singularity.mem_of_mem_adjoin_residue`, `Singularity.HasLocalUniformization.of_intermediateField` (all claims but the last)
+Node: SG0000004F · Lean: `Singularity.algebraicIndependent_of_residue`, `Singularity.mem_of_mem_adjoin_residue`, `Singularity.HasLocalUniformization.of_intermediateField`, `Singularity.isAlgebraic_range_residueAdjoinHom`, `Singularity.trdeg_adjoin_add_trdeg_residueField`
 
 *Proof.* The first claims are in the proof of Volume 3, Proposition 4.1.8, part 2: for a nonzero polynomial $Q$ over $k$, the residue of $Q(y)$ is $Q(\bar{y}) \ne 0$, so $Q(y)$ is a unit of $\mathcal{O}_v$. Thus $k' \subseteq \mathcal{O}_v$, and $K$ is finitely generated over $k'$.
 
