@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.83] - 2026-11-28
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.83.
 - Volume 9, Section 3.29 treats embedded resolution of 3-folds as the central open problem. Theorem 3.29.11 proves that embedded resolution of 3-folds with an isomorphism clause over the snc locus gives the weak principalization $\mathrm{Princ}_4^{\rm w}$, in four steps, and Theorem 3.29.12 proves that the form without the clause gives a very weak principalization over each field. Example 3.29.8 shows that one hypersurface does not suffice, and the gaps (G1) to (G4) are listed. Theorem 3.29.19 proves that embedded local uniformization of 3-folds gives $\mathrm{PILU}_4$ for each valuation without defect, in each multiplicity, with the toric chart Lemma 3.29.15 and the unit absorption Lemma 3.29.16. Problem 3.29.23 states the open case (D) for valuations with defect, Examples 3.29.24, 3.29.25 and 3.29.27 treat a defect example, the cusp $x^2 + y^3$ for $p \ge 5$ and $x^2 + y^{2p+1}$, Lemma 3.29.28 gives embedded local uniformization from embedded resolution, and the section explains why the counterexample of Cutkosky does not refute (D).
 
 ### Changed
