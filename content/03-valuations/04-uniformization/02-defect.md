@@ -42,7 +42,7 @@ The best approximation exists when there is no defect.
 
 **Corollary 4.2.3.** Let $(K, v)$ be a henselian valued field with $\operatorname{char} Kv = 0$, let $L/K$ be a finite extension, and let $w$ be the extension of $v$ to $L$. Then for each $z \in L \setminus K$ the set $w(z - K)$ has a largest element.
 
-Lean: none yet
+Lean: `Singularity.exists_forall_valuation_sub_le_of_eq_pow_mul` (with the conclusion of Theorem 3.1.4 and the families as hypotheses). Theorem 3.1.4 is not in Lean yet.
 
 *Proof.* By Corollary 3.2.2, $d(L/K) = 1$, so $ef = [L : K]$. Proposition 3.2.3 gives the largest element. $\square$
 

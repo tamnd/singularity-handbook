@@ -32,7 +32,7 @@ The inequality is strict only in case 3. This is the classification of Zariski [
 
 **Example 2.4.5 (the two cases of the local proof).** Let $R = k[x, y]_{(x, y)}$, with $\kappa = k$ and $\dim R = 2$. We follow the proof of Theorem 2.3.3 for two valuations that dominate $R$.
 
-Lean: none yet
+Lean: `Singularity.IsConvexSubgroup.eq_top_of_one_lt_mem`, `Singularity.isLeast_delta_one_lexValueX` (the two computations of the smallest convex subgroup). The claims on lengths and residue fields are not in Lean yet.
 
 First let $v$ be the valuation of Example 1.6.3, with $v(x) = 1$ and $v(y) = \alpha$ for an irrational $\alpha > 0$. The least value of the generators $x, y$ is $\mu = \min(1, \alpha)$. Since $\Gamma_v \subseteq \mathbb{R}$ is archimedean, the smallest convex subgroup that contains $\mu$ is $\Delta = \Gamma_v$, so $\mathfrak{q} = 0$ and we are in Case A. There $r = 2$ and $s = 0$, and Step 3 gives $\ell(R/\mathfrak{m}^N) \ge CN^2$, which matches the degree 2 of the Hilbert-Samuel polynomial of $R$. So $2 + 0 \le 2$, with equality.
 

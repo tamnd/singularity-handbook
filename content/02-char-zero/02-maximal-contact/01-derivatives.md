@@ -65,7 +65,7 @@ Let $Z \subseteq X$ be a smooth closed subvariety, that is, a closed subscheme t
 
 **Proposition 2.1.7 (order along a smooth subvariety).** Let $Z \subseteq X$ be a smooth closed subvariety, let $U \subseteq X$ be open and let $f \in \mathcal{O}(U)$. Assume that $\operatorname{ord}_x f \ge r$ at each closed point $x$ of $Z \cap U$. Then $f \in I_Z^r(U)$.
 
-Lean: none yet
+Lean: `Singularity.mem_varsIdeal_pow_of_le_ordAtPoint`, `Singularity.le_ordAtPoint_of_mem_varsIdeal_pow`, `Singularity.forall_le_ordAtPoint_iff_le_varsIdeal_pow` (for a coordinate subspace of the affine space). Smooth varieties in general are not in Lean yet.
 
 *Proof.* It suffices to show that $f \in I_Z^r \mathcal{O}_{X,x}$ at each closed point $x$ of $Z \cap U$; at the other closed points $I_Z$ is the unit ideal near the point. Choose local coordinates at $x$ with $I_Z = (x_1, \dots, x_c)$, and write $x' = (x_1, \dots, x_c)$ and $x'' = (x_{c+1}, \dots, x_n)$. In $\hat{\mathcal{O}}_{X,x} = K[[x', x'']]$ write
 $$f = \sum_{\beta \in \mathbb{N}^c} f_\beta(x'') \, x'^\beta, \qquad f_\beta \in K[[x'']].$$

@@ -26,7 +26,7 @@ In the coordinates above, $\partial_2, \dots, \partial_n$ restrict to the deriva
 2. Let $(A, a)$ be a marked ideal on $X$ with $Z \subseteq \operatorname{cosupp}(A, a)$. Then $Z \subseteq \operatorname{cosupp}(A|_S, a)$, and the restriction to $S'$ of the transform of $(A, a)$ is the transform of $(A|_S, a)$ under $\pi_S$.
 3. For each ideal $B$ on $S$ and each closed point $x$, $\operatorname{ord}_x D_S^l(B) \ge \operatorname{ord}_x B - l$.
 
-Lean: none yet
+Lean: `Singularity.hyperplaneRestrict_comp_chartSubst` (part 1), `Singularity.map_hyperplaneRestrict_le`, `Singularity.map_hyperplaneRestrict_centerChartTransformIdeal` (part 2), `Singularity.derivIdeal_iterate_le_ordAtPointIdeal` (part 3). These are for coordinate centers in the affine space.
 
 *Proof.* (1) The birational transform of a closed subscheme is the blowup of the subscheme along the restricted ideal [Har, Section II.7], and $I_Z \cdot \mathcal{O}_S$ is the ideal of $Z$ in $S$. So $I_Z \mathcal{O}_{S'} = \mathcal{O}_{X'}(-F) \mathcal{O}_{S'}$ is the ideal of the exceptional divisor of $\pi_S$. (2) Restriction to $S$ does not lower the order at points of $S$. The pullback commutes with restriction, because $S' \to X' \to X$ and $S' \to S \to X$ are the same map, and $\mathcal{O}_{X'}(aF)$ is invertible with restriction $\mathcal{O}_{S'}(aF_S)$ by (1). So $(\mathcal{O}(aF) \pi^* A)|_{S'} = \mathcal{O}(aF_S) \pi_S^*(A|_S)$. (3) A derivation maps $\mathfrak{m}_x^r$ into $\mathfrak{m}_x^{r-1}$. $\square$
 
@@ -45,7 +45,7 @@ So the derivative of the transform in the direction normal to $S'$ is the transf
 1. $S_{i+1} \to S_i$ is the blowup of $S_i$ along $Z_i$, and $T^{(j)}_{i+1}$ is the transform of $(T^{(j)}_i, m - j)$. So the $T^{(j)}_i$ are the successive transforms of $\big( D^j(I)|_S, \, m - j \big)$ on $S$.
 2. $S_i \cap \operatorname{cosupp}(I_i, m) = \bigcap_{j=0}^{m-1} \operatorname{cosupp}(T^{(j)}_i, m - j)$.
 
-Node: SG00000046 · Lean: none yet
+Node: SG00000046 · Lean: `Singularity.le_ord_of_hyperplaneRestrict_pderiv_iterate`, `Singularity.le_idealOrd_of_restrict_le`, `Singularity.le_idealOrd_iff_restrict_derivIdeal_iterate` (part 2 at the origin, for the first step). The induction across a sequence of blowups is not in Lean yet.
 
 *Proof.* (1) This is Lemma 3.1.2 (1) and (2), since $Z_i \subseteq \operatorname{cosupp}(J^{(j)}_i, m - j)$ by Theorem 2.2.7.
 

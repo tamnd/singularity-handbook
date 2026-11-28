@@ -20,7 +20,7 @@ Node: SG00000010 · Lean: `Singularity.Valuation.defect` (planned, no Lean state
 
 **Corollary 3.2.2.** In Definition 3.2.1, $d(L/K)$ is a power of the characteristic exponent $p$ of $Kv$. In particular $d(L/K) = 1$ if $\operatorname{char} Kv = 0$, or if $n$ is prime to $p$.
 
-Lean: none yet
+Lean: `Singularity.div_eq_pow_of_eq_pow_mul`, `Singularity.mul_eq_of_eq_pow_mul` (with the conclusion of Theorem 3.1.4 as a hypothesis). Theorem 3.1.4 is not in Lean yet.
 
 *Proof.* By Theorem 3.1.4, $d(L/K) = p^\nu$. If $p = 1$ this is 1. If $p$ is prime and $p \nmid n$, then $p^\nu \mid n$ forces $\nu = 0$. $\square$
 

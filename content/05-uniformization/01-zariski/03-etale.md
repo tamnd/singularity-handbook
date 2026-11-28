@@ -86,7 +86,7 @@ Lean: none yet
 
 **Corollary 1.3.6.** Let $k$ be a field of characteristic 0, let $K/k$ be a function field of transcendence degree 2, and let $v$ be a valuation of $K/k$ whose value group $\Gamma_v$ is finitely generated. Then $v$ has local uniformization.
 
-Lean: none yet
+Lean: `Singularity.valuation_eq_one_of_isAlgebraic` (the step that shows that $x$ is transcendental over $k$). The rest of the proof needs Theorem 1.3.5, which is not in Lean yet.
 
 *Proof.* The group $\Gamma_v$ is torsion free and finitely generated, so $\Gamma_v \cong \mathbb{Z}^r$, and $r \le 2$ by the Abhyankar inequality (Volume 3, Theorem 2.1.5). If $r = 0$, then $v$ is trivial. If $r = 1$, choose $x \in K$ such that $v(x)$ generates $\Gamma_v$. An element algebraic over $k$ has value 0, because $v$ is trivial on $k$ and $\Gamma_v$ is torsion free. So $x$ is transcendental over $k$. Choose $y \in K$ transcendental over $k(x)$. Then $\Gamma_{k(x, y)}$ contains $v(x)$, so it is $\Gamma_v$. If $r = 2$, choose $x, y \in K$ such that $v(x), v(y)$ is a basis of $\Gamma_v$. If $x$ and $y$ were algebraically dependent over $k$, the field $k(x, y)$ would have transcendence degree at most 1, and its value group would have rational rank at most 1 by the Abhyankar inequality. But it contains $v(x)$ and $v(y)$. So $x$ and $y$ are algebraically independent, and $\Gamma_{k(x, y)} = \Gamma_v$. In each case Theorem 1.3.5 applies. $\square$
 

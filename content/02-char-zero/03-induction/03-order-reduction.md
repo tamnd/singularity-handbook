@@ -37,7 +37,7 @@ Lean: none yet
 2. If also $Z$ contains no component of $S$, and $\pi$ is the blowup of $Z$, then $S' + E'$ has simple normal crossings, where $E'$ is the transform of $E$, and $E'|_{S'}$ is the transform of $E|_S$ under the blowup $\pi_S$ of $S$ along $Z$.
 3. If $Z \subseteq S$ is a smooth closed subvariety and $x \in Z$ is a closed point such that $Z$ has simple normal crossings with $E$ near $x$, then $Z$ has simple normal crossings with $S + E$ near $x$.
 
-Lean: none yet
+Lean: `Singularity.centerChartTransformIdeal_span_X_of_mem`, `Singularity.centerChartTransformIdeal_span_X_of_not_mem`, `Singularity.centerChartTransformIdeal_span_X_self` (the chart computation of part 2). Parts 1 and 3 are not in Lean yet.
 
 *Proof.* (1) Let $x \in Z$. Choose local coordinates $z_2, \dots, z_n$ on $S$ at $x$ such that each $E^i|_S$ through $x$ is some $(z_l = 0)$ and $Z$ is a coordinate subspace. If $e_i$ is a local equation of $E^i$, then $e_i|_S$ is a unit times $z_l$, and we may replace $z_l$ by $e_i|_S$. Let $h$ be a local equation of $S$. Lift the other $z_l$ to functions on $X$, and take the $e_i$ as lifts of the $z_l = e_i|_S$. The differentials at $x$ of the lifts restrict to a basis of the cotangent space of $S$, and the differential of $h$ spans the kernel of the restriction map. So $h$ and the lifts are local coordinates on $X$ at $x$. In them $S$ and the $E^i$ are coordinate hyperplanes, and $Z$ is the coordinate subspace given by $h$ and the $z_l$ that define $Z$ in $S$.
 
