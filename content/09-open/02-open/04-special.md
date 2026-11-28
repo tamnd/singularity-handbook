@@ -1,7 +1,7 @@
 ---
 title: Special classes and the next steps
 nodes: [SG0000001T, SG0000001S, SG00000007]
-sources: [KKMS, Ful93, Wlo22, AS22, MN26, Ber26, HP19a]
+sources: [KKMS, Ful93, Wlo22, AS22, MN26, Ber26, HP19a, CP19, CJS20]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -34,7 +34,7 @@ Node: SG0000001S · Lean: `Singularity.binomial_resolution` (planned, no Lean st
 
 This is [Wlo22, Theorem 1.0.1]. The resolution is a projective birational morphism that is an isomorphism over the regular locus, and the inverse image of the singular locus is a divisor with simple normal crossings. Abramovich and Schober resolve binomial varieties over algebraically closed fields with toric Artin stacks, the fantastacks of Geraschenko and Satriano [AS22]. Both proofs use the torus structure of the binomial equations.
 
-In a recent preprint, Martínez-Núñez extends the toric case to varieties over an algebraically closed field of positive characteristic with a torus action of complexity at most 3 [MN26]. The complexity is the dimension of the variety minus the dimension of a general orbit. The proof describes the variety by a polyhedral divisor on a quotient of dimension at most 3. Then it uses log resolutions in dimension at most 3, and it finishes with the toroidal resolution of [KKMS]. This is one of the few unconditional results in dimension 4 and higher for a large class. The class contains fourfolds with an action of a torus of dimension 1, but it does not contain a general fourfold.
+In a recent preprint, Martínez-Núnez extends the toric case to varieties over an algebraically closed field of positive characteristic with a torus action of complexity at most 3 [MN26]. The complexity is the dimension of the variety minus the dimension of a general orbit. The proof describes the variety by a polyhedral divisor on a quotient of dimension at most 3. Then it uses log resolutions in dimension at most 3, and it finishes with the toroidal resolution of [KKMS]. The input in dimension 3 is the theorem of Cossart and Piltant [CP19] and the embedded resolution of surfaces [CJS20] on the base. The resolution is a proper birational morphism from a regular variety. It is not known to be projective, and the field must be algebraically closed. Section 3.32 reads the proof and gives the cases in dimension 4 that follow from it. This is one of the few unconditional results in dimension 4 and higher for a large class. The class contains fourfolds with an action of a torus of dimension 1, but it does not contain a general fourfold.
 
 ### Computer search
 

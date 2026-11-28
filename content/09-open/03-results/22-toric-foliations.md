@@ -1,7 +1,7 @@
 ---
 title: Foliations in dimension 4 that a torus fixes
 nodes: [SG000000A7, SG000000A8, SG000000A9, SG000000AA, SG000000AB, SG000000AC, SG000000AD, SG000000AE, SG000000AF, SG000000AG, SG000000AH, SG000000AJ, SG000000AK, SG000000AM, SG000000AN, SG000000AP, SG000000AQ, SG000000AR]
-sources: [Pos24, Pos23, KKMS, Quek22]
+sources: [Pos24, Pos23, KKMS, Quek22, MN26]
 status: drafted
 drafted_by: writer
 reviewed_by: []
@@ -130,7 +130,7 @@ Node: SG000000AA · Lean: none yet
 
 *Proof.* The foliation $\mathcal{F}_V$ is graded, so its ring of constants in $A$ is spanned by monomials. For a monomial, $D_c(x^m) = (c \cdot \bar{m}) x^m$ and $\partial_j(x^m) = m_j x^{m - e_j}$. So $x^m$ is a constant if and only if $c \cdot \bar{m} = 0$ for each $c \in V$. The conditions from the $\partial_j$ with $e_j \in V$ are among these. The toric resolution is Theorem 2.4.1 [KKMS]. $\square$
 
-With Theorem 3.22.10 this answers Problem 4.10 of note 04 for the diagonal maximal torus in both of its readings: resolve the foliation, and resolve the quotient. For an arbitrary embedding of $\mathbb{G}_m^n$ in $\operatorname{Aut} \mathbb{A}^n$ one needs a linearization theorem in characteristic $p$, and the research notes did not check its hypotheses. For smaller tori, actions on affine space need not be linear in positive characteristic, so the hypothesis "diagonal" is part of the statements below too.
+With Theorem 3.22.10 this answers Problem 4.10 of note 04 for the diagonal maximal torus in both of its readings: resolve the foliation, and resolve the quotient. For an arbitrary embedding of $\mathbb{G}_m^n$ in $\operatorname{Aut} \mathbb{A}^n$ one needs a linearization theorem in characteristic $p$, and the research notes did not check its hypotheses. For the quotient this is no longer needed: for each nontrivial action of a torus on $\mathbb{A}^4$, linear or not, and each invariant foliation, the quotient has a resolution by [MN26] (Corollary 3.32.7). The linearization question remains for the foliation form. For smaller tori, actions on affine space need not be linear in positive characteristic, so the hypothesis "diagonal" is part of the statements below too.
 
 ### The limits of toric methods
 
@@ -180,7 +180,7 @@ At a singular multiplicative point there are formal coordinates $t_1, \dots, t_4
 
 Node: SG000000AD · Lean: none yet
 
-The expected proof is short: the weighted filtration depends only on the coordinates modulo terms of high weight, and blowups commute with the flat base change to the completion. The missing step is that the regularity of the saturated pullback can be checked after completion at the points over $q$. Under Conjecture 3.22.16, one weighted blowup at each of the $p + 1$ points removes them from the singular locus. Along $S$ the foliation is, chart by chart, the product of a line with the threefold field $\delta$ of the chart $z$ or $w$, and Hypothesis 3.22.3 resolves each chart. The gluing of these resolutions is Conjecture 3.22.21 below. So it is not proved that Example 3.22.14 can be resolved, and it is not proved that it is a counterexample to Problem 4.10.
+The expected proof is short: the weighted filtration depends only on the coordinates modulo terms of high weight, and blowups commute with the flat base change to the completion. The missing step is that the regularity of the saturated pullback can be checked after completion at the points over $q$. Under Conjecture 3.22.16, one weighted blowup at each of the $p + 1$ points removes them from the singular locus. Along $S$ the foliation is, chart by chart, the product of a line with the threefold field $\delta$ of the chart $z$ or $w$, and Hypothesis 3.22.3 resolves each chart. The gluing of these resolutions is Conjecture 3.22.21 below. So it is not proved that the foliation of Example 3.22.14 can be resolved. Its quotient $\mathbb{A}^4/\mathcal{F}$ carries the scalar action of $\mathbb{G}_m$, so it has a resolution by [MN26] (Corollary 3.32.7), and the example is not a counterexample to Problem 4.10 in its quotient form.
 
 The second example is invariant under a torus of rank 3.
 
@@ -317,7 +317,7 @@ In Example 3.22.14, $d = p - 1$ and $\delta(\alpha) = 0$ in the chart $x$, which
 2. Conjecture 3.22.21, the equivariant gluing of the chart resolutions of Corollary 3.22.19. Posva's Remark 5.1.5 shows that this is a real issue. With Conjecture 3.22.16 it would resolve Example 3.22.14.
 3. Conjecture 3.22.20 with $H = 0$ at the points of $Z(\delta) \cap V(s)$, when $\delta$ has no second torus symmetry as in Proposition 3.22.25.
 4. Conjecture 3.22.20 with $H \ne 0$.
-5. Problem 4.10 of note 04 for tori of rank 1, 2 and 3, and for actions of $\mathbb{G}_m$ with weights of mixed sign, zero or divisible by $p$.
+5. Problem 4.10 of note 04 in its foliation form, for tori of rank 1, 2 and 3, and for actions of $\mathbb{G}_m$ with weights of mixed sign, zero or divisible by $p$. The quotient form is solved for all of these by [MN26] (Corollary 3.32.7).
 
 ### Exercises
 
@@ -333,8 +333,8 @@ In Example 3.22.14, $d = p - 1$ and $\delta(\alpha) = 0$ in the chart $x$, which
 
 ### Status
 
-The results are the nodes SG000000A7 to SG000000AR of the map. Theorems 3.22.6 and 3.22.10, Corollary 3.22.11, Lemma 3.22.12, Examples 3.22.14 and 3.22.17 and Proposition 3.22.18 are from research note 58, with the corrections of the referee report in note 73. Proposition 3.22.15, Lemma 3.22.22, Theorem 3.22.23, Corollary 3.22.24, Propositions 3.22.25 and 3.22.27 and Example 3.22.26 are new in note 73. Corollary 3.22.19 depends on the threefold theorems of Posva, which are a hypothesis on the map. Conjectures 3.22.16, 3.22.20 and 3.22.21 are open, and so it is not known whether Example 3.22.14 has a resolution. The computer checks of notes 58 and 73 (all subspaces of $\mathbb{F}_p^4$ for $p = 2, 3, 5$, and the examples for $p \le 7$) are evidence only. None of the nodes has a Lean proof yet. An outside expert has not yet read the result.
+The results are the nodes SG000000A7 to SG000000AR of the map. Theorems 3.22.6 and 3.22.10, Corollary 3.22.11, Lemma 3.22.12, Examples 3.22.14 and 3.22.17 and Proposition 3.22.18 are from research note 58, with the corrections of the referee report in note 73. Proposition 3.22.15, Lemma 3.22.22, Theorem 3.22.23, Corollary 3.22.24, Propositions 3.22.25 and 3.22.27 and Example 3.22.26 are new in note 73. Corollary 3.22.19 depends on the threefold theorems of Posva, which are a hypothesis on the map. Conjectures 3.22.16, 3.22.20 and 3.22.21 are open, and so it is not known whether the foliation of Example 3.22.14 has a resolution. Its quotient has a resolution by Corollary 3.32.7. The computer checks of notes 58 and 73 (all subspaces of $\mathbb{F}_p^4$ for $p = 2, 3, 5$, and the examples for $p \le 7$) are evidence only. None of the nodes has a Lean proof yet. An outside expert has not yet read the result.
 
 ### Notes and references
 
-The results are in research note 58, with the corrections of note 73, which is a referee report on note 58. Note 73 found that the charts $x$ and $y$ of Example 3.22.14 were missing, proved Proposition 3.22.15, stated Conjecture 3.22.16, restricted Corollary 3.22.11 to the diagonal action and the case of $\mathbb{G}_m$ to linear actions with positive weights prime to $p$, and proved the results on the case $H = 0$. The definitions and the theory of quotients by 1-foliations are in [Pos23]: additive and multiplicative derivations and Hochschild's formula in Section 2.3, the Jacobson correspondence in Section 2.5, and the normal form of singular multiplicative derivations in Section 4.1. The resolution of 1-foliations on surfaces and threefolds is [Pos24], and the weighted blowups there are in Example 2.4.3. Weighted blowups as stacks are in [Quek22]. Toric resolution is [KKMS]. Jacobson's formula $(\delta + a)^p = \delta^p + a^p + \delta^{p-1}(a)$ is classical.
+The results are in research note 58, with the corrections of note 73, which is a referee report on note 58. Note 73 found that the charts $x$ and $y$ of Example 3.22.14 were missing, proved Proposition 3.22.15, stated Conjecture 3.22.16, restricted Corollary 3.22.11 to the diagonal action and the case of $\mathbb{G}_m$ to linear actions with positive weights prime to $p$, and proved the results on the case $H = 0$. The definitions and the theory of quotients by 1-foliations are in [Pos23]: additive and multiplicative derivations and Hochschild's formula in Section 2.3, the Jacobson correspondence in Section 2.5, and the normal form of singular multiplicative derivations in Section 4.1. The resolution of 1-foliations on surfaces and threefolds is [Pos24], and the weighted blowups there are in Example 2.4.3. Weighted blowups as stacks are in [Quek22]. Toric resolution is [KKMS]. The resolution of varieties with a torus action of complexity at most 3 is [MN26], G. Martínez-Núnez, arXiv:2611.18258, and Section 3.32 applies it to the quotients of this section. Jacobson's formula $(\delta + a)^p = \delta^p + a^p + \delta^{p-1}(a)$ is classical.
