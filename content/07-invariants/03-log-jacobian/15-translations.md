@@ -70,6 +70,8 @@ The next lemma is the argument of Lemma 3.13.19 in the form that the proof of Pr
 
 **Lemma 3.15.4.** The number $\theta_m$ is irrational. Let $S \subseteq \mathbb{N}^2$ be a set, finite or infinite, with one point $q_*$ where $\lambda$ takes its least value on $S$. Then there is an $m_0$ such that for each $m' \ge m_0$, each $q \in S$ with $q \ne q_*$ and $s = 1, 2$, we have $(q - q_*) \cdot c_s > 0$.
 
+Lean: `Singularity.PlanarRuns.IsCornerWord.dominance`, `Singularity.PlanarRuns.coord_col` (for the Hahn model of a corner run; the exponents of $q - q_*$ at $P_{m'}$ are the products $(q - q_*) \cdot c_s$, and the uniqueness of the minimiser, which the irrationality of $\theta_m$ gives, is a hypothesis)
+
 *Proof.* If $\theta_m = a / b$ with integers $a$ and $b > 0$, then the Laurent monomial $z_m^b y_m^{-a}$ has the value $0$. It is not $1$, and it is a Laurent monomial in $y_N, z_N$, since the matrices have the determinant $\pm 1$. This is not possible, since $\theta$ is irrational.
 
 From $v(y_m) = a_1 v(y_{m'}) + a_2 v(z_{m'})$ and $v(z_m) = b_1 v(y_{m'}) + b_2 v(z_{m'})$ we get $(v(y_m), v(z_m)) = v(y_{m'}) c_1 + v(z_{m'}) c_2$. So the ray of $(1, \theta_m)$ is in the cone of $c_1$ and $c_2$. A $y$-step replaces $c_1$ by $c_1 + c_2$ and a $z$-step replaces $c_2$ by $c_1 + c_2$, as in the proof of Theorem 3.13.20. Both charts occur an infinite number of times, so the entries of $c_1$ and $c_2$ go to infinity, and $c_s / |c_s|$ goes to the direction of $(1, \theta_m)$.

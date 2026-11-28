@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 7, Lemma 3.15.4 has a Lean line: `IsCornerWord.dominance` proves the dominance lemma in the Hahn model of a corner run.
+
 ## [0.4.81] - 2026-11-28
 
 ### Added
