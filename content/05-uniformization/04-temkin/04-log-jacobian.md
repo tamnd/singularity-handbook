@@ -241,7 +241,7 @@ Part 2. The class $\bar{t}$ is not a $p$-th power in $\kappa$, so $d\bar{t} \ne 
 
 In each case $t$ has monomial type, so $f$ is foliated monomial in $R$.
 
-Lean: `Singularity.span_eq_top_of_span_eq_span_singleton` (the first step of the proof). The theorem is not in Lean yet.
+Lean: `Singularity.span_eq_top_of_span_eq_span_singleton` (the first step of the proof), `Singularity.exists_derivLogJacobian_eq_span_generator` (a principal log Jacobian ideal has a generator $x_i D_i f$ with $i \in \Delta$ or $D_j f$ with $j \notin \Delta$), `Singularity.exists_first_integral_of_derivLogJacobian_eq_span` and `Singularity.exists_origin_first_integral_of_derivLogJacobian_eq_span` (Case 1 of the proof: the element $t$, the fact that each log derivation that kills $f$ kills $t$, and the fact that $x_{i_0} D_{i_0} t$ is a unit times $t$; the second theorem is for the local ring of affine space at the origin). The Lean proof uses a Taylor expansion along each coordinate outside $D$ in place of Steps 4 to 6. Case 2 and the statement $f \in E^p(t)$ are not in Lean yet.
 
 *Proof.* Fix a family of coordinates adapted to $D$. Let $J_D(f) = mR$. By Lemma 4.4.4, part 2, $m \ne 0$. By Lemma 4.4.3, part 4, the coefficients $x_i\partial_{x_i}(f)$ and $\partial_{y_j}(f)$ of $df$ lie in $mR$. Write them as $m c_i$ and $m d_j$. Then $df = m\,\omega$ with
 $$\omega = \sum_i c_i\, d\log x_i + \sum_j d_j\, dy_j \in \Omega_R(\log D).$$
