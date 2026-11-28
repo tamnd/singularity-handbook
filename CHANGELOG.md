@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.82] - 2026-11-28
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.82.
 - Volume 9, Section 3.28 treats pivot sets and the number of pivots in toric relative strong factorization in dimension 3. Proposition 3.28.1 shows that a certificate lets us choose the subdivision of the cone among the restrictions of star sequences of the octant, and Corollary 3.28.2 deduces toric $\mathrm{RSF}_3$ from a one-sided form of the conjecture of Oda. Lemmas 3.28.5 to 3.28.9 describe pivot sets as tilings by closed stars and prove a parity rule, and Proposition 3.28.10 and Example 3.28.11 treat the certificate of $F_4$ with no pivot set and one star that removes the obstruction. Lemma 3.28.12 shows that every certificate gives one with a pivot set, and Proposition 3.28.15 shows that the conjecture on witnesses with at most $k$ pivots is the same as a bound on the number of pivots of certificates, so it restates $\mathrm{RSF}_3$ and does not reduce it. Proposition 3.28.17 gives a necessary condition, Proposition 3.28.18 lists the witnesses found, and Proposition 3.28.19 says that the bound is false for $k = 1$ and open for each $k \ge 2$.
 
 ### Changed
