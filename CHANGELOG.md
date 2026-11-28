@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 7, Theorem 3.18.32 has a Lean line for part 2: `IsCornerWord.not_hahnVal_hahnCl_lt` proves that the cleaned limit has a value of at least $\Lambda$, in a termwise form, for the Hahn model of a planar corner run that keeps $\rho \ge 1$.
 - Volume 2, Theorems 1.1.5 to 1.1.8, 1.2.1, 3.2.4, 3.3.5, 3.3.6, 3.3.10 and 3.3.11, Lemmas 2.2.2, 3.3.2 and 3.3.4, Definition 2.2.3 and Corollary 3.2.5 have Lean lines.
 - Volume 7, Proposition 3.17.3 has a Lean line: `IsCornerWord.rhoAt_eq_zero_of_starStar` and `KeepsRho.not_starStar` prove the criterion (★★) for a corner run in the Hahn model.
 

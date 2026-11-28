@@ -462,6 +462,8 @@ with $A'_{kl} = \operatorname{cl} A_{kl}$ if $p \mid k$ and $p \mid l$, and $A'_
 1. $\Lambda_0 \ge \Lambda_+$, so $\Lambda = \Lambda_+$.
 2. $v(\operatorname{cl} g(\Phi_\infty)) \ge \Lambda$, with $v(0) = \infty$.
 
+Lean: `Singularity.PlanarRuns.IsCornerWord.not_hahnVal_hahnCl_lt` (for the Hahn model of a planar corner run over a perfect field $K$, with $\theta$ irrational and the coefficients of $g$ in $\mathbb{F}$; only part 2 is in Lean, with the hypothesis that the run keeps $\rho \ge 1$; $\Lambda$ is not a definition in Lean, so part 2 is in the form: $\operatorname{cl} g(\Phi_\infty) \ne 0$ and $v(\operatorname{cl} g(\Phi_\infty)) < \beta_n + |n| (1 + \theta)$ for each $n \ne 0$ with $g^{[n]} \ne 0$ do not both hold)
+
 *Proof.* Part 1. If $g_X = g_W = 0$, then $\Lambda_0 = \infty$ and part 1 holds. If $\Lambda_0 < \Lambda_+$, then Lemma 3.18.30 gives the hypotheses of Lemma 3.18.31 at $P_m$ for $m$ large, and this is a contradiction.
 
 Part 2. Assume that $V_K := v(\operatorname{cl} g(\Phi_\infty)) < \Lambda$. The cleaning is additive and removes terms, so
