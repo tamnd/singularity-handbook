@@ -93,7 +93,7 @@ Let $u, v$ be a regular system of parameters of $R$. Since $\mathfrak{m}^m$ is g
 4. For each point $Q$ of $C'$ over $P$, the multiplicity of $C'$ at $Q$ is at most $m$.
 5. $\delta_P(C) = m(m-1)/2 + \sum_{Q} \delta_Q(C')$, where $Q$ runs over the points of $C'$ over $P$.
 
-Lean: none yet
+Lean: `Singularity.blowupCurve_chart`, `Singularity.blowupCurve_pow_mem_span`, `Singularity.blowupCurve_finrank` (the algebra of parts 1 to 3). The module lengths and parts 4 and 5 are not in Lean yet.
 
 *Proof.* 1. By Theorem 1.1.7 we may work over $\operatorname{Spec} R$, with the two charts $B = R[v/u] \cong R[T]/(uT - v)$ and $B'' = R[u/v]$. In $B$ we have $v^j = u^j t^j$, so $f = u^m f'$. The ideal of $E$ is $uB$, and $B/uB = k[T]$. The image of $f'$ in $k[T]$ is $f_m(1, T)$, which is not 0, so $u \nmid f'$, and the strict transform is $V(f')$ in this chart, as in Lemma 1.1.6. The only point of $E$ outside $\operatorname{Spec} B$ is the point $u/v = 0$ of $\operatorname{Spec} B''$. There $f/v^m = \sum a_{ij} (u/v)^i$, and its image at this point is $\bar a_{0m} \ne 0$. So this point is not on $C'$. Near $E$ the total transform is $V(f) = V(u^m f')$, which gives $\pi^* C = C' + mE$.
 
