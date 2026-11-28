@@ -7,6 +7,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 ### Changed
 
 - Volume 5, Corollaries 1.4.6, 2.2.3 and 4.1.3 and Propositions 3.1.2 and 4.1.2, and Volume 6, Corollary 1.1.5, Proposition 2.2.1 and Theorem 3.1.5 have Lean lines.
+- Volume 7, Sections 3.18 and 3.19, and Volume 9, Section 3.19, give the Lean names for Lemmas 3.18.23 to 3.18.25 and Theorem 3.18.26 in the Hahn model of a planar corner run over a perfect field. Theorem 3.19.6 in this model now has only Theorem 3.18.32, part 1, and Corollary 3.18.33 as hypotheses.
 
 ## [0.4.80] - 2026-11-28
 
