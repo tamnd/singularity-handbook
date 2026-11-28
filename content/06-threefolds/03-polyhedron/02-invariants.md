@@ -117,13 +117,13 @@ Now let $m(y) = p$. The center $Y$ is *permissible of the first kind* at $x$ if 
 **Theorem 3.2.6 (Cossart-Piltant).** Let $S$ be an excellent regular local ring of dimension $n \ge 1$ with residue field of characteristic $p$. Let $h \in S[X]$ be a reduced monic polynomial of degree $p$ that satisfies condition 1 or condition 2 of Theorem 1.2.6, and assume that $(S, h, E)$ satisfies condition (E). Let $x$ be the point over $\mathfrak{m}_S$ with $m(x) = p$, and assume $\omega(x) > 0$. Let $\pi$ be the blowup along a center $Y$ that is permissible of the first or the second kind at $x$, with generic point $y$, and let $x' \in \pi^{-1}(x)$. Then
 $$\iota(x') \le \iota(x).$$ If $\epsilon(x') > \epsilon(x)$, then in well adapted coordinates $(u; Z)$ the initial form $\operatorname{in}_{\mathbf{1}} h$ of Definition 3.1.3 has no terms in $Z^1, \dots, Z^{p-1}$ (the case $i_0 = p$ of [CP19]), $\epsilon(y) = \epsilon(x) = \omega(x)$, and $\delta(y) \in \mathbb{N}$.
 
-Lean: none yet
+Lean: `Singularity.cpOmega_eq_of_lt` (the step from $\omega(x') \le \omega(x)$ and $\varepsilon(x') > \varepsilon(x)$ to $\omega(x) = \varepsilon(x) = \omega(x')$). The theorem is not in Lean yet.
 
 This is part of [CP19, Theorem 3.13]. The values $\kappa \ge 2$ are not distinguished there, as in [CP19, (2.76)]. The theorem holds in each dimension $n$. It also says that in the case of equality $x'$ lies in a certain projective cone, and it gives the form of $F$ when $\epsilon$ increases. We do not prove it. Its proof fills Chapter 3 of [CP19].
 
 **Theorem 3.2.7 (Cossart-Piltant).** In the situation of Theorem 3.2.6, assume $\omega(x) = 0$ instead. Then for each valuation $\mu$ of $L$ with center $x$ there is a finite sequence of local Hironaka-permissible blowups along $\mu$ after which the multiplicity of the center of $\mu$ is less than $p$.
 
-Lean: none yet
+Lean: `Singularity.not_strictAnti_of_factorial_mul` (a sequence in $(1/p!)\mathbb{N}$ cannot drop forever). The choice of centers and the drop of $\delta$ are not in Lean yet.
 
 This is [CP19, Theorem 2.81]. Its proof is combinatorial, as in characteristic 0: it finds a center for which $\delta$ drops, and $\delta \in \frac{1}{p!} \mathbb{N}$ cannot drop forever. So the hard case of Theorem 1.2.6 is $m(x) = p$ and $\omega(x) > 0$.
 

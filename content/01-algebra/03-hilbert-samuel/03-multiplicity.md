@@ -144,7 +144,7 @@ The polynomial $P(X) = \binom{X+d-1}{d}$ has degree $d = \dim R$ and leading coe
 
 **Remark 3.3.14.** The converse is a theorem of Nagata: an unmixed Noetherian local ring $R$ with $e(R) = 1$ is regular [Nag62, Section 40]. Without the hypothesis the converse fails. For example, let $R = k[x, y]_{(x, y)}/(x^2, xy)$, the ring of Example 1.5.2. Then $\dim R = 1$ and $e(R) = 1$, but $R$ is not regular. The theorem of Nagata is not in the Lean library.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isRegularLocalRing_quotient_iff_samuelMultiplicity_eq_one` (the converse for a hypersurface in a regular local ring), `Singularity.Algebra.samuelMultiplicity_eq_one_of_mul_maximalIdeal_eq_zero`, `Singularity.Algebra.not_isRegularLocalRing_of_mul_maximalIdeal_eq_zero` (the example, for each ring with $x \ne 0$, $x\mathfrak{m} = 0$ and $R/(x)$ regular). The theorem of Nagata for unmixed rings is not in Lean yet.
 
 ### Hypersurfaces
 
