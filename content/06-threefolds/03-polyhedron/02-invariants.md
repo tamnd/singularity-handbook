@@ -35,7 +35,7 @@ The correction in item 4 looks small, but it is the reason for the definition. T
 $$\delta(x) = \delta_{\mathbf{1}}(h; u; Z) = \min \{ x_1 + \dots + x_n : x \in \Delta(h; u; Z) \} = \min_{1 \le i \le m} \frac{\operatorname{ord} f_{i, Z}}{i},$$
 where $\mathbf{1} = (1, \dots, 1)$ and $\operatorname{ord}$ is the order for $\mathfrak{m}_S$.
 
-Lean: none yet
+Lean: `Singularity.charDelta`, `Singularity.charDelta_eq_polyDelta`, `Singularity.charDelta_taylor` (in fixed minimal coordinates).
 
 The last equality is Lemma 3.1.2(3), since $\mu_{\mathbf{1}} = \operatorname{ord}$. This is [CP19, Definition 2.11] at the closed point. By Lemma 3.1.2(1), $\delta(x) \in \frac{1}{m!} \mathbb{N}$.
 
@@ -45,7 +45,7 @@ The last equality is Lemma 3.1.2(3), since $\mu_{\mathbf{1}} = \operatorname{ord
 2. $\delta(x) > 0$ if and only if $\eta^{-1}(\mathfrak{m}_S)$ is one point $x$ with residue field $k$.
 3. $\delta(x) \ge 1$ if and only if $\eta^{-1}(\mathfrak{m}_S)$ contains a point of multiplicity $m$. In this case the point is $x = (\mathfrak{m}_S, Z)$.
 
-Lean: none yet
+Lean: `Singularity.isGreatest_polyDelta_taylor`, `Singularity.polyDelta_pos_iff_of_isMinimalCoord`, `Singularity.one_le_polyDelta_iff` (the three parts in terms of the coefficients, in fixed minimal coordinates). The existence of minimal coordinates, the independence of the parameters and the translation into fibers and multiplicity are not in Lean yet.
 
 *Proof.* Part 1. Let $\Delta(h; u; Z)$ be minimal. By Theorem 3.1.5(2), it is contained in $\Delta(h; u; X - \varphi)$ for each $\varphi$, so $\delta_{\mathbf 1}(h; u; Z) \ge \min_i \operatorname{ord} f_{i, X - \varphi}/i$ for each $\varphi$, with equality for $\varphi = \theta$. So $\delta(x)$ is the maximum in part 1. The order, the elements $f_{i, X - \varphi}$ and the set of the $\varphi$ do not depend on $u$, so neither does the maximum.
 
@@ -62,7 +62,7 @@ Let $E = \operatorname{div}(u_1 \cdots u_e)$ with $0 \le e \le n$. The coordinat
 **Definition 3.2.3.** Let $(u; Z)$ be well adapted. For $1 \le j \le e$ let
 $$d_j = \min \{ x_j : x \in \Delta(h; u; Z) \}, \qquad \epsilon(x) = m \Bigl( \delta(x) - \sum_{j = 1}^{e} d_j \Bigr).$$
 
-Lean: none yet
+Lean: `Singularity.divisorDelta`, `Singularity.residualEpsilon`, `Singularity.residualEpsilon_nonneg`. The numbers $d_j$ at the generic points of the components of $E$ are not in Lean yet.
 
 Cossart and Piltant define $d_j$ as $\delta$ at the generic point of a component of $\eta^{-1}(\operatorname{div}(u_j))$, and they prove that it equals the minimum above [CP19, Definition 2.25 and Proposition 2.26]. So $d_j$ depends only on $\operatorname{div}(u_j)$, and $\epsilon(x)$ depends only on $(S, h, E)$. Each point of the polyhedron has $x_j \ge d_j$, so $\delta(x) \ge \sum_j d_j$ and $\epsilon(x) \ge 0$.
 

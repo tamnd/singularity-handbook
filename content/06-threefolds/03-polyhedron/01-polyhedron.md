@@ -56,7 +56,7 @@ $$\operatorname{in}_\alpha h = X^m + \sum_{i = 1}^{m} [f_{i, X}]_{i \delta} X^{m
 It is homogeneous of degree $m \delta$ if $X$ has degree $\delta$. Let $y$ be a vertex of $\Delta(h; u; X)$, and choose $\alpha$ such that $y$ is the only point of $\Delta(h; u; X)$ where $|\cdot|_\alpha$ is minimal. Then $\operatorname{in}_y h = \operatorname{in}_\alpha h$. The vertex $y$ is *solvable* if $y \in \mathbb{N}^n$ and there is $\lambda \in k$ with
 $$\operatorname{in}_y h = (X - \lambda U^y)^m.$$
 
-Lean: none yet
+Lean: `Singularity.weightInitialForm`, `Singularity.coeff_weightInitialForm_of_isUniqueMinimizer`, `Singularity.isSolvableVertex_iff_weightInitialForm`. The existence of a weight for which a vertex is the only minimum point is not in Lean yet.
 
 This is [CP19, Definitions 2.3 and 2.6]. A weight $\alpha$ with the property of the definition exists, because the linear functions whose minimum on a polyhedron is attained only at a given vertex form a nonempty open set (see the proof of Volume 7, Theorem 1.2.4). For such $\alpha$, a term $c u^a$ of $f_{i, X}$ has weight $i \delta$ if and only if $a = i y$. So
 $$\operatorname{in}_y h = X^m + \sum_{i = 1}^{m} c_i U^{i y} X^{m - i},$$

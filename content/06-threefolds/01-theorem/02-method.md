@@ -162,7 +162,7 @@ Here $m = 2$ and $a_1 = 0$, so $z' = z$. The partial derivatives of $h$ are $2z$
 
 *The case $p = 2$.* Then $2! = 0$ in $k$, and Proposition 1.2.5 does not apply. Now $h = z^2 + g$ with $g = x^3 + y^3 + w^3$, an equation of the form $z^p + g$ of Section 2.3. Since $D h = 2z = 0$, no derivative in $z$ gives the hypersurface $V(z')$. The partial derivatives of $g$ are $x^2$, $y^2$ and $w^2$, so the origin is the only singular point, by Lemma 2.3.2. Here the locus of multiplicity 2 is a point, so it lies in a regular hypersurface. Example 3.3.4 computes the invariants of Cossart and Piltant at this point, and it resolves the singularity by two blowups.
 
-Lean: none yet
+Lean: `Singularity.ex127_singular_iff_of_ne`, `Singularity.ex127_singular_iff_char3`, `Singularity.ex127_translate_char3`, `Singularity.ex127_singular_iff_char2` (the singular loci, with the vanishing of $h$ and its partial derivatives). The Jacobian criterion and the resolution are not in Lean yet.
 
 We checked the partial derivatives of Example 1.2.7 by computer. The example does not show the failure of maximal contact for $m = p$. For that failure one needs a locus of multiplicity $p$ that is not contained in a regular hypersurface, as in the example of Narasimhan.
 
