@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.78] - 2026-11-28
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.78.
 - Volume 9, Section 3.26 treats toric relative strong factorization in dimension 3: the condition (A$^{\rm w}$) in the weak and the strong model of Step 3, a game that decides direct reachability of a regular cone, certificates for all regular cones with entries at most 4 and for all but two classes with entries at most 5, the route on 801 toric pairs, a counterexample to the drop of the number $\mu$ of bad cones, and a condition under which $\mu$ drops.
 - Volume 5, Section 2.3, the Perron algorithm. Theorem 2.3.5 says that a valid run of blowups of strata of codimension 2 makes a Laurent monomial of positive value a monomial, for real weights that are positive and linearly independent over the integers. The section has Lemmas 2.3.2 and 2.3.4 on steps and runs, Corollaries 2.3.6 and 2.3.7 on finite sets and on the divisibility of monomials, Examples 2.3.8 and 2.3.9, Proposition 2.3.10 on the matrix of a run, Corollary 2.3.11 on monomial charts, and seven exercises. Lemma 2.3.2 to Corollary 2.3.7 have Lean lines.
 
