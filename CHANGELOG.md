@@ -6,6 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 4, Example 2.3.14 and Lemma 3.1.7 and Volume 8, Proposition 2.4.3 have Lean lines.
 - Volume 1, Proposition 3.3.15 has a full Lean proof. Volume 1, Proposition 3.2.3, Theorems 5.2.3 and 5.3.3, Propositions 5.3.2 and 5.3.4 and Corollary 5.3.5, Volume 4, Propositions 2.2.2 and 2.2.6, and Volume 6, Definition 3.2.5, Propositions 3.2.9 and 3.2.12 and Example 3.2.13 have new Lean lines.
 - Volume 2, Lemma 3.3.7 and Theorem 3.3.8, Volume 4, Theorem 1.1.2, Lemma 2.1.2, Propositions 2.1.7 and 2.1.9 and Corollary 2.1.10, and Volume 5, Theorem 1.2.6 and Corollaries 1.2.7 and 1.2.8 have Lean lines.
 

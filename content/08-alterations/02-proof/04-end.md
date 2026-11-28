@@ -89,7 +89,7 @@ let $Z \subseteq \operatorname{Spec} P$ be the closed subset $t_1 \cdots t_r = 0
 1. the chart $P[I/u]$ is isomorphic to the polynomial ring $k[u, t_1', t_2', t_3, \dots, t_m]$, with $v = u t_1' t_2' t_3 \cdots t_\mu$, $t_1 = u t_1'$ and $t_2 = u t_2'$, and the inverse image of $Z$ is $u t_1' t_2' t_3 \cdots t_r = 0$; the chart $P[I/v]$ is the same with $u$ and $v$ exchanged;
 2. the chart $P[I/t_1]$ is isomorphic to $k[u', v', t_1, t_2', t_3, \dots, t_m]/(u'v' - t_2' t_3 \cdots t_\mu)$, with $u = t_1 u'$, $v = t_1 v'$ and $t_2 = t_1 t_2'$, and the inverse image of $Z$ is $t_1 t_2' t_3 \cdots t_r = 0$; the chart $P[I/t_2]$ is the same with $t_1$ and $t_2$ exchanged.
 
-Lean: none yet
+Lean: `Singularity.Algebra.nodeBlowupChartUEquiv`, `Singularity.Algebra.nodeBlowupChartTEquiv`, `Singularity.Algebra.nodeBlowupChartUHom_Z` (the charts $u$ and $t_1$, over any commutative ring). The charts $v$ and $t_2$, the cover by the four charts and the inverse image of $Z$ as a closed set are not in Lean yet.
 
 *Proof.* As in Proposition 2.1.5, $P$ is a domain of dimension $m + 1$, the charts are subrings of its fraction field, and a surjection between domains of finite type over $k$ of the same dimension is an isomorphism (Section 2.1).
 
