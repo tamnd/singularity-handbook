@@ -40,7 +40,7 @@ The first lemma is Lemma 3.15.1 with two free coordinates. Both coordinates are 
 3. $g(\varphi_m + M_m X, \psi_m + M_m W) = \sum_{k, l} A_{kl} X^k W^l$ with $A_{kl} = M_m^{k + l} g^{[k, l]}(\varphi_m, \psi_m) \in K[[y_m, z_m]]$, and $g_m$ is the sum of the terms $A_{kl} x_m^k w_m^l$ over the $(k, l)$ with $k$ or $l$ not divisible by $p$, plus the sum of the terms $\operatorname{cl}(A_{kl}) x_m^k w_m^l$ over the $(k, l)$ with $p \mid k$ and $p \mid l$.
 4. $\partial_{x_m} g_m = M_m g_x(\varphi_m + M_m x_m, \psi_m + M_m w_m)$, and the same holds for $w$.
 
-Node: SG0000006J · Lean: `Singularity.PlanarRuns.eq_cornerSum_add_cornerMono_mul`, `Singularity.PlanarRuns.coeff_clean_chart`, `Singularity.PlanarRuns.hasse_single_clean_chart` (parts 1, 3 and 4, for polynomials over a field, with the cleaning given by an additive map $\operatorname{cl}$; in part 1 the fact that $\varphi_m, \psi_m$ have no constant term and part 2 are not in Lean)
+Node: SG0000006J · Lean: `Singularity.PlanarRuns.eq_cornerSum_add_cornerMono_mul`, `Singularity.PlanarRuns.coeff_clean_chart`, `Singularity.PlanarRuns.hasse_single_clean_chart` `Singularity.PlanarRuns.runFn_succ`, `Singularity.PlanarRuns.cornerRunFn_eq` (parts 1, 3 and 4, for polynomials over a field, with the cleaning given by an additive map $\operatorname{cl}$; in part 2 only the fact that the step by step function of $P_m$ is $M_m^{-p} g_m$, for a cleaning with the facts on the classes, and the corner run of the Hahn model; in part 1 the fact that $\varphi_m, \psi_m$ have no constant term and the rest of part 2 are not in Lean)
 
 *Proof.* Part 1 is the induction of Lemma 3.13.24, part 3, for each of the two free coordinates: from $x_N = \varphi_m + M_m x_m$ and $x_m = L_m (x_{m+1} + a_m)$ we get $x_N = \varphi_m + a_m M_m L_m + M_m L_m x_{m+1} = \varphi_{m+1} + M_{m+1} x_{m+1}$, and the same for $w$. The other parts are the proof of Lemma 3.15.1. It uses only two facts. First, the cleaning commutes with the substitution, since $\pi(h^p) = \pi(h)^p$ and the monomial maps have the determinant $\pm 1$. Second, a monomial $c\, Y x^k w^l$ with $k$ or $l$ not divisible by $p$ is not a $p$-th power. Both hold with two free coordinates. Part 4 is the chain rule. $\square$
 
@@ -82,7 +82,7 @@ For $k = 2$ letters the value group has the rational rank $2$ for each $n$, so P
 
 **Definition 3.17.5.** A corner run in four variables is *linear* if there is a $\lambda \ne 0$ with $t^\lambda_j = 0$ for $j$ large, and *planar* if not.
 
-Lean: `Singularity.PlanarRuns.IsLinearRun`, `Singularity.PlanarRuns.IsPlanarRun` (for the translations $t_j$ of a run, with a finite set of free coordinates; the run itself is the Hahn model `Singularity.PlanarRuns.cornerPoint` with the word of the charts)
+Lean: `Singularity.PlanarRuns.IsLinearRun`, `Singularity.PlanarRuns.IsPlanarRun`, `Singularity.PlanarRuns.KeepsRho` (for the translations $t_j$ of a run, with a finite set of free coordinates; the run itself is the Hahn model `Singularity.PlanarRuns.cornerPoint` with the word of the charts, and `KeepsRho` is the condition that $\rho \ge 1$ is the same at each point, with $\rho$ in the fixed coordinates $(x_m, w_m, y_m, z_m)$)
 
 In a planar run each $\lambda \ne 0$ has an infinite number of $t^\lambda_j \ne 0$, so by Proposition 3.17.4 no nonzero combination $\alpha \varphi_\infty + \beta \psi_\infty$ with $\alpha, \beta \in K$ is in $\hat H$. We do not have the transcendental type for the pair $(\varphi_\infty, \psi_\infty)$. Remark 3.17.34 says more about this.
 

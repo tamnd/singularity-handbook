@@ -51,7 +51,7 @@ In Lean the factorization is `Singularity.logJacobian_monomial_mul` and `Singula
 
 **Definition 3.1.3.** The *residual order of the log-Jacobian ideal* is $\rho(F) = \operatorname{ord} \widetilde\Theta(G)$, the smallest order of an element of $\widetilde\Theta(G)$.
 
-Node: SG0000003F · Lean: `Singularity.residualLogJacobian`, `Singularity.logJacobianOrder`
+Node: SG0000003F · Lean: `Singularity.residualLogJacobian`, `Singularity.logJacobianOrder`, `Singularity.PlanarRuns.rhoAt` (the last one at the points of a corner run in four variables in the Hahn model, in the fixed coordinates, with the order of $\widetilde\Theta(G)$ taken as the least order of its generators)
 
 **Theorem 3.1.4.** Let $F \ne 0$ be clean, with $F = x^r G$ and $d = \operatorname{ord} G$ as above, and let $\rho = \rho(F)$.
 
