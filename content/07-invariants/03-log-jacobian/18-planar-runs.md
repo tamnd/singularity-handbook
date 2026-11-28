@@ -155,7 +155,7 @@ In this part the run is planar. An element of $\mathbb{K}$ is *of finite type* i
 
 **Lemma 3.18.8.** The set $\mathbb{F}$ is a subfield of $\mathbb{K}$. It contains $\hat H$ and, for each $f \in \hat H[X, W]$ and each $m$, the element $f(\Phi_m)$.
 
-Node: SG0000008B
+Node: SG0000008B · Lean: `Singularity.PlanarRuns.finiteTypeSubfield`, `Singularity.PlanarRuns.isFiniteType_cornerPoint` (for the Hahn model of $\mathbb{K}$ with $v(y_N^a z_N^b) = a + \theta b$; the field $\hat H$ is not in Lean, so of the last claim only the points $\Phi_m$ are in Lean)
 
 *Proof.* We have $\hat H \subseteq \mathbb{F}$ by Lemma 3.15.6, part 2. Sums are clear. Products: let $A, B \in \mathbb{F}$ be nonzero, and let $V$ be a value. A term of $A B$ of value less than $V$ comes from a term $s$ of $A$ and a term $t$ of $B$ with $v(s) + v(t) < V$, so $v(s) < V - v(B)$ and $v(t) < V - v(A)$, and there are a finite number of such pairs. Inverses: let $A \ne 0$, let $c \nu$ be its term of least value, which exists since $A$ has a finite number of terms below each value, and write $A = c \nu (1 + \varepsilon)$. Then $\varepsilon \in \mathbb{F}$, and its terms have values at least $s_0 = v(\varepsilon) > 0$. A term of $\varepsilon^n$ has a value at least $n s_0$, so only the $n < V / s_0$ give terms below $V$, and each of them gives a finite number. So $(1 + \varepsilon)^{-1} = \sum_n (-\varepsilon)^n$ is in $\mathbb{F}$, and so is $A^{-1}$. The last claim holds since $\varphi_m$ and $\psi_m$ are finite sums of terms, so they are in $H$. $\square$
 
@@ -181,7 +181,7 @@ $$\Delta_m = \Phi_\infty - \Phi_m = (\Delta\varphi, \Delta\psi), \qquad \Delta\v
 **Lemma 3.18.10.** Let $m \ge N$, and let $\alpha, \beta, \gamma \in \mathbb{F}$ with $(\alpha, \beta) \ne (0, 0)$. Then
 $$v(\gamma + \alpha\, \Delta\varphi + \beta\, \Delta\psi) < \min(v(\alpha), v(\beta)) + 1 + \theta.$$
 
-Node: SG0000008D
+Node: SG0000008D · Lean: `Singularity.PlanarRuns.hahnVal_add_sum_mul_tail_lt`, `Singularity.PlanarRuns.isPlanarTail_corner` (for the Hahn model of the run, with a finite set of free coordinates; `isPlanarTail_corner` adds the bound $v(\Delta_m) \ge v(M_{m+1})$)
 
 *Proof.* This is the proof of Lemma 3.18.9 with $\Delta_m$ in place of $\Phi_\infty$. Assume $v(\alpha) \le v(\beta)$, so $\alpha \ne 0$, and put $u = \beta / \alpha$, which is in $\mathbb{F}$ by Lemma 3.18.8. Then $v(u) \ge 0$, so $u = c + u'$ with $c \in K$ and $v(u') > 0$. Write
 $$\frac{\gamma + \alpha \Delta\varphi + \beta \Delta\psi}{\alpha} = \sum_{j \ge m} (a_j + c b_j) M_{j+1} + u' \Delta\psi + \frac{\gamma}{\alpha}.$$
@@ -198,7 +198,7 @@ with $v(0) = \infty$. So $\lambda_0(f) = v(f(\Phi_\infty))$ and $\lambda_1(f) = 
 3. $\lambda_{s - 1}(f) < \lambda_s(f) + 1 + \theta$ for $1 \le s \le \deg f$, and $\lambda_s(f) = \infty$ if and only if $s > \deg f$. In particular, for each $(k, l) \ne (0, 0)$ with $f^{[k, l]} \ne 0$,
 $$v(f(\Phi_\infty)) < v\bigl(f^{[k, l]}(\Phi_\infty)\bigr) + (k + l)(1 + \theta).$$
 
-Node: SG0000008E
+Node: SG0000008E · Lean: `Singularity.PlanarRuns.statementDHolds_corner` (for the Hahn model of the run and the coefficients in $\mathbb{F}$; part 1 without the bound by $\lambda_1(f)$, the first claim of part 2, and the last claim of part 3)
 
 *Proof.* Induction on $D = \deg f$. If $D = 0$, then $f$ is a nonzero element of $\hat H$, and the three claims are clear. Let $D \ge 1$, assume the theorem for all nonzero $h$ with $\deg h < D$, and write $\lambda_s = \lambda_s(f)$.
 
@@ -575,7 +575,7 @@ The results of this section are a result of the track C4 of this project (tamnd/
 
 Computer tests with exact arithmetic over $\mathbb{F}_3$, $\mathbb{F}_9$, $\mathbb{F}_5$, $\mathbb{F}_{25}$, $\mathbb{F}_7$, $\mathbb{F}_{49}$ and $\mathbb{F}_{11}$ agree with each result for $\deg_{x, w} g < p$. Depth first searches over all the translations along random words, for starting points with $\deg_{x, w} g = 2$ and $3$, found no planar run. Only one branch, over $\mathbb{F}_5$ with $\deg_{x, w} g = 2$, had late translations that span $K^2$, and it ends at a point with $d = \rho = 1$ from which no step keeps $\rho$. Linear walks checked the conclusions of Theorem 3.18.6, and computations in a model of the Hahn field checked Theorem 3.18.11 and Proposition 3.18.14. A control with linear translations made the dominance fail, as Remark 3.18.12 predicts, so the tests can see failures. The tests for degree at least $p$ are in Remark 3.18.40. The translations of the tests are in finite fields, the words are finite and the searches have budgets, so the tests are not a proof.
 
-The outside results are those of Section 3.17: the pseudo Cauchy sequences of Kaplansky, the generalized stability theorem [Kuh10, Theorem 1.1] and the facts on the henselization in [Kuh-book], through Proposition 3.15.7. The use of the history of the divisor is from [CJS20]. None of the results has a Lean proof yet.
+The outside results are those of Section 3.17: the pseudo Cauchy sequences of Kaplansky, the generalized stability theorem [Kuh10, Theorem 1.1] and the facts on the henselization in [Kuh-book], through Proposition 3.15.7. The use of the history of the divisor is from [CJS20]. Lemmas 3.18.8 and 3.18.10 and a part of Theorem 3.18.11 have Lean proofs for the Hahn model of the run. The Lean lines say what is not in Lean.
 
 Several questions are open.
 
