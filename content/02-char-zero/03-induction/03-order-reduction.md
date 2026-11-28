@@ -27,7 +27,7 @@ The statement (M$_0$) holds: a smooth variety of dimension 0 is a finite disjoin
 
 **Lemma 3.3.2 (localization).** Let $U \subseteq X$ be an open set that contains $\operatorname{cosupp}(I, m)$. Then each blowup sequence of order at least $m$ for $(I|_U, m, E|_U)$ extends uniquely to a blowup sequence of order at least $m$ for $(I, m, E)$ that is an isomorphism over $X \setminus U$, and the cosupports of the transforms agree.
 
-Lean: none yet
+Lean: `Singularity.map_markedTransform` (for one ring map). The open cover is not in Lean yet.
 
 *Proof.* Let $U_i \subseteq X_i$ be the inverse image of $U$. We show by induction on $i$ that $\operatorname{cosupp}(I_i, m) \subseteq U_i$. For $i = 0$ this is the hypothesis, and Lemma 2.2.4 (4) gives the step. The center $Z_i$ is closed in $U_i$ and lies in $\operatorname{cosupp}(I_i, m) \cap U_i = \operatorname{cosupp}(I_i, m)$, which is closed in $X_i$. So $Z_i$ is closed in $X_i$, and we blow it up in $X_i$. Smoothness and simple normal crossings are local conditions at the points of $Z_i$. $\square$
 
@@ -55,7 +55,7 @@ The main step moves the points of order $m$ away from one divisor.
 
 **Lemma 3.3.4 (moving the cosupport off a divisor).** Assume (M$_{n-1}$). Let $(X, I, E)$ be a triple with $\dim X = n$, let $m \ge 1$, and let $E^j$ be one of the divisors of $E$. Then there is a blowup sequence of order at least $m$ for $(I, m, E)$ such that the birational transform $E^j_r$ of $E^j$ is disjoint from $\operatorname{cosupp}(I_r, m)$.
 
-Lean: none yet
+Lean: `Singularity.centerChartTransformIdeal_singleton` (the first blowup only).
 
 *Proof.* Let $Z_{-1}$ be the union of the irreducible components of $E^j$ that lie in $\operatorname{cosupp}(I, m)$. It is a union of connected components of the smooth divisor $E^j$, so it is a smooth center of codimension 1 with simple normal crossings with $E$. Its blowup is the identity of $X$; the transform of $(I, m)$ is $I_0 = \mathcal{O}_X(m Z_{-1}) \cdot I$, and $Z_{-1}$ becomes the last divisor, while the birational transform of $E^j$ is the union $S$ of the other components. The divisor $S$ is disjoint from $Z_{-1}$, so $I_0 = I$ near $S$, and no component of $S$ lies in $\operatorname{cosupp}(I_0, m)$.
 
@@ -69,7 +69,7 @@ The centers of this sequence are chosen by the rule of (M$_{n-1}$) on $S$. If th
 
 **Theorem 3.3.5 (order reduction with a global hypersurface of maximal contact).** Assume (M$_{n-1}$). Let $(X, I, E)$ be a triple with $\dim X = n$ and $\operatorname{max\text{-}ord} I = m \ge 1$, and assume that there is a hypersurface of maximal contact $H \subseteq X$ for $I$. Then there is a blowup sequence of order $m$ for $(I, m, E)$ with $\operatorname{max\text{-}ord} I_r < m$.
 
-Lean: none yet
+Lean: `Singularity.centerChartTransformIdeal_singleton_eq_top`, `Singularity.idealOrd_centerChartTransformIdeal_singleton_lt` (for $H = V(x_h)$ with $x_h^m \in I$). The theorem is not in Lean yet.
 
 *Proof.* Throughout, if the maximal order drops below $m$ we stop. While it is $m$, Theorem 2.3.3 shows that the centers lie in the transforms $H_i$ and that $H_i$ is a hypersurface of maximal contact for $I_i$.
 
@@ -87,7 +87,7 @@ In general there is no global hypersurface of maximal contact. Kollár deals wit
 
 **Theorem 3.3.6 (order reduction for ideals).** Assume (M$_{n-1}$), in the functorial form. Then (O$_n$) holds, in the functorial form.
 
-Node: SG00000048 · Lean: none yet
+Node: SG00000048 · Lean: `Singularity.centerChartTransformIdeal_span_monomial`, `Singularity.principal_monomial_orderReduction` (for a principal monomial ideal and one blowup). The theorem is not in Lean yet.
 
 *Proof sketch.* We follow [Kol07, Chapter 3], Section "Order reduction for ideals". Let $\operatorname{max\text{-}ord} I \le m$; if it is less than $m$ there is nothing to do.
 
@@ -141,7 +141,7 @@ Lean: `Singularity.naiveCoeff_eq`, `Singularity.exists_lt_naiveCoeff_add` (the a
 
 **Theorem 3.3.10 (order reduction for marked ideals).** Assume (O$_n$). Then (M$_n$) holds.
 
-Node: SG00000049 · Lean: none yet
+Node: SG00000049 · Lean: `Singularity.le_idealOrd_sup_pow_iff`, `Singularity.centerChartTransformIdeal_sup_pow`. The order drop along a sequence is not in Lean yet.
 
 *Proof.* Let $(X, I, m, E)$ be given, with $I$ nonzero on each component. Write $I = M(I) \cdot N(I)$ as in Lemma 3.3.7. If $\operatorname{cosupp}(I, m) = \emptyset$ we stop. Otherwise let
 $$s = \max \{ \operatorname{ord}_x N(I) : x \in \operatorname{cosupp}(I, m) \}.$$
@@ -158,7 +158,7 @@ Kollár first applies order reduction to $N(I)$ until its maximal order is less 
 
 **Theorem 3.3.11 (principalization).** Assume (M$_n$). Let $X$ be a smooth variety of dimension $n$, $I$ an ideal sheaf nonzero on each component, and $E$ a divisor with simple normal crossings and ordered index set. Then there is a blowup sequence $\Pi \colon X_r \to \dots \to X_0 = X$ with smooth centers that have simple normal crossings with the transforms of $E$, each lying over $V(I)$, such that $\Pi^* I = \mathcal{O}_{X_r}(-G)$ for a divisor $G \ge 0$ supported on the exceptional divisors, which are part of the divisor $E_r$ with simple normal crossings.
 
-Node: SG00000042 · Lean: none yet
+Node: SG00000042 · Lean: `Singularity.exists_map_chartSeqMap_eq_span_monomial` (in the chart model). The global divisor is not in Lean yet.
 
 *Proof.* Apply (M$_n$) with $m = 1$. A blowup sequence of order at least 1 is a sequence whose centers lie in $V(I_i)$, and $\operatorname{cosupp}(I_r, 1) = \emptyset$ means $I_r = \mathcal{O}_{X_r}$. Since $I_{i+1} = \mathcal{O}(F_i) \cdot \pi_i^* I_i$, we get $\Pi^* I = \mathcal{O}(-G) \cdot I_r = \mathcal{O}(-G)$, with $G$ the sum of the pullbacks to $X_r$ of the exceptional divisors $F_i$. By induction, $\Pi_i^* I = \mathcal{O}(-G_i) \cdot I_i \subseteq I_i$, where $\Pi_i \colon X_i \to X$, so $Z_i \subseteq V(I_i) \subseteq \Pi_i^{-1}(V(I))$. $\square$
 

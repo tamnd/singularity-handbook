@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 2, Theorems 1.1.5 to 1.1.8, 1.2.1, 3.2.4, 3.3.5, 3.3.6, 3.3.10 and 3.3.11, Lemmas 2.2.2, 3.3.2 and 3.3.4, Definition 2.2.3 and Corollary 3.2.5 have Lean lines.
+
 ## [0.4.83] - 2026-11-28
 
 ### Added
