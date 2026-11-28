@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.77] - 2026-11-28
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.77.
 - Volume 9, Section 3.25 treats principalization in dimension 4 and relative strong factorization: the weak and the strong form of principalization, the known cases, the local input $\mathrm{RSF}_3$ of patching along curves with the toric case for $\sigma_0$ in 14 blowups, the repair of Construction 3.24.19 near its bad curve, local strong factorization for valuations of rank 1 and rational rank 3, and the dead chart that settles 36 more toric cones.
 - Volume 7, Section 4.5 has the results of research note 86, the referee report on research note 81. Lemma 4.5.16 shows that $z$ stays prepared at each point when $a_p = 0$ or $a_{2p} = 0$, and Corollary 4.5.18 shows that $\omega$ then never goes up. Theorem 4.5.21 extends the toric model to each boundary, Lemma 4.5.23 and Corollary 4.5.24 describe the generic steps at points that are not chart origins, and Theorem 4.5.28 shows that the extended model terminates. Corollary 4.5.29 proves Conjecture 4.4.6 for rigid germs on branches without cancellation. Proposition 4.5.30 and Corollary 4.5.31 show that a rise of $\omega$ needs a new preparation. Examples 4.5.19, 4.5.25 and 4.5.32 give a new preparation at a chart origin and the steps of germs 57 and 63.
 
