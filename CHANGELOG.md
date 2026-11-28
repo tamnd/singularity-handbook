@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 7, Theorem 3.18.26 has a new Lean line for part 3: `lambda_le_of_frob` and `lambda_le_corner` show that the minimum $\Lambda(f)$ is attained only at the indices $p^e e_i$.
+
 ## [0.4.82] - 2026-11-28
 
 ### Added
