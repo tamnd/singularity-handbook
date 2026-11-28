@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 9, Sections 3.24 and 3.29 name the Lean statements of `Fund_4`, `PILU_4`, `Princ_4^w`, `Emb_3` and Theorems 3.24.4, 3.24.5, 3.29.11 and 3.29.12, from tamnd/singularity-lean#320. The line `singularity` of `EDITION` is the map commit 69d555b, which has these names in records/lean.json.
+
 ## [0.4.85] - 2026-11-28
 
 ### Added
