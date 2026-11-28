@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 5, Section 4.4 is new: the log Jacobian criterion for a step of degree $p$. Lemma 4.4.4 shows that the log Jacobian ideal $J_D(f)$ does not change when we add a $p$-th power to $f$. Proposition 4.4.8 proves $E(f^{1/p}) = E(t^{1/p})$ for a foliated monomial $f$, and Theorem 4.4.11 and Corollary 4.4.12 deduce the step and local uniformization from foliated log monomialization. Lemmas 4.4.13 and 4.4.14 treat derivations with $\delta^p = 0$ and $\delta^p = \delta$. Proposition 4.4.15, Theorem 4.4.16 and Corollary 4.4.17 prove that $f$ is foliated monomial if and only if $J_D(f)$ is principal for some normal crossings divisor $D$. Lemma 4.4.18 computes the ideal after a blow-up, and Examples 4.4.20 to 4.4.22 give a foliated monomial element that is not monomial modulo $p$-th powers and a blow-up that makes a principal ideal not principal. The section says that the existence of a model with a principal log Jacobian ideal along a valuation is open in transcendence degree 4 and more.
+
 ### Changed
 
 - Volume 5, Corollaries 1.4.6, 2.2.3 and 4.1.3 and Propositions 3.1.2 and 4.1.2, and Volume 6, Corollary 1.1.5, Proposition 2.2.1 and Theorem 3.1.5 have Lean lines.
