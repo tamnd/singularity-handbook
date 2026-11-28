@@ -10,6 +10,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 3, Theorem 3.1.2 and Proposition 3.1.6 and Volume 5, Proposition 1.4.5, Proposition 3.1.4 and Theorem 3.1.5 have Lean lines.
 - Volume 5, Section 2.1, the remark on the lattice lemma and the introduction of Chapter 2 refer to Section 2.3.
 
 - Volume 4, Example 2.3.14 and Lemma 3.1.7 and Volume 8, Proposition 2.4.3 have Lean lines.

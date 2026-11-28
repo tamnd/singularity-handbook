@@ -42,7 +42,7 @@ We return to the setting of Section 1.3: $K_0 \subseteq K$ with $[K : K_0]$ fini
 
 **Proposition 3.1.4.** If $K/K_0$ has an étale generator at $v$, then $e = 1$, the residue extension $Kv/K_0v_0$ is separable, and $d = 1$.
 
-Lean: none yet
+Lean: `Singularity.isSeparable_of_isEtaleGenerator_top` (the trivial valuation only). The case of a nontrivial valuation needs the henselization and is not in Lean yet.
 
 *Proof.* Let $z$ be the étale generator, with minimal polynomial $P$ over $K_0$. Over $K_0^h$ write $P = P_1Q$, where $P_1$ is the minimal polynomial of $z$ over $K_0^h$, with $z$ seen in $K^h$. As in the proof of Lemma 1.3.3, $\deg P_1 = [K^h : K_0^h] = def$, and $P_1$ and $Q$ have coefficients in the valuation ring of $K_0^h$. In $K^h$ we have $P'(z) = P_1'(z)Q(z)$. Both factors lie in the valuation ring of $K^h$, and their product is a unit, so $P_1'(z)$ is a unit.
 
@@ -52,7 +52,7 @@ So $de \le 1$, that is, $d = e = 1$, and $Kv = K_0v_0(\bar{z})$ is separable ove
 
 **Theorem 3.1.5.** Let $k$ be a field of any characteristic, let $K/k$ be a function field of transcendence degree 2, let $v$ be a valuation of $K/k$, and let $x, y \in K$ be algebraically independent over $k$, with $K_0 = k(x, y)$ and $v_0$ the restriction of $v$. Then $K/K_0$ has an étale generator at $v$ if and only if $v$ is not trivial and $e = 1$, $Kv/K_0v_0$ is separable and $d = 1$, or $v$ is trivial and $K/K_0$ is separable. In this case $v$ has local uniformization, and the proof does not use the theorem of Lipman.
 
-Lean: none yet
+Lean: `Singularity.exists_isEtaleGenerator_top_iff_isSeparable` (the trivial valuation only). The case of a nontrivial valuation is not in Lean yet.
 
 *Proof.* For a nontrivial $v$, the equivalence is Lemma 1.3.3 and Proposition 3.1.4. For a trivial $v$, the valuation ring is $K$, and an étale generator is a primitive element $z$ of $K/K_0$, whose derivative $P'(z)$ is not 0. Such an element exists if and only if $K/K_0$ is separable. Local uniformization follows from Corollary 1.2.8 for $v_0$ and Theorem 1.3.4. $\square$
 

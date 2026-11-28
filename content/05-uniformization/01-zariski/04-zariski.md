@@ -56,7 +56,7 @@ Lean: `Singularity.algebraicIndependent_of_residue`, `Singularity.mem_of_mem_adj
 
 **Proposition 1.4.5.** Let $v$ be a valuation of $K/k$, let $X$ be a model of $K/k$ on which $v$ has a center, and let $\pi : X' \to X$ be a resolution of $X$, that is, a proper birational morphism with $X'$ regular. Then the center of $v$ on $X'$ is a regular point of $X'$. In particular, if each model of $K/k$ has a resolution, then each valuation of $K/k$ has local uniformization.
 
-Node: SG0000004E · Lean: none yet
+Node: SG0000004E · Lean: `Singularity.Scheme.exists_isCenter_of_isCenterAlong`, `Singularity.Scheme.existsUnique_isCenter_of_isCenterAlong`, `Singularity.Scheme.exists_isCenter_isRegularLocalRing_of_isCenterAlong` (the first claim, for a proper morphism of integral schemes). The claim that a resolution of each model gives local uniformization is not in Lean yet.
 
 *Proof.* The center of $v$ on $X'$ exists, by the valuative criterion of properness (see the remark after Volume 3, Definition 4.1.1). Each point of $X'$ is regular. So $\pi$ is a proper birational morphism as in Volume 3, Definition 4.1.1, and the center of $v$ on $X'$ is regular. $\square$
 

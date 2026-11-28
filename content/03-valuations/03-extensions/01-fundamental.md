@@ -22,7 +22,7 @@ The Lean statement is for each algebraic extension $L/K$, and for two valuation 
 $$\sum_{i=1}^g e_if_i \le n.$$
 In particular $v$ has at most $n$ extensions to $L$.
 
-Lean: none yet
+Lean: `Singularity.sum_ramificationIdx_mul_inertiaDeg_le_finrank`, `Singularity.sum_ramificationIdx_mul_inertiaDeg_le_finrank_of_isDedekindDomain`, `Singularity.ncard_primesOver_le_finrank_of_isDedekindDomain` (primes of a finite flat extension, and the Dedekind case, which includes discrete valuation rings). The case of a general valuation is not in Lean yet.
 
 For $g = 1$ this is Corollary 2.1.3. For $g \ge 2$ one combines the elements of Lemma 2.1.2 for the different $w_i$ with the approximation theorem for incomparable valuation rings. Lemma 3.1.1 shows that the rings $\mathcal{O}_{w_i}$ are incomparable. We prove the theorem when $v$ has rank 1 at the end of this section, with a simple form of the approximation theorem (Lemma 3.1.5). This case contains the discrete valuations of rank 1 and all the examples of this chapter. For $v$ of higher rank we do not prove the approximation theorem, and we cite the inequality from [ZS2, Chapter VI]. The approximation theorem is also in [ZS2, Chapter VI].
 
@@ -83,7 +83,7 @@ The next proposition proves a special case of Corollary 3.2.2 without the theore
 
 **Proposition 3.1.6.** Let $(K, v)$ be henselian, and let $p$ be the characteristic exponent of $Kv$. Let $L/K$ be a finite extension of degree $n$, prime to $p$, and let $w$ be the extension of $v$ to $L$. If $e = f = 1$, then $L = K$.
 
-Lean: none yet
+Lean: `Singularity.finrank_eq_one_of_henselian`, `Singularity.valuation_eq_of_aeval_minpoly_eq_zero`, `Singularity.valuation_trace_le` (in full, with the henselian condition stated over an algebraic closure).
 
 *Proof.* The integer $n$ is prime to $p$, so its image in $Kv$ is not 0, and $v(n) = 0$. If $\operatorname{char} K = q > 0$, then $\operatorname{char} Kv = q$ and $q = p$. So $n$ is prime to the characteristic of $K$, and $L/K$ is separable, because the degree of inseparability of $L/K$ is a power of $\operatorname{char} K$ that divides $n$. Let $\operatorname{Tr} : L \to K$ be the trace. Fix an algebraic closure $\bar{K}$ of $K$ that contains $L$, and let $\bar{w}$ be the extension of $v$ to $\bar{K}$. It is unique, since $K$ is henselian, and so $\bar{w}$ extends $w$.
 
