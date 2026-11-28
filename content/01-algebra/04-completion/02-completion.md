@@ -70,7 +70,7 @@ Lean: `Singularity.Algebra.flat_adicCompletion`
 2. $(I\hat{R})^n = I^n \hat{R}$, and $\hat{R}$ is complete for its $I\hat{R}$-adic topology.
 3. The ideal $I\hat{R}$ is contained in the Jacobson radical of $\hat{R}$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.ker_evalₐ_eq_map_pow`, `Singularity.Algebra.adicCompletionQuotientPowAlgEquiv`, `Singularity.Algebra.map_pow_adicCompletion`, `Singularity.Algebra.isAdicComplete_map_adicCompletion`, `Singularity.Algebra.map_le_jacobson_adicCompletion` (for a finitely generated ideal, which covers the Noetherian case).
 
 *Proof.* For 1, apply Proposition 4.2.5 to the sequence $0 \to I^n \to R \to R/I^n \to 0$. The module $R/I^n$ is killed by $I^k$ for $k \ge n$, so its completion is $R/I^n$, and the map $\hat{R} \to R/I^n$ is the projection to the $n$-th term. Its kernel is the image of the completion of $I^n$. By Theorem 4.2.6, this image is the image of $\hat{R} \otimes_R I^n \to \hat{R}$, and this is $I^n \hat{R}$.
 

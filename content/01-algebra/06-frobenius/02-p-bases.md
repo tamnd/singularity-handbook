@@ -55,7 +55,7 @@ For a finite extension $K/k$ in characteristic $0$, $\Omega_{K/k} = 0$. In chara
 
 **Proposition 6.2.5.** Let $k$ be a perfect field and let $K$ be a finitely generated field extension of $k$ of transcendence degree $n$. Then $[K : K^p] = p^n$, and $\Omega_{K/k}$ has dimension $n$ over $K$. More exactly, if $t_1, \dots, t_n$ is a transcendence basis such that $K$ is separable over $k(t_1, \dots, t_n)$, then $t_1, \dots, t_n$ is a $p$-basis of $K$ over $k$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isPBasis_ratFunc_X`, `Singularity.Algebra.finrank_pSubring_ratFunc` (the case $K = k(t)$ with $k$ perfect). The general case, with $[K : K^p] = p^n$ and a separating transcendence basis as a $p$-basis, is not in Lean yet.
 
 *Proof.* Since $k$ is perfect, $K$ has a transcendence basis $t_1, \dots, t_n$ such that $K$ is a finite separable extension of $E = k(t_1, \dots, t_n)$ [Mat, Section 26]. Since $k = k^p \subseteq K^p$, we have $kK^p = K^p$, and $E^p = k(t_1^p, \dots, t_n^p)$.
 

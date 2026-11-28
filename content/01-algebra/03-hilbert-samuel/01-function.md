@@ -70,7 +70,7 @@ Now let $k$ be a field, let $A = k[x_1, \dots, x_d]$ and let $R = A_\mathfrak{n}
 $$\chi_R(j) = \sum_{i=0}^{j-1} \binom{i+d-1}{d-1} = \binom{j+d-1}{d}.$$
 For large $j$ this is a polynomial in $j$ of degree $d = \dim R$ with leading coefficient $1/d!$.
 
-Lean: none yet
+Lean: `Singularity.Algebra.isRegularLocalRing_affineOriginRing`, `Singularity.Algebra.hilbertSamuel_affineOriginRing_succ`, `Singularity.Algebra.length_grPiece_affineOriginRing`, `Singularity.Algebra.samuelMultiplicity_affineOriginRing` (the local ring at the origin of affine space).
 
 **Remark 3.1.7 (the multiplicity).** Let $(R, \mathfrak{m})$ be a Noetherian local ring of dimension $d$, let $I$ be an $\mathfrak{m}$-primary ideal and let $M$ be a finitely generated $R$-module. By the theorem of Hilbert and Samuel, there is a polynomial $P$ with rational coefficients such that $\chi_{I,M}(n) = P(n)$ for large $n$. Section 3.3 proves this result (Theorem 3.3.6). The degree of $P$ is at most $d$, and for $M = R$ it is exactly $d$ [AM69, Theorem 11.14]. The *multiplicity* $e(I, M)$ is $d!$ times the coefficient of $n^d$ in $P$, and $e(R) = e(\mathfrak{m}, R)$. Section 3.3 defines it, proves its first laws and proves that $e(R) = 1$ for each regular local ring (Theorem 3.3.13). Example 3.1.6 gives $e(R) = 1$ for the local ring of affine space at the origin. A theorem of Nagata says that an unmixed local ring $R$ is regular if and only if $e(R) = 1$ [Nag62, Section 40]. This edition does not prove the theorem of Nagata or the equality of the degree with the dimension.
 
