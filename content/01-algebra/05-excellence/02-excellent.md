@@ -24,7 +24,7 @@ Node: SG0000002T · Lean: `Singularity.Algebra.isOpen_regularLocus_of_charZero`
 
 **Theorem 5.2.3.** Every field is J-2. More generally, a complete Noetherian local ring and a Dedekind domain whose field of fractions has characteristic $0$ are J-2.
 
-Lean: `Singularity.Algebra.isOpen_regularLocus_of_field` (the case of a field)
+Lean: `Singularity.Algebra.isOpen_regularLocus_of_field`, `Singularity.Algebra.isJ2_of_field` (the case of a field)
 
 We prove Theorem 5.2.3 only for a field $k$. A finitely generated $k$-algebra is of finite type over $k$, so this case is Theorem 1.9.5, part 1. In the literature it is [EGA4, Section 6.12]. The other cases are in [EGA4-7, Section 7.8] and [Mat, Section 32], and we do not prove them. By the criterion of Nagata (Theorem 1.7.7), the statement for a field $k$ reduces to this: for each domain $D$ of finite type over $k$, the set $\operatorname{Reg}(D)$ contains a nonempty open set. When $k$ is perfect, $D$ is smooth over $k$ on a nonempty open set. When $k$ is imperfect, this can fail. For example, let $k = \mathbb{F}_p(t)$ and $D = k(a)$ with $a^p = t$. Then $D$ is a field, so it is regular, but $\Omega_{D/k} \ne 0$ (Example 6.2.6), so $D$ is not smooth over $k$ at its only point. Thus Section 1.9 uses the flat descent of regularity (Theorem 1.9.1) in its place. The Lean library of the project proves the case of characteristic $0$ (Proposition 5.2.2), the case of a perfect field (Theorem 1.8.17) and the case of an arbitrary field (Theorem 1.9.5).
 
