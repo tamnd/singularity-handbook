@@ -10,11 +10,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 - Volume 0, Section 5.1 describes edition 0.4.80.
 - Volume 9, Section 3.27 treats the Pivot Theorem for toric relative strong factorization in dimension 3: direct reachability as membership in a monoid of matrices, the Pivot Theorem and its form with several pivots with their converses, a uniform certificate for an infinite family of cones that are not directly reachable, certificates for all regular cones with entries at most 6, the depth growth in two families, the pivot condition on all classes with entries at most 5 (127 classes undecided), the route data for the bad cones, and corrected citations on the strong factorization conjecture of Oda.
+- Volume 5, Section 4.3 is new: weak log monomialization and the step of degree $p$. Theorem 4.3.2 proves, over a perfect field, that the theorem of Temkin and one purely inseparable step of degree $p$ (Definition 4.3.1) give local uniformization. Definition 4.3.4 defines the elements that are monomial modulo $p$-th powers, of the ramified and of the residual type. Theorems 4.3.8 and 4.3.10, Proposition 4.3.11 and the toric step Lemma 4.3.12 prove the step for such elements (Theorem 4.3.14). Definition 4.3.15 states weak log monomialization along a valuation as a hypothesis, and Theorem 4.3.16 and Corollary 4.3.17 deduce the step and local uniformization from it. The section says that weak log monomialization and local uniformization in transcendence degree 4 are open.
 
 ### Changed
 
 - Volume 1, Propositions 5.1.2, 5.1.6, 5.2.6 and 5.3.8, Theorems 5.1.7, 5.2.5 and 5.2.8, Definition 5.2.7, Corollary 5.2.9 and Example 5.3.9, Volume 3, Theorems 2.3.3 and 3.1.4 and Proposition 4.1.2, and Volume 4, Definitions 1.1.8, 2.1.1 and 2.3.8, Corollaries 1.1.9 and 3.1.9, Remarks 1.1.10 and 2.3.3 and Theorem 3.1.8 have Lean lines.
 - Volume 9, Section 3.26, the list of open questions cites Section 3.27. Volume 9, Section 2.5 and the introduction of Part 3 cite Section 3.27.
+- Volume 5, Section 4.2, the subsection on the equations $t^p = f$ refers to Theorem 4.3.2, and the introduction of Chapter 4 describes Section 4.3. The introduction of Volume 5 lists the Lean results for Section 4.3.
 
 ## [0.4.79] - 2026-11-28
 
