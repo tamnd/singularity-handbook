@@ -18,7 +18,7 @@ By Theorem 5.2.8, part 2, a scheme locally of finite type over a locally quasi-e
 
 **Proposition 5.3.2.** Let $X$ be a locally quasi-excellent scheme. Then $\operatorname{Reg}(X)$ is open in $X$.
 
-Lean: none yet
+Lean: `Singularity.regularLocus_isOpen_of_isJ2_cover` (with J-2 in place of quasi-excellent; a quasi-excellent ring is J-2)
 
 *Proof.* Let $x \in X$ and let $U = \operatorname{Spec} A$ be an affine open neighbourhood of $x$ with $A$ quasi-excellent. The ring $A$ is J-2, and $A$ is a finitely generated $A$-algebra, so $A$ is J-1. Thus $\operatorname{Reg}(A)$ is open in $U$. For $y \in U$ with prime $\mathfrak{p}_y$, the local ring $\mathcal{O}_{X,y}$ is $A_{\mathfrak{p}_y}$, so $\operatorname{Reg}(X) \cap U = \operatorname{Reg}(A)$. Since such sets $U$ cover $X$, the set $\operatorname{Reg}(X)$ is open. $\square$
 
@@ -26,7 +26,7 @@ The proposition is a direct consequence of the definition. The real content is i
 
 **Theorem 5.3.3.** Let $A$ be a quasi-excellent ring, for example a field, the ring $\mathbb{Z}$ or a complete Noetherian local ring. Let $X$ be a scheme locally of finite type over $A$. Then $\operatorname{Reg}(X)$ is open in $X$. In particular, the regular locus of a variety over any field is open.
 
-Node: SG0000000K · Lean: `Singularity.regularLocus_isOpen_of_field` (the case of a field)
+Node: SG0000000K · Lean: `Singularity.regularLocus_isOpen_of_field`, `Singularity.regularLocus_isOpen_of_isJ2` (with J-2 in place of quasi-excellent)
 
 *Proof.* The scheme $X$ is covered by affine open sets $\operatorname{Spec} B$ with $B$ a finitely generated $A$-algebra. Since $A$ is J-2, each such $B$ is J-1. Now argue as in the proof of Proposition 5.3.2. The rings in the list are quasi-excellent by Theorem 5.2.8. $\square$
 
@@ -38,13 +38,13 @@ Volume 0 defines a resolution of a scheme $X$ as a proper morphism $\pi : Y \to 
 
 **Proposition 5.3.4.** Let $X$ be an integral locally Noetherian scheme. Assume that there are a regular scheme $Y$, a morphism $\pi : Y \to X$ and a nonempty open set $V \subseteq X$ such that $\pi^{-1}(V) \to V$ is an isomorphism. Then $\operatorname{Reg}(X)$ contains a nonempty open set.
 
-Lean: none yet
+Lean: `Singularity.subset_regularLocus_of_isIso_restrict` (the Lean form does not ask that $X$ is integral or locally Noetherian)
 
 *Proof.* The set $\pi^{-1}(V)$ is open in $Y$, and each local ring of an open subscheme of $Y$ is a local ring of $Y$. So $\pi^{-1}(V)$ is a regular scheme. Since $V \cong \pi^{-1}(V)$, each local ring of $V$ is regular. Thus $V \subseteq \operatorname{Reg}(X)$. $\square$
 
 **Corollary 5.3.5.** Let $A$ be a Noetherian ring. Assume that for each prime $\mathfrak{p}$ of $A$, the integral scheme $\operatorname{Spec} A/\mathfrak{p}$ has a morphism $\pi$ as in Proposition 5.3.4. Then $\operatorname{Reg}(A)$ is open. If the same holds for each finitely generated $A$-algebra in place of $A$, then $A$ is J-2.
 
-Lean: none yet
+Lean: `Singularity.isOpen_regularLocus_of_resolution`, `Singularity.isJ2_of_resolution`
 
 *Proof.* By Proposition 5.3.4, for each prime $\mathfrak{p}$ the set $\operatorname{Reg}(A/\mathfrak{p})$ contains a nonempty open subset of $\operatorname{Spec} A/\mathfrak{p}$. By Theorem 1.7.7, $\operatorname{Reg}(A)$ is open. The second statement follows from the first, applied to each finitely generated $A$-algebra. $\square$
 

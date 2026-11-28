@@ -37,7 +37,7 @@ The next proposition shows that the finiteness of normalization is necessary for
 
 **Proposition 2.2.2.** Let $X$ be an integral Noetherian scheme that has a resolution $\pi : Y \to X$. Then the normalization of $X$ is finite.
 
-Lean: none yet
+Lean: `Singularity.Lipman.integralClosure_le_of_isIntegral`, `Singularity.Lipman.moduleFinite_integralClosure_of_subalgebra` (the affine step). The properness argument is not in Lean yet.
 
 *Proof.* Let $K$ be the function field of $X$ and let $U = \operatorname{Reg}(X)$. The set $U$ is open by condition 3 of Definition 2.1.5 of Volume 0. The generic point of $X$ is in $U$, so $U$ is a nonempty open set and it is irreducible. The set $\pi^{-1}(U) \cong U$ is irreducible and dense in $Y$, so $Y$ is irreducible. The local rings of $Y$ are regular, so they are domains (Theorem 1.3.3 of Volume 1), and $Y$ is integral with function field $K$. A regular local ring is factorial [Mat, Section 20], so it is integrally closed (Proposition 2.1.4 of Volume 1). Thus $Y$ is normal.
 
@@ -84,7 +84,7 @@ Thus the process near one point does not see the other points, and we may study 
 2. We have $h_0 = 0$ and $h_{i+1} = h_i + \ell_A(H^0(X_i, R^1 g_{i*} \mathcal{O}_{X_{i+1}}))$. In particular the sequence $h_0, h_1, \dots$ does not go down.
 3. There is an $i_0$ such that $R^1 g_{i*} \mathcal{O}_{X_{i+1}} = 0$ for each $i \ge i_0$.
 
-Lean: none yet
+Lean: `Singularity.Lipman.length_monotone_of_exact`, `Singularity.Lipman.exists_forall_subsingleton_of_length_le` (parts 2 and 3 for the lengths, with the bound of Theorem 2.1.6 as a hypothesis). Part 1 and the cohomology are not in Lean yet.
 
 *Proof.* 1. By the proof of Theorem 2.2.1, each $X_i$ is a normal excellent surface, and $g_i$ is proper. The scheme $X_i$ is integral by induction. Indeed, the blowup of an integral surface in a finite set of closed points that is not the whole surface is integral with the same function field (Lemma 1.1.3), and the normalization of an integral scheme is integral. The morphism $g_i$ is an isomorphism over the dense open set $\operatorname{Reg}(X_i)$, by Corollary 1.2.5. Thus $g_i$ is a normal modification. A composite of normal modifications is a normal modification.
 
