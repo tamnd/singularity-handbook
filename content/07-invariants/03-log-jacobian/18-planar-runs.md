@@ -472,6 +472,8 @@ and by Steps 2 and 5 of the proof of Theorem 3.18.26 the right side tends to $\L
 
 **Corollary 3.18.33.** Let $g$ be clean with a planar corner run. Assume that for some $e \ge 1$ with $\Lambda_e = \Lambda$, the monomial $\nu_e$ of least value of the pair $g^{[p^e, 0]}(\Phi_\infty)$, $g^{[0, p^e]}(\Phi_\infty)$ has a nonzero class. Then we have a contradiction.
 
+Lean: `Singularity.PlanarRuns.IsCornerWord.classHom_germ_eq_zero`, `Singularity.PlanarRuns.exists_coeff_germ_ne_zero` (for the Hahn model of a planar corner run over a perfect field $K$, with $\theta$ irrational and the coefficients of $g$ in $\mathbb{F}$, with a finite set of free coordinates; the claim is in the contrapositive form: if the run keeps $\rho \ge 1$, $e \ge 1$ and $\beta_{p^e e_i} + p^e (1 + \theta) \le \beta_n + |n| (1 + \theta)$ for each $n \ne 0$ with $g^{[n]} \ne 0$, then the monomial of least value of $g^{[p^e e_i]}(\Phi_\infty)$ has the class $0$; here $\nu_e$ is given by the index $i$ that attains $\Lambda$)
+
 *Proof.* Take $m$ large as in the proof of Theorem 3.18.26 for $f = g$, so that $\nu_e$ is also the monomial of least value of the pair at $\Phi_m$, by Step 2. In Step 4 of that proof with $e_0 = e$, an infinite number of the terms $\nu_e t_j M_{j+1}^{p^e}$ of the germ of order $p^e$ are terms of $g(\Phi_\infty)$ of value less than $\Lambda$. The monomial $M_{j+1}^{p^e}$ has the class $0$, so these terms have the class of $\nu_e$, which is not $0$. So $\operatorname{cl} g(\Phi_\infty)$ has terms of value less than $\Lambda$. This contradicts Theorem 3.18.32, part 2. $\square$
 
 Consider the following condition on $g$.
