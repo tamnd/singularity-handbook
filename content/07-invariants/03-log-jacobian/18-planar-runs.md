@@ -358,11 +358,15 @@ The *class* of a Laurent monomial in $y_N, z_N$ is its vector of exponents modul
 
 *Proof.* A $y$-chart is $y_m = y_{m+1}$, $z_m = y_{m+1} z_{m+1}$, and a $z$-chart is the same with $y$ and $z$ exchanged. Each is given by an integer matrix of determinant $1$. A matrix in $GL_2(\mathbb{Z})$ is invertible modulo $p$, so it sends the vectors divisible by $p$ onto the vectors divisible by $p$. For the last claim, the vectors $e(y_m)$ and $e(z_m)$ of exponents of $y_m$ and $z_m$ at $P_N$ are the columns of $U_m^{-1}$, so they are a basis of $\mathbb{Z}^2$, and $u_m = e(y_m) + e(z_m)$ has the coordinates $(1, 1)$ in this basis. So $u_m$ is not divisible by $p$. $\square$
 
+Lean: `Singularity.PlanarRuns.det_expY_expZ`, `Singularity.PlanarRuns.not_dvd_expU` (for the Hahn model of the run; only the determinant of the exponents of $y_m, z_m$ and the last claim are in Lean)
+
 Since $M_m = y_N z_N / (y_m z_m)$, the vector of exponents of $M_m$ at $P_N$ is $u_N - u_m$, and $v(y_m z_m) = 1 + \theta - v(M_m)$ decreases to $0$.
 
 **Lemma 3.18.24.** Let $\nu, \nu'$ be Laurent monomials and $0 \le e < e'$. Then only a finite number of pairs $(i, j)$ satisfy $\nu\, M_{j+1}^{p^e} = \nu'\, M_{i+1}^{p^{e'}}$.
 
 *Proof.* The equation says that $p^{e'} u_{i+1} - p^e u_{j+1} = c$ for a fixed vector $c \in \mathbb{Z}^2$. The values $v(M_{j+1})$ increase strictly, so for each $i$ there is at most one $j$, and for each $j$ at most one $i$. Assume that there are an infinite number of solutions. Then $i, j \to \infty$ along them, and since $v(u_m) = v(y_m z_m) \to 0$, the value of the vector $c$, that is, $c_1 + \theta c_2$, is $0$. Since $\theta$ is irrational, $c = 0$. Then $u_{j+1} = p^{e' - e} u_{i+1}$ is divisible by $p$, which contradicts Lemma 3.18.23. $\square$
+
+Lean: `Singularity.PlanarRuns.finite_smul_expM_eq` (for the Hahn model of the run, with $\theta$ irrational, in the form: for $(e, d) \ne (e', 0)$ only a finite number of $j$ solve $p^e M_{j+1} = d + p^{e'} M_{j'+1}$ in exponents)
 
 **Lemma 3.18.25.** Let $m \ge N$ and $e \ge 0$, and let $C, D \in \mathbb{F}$, not both $0$. Let $\nu$ be the monomial of least value of the pair, that is, $C = a \nu + C'$ and $D = b \nu + D'$ with $a, b \in K$ not both $0$ and with all the terms of $C'$ and $D'$ of value larger than $v(\nu)$. Put $W = v(\nu) + p^e (1 + \theta)$. Then
 $$C\, \Delta\varphi^{p^e} + D\, \Delta\psi^{p^e} = \nu \sum_{j \ge m} t_j M_{j+1}^{p^e} + R, \qquad t_j = \bigl(a^{1/p^e} a_j + b^{1/p^e} b_j\bigr)^{p^e},$$
@@ -371,6 +375,8 @@ where an infinite number of the $t_j$ are not $0$, the terms $\nu t_j M_{j+1}^{p
 We call $\nu \sum_j t_j M_{j+1}^{p^e}$ the *germ of order $p^e$* of the pair $(C, D)$.
 
 *Proof.* In characteristic $p$ we have $\Delta\varphi^{p^e} = \sum_{j \ge m} a_j^{p^e} M_{j+1}^{p^e}$, and the same for $\Delta\psi$. So the part with $a \nu$ and $b \nu$ is $\nu \sum_j (a a_j^{p^e} + b b_j^{p^e}) M_{j+1}^{p^e}$, and $a a_j^{p^e} + b b_j^{p^e} = t_j$, since $K$ is perfect. Since the run is planar, the direction $(a^{1/p^e}, b^{1/p^e}) \ne (0, 0)$ has an infinite number of nonzero $a^{1/p^e} a_j + b^{1/p^e} b_j$, so an infinite number of the $t_j$ are not $0$. The values $v(\nu) + p^e v(M_{j+1})$ are distinct and less than $W$. The rest is $R = C' \Delta\varphi^{p^e} + D' \Delta\psi^{p^e}$. The element $C'$ is in $\mathbb{F}$, so its terms have values at least $v(\nu) + \eta$ for some $\eta > 0$. A term of $C' \Delta\varphi^{p^e}$ of value less than $W$ comes from a term $s$ of $C'$ of value less than $W$, and there are a finite number of them, and from a $j$ with $p^e v(M_{j+1}) < W - v(s) \le p^e (1 + \theta) - \eta$, and there are a finite number of these $j$. The same holds for $D'$. $\square$
+
+Lean: `Singularity.PlanarRuns.cornerTail_pow`, `Singularity.PlanarRuns.hahnVal_add_sum_mul_tail_pow_lt` (for the Hahn model of the run over a perfect field $K$, with a finite set of free coordinates; Lean proves the germ count of Lemmas 3.18.24 and 3.18.25 together, as the bound of Step 4 of the proof of Theorem 3.18.26)
 
 For $e = 0$ this is the core of Lemma 3.18.10.
 
@@ -382,7 +388,7 @@ For $e = 0$ this is the core of Lemma 3.18.10.
 
 In particular Conjecture T of Remark 3.17.34 holds for the planar runs.
 
-Node: SG00000090
+Node: SG00000090 · Lean: `Singularity.PlanarRuns.statementD_frob`, `Singularity.PlanarRuns.isFrobTail_corner`, `Singularity.PlanarRuns.statementDHolds_corner_frob` (for the Hahn model of the run over a perfect field $K$ and the coefficients in $\mathbb{F}$; part 1 and part 2 are in Lean in the form of Statement D, part 3 and the form with $\Lambda(f)$ are not in Lean)
 
 *Proof.* Induction on $D = \deg f$. If $D = 0$, then $f$ is a nonzero element of $\hat H$, $\Lambda(f) = \infty$ and $f(\Phi_m) = f$, so the claims are clear. Let $D \ge 1$, and assume the theorem for each nonzero polynomial of degree less than $D$. Write $\Lambda = \Lambda(f)$ and $\Lambda_e = \Lambda_e(f)$.
 
@@ -575,7 +581,7 @@ The results of this section are a result of the track C4 of this project (tamnd/
 
 Computer tests with exact arithmetic over $\mathbb{F}_3$, $\mathbb{F}_9$, $\mathbb{F}_5$, $\mathbb{F}_{25}$, $\mathbb{F}_7$, $\mathbb{F}_{49}$ and $\mathbb{F}_{11}$ agree with each result for $\deg_{x, w} g < p$. Depth first searches over all the translations along random words, for starting points with $\deg_{x, w} g = 2$ and $3$, found no planar run. Only one branch, over $\mathbb{F}_5$ with $\deg_{x, w} g = 2$, had late translations that span $K^2$, and it ends at a point with $d = \rho = 1$ from which no step keeps $\rho$. Linear walks checked the conclusions of Theorem 3.18.6, and computations in a model of the Hahn field checked Theorem 3.18.11 and Proposition 3.18.14. A control with linear translations made the dominance fail, as Remark 3.18.12 predicts, so the tests can see failures. The tests for degree at least $p$ are in Remark 3.18.40. The translations of the tests are in finite fields, the words are finite and the searches have budgets, so the tests are not a proof.
 
-The outside results are those of Section 3.17: the pseudo Cauchy sequences of Kaplansky, the generalized stability theorem [Kuh10, Theorem 1.1] and the facts on the henselization in [Kuh-book], through Proposition 3.15.7. The use of the history of the divisor is from [CJS20]. Lemmas 3.18.8 and 3.18.10 and a part of Theorem 3.18.11 have Lean proofs for the Hahn model of the run. The Lean lines say what is not in Lean.
+The outside results are those of Section 3.17: the pseudo Cauchy sequences of Kaplansky, the generalized stability theorem [Kuh10, Theorem 1.1] and the facts on the henselization in [Kuh-book], through Proposition 3.15.7. The use of the history of the divisor is from [CJS20]. Lemmas 3.18.8 and 3.18.10, a part of Theorem 3.18.11, Lemmas 3.18.23 to 3.18.25 and a part of Theorem 3.18.26 have Lean proofs for the Hahn model of the run. The Lean lines say what is not in Lean.
 
 Several questions are open.
 
