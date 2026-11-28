@@ -388,7 +388,7 @@ For $e = 0$ this is the core of Lemma 3.18.10.
 
 In particular Conjecture T of Remark 3.17.34 holds for the planar runs.
 
-Node: SG00000090 · Lean: `Singularity.PlanarRuns.statementD_frob`, `Singularity.PlanarRuns.isFrobTail_corner`, `Singularity.PlanarRuns.statementDHolds_corner_frob` (for the Hahn model of the run over a perfect field $K$ and the coefficients in $\mathbb{F}$; part 1 and part 2 are in Lean in the form of Statement D, part 3 and the form with $\Lambda(f)$ are not in Lean)
+Node: SG00000090 · Lean: `Singularity.PlanarRuns.statementD_frob`, `Singularity.PlanarRuns.isFrobTail_corner`, `Singularity.PlanarRuns.statementDHolds_corner_frob`, `Singularity.PlanarRuns.lambda_le_of_frob`, `Singularity.PlanarRuns.lambda_le_corner` (for the Hahn model of the run over a perfect field $K$ and the coefficients in $\mathbb{F}$; part 1 and part 2 are in Lean in the form of Statement D; part 3 is in Lean as a comparison of the terms of the minimum, so $\Lambda(f)$ is not a definition in Lean)
 
 *Proof.* Induction on $D = \deg f$. If $D = 0$, then $f$ is a nonzero element of $\hat H$, $\Lambda(f) = \infty$ and $f(\Phi_m) = f$, so the claims are clear. Let $D \ge 1$, and assume the theorem for each nonzero polynomial of degree less than $D$. Write $\Lambda = \Lambda(f)$ and $\Lambda_e = \Lambda_e(f)$.
 
