@@ -313,7 +313,7 @@ The toric statement is combinatorial, so it holds in each characteristic. Karu e
 ### What is open
 
 1. $\mathrm{Fund}_4$ (Conjecture 3.24.3). By Theorem 3.24.5 it is, together with $\mathrm{PILU}_4$, exactly what resolution of 4-folds by projective morphisms needs. No reduction of it to simpler statements is known.
-2. $\mathrm{Princ}_4$ (Conjecture 3.24.7). It is not known to follow from $\mathrm{Res}_4^{\rm pr}$. Section 3.25 gives the known cases and a weak form that is sufficient for most steps of the proof of Theorem 3.24.13.
+2. $\mathrm{Princ}_4$ (Conjecture 3.24.7). It is not known to follow from $\mathrm{Res}_4^{\rm pr}$. Section 3.25 gives the known cases and a weak form that is sufficient for most steps of the proof of Theorem 3.24.13. Section 3.29 proves that embedded resolution of 3-folds with an isomorphism clause gives this weak form (Theorem 3.29.11), and that the strong form is needed only in Lemma 3.24.11, where it stays open.
 3. Regular reachability of toric rings.
 
 **Conjecture 3.24.24.** Let $\sigma \subseteq \mathbb{R}^3_{\ge 0}$ be a regular cone. If $S_\sigma$ is an iterated monoidal transform of $R = F[x,y,z]_{(x,y,z)}$ with arbitrary regular centers, then $\sigma$ is reached from $\mathbb{R}^3_{\ge 0}$ by smooth star subdivisions at 2-faces or at the whole cone.
@@ -331,7 +331,7 @@ Node: SG000000C9 · Lean: none yet
 A positive answer removes $\Gamma$ from the fundamental locus, and the centers of the valuations in $N$ stay regular, because a blowup along a regular center keeps regular points regular. Whether finitely many such steps, together with $\mathrm{Princ}_4$, reach the condition (A$^{\rm w}$) of Proposition 3.24.21 is part of the problem. Research note 83 named local strong factorization in dimension 3 over $\kappa(\Gamma)$ as the local input at the generic point of $\Gamma$. Research note 85 corrects this: one modification near the generic point of $\Gamma$ must serve all the valuations at the same time, so the local input is the relative strong factorization $\mathrm{RSF}_3$ of Definition 3.25.8. It implies local strong factorization, and the converse is open. Section 3.25 solves the problem near $\Gamma$ for Construction 3.24.19. The new global difficulty is the termination of the alternating blowups along $\Gamma$ near its points over $\mathrm{Sing}\, V_1$. For Construction 3.24.19, $\mathrm{Fund}_4$ holds by toric resolution, but it is not known whether it holds in the form of Conjecture 3.24.25.
 
 5. Local strong factorization of regular local rings of dimension 3 over imperfect fields of characteristic $p$, beyond the toric case of Theorem 3.24.23 and the case of Proposition 3.25.14. The relative form $\mathrm{RSF}_3$ of Definition 3.25.8 is what the patching needs.
-6. $\mathrm{PILU}_4$ (Conjecture 3.24.2), the local half.
+6. $\mathrm{PILU}_4$ (Conjecture 3.24.2), the local half. Section 3.29 proves it for each valuation without defect, given embedded local uniformization of 3-folds (Theorem 3.29.19), and reduces the case of defect to the open statement (D) of Problem 3.29.23.
 
 ### Exercises
 
