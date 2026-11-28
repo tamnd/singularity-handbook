@@ -23,6 +23,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 2, Proposition 2.1.7, Theorems 2.3.3 and 3.1.3, Lemmas 3.1.2 and 3.3.3 and Remark 3.2.12, Volume 3, Examples 1.4.5, 1.5.6 and 2.4.5 and Corollaries 2.3.4, 3.2.2 and 4.2.3, and Volume 5, Lemmas 1.2.3 and 1.2.4, Propositions 1.2.5 and 4.2.1, Corollary 1.3.6 and Examples 3.2.1 and 4.2.2 have Lean lines. Proposition 2.3.10 of Volume 5 has one more Lean name.
 - Volume 4, Definitions 1.1.1, 1.1.4 and 1.2.1, Lemmas 2.1.5, 2.1.8, 2.2.5 and 2.3.9 and Example 2.2.4 have Lean lines.
 - Volume 7, Definition 3.17.5, Lemmas 3.18.8 and 3.18.10, Theorem 3.18.11 and Theorem 3.19.6 have new Lean lines for the Hahn model of a planar corner run, and Volume 9, Section 3.19 says which results have Lean proofs.
+- Volume 5, Section 4.3 is new: weak log monomialization and the step of degree $p$. Theorem 4.3.2 proves, over a perfect field, that the theorem of Temkin and one purely inseparable step of degree $p$ (Definition 4.3.1) give local uniformization. Definition 4.3.4 defines the elements that are monomial modulo $p$-th powers, of the ramified and of the residual type. Theorems 4.3.8 and 4.3.10, Proposition 4.3.11 and the toric step Lemma 4.3.12 prove the step for such elements (Theorem 4.3.14). Definition 4.3.15 states weak log monomialization along a valuation as a hypothesis, and Theorem 4.3.16 and Corollary 4.3.17 deduce the step and local uniformization from it. The section says that weak log monomialization and local uniformization in transcendence degree 4 are open.
+
+### Changed
+
+- Volume 5, Section 4.2, the subsection on the equations $t^p = f$ refers to Theorem 4.3.2, and the introduction of Chapter 4 describes Section 4.3.
 
 ## [0.4.78] - 2026-11-28
 
