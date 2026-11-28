@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 5, Section 4.5 treats the step of degree $p$ over an Abhyankar base of rank one. Lemma 4.5.13 (the cone lemma) and Theorem 4.5.14 (the cone theorem) show that a dominant index $p^a$ with $a \ge 1$ has a leading term that is a $p$-th power. Theorem 4.5.16 proves that an immediate extension $K_0(x, z)$ with $z^p = g(x^p) + Gx + b$ is henselian rational over the base and that the valuation has local uniformization, and Corollary 4.5.17 gives the case of additive polynomials. Examples 4.5.18 and 4.5.19 and a list of what the section does not prove are included. Volume 5, the introduction of Chapter 4 and Section 4.2 cite Section 4.5.
+
 ## [0.4.87] - 2026-11-29
 
 ### Added
