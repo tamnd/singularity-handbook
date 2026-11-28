@@ -143,7 +143,7 @@ of order 7, with $E' = \operatorname{div}(x_1 x_3 x_4)$, $r' = (3, 0, 0)$, $\eps
 
 The exceptional divisor has 40 points with coordinates in $\mathbb{F}_3$. We computed all of them with SymPy. Each one has $m(x') = 3$. The pairs $(\epsilon(x'), \omega(x'))$ are $(0, 0)$ at 18 points, $(1, 0)$ at 9 points, $(1, 1)$ at 12 points, and $(4, 3)$ at the one point above. So $\omega(x') \le 3$ at each of them, and the only increase of $\epsilon$ is at a point that is not the origin of a chart, as Proposition 4.3.4 predicts.
 
-Lean: none yet
+Lean: `Singularity.Examples.example_4_3_6_residualFactor`, `Singularity.Examples.example_4_3_6_zero_pderiv`, `Singularity.Examples.example_4_3_6_strictTransform`, `Singularity.Examples.example_4_3_6_residualFactor'` (the polynomial computations in characteristic 3). The values of $\omega$ and $\iota$ are not in Lean yet.
 
 In the two examples 3.3.5 and 4.3.6 the mechanism of the increase is the same in dimension 3 and in dimension 4. An extra variable adds terms, but the cube that cleaning removes comes from the same factor $(x_2 - x_1)^3$ of the initial form of $G$.
 

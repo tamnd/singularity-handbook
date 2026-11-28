@@ -12,6 +12,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 - Volume 1, Example 1.2.11 has a Lean line.
 - Volume 2, Lemma 2.1.1 and Volume 8, Lemma 1.1.4 have Lean lines.
+- Volume 1, Proposition 3.3.15, Volume 2, Lemma 2.2.6, Volume 3, Example 1.6.9, Volume 6, Example 4.3.6 and Volume 8, Lemma 1.1.7 have Lean lines.
 - Volume 6, Lemmas 2.3.2 and 2.3.3 and Examples 4.3.3 and 4.3.5, and Volume 8, Lemma 1.1.5 have Lean lines.
 - Volume 7, Lemma 4.5.2, Theorem 4.5.9 and Corollary 4.5.10 need only $a_p = 0$ or $a_{2p} = 0$. Exercise 4 of Section 4.5 is now Lemma 4.5.16. Section 4.5 has the corrected computer counts of note 86, a warning on truncated searches (germ 52) and a new list of open questions. The introduction of Chapter 4 and Volume 9, Section 2.5 cite the new results.
 - Volume 7, Lemmas 3.17.1, 3.19.1 and 3.19.2, Corollary 3.19.3 and Theorem 3.19.6 (Conjecture P) have Lean lines. Each line says what part is not in Lean.
