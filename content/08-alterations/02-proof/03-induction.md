@@ -84,7 +84,7 @@ The next lemma is the geometric heart of the reduction. It fibres $X$ in curves 
 2. all fibres of $f$ are nonempty and of pure dimension 1, the smooth locus of $f$ is dense in each fibre, and at least one fibre of $f$ is smooth;
 3. the restriction of $f$ to $Z' = \varphi^{-1}(Z)$ is finite, and it is étale over a nonempty open subset of $\mathbb{P}^{d-1}_k$.
 
-Lean: none yet
+Lean: `Singularity.exists_forall_eval_ne_zero`, `Singularity.exists_injOn_linear`, `Singularity.finite_setOf_eval_line_eq_zero` (the choice of a general point and a general projection over an infinite field). The geometry is not in Lean yet.
 
 *Proof.* We use two facts of general position from [dJ96].
 
@@ -118,7 +118,7 @@ Since $\mathbb{P}^{d-1}_k$ over an algebraically closed field has no nontrivial 
 
 **Lemma 2.3.4 (de Jong).** Let $f \colon X \to Y$ be a morphism of projective varieties over an algebraically closed field with the properties (vi)(a) and (vi)(b). There is a divisor $H \subseteq X$ such that $f|_H \colon H \to Y$ is finite and generically étale, and such that, for each geometric point $\bar y$ of $Y$ and each irreducible component $C$ of $X_{\bar y}$, the set $\operatorname{sm}(X/Y) \cap C \cap H$ has at least 3 points.
 
-Lean: none yet
+Lean: `Singularity.le_card_rootSet_of_separable` (the count of points on a transversal hyperplane). The Bertini statements are not in Lean yet.
 
 This is [dJ96, Lemma 4.13]. *Sketch of proof.* Let $\mathcal{L}$ be very ample on $X$ and embed $X$ by $\mathcal{L}^{\otimes n}$ with $n \ge 3$. Then each curve $C \subseteq X$ has degree at least $n$ in this embedding, and it is not contained in a linear subspace of dimension $n - 1$. A dimension count shows that a general hyperplane contains no component of any fibre, so it meets $X$ in a divisor $H$ that is finite over $Y$. Near a given closed point $y$ of $Y$, a general hyperplane also meets $f^{-1}(y)$ transversally and only in the smooth locus of $f$. Then $H$ is finite étale over a neighbourhood of $y$, and it meets each component $C$ of a nearby fibre in $\deg C \ge n \ge 3$ distinct smooth points. Noetherian induction on $Y$ and a finite union of such divisors give the lemma. $\square$
 

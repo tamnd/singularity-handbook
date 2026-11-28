@@ -287,7 +287,7 @@ In all cases we have found $t$ with the properties of the paragraph before Case 
 
 **Corollary 4.4.17 (the log Jacobian criterion).** Let $f \in R$ with $f \notin E^p$. Then $f$ is foliated monomial in $R$ if and only if there is a normal crossings divisor $D$ of $R$ such that $J_D(f)$ is principal.
 
-Lean: none yet
+Lean: `Singularity.IsFoliatedMonomialPoly.exists_logJacobian_eq_span`, `Singularity.IsFoliatedMonomialPoly.exists_derivationIdeal_eq_span` (the first direction, in the polynomial model with a constant unit). The converse is not in Lean yet.
 
 *Proof.* If $f$ is foliated monomial, Proposition 4.4.15 gives $D$. If $J_D(f)$ is principal, Theorem 4.4.16 gives $t$. $\square$
 

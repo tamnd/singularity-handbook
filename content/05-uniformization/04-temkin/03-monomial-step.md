@@ -178,7 +178,7 @@ Now we treat the ramified type in general. By Lemma 4.3.7 we have $z^p = x_1x_2^
 $$z^p = x_1\, x_2^{r_2} \cdots x_d^{r_d}, \qquad 0 \le r_i < p.$$
 Then there are elements $U_1, \dots, U_d \in \mathcal{O}_w$, each a Laurent monomial in $z, x_2, \dots, x_d$, with these properties. Each of $z, x_1, \dots, x_d$ is a monomial in $U_1, \dots, U_d$ with exponents in $\mathbb{N}$. The ring $T = R[U_1, \dots, U_d]$ has a regular local ring $T_Q$ at the prime $Q = \mathfrak{m}_w \cap T$. The ring $A[U_1, \dots, U_d]$ is an affine model of $E'/k$ with $A \subseteq A[U_1, \dots, U_d] \subseteq \mathcal{O}_w$, and its local ring at the center of $w$ is $T_Q$.
 
-Lean: none yet
+Lean: `Singularity.exists_toric_chart` (Steps 1 to 3), `Singularity.toric_prod_mem_sq`, `Singularity.toric_prod_eq_of_sum_eq_one` (the monomial cases of Step 6), `Singularity.nsmul_mem_span_toricParamVec`, `Singularity.exists_toricParamVec_vecMul_ne_zero` (the combinatorics of Step 7). The link with the valuation and Steps 4, 5, 8 and 9 are not in Lean yet.
 
 The proof has nine steps. Steps 1 to 3 choose the monomials $U_j$ with the lattice lemma. Steps 4 to 6 write $T$ as a quotient of a polynomial ring over $R$ by $d$ binomials, and show that the local ring of this quotient is regular: the binomials are part of a regular system of parameters of the local ring of the polynomial ring. Steps 7 and 8 show that the quotient has the same local ring as $T$, by a comparison of the fields of fractions. Step 9 passes to the affine model.
 

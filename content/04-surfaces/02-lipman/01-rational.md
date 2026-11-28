@@ -50,7 +50,7 @@ Lean: `Singularity.HasRationalSingularities`, `Singularity.IsRationalSingularity
 
 **Remark 2.1.4.** Many texts define a rational singularity with one resolution: $A$ is rational if $H^1(Y, \mathcal{O}_Y) = 0$ for a resolution $Y \to \operatorname{Spec} A$. Once resolutions exist (Theorem 2.2.1), this agrees with Definition 2.1.3 for excellent $A$. We do not use this fact, and we do not prove it. Definition 2.1.3 has the advantage that it does not need the existence of a resolution.
 
-Lean: none yet
+Lean: `Singularity.r1PushforwardVanishes_of_hasRationalSingularities`, `Singularity.r1PushforwardVanishes_of_isRationalSingularity` (the easy direction). The converse is not in Lean yet.
 
 ### Two properties
 
