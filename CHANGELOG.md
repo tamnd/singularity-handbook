@@ -4,12 +4,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 9, Section 3.28 treats pivot sets and the number of pivots in toric relative strong factorization in dimension 3. Proposition 3.28.1 shows that a certificate lets us choose the subdivision of the cone among the restrictions of star sequences of the octant, and Corollary 3.28.2 deduces toric $\mathrm{RSF}_3$ from a one-sided form of the conjecture of Oda. Lemmas 3.28.5 to 3.28.9 describe pivot sets as tilings by closed stars and prove a parity rule, and Proposition 3.28.10 and Example 3.28.11 treat the certificate of $F_4$ with no pivot set and one star that removes the obstruction. Lemma 3.28.12 shows that every certificate gives one with a pivot set, and Proposition 3.28.15 shows that the conjecture on witnesses with at most $k$ pivots is the same as a bound on the number of pivots of certificates, so it restates $\mathrm{RSF}_3$ and does not reduce it. Proposition 3.28.17 gives a necessary condition, Proposition 3.28.18 lists the witnesses found, and Proposition 3.28.19 says that the bound is false for $k = 1$ and open for each $k \ge 2$.
+
 ### Changed
 
 - Volume 7, Lemma 3.15.4 has a Lean line: `IsCornerWord.dominance` proves the dominance lemma in the Hahn model of a corner run.
 - Volume 1, Remark 3.3.14, Volume 6, Theorems 3.2.6 and 3.2.7 and Corollary 4.3.2, and Volume 8, Example 1.2.4, Proposition 2.1.2 and Examples 2.1.6 and 2.1.7, have Lean lines.
 - Volume 1, Remark 3.3.14, Volume 6, Theorems 3.2.6 and 3.2.7 and Corollary 4.3.2, and Volume 8, Proposition 2.1.2, have Lean lines.
 - Volume 1, Remark 3.3.14, Volume 4, Corollary 1.2.5, Definition 2.1.3 and Remark 2.2.3, Volume 5, Lemmas 4.4.1, 4.4.3 to 4.4.5 and 4.4.18, Definition 4.4.2, Proposition 4.4.15, Theorem 4.4.16 and Corollary 4.4.19, Volume 6, Theorems 3.2.6 and 3.2.7 and Corollary 4.3.2, and Volume 8, Proposition 2.1.2, have Lean lines.
+- Volume 9, Sections 3.26 and 3.27, the lists of open questions cite Section 3.28. Section 3.27 marks the volume, the year and the pages of the paper of Ewald as not confirmed. Volume 9, Section 2.5 and the introduction of Part 3 cite Section 3.28.
 
 ## [0.4.81] - 2026-11-28
 
