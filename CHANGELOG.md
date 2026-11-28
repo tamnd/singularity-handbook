@@ -14,6 +14,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 1, Theorems 1.1.2, 4.2.9, 4.3.3, 4.4.4 and 4.4.9 and Remarks 3.1.7 and 6.4.8, and Volume 8, Propositions 1.2.3, 1.3.4, 1.3.6, 1.3.8, 2.2.6, 3.1.7 and 3.2.3, Lemmas 2.2.9 and 2.4.1, Example 2.2.3 and Corollary 3.2.5 have Lean lines. Theorems 1.1.2, 4.2.9 and 4.3.3 of Volume 1 have full Lean proofs.
 - Volume 5, Corollaries 1.4.6, 2.2.3 and 4.1.3 and Propositions 3.1.2 and 4.1.2, and Volume 6, Corollary 1.1.5, Proposition 2.2.1 and Theorem 3.1.5 have Lean lines.
 - Volume 7, Sections 3.18 and 3.19, and Volume 9, Section 3.19, give the Lean names for Lemmas 3.18.23 to 3.18.25 and Theorem 3.18.26 in the Hahn model of a planar corner run over a perfect field. Theorem 3.19.6 in this model now has only Theorem 3.18.32, part 1, and Corollary 3.18.33 as hypotheses.
+- Volume 5, Lemma 4.3.7 has the Lean names for the step of part 2 that removes the unit. The reduction of the exponents has no Lean proof yet.
 
 ## [0.4.80] - 2026-11-28
 
