@@ -15,6 +15,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ### Changed
 
+- Volume 6, Definitions 3.1.3, 3.2.1 and 3.2.3, Proposition 3.2.2 and Examples 1.2.7 and 4.1.1 have Lean lines.
 - Volume 3, Theorem 3.1.2 and Proposition 3.1.6 and Volume 5, Proposition 1.4.5, Proposition 3.1.4 and Theorem 3.1.5 have Lean lines.
 - Volume 9, Section 3.25 has the five fixes of the referee report in research note 89: the repair of Proposition 3.25.11 comes from the weak Step 3, $\tilde U_2 = U_2$ after Lemma 3.25.7, a polyhedral fan in the proof of Proposition 3.25.13, the citation of the proof of [CJS20, Corollary 0.4], and the version of [CP19]. It cites Section 3.26, and Volume 9, Section 2.5 and the introduction of Part 3 cite Section 3.26.
 - Volume 1, Section 1.4, the notes refer to Theorem 1.3.12.

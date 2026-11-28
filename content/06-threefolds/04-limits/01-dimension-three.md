@@ -63,7 +63,7 @@ Cossart and Piltant show that after $r$ such blowups the strict transform is
 $$h_r = T_r^p + u_2^r \bigl( u_2^p v_4^{(r)} (u_3^{(r)})^p + u_3^{(r)} (u_1^{(r)})^p \bigr)$$
 in suitable well adapted coordinates, where $v_4^{(r)}$ and $T_r$ absorb the terms of $\vartheta$ of degree at most $r/p$. The closure of the arc is $V(T_r, u_1^{(r)}, u_3^{(r)})$, and it is not permissible at the center $x_r$ for each $r \ge 1$ [CP19, Example 3.18].
 
-Lean: none yet
+Lean: `Singularity.ex411_delta`, `Singularity.ex411_epsilon`, `Singularity.ex411_initialForm`, `Singularity.ex411_blowup`, `Singularity.ex411_delta'`, `Singularity.ex411_epsilon'` (the computations at $x$ and $x_1$). The invariant $\omega$, the locus of multiplicity $p$ and the arc are not in Lean yet.
 
 We checked the first blowup above by hand, and its invariants by hand and by computer for $p = 2, 3, 5$. We do not check the claim on the locus of multiplicity $p$ or the formula for $h_r$ with $r \ge 2$, and we cite them from [CP19].
 
