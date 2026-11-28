@@ -14,7 +14,7 @@ The blowup is the main operation of the resolution of singularities. It replaces
 
 **Definition 1.1.1.** Let $X$ be a Noetherian scheme and let $Z \subseteq X$ be a closed subscheme with ideal sheaf $\mathcal{I}$. The *Rees algebra* of $\mathcal{I}$ is the graded $\mathcal{O}_X$-algebra $\mathcal{S} = \bigoplus_{n \ge 0} \mathcal{I}^n$, with $\mathcal{I}^0 = \mathcal{O}_X$. The *blowup* of $X$ along $Z$ is the scheme $X' = \operatorname{Bl}_Z X = \operatorname{Proj}_X \mathcal{S}$ with its projection $\pi : X' \to X$. The closed subscheme $E = \pi^{-1}(Z)$ of $X'$, with ideal sheaf $\mathcal{I}\mathcal{O}_{X'}$, is the *exceptional divisor*. The set $Z$ is the *center* of the blowup.
 
-Node: SG0000000S · Lean: none yet
+Node: SG0000000S · Lean: `Singularity.reesChartMap`, `Singularity.range_reesChartMap` (the chart of the Rees algebra, in algebra). The blowup as a scheme is not in Lean yet.
 
 The algebra $\mathcal{S}$ is generated in degree 1 by the coherent sheaf $\mathcal{I}$. Thus $\pi$ is projective [Har, Section II.7], and in particular $\pi$ is proper.
 
@@ -80,7 +80,7 @@ The proof of part 3 follows [Har, Proposition II.7.14]. It shows more: for a mor
 
 **Definition 1.1.4.** Let $\pi : X' \to X$ be the blowup along $Z$, and let $Y \subseteq X$ be a closed subscheme. The *strict transform* of $Y$ is the scheme-theoretic closure of $\pi^{-1}(Y \setminus Z)$ in $X'$.
 
-Lean: none yet
+Lean: `Singularity.chartStrictTransform`, `Singularity.mem_chartStrictTransform_iff`, `Singularity.mem_awaySaturation_iff_algebraMap_eq_zero` (the strict transform in one chart). The gluing of the charts is not in Lean yet.
 
 In a chart the strict transform is easy to compute. Let $X = \operatorname{Spec} R$, let $B = R[I/f]$ be a chart, and let $Y = V(J)$. On $\operatorname{Spec} B$ the set $\pi^{-1}(Z)$ is $V(fB)$ by Lemma 1.1.3. Thus the strict transform of $Y$ in $\operatorname{Spec} B$ is the scheme-theoretic closure of the open set $D(f)$ of $V(JB)$. Its ideal is the kernel of $B/JB \to (B/JB)_f$, that is, the ideal $(JB : f^\infty)$ of the elements $b \in B$ with $f^k b \in JB$ for some $k$ [Stacks].
 

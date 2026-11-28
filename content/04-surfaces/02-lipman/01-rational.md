@@ -56,7 +56,7 @@ Lean: none yet
 
 **Lemma 2.1.5.** Assume that $X$ has rational singularities and let $h : Y \to X$ be a normal modification. Then $Y$ has rational singularities.
 
-Lean: none yet
+Lean: `Singularity.subsingleton_of_exact`, `Singularity.subsingleton_of_forall_pi_subsingleton` (the algebra steps). The statement on higher direct images is not in Lean yet.
 
 *Proof.* The scheme $Y$ is a normal integral excellent scheme with $\dim Y \le 2$, by Lemma 2.1.2 and the remarks before it. Let $g : Y' \to Y$ be a normal modification and let $f = h \circ g$. Then $f$ is a normal modification of $X$. The Leray spectral sequence $R^p h_* R^q g_* \mathcal{O}_{Y'} \Rightarrow R^{p+q} f_* \mathcal{O}_{Y'}$ gives the exact sequence of low degrees
 
@@ -92,7 +92,7 @@ The definition asks for a condition on all normal modifications of $X$. The next
 
 **Lemma 2.1.8.** Assume that for each point $x \in X$ with $\dim \mathcal{O}_{X,x} = 2$, the ring $\mathcal{O}_{X,x}$ has a rational singularity. Then $X$ has rational singularities.
 
-Lean: none yet
+Lean: `Singularity.isIntegrallyClosed_localization_of_le` (the algebra step). The statement on cohomology is not in Lean yet.
 
 *Proof.* Let $f : Y \to X$ be a normal modification, and let $x \in X$. Let $\mathcal{O} = \mathcal{O}_{X,x}$, let $Y_x = Y \times_X \operatorname{Spec} \mathcal{O}$, and let $f_x : Y_x \to \operatorname{Spec} \mathcal{O}$ be the projection. As in the proof of Lemma 2.1.2, part 4, flat base change gives $(R^1 f_* \mathcal{O}_Y)_x \cong H^1(Y_x, \mathcal{O}_{Y_x})$. If $\dim \mathcal{O} \le 1$, this group is 0 by Lemma 2.1.2, part 4.
 

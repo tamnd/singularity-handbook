@@ -14,7 +14,7 @@ The process of Lipman alternates the normalization and the blowup of the singula
 
 **Definition 1.2.1.** In this volume a *surface* is a Noetherian scheme $X$ with $\dim X \le 2$. The surface is *excellent* if it is locally excellent in the sense of Definition 5.3.1 of Volume 1. A Noetherian scheme $X$ is *normal* if each local ring $\mathcal{O}_{X,x}$ is an integrally closed domain. Let $X$ be a reduced Noetherian scheme with irreducible components $X_1, \dots, X_s$, each with its reduced structure. The *normalization* of an integral $X_i$ with function field $K_i$ is the affine morphism $X_i^\nu \to X_i$ given by the integral closure of $\mathcal{O}_{X_i}$ in $K_i$. The *normalization* of $X$ is $\nu : X^\nu = \coprod_i X_i^\nu \to X$.
 
-Lean: none yet
+Lean: `Singularity.affineNormalization`, `Singularity.isIntegrallyClosed_affineNormalization`, `Singularity.affineNormalization_eq_bot_iff` (the affine case).
 
 A Noetherian normal scheme is the disjoint union of its connected components, and each component is integral. The normalization $X^\nu$ is normal. Over an affine open $\operatorname{Spec} R$ of an integral $X_i$, it is $\operatorname{Spec} R'$, where $R'$ is the integral closure of $R$ in $K_i$ [Stacks].
 

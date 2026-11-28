@@ -53,7 +53,7 @@ The process can stop at each of its two operations. The next example stops after
 
 **Example 2.2.4.** Let $k$ be a field and let $X = V(x^2 - y^2z) \subseteq \mathbb{A}^3_k$ be the Whitney umbrella of Example 1.2.7. Then $X_0 = \mathbb{A}^2_k$, so the process stops with $n = 0$. The normalization $\nu : \mathbb{A}^2_k \to X$ is a resolution of $X$. It is finite, and no curve of $\mathbb{A}^2_k$ maps to a point.
 
-Lean: none yet
+Lean: `Singularity.whitneyNormalization_finite`, `Singularity.whitneyNormalization_eq_of_comap_eq` (the map is finite, and no curve maps to a point). The claim that the map is the normalization is not in Lean yet.
 
 *Proof.* By Example 1.2.7, the normalization of $X$ is $\nu : \mathbb{A}^2_k \to X$, and $\mathbb{A}^2_k$ is regular. By the second part of the proof of Theorem 2.2.1, with $n = 0$, the morphism $\nu$ is a resolution. A finite morphism has finite fibres, so no curve maps to a point. $\square$
 
@@ -68,7 +68,7 @@ The next two results are the short steps of the proof that we can give in full. 
 1. The sequence of Theorem 2.2.1 for $W$ is $W_i = X_i \times_X W$, and $\operatorname{Sing}(W_i)$ is the inverse image of $\operatorname{Sing}(X_i)$.
 2. The scheme $X_n$ is regular if and only if $X_n \times_X \operatorname{Spec} \mathcal{O}_{X,x}$ is regular for each closed point $x$ of $X$.
 
-Lean: none yet
+Lean: `Singularity.isRegularLocalRing_localization_atPrime_iff` (the local ring step). The base change of the process of Theorem 2.2.1 and part 2 are not in Lean yet.
 
 *Proof.* 1. The scheme $W$ is reduced and Noetherian, and it is excellent, since a localization of an excellent ring is excellent [Stacks]. Let $Y$ be a scheme over $X$ and let $Y_W = Y \times_X W$. In both cases the projection $Y_W \to Y$ is injective on points, and it induces isomorphisms of the local rings. For an open set this is clear. For $W = \operatorname{Spec} \mathcal{O}_{X,x}$, over an affine open $\operatorname{Spec} B$ of $Y$ that lies over an affine open $\operatorname{Spec} R$ of $X$, we have $Y_W \cap \operatorname{Spec} B = \operatorname{Spec} B_\Sigma$, where $\Sigma$ is the image of $R \setminus \mathfrak{p}_x$. The primes of $B_\Sigma$ are primes of $B$, with the same local rings. Thus a point of $Y_W$ is regular if and only if its image in $Y$ is regular, and $\operatorname{Sing}(Y_W)$ is the inverse image of $\operatorname{Sing}(Y)$.
 
