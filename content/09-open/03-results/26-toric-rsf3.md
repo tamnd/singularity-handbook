@@ -258,9 +258,9 @@ In Counterexample 3.26.24 the cone $u_2$ is in $N(u_1)$, so Proposition 3.26.25 
 
 ### What is open
 
-1. Toric $\mathrm{RSF}_3$ for all regular cones in the octant. The first test cases are the two classes $\langle (0,1,3), (1,2,5), (5,2,0) \rangle$ and $\langle (0,2,3), (1,4,5), (5,3,0) \rangle$ of Theorem 3.26.19(3), for which no certificate is known.
-2. A uniform certificate for the family of the three cones of Theorem 3.26.19(4), and a proof of toric $\mathrm{RSF}_3$ that uses that only one cone is prescribed (Remark 3.26.21).
-3. The weak form of the drop of $\mu$: for each fan $\Sigma_2$ with $\mu > 0$, some bad cone has a certificate whose repair lowers $\mu$. Then an invariant that also controls $\mu_2$ and gives termination of the repairs. This is part (N4) of item 7 in Section 3.25, in the toric case.
+1. Toric $\mathrm{RSF}_3$ for all regular cones in the octant. The two classes $\langle (0,1,3), (1,2,5), (5,2,0) \rangle$ and $\langle (0,2,3), (1,4,5), (5,3,0) \rangle$ of Theorem 3.26.19(3) now have certificates of depth 12, and every regular cone with entries at most 6 has a certificate (Theorem 3.27.20). The question for all cones is open (Section 3.27).
+2. A uniform certificate for the family of the three cones of Theorem 3.26.19(4), which by Theorem 3.27.22 cannot be of pivot type, and a proof of toric $\mathrm{RSF}_3$ that uses that only one cone is prescribed (Remark 3.26.21).
+3. The weak form of the drop of $\mu$: for each fan $\Sigma_2$ with $\mu > 0$, some bad cone has a certificate whose repair lowers $\mu$. Then an invariant that also controls $\mu_2$ and gives termination of the repairs. This is part (N4) of item 7 in Section 3.25, in the toric case. Proposition 3.27.24 and Corollary 3.27.25 give data and a partial result for a different choice of the bad cone.
 4. Problem $(\mathrm{P}_{\tau_1})$ for $V_2'$ and for $V_2''$, and so (A$^{\rm w}$) on $V_2'$ in the strong model.
 5. A star sequence of $\Sigma_1$ over $U_1$ that refines $\Sigma_2$ over $U_1$ and has prescribed stars on $\partial C$, as needed after Proposition 3.26.9.
 6. Outside the toric case, every question of the list at the end of Section 3.25 stays open, in particular $\mathrm{Princ}_4$ at closed points in characteristic $p$.

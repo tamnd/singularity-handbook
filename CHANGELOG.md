@@ -4,6 +4,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 9, Section 3.27 treats the Pivot Theorem for toric relative strong factorization in dimension 3: direct reachability as membership in a monoid of matrices, the Pivot Theorem and its form with several pivots with their converses, a uniform certificate for an infinite family of cones that are not directly reachable, certificates for all regular cones with entries at most 6, the depth growth in two families, the pivot condition on all classes with entries at most 5 (127 classes undecided), the route data for the bad cones, and corrected citations on the strong factorization conjecture of Oda.
+
+### Changed
+
+- Volume 9, Section 3.26, the list of open questions cites Section 3.27. Volume 9, Section 2.5 and the introduction of Part 3 cite Section 3.27.
+
 ## [0.4.79] - 2026-11-28
 
 ### Added
