@@ -77,7 +77,7 @@ Lean: none yet
 
 **Corollary 1.1.5.** Let $\mathcal{O}$ be an excellent Dedekind domain with fraction field $F$, and let $\Sigma$ be a regular projective surface over $F$. Then there is a proper flat $\mathcal{O}$-scheme $\mathcal{X}$ with generic fiber $\Sigma$ such that $\mathcal{X}$ is regular.
 
-Lean: none yet
+Lean: `Singularity.flat_of_injective_algebraMap` (the flatness step, on an affine piece). The rest is not in Lean yet.
 
 These are [CP19, Corollary 1.2] and [CP19, Corollary 1.3]. Corollary 1.1.4 follows because a complete local ring is excellent. Corollary 1.1.5 follows because a projective model of $\Sigma$ over $\mathcal{O}$ is quasi-excellent of dimension 3.
 

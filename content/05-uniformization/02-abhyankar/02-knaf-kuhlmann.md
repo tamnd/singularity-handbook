@@ -52,7 +52,7 @@ The proof applies Theorem 2.2.2 to $K_0$, which is a field of rational functions
 
 **Corollary 2.2.3.** Let $k$ be a perfect field. Then each Abhyankar valuation of a function field $K/k$ has local uniformization.
 
-Lean: none yet
+Lean: `Singularity.hasLocalUniformization_of_isAbhyankarValuation_of_fg`, `Singularity.hasLocalUniformization_of_isAbhyankarValuation_of_perfectField` (with the theorem of Knaf-Kuhlmann as a hypothesis).
 
 *Proof.* By Volume 3, Corollary 2.2.4, $Kv$ is finitely generated over $k$, so it is separable over $k$. Theorem 2.2.1 applies. $\square$
 

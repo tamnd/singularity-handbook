@@ -4,6 +4,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- Volume 5, Corollaries 1.4.6, 2.2.3 and 4.1.3 and Propositions 3.1.2 and 4.1.2, and Volume 6, Corollary 1.1.5, Proposition 2.2.1 and Theorem 3.1.5 have Lean lines.
+
 ## [0.4.80] - 2026-11-28
 
 ### Added

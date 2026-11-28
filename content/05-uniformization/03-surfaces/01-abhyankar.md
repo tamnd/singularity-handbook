@@ -20,7 +20,7 @@ This is [Abh56s], and it is Volume 3, Theorem 4.1.4. Abhyankar also developed th
 
 **Proposition 3.1.2.** Let $k$ be a field of any characteristic, and let $K/k$ be a function field of transcendence degree 2. Then each valuation of $K/k$ has local uniformization.
 
-Lean: none yet
+Lean: `Singularity.hasLocalUniformization_of_trdeg_eq_two_of_one_le` (the case where the residue field is not algebraic over $k$). The algebraic case needs the theorem of Lipman, and it is not in Lean yet.
 
 *Proof.* Let $X$ be a model of $K/k$. It is an integral variety of dimension 2 over $k$, so it is a reduced excellent Noetherian scheme of dimension 2. By Volume 4, Theorem 2.2.1, it has a resolution. Proposition 1.4.5 gives the claim. $\square$
 

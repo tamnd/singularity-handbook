@@ -92,7 +92,7 @@ The remark gives a translation that is best for one weight. Theorem 3.1.5(1) ask
 2. For $\varphi \in \hat S$, the polyhedron $\Delta(h; u; X - \varphi)$ has this minimal property if and only if it has no solvable vertex.
 3. If $S$ is excellent, then one can choose $\theta \in S$.
 
-Lean: none yet
+Lean: `Singularity.order_eval_sq_add_X_pow_three_le` (the example $h = X^2 + u^3$ only). The general statement is not in Lean yet.
 
 Parts 1 and 2 are [CP19, Proposition 2.7], which refers to the Vertex Preparation Lemma (3.10) and Theorem (4.8) of [Hir67]. Part 3 is the first statement of [CP19, Proposition 2.12], which [CP19] takes from [CP15, Corollary II.4]. We do not prove Theorem 3.1.5. Lemma 3.1.4 proves the implication "minimal implies no solvable vertex" of part 2 for $S = k[[u]]$: a solvable vertex can be removed. The converse, and the convergence of the translations in part 1, are the deep parts, and they are not proved here. For $S = k[[u]]$ and $h = X^q + F$ with $q = p^e$ and $F$ clean, Volume 7, Proposition 1.2.7, proves directly that $\Delta(h; u; X)$ is minimal and has no solvable vertex, with a Lean proof. This special case does not prove the converse in general.
 
