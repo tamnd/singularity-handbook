@@ -59,7 +59,7 @@ In type 1 the divisor $V(x_j')$ is not part of $E$. A global argument must expla
 
 The equations $z^p + x^r$ and $z^p + x^r x_j$ are binomial: they have two terms. A variety that is defined locally by binomial equations is locally toric, and it has a resolution in each characteristic by combinatorial methods (Volume 9, Theorem 2.4.3). Włodarczyk proves this with cobordant blowups [Wlo22], and Abramovich and Schober prove it with weighted blowups [AS22]. In both proofs the invariant is built from the monomials, not from the derivatives.
 
-So the points with $\rho = 0$ are not an obstacle. Two questions remain. The first is to glue the local normal forms of Theorem 3.5.3, with the extra divisor $V(x_j')$ in type 1, into a global toroidal structure. The second, and the main one, is to find a sequence of blowups that makes $\rho$ go down to $0$. Sections 3.2 and 3.4 give only that $\rho$ does not go up.
+So the points with $\rho = 0$ are not an obstacle. Two questions remain. The first is to glue the local normal forms of Theorem 3.5.3, with the extra divisor $V(x_j')$ in type 1, into a global toroidal structure. The second, and the main one, is to find a sequence of blowups that makes $\rho$ go down to $0$. Sections 3.2 and 3.4 give only that $\rho$ does not go up. Volume 9, Section 3.31, shows that the second question along one valuation, with arbitrary models, is the statement (D) of Volume 9, Definition 3.29.21, and proves it when the valuation is discrete of rank one.
 
 ### The Lean proof
 

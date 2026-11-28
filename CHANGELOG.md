@@ -4,9 +4,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 9, Section 3.31 works on the statement (D) of Problem 3.29.23. Lemma 3.31.1 gives a $p$-basis of a model, and Theorem 3.31.2 shows that (D) holds on a model if and only if the log-Jacobian ideal $\Theta_{x,E}(a)$ is a principal monomial ideal with support in the boundary $E$. Corollary 3.31.5 shows that (D) is the end case $\rho = 0$ of Volume 7, Section 3.5, for a boundary chosen on the model, and Corollary 3.31.6 shows that the approximation of $b$ does not change the test on a fixed model. Examples 3.31.3 and 3.31.4 show that the residue field must be perfect and that a free parameter is necessary. Proposition 3.31.7 and Problem 3.31.8 treat a change of the equation, Lemma 3.31.9 gives the transformation law, and Proposition 3.31.11 computes the determinant of the log-Jacobian matrix, which is the ordinary Jacobian determinant up to monomials. Definition 3.31.13, Lemma 3.31.14, Proposition 3.31.15 and Remark 3.31.16 show what a log form of $\mathrm{ELU}_3$ gives. Proposition 3.31.18 gives (D) when $A[b]$ is regular, and Proposition 3.31.19 proves (D) when the valuation is discrete of rank one on $L$, with or without defect. Proposition 3.31.20 reports the computations of notes 97 and 99, and Problem 3.31.21 states (D) for the value groups other than $\mathbb{Z}$.
+
 ### Changed
 
 - Volume 9, Sections 3.24 and 3.29 name the Lean statements of `Fund_4`, `PILU_4`, `Princ_4^w`, `Emb_3` and Theorems 3.24.4, 3.24.5, 3.29.11 and 3.29.12, from tamnd/singularity-lean#320. The line `singularity` of `EDITION` is the map commit 69d555b, which has these names in records/lean.json.
+- Volume 9, Section 3.29: Problem 3.29.23 and its status, the case of defect $d = p$, item 5 of the open list and the status cite Section 3.31.
+- Volume 9, Section 2.5: a remark after Conjecture 2.5.3 connects the end case with (D), route V and the route table cite Section 3.31, the track FP covers Sections 3.24 to 3.31 and notes 97 and 99, and the FP row, the diagram and the critical path mark (D) as open only for the value groups other than $\mathbb{Z}$.
+- Volume 9, the introduction of Part 3 describes Section 3.31.
+- Volume 7, Section 3.5: the text on the questions that remain cites Volume 9, Section 3.31.
 
 ## [0.4.85] - 2026-11-28
 
