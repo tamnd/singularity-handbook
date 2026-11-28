@@ -14,7 +14,7 @@ We now begin the proof of Theorem 1.2.1. The proof is an induction on $d = \dim 
 
 **Lemma 2.3.1.** Let $(X, Z)$ be as in Theorem 1.2.1, let $\varphi \colon X' \to X$ be an alteration, and let $Z' = \varphi^{-1}(Z)$. Then $Z'$ is a proper closed subset of $X'$. If the theorem holds for $(X', Z')$, then it holds for $(X, Z)$. If also $\varphi$ is generically étale and the theorem holds for $(X', Z')$ with a generically étale alteration, then it holds for $(X, Z)$ with a generically étale alteration.
 
-Lean: none yet
+Lean: `Singularity.DeJongSolution.of_isAlteration`, `Singularity.IsAlteration.isClosed_preimage`, `Singularity.IsAlteration.preimage_ne_univ` (the lemma without the generically étale part, which `deJongAlteration` does not state).
 
 *Proof.* The morphism $\varphi$ is dominant, so it maps the generic point of $X'$ to the generic point of $X$, which is not in $Z$. So $Z' \ne X'$. Let $\varphi_1' \colon X_1 \to X'$ and $j_1 \colon X_1 \to \bar X_1$ solve the problem for $(X', Z')$. Then $\varphi \circ \varphi_1'$ is an alteration (Lemma 1.1.6), and $(\varphi \circ \varphi_1')^{-1}(Z) = \varphi_1'^{-1}(Z')$. So $\varphi \circ \varphi_1'$ and $j_1$ solve the problem for $(X, Z)$. The statement on generically étale alterations is the last part of Lemma 1.1.6. $\square$
 
@@ -66,7 +66,7 @@ Two remarks make the later steps work. First, the properties (i), (iii) and (iv)
 
 **Lemma 2.3.2.** Assume (iii) and (iv), and let $Z \subseteq Z'$ be a proper closed subset of $X$. If the theorem holds for $(X, Z')$, then it holds for $(X, Z)$, with the same alteration.
 
-Lean: none yet
+Lean: `Singularity.exists_eq_biUnion_of_subset_iUnion`, `Singularity.isSncAt_span_prod_of_subset` (the topological core and the local core). The codimension of the components of $\varphi^{-1}(Z)$ and the scheme statement are not in Lean yet.
 
 *Proof.* Let $\varphi_1 \colon X_1 \to X$ and $j_1$ solve the problem for $(X, Z')$. As in Step 2, $X_1$ is proper, so $j_1$ is an isomorphism and we may take $X_1 = \bar X_1$. The set $\varphi_1^{-1}(Z)$ is the support of the Cartier divisor $\varphi_1^* D$, so each of its irreducible components has codimension 1 in $X_1$ by the principal ideal theorem. It is contained in the divisor with strict normal crossings $\varphi_1^{-1}(Z')$. So each irreducible component of $\varphi_1^{-1}(Z)$ is an irreducible closed subset of codimension 1 contained in the union of the components of $\varphi_1^{-1}(Z')$, and so it is one of these components. A union of irreducible components of a divisor with strict normal crossings is a divisor with strict normal crossings, by Definition 1.1.10. $\square$
 
@@ -132,7 +132,7 @@ From now on we alter the base $Y$, and we change $X$ by the strict transform. Th
 
 **Lemma 2.3.5.** Let $f \colon X \to Y$ and $Z$ have the properties (i), (iii), (iv) and (vi)(a) to (e). Let $\psi \colon Y' \to Y$ be a projective generically étale alteration. Let $X'$ be the reduced scheme of $Y' \times_Y X$, with $f' \colon X' \to Y'$ and $\varphi \colon X' \to X$ the projections, and let $Z' = \varphi^{-1}(Z)$. Then $X'$ is integral, $\varphi$ is a projective generically étale alteration of degree $\deg \psi$, and $(X', Z')$ with $f'$ has the properties (i), (iii), (iv) and (vi)(a) to (e).
 
-Lean: none yet
+Lean: `Singularity.isReduced_tensorProduct_of_isSeparable`, `Singularity.isSeparable_of_tensorProduct_equiv` (the generic fibre). The irreducibility of $Y' \times_Y X$ and the properties (vi)(a) to (e) are not in Lean yet.
 
 *Proof.* Let $W = Y' \times_Y X$ and let $W_0 \subseteq W$ be the inverse image of the smooth locus $\operatorname{sm}(X/Y)$. Then $W_0 \to Y'$ is smooth, as a base change of a smooth morphism. Its generic fibre is the base change of the generic fibre $X_\eta$ of $f$ to $k(Y')$. The scheme $X_\eta$ is smooth and geometrically connected over $k(Y)$, so it is geometrically integral, and so the generic fibre of $W_0 \to Y'$ is integral. A smooth morphism is flat, so each irreducible component of $W_0$ dominates $Y'$, by going down for flat morphisms. Its generic point then lies in the generic fibre, which is irreducible. So $W_0$ is irreducible. Each fibre $W_{y'} = X_{\psi(y')} \times \kappa(y')$ contains $W_0 \cap W_{y'}$ as a dense open subset, by (vi)(b). So each point of $W$ is in the closure of $W_0$, and $W$ is irreducible. So $X' = W_{\mathrm{red}}$ is integral.
 

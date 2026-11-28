@@ -47,7 +47,7 @@ Now suppose that $\mathrm{pr}_1$ is constant on the component $T_j$ over $X_i$, 
 
 **Proposition 2.4.2.** In the situation of (a) to (c), (e) and (g) to (i), the projection $\mathrm{pr}_1 \colon T \to \mathcal{C}$ is an isomorphism. So $\beta$ extends to a proper birational morphism $\mathrm{pr}_2 \circ \mathrm{pr}_1^{-1} \colon \mathcal{C} \to X$.
 
-Lean: none yet
+Lean: `Singularity.algebraMap_bijective_of_isIntegral_of_birational` (the commutative algebra of the last step). The finite fibres and the normality of the stable curve are not in Lean yet.
 
 *Proof.* We first show that $\mathrm{pr}_1$ has finite fibres. Over $U$ it is an isomorphism. Let $s \in S$ and let $T_j$ be a component of $T_s$. Since $T \subseteq \mathcal{C} \times_S X$, the curve $T_j$ is not mapped to a point by both projections. If $\mathrm{pr}_2$ maps $T_j$ to a point, then $\mathrm{pr}_1$ is not constant on $T_j$. If $\mathrm{pr}_2(T_j)$ is a curve, then it is a component $X_i$ of $X_s$, and by Lemma 2.4.1 $T_j$ is the unique component over $X_i$ and $\mathrm{pr}_1$ is not constant on it. So $\mathrm{pr}_1$ is not constant on any component of $T_s$, and its fibres over the points of $\mathcal{C}_s$ are finite. A proper morphism with finite fibres is finite. So $\mathrm{pr}_1$ is finite and birational.
 
@@ -107,7 +107,7 @@ In chart $u$ the blowup is regular and the inverse image of $Z$ has normal cross
 
 **Proposition 2.4.4 (de Jong).** In Situation B, let $E$ be an irreducible component of $\operatorname{Sing}(X)$, let $X' \to X$ be the blowup along $E$, and let $Z'$ be the reduced inverse image of $Z$. Then $(X', Z')$ is again as in Situation B, and $\operatorname{Sing}(X')$ has one irreducible component less than $\operatorname{Sing}(X)$.
 
-Lean: none yet
+Lean: `Singularity.nodeBlowupQOneEquiv` (the chart $t_1$ for $\mu = 2$ is a polynomial ring). The case $\mu \geq 3$ and the count of the components of the singular locus are not in Lean yet.
 
 This is [dJ96, 4.26 and 4.27]. The local statements are Proposition 2.4.3 and the discussion after it. De Jong adds the global statement: the strict transform of another component $E'$ of $\operatorname{Sing}(X)$ is the blowup of $E'$ in the regular closed subscheme $E \cap E'$, so it is regular, and $\operatorname{Sing}(X')$ is the union of these strict transforms.
 
