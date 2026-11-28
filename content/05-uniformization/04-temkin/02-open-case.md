@@ -20,7 +20,7 @@ In Theorem 4.1.1 the fields $l$ and $L$ depend on $X$. So the Lean statement `Si
 
 **Proposition 4.2.1.** Let $k$ be a field of characteristic $p > 0$, let $A$ be a normal domain that is a finitely generated $k$-algebra with fraction field $K$, let $L/K$ be a finite purely inseparable extension, and let $B$ be the integral closure of $A$ in $L$. Then $B$ is a finite $A$-module, and the map $\operatorname{Spec} B \to \operatorname{Spec} A$ is a homeomorphism.
 
-Lean: none yet
+Lean: `Singularity.isHomeomorph_comap_integralClosure` (the map of spectra for a purely inseparable extension, in algebra). The statement on schemes is not in Lean yet.
 
 *Proof.* The module $B$ is finite by [Eis95, Corollary 13.13]. Since $L/K$ is finite and purely inseparable, there is $n$ with $L^{p^n} \subseteq K$. Let $b \in B$. Then $b^{p^n}$ lies in $K$ and it is integral over $A$. Since $A$ is normal, $b^{p^n} \in A$.
 
@@ -35,7 +35,7 @@ So Theorem 4.1.1 gives a regular point $\mathfrak{q}$ of $\operatorname{Spec} B$
 3. The integral closure of $A$ in $L$ is $k[a, b]$.
 4. The point $\mathfrak{m} = (x, y, z)$ of $X$ is singular.
 
-Lean: none yet
+Lean: `Singularity.add_pow_pow_succ_char`, `Singularity.surface_relation_mem_sq` (parts 1 and 4). Parts 2 and 3 are not in Lean yet.
 
 *Proof.* We prove part 2 first. Part 2. Since $k$ is perfect, $k(x, y) = L^p$, the field of $p$-th powers of $L$. The monomials $a^i b^j$ with $0 \le i, j < p$ form a basis of $L$ over $L^p$, and the elements of $L^p$ are the multiples of the basis vector $1$. Now $z = a^p \cdot a + b^p \cdot b$ has the nonzero coordinates $a^p$ and $b^p$ on the basis vectors $a$ and $b$, which differ from $1$ because $p \ge 2$. So $z \notin k(x, y)$. Since $z^p \in k(x, y)$, the polynomial $T^p - z^p$ is irreducible over $k(x, y)$, and $[K : k(x, y)] = p$. The degree $[L : k(x, y)]$ is $p^2$, so $[L : K] = p$. Each element of $L$ has its $p$-th power in $L^p \subseteq K$, so $L/K$ is purely inseparable.
 

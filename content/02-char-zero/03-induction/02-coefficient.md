@@ -161,7 +161,7 @@ The last property says that $\varphi$ is the identity on $\hat{\mathcal{O}} / MC
 $$W_s(I) = \sum \Big\{ \prod_{j=0}^{m} D^j(I)^{c_j} \;:\; \sum_j (m - j) \, c_j \ge s \Big\}.$$
 For suitable $s$, the ideal $W_s(I)$ is MC-invariant, it has maximal order $s$, its maximal contact ideal is $MC(I)$, and the blowup sequences of order at least $m$ for $(I, m)$ are the blowup sequences of order at least $s$ for $(W_s(I), s)$ (Section "Tuning of ideals"). The formal automorphism of Corollary 3.2.11 can be replaced by two étale maps $U \rightrightarrows X$, and then two blowup sequences of order $m$ for an MC-invariant ideal that are equivalent under these maps are equal (Section "Uniqueness of maximal contact"). Section 3.3 uses these results only in the proof of Theorem 3.3.6.
 
-Lean: none yet
+Lean: `Singularity.tuningIdeal`, `Singularity.le_idealOrd_iff_le_idealOrd_tuningIdeal`, `Singularity.le_pow_iff_tuningIdeal_le_pow` (the cosupport at the origin and the coordinate centers, for $m \mid s$). The invariance under maximal contact is not in Lean yet.
 
 *Example (a component of $S$ in the cosupport).* Theorem 3.2.4 asks that no component of $S$ lies in $\operatorname{cosupp}(I, m)$. Let $I = (y^2)$ on $\mathbb{A}^2$ with $m = 2$, and let $S = (y = 0)$. Then $\operatorname{cosupp}(I, 2) = S$. We have $D(I) = (y^2, 2y) = (y)$, so $I|_S = 0$ and $D(I)|_S = 0$, and
 $$C_S(I) = (I|_S) + (D(I)|_S)^2 = 0.$$

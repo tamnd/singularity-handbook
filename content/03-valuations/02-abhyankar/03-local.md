@@ -83,7 +83,7 @@ Abhyankar also proves that in the case of equality $\Gamma_v \cong \mathbb{Z}^r$
 $$\operatorname{trdeg}(K/k) - \operatorname{rr} \Gamma_v - \operatorname{trdeg}(Kv/k) = \dim R - \operatorname{rr} \Gamma_v - \operatorname{trdeg}(Kv/\kappa).$$
 In particular Theorem 2.3.3 for $R$ gives Theorem 2.1.5 for $v$, and $v$ is an Abhyankar valuation if and only if equality holds in Theorem 2.3.3.
 
-Lean: none yet
+Lean: `Singularity.trdeg_sub_eq_dim_sub`, `Singularity.add_trdeg_eq_dim_iff` (with the dimension formula for varieties as a hypothesis). The dimension formula is not in Lean yet.
 
 *Proof.* Let $\operatorname{Spec} B$ be an affine open set that contains $x$, and let $\mathfrak{p} \subseteq B$ be the prime of $x$. Then $B$ is a domain of finite type over $k$ with field of fractions $K$, and $R = B_\mathfrak{p}$. By [Har, Chapter I, Theorem 1.8A], $\dim B = \operatorname{trdeg}(K/k)$ and $\operatorname{ht} \mathfrak{p} + \dim B/\mathfrak{p} = \dim B$. Also $\dim B/\mathfrak{p} = \operatorname{trdeg}(\kappa/k)$ by the same theorem applied to $B/\mathfrak{p}$. So $\dim R + \operatorname{trdeg}(\kappa/k) = \operatorname{trdeg}(K/k)$. Since $k \subseteq \kappa \subseteq Kv$, transcendence degrees add: $\operatorname{trdeg}(Kv/k) = \operatorname{trdeg}(Kv/\kappa) + \operatorname{trdeg}(\kappa/k)$. Subtract the two equations. $\square$
 

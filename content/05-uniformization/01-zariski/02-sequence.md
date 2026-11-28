@@ -37,7 +37,7 @@ The next lemma computes a length on a curve from its branches. Let $C$ be a Noet
 **Lemma 1.2.3 (branch formula).** For each $h \in C$ with $h \ne 0$,
 $$\lambda_C(C/hC) = \sum_{i=1}^s [\kappa_i : \kappa_C]\, v_i(h).$$
 
-Lean: none yet
+Lean: `Singularity.length_ker_eq_length_quotient_range`, `Singularity.length_quotient_smul_eq_of_finiteLength` (the first half of the proof, $\lambda(C/hC) = \lambda(\bar C/h\bar C)$). The Chinese remainder step for the branches is not in Lean yet.
 
 *Proof.* Choose $c \in C$ with $c \ne 0$ and $c\bar{C} \subseteq C$, a common denominator of finitely many generators of $\bar{C}$. Then $N = \bar{C}/C$ is a finitely generated module over $C/cC$, which has finite length, so $N$ has finite length. Apply the snake lemma to multiplication by $h$ on the exact sequence $0 \to C \to \bar{C} \to N \to 0$. Multiplication by $h$ is injective on $C$ and on $\bar{C}$, so we get an exact sequence
 $$0 \to \ker(h|_N) \to C/hC \to \bar{C}/h\bar{C} \to N/hN \to 0.$$
@@ -53,7 +53,7 @@ Let $p \in \mathfrak{m}$ be a prime element of $R$ with $\operatorname{ord}(p) =
 $$\sum_{i=1}^s [\kappa_i : \kappa]\, \min(v_i(\bar{x}), v_i(\bar{y})) = b,$$
 with the convention $v_i(0) = \infty$.
 
-Lean: none yet
+Lean: `Singularity.natDegree_add_natTrailingDegree_reflect`, `Singularity.sum_mul_min_eq_of_branches` (the count of degrees and orders). The charts and the branches are not in Lean yet.
 
 *Proof.* The element $x$ is prime, because $R/xR$ is a discrete valuation ring. So $\bar{x} \ne 0$. Let $I$ be the set of $i$ with $v_i(\bar{x}) \le v_i(\bar{y})$, and $J$ its complement. If $p$ is associate to $y$, then $C = R/yR$ is a discrete valuation ring with uniformizer $\bar{x}$, so $s = 1$, both sides are 1, $I = \{1\}$ and $J$ is empty. Assume now that $p$ is associate to neither $x$ nor $y$. Then $\bar{x} \ne 0$ and $\bar{y} \ne 0$.
 
@@ -76,7 +76,7 @@ Write $P = \sum_{j=0}^b c_jX^{b-j}Y^j$. Then $\deg P(1, Y)$ is the largest $j$ w
 **Proposition 1.2.5 (inequality of Noether).** Assume case 2 of Proposition 1.1.3. Let $f, g \in R$ be nonzero elements with no common prime factor, with $a = \operatorname{ord}(f)$ and $b = \operatorname{ord}(g)$. Then
 $$i_{R_1}(f', g') \le i_R(f, g) - ab.$$
 
-Lean: none yet
+Lean: `Singularity.noether_inequality_of_branches` (the numerical part of the proof). The strict transforms and the branches are not in Lean yet.
 
 *Proof.* By Lemma 1.1.6 the strict transforms $f'$ and $g'$ have no common prime factor, so the left side is defined. Write $g = u\,p_1 \cdots p_m$ with $u$ a unit and $p_j$ prime. Then $f$ has no common factor with each $p_j$, and $b = \sum \operatorname{ord}(p_j)$. By Lemma 1.1.5, $g' = u\,p_1' \cdots p_m'$, and by Lemma 1.1.6, $f'$ has no common factor with each $p_j'$. By Lemma 1.2.2, both sides of the inequality are additive in $g$. So we may assume that $g = p$ is a prime element of $R$ in $\mathfrak{m}$.
 

@@ -21,7 +21,7 @@ Theorem 3.1.5 shows that the method of Section 1.3 works for a surface exactly w
 3. $d = p$.
 4. $v$ has local uniformization.
 
-Lean: none yet
+Lean: `Singularity.minpoly_eq_X_pow_sub_C_of_pow_eq`, `Singularity.finrank_adjoin_of_pow_eq`, `Singularity.not_isSeparable_of_pow_eq`, `Singularity.not_mem_of_isSeparable_of_pow_eq` (parts 1 and 3, the field theory). Part 2 on the valuations is not in Lean yet.
 
 *Proof.* Part 1. The element $y$ is a root of $Y^p - y^p$ over $K_0$, and $y \notin K_0$, because $x$ and $y$ are algebraically independent. In characteristic $p$, a polynomial $Y^p - c$ is irreducible over a field that does not contain a $p$-th root of $c$. So $[K : K_0] = p$, and $y$ is purely inseparable over $K_0$.
 

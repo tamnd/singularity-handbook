@@ -38,7 +38,7 @@ A global hypersurface of maximal contact need not exist, and the local ones are 
 2. $\operatorname{cosupp}(I_i, m) \subseteq H_i$, and in particular the center $Z_i$ lies in $H_i$;
 3. $H_{i+1}$ is smooth, and it is a hypersurface of maximal contact for $I_{i+1}$ whenever $\operatorname{max\text{-}ord} I_{i+1} = m$.
 
-Node: SG00000045 · Lean: none yet
+Node: SG00000045 · Lean: `Singularity.chartSubst_X_of_ne`, `Singularity.X_mem_centerChartTransformIdeal_one` (part 1 in one chart), `Singularity.eq_zero_of_X_mem_derivIdeal_iterate` (part 2 for $i = 0$). Part 3 and the statements for sequences of blowups are not in Lean yet.
 
 *Proof.* We first compute the transform of $H_i$ near the center. Let $\pi_i \colon X_{i+1} \to X_i$ be the blowup of a smooth center $Z_i \subseteq H_i$, with exceptional divisor $F_i$. Let $x \in Z_i$ be a closed point, and let $c$ be the codimension of $Z_i$ in $X_i$ at $x$. Since $Z_i \subseteq H_i$ are both smooth, there are local coordinates $x_1, \dots, x_n$ on an open set $U \ni x$ with $H_i \cap U = (x_1 = 0)$ and $Z_i \cap U = (x_1 = \dots = x_c = 0)$. To find them, take coordinates on $H_i$ at $x$ in which $Z_i$ is a coordinate subspace, lift them to $X_i$, and add an equation $x_1$ of $H_i$. Assume $c \ge 2$, and use the charts $U_1, \dots, U_c$ of Lemma 2.2.2.
 
