@@ -14,7 +14,7 @@ The results come from research note 92 and from research note 93, which is a ref
 
 ### Motivation
 
-Toric $\mathrm{RSF}_3$ is a case of the strong factorization conjecture of Oda (Proposition 3.27.26), and this conjecture is open in dimension 3. So a proof of toric $\mathrm{RSF}_3$ must use something that the conjecture of Oda does not have. The first part of this section says what this is: a certificate lets us choose the subdivision of $\sigma$, among the restrictions of star sequences of the octant (Proposition 3.28.1).
+Toric $\mathrm{RSF}_3$ is a case of the strong factorization conjecture of Oda (Proposition 3.27.26), and this conjecture is open in dimension 3. So a proof of toric $\mathrm{RSF}_3$ should use the structure that it has in addition to the conjecture of Oda. The first part of this section says what this is: a certificate lets us choose the subdivision of $\sigma$, among the restrictions of star sequences of the octant (Proposition 3.28.1).
 
 The second part studies the sets of pivots of Theorem 3.27.17. A set of pivots is the same as a tiling of $\sigma$ by closed stars of rays (Lemma 3.28.6). This view gives a parity rule (Lemma 3.28.7), and the parity rule explains why one certificate of the cone $F_4$ of Proposition 3.27.21 has no set of pivots at all. The worked example of $F_4$ shows the obstruction and how one more star removes it.
 
