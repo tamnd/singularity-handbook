@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.87] - 2026-11-29
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.87.
 - Volume 9, Section 3.32 reviews the track FO against the preprint [MN26] of Martínez-Núnez. Theorem 3.32.1 states its main result without equivariance, and the section lists the steps of its proof, with the input in dimension 3 on the base. Lemma 3.32.2 and Corollary 3.32.3 give a resolution of each 4-fold with a nontrivial torus action, and Example 3.32.4 gives 4-folds with no torus action. Lemma 3.32.5 shows that a torus action passes to the quotient by an invariant $p$-closed foliation, so Proposition 3.32.6 gives $\mathrm{FQ}_4$ for torus-invariant foliations, and Corollary 3.32.7 solves Problem 4.10 of note 04 in its quotient form. Proposition 3.32.8 gives $\mathrm{PIRes}_4$ for semi-invariant functions, Corollaries 3.32.9 and 3.32.10 treat hypersurfaces whose exponents lie in a hyperplane, Proposition 3.32.12 gives a projective resolution of affine 4-folds with a torus of dimension at least 2, and Proposition 3.32.13 treats reductive groups and finite quotients. Problems 3.32.14 to 3.32.18 are open.
 
 ### Changed
