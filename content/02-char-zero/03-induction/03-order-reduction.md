@@ -110,7 +110,7 @@ The second step of the induction removes the condition on the maximal order. The
 
 We call $M(I)$ the *monomial part* and $N(I)$ the *nonmonomial part* of $I$.
 
-Lean: none yet
+Lean: `Singularity.monoPart_mul_nonmonoPart`, `Singularity.eq_nonmonoPart_of_mul`, `Singularity.divOrd_span_pow_mul`, `Singularity.idealOrd_nonmonoPart_le` (the local form at one component $D$, with $t$ a local equation of $D$). The form with all components at once and part 2 for negative coefficients are not in Lean yet.
 
 *Proof.* Let $t$ be a local equation of $D$ at a point of $D$. The condition $B \subseteq \mathcal{O}_X(-cD)$ says that $t^{-c} B$ is regular. Since $X$ is normal, this holds if it holds at the generic points of the codimension 1 subvarieties, and away from $D$ it is automatic. So $c_D(B) = \operatorname{ord}_D B$, the order of $B$ at the generic point of $D$, whose local ring is a discrete valuation ring. Different components $D$ have different generic points, and the equations of the other components are units at the generic point of $D$. So $\operatorname{ord}_D$ is additive, and $\operatorname{ord}_D(\mathcal{O}(-G) B) = g_D + \operatorname{ord}_D B$, where $g_D$ is the coefficient of $D$ in $G$. This gives (2), since then $N(\mathcal{O}(-G) B) = \mathcal{O}(\sum_D (g_D + c_D) D) \, \mathcal{O}(-G) \, B = N(B)$. For (1), $N(I)$ is an ideal because $\operatorname{ord}_D(\mathcal{O}(c_D D) I) = 0$ for each $D$ and the other generic points of codimension 1 are not affected; the same equality gives $N(I) \not\subseteq \mathcal{O}(-D)$. If $I = \mathcal{O}(-\sum a_D D) \cdot N'$ with $N'$ an ideal not contained in any $\mathcal{O}(-D)$, then $a_D = \operatorname{ord}_D I = c_D$. (3) holds because $\mathcal{O}(\sum c_D D) \supseteq \mathcal{O}_X$. $\square$
 
@@ -118,7 +118,7 @@ We allow different coefficients on the components of one divisor $E^l$; then par
 
 **Theorem 3.3.8 (order reduction for monomial ideals).** Let $I = \mathcal{O}_X(-\sum_D a_D D)$ be a monomial ideal for $E$, with $D$ running over the components of the $E^l$, and let $m \ge 1$. Then there is a blowup sequence of order at least $m$ for $(I, m, E)$ whose centers are intersections of components of the transforms of $E$, with $\operatorname{cosupp}(I_r, m) = \emptyset$.
 
-Node: SG00000049 · Lean: none yet
+Node: SG00000049 · Lean: `Singularity.monomialStep_lt_mu`, `Singularity.monomialStep_lt_mark` (the two inequalities of the proof). The blowups, the transforms and the termination are not in Lean yet.
 
 *Proof.* The transforms of $I$ stay monomial: if $Z$ is a connected component of some $E^B$ and $\pi$ is its blowup, then $\pi^* \mathcal{O}(-D)$ is $\mathcal{O}(-D' - F)$ if $Z \subseteq D$ and $\mathcal{O}(-D')$ otherwise, where $D'$ is the birational transform. So if $Z \subseteq \operatorname{cosupp}(I, m)$, the transform of $(I, m)$ is monomial, with the old coefficients on the transforms $D'$ and the coefficient $a_B(Z) - m$ on the new divisor $F$ over $Z$; by the remark above, no other divisor contains $Z$. Also $\operatorname{ord}_y I = a_{A(y)}(y)$, where $A(y)$ is the set of all $l$ with $y \in E^l$. So a union of connected components of $E^B$ on which $a_B \ge m$ lies in $\operatorname{cosupp}(I, m)$ and is an allowed center.
 

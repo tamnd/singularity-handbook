@@ -28,7 +28,7 @@ By Corollary 1.2.5, the normalization of the blowup of $X$ at its singular point
 4. The sheaf $R^1 f_* \mathcal{O}_Y$ is coherent, and its support is a finite set of closed points $x$ with $\dim \mathcal{O}_{X,x} = 2$. If $X = \operatorname{Spec} A$ is affine, then $H^1(Y, \mathcal{O}_Y)$ is an $A$-module of finite length.
 5. For each coherent sheaf $\mathcal{F}$ on $Y$ and each $i \ge 2$, we have $R^i f_* \mathcal{F} = 0$. If $X$ is affine, then $H^i(Y, \mathcal{F}) = 0$ for $i \ge 2$.
 
-Lean: none yet
+Lean: `Singularity.Lipman.subalgebra_eq_bot_of_finite` (the affine step of part 1: a finite subalgebra of $K$ over a normal domain $R$ is $R$). The sheaf statement and parts 2 to 5 are not in Lean yet.
 
 *Proof.* 1. For a proper morphism and a coherent sheaf, the higher direct images are coherent [Har, Theorem III.8.8] for projective morphisms, and [Stacks] in general. Let $\operatorname{Spec} R \subseteq X$ be an affine open. Then $B = \Gamma(f^{-1}(\operatorname{Spec} R), \mathcal{O}_Y)$ is a finite $R$-module. It is a subring of $K$, because $Y$ is integral with function field $K$. Thus each element of $B$ is integral over $R$. Since $R$ is integrally closed in $K$, we get $B = R$.
 
@@ -74,7 +74,7 @@ This is the main input of the first part of the proof. We do not prove the theor
 
 **Proposition 2.1.7.** Let $A$ be an excellent normal local domain of dimension 2 and let $h : Y \to \operatorname{Spec} A$ be a normal modification such that $\ell_A(H^1(Y, \mathcal{O}_Y))$ is the largest value over all normal modifications of $\operatorname{Spec} A$. Then $Y$ has rational singularities. Such a $Y$ exists by Theorem 2.1.6.
 
-Lean: none yet
+Lean: `Singularity.Lipman.subsingleton_of_length_le` (the step on lengths). The cohomology is not in Lean yet.
 
 *Proof.* Let $g : Y' \to Y$ be a normal modification. Then $h \circ g$ is a normal modification of $\operatorname{Spec} A$. The Leray spectral sequence $H^p(Y, R^q g_* \mathcal{O}_{Y'}) \Rightarrow H^{p+q}(Y', \mathcal{O}_{Y'})$ and $g_* \mathcal{O}_{Y'} = \mathcal{O}_Y$ give the exact sequence
 
@@ -112,7 +112,7 @@ The definition of a rational singularity uses the cohomology of the whole modifi
 2. If $A$ is local of dimension 2, then $\ell_A(H^1(D, \mathcal{O}_D)) \le \ell_A(H^1(Y, \mathcal{O}_Y)) \le N$, where $N$ is the integer of Theorem 2.1.6.
 3. If $X$ has rational singularities, then $H^1(D, \mathcal{O}_D) = 0$.
 
-Lean: none yet
+Lean: `Singularity.Lipman.length_le_of_surjective'` (the step on lengths in part 2). The cohomology is not in Lean yet.
 
 *Proof.* 1. Let $\mathcal{I}_D$ be the ideal sheaf of $D$. The exact sequence $0 \to \mathcal{I}_D \to \mathcal{O}_Y \to \mathcal{O}_D \to 0$ gives the exact sequence
 
@@ -132,7 +132,7 @@ Part 2 is the form in which the bound of Lipman controls the curves. Let $A$ be 
 2. Assume that $H^0(C, \mathcal{O}_C) = H^0(C', \mathcal{O}_{C'}) = \kappa$. Let $T = C \cap C'$ be the closed subscheme with ideal sheaf $\mathcal{I}_C + \mathcal{I}_{C'}$. Then $T$ is empty, or it is one point $t$ with $\mathcal{O}_{T,t} = \kappa$.
 3. If $\kappa$ is algebraically closed and $C$ is regular, then $C \cong \mathbb{P}^1_\kappa$.
 
-Lean: none yet
+Lean: `Singularity.Lipman.exact_diagQuotInf_diffQuotSup`, `Singularity.Lipman.length_quot_sup_le_one` (the exact sequence and the count of lengths in part 2, for rings). The step to sheaves and parts 1 and 3 are not in Lean yet.
 
 *Proof.* 1. This is Proposition 2.1.9, part 3, with $D = C$.
 
