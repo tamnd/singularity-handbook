@@ -4,7 +4,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Added
+
+- Volume 5, Section 2.3, the Perron algorithm. Theorem 2.3.5 says that a valid run of blowups of strata of codimension 2 makes a Laurent monomial of positive value a monomial, for real weights that are positive and linearly independent over the integers. The section has Lemmas 2.3.2 and 2.3.4 on steps and runs, Corollaries 2.3.6 and 2.3.7 on finite sets and on the divisibility of monomials, Examples 2.3.8 and 2.3.9, Proposition 2.3.10 on the matrix of a run, Corollary 2.3.11 on monomial charts, and seven exercises. Lemma 2.3.2 to Corollary 2.3.7 have Lean lines.
+
 ### Changed
+
+- Volume 5, Section 2.1, the remark on the lattice lemma and the introduction of Chapter 2 refer to Section 2.3.
 
 - Volume 4, Example 2.3.14 and Lemma 3.1.7 and Volume 8, Proposition 2.4.3 have Lean lines.
 - Volume 1, Proposition 3.3.15 has a full Lean proof. Volume 1, Proposition 3.2.3, Theorems 5.2.3 and 5.3.3, Propositions 5.3.2 and 5.3.4 and Corollary 5.3.5, Volume 4, Propositions 2.2.2 and 2.2.6, and Volume 6, Definition 3.2.5, Propositions 3.2.9 and 3.2.12 and Example 3.2.13 have new Lean lines.
