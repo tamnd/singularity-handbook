@@ -15,6 +15,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 0, Section 5.1 describes edition 0.4.78.
 - Volume 9, Section 3.26 treats toric relative strong factorization in dimension 3: the condition (A$^{\rm w}$) in the weak and the strong model of Step 3, a game that decides direct reachability of a regular cone, certificates for all regular cones with entries at most 4 and for all but two classes with entries at most 5, the route on 801 toric pairs, a counterexample to the drop of the number $\mu$ of bad cones, and a condition under which $\mu$ drops.
 - Volume 1, Section 1.3 has a new part with the proof that a regular local ring is integrally closed (Theorem 1.3.12). The proof uses a divisibility property (D), the induction on the dimension of Theorem 1.3.3 and the intersection theorem of Krull. Corollary 1.3.13 says that a regular local ring contains each element of its fraction field that has a power in the ring. Example 1.3.14 shows that the cusp does not have property (D).
+- Volume 5, Corollary 2.3.12, the monomial form of a polynomial. After a valid run of the Perron algorithm, a polynomial that is not 0 is a monomial times a polynomial with a nonzero constant term. One run is sufficient for a finite set of polynomials.
 - Volume 5, Section 2.3, the Perron algorithm. Theorem 2.3.5 says that a valid run of blowups of strata of codimension 2 makes a Laurent monomial of positive value a monomial, for real weights that are positive and linearly independent over the integers. The section has Lemmas 2.3.2 and 2.3.4 on steps and runs, Corollaries 2.3.6 and 2.3.7 on finite sets and on the divisibility of monomials, Examples 2.3.8 and 2.3.9, Proposition 2.3.10 on the matrix of a run, Corollary 2.3.11 on monomial charts, and seven exercises. Lemma 2.3.2 to Corollary 2.3.7 have Lean lines.
 
 ### Changed
@@ -25,6 +26,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 - Volume 3, Theorem 3.1.2 and Proposition 3.1.6 and Volume 5, Proposition 1.4.5, Proposition 3.1.4 and Theorem 3.1.5 have Lean lines.
 - Volume 9, Section 3.25 has the five fixes of the referee report in research note 89: the repair of Proposition 3.25.11 comes from the weak Step 3, $\tilde U_2 = U_2$ after Lemma 3.25.7, a polyhedral fan in the proof of Proposition 3.25.13, the citation of the proof of [CJS20, Corollary 0.4], and the version of [CP19]. It cites Section 3.26, and Volume 9, Section 2.5 and the introduction of Part 3 cite Section 3.26.
 - Volume 1, Section 1.4, the notes refer to Theorem 1.3.12.
+- Volume 5, Proposition 2.3.10 and Corollary 2.3.11 have Lean lines.
 - Volume 5, Section 2.1, the remark on the lattice lemma and the introduction of Chapter 2 refer to Section 2.3.
 - Volume 4, Example 2.3.14 and Lemma 3.1.7 and Volume 8, Proposition 2.4.3 have Lean lines.
 - Volume 1, Proposition 3.3.15 has a full Lean proof. Volume 1, Proposition 3.2.3, Theorems 5.2.3 and 5.3.3, Propositions 5.3.2 and 5.3.4 and Corollary 5.3.5, Volume 4, Propositions 2.2.2 and 2.2.6, and Volume 6, Definition 3.2.5, Propositions 3.2.9 and 3.2.12 and Example 3.2.13 have new Lean lines.
