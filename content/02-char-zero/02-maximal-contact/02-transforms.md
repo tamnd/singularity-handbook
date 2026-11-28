@@ -50,7 +50,7 @@ Kollár writes the transform as $\pi^{-1}_*(I, m)$, and we keep his notation [Ko
 3. If $Z \subseteq \operatorname{cosupp}(A, a)$ and $a' \le a$, then the transform of $(A, a')$ is $\mathcal{O}(-(a - a')F)$ times the transform of $(A, a)$, so it is contained in it.
 4. If $Z \subseteq \operatorname{cosupp}(I, m)$, then $\operatorname{cosupp}(I', m) \subseteq \pi^{-1}(\operatorname{cosupp}(I, m))$, where $I'$ is the transform.
 
-Lean: none yet
+Lean: `Singularity.markedTransform_mul`, `Singularity.markedTransform_pow`, `Singularity.markedTransform_sup`, `Singularity.markedTransform_le_of_mark_le`, `Singularity.centerChartTransformIdeal_mul` (parts 1 to 3, in general and in the charts of a coordinate center of any codimension). Part 4 and the gluing of the charts are not in Lean yet.
 
 *Proof.* Parts 1 to 3 follow from $\pi^*(AB) = \pi^*A \cdot \pi^*B$, $\pi^*(A + B) = \pi^*A + \pi^*B$ and $\mathcal{O}(aF) \mathcal{O}(bF) = \mathcal{O}((a + b)F)$, since $\mathcal{O}(F)$ is invertible. For part 4, $\pi$ is an isomorphism over $X \setminus Z$, and there $I' = \pi^* I$, so a point of $X' \setminus F$ in $\operatorname{cosupp}(I', m)$ lies over $\operatorname{cosupp}(I, m)$, and the points of $F$ lie over $Z \subseteq \operatorname{cosupp}(I, m)$. $\square$
 

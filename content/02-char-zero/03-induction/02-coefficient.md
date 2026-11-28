@@ -23,13 +23,13 @@ The exponents make all the summands have the same expected order: if $D^j(I)$ ha
 1. At each closed point $x$, $\operatorname{ord}_x B \ge N$ if and only if $\operatorname{ord}_x B_j \ge c_j$ for all $j$. So $\operatorname{cosupp}(B, N) = \bigcap_j \operatorname{cosupp}(B_j, c_j)$.
 2. Let $\pi$ be the blowup of a smooth $Z \subseteq \operatorname{cosupp}(B, N)$, and let $B_j'$ be the transform of $(B_j, c_j)$. Then the transform of $(B, N)$ is $\sum_j (B_j')^{N / c_j}$.
 
-Lean: `Singularity.le_idealOrd_iSup_pow_iff` (part 1, at the origin of affine space), `Singularity.chartTransformIdeal_iSup_pow` (part 2, for the blowup of a point in one chart)
+Lean: `Singularity.le_idealOrd_iSup_pow_iff` (part 1, at the origin of affine space), `Singularity.chartTransformIdeal_iSup_pow` (part 2, for the blowup of a point in one chart), `Singularity.centerChartTransformIdeal_iSup_pow` (part 2, for a coordinate center of any codimension in one chart)
 
 *Proof.* (1) The graded ring of $\hat{\mathcal{O}}_{X, x}$ for the maximal ideal is a polynomial ring, so it has no zero divisors. Hence $\operatorname{ord}_x (fg) = \operatorname{ord}_x f + \operatorname{ord}_x g$, and $\operatorname{ord}_x (A^e) = e \operatorname{ord}_x A$ for each ideal $A$. The order of a sum of ideals is the minimum of the orders. So $\operatorname{ord}_x B = \min_j (N / c_j) \operatorname{ord}_x B_j$, and this is at least $N$ if and only if $\operatorname{ord}_x B_j \ge c_j$ for all $j$. (2) By (1), applied at the points of $Z$, $Z \subseteq \operatorname{cosupp}(B_j, c_j)$ for all $j$. Now apply Lemma 2.2.4 (1) and (2). $\square$
 
 **Proposition 3.2.3 (tuning by the coefficient ideal).** Let $(I, m)$ be a marked ideal with $m \ge 1$. A sequence of blowups with smooth centers is a blowup sequence of order at least $m$ for $(I, m)$ if and only if it is a blowup sequence of order at least $m!$ for $(C(I), m!)$. If this holds, then $\operatorname{cosupp}(I_i, m) = \operatorname{cosupp}(C_i, m!)$ for each $i$, where $C_i$ is the $i$th transform of $(C(I), m!)$.
 
-Lean: none yet
+Lean: `Singularity.centerChartTransformIdeal_coeffIdeal` (the step for one blowup with a coordinate center, in one chart). The induction over a sequence of blowups is not in Lean yet.
 
 *Proof.* Let $J^{(j)}_i$ be as in Theorem 2.2.7. We show by induction on $i$ that, if the first $i$ blowups are of order at least $m$ for $(I, m)$, then $C_i = \sum_j (J^{(j)}_i)^{m!/(m-j)}$ and $\operatorname{cosupp}(C_i, m!) = \operatorname{cosupp}(I_i, m)$. The first claim follows from Lemma 3.2.2 (2), applied $i$ times. By Lemma 3.2.2 (1), $\operatorname{cosupp}(C_i, m!) = \bigcap_j \operatorname{cosupp}(J^{(j)}_i, m - j)$. Since $J^{(0)}_i = I_i$, this set lies in $\operatorname{cosupp}(I_i, m)$. Conversely, at a point of $\operatorname{cosupp}(I_i, m)$ the ideal $D^j(I_i)$ has order at least $m - j$ by Lemma 2.1.4, and $J^{(j)}_i \subseteq D^j(I_i)$ by Theorem 2.2.7. So the two cosupports are equal, and the center $Z_i$ is allowed for one marked ideal if and only if it is allowed for the other. $\square$
 
