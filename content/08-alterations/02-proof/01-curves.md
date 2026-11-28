@@ -18,7 +18,7 @@ This is [dJ96, 2.21 and 2.22]. An ordinary double point of a curve $C$ over an a
 
 **Proposition 2.1.2 (local form).** Let $f \colon X \to S$ be a split semistable curve with $S$ Noetherian, let $x \in \operatorname{Sing}(f)$, and let $s = f(x)$. Let $A$ be the complete local ring of $S$ at $s$. Then the complete local ring of $X$ at $x$ is isomorphic to $A[[u, v]]/(uv - h)$ for some $h$ in the maximal ideal of $A$.
 
-Lean: none yet
+Lean: `Singularity.isDomain_node_polynomialModel` (the polynomial model $A[u,v]/(uv - h)$ is a domain). The complete local ring is not in Lean yet.
 
 This is [dJ96, 2.23]. The proof has two halves. The first half shows that the complete local ring is a quotient of $A[[u, v]]$ by one equation that reduces to $uv$ modulo $\mathfrak{m}_A$. This half uses only flatness, and we prove it. The second half is a change of coordinates that puts the equation in the form $uv - h$ with $h \in A$. For this half we refer to [dJ96, 2.23].
 

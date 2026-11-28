@@ -40,7 +40,7 @@ The blowups are those of Section 3.3: the blowup of the origin, in the $x_j$-cha
 
 **Corollary 4.3.2.** Let $(S, h, E)$ be as above, and assume that it satisfies condition (E) and that $\omega(x) > 0$. Let $x'$ be a point over $x$ of the blowup of the closed point. Then $\iota(x') \le \iota(x)$. If also $\epsilon(x') > \epsilon(x)$, then $\epsilon(x) = \omega(x)$ and $\delta(x) \in \mathbb{N}$.
 
-Lean: none yet
+Lean: `Singularity.cpIota_cleanPart_pointChart`, `Singularity.cpOmega_eq_of_lt_pointChart`, `Singularity.exists_ord_eq_mul_of_lt` (for a point blowup, at the points of the chart with coordinates in $k$). Lean assumes that the cleaning gives well adapted coordinates.
 
 *Proof.* The hypotheses of Theorem 3.2.6 hold, as we showed above. Apply it with $Y = \{x\}$. Then the generic point $y$ of $Y$ is $x$, so $\epsilon(y) = \epsilon(x)$ and $\delta(y) = \delta(x)$, and the theorem gives both claims. $\square$
 

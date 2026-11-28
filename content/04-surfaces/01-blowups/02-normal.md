@@ -51,7 +51,7 @@ The theorem fails in dimension 3. The threefold $V(xy - z^2) \subseteq \mathbb{A
 
 **Corollary 1.2.5.** Let $X$ be a normal excellent surface and let $S = \operatorname{Sing}(X)$ with its reduced structure. Let $X_1$ be the normalization of $\operatorname{Bl}_S X$. Then $X_1$ is a normal excellent surface, the morphism $X_1 \to X$ is proper, and it is an isomorphism over $\operatorname{Reg}(X) = X \setminus S$.
 
-Lean: none yet
+Lean: `Singularity.regularLocus_compl_ne_univ`, `Singularity.idealChart_top_eq_top`, `Singularity.exists_algebraMap_eq_of_isIntegral_localization`, `Singularity.ringKrullDim_integralClosure_le` (the affine steps). The finiteness of the normalization and the scheme statement are not in Lean yet.
 
 *Proof.* By Theorem 1.2.4, $S$ is a finite set of closed points. The morphism $\operatorname{Bl}_S X \to X$ is projective, so it is proper and of finite type. We may work on one connected component of $X$, so we may assume that $X$ is integral. If $S = \emptyset$, there is nothing to prove. Otherwise $S \ne X$, because a point of a normal scheme with $\dim \mathcal{O}_{X,x} = 0$ is regular. By the remark after Lemma 1.1.3, $\operatorname{Bl}_S X$ is integral, and each chart over an affine open $\operatorname{Spec} R$ is a ring $B$ with $R \subseteq B \subseteq K$, where $K$ is the function field.
 
