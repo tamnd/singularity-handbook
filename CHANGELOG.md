@@ -4,8 +4,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+## [0.4.85] - 2026-11-28
+
 ### Added
 
+- Volume 0, Section 5.1 describes edition 0.4.85.
 - Volume 9, Section 3.30 proves a lower bound for the number of pivots in toric relative strong factorization. Theorem 3.30.9 shows that a directly reachable cone around a star center with its sum in $\sigma_n$ meets $\sigma_n$ in a set of extent at most $\frac{2n}{n-1}$. Theorem 3.30.10 shows that $\sigma_n$ fails the refined condition $(\mathrm{N}_k^{\rm ref})$ for $n \ge 4k + 2$, Corollary 3.30.11 gives at least $\frac{n-1}4$ rays in every pivot set of every certificate of $\sigma_n$, and Corollary 3.30.12 shows that $\mathrm{C}(k)$ is false for every $k$. Proposition 3.30.13 gives at least $\frac{k+1}4$ pivots for $F_k$. Proposition 3.30.3 proves Proposition 3.28.17 again in the form of the refined condition. The second part shows that the quantity $h$ of Volume 7, Section 4.5, is not defined at the rises of Volume 7, Theorems 4.4.7 and 4.4.8 (Proposition 3.30.17), proves a congruence for the leading monomial at a rise (Lemma 3.30.18), reports the computed trees and searches for rises at a $(1,1,1)$ vertex (Propositions 3.30.19 and 3.30.20), and states the open question on the number of rises (Remark 3.30.21).
 
 ### Changed
